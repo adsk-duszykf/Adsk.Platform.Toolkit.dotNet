@@ -41,7 +41,55 @@ public class AuthenticationClientHelper
 
         return url.ToString();
     }
+    /// <summary>
+    /// Generates a random string between 43 and 128 characters containing only alphanumeric characters and the punctuation characters '-', '.', '_', '~'.
+    /// </summary>
+    /// <param name="length">The length of the string to generate (between 43 and 128).</param>
+    /// <returns>A random string.</returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    private static string GenerateRandomCodeVerifier(int length = 64)
+    {
+        if (length < 43 || length > 128)
+            throw new ArgumentOutOfRangeException(nameof(length), "Length must be between 43 and 128.");
 
+        const string allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~";
+        var randomBytes = new byte[length];
+        using var rng = System.Security.Cryptography.RandomNumberGenerator.Create();
+        rng.GetBytes(randomBytes);
+
+        var chars = new char[length];
+        for (int i = 0; i < length; i++)
+        {
+            chars[i] = allowedChars[randomBytes[i] % allowedChars.Length];
+        }
+        return new string(chars);
+    }
+    
+    /// <summary>
+    /// Generates a PKCE code challenge from a code verifier using SHA256 and Base64Url encoding.
+    /// </summary>
+    /// <returns>The code challenge string, and its code verifier</returns>
+    public static (string codeVerifier, string codeChallenge) CreatePkceCodeChallenge()
+    {
+        var codeVerifier = GenerateRandomCodeVerifier();
+        var bytes = Encoding.ASCII.GetBytes(codeVerifier);
+        var hash = System.Security.Cryptography.SHA256.HashData(bytes);
+        var codeChallenge = Base64UrlEncode(hash);
+        return (codeVerifier, codeChallenge);
+    }
+
+    /// <summary>
+    /// Encodes a byte array using Base64Url encoding (RFC 7636).
+    /// </summary>
+    /// <param name="input">The byte array to encode.</param>
+    /// <returns>The Base64Url encoded string.</returns>
+    private static string Base64UrlEncode(byte[] input)
+    {
+        return Convert.ToBase64String(input)
+            .TrimEnd('=')
+            .Replace('+', '-')
+            .Replace('/', '_');
+    }
 
     /// <summary>
     /// Get the User info. 
