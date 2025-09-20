@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "782BB701E4FD993E942CB4942BF61E3F19A7FA83F24359B3C0F83F0F75BB0F94FCD6778492116D63BE16DCC618B8939985F1457B72C1E78E202E01DB0BB3BA9F",
-  "descriptionLocation": "../../../private/Autodesk.Authentication/OpenAPI/authentication.yaml",
+  "descriptionHash": "08AEB554645D9A97397CD2D040A0685CB5BC7963F791A330B8D0DA125A5A0232989EA67FAADB3A871767FE61BD03F45E7EC4E6CDAC73F7912566451452B05992",
+  "descriptionLocation": "../../../_spec/Autodesk.Authentication/OpenAPI/authentication.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.28.0",
   "clientClassName": "BaseAuthenticationClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Autodesk.Authentication",
