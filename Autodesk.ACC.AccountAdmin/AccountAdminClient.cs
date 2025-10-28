@@ -1,8 +1,6 @@
-using ACCapi=Autodesk.ACC.AccountAdmin.ACC;
-using BIMapi=Autodesk.ACC.AccountAdmin.BIM;
 using Autodesk.ACC.AccountAdmin.Managers;
-using Autodesk.ACC.AccountAdmin.ACC.Construction;
-using Autodesk.ACC.AccountAdmin.BIM.Hq;
+using Autodesk.ACC.AccountAdmin.Construction;
+using Autodesk.ACC.AccountAdmin.Hq;
 
 namespace Autodesk.ACC.AccountAdmin;
 
@@ -51,13 +49,12 @@ public class AccountAdminClient
         var adapter = Common.HttpClientLibrary.HttpClientFactory.CreateAdapter(getAccessToken, httpClient);
 
         // Create base clients for ACC and BIM360
-        var accBaseClient = new ACCapi.BaseAccountAdminClient(adapter);
-        var bimBaseClient = new BIMapi.BaseAccountAdminClient(adapter);
+        var baseClient = new BaseAccountAdminClient(adapter);
 
         Api = new ApiRequestBuilder
         {
-            Construction = accBaseClient.Construction,
-            Hq = bimBaseClient.Hq
+            Construction = baseClient.Construction,
+            Hq = baseClient.Hq
         };
 
         // Initialize managers

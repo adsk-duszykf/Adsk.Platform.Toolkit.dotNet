@@ -1,5 +1,5 @@
 
-using Autodesk.ACC.AccountAdmin.BIM.Hq.V1.Accounts.Item.Business_units_structure;
+using Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Business_units_structure;
 using Microsoft.Kiota.Abstractions;
 
 namespace Autodesk.ACC.AccountAdmin.Managers;

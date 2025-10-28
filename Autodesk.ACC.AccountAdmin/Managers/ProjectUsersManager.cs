@@ -1,9 +1,9 @@
-using Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Projects.Item.Users;
-using Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Projects.Item.Users.Item;
-using Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V2.Projects.Item.UsersImport;
+using Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Projects.Item.Users;
+using Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Projects.Item.Users.Item;
+using Autodesk.ACC.AccountAdmin.Construction.Admin.V2.Projects.Item.UsersImport;
 using Microsoft.Kiota.Abstractions;
-using static Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder;
-using static Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Projects.Item.Users.UsersRequestBuilder;
+using static Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder;
+using static Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Projects.Item.Users.UsersRequestBuilder;
 
 namespace Autodesk.ACC.AccountAdmin.Managers;
 

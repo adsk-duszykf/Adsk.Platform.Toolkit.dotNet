@@ -1,6 +1,7 @@
 
-using Autodesk.ACC.AccountAdmin.BIM.Hq.V1.Accounts.Item.Companies;
-using Autodesk.ACC.AccountAdmin.BIM.Hq.V1.Accounts.Item.Companies.Import;
+using Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Companies;
+using Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Companies.Import;
+using static Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder;
 using Microsoft.Kiota.Abstractions;
 
 namespace Autodesk.ACC.AccountAdmin.Managers;
@@ -30,7 +31,7 @@ public class CompaniesManager
     /// <returns>Company data</returns>
     public async Task<CompaniesGetResponse?> ListCompaniesAsync(
         string accountId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        Action<RequestConfiguration<CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Hq!.V1.Accounts[accountId]
@@ -72,7 +73,7 @@ public class CompaniesManager
     /// <returns>Import result with success and failure counts</returns>
     public async Task<ImportPostResponse?> ImportCompaniesAsync(
         string accountId,
-        List<Import> companies,
+        ImportPostRequestBody companies,
         Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {

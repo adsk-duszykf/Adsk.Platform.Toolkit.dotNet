@@ -1,7 +1,8 @@
-using Autodesk.ACC.AccountAdmin.BIM.Hq.V1.Accounts.Item.Users;
-using Autodesk.ACC.AccountAdmin.BIM.Hq.V1.Accounts.Item.Users.Import;
-using Autodesk.ACC.AccountAdmin.BIM.Hq.V1.Accounts.Item.Users.Item;
+using Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Users;
+using Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Users.Import;
+using Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Users.Item;
 using Microsoft.Kiota.Abstractions;
+using static Autodesk.ACC.AccountAdmin.Hq.V1.Accounts.Item.Users.UsersRequestBuilder;
 
 namespace Autodesk.ACC.AccountAdmin.Managers;
 
@@ -30,7 +31,7 @@ public class AccountUsersManager
     /// <returns>User data</returns>
     public async Task<UsersGetResponse?> ListUsersAsync(
         string accountId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        Action<RequestConfiguration<UsersRequestBuilderGetQueryParameters>>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Hq.V1.Accounts[accountId]
@@ -93,7 +94,7 @@ public class AccountUsersManager
     /// <returns>Import result with success and failure counts</returns>
     public async Task<ImportPostResponse?> ImportUsersAsync(
         string accountId,
-        List<Import> users,
+        ImportPostRequestBody users,
         Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {

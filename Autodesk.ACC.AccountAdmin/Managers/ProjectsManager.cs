@@ -1,8 +1,8 @@
-using Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Accounts.Item.Projects;
-using Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Projects.Item;
+using Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Accounts.Item.Projects;
+using Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Projects.Item;
 using Microsoft.Kiota.Abstractions;
-using static Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder;
-using static Autodesk.ACC.AccountAdmin.ACC.Construction.Admin.V1.Projects.Item.WithProjectItemRequestBuilder;
+using static Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder;
+using static Autodesk.ACC.AccountAdmin.Construction.Admin.V1.Projects.Item.WithProjectItemRequestBuilder;
 
 namespace Autodesk.ACC.AccountAdmin.Managers;
 
