@@ -1,0 +1,46 @@
+{
+  "descriptionHash": "C02B2231B5F16AE8CEB25DFAF58E9501EBE72003C3E94BB5E1CA03505538826997F4D33F588BE3205C8D0FD633D7A06231305EEDABDC797147D3594A55B062CF",
+  "descriptionLocation": "../../../_spec/Autodesk.ACC.DataConnector/OpenAPI/data-connector-openapi.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.29.0",
+  "clientClassName": "BaseDataConnectorClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "Autodesk.ACC.DataConnector",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [
+    "/data-connector/v1/accounts/{accountId}/requests#POST",
+    "/data-connector/v1/accounts/{accountId}/requests#GET",
+    "/data-connector/v1/accounts/{accountId}/requests/{requestId}#GET",
+    "/data-connector/v1/accounts/{accountId}/requests/{requestId}#PATCH",
+    "/data-connector/v1/accounts/{accountId}/requests/{requestId}#DELETE",
+    "/data-connector/v1/accounts/{accountId}/requests/{requestId}/jobs#GET",
+    "/data-connector/v1/accounts/{accountId}/jobs#GET",
+    "/data-connector/v1/accounts/{accountId}/jobs/{jobId}#GET",
+    "/data-connector/v1/accounts/{accountId}/jobs/{jobId}#DELETE",
+    "/data-connector/v1/accounts/{accountId}/jobs/{jobId}/data-listing#GET",
+    "/data-connector/v1/accounts/{accountId}/jobs/{jobId}/data/{name}#GET"
+  ],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

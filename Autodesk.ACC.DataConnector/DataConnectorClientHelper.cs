@@ -1,12 +1,12 @@
-﻿using Autodesk.ACC.DataConnector.Models;
-using CommonUtils;
+﻿using Autodesk.ACC.DataConnector.DataConnector.V1;
+using Autodesk.ACC.DataConnector.DataConnector.V1.Accounts.Item.Requests;
 
 namespace Autodesk.ACC.DataConnector.Helpers;
 
 public class DataConnectorClientHelper
 {
-    public BaseDataConnectorClient Api { get; init; }
-    internal DataConnectorClientHelper(BaseDataConnectorClient api)
+    public V1RequestBuilder Api { get; init; }
+    internal DataConnectorClientHelper(V1RequestBuilder api)
     {
         Api = api;
     }
@@ -20,10 +20,10 @@ public class DataConnectorClientHelper
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Data Requests</returns>
     /// <exception cref="InvalidOperationException"></exception>
-    public async IAsyncEnumerable<DataRequest> GetAllRequestsAsync<T>(string accountId, [System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken = default)
+    public async IAsyncEnumerable<RequestsGetResponse_results> GetAllRequestsAsync<T>(string accountId, [System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
 
-        var currentPage = new Pagination
+        var currentPage = new RequestsGetResponse_pagination
         {
             Limit = 20,
             Offset = 0,
@@ -34,7 +34,7 @@ public class DataConnectorClientHelper
 
         do
         {
-            var response = await Api.Accounts[Guid.Parse(accountId)].Requests.GetAsync(
+            RequestsGetResponse? response = await Api.Accounts[Guid.Parse(accountId)].Requests.GetAsRequestsGetResponseAsync(
                 r => r.QueryParameters.Offset = currentPage.Offset,
                 cancellationToken: cancellationToken);
 
