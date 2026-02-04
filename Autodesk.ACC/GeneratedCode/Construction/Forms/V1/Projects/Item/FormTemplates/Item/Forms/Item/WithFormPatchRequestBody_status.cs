@@ -11,38 +11,21 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         #pragma warning disable CS1591
         Draft,
         #pragma warning restore CS1591
-        [EnumMember(Value = "(in progress) forms may be edited.")]
+        [EnumMember(Value = "discarded")]
         #pragma warning disable CS1591
-        InProgressFormsMayBeEdited,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "inReview")]
-        #pragma warning disable CS1591
-        InReview,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "forms may not be edited but may be approved by the form reviewers.")]
-        #pragma warning disable CS1591
-        FormsMayNotBeEditedButMayBeApprovedByTheFormReviewers,
+        Discarded,
         #pragma warning restore CS1591
         [EnumMember(Value = "submitted")]
         #pragma warning disable CS1591
         Submitted,
         #pragma warning restore CS1591
-        [EnumMember(Value = "forms are closed and no longer editable.")]
-        #pragma warning disable CS1591
-        FormsAreClosedAndNoLongerEditable,
-        #pragma warning restore CS1591
         [EnumMember(Value = "archived")]
         #pragma warning disable CS1591
         Archived,
         #pragma warning restore CS1591
-        [EnumMember(Value = "forms are not editable and hidden in the ui
-Possible values:")]
+        [EnumMember(Value = "in_review")]
         #pragma warning disable CS1591
-        FormsAreNotEditableAndHiddenInTheUiPossibleValues,
-        #pragma warning restore CS1591
-        [EnumMember(Value = ",")]
-        #pragma warning disable CS1591
-        Comma,
+        In_review,
         #pragma warning restore CS1591
     }
 }
