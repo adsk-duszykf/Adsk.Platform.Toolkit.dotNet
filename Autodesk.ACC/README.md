@@ -122,6 +122,63 @@ var httpClient = new HttpClient();
 var accClient = new ACCclient(getAccessToken, httpClient);
 ```
 
+## Rate Limiting
+
+The SDK handles API rate limits automatically thanks to the built-in retry handler provided by the [Kiota HTTP client](https://learn.microsoft.com/en-us/openapi/kiota/middleware). When the API returns a `429 Too Many Requests` response, the SDK will:
+
+- Automatically retry the request with exponential backoff
+- Respect the `Retry-After` header returned by the API
+- Retry up to a configurable number of times before failing
+
+This means you don't need to implement custom retry logic in your application — the SDK handles transient failures and rate limiting transparently.
+
+## Error Handling
+
+By default, the SDK throws an `HttpRequestException` for any non-successful HTTP response (4xx or 5xx status codes). This differs from Kiota's default behavior, which requires you to check the response status manually.
+
+The exception includes:
+- The request URI
+- The HTTP status code
+- The full `HttpResponseMessage` in the `Data["context"]` property, allowing you to inspect the request, headers, response body, and other details for debugging
+
+```csharp
+try
+{
+    var issues = await accClient.Issues.Projects[projectId].Issues.GetAsync();
+}
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"Request failed: {ex.Message}");
+    Console.WriteLine($"Status code: {ex.StatusCode}");
+
+    // Access the full response for more details
+    if (ex.Data["context"] is HttpResponseMessage response)
+    {
+        // Get request details
+        Console.WriteLine($"Request URI: {response.RequestMessage?.RequestUri}");
+        Console.WriteLine($"Request Method: {response.RequestMessage?.Method}");
+
+        // Get response body
+        var body = await response.Content.ReadAsStringAsync();
+        Console.WriteLine($"Response body: {body}");
+    }
+}
+```
+
+If you prefer Kiota's default behavior (no automatic exception throwing), you can disable the error handler:
+
+```csharp
+using Autodesk.Common.HttpClientLibrary.Middleware.Options;
+
+// Disable error handling for a specific request
+var requestConfig = new Action<RequestConfiguration<DefaultQueryParameters>>(config =>
+{
+    config.Options.Add(new ErrorHandlerOption { Enabled = false });
+});
+
+var issues = await accClient.Issues.Projects[projectId].Issues.GetAsync(requestConfig);
+```
+
 ## Requirements
 
 - .NET 8.0 or later
