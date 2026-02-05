@@ -110,6 +110,11 @@ public class ACCclient
     public Construction.Rcm.V1.V1RequestBuilder RCM => Api.Construction.Rcm.V1;
 
     /// <summary>
+    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/relationship/v2/*
+    /// </summary>
+    public Bim360.Relationship.V2.V2RequestBuilder Relationships => Api.Bim360.Relationship.V2;
+    
+    /// <summary>
     /// Shortcut to endpoints https://developer.api.autodesk.com/construction/reviews/v1/*
     /// </summary>
     public Construction.Reviews.V1.V1RequestBuilder Reviews => Api.Construction.Reviews.V1;
