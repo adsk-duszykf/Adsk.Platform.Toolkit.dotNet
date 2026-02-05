@@ -20,12 +20,18 @@ This SDK provides access to multiple ACC API endpoints through a unified client:
 | **Forms** | `/construction/forms/v1/*` |
 | **Index** | `/construction/index/v2/*` |
 | **Issues** | `/construction/issues/v1/*` |
+| **Locations** | `/construction/locations/v2/*` |
 | **ModelSet** | `/bim360/modelset/v3/*` |
-| **Relationships** | `/bim360/relationship/v2/*` |
+| **Packages** | `/construction/packages/v1/*` |
+| **Photos** | `/construction/photos/v1/*` |
 | **RCM** | `/construction/rcm/v1/*` |
+| **Relationships** | `/bim360/relationship/v2/*` |
+| **Reviews** | `/construction/reviews/v1/*` |
 | **RFIs** | `/construction/rfis/v3/*` |
 | **Sheets** | `/construction/sheets/v1/*` |
 | **Submittals** | `/construction/submittals/v2/*` |
+| **Takeoff** | `/construction/takeoff/v1/*` |
+| **Transmittals** | `/construction/transmittals/v1/*` |
 
 ## Installation
 
@@ -130,21 +136,30 @@ The SDK provides convenient shortcut properties for common endpoints:
 | Property | Description |
 |----------|-------------|
 | `accClient.Accounts` | Account management APIs |
-| `accClient.Projects` | Project relationship APIs |
-| `accClient.Clash` | Clash detection APIs |
-| `accClient.Docs` | Document management APIs |
-| `accClient.ModelSet` | Model set management APIs |
-| `accClient.AutoSpecs` | AutoSpecs APIs |
 | `accClient.Admin` | Admin APIs |
-| `accClient.Issues` | Issues management APIs |
-| `accClient.Sheets` | Sheets APIs |
-| `accClient.Forms` | Forms APIs |
-| `accClient.Files` | Files management APIs |
-| `accClient.Index` | Index/search APIs |
+| `accClient.Assets` | Assets APIs |
+| `accClient.AutoSpecs` | AutoSpecs APIs |
+| `accClient.Clash` | Clash detection APIs |
 | `accClient.Cost` | Cost management APIs |
 | `accClient.DataConnector` | Data Connector APIs |
-| `accClient.Submittals` | Submittals APIs |
+| `accClient.Docs` | Document management APIs |
+| `accClient.Files` | Files management APIs |
+| `accClient.Forms` | Forms APIs |
+| `accClient.Index` | Index/search APIs |
+| `accClient.Issues` | Issues management APIs |
+| `accClient.Locations` | Locations APIs |
+| `accClient.ModelSet` | Model set management APIs |
+| `accClient.Packages` | Packages APIs |
+| `accClient.Photos` | Photos APIs |
+| `accClient.Projects` | Project relationship APIs |
+| `accClient.RCM` | RCM APIs |
+| `accClient.Relationships` | Relationship APIs |
+| `accClient.Reviews` | Reviews APIs |
 | `accClient.RFIs` | RFI management APIs |
+| `accClient.Sheets` | Sheets APIs |
+| `accClient.Submittals` | Submittals APIs |
+| `accClient.Takeoff` | Takeoff APIs |
+| `accClient.Transmittals` | Transmittals APIs |
 
 ## Custom HttpClient
 
