@@ -10,6 +10,7 @@ This SDK provides access to multiple ACC API endpoints through a unified client:
 |-----|---------------|
 | **Accounts** | `/hq/v1/accounts/*` |
 | **Admin** | `/construction/admin/v1/*` |
+| **Assets** | `/construction/assets/*` |
 | **AutoSpecs** | `/construction/autospecs/v1/*` |
 | **Clash** | `/bim360/clash/v3/*` |
 | **Cost** | `/cost/v1/*` |
