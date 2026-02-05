@@ -44,6 +44,40 @@ Func<Task<string>> getAccessToken = () => Task.FromResult("YOUR_ACCESS_TOKEN");
 var accClient = new ACCclient(getAccessToken);
 ```
 
+### Using with 2-Legged Authentication
+
+For server-to-server communication using client credentials (2-legged OAuth), use the `Autodesk.Authentication` package:
+
+```csharp
+using Autodesk.ACC;
+using Autodesk.Authentication;
+using Autodesk.Authentication.Helpers.Models;
+
+// Your APS app credentials
+var clientId = "YOUR_CLIENT_ID";
+var clientSecret = "YOUR_CLIENT_SECRET";
+
+// Define the required scopes
+var scopes = new[] { "data:read", "data:write", "account:read" };
+
+// Create authentication client
+var authClient = new AuthenticationClient();
+
+// Create an auto-refreshing token provider (handles token expiration automatically)
+var tokenStore = new InMemoryTokenStore();
+var getAccessToken = authClient.Helper.CreateTwoLeggedAutoRefreshToken(
+    clientId, 
+    clientSecret, 
+    scopes, 
+    tokenStore);
+
+// Initialize the ACC client with auto-refreshing token
+var accClient = new ACCclient(getAccessToken);
+
+// Now you can use the client - tokens are refreshed automatically when needed
+var issues = await accClient.Issues.Projects[projectId].Issues.GetAsync();
+```
+
 ## Usage Examples
 
 ### Get Issues
