@@ -1,6 +1,6 @@
 {
   "descriptionHash": "6C5E7DB920135FE874C54DCEF782C9D10034BD2EBD9192E5ED804A1DCDE3028501534BFC71E3EF37CADD4F3248EF116F7635FC8EC838BD66414777C3483D8E67",
-  "descriptionLocation": "../../../private/Autodesk.Vault/OpenAPI/Autodesk.Vault.yaml",
+  "descriptionLocation": "../../../_spec/Autodesk.Vault/OpenAPI/Autodesk.Vault.yaml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.25.1",
   "clientClassName": "BaseVaultClient",
