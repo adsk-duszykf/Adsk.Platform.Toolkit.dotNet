@@ -4,6 +4,18 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>$(AssemblyName)</Title>
+    <Description>Autodesk Platform: Vault Data SDK and tools</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <Version>1.0.0</Version>
+
+    <PackageId>Adsk.Platform.VaultData</PackageId>
+    
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
   </PropertyGroup>
 
   <ItemGroup>
