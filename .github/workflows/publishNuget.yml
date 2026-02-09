@@ -35,7 +35,14 @@ jobs:
         run:  dotnet pack --configuration Release --no-build /p:Version=${{ steps.get_version.outputs.version }} --output ./nupkg
 
       - name: Publish Nuget Packages
-        run: dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: |
+          dotnet nuget push Autodesk.ACC.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push Autodesk.Authentication.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push Autodesk.BIM360.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push Autodesk.Common.HttpClientLibrary.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push Autodesk.DataManagement.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push Autodesk.ModelDerivative.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push Autodesk.Vault.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
         working-directory: ./nupkg
         continue-on-error: true
       
