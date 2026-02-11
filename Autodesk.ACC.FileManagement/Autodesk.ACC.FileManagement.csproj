@@ -9,6 +9,7 @@
     <Description>Autodesk Platform: ACC File Management Service SDK and tools</Description>    
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

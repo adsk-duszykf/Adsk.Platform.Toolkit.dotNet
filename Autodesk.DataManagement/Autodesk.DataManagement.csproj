@@ -16,6 +16,8 @@
     <PackageId>Adsk.Platform.DataManagement</PackageId>
     
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

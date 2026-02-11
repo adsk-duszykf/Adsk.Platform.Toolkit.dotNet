@@ -16,6 +16,8 @@
     <PackageId>Adsk.Platform.Authentication</PackageId>
     
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
