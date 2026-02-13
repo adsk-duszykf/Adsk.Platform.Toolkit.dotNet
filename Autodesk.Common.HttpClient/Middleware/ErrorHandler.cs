@@ -1,4 +1,4 @@
-﻿using Autodesk.Common.HttpClientLibrary.Middleware.Options;
+using Autodesk.Common.HttpClientLibrary.Middleware.Options;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
 
 namespace Autodesk.Common.HttpClientLibrary.Middleware;
@@ -21,23 +21,23 @@ public class ErrorHandler : DelegatingHandler
         // Check if the request has a specific ErrorHandlerOptions set, otherwise use the default options
         var errorOptions = request.GetRequestOption<ErrorHandlerOption>() ?? _errorHandlerOptions;
 
-        if (errorOptions.Enabled && response.IsSuccessStatusCode == false)
+        if (errorOptions.Enabled && !response.IsSuccessStatusCode)
         {
+            // Buffer the response content so it remains readable after the exception propagates
+            await response.Content.LoadIntoBufferAsync();
 
-            var err = new HttpRequestException($"Request to '{request.RequestUri}' failed with status code '{response.StatusCode}'.", null, response.StatusCode)
+            var responseBody = await response.Content.ReadAsStringAsync(cancellationToken);
+
+            throw new HttpRequestException(
+                $"Request to '{request.RequestUri}' failed with status code '{response.StatusCode}'. Response body: {responseBody}",
+                null,
+                response.StatusCode)
             {
-                Data =
-                {
-                    ["context"] = response
-                }
-
+                Data = { ["context"] = response }
             };
-
-            throw err;
         }
 
         return response;
-
     }
 
 }
