@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Autodesk.DataManagement.Data.V1;
 using Autodesk.DataManagement.Data.V1.Projects.Item.Folders.Item.Contents;
 using Autodesk.DataManagement.Helpers.Models;
@@ -97,6 +97,43 @@ public class DataManagementClientHelper
                 result?.Included?.FirstOrDefault()?.Id ?? throw new UnreachableException("Version 'id' is not defined"),
                 result?.Data?.Id ?? throw new UnreachableException("Item 'id' is not defined")
                 );
+    }
+
+    /// <summary>
+    /// Rename a file item in ACC/BIM360 by patching the item's displayName
+    /// </summary>
+    /// <param name="projectId">Project Id. Prefix 'b.' handled automatically</param>
+    /// <param name="fileVersionUrn">File Item URN (lineage ID like 'urn:adsk.wipprod:dm.lineage:...')</param>
+    /// <param name="newFileName">New file name including extension</param>
+    /// <returns>The updated item</returns>
+    /// <remarks>
+    /// Uses PATCH items/:item_id to update the displayName.
+    /// Only supported for BIM 360 Docs and ACC.
+    /// </remarks>
+    public async Task<VersionObject> RenameFileAsync(string projectId, string fileVersionUrn, string newFileName)
+    {
+        projectId = FixProjectId(projectId);
+
+        var result = await _dataMgtClient.Projects[projectId].Versions[fileVersionUrn]
+            .PatchAsync(new()
+            {
+                Jsonapi = new()
+                {
+                    Version = "1.0"
+                },
+                Data = new()
+                {
+                    Type = "versions",
+                    Id = fileVersionUrn,
+                    Attributes = new()
+                    {
+                        Name = newFileName
+                    }
+
+                }
+            });
+
+        return result ?? throw new InvalidOperationException("Rename failed: no response returned");
     }
 
     /// <summary>

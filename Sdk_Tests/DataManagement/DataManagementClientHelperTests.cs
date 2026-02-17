@@ -1,7 +1,10 @@
-﻿using Autodesk.Authentication;
+using System.Collections.ObjectModel;
+using System.Net.Http.Json;
+using Autodesk.Authentication;
 using Autodesk.Authentication.Helpers.Models;
 using Autodesk.DataManagement;
 using Autodesk.DataManagement.Helpers.Models;
+using Autodesk.DataManagement.Models;
 using Sdk_Tests;
 
 namespace Tests.DataManagement;
@@ -234,19 +237,56 @@ public class DataManagementClientHelperTests
     }
 
     [TestMethod]
+    public async Task ShouldRenameFile()
+    {
+
+        //Create a random file content
+        var uniqueFileName = $"{Guid.NewGuid()}.txt";
+
+        byte[] byteArray = new byte[11 * 1024];
+        var rnd = new Random();
+        rnd.NextBytes(byteArray);
+
+        var fileContent = new MemoryStream(byteArray);
+
+        //Upload the file
+        var (fileItemId, versionId, _) = await DMclient.Helper.UploadFileAsync(config.PROJECT_ID, config.FOLDER_ID, uniqueFileName, fileContent, 50000);
+        Assert.IsNotNull(fileItemId);
+        Assert.IsTrue(versionId.EndsWith("1"));
+
+        //Rename the file using PATCH items
+        var newFileName = $"{Guid.NewGuid()}.txt";
+
+        //Initialize a new client without proxy 
+        //Because WireMock proxy decode the URL before forwarding the request to the real APS endpoint, 
+        //which makes the encoded URN not work for the rename operation
+        var DMclientNoProxy = InitializeDMclient(false);
+
+        VersionObject renameResult;
+
+        renameResult = await DMclientNoProxy.Helper.RenameFileAsync(config.PROJECT_ID, versionId, newFileName);
+
+        Assert.IsNotNull(renameResult);
+        Assert.AreEqual(versionId, renameResult.Data?.Id);
+        Assert.AreEqual(newFileName, renameResult.Data?.Attributes?.DisplayName);
+
+        //Cleanup
+        await DMclient.Helper.DeleteFileAsync(config.PROJECT_ID, fileItemId);
+    }
+
+    [TestMethod]
     public async Task ShouldReturnFileIsDeleted()
     {
         var isDeleted = await DMclient.Helper.IsFileDeletedAsync(config.PROJECT_ID, config.DELETED_FILE_URN);
         Assert.IsTrue(isDeleted);
     }
 
-    private static DataManagementClient InitializeDMclient()
+    private static DataManagementClient InitializeDMclient(bool useMockServer = true)
     {
 
         var authProxyClient = APSmockServer.CreateProxyHttpClient(AdskService.Authentication);
 
         var authClient = new AuthenticationClient(authProxyClient);
-
 
         var scope = new List<string>
         {
@@ -268,6 +308,12 @@ public class DataManagementClientHelperTests
         var dataMgtProxyClient = APSmockServer.CreateProxyHttpClient(AdskService.DataManagement);
 
         var DMclient = new DataManagementClient(getAccessToken, dataMgtProxyClient);
+
+        if (!useMockServer)
+        {
+            authClient = new AuthenticationClient();
+            DMclient = new DataManagementClient(getAccessToken);
+        }
 
         return DMclient;
     }
