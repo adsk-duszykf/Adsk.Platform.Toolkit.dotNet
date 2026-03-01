@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Item.Item.Actions
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The new value assigned to the attribute after the action is performed. For example,  update ``budgetStatus`` to ``open``.</summary>
+        /// <summary>The new value assigned to the attribute after the action is performed. For example,  update `budgetStatus` to `open`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? To { get; set; }

@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
     public partial class NodesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.locations.v2.projects.item.trees.item.nodes.item collection</summary>
-        /// <param name="position">The unique identifier of an LBS node.To find node IDs, call the `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_ endpoint and check the value of ``results.id`` in the returned nodes.</param>
+        /// <param name="position">The unique identifier of an LBS node.To find node IDs, call the [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/) endpoint and check the value of `results.id` in the returned nodes.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.locations.v2.projects.item.trees.item.nodes.item collection</summary>
-        /// <param name="position">The unique identifier of an LBS node.To find node IDs, call the `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_ endpoint and check the value of ``results.id`` in the returned nodes.</param>
+        /// <param name="position">The unique identifier of an LBS node.To find node IDs, call the [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/) endpoint and check the value of `results.id` in the returned nodes.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NodesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies one or more nodes (locations) in the LBS tree to retrieve. Separate multiple node IDs with commas (no space); for example, ``filter[id]=88e07ccb-4594-4dc5-8973-304412b8fa96,de9aca33-5e0c-4668-85fa-f96273db4b35``.To find node IDs, call this endpoint and check the value of ``results.id`` in the returned nodes.Note that when you use this parameter, the server ignores the ``limit`` and ``offset`` parameters, and each node in the response includes a ``path`` array containing its ancestor nodes in the tree.</summary>
+            /// <summary>Specifies one or more nodes (locations) in the LBS tree to retrieve. Separate multiple node IDs with commas (no space); for example, `filter[id]=88e07ccb-4594-4dc5-8973-304412b8fa96,de9aca33-5e0c-4668-85fa-f96273db4b35`.To find node IDs, call this endpoint and check the value of `results.id` in the returned nodes.Note that when you use this parameter, the server ignores the `limit` and `offset` parameters, and each node in the response includes a `path` array containing its ancestor nodes in the tree.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -202,10 +202,10 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>The maximum number of location nodes to return per page. Acceptable values: ``1-10000``. Default value: ``10000``.</summary>
+            /// <summary>The maximum number of location nodes to return per page. Acceptable values: `1-10000`. Default value: `10000`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The node index at which the pagination starts. This is zero-based; for example, with a value of ``6``, the response starts with the seventh node.</summary>
+            /// <summary>The node index at which the pagination starts. This is zero-based; for example, with a value of `6`, the response starts with the seventh node.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }
@@ -223,7 +223,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NodesRequestBuilderPostQueryParameters 
         {
-            /// <summary>Where to insert the new node relative to the target node that you specified with ``targetNodeId``. The nodes in a given tier of the tree have a defined sequence order, and ``insertOption`` specifies whether the new node comes before or after the target node.Required only when ``targetNodeId`` is also included in the request.Possible values: ``After``, ``Before``</summary>
+            /// <summary>Where to insert the new node relative to the target node that you specified with `targetNodeId`. The nodes in a given tier of the tree have a defined sequence order, and `insertOption` specifies whether the new node comes before or after the target node.Required only when `targetNodeId` is also included in the request.Possible values: `After`, `Before`</summary>
             [Obsolete("This property is deprecated, use InsertOptionAsPostInsertOptionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,10 +234,10 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
             [QueryParameter("insertOption")]
             public string InsertOption { get; set; }
 #endif
-            /// <summary>Where to insert the new node relative to the target node that you specified with ``targetNodeId``. The nodes in a given tier of the tree have a defined sequence order, and ``insertOption`` specifies whether the new node comes before or after the target node.Required only when ``targetNodeId`` is also included in the request.Possible values: ``After``, ``Before``</summary>
+            /// <summary>Where to insert the new node relative to the target node that you specified with `targetNodeId`. The nodes in a given tier of the tree have a defined sequence order, and `insertOption` specifies whether the new node comes before or after the target node.Required only when `targetNodeId` is also included in the request.Possible values: `After`, `Before`</summary>
             [QueryParameter("insertOption")]
             public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.PostInsertOptionQueryParameterType? InsertOptionAsPostInsertOptionQueryParameterType { get; set; }
-            /// <summary>Unique identifier of a node that will be the new node&apos;s immediate sibling in the locations tree. The target node&apos;s ``parentId`` must match the ``body.parentId`` field in the request.Note that nodes in a given tier of the tree have a defined sequence order. The new node will be created in the same tier, either before or after the target node. You specify the sequence position of the new node using the  ``insertOption`` parameter.Note that this parameter is unavailable if this request is creating an existing node&apos;s first child node.Required only when ``insertOption`` is also included in the request.</summary>
+            /// <summary>Unique identifier of a node that will be the new node&apos;s immediate sibling in the locations tree. The target node&apos;s `parentId` must match the `body.parentId` field in the request.Note that nodes in a given tier of the tree have a defined sequence order. The new node will be created in the same tier, either before or after the target node. You specify the sequence position of the new node using the  `insertOption` parameter.Note that this parameter is unavailable if this request is creating an existing node&apos;s first child node.Required only when `insertOption` is also included in the request.</summary>
             [QueryParameter("targetNodeId")]
             public Guid? TargetNodeId { get; set; }
         }

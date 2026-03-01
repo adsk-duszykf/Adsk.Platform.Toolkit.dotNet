@@ -29,7 +29,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions_updateRfi_permittedStatuses PermittedStatuses { get; set; }
 #endif
-        /// <summary>``true``: The user is allowed to fill in custom attributes when creating the RFI.``false`` (default): The user is not allowed to fill in custom attributes when creating the RFI.</summary>
+        /// <summary>`true`: The user is allowed to fill in custom attributes when creating the RFI.`false` (default): The user is not allowed to fill in custom attributes when creating the RFI.</summary>
         public bool? UseCustomAttributes { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

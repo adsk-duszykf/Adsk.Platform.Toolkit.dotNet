@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
 {
-    /// <summary>The content view type.Possible values: ``SHEET`` (2D Sheet), ``FILE_MODEL`` (3D Model).</summary>
+    /// <summary>The content view type.Possible values: `SHEET` (2D Sheet), `FILE_MODEL` (3D Model).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ContentViewsGetResponse_results_type
     {

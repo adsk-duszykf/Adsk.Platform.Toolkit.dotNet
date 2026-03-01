@@ -12,11 +12,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
     public partial class AttachmentsPostRequestBody_attachments : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The unique identifier for the attachment, set by the client when creating the attachment reference. This can be any unique GUID, but it is recommended to use the OSS storage GUID. For more information, see the `Upload Issue Attachment &lt;/en/docs/acc/v1/tutorials/issues/upload-issue-attachments/&gt;`_ tutorial.</summary>
+        /// <summary>The unique identifier for the attachment, set by the client when creating the attachment reference. This can be any unique GUID, but it is recommended to use the OSS storage GUID. For more information, see the [Upload Issue Attachment](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/upload-issue-attachments/) tutorial.</summary>
         public Guid? AttachmentId { get; set; }
-        /// <summary>The type of attachment to create. Set to ``issue-attachment``. Will always be: ``issue-attachment``</summary>
+        /// <summary>The type of attachment to create. Set to `issue-attachment`. Will always be: `issue-attachment`</summary>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.AttachmentsPostRequestBody_attachments_attachmentType? AttachmentType { get; set; }
-        /// <summary>The human-readable display name for the attachment, including the file extension (for example, ``.pdf``, ``.jpg``, ``.dwg``). This name appears in the ACC web UI and is used when downloading the file from the issue.</summary>
+        /// <summary>The human-readable display name for the attachment, including the file extension (for example, `.pdf`, `.jpg`, `.dwg`). This name appears in the ACC web UI and is used when downloading the file from the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The unique filename of the attachment, typically formatted as {attachmentId}.{fileExtension}.This value must exactly match the name of the file stored in Autodesk Docs (OSS) that you uploaded via the OSS process.For more information, see the `Upload Issue Attachment &lt;/en/docs/acc/v1/tutorials/issues/upload-issue-attachments/&gt;`_ tutorial.</summary>
+        /// <summary>The unique filename of the attachment, typically formatted as {attachmentId}.{fileExtension}.This value must exactly match the name of the file stored in Autodesk Docs (OSS) that you uploaded via the OSS process.For more information, see the [Upload Issue Attachment](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/upload-issue-attachments/) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }
@@ -32,7 +32,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>The Object Storage Service (OSS) URN that uniquely identifies where the file is stored in Autodesk&apos;s cloud infrastructure. You obtain this value after uploading the file to OSS (see the `Upload Issue Attachment &lt;/en/docs/acc/v1/tutorials/issues/upload-issue-attachments/&gt;`_ tutorial) or by retrieving it from an existing attachment (see the `Downloading Issue Attachments &lt;/en/docs/acc/v1/tutorials/issues/download-issue-attachments/&gt;`_ tutorial).</summary>
+        /// <summary>The Object Storage Service (OSS) URN that uniquely identifies where the file is stored in Autodesk&apos;s cloud infrastructure. You obtain this value after uploading the file to OSS (see the [Upload Issue Attachment](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/upload-issue-attachments/) tutorial) or by retrieving it from an existing attachment (see the [Downloading Issue Attachments](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/download-issue-attachments/) tutorial).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageUrn { get; set; }

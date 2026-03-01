@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versio
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VersionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters the results based on the approval status assigned to each file during the review. It should be URL-encoded.The filter applies to the ``label`` of the approval status, as defined in the workflow — not the internal value.For example, if your workflow includes a status labeled ``Approved with comments``, you would filter using that label:``filter[approveStatus]=Approved with comments``.This is especially useful when a workflow includes multiple approval options with customized labels.Note: It supports multiple values.For example, if you want to filter with 2 labels: both ``Approved`` and ``Rejected``, you could filter with the query string:``filter[approveStatus]=Approved&amp;filter[approveStatus]=Rejected``</summary>
+            /// <summary>Filters the results based on the approval status assigned to each file during the review. It should be URL-encoded.The filter applies to the `label` of the approval status, as defined in the workflow — not the internal value.For example, if your workflow includes a status labeled `Approved with comments`, you would filter using that label:`filter[approveStatus]=Approved with comments`.This is especially useful when a workflow includes multiple approval options with customized labels.Note: It supports multiple values.For example, if you want to filter with 2 labels: both `Approved` and `Rejected`, you could filter with the query string:`filter[approveStatus]=Approved&amp;filter[approveStatus]=Rejected`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BapproveStatus%5D")]
@@ -113,10 +113,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versio
             [QueryParameter("filter%5BapproveStatus%5D")]
             public string[] FilterapproveStatus { get; set; }
 #endif
-            /// <summary>The number of file versions to return in the response. Possible values: ``1-50``. Maximum: ``50``. Default: ``50``. For example: ``limit=2``.</summary>
+            /// <summary>The number of file versions to return in the response. Possible values: `1-50`. Maximum: `50`. Default: `50`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first result to return (zero-based). Default: ``0``. For example: ``offset=10``.</summary>
+            /// <summary>The index of the first result to return (zero-based). Default: `0`. For example: `offset=10`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

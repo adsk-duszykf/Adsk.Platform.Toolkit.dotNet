@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch
         {
         }
         /// <summary>
-        /// The response contains a list of the requested relationship objects.
+        /// Retrieves a list of one or more relationships by passing an array of relationship IDs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch.RelationshipsBatchPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch.RelationshipsBatchPostResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch.RelationshipsBatchPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The response contains a list of the requested relationship objects.
+        /// Retrieves a list of one or more relationships by passing an array of relationship IDs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch.RelationshipsBatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch.RelationshipsBatchResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch.RelationshipsBatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The response contains a list of the requested relationship objects.
+        /// Retrieves a list of one or more relationships by passing an array of relationship IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

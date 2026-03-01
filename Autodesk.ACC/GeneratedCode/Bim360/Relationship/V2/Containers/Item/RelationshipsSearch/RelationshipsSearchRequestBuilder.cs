@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearc
         {
         }
         /// <summary>
-        /// ``Deleted`` relationships are only returned if the ``includeDeleted`` query parameter is set to true.
+        /// Retrieves a list of relationships that match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearch.RelationshipsSearchGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearc
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearch.RelationshipsSearchGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearch.RelationshipsSearchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// ``Deleted`` relationships are only returned if the ``includeDeleted`` query parameter is set to true.
+        /// Retrieves a list of relationships that match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearch.RelationshipsSearchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearc
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearch.RelationshipsSearchResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearch.RelationshipsSearchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// ``Deleted`` relationships are only returned if the ``includeDeleted`` query parameter is set to true.
+        /// Retrieves a list of relationships that match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

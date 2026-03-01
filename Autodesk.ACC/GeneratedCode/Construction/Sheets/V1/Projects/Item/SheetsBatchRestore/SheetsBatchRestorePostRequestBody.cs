@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchRestore
     public partial class SheetsBatchRestorePostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The IDs of the sheets to restore.To find the IDs of deleted sheets you want to restore, call `GET sheets &lt;/en/docs/acc/v1/reference/http/sheets-sheets-GET/&gt;`_ using the ``isDeleted=true`` filter.- The max number of items is 200.</summary>
+        /// <summary>The IDs of the sheets to restore.To find the IDs of deleted sheets you want to restore, call [GET sheets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/) using the `isDeleted=true` filter.- The max number of items is 200.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ids { get; set; }

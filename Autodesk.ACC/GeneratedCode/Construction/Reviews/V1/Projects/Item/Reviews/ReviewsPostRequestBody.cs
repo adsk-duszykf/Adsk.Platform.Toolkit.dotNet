@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A note about the review. In the UI, this appears as the ``Description`` field.Maximum length: 4096 characters.Max length: 4096</summary>
+        /// <summary>A note about the review. In the UI, this appears as the `Description` field.Maximum length: 4096 characters.Max length: 4096</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The ID of the approval workflow used to create the review.To list available workflows, call `GET workflows &lt;/en/docs/acc/v1/reference/http/reviews-workflows-GET/&gt;`_.</summary>
+        /// <summary>The ID of the approval workflow used to create the review.To list available workflows, call [GET workflows](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-workflows-GET/).</summary>
         public Guid? WorkflowId { get; set; }
         /// <summary>Optional parameters that override approval workflow settings for this review (for example, steps, copy settings, or additional options).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

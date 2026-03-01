@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     public partial class ReviewsPostRequestBody_workflowOptions_steps_candidates_companies : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID of the company. To find the Autodesk IDs of companies for a project, call `GET companies &lt;/en/docs/acc/v1/reference/http/companies-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the company. To find the Autodesk IDs of companies for a project, call [GET companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/companies-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutodeskId { get; set; }

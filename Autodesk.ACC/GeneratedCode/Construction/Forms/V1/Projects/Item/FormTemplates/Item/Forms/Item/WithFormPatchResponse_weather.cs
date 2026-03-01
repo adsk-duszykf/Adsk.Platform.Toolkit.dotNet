@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         public double? Humidity { get; set; }
         /// <summary>Amount of precipitation accumulated throughout the day.</summary>
         public double? PrecipitationAccumulation { get; set; }
-        /// <summary>Indicates the measurement unit of the ``precipitationAccumulation``.</summary>
+        /// <summary>Indicates the measurement unit of the `precipitationAccumulation`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrecipitationAccumulationUnit { get; set; }
@@ -32,9 +32,9 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public string PrecipitationAccumulationUnit { get; set; }
 #endif
-        /// <summary>Indicates the source of the weather data.Possible values: ``darksky``, ``weatherkit``</summary>
+        /// <summary>Indicates the source of the weather data.Possible values: `darksky`, `weatherkit`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather_provider? Provider { get; set; }
-        /// <summary>Indicates the measurement unit of the ``windSpeed`` and ``windGust``.</summary>
+        /// <summary>Indicates the measurement unit of the `windSpeed` and `windGust`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SpeedUnit { get; set; }
@@ -42,7 +42,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public string SpeedUnit { get; set; }
 #endif
-        /// <summary>A code describing the the weather (e.g. Clear, PartlyCloudy).</summary>
+        /// <summary>A code describing the weather (e.g. Clear, PartlyCloudy).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SummaryKey { get; set; }
@@ -54,7 +54,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         public double? TemperatureMax { get; set; }
         /// <summary>Minimum temperature during the day.</summary>
         public double? TemperatureMin { get; set; }
-        /// <summary>Indicates the measurement unit of the temperature values e.g. ``temperatureMin``, ``temperatureMax``, ``temp``.</summary>
+        /// <summary>Indicates the measurement unit of the temperature values e.g. `temperatureMin`, `temperatureMax`, `temp`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TemperatureUnit { get; set; }

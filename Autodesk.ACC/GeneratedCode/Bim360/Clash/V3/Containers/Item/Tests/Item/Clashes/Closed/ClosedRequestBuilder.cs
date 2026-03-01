@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
         {
         }
         /// <summary>
-        /// Retrieves closed clashes for a specific clash test. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves the state of all closed clash groups in a particular model set, relative to a specified clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves closed clashes for a specific clash test. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves the state of all closed clash groups in a particular model set, relative to a specified clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The response contains a list of closed clash groups.
+        /// Retrieves the state of the specified closed clash groups, relative to a specified clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The response contains a list of closed clash groups.
+        /// Retrieves the state of the specified closed clash groups, relative to a specified clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves closed clashes for a specific clash test. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves the state of all closed clash groups in a particular model set, relative to a specified clash test.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
             return requestInfo;
         }
         /// <summary>
-        /// The response contains a list of closed clash groups.
+        /// Retrieves the state of the specified closed clash groups, relative to a specified clash test.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

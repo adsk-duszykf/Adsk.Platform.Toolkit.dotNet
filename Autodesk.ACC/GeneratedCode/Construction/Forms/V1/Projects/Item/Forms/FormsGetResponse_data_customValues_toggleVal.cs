@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
 {
-    /// <summary>A boolean like enum value.Possible values: ``Yes``, ``No``, ``False``, ``True``, ``Minus``, ``Plus``, ``Fail``, ``Pass``, ``NA``</summary>
+    /// <summary>A boolean like enum value.Possible values: `Yes`, `No`, `False`, `True`, `Minus`, `Plus`, `Fail`, `Pass`, `NA`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FormsGetResponse_data_customValues_toggleVal
     {

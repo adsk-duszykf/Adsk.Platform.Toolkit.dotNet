@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
         {
         }
         /// <summary>
-        /// Searches for users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Searches for users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Searches for users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             return new global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Searches for users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 

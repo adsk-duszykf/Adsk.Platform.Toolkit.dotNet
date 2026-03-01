@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     public partial class ReviewsPostRequestBody_workflowOptions_steps : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>(Displayed in the UI when selecting Reviewers/Approvers for a step) Defines the users, roles, or companies to specify for this step of the approval workflow. At least one of the fields (``users``, ``roles``, or ``companies``) must be provided.</summary>
+        /// <summary>(Displayed in the UI when selecting Reviewers/Approvers for a step) Defines the users, roles, or companies to specify for this step of the approval workflow. At least one of the fields (`users`, `roles`, or `companies`) must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_steps_candidates? Candidates { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_steps_candidates Candidates { get; set; }
 #endif
-        /// <summary>The ID of the step in the approval workflow. Use this value to set the candidates for the step when creating the review. Retrieve step IDs by calling `GET workflows &lt;/en/docs/acc/v1/reference/http/reviews-workflows-GET/&gt;`_.</summary>
+        /// <summary>The ID of the step in the approval workflow. Use this value to set the candidates for the step when creating the review. Retrieve step IDs by calling [GET workflows](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-workflows-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
         {
         }
         /// <summary>
-        /// Returns a list of URLs and secure headers necessary to access the resources generated for the given clash test.
+        /// Retrieves information about a given clash test result resources.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of URLs and secure headers necessary to access the resources generated for the given clash test.
+        /// Retrieves information about a given clash test result resources.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of URLs and secure headers necessary to access the resources generated for the given clash test.
+        /// Retrieves information about a given clash test result resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

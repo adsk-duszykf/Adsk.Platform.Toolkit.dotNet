@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
         {
         }
         /// <summary>
-        /// Retrieves all projects for a specified user. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Returns a list of projects for a specified user within an Autodesk Construction Cloud (ACC) or BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all projects for a specified user. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Returns a list of projects for a specified user within an Autodesk Construction Cloud (ACC) or BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all projects for a specified user. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Returns a list of projects for a specified user within an Autodesk Construction Cloud (ACC) or BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,12 +98,12 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             return new global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves all projects for a specified user. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Returns a list of projects for a specified user within an Autodesk Construction Cloud (ACC) or BIM 360 account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProjectsRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma-separated list of user project fields to include in the response. If not specified, all available fields are included by default.Possible values: ``accessLevels``, ``accountId``, ``addressLine1``, ``addressLine2``, ``city``, ``constructionType``, ``country``, ``createdAt``, ``classification``, ``deliveryMethod``, ``endDate``, ``imageUrl``, ``jobNumber``, ``latitude``, ``longitude``, ``name``, ``platform``, ``postalCode``, ``projectValue``, ``sheetCount``, ``startDate``, ``stateOrProvince``, ``status``, ``thumbnailImageUrl``, ``timezone``, ``type``, ``updatedAt``, ``contractType`` and ``currentPhase``.</summary>
+            /// <summary>A comma-separated list of user project fields to include in the response. If not specified, all available fields are included by default.Possible values: `accessLevels`, `accountId`, `addressLine1`, `addressLine2`, `city`, `constructionType`, `country`, `createdAt`, `classification`, `deliveryMethod`, `endDate`, `imageUrl`, `jobNumber`, `latitude`, `longitude`, `name`, `platform`, `postalCode`, `projectValue`, `sheetCount`, `startDate`, `stateOrProvince`, `status`, `thumbnailImageUrl`, `timezone`, `type`, `updatedAt`, `contractType` and `currentPhase`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -113,7 +113,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
-            /// <summary>Filters projects by user access level. Possible values: ``projectAdmin``, ``projectMember``.Max length: 255</summary>
+            /// <summary>Filters projects by user access level. Possible values: `projectAdmin`, `projectMember`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BaccessLevels%5D")]
@@ -123,7 +123,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5BaccessLevels%5D")]
             public string[] FilteraccessLevels { get; set; }
 #endif
-            /// <summary>Filters projects by classification. Possible values:``production`` – Standard production projects.``template`` – Project templates that can be cloned to create production projects.``component`` – Placeholder projects that contain standardized components (e.g., forms) for use across projects. Only one component project is permitted per account. Known as a library in the ACC unified products UI.``sample`` – The single sample project automatically created upon ACC trial setup. Only one sample project is permitted per account.Max length: 255</summary>
+            /// <summary>Filters projects by classification. Possible values:`production` – Standard production projects.`template` – Project templates that can be cloned to create production projects.`component` – Placeholder projects that contain standardized components (e.g., forms) for use across projects. Only one component project is permitted per account. Known as a library in the ACC unified products UI.`sample` – The single sample project automatically created upon ACC trial setup. Only one sample project is permitted per account.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bclassification%5D")]
@@ -143,7 +143,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Filters by a user-defined project identifier. Supports partial matches when used with ``filterTextMatch``. For example, ``filter[jobNumber]=HP-0002&amp;filterTextMatch=equals`` returns projects where the job number is exactly ``HP-0002``.Max length: 255</summary>
+            /// <summary>Filters by a user-defined project identifier. Supports partial matches when used with `filterTextMatch`. For example, `filter[jobNumber]=HP-0002&amp;filterTextMatch=equals` returns projects where the job number is exactly `HP-0002`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BjobNumber%5D")]
@@ -153,7 +153,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5BjobNumber%5D")]
             public string FilterjobNumber { get; set; }
 #endif
-            /// <summary>Filters projects by name. Supports partial matches when used with ``filterTextMatch``. For example ``filter[name]=ABCco&amp;filterTextMatch=startsWith`` returns projects whose names start with ``ABCco``.Max length: 255</summary>
+            /// <summary>Filters projects by name. Supports partial matches when used with `filterTextMatch`. For example `filter[name]=ABCco&amp;filterTextMatch=startsWith` returns projects whose names start with `ABCco`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bname%5D")]
@@ -163,7 +163,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5Bname%5D")]
             public string Filtername { get; set; }
 #endif
-            /// <summary>Filters by platform. Possible values: ``acc`` (Autodesk Construction Cloud) and ``bim360`` (BIM 360).Max length: 255</summary>
+            /// <summary>Filters by platform. Possible values: `acc` (Autodesk Construction Cloud) and `bim360` (BIM 360).Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bplatform%5D")]
@@ -173,7 +173,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5Bplatform%5D")]
             public string[] Filterplatform { get; set; }
 #endif
-            /// <summary>Filters projects by status. Possible values: ``active``, ``pending``, ``archived``, ``suspended``.</summary>
+            /// <summary>Filters projects by status. Possible values: `active`, `pending`, `archived`, `suspended`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -183,7 +183,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,10 +194,10 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filterTextMatch")]
             public string FilterTextMatch { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [QueryParameter("filterTextMatch")]
             public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
-            /// <summary>Filters by project type. To exclude a type, prefix it with ``-`` (e.g., ``-Bridge`` excludes bridge projects).Possible values: ``Airport``, ``Assisted Living / Nursing Home``, ``Bridge``, ``Canal / Waterway``, ``Convention Center``, ``Court House``, ``Data Center``, ``Dams / Flood Control / Reservoirs``, ``Demonstration Project``, ``Dormitory``, ``Education Facility``, ``Government Building``, ``Harbor / River Development``, ``Hospital``, ``Hotel / Motel``, ``Library``, ``Manufacturing / Factory``, ``Medical Laboratory``, ``Medical Office``, ``Military Facility``, ``Mining Facility``, ``Multi-Family Housing``, ``Museum``, ``Oil &amp; Gas``,``Plant``, ``Office``, ``OutPatient Surgery Center``, ``Parking Structure / Garage``, ``Performing Arts``, ``Power Plant``, ``Prison / Correctional Facility``, ``Rail``, ``Recreation Building``, ``Religious Building``, ``Research Facility / Laboratory``, ``Restaurant``, ``Retail``, ``Seaport``, ``Single-Family Housing``, ``Solar Farm``, ``Stadium/Arena``, ``Streets / Roads / Highways``, ``Template Project``, ``Theme Park``, ``Training Project``, ``Transportation Building``, ``Tunnel``, ``Utilities``, ``Warehouse (non-manufacturing)``, ``Waste Water / Sewers``, ``Water Supply``, ``Wind Farm``.</summary>
+            /// <summary>Filters by project type. To exclude a type, prefix it with `-` (e.g., `-Bridge` excludes bridge projects).Possible values: `Airport`, `Assisted Living / Nursing Home`, `Bridge`, `Canal / Waterway`, `Convention Center`, `Court House`, `Data Center`, `Dams / Flood Control / Reservoirs`, `Demonstration Project`, `Dormitory`, `Education Facility`, `Government Building`, `Harbor / River Development`, `Hospital`, `Hotel / Motel`, `Library`, `Manufacturing / Factory`, `Medical Laboratory`, `Medical Office`, `Military Facility`, `Mining Facility`, `Multi-Family Housing`, `Museum`, `Oil &amp; Gas`,`Plant`, `Office`, `OutPatient Surgery Center`, `Parking Structure / Garage`, `Performing Arts`, `Power Plant`, `Prison / Correctional Facility`, `Rail`, `Recreation Building`, `Religious Building`, `Research Facility / Laboratory`, `Restaurant`, `Retail`, `Seaport`, `Single-Family Housing`, `Solar Farm`, `Stadium/Arena`, `Streets / Roads / Highways`, `Template Project`, `Theme Park`, `Training Project`, `Transportation Building`, `Tunnel`, `Utilities`, `Warehouse (non-manufacturing)`, `Waste Water / Sewers`, `Water Supply`, `Wind Farm`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Btype%5D")]
@@ -207,7 +207,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5Btype%5D")]
             public string[] Filtertype { get; set; }
 #endif
-            /// <summary>Filters projects updated within a specific date range in ISO 8601 format. For example:Date range: ``2023-03-02T00:00:00.000Z..2023-03-03T23:59:59 .999Z``Specific start date: ``2023-03-02T00:00:00.000Z..``Specific end date: ``..2023-03-02T23:59:59.999Z``For more details, see `JSON API Filtering &lt;https://jsonapi.org/format/#fetching-filtering&gt;`_.Max length: 100</summary>
+            /// <summary>Filters projects updated within a specific date range in ISO 8601 format. For example:Date range: `2023-03-02T00:00:00.000Z..2023-03-03T23:59:59 .999Z`Specific start date: `2023-03-02T00:00:00.000Z..`Specific end date: `..2023-03-02T23:59:59.999Z`For more details, see [JSON API Filtering](https://jsonapi.org/format/#fetching-filtering).Max length: 100</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -217,13 +217,13 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>The maximum number of records to return in the response.Default: ``20``Minimum: ``1``Maximum: ``200`` (If a larger value is provided, only 200 records are returned)</summary>
+            /// <summary>The maximum number of records to return in the response.Default: `20`Minimum: `1`Maximum: `200` (If a larger value is provided, only 200 records are returned)</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first record to return.Used for pagination in combination with the ``limit`` parameter.Example: ``limit=20`` and ``offset=40`` returns records 41–60.</summary>
+            /// <summary>The index of the first record to return.Used for pagination in combination with the `limit` parameter.Example: `limit=20` and `offset=40` returns records 41-60.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>A list of fields to sort the returned user projects by. Multiple sort fields are applied in sequence order — each sort field produces groupings of projects with the same values of that field; the next sort field applies within the groupings produced by the previous sort field.Each property can be followed by a direction modifier of either ``asc`` (ascending) or ``desc`` (descending). The default is ``asc``.Possible values: ``name`` (the default), ``startDate``, ``endDate``, ``type``, ``status``, ``jobNumber``, ``constructionType``, ``deliveryMethod``, ``contractType``, ``currentPhase``, ``createdAt``, ``updatedAt`` and ``platform``.</summary>
+            /// <summary>A list of fields to sort the returned user projects by. Multiple sort fields are applied in sequence order — each sort field produces groupings of projects with the same values of that field; the next sort field applies within the groupings produced by the previous sort field.Each property can be followed by a direction modifier of either `asc` (ascending) or `desc` (descending). The default is `asc`.Possible values: `name` (the default), `startDate`, `endDate`, `type`, `status`, `jobNumber`, `constructionType`, `deliveryMethod`, `contractType`, `currentPhase`, `createdAt`, `updatedAt` and `platform`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

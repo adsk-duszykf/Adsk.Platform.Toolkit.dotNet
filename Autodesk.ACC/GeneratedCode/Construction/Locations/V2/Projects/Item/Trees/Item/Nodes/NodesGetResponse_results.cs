@@ -40,11 +40,11 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>This node&apos;s position relative to its sibling nodes. Nodes with the same parent have a defined sequence order. A node with a lower ``order`` value will be positioned before a node with a higher ``order`` value.This is zero-based; for example, a node with an ``order`` value of ``3`` is the fourth node among its sibling nodes.If an existing sibling node has the same or higher ``order`` value, that value will be incremented to make room for the new node.</summary>
+        /// <summary>This node&apos;s position relative to its sibling nodes. Nodes with the same parent have a defined sequence order. A node with a lower `order` value will be positioned before a node with a higher `order` value.This is zero-based; for example, a node with an `order` value of `3` is the fourth node among its sibling nodes.If an existing sibling node has the same or higher `order` value, that value will be incremented to make room for the new node.</summary>
         public int? Order { get; set; }
         /// <summary>The identifier of the parent node of this LBS node.</summary>
         public Guid? ParentId { get; set; }
-        /// <summary>The path from the root node to the current node. Note that this is only included if you use the ``filter[id]`` parameter.</summary>
+        /// <summary>The path from the root node to the current node. Note that this is only included if you use the `filter[id]` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Path { get; set; }
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
 #else
         public List<string> Path { get; set; }
 #endif
-        /// <summary>The type of this LBS node. Note that only ``Area`` is a currently supported request value.Possible values: ``Area``, ``Level``, ``Root``</summary>
+        /// <summary>The type of this LBS node. Note that only `Area` is a currently supported request value.Possible values: `Area`, `Level`, `Root`</summary>
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse_results_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress
 {
-    /// <summary>The current status of the step. Possible values:- ``CLAIMED``: A user has claimed the step.- ``UNCLAIMED``: No user has claimed the step.- ``SUBMITTED``: A user submitted the step (e.g., approved/rejected/custom).- ``VOID``: The step was voided.</summary>
+    /// <summary>The current status of the step. Possible values:- `CLAIMED`: A user has claimed the step.- `UNCLAIMED`: No user has claimed the step.- `SUBMITTED`: A user submitted the step (e.g., approved/rejected/custom).- `VOID`: The step was voided.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ProgressGetResponse_results_status
     {

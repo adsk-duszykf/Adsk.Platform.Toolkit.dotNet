@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
     {
         /// <summary>The date and time when the transmittal was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Specifies how much recipient information each recipient can see.- ``ALL`` – All recipients can view the full recipient list.- ``LIMITED`` – Each recipient can view only their own recipient information.Project Admins and the sender always see the full list.Possible values: ``ALL``, ``LIMITED``</summary>
+        /// <summary>Specifies how much recipient information each recipient can see.- `ALL` – All recipients can view the full recipient list.- `LIMITED` – Each recipient can view only their own recipient information.Project Admins and the sender always see the full list.Possible values: `ALL`, `LIMITED`</summary>
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_displayRecipients? DisplayRecipients { get; set; }
         /// <summary>The total number of documents included in the transmittal.</summary>
         public int? DocumentsCount { get; set; }
@@ -36,9 +36,9 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Indicates the progress of packaging transmittal files into a ZIP archive.Possible values: ``SUCCESS``, ``PARTIAL_SUCCESS``, ``FAILED``, ``PROCESSING``, ``EXPIRED``, ``NOT_ALLOWED``</summary>
+        /// <summary>Indicates the progress of packaging transmittal files into a ZIP archive.Possible values: `SUCCESS`, `PARTIAL_SUCCESS`, `FAILED`, `PROCESSING`, `EXPIRED`, `NOT_ALLOWED`</summary>
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_packedStatus? PackedStatus { get; set; }
-        /// <summary>The list of recipients included in the transmittal, grouped by user, company, and role.For more information on how to add recipients to a transmittal, see the `Create Transmittals &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Create_Transmittal&amp;p=DOCS&gt;`_ documentation.</summary>
+        /// <summary>The list of recipients included in the transmittal, grouped by user, company, and role.For more information on how to add recipients to a transmittal, see the [Create Transmittals](https://help.autodesk.com/view/BUILD/ENU/?guid=Create_Transmittal&amp;p=DOCS) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients>? Recipients { get; set; }
@@ -62,7 +62,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string SequenceId { get; set; }
 #endif
-        /// <summary>The current processing state of the transmittal.- ``SENDING`` – The transmittal is being processed or packaged; some fields may be temporarily empty. The ``recipients`` and ``externalMembers`` fields may be temporarily empty.- ``COMPLETED`` – The transmittal has been successfully issued and all data is available.- ``FAILED`` – The transmittal failed to process or send.Possible values: ``SENDING``, ``COMPLETED``, ``FAILED``.</summary>
+        /// <summary>The current processing state of the transmittal.- `SENDING` – The transmittal is being processed or packaged; some fields may be temporarily empty. The `recipients` and `externalMembers` fields may be temporarily empty.- `COMPLETED` – The transmittal has been successfully issued and all data is available.- `FAILED` – The transmittal failed to process or send.Possible values: `SENDING`, `COMPLETED`, `FAILED`.</summary>
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_status? Status { get; set; }
         /// <summary>The title of the transmittal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

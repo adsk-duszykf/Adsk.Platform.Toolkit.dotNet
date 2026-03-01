@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
         {
         }
         /// <summary>
-        /// For a detailed overview of the submittal workflow, see the `Manage Submittal Item Transitions tutorial &lt;/en/docs/acc/v1/tutorials/submittals/submittal-transitions.rst/&gt;`_.
+        /// Retrieves a list of review templates available for a project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For a detailed overview of the submittal workflow, see the `Manage Submittal Item Transitions tutorial &lt;/en/docs/acc/v1/tutorials/submittals/submittal-transitions.rst/&gt;`_.
+        /// Retrieves a list of review templates available for a project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For a detailed overview of the submittal workflow, see the `Manage Submittal Item Transitions tutorial &lt;/en/docs/acc/v1/tutorials/submittals/submittal-transitions.rst/&gt;`_.
+        /// Retrieves a list of review templates available for a project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,18 +98,18 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
             return new global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// For a detailed overview of the submittal workflow, see the `Manage Submittal Item Transitions tutorial &lt;/en/docs/acc/v1/tutorials/submittals/submittal-transitions.rst/&gt;`_.
+        /// Retrieves a list of review templates available for a project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TemplatesRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>A comma-delimited list of fields to sort by in the format ``field asc`` or ``field desc``.Possible values: ``id``, ``name``, ``createdAt``, ``createdBy``, ``updatedAt``, ``updatedBy``.For example: ``sort=id asc``.</summary>
+            /// <summary>A comma-delimited list of fields to sort by in the format `field asc` or `field desc`.Possible values: `id`, `name`, `createdAt`, `createdBy`, `updatedAt`, `updatedBy`.For example: `sort=id asc`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

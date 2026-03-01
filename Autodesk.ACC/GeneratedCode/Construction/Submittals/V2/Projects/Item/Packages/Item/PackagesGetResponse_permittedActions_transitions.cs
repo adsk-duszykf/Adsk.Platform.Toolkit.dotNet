@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
 #else
         public string ActionId { get; set; }
 #endif
-        /// <summary>The ID of the transition in the format ``from-state::to-state``. For example, ``create::mgr-1``, ``mgr-1::mgr-2``, ``rev::void``.</summary>
+        /// <summary>The ID of the transition in the format `from-state::to-state`. For example, `create::mgr-1`, `mgr-1::mgr-2`, `rev::void`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A list of required fields for the transition. For example, [``responseId``].</summary>
+        /// <summary>A list of required fields for the transition. For example, [`responseId`].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MandatoryFields { get; set; }
@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
 #else
         public List<string> MandatoryFields { get; set; }
 #endif
-        /// <summary>The descriptive name of the transition. For example, ``Create``, ``Send to Manager``, ``Send to void``.</summary>
+        /// <summary>The descriptive name of the transition. For example, `Create`, `Send to Manager`, `Send to void`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -60,7 +60,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
 #else
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item.PackagesGetResponse_permittedActions_transitions_stateTo StateTo { get; set; }
 #endif
-        /// <summary>Fields that are used in the transition. For example, [``subcontractor``, ``subcontractorType``, ``watchers``, ``responseId``].</summary>
+        /// <summary>Fields that are used in the transition. For example, [`subcontractor`, `subcontractorType`, `watchers`, `responseId`].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TransitionFields { get; set; }

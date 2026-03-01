@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item
 {
-    /// <summary>The type of content this model set tracks. Possible values: ``Plans``, ``ProjectFiles``.</summary>
+    /// <summary>The type of content this model set tracks. Possible values: `Plans`, `ProjectFiles`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithModelSetGetResponse_modelSetType
     {

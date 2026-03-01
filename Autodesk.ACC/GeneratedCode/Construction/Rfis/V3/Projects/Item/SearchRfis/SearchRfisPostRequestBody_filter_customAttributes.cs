@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 {
     /// <summary>
-    /// Filter RFIs by custom attributes.Provide a map of key-value pairs using attribute ID and selected value ID.For example, ``fd9a1234-aaaa-4444-bbbb-8888aa77ee66: value-id-1``.
+    /// Filter RFIs by custom attributes.Provide a map of key-value pairs using attribute ID and selected value ID.For example, `fd9a1234-aaaa-4444-bbbb-8888aa77ee66: value-id-1`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchRfisPostRequestBody_filter_customAttributes : IParsable

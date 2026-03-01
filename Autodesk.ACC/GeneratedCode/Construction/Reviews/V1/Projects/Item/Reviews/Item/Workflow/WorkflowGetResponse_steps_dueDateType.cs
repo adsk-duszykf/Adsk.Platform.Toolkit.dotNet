@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow
 {
-    /// <summary>Specifies how the due date is calculated for this step. It works together with duration.This field applies only to ``REVIEWER`` and ``APPROVER`` steps.Possible values:- ``CALENDAR_DAY`` (default): the due date includes all calendar days, including weekends and holidays.- ``WORKDAY``: the due date excludes weekends and project holidays.</summary>
+    /// <summary>Specifies how the due date is calculated for this step. It works together with duration.This field applies only to `REVIEWER` and `APPROVER` steps.Possible values:- `CALENDAR_DAY` (default): the due date includes all calendar days, including weekends and holidays.- `WORKDAY`: the due date excludes weekends and project holidays.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WorkflowGetResponse_steps_dueDateType
     {

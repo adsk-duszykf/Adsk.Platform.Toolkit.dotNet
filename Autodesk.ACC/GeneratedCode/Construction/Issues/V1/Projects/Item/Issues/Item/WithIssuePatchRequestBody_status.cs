@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 {
-    /// <summary>The current status of the issue. To check the available statuses for the project, call `GET users/me &lt;/en/docs/acc/v1/reference/http/issues-me-GET&gt;`_ and check the permitted statuses list (``issue.new.permittedStatuses``). For more information about statuses, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Statuses&gt;`_.Possible values: ``draft``, ``open``, ``pending``, ``in_progress``, ``completed``, ``in_review``, ``not_approved``, ``in_dispute``, ``closed``</summary>
+    /// <summary>The current status of the issue. To check the available statuses for the project, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-me-GET) and check the permitted statuses list (`issue.new.permittedStatuses`). For more information about statuses, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Statuses).Possible values: `draft`, `open`, `pending`, `in_progress`, `completed`, `in_review`, `not_approved`, `in_dispute`, `closed`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIssuePatchRequestBody_status
     {

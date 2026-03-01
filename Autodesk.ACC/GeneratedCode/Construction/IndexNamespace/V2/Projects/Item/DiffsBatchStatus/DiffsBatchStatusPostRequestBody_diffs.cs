@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
     public partial class DiffsBatchStatusPostRequestBody_diffs : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>`SQL AST for describing columns/projections &lt;/en/docs/acc/v1/tutorials/model-properties/query-ref/&gt;`_</summary>
+        /// <summary>[SQL AST for describing columns/projections](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostRequestBody_diffs_columns? Columns { get; set; }
@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
 #else
         public string PrevVersionUrn { get; set; }
 #endif
-        /// <summary>`SQL AST for binary expression/filter &lt;/en/docs/acc/v1/tutorials/model-properties/query-ref/&gt;`_</summary>
+        /// <summary>[SQL AST for binary expression/filter](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostRequestBody_diffs_query? Query { get; set; }

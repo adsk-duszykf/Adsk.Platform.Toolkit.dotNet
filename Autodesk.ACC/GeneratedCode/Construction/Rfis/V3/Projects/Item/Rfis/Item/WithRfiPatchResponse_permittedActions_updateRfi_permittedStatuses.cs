@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRfiPatchResponse_permittedActions_updateRfi_permittedStatuses : IParsable
     {
-        /// <summary>The list of statuses the user is permitted to transition an RFI to in workflows of type ``emea``.</summary>
+        /// <summary>The list of statuses the user is permitted to transition an RFI to in workflows of type `emea`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions_updateRfi_permittedStatuses_wfEU>? WfEU { get; set; }
@@ -21,7 +21,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions_updateRfi_permittedStatuses_wfEU> WfEU { get; set; }
 #endif
-        /// <summary>A list of statuses the user is permitted to transition an RFI to in workflows of type ``US``.</summary>
+        /// <summary>A list of statuses the user is permitted to transition an RFI to in workflows of type `US`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions_updateRfi_permittedStatuses_wfUS>? WfUS { get; set; }

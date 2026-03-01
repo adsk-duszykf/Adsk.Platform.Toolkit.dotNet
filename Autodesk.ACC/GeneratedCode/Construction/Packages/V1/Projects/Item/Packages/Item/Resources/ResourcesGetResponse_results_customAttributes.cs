@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The data type of the custom attribute. Possible values:- ``string`` – Text field.- ``date`` – Date field.- ``array`` – Drop-down list.</summary>
+        /// <summary>The data type of the custom attribute. Possible values:- `string` – Text field.- `date` – Date field.- `array` – Drop-down list.</summary>
         public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse_results_customAttributes_type? Type { get; set; }
         /// <summary>The value of the custom attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

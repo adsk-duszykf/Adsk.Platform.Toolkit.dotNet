@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
     public partial class TransmittalsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.transmittals.v1.projects.item.transmittals.item collection</summary>
-        /// <param name="position">The ID of the transmittal. To find the ID, call `GET transmittals &lt;/en/docs/acc/v1/reference/http/transmittals-listtransmittals-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the transmittal. To find the ID, call [GET transmittals](https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-listtransmittals-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.transmittals.v1.projects.item.transmittals.item collection</summary>
-        /// <param name="position">The ID of the transmittal. To find the ID, call `GET transmittals &lt;/en/docs/acc/v1/reference/http/transmittals-listtransmittals-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the transmittal. To find the ID, call [GET transmittals](https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-listtransmittals-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder this[string position]
@@ -129,13 +129,13 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransmittalsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results to return per page.Acceptable values: 1-200.Default value: 20.For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results to return per page.Acceptable values: 1-200.Default value: 20.For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index from which the response starts returning results.Default value: 0.For example, to skip the first three results, use ``offset=3``.</summary>
+            /// <summary>The index from which the response starts returning results.Default value: 0.For example, to skip the first three results, use `offset=3`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sorts the transmittals by a supported field and order.By default, results are sorted by ``sequenceId desc`` (descending order).To sort in ascending order, add ``asc`` after the field name.Format: ``sort=&lt;field&gt; [asc or desc]``Possible values: ``status``, ``sequenceId``, ``title``, ``sentByName``, ``createdAt``, ``documentsCount``.Examples:- ``sort=status asc`` – sorts transmittals by status in ascending order.- ``sort=createdAt desc`` – sorts transmittals by creation date in descending order.</summary>
+            /// <summary>Sorts the transmittals by a supported field and order.By default, results are sorted by `sequenceId desc` (descending order).To sort in ascending order, add `asc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Possible values: `status`, `sequenceId`, `title`, `sentByName`, `createdAt`, `documentsCount`.Examples:- `sort=status asc` – sorts transmittals by status in ascending order.- `sort=createdAt desc` – sorts transmittals by creation date in descending order.</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,7 +146,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            /// <summary>Sorts the transmittals by a supported field and order.By default, results are sorted by ``sequenceId desc`` (descending order).To sort in ascending order, add ``asc`` after the field name.Format: ``sort=&lt;field&gt; [asc or desc]``Possible values: ``status``, ``sequenceId``, ``title``, ``sentByName``, ``createdAt``, ``documentsCount``.Examples:- ``sort=status asc`` – sorts transmittals by status in ascending order.- ``sort=createdAt desc`` – sorts transmittals by creation date in descending order.</summary>
+            /// <summary>Sorts the transmittals by a supported field and order.By default, results are sorted by `sequenceId desc` (descending order).To sort in ascending order, add `asc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Possible values: `status`, `sequenceId`, `title`, `sentByName`, `createdAt`, `documentsCount`.Examples:- `sort=status asc` – sorts transmittals by status in ascending order.- `sort=createdAt desc` – sorts transmittals by creation date in descending order.</summary>
             [QueryParameter("sort")]
             public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
         }

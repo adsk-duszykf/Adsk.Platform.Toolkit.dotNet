@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates
     public partial class TemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.templates.item collection</summary>
-        /// <param name="position">The budget code template ID. To obtain a template ID, use `GET templates &lt;/en/docs/bim360/v1/reference/http/cost-templates-GET/&gt;`_.</param>
+        /// <param name="position">The budget code template ID. To obtain a template ID, use [GET templates](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-templates-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.templates.item collection</summary>
-        /// <param name="position">The budget code template ID. To obtain a template ID, use `GET templates &lt;/en/docs/bim360/v1/reference/http/cost-templates-GET/&gt;`_.</param>
+        /// <param name="position">The budget code template ID. To obtain a template ID, use [GET templates](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-templates-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder this[string position]

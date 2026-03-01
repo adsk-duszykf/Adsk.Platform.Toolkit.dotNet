@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies
         {
         }
         /// <summary>
-        /// To query all the partner companies in the account, see `GET companies &lt;/en/docs/bim360/v1/reference/http/companies-GET/&gt;`_.
+        /// Query all the partner companies in a specific BIM 360 project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesGetResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To query all the partner companies in the account, see `GET companies &lt;/en/docs/bim360/v1/reference/http/companies-GET/&gt;`_.
+        /// Query all the partner companies in a specific BIM 360 project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To query all the partner companies in the account, see `GET companies &lt;/en/docs/bim360/v1/reference/http/companies-GET/&gt;`_.
+        /// Query all the partner companies in a specific BIM 360 project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies
             return new global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To query all the partner companies in the account, see `GET companies &lt;/en/docs/bim360/v1/reference/http/companies-GET/&gt;`_.
+        /// Query all the partner companies in a specific BIM 360 project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CompaniesRequestBuilderGetQueryParameters 

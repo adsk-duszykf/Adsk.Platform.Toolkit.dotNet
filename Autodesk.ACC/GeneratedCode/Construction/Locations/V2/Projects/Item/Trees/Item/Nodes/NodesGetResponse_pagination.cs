@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
 #else
         public string NextUrl { get; set; }
 #endif
-        /// <summary>The node index at which the pagination starts. This is zero-based; for example, with a value of ``6``, the response starts with the seventh node.</summary>
+        /// <summary>The node index at which the pagination starts. This is zero-based; for example, with a value of `6`, the response starts with the seventh node.</summary>
         public int? Offset { get; set; }
         /// <summary>The URL path that returns the previous page of data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

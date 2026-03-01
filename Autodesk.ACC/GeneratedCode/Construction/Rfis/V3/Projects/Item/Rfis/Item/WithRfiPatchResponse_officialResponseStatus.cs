@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
-    /// <summary>The status of the official response to the RFI.Possible values: ``unanswered``, ``answered``.Always ``unanswered`` when creating an RFI.</summary>
+    /// <summary>The status of the official response to the RFI.Possible values: `unanswered`, `answered`.Always `unanswered` when creating an RFI.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithRfiPatchResponse_officialResponseStatus
     {

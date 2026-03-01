@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Cost.V1.Containers.Item.Properties
 {
-    /// <summary>Type of the attribute definition.Possible values: ``text``, ``multiline``, ``richtext``, ``options``, ``boolean``, ``integer``, ``percent``, ``currency``, ``number``, ``datetime``</summary>
+    /// <summary>Type of the attribute definition.Possible values: `text`, `multiline`, `richtext`, `options`, `boolean`, `integer`, `percent`, `currency`, `number`, `datetime`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PropertiesGetResponse_type
     {

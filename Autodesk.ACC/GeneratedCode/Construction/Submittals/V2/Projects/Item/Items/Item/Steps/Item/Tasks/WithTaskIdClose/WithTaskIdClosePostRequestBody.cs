@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
     public partial class WithTaskIdClosePostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A list of attachment IDs to duplicate from a submittal item&apos;s previous stage in the workflow. To retrieve available attachments, call `GET items/:itemId/attachments &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-attachments-GET/&gt;`_.</summary>
+        /// <summary>A list of attachment IDs to duplicate from a submittal item&apos;s previous stage in the workflow. To retrieve available attachments, call [GET items/:itemId/attachments](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemId-attachments-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DuplicateAttachments { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public string ResponseComment { get; set; }
 #endif
-        /// <summary>The ID of the response associated with the task, linking to the specific feedback or action taken. To retrieve this ID, call `GET responses &lt;/en/docs/acc/v1/reference/http/submittals-responses-GET/&gt;`_.</summary>
+        /// <summary>The ID of the response associated with the task, linking to the specific feedback or action taken. To retrieve this ID, call [GET responses](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-responses-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResponseId { get; set; }

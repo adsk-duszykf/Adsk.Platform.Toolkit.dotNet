@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
 #else
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse_permittedActions_fields Fields { get; set; }
 #endif
-        /// <summary>The ID of the action in the format ``type_of_object::action``. For example, ``Item::retrieve``.</summary>
+        /// <summary>The ID of the action in the format `type_of_object::action`. For example, `Item::retrieve`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Lists the fields that are required when updating a submittal item.The required fields depend on the action being performed, the item&apos;s current state, and the user’s role.For example:To transition the state of a submittal item, ``stateId`` and ``responseId`` are required.To reassign the manager, ``manager`` and ``managerType`` are required.To modify the spec section, ``specId`` is required.</summary>
+        /// <summary>Lists the fields that are required when updating a submittal item.The required fields depend on the action being performed, the item&apos;s current state, and the user’s role.For example:To transition the state of a submittal item, `stateId` and `responseId` are required.To reassign the manager, `manager` and `managerType` are required.To modify the spec section, `specId` is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MandatoryFields { get; set; }

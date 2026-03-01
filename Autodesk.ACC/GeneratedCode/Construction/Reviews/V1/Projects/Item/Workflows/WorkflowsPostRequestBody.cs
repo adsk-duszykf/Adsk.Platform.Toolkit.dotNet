@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
     public partial class WorkflowsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Custom approval statuses to add in addition to the built-in statuses (``APPROVED``, ``REJECTED``). You can define up to 50.</summary>
+        /// <summary>Custom approval statuses to add in addition to the built-in statuses (`APPROVED`, `REJECTED`). You can define up to 50.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody_additionalApprovalStatusOptions>? AdditionalApprovalStatusOptions { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody_additionalOptions AdditionalOptions { get; set; }
 #endif
-        /// <summary>(``Copy approved files`` in the UI) The configuration for copying approved files to a target folder when the review is complete.</summary>
+        /// <summary>(`Copy approved files` in the UI) The configuration for copying approved files to a target folder when the review is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody_copyFilesOptions? CopyFilesOptions { get; set; }

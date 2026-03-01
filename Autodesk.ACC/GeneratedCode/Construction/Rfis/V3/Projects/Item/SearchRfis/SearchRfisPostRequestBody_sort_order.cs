@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 {
-    /// <summary>The sort order.Possible values: ``DESC``, ``ASC``</summary>
+    /// <summary>The sort order.Possible values: `DESC`, `ASC`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SearchRfisPostRequestBody_sort_order
     {

@@ -103,13 +103,13 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FoldersRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results to return per page.Acceptable values: 1-200.Default value: 20.For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results to return per page.Acceptable values: 1-200.Default value: 20.For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index from which the response starts returning results.Default value: 0.For example, to skip the first three results, use ``offset=3``.</summary>
+            /// <summary>The index from which the response starts returning results.Default value: 0.For example, to skip the first three results, use `offset=3`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sorts the folders by a supported field and order.By default, folders are sorted in ascending order by ``name`` (``name asc``).To sort in descending order, add ``desc`` after the field name.Format: ``sort=&lt;field&gt; [asc or desc]``Supported fields: ``name``, ``lastUpdatedAt``, ``updatedByName``.Examples:- ``sort=name asc`` – sorts folders alphabetically by name.- ``sort=lastUpdatedAt desc`` – sorts folders by last updated time in descending order.Possible values: ``name``, ``lastUpdatedAt``, ``updatedByName``, ``name asc``, ``lastUpdatedAt asc``, ``updatedByName asc``, ``name desc``, ``lastUpdatedAt desc``, ``updatedByName desc``</summary>
+            /// <summary>Sorts the folders by a supported field and order.By default, folders are sorted in ascending order by `name` (`name asc`).To sort in descending order, add `desc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Supported fields: `name`, `lastUpdatedAt`, `updatedByName`.Examples:- `sort=name asc` – sorts folders alphabetically by name.- `sort=lastUpdatedAt desc` – sorts folders by last updated time in descending order.Possible values: `name`, `lastUpdatedAt`, `updatedByName`, `name asc`, `lastUpdatedAt asc`, `updatedByName asc`, `name desc`, `lastUpdatedAt desc`, `updatedByName desc`</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,7 +120,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            /// <summary>Sorts the folders by a supported field and order.By default, folders are sorted in ascending order by ``name`` (``name asc``).To sort in descending order, add ``desc`` after the field name.Format: ``sort=&lt;field&gt; [asc or desc]``Supported fields: ``name``, ``lastUpdatedAt``, ``updatedByName``.Examples:- ``sort=name asc`` – sorts folders alphabetically by name.- ``sort=lastUpdatedAt desc`` – sorts folders by last updated time in descending order.Possible values: ``name``, ``lastUpdatedAt``, ``updatedByName``, ``name asc``, ``lastUpdatedAt asc``, ``updatedByName asc``, ``name desc``, ``lastUpdatedAt desc``, ``updatedByName desc``</summary>
+            /// <summary>Sorts the folders by a supported field and order.By default, folders are sorted in ascending order by `name` (`name asc`).To sort in descending order, add `desc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Supported fields: `name`, `lastUpdatedAt`, `updatedByName`.Examples:- `sort=name asc` – sorts folders alphabetically by name.- `sort=lastUpdatedAt desc` – sorts folders by last updated time in descending order.Possible values: `name`, `lastUpdatedAt`, `updatedByName`, `name asc`, `lastUpdatedAt asc`, `updatedByName asc`, `name desc`, `lastUpdatedAt desc`, `updatedByName desc`</summary>
             [QueryParameter("sort")]
             public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
         }

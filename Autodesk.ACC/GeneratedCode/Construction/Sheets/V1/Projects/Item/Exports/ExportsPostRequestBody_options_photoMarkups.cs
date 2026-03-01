@@ -13,9 +13,9 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExportsPostRequestBody_options_photoMarkups : IParsable
     {
-        /// <summary>``true``: published photo markups will be included in the exported sheets.``false``: (default) published photo markups will not be included in the exported sheets.</summary>
+        /// <summary>`true`: published photo markups will be included in the exported sheets.`false`: (default) published photo markups will not be included in the exported sheets.</summary>
         public bool? IncludePublishedMarkups { get; set; }
-        /// <summary>``true``: include photo markups in the exported sheets that are visible only to their creators or assignees.``false``: (default) export sheets without including unpublished photo markups.</summary>
+        /// <summary>`true`: include photo markups in the exported sheets that are visible only to their creators or assignees.`false`: (default) export sheets without including unpublished photo markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

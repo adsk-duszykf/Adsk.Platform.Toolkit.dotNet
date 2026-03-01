@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
     public partial class WithResponsePatchResponse_rfi_permittedActions_remainingReviewers : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID of the assigned user.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.To retrieve the list of available assignees, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_ and check the ``manager`` and ``projectReviewer`` fields.</summary>
+        /// <summary>The Autodesk ID of the assigned user.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).To retrieve the list of available assignees, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET) and check the `manager` and `projectReviewer` fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The type of reviewer. Will always be ``user``.</summary>
+        /// <summary>The type of reviewer. Will always be `user`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi_permittedActions_remainingReviewers_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -13,9 +13,9 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProjectsPostRequestBody_template_options_field : IParsable
     {
-        /// <summary>Indicates whether to include company data when copying from the project template.- ``true``: Include company data.- ``false``: Exclude company data.</summary>
+        /// <summary>Indicates whether to include company data when copying from the project template.- `true`: Include company data.- `false`: Exclude company data.</summary>
         public bool? IncludeCompanies { get; set; }
-        /// <summary>Indicates whether to include location data when copying from the project template.- ``true``: Include location data.- ``false``: Exclude location data.</summary>
+        /// <summary>Indicates whether to include location data when copying from the project template.- `true`: Include location data.- `false`: Exclude location data.</summary>
         public bool? IncludeLocations { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

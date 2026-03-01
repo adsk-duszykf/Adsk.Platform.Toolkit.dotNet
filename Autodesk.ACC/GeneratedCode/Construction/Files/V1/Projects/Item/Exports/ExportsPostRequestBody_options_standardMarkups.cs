@@ -8,16 +8,16 @@ using System;
 namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
 {
     /// <summary>
-    /// The options for which standard markups and associated links to export.No markups or links will be exported if all options are set to ``false``.
+    /// The options for which standard markups and associated links to export.No markups or links will be exported if all options are set to `false`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExportsPostRequestBody_options_standardMarkups : IParsable
     {
-        /// <summary>``true``: Include with each exported file the supported type reference links added to its markups. Supported links are links to Sheets, Files, RFIs, Forms, Submittals, and Assets.``false``: (Default) Export files without any reference links.Note that this parameter will be treated as ``false`` if the values of ``includePublishedMarkups`` and ``includeUnpublishedMarkups`` are both ``false``.</summary>
+        /// <summary>`true`: Include with each exported file the supported type reference links added to its markups. Supported links are links to Sheets, Files, RFIs, Forms, Submittals, and Assets.`false`: (Default) Export files without any reference links.Note that this parameter will be treated as `false` if the values of `includePublishedMarkups` and `includeUnpublishedMarkups` are both `false`.</summary>
         public bool? IncludeMarkupLinks { get; set; }
-        /// <summary>``true``: (Default) Include all published standard markups in the exported files. Note that published markups are visible to all project members.``false``: Export files without including any published standard markups.</summary>
+        /// <summary>`true`: (Default) Include all published standard markups in the exported files. Note that published markups are visible to all project members.`false`: Export files without including any published standard markups.</summary>
         public bool? IncludePublishedMarkups { get; set; }
-        /// <summary>``true``: (Default) Include in the exported files all standard markups that are only visible to their creators.``false``: Export files without including unpublished markups.</summary>
+        /// <summary>`true`: (Default) Include in the exported files all standard markups that are only visible to their creators.`false`: Export files without including unpublished markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

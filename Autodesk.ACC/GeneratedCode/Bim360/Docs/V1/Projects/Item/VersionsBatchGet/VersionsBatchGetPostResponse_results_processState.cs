@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
-    /// <summary>The process state of the version.Possible values: ``NEEDS_PROCESSING``, ``PROCESSING``, ``PREVIOUS_SEED_PENDING``, ``EXTRACTION_PENDING``, ``SPLITTING``, ``PREVIOUS_DOC_PENDING``, ``PROCESSING_ABORTING``, ``PROCESSING_ABORTED``, ``PROCESSING_COMPLETE``, ``PROCESSING_PROMOTION``, ``PROCESSING_COPY``, ``PROCESSING_PROMOTING``, ``PROCESSING_COPYING``, ``PROCESSING_SUSPEND``</summary>
+    /// <summary>The process state of the version.Possible values: `NEEDS_PROCESSING`, `PROCESSING`, `PREVIOUS_SEED_PENDING`, `EXTRACTION_PENDING`, `SPLITTING`, `PREVIOUS_DOC_PENDING`, `PROCESSING_ABORTING`, `PROCESSING_ABORTED`, `PROCESSING_COMPLETE`, `PROCESSING_PROMOTION`, `PROCESSING_COPY`, `PROCESSING_PROMOTING`, `PROCESSING_COPYING`, `PROCESSING_SUSPEND`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VersionsBatchGetPostResponse_results_processState
     {

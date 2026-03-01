@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
             get => new global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.CustomIdentifier.CustomIdentifierRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.rfis.v3.projects.item.rfis.item collection</summary>
-        /// <param name="position">The ID of the RFI. To find the ID, call `POST search:rfis &lt;/en/docs/acc/v1/reference/http/rfis-rfi-search-POST/&gt;`_.</param>
+        /// <param name="position">The ID of the RFI. To find the ID, call [POST search:rfis](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-search-POST/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiItemRequestBuilder this[string position]
         {

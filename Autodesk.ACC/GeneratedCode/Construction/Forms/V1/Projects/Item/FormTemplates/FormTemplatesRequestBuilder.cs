@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
     public partial class FormTemplatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.forms.v1.projects.item.formTemplates.item collection</summary>
-        /// <param name="position">The unique identifier of the form template.Use `GET form-templates &lt;/en/docs/acc/v1/reference/http/forms-form-templates-GET/&gt;`_ to retrieve the template ID.</param>
+        /// <param name="position">The unique identifier of the form template.Use [GET form-templates](https://aps.autodesk.com/en/docs/acc/v1/reference/http/forms-form-templates-GET/) to retrieve the template ID.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.WithTemplateItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.WithTemplateItemRequestBuilder this[string position]
         {
@@ -122,7 +122,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
             /// <summary>The number of records to skip before returning the result records. Defaults to 0. Increase this value in subsequent requests to continue getting results when the number of records exceeds the requested limit.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Return Templates in specified sorted order.Possible values: ``desc``, ``asc``</summary>
+            /// <summary>Return Templates in specified sorted order.Possible values: `desc`, `asc`</summary>
             [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,7 +133,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
             [QueryParameter("sortOrder")]
             public string SortOrder { get; set; }
 #endif
-            /// <summary>Return Templates in specified sorted order.Possible values: ``desc``, ``asc``</summary>
+            /// <summary>Return Templates in specified sorted order.Possible values: `desc`, `asc`</summary>
             [QueryParameter("sortOrder")]
             public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
             /// <summary>Return Templates updated after specified time.</summary>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 {
-    /// <summary>The type of manager. This attribute is required when a manager is specified. To determine the type of manager, call `GET mappings &lt;/en/docs/acc/v1/reference/http/submittals-mappings-GET/&gt;`_ and check the user type.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+    /// <summary>The type of manager. This attribute is required when a manager is specified. To determine the type of manager, call [GET mappings](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-mappings-GET/) and check the user type.Possible values: `1` (user), `2` (company), `3` (role).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithItemPatchRequestBody_managerType
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents
 {
-    /// <summary>The value of the approval status.Possible values: ``APPROVED``, ``REJECTED``</summary>
+    /// <summary>The value of the approval status.Possible values: `APPROVED`, `REJECTED`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DocumentsGetResponse_results_approveStatus_value
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate
 {
-    /// <summary>Defines the project&apos;s scope status of the cost item. Possible values: ``out``, ``in``, ``tbd``, ``budgetOnly``, ``contingency``.</summary>
+    /// <summary>Defines the project&apos;s scope status of the cost item. Possible values: `out`, `in`, `tbd`, `budgetOnly`, `contingency`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CostItemsBatchCreatePostResponse_scope
     {

@@ -221,7 +221,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCostItemItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A list of resources related to the returned cost items to include in the response. Resources can have a maximum length of 100. For example, ``include=changeOrders`` returns the change orders that contain each cost item. ``include=attributes`` returns custom attributes, which represent the ``properties`` in the response. Possible values: ``budget``, ``changeOrders``, ``subCostItems``, ``attributes``.</summary>
+            /// <summary>A list of resources related to the returned cost items to include in the response. Resources can have a maximum length of 100. For example, `include=changeOrders` returns the change orders that contain each cost item. `include=attributes` returns custom attributes, which represent the `properties` in the response. Possible values: `budget`, `changeOrders`, `subCostItems`, `attributes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "733CA1BC24EA440090DA5F8E9E4C5F72E465610779C8E0A414AE023E59F180229634EAF6E6CD423A6ADB30B1CAC1AD7D62C6293A2F9ACE0D74B51F2780CFD57C",
-  "descriptionLocation": "../../../_spec/Autodesk.ACC/OpenAPI/acc-openapi.yaml",
+  "descriptionHash": "1ED648B440FDB6AC8FC3EE47A4E78F8B26A3FADCB464F2D95CA8B7AF8236CAE731B2D77CE612E7A115F196DB1F813FA64F29A23F5C1297ECC170E96182F6912E",
+  "descriptionLocation": "../../../_spec/output/acc/acc-openapi-patched.yaml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.30.0",
   "clientClassName": "BaseACCclient",

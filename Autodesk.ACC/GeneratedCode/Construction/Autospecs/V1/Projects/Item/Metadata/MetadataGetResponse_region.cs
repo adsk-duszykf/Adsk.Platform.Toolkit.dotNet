@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
 {
-    /// <summary>The region of the specification PDFs that were uploaded for this project. Currently, AutoSpecs supports CSI MasterFormat for the United States and Canada.Possible values: ``USA``, ``Canada``, ``Others``</summary>
+    /// <summary>The region of the specification PDFs that were uploaded for this project. Currently, AutoSpecs supports CSI MasterFormat for the United States and Canada.Possible values: `USA`, `Canada`, `Others`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MetadataGetResponse_region
     {

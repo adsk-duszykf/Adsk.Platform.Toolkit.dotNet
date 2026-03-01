@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The value representing the approval outcome. Possible values: ``APPROVED``, ``REJECTED``.</summary>
+        /// <summary>The value representing the approval outcome. Possible values: `APPROVED`, `REJECTED`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody_additionalApprovalStatusOptions_value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

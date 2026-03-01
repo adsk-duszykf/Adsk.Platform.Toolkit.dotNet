@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
 {
-    /// <summary>(Displayed under ``More options`` in the UI) Specifies the group review rule for this step.Possible values:- ``ALL``: every reviewer assigned to the step must submit a response (up to 30).- ``MINIMUM``: only a specified number of reviewers must respond, as defined in ``min``.</summary>
+    /// <summary>(Displayed under `More options` in the UI) Specifies the group review rule for this step.Possible values:- `ALL`: every reviewer assigned to the step must submit a response (up to 30).- `MINIMUM`: only a specified number of reviewers must respond, as defined in `min`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithWorkflowGetResponse_steps_groupReview_type
     {

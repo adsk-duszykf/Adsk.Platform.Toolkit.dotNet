@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow
 {
-    /// <summary>The value representing the approval outcome. Possible values: ``APPROVED``, ``REJECTED``.</summary>
+    /// <summary>The value representing the approval outcome. Possible values: `APPROVED`, `REJECTED`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WorkflowGetResponse_approvalStatusOptions_value
     {

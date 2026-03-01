@@ -86,9 +86,9 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public string TextVal { get; set; }
 #endif
-        /// <summary>A boolean like enum value.Possible values: ``Yes``, ``No``, ``False``, ``True``, ``Minus``, ``Plus``, ``Fail``, ``Pass``, ``NA``</summary>
+        /// <summary>A boolean like enum value.Possible values: `Yes`, `No`, `False`, `True`, `Minus`, `Plus`, `Fail`, `Pass`, `NA`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutResponse_customValues_toggleVal? ToggleVal { get; set; }
-        /// <summary>Indicates the type of value used for this item.Possible values: ``textVal``, ``toggleVal``, ``arrayVal``, ``numberVal``, ``choiceVal``, ``dateVal``, ``svgVal``</summary>
+        /// <summary>Indicates the type of value used for this item.Possible values: `textVal`, `toggleVal`, `arrayVal`, `numberVal`, `choiceVal`, `dateVal`, `svgVal`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutResponse_customValues_valueName? ValueName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

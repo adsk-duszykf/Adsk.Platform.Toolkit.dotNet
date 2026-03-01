@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatc
         {
         }
         /// <summary>
-        /// Note that you cannot delete permission for project admins, who are always assigned full permissions.
+        /// Deletes all the permissions assigned to specified users, roles, and companies.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatc
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that you cannot delete permission for project admins, who are always assigned full permissions.
+        /// Deletes all the permissions assigned to specified users, roles, and companies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

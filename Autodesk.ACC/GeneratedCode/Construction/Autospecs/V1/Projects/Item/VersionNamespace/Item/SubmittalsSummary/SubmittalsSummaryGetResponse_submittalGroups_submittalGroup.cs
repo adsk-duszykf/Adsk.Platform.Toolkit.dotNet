@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.SubmittalsSummary
 {
-    /// <summary>The submittal group associated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: ``ACTION AND INFORMATIONAL``, ``CLOSEOUT SUBMITTALS``, ``FIELD QUALITY CONTROL``, ``Mockups``, ``QUALITY ASSURANCE``, ``Tests And Inspections``, ``DIVISION 01 REQUIREMENTS``</summary>
+    /// <summary>The submittal group associated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: `ACTION AND INFORMATIONAL`, `CLOSEOUT SUBMITTALS`, `FIELD QUALITY CONTROL`, `Mockups`, `QUALITY ASSURANCE`, `Tests And Inspections`, `DIVISION 01 REQUIREMENTS`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SubmittalsSummaryGetResponse_submittalGroups_submittalGroup
     {

@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Indicates whether the folder is deleted.``true`` – The folder is deleted, either directly or because its parent folder was deleted.``false`` – The folder is not deleted.</summary>
+        /// <summary>Indicates whether the folder is deleted.`true` – The folder is deleted, either directly or because its parent folder was deleted.`false` – The folder is not deleted.</summary>
         public bool? IsDeleted { get; set; }
         /// <summary>The date and time when the folder was last modified, in ISO 8601 format.</summary>
         public DateTimeOffset? LastUpdatedAt { get; set; }
@@ -32,7 +32,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the user who last modified the folder. For details about the user, call `GET user &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who last modified the folder. For details about the user, call [GET user](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy { get; set; }

@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCus
         {
         }
         /// <summary>
-        /// For information about custom numbering in Submittals, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Custom_Numbering&gt;`_.
+        /// Validates a custom identifier for a submittal item in a project.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCus
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For information about custom numbering in Submittals, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Custom_Numbering&gt;`_.
+        /// Validates a custom identifier for a submittal item in a project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -82,12 +82,12 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCus
             return new global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCustomIdentifier.ItemsValidateCustomIdentifierRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// For information about custom numbering in Submittals, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Custom_Numbering&gt;`_.
+        /// Validates a custom identifier for a submittal item in a project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsValidateCustomIdentifierRequestBuilderPostQueryParameters 
         {
-            /// <summary>The item spec ID. This parameter is only required when the project is in spec sequence type (as opposed to global sequence).To verify the sequence type, call `GET metadata &lt;/en/docs/acc/v1/reference/http/submittals-metadata-GET/&gt;`_, and check ``customIdentifierSequenceType``.To get the spec ID call `GET specs &lt;/en/docs/acc/v1/reference/http/submittals-specs-GET/&gt;`_, and select the relevant ID (``id``).</summary>
+            /// <summary>The item spec ID. This parameter is only required when the project is in spec sequence type (as opposed to global sequence).To verify the sequence type, call [GET metadata](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET/), and check `customIdentifierSequenceType`.To get the spec ID call [GET specs](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-GET/), and select the relevant ID (`id`).</summary>
             [QueryParameter("specId")]
             public Guid? SpecId { get; set; }
         }

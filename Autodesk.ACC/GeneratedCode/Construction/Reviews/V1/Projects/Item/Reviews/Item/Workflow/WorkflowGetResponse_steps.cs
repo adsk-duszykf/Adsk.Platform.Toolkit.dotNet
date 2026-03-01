@@ -20,11 +20,11 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
 #else
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_steps_candidates Candidates { get; set; }
 #endif
-        /// <summary>Specifies how the due date is calculated for this step. It works together with duration.This field applies only to ``REVIEWER`` and ``APPROVER`` steps.Possible values:- ``CALENDAR_DAY`` (default): the due date includes all calendar days, including weekends and holidays.- ``WORKDAY``: the due date excludes weekends and project holidays.</summary>
+        /// <summary>Specifies how the due date is calculated for this step. It works together with duration.This field applies only to `REVIEWER` and `APPROVER` steps.Possible values:- `CALENDAR_DAY` (default): the due date includes all calendar days, including weekends and holidays.- `WORKDAY`: the due date excludes weekends and project holidays.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_steps_dueDateType? DueDateType { get; set; }
-        /// <summary>(``Time allowed`` in the UI) The number of days allocated to complete this step.This field applies only to ``REVIEWER`` and ``APPROVER`` steps. It is used to calculate the due date based on the selected ``dueDateType``.Valid range: ``1–99``.</summary>
+        /// <summary>(`Time allowed` in the UI) The number of days allocated to complete this step.This field applies only to `REVIEWER` and `APPROVER` steps. It is used to calculate the due date based on the selected `dueDateType`.Valid range: `1-99`.</summary>
         public int? Duration { get; set; }
-        /// <summary>(``Reviewer Type`` in the UI) Defines whether multiple reviewers can participate in this step and how their responses are handled. It applies only to ``REVIEWER`` steps.</summary>
+        /// <summary>(`Reviewer Type` in the UI) Defines whether multiple reviewers can participate in this step and how their responses are handled. It applies only to `REVIEWER` steps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_steps_groupReview? GroupReview { get; set; }
@@ -48,7 +48,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Indicates the step type in the workflow. Possible values:- ``INITIATOR``: the first step. It typically represents the person who launches the review.- ``REVIEWER``: an intermediate step. It allows one or more reviewers to evaluate the files.- ``APPROVER``: the final step. It represents the decision maker who approves or rejects the files.</summary>
+        /// <summary>Indicates the step type in the workflow. Possible values:- `INITIATOR`: the first step. It typically represents the person who launches the review.- `REVIEWER`: an intermediate step. It allows one or more reviewers to evaluate the files.- `APPROVER`: the final step. It represents the decision maker who approves or rejects the files.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_steps_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

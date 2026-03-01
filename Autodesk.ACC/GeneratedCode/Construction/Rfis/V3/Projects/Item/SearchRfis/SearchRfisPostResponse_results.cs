@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
     public partial class SearchRfisPostResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time when the official response to the RFI was submitted, in ISO 8601 format (``YYYY-MM-DDThh:mm:ss.sZ``).Empty when creating an RFI.</summary>
+        /// <summary>The date and time when the official response to the RFI was submitted, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).Empty when creating an RFI.</summary>
         public DateTimeOffset? AnsweredAt { get; set; }
-        /// <summary>The Autodesk ID of the user who submitted the official response to the RFI.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.Empty when creating an RFI.</summary>
+        /// <summary>The Autodesk ID of the user who submitted the official response to the RFI.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).Empty when creating an RFI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AnsweredBy { get; set; }
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
         public bool? BridgedTarget { get; set; }
         /// <summary>Not relevant</summary>
         public bool? BridgeSyncOutdated { get; set; }
-        /// <summary>A list of predefined categories to assign to the RFI.Categories help group RFIs for filtering and reporting. Each value must match a category configured in the project’s RFI settings. Categories are case-sensitive and project-specific.RFI categories are configured in Project Admin and may differ between projects. Call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_ to retrieve the allowed values for this field.Some possible values: ``Code Compliance``, ``Constructability``, ``Design Coordination``, ``Documentation Conflict``, ``Documentation Incomplete``, ``Field condition``, ``Other``.</summary>
+        /// <summary>A list of predefined categories to assign to the RFI.Categories help group RFIs for filtering and reporting. Each value must match a category configured in the project’s RFI settings. Categories are case-sensitive and project-specific.RFI categories are configured in Project Admin and may differ between projects. Call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET) to retrieve the allowed values for this field.Some possible values: `Code Compliance`, `Constructability`, `Design Coordination`, `Documentation Conflict`, `Documentation Incomplete`, `Field condition`, `Other`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Category { get; set; }
@@ -52,9 +52,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Category { get; set; }
 #endif
-        /// <summary>The date and time when the RFI was closed, in ISO 8601 format (``YYYY-MM-DDThh:mm:ss.sZ``).</summary>
+        /// <summary>The date and time when the RFI was closed, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).</summary>
         public DateTimeOffset? ClosedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who closed the RFI.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who closed the RFI.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClosedBy { get; set; }
@@ -64,7 +64,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #endif
         /// <summary>The number of comments associated with the RFI.</summary>
         public int? CommentsCount { get; set; }
-        /// <summary>The Autodesk ID of the user designated as the Construction Manager for this RFI.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user designated as the Construction Manager for this RFI.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConstructionManagerId { get; set; }
@@ -88,7 +88,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_coReviewers> CoReviewers { get; set; }
 #endif
-        /// <summary>The default cost impact value for new RFIs of this type.Possible values: ``null``, ``Yes``, ``No``, ``Unknown``.To check whether cost impact options are enabled and to retrieve the default value, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
+        /// <summary>The default cost impact value for new RFIs of this type.Possible values: `null`, `Yes`, `No`, `Unknown`.To check whether cost impact options are enabled and to retrieve the default value, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostImpact { get; set; }
@@ -96,9 +96,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string CostImpact { get; set; }
 #endif
-        /// <summary>The date and time when the RFI was created, in ISO 8601 format (``YYYY-MM-DDThh:mm:ss.sZ``).</summary>
+        /// <summary>The date and time when the RFI was created, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who created the RFI.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who created the RFI.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -122,7 +122,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string CustomIdentifier { get; set; }
 #endif
-        /// <summary>The discipline associated with the RFI. To retrieve the supported values for the current project, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_.Some possible values: ``Building Management System``, ``Electrical Substation``, ``Security``, ``Audio Visual``, ``Food Service``, ``Fire Alarm``, ``Power Systems``, ``Design Systems Integrator``, ``Signage``, ``Pathways``, ``Cabling``, ``Networks``, ``Distributed Antenna System``, ``Lighting``, ``Vertical Transportation``, ``Roofing``, ``Architectural``, ``Civil/Site``, ``Concrete``, ``Electrical``, ``Exterior Envelope``, ``Fire Protection``, ``Interior/Finishes``, ``Landscaping``, ``Masonry``, ``Mechanical``, ``Plumbing``, ``Structural``, ``Other``.&apos;</summary>
+        /// <summary>The discipline associated with the RFI. To retrieve the supported values for the current project, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET).Some possible values: `Building Management System`, `Electrical Substation`, `Security`, `Audio Visual`, `Food Service`, `Fire Alarm`, `Power Systems`, `Design Systems Integrator`, `Signage`, `Pathways`, `Cabling`, `Networks`, `Distributed Antenna System`, `Lighting`, `Vertical Transportation`, `Roofing`, `Architectural`, `Civil/Site`, `Concrete`, `Electrical`, `Exterior Envelope`, `Fire Protection`, `Interior/Finishes`, `Landscaping`, `Masonry`, `Mechanical`, `Plumbing`, `Structural`, `Other`.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Discipline { get; set; }
@@ -130,7 +130,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Discipline { get; set; }
 #endif
-        /// <summary>The date and time by which a response to the RFI is expected, in ISO 8601 format (``YYYY-MM-DDThh:mm:ss.sZ``).</summary>
+        /// <summary>The date and time by which a response to the RFI is expected, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DueDate { get; set; }
@@ -146,7 +146,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The default text for the Location field when creating a new RFI.Note that the API does not auto-populate this value.Clients are responsible for applying the default if desired.To retrieve the default value configured for this field, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_.</summary>
+        /// <summary>The default text for the Location field when creating a new RFI.Note that the API does not auto-populate this value.Clients are responsible for applying the default if desired.To retrieve the default value configured for this field, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationDescription { get; set; }
@@ -154,7 +154,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string LocationDescription { get; set; }
 #endif
-        /// <summary>A list of predefined location IDs associated with the RFI, based on the project’s Location Breakdown Structure (LBS). To get more information about the locations, call `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_.</summary>
+        /// <summary>A list of predefined location IDs associated with the RFI, based on the project’s Location Breakdown Structure (LBS). To get more information about the locations, call [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Locations { get; set; }
@@ -162,7 +162,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Locations { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the user designated as the RFI Manager.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user designated as the RFI Manager.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagerId { get; set; }
@@ -186,9 +186,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_officialResponseActors> OfficialResponseActors { get; set; }
 #endif
-        /// <summary>``true``: the RFI Manager is allowed to edit the official response after submission.``false``: editing the official response is disabled. (default).</summary>
+        /// <summary>`true`: the RFI Manager is allowed to edit the official response after submission.`false`: editing the official response is disabled. (default).</summary>
         public bool? OfficialResponseEditByManagerState { get; set; }
-        /// <summary>The status of the official response to the RFI.Possible values: ``unanswered``, ``answered``.Always ``unanswered`` when creating an RFI.</summary>
+        /// <summary>The status of the official response to the RFI.Possible values: `unanswered`, `answered`.Always `unanswered` when creating an RFI.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_officialResponseStatus? OfficialResponseStatus { get; set; }
         /// <summary>The list of actions that are permitted for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,9 +198,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_permittedActions PermittedActions { get; set; }
 #endif
-        /// <summary>The previous status of the RFI, if one exists.This field is omitted if the RFI has no prior status (e.g., when newly created).- For single-reviewer workflows (US):Possible values:``draft``, ``submitted``, ``open``, ``answered``, ``rejected``, ``closed``, ``void``.- For multi-reviewer workflows (EMEA):Possible values:``draft``, ``submitted``, ``openRev1`` (manager), ``openRev2`` (reviewers), ``answeredRev1``, ``answeredManager``, ``closed``, ``void``.To determine the workflow type, call `GET users/me &lt;/en/docs/acc/v1/reference/http/rfis-users-me-GET/&gt;`_ and check the ``workflowType`` value.For details on RFI workflows in the ACC UI, see `About RFI Workflows – Autodesk Help &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup&gt;`_.</summary>
+        /// <summary>The previous status of the RFI, if one exists.This field is omitted if the RFI has no prior status (e.g., when newly created).- For single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.- For multi-reviewer workflows (EMEA):Possible values:`draft`, `submitted`, `openRev1` (manager), `openRev2` (reviewers), `answeredRev1`, `answeredManager`, `closed`, `void`.To determine the workflow type, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET/) and check the `workflowType` value.For details on RFI workflows in the ACC UI, see [About RFI Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_previousStatus? PreviousStatus { get; set; }
-        /// <summary>The default priority for new RFIs of this type.The available priority values are configured in Project Admin.If no default is set, this field is ``null``.Note that the API does not auto-populate this value when creating an RFI.Clients are responsible for applying the default if desired.The valid priority options can be retrieved by calling `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;_. Some possible values: ``null``, ``High``, ``Normal``, ``Low``.</summary>
+        /// <summary>The default priority for new RFIs of this type.The available priority values are configured in Project Admin.If no default is set, this field is `null`.Note that the API does not auto-populate this value when creating an RFI.Clients are responsible for applying the default if desired.The valid priority options can be retrieved by calling [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-RFI-types-GET/). Some possible values: `null`, `High`, `Normal`, `Low`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Priority { get; set; }
@@ -232,9 +232,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The date and time when the RFI was officially responded to, in ISO 8601 format (``YYYY-MM-DDThh:mm:ss.sZ``).</summary>
+        /// <summary>The date and time when the RFI was officially responded to, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).</summary>
         public DateTimeOffset? RespondedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who submitted the official response to the RFI.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who submitted the official response to the RFI.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RespondedBy { get; set; }
@@ -252,7 +252,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #endif
         /// <summary>The ID of the default RFI type assigned to the project. This is the unique identifier of the RFI type that will be selected by default when creating a new RFI.</summary>
         public Guid? RfiTypeId { get; set; }
-        /// <summary>The default schedule impact value for new RFIs of this type.Possible values: ``null``, ``Yes``, ``No``, ``Unknown``.To verify whether schedule impact tracking is enabled for the project and what the default value is, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
+        /// <summary>The default schedule impact value for new RFIs of this type.Possible values: `null`, `Yes`, `No`, `Unknown`.To verify whether schedule impact tracking is enabled for the project and what the default value is, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScheduleImpact { get; set; }
@@ -260,7 +260,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string ScheduleImpact { get; set; }
 #endif
-        /// <summary>The current status of the RFI. Available values depend on the RFI’s workflow type:- For single-reviewer workflows (US):Possible values:``draft``, ``submitted``, ``open``, ``answered``, ``rejected``, ``closed``, ``void``.- For multi-reviewer workflows (EMEA):Possible values:``draft``, ``submitted``, ``openRev1`` (manager), ``openRev2`` (reviewers), ``answeredRev1``, ``answeredManager``, ``closed``, ``void``.To determine the workflow type, call `GET users/me &lt;/en/docs/acc/v1/reference/http/rfis-users-me-GET/&gt;`_ and check the ``workflowType`` value.For details on RFI workflows in the ACC UI, see `About RFI  Workflows – Autodesk Help &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup&gt;`_.</summary>
+        /// <summary>The current status of the RFI. Available values depend on the RFI’s workflow type:- For single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.- For multi-reviewer workflows (EMEA):Possible values:`draft`, `submitted`, `openRev1` (manager), `openRev2` (reviewers), `answeredRev1`, `answeredManager`, `closed`, `void`.To determine the workflow type, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET/) and check the `workflowType` value.For details on RFI workflows in the ACC UI, see [About RFI  Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_status? Status { get; set; }
         /// <summary>A suggested answer for the RFI, typically entered by the assignee before submission of the official response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -280,9 +280,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The date and time when the RFI was last updated, in ISO 8601 format (``YYYY-MM-DDThh:mm:ss.sZ``).</summary>
+        /// <summary>The date and time when the RFI was last updated, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who last updated the RFI.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who last updated the RFI.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy { get; set; }
@@ -290,7 +290,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string UpdatedBy { get; set; }
 #endif
-        /// <summary>The URN of the virtual folder created for the RFI.This folder stores all attachments related to the RFI.The ``virtualFolderUrn`` is required when uploading attachments to an RFI. See the `Upload Attachment &lt;/en/docs/acc/v1/tutorials/files/upload-document-s3/&gt;`_ tutorial for more details.</summary>
+        /// <summary>The URN of the virtual folder created for the RFI.This folder stores all attachments related to the RFI.The `virtualFolderUrn` is required when uploading attachments to an RFI. See the [Upload Attachment](https://aps.autodesk.com/en/docs/acc/v1/tutorials/files/upload-document-s3/) tutorial for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VirtualFolderUrn { get; set; }
@@ -306,7 +306,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_watchers> Watchers { get; set; }
 #endif
-        /// <summary>The workflow type assigned to the RFI, which determines the allowed status transitions and the review path.Possible values:- ``US``: Single-reviewer workflow- ``EU``: Multi-reviewer workflowThis value affects how statuses like ``submitted``, ``openRev1``, or ``answeredManager`` behave.For status definitions, see the ``status`` and ``previousStatus`` fields.</summary>
+        /// <summary>The workflow type assigned to the RFI, which determines the allowed status transitions and the review path.Possible values:- `US`: Single-reviewer workflow- `EU`: Multi-reviewer workflowThis value affects how statuses like `submitted`, `openRev1`, or `answeredManager` behave.For status definitions, see the `status` and `previousStatus` fields.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_workflowType? WorkflowType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.ValuesImport
     public partial class ValuesImportPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>``true`` append the imported segment values to the existing values.``false`` purge the existing segment values and replace them with the imported values.</summary>
+        /// <summary>`true` append the imported segment values to the existing values.`false` purge the existing segment values and replace them with the imported values.</summary>
         public bool? Append { get; set; }
         /// <summary>A list of segment values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

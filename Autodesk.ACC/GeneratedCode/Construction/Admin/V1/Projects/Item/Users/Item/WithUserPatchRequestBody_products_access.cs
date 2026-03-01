@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
 {
-    /// <summary>The user&apos;s type of access to the product identified by ``key``. Possible values:- ``administrator``- ``member``- ``none``Note that when you&apos;re using a POST or PATCH endpoint to set this value, you must adhere to the following guidelines:- If you set a product&apos;s ``key`` to ``projectAdministration`` and you set ``access`` to ``none``, all other products should be set to ``member`` access for the user.- If you set a product&apos;s ``key`` to ``projectAdministration`` and you set ``access`` to ``administrator``, all other products should be set to ``administrator`` access for the user.- You cannot set a product&apos;s ``key`` to ``projectAdministration`` and set ``access`` to ``member``.</summary>
+    /// <summary>The user&apos;s type of access to the product identified by `key`. Possible values:- `administrator`- `member`- `none`Note that when you&apos;re using a POST or PATCH endpoint to set this value, you must adhere to the following guidelines:- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `none`, all other products should be set to `member` access for the user.- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `administrator`, all other products should be set to `administrator` access for the user.- You cannot set a product&apos;s `key` to `projectAdministration` and set `access` to `member`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithUserPatchRequestBody_products_access
     {

@@ -16,7 +16,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts
     public partial class AccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.dataConnector.v1.accounts.item collection</summary>
-        /// <param name="position">The account ID. You can derive it from your hub ID if necessary: Use `GET hubs &lt;/en/docs/data/v2/reference/http/hubs-GET/&gt;`_ in the Data Management API to retrieve your hub ID. Remove the initial ``b.`` from the hub ID to get your account ID.</param>
+        /// <param name="position">The account ID. You can derive it from your hub ID if necessary: Use [GET hubs](https://aps.autodesk.com/en/docs/data/v2/reference/http/hubs-GET/) in the Data Management API to retrieve your hub ID. Remove the initial `b.` from the hub ID to get your account ID.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.dataConnector.v1.accounts.item collection</summary>
-        /// <param name="position">The account ID. You can derive it from your hub ID if necessary: Use `GET hubs &lt;/en/docs/data/v2/reference/http/hubs-GET/&gt;`_ in the Data Management API to retrieve your hub ID. Remove the initial ``b.`` from the hub ID to get your account ID.</param>
+        /// <param name="position">The account ID. You can derive it from your hub ID if necessary: Use [GET hubs](https://aps.autodesk.com/en/docs/data/v2/reference/http/hubs-GET/) in the Data Management API to retrieve your hub ID. Remove the initial `b.` from the hub ID to get your account ID.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder this[string position]

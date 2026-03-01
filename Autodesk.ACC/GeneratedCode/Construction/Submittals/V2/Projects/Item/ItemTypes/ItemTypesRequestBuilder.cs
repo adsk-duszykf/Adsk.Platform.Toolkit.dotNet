@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
     public partial class ItemTypesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.submittals.v2.projects.item.itemTypes.item collection</summary>
-        /// <param name="position">The ID of the submittal item to retrieve revisions for. To obtain this ID, call `GET items &lt;/en/docs/acc/v1/reference/http/submittals-items-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the submittal item to retrieve revisions for. To obtain this ID, call [GET items](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
         {
         }
         /// <summary>
-        /// For more information about submittal item types, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types&gt;`_.
+        /// Retrieves all submittal itme types for the specified project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more information about submittal item types, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types&gt;`_.
+        /// Retrieves all submittal itme types for the specified project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more information about submittal item types, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types&gt;`_.
+        /// Retrieves all submittal itme types for the specified project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,15 +111,15 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
             return new global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// For more information about submittal item types, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types&gt;`_.
+        /// Retrieves all submittal itme types for the specified project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemTypesRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

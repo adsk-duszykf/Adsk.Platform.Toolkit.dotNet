@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
-    /// <summary>The current status of the RFI. Available values depend on the RFI’s workflow type:- For single-reviewer workflows (US):Possible values:``draft``, ``submitted``, ``open``, ``answered``, ``rejected``, ``closed``, ``void``.- For multi-reviewer workflows (EMEA):Possible values:``draft``, ``submitted``, ``openRev1`` (manager), ``openRev2`` (reviewers), ``answeredRev1``, ``answeredManager``, ``closed``, ``void``.To determine the workflow type, call `GET users/me &lt;/en/docs/acc/v1/reference/http/rfis-users-me-GET/&gt;`_ and check the ``workflowType`` value.For details on RFI workflows in the ACC UI, see `About RFI  Workflows – Autodesk Help &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup&gt;`_.</summary>
+    /// <summary>The current status of the RFI. Available values depend on the RFI’s workflow type:- For single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.- For multi-reviewer workflows (EMEA):Possible values:`draft`, `submitted`, `openRev1` (manager), `openRev2` (reviewers), `answeredRev1`, `answeredManager`, `closed`, `void`.To determine the workflow type, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET/) and check the `workflowType` value.For details on RFI workflows in the ACC UI, see [About RFI  Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithRfiGetResponse_status
     {

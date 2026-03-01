@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
     public partial class SheetsBatchUpdatePostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>To find the IDs of the sheets you want to update, call `GET sheets &lt;/en/docs/acc/v1/reference/http/sheets-sheets-GET/&gt;`_.- The max number of items is 200.</summary>
+        /// <summary>To find the IDs of the sheets you want to update, call [GET sheets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/).- The max number of items is 200.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ids { get; set; }

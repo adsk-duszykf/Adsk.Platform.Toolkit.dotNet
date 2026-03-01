@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
 {
-    /// <summary>The type to which the sub cost items are copied. Note that ``contract`` and ``budget`` cannot be used as a destination. Possible values: ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``.</summary>
+    /// <summary>The type to which the sub cost items are copied. Note that `contract` and `budget` cannot be used as a destination. Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SubCostItemsCopyPostRequestBody_to
     {

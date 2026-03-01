@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item
 {
-    /// <summary>The type of the attachment.Possible values: ``rfiResponse``, ``rfiOfficialResponse``, ``bridgeFiles``, ``rfiWebHiddenFiles``.</summary>
+    /// <summary>The type of the attachment.Possible values: `rfiResponse`, `rfiOfficialResponse`, `bridgeFiles`, `rfiWebHiddenFiles`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithResponsePatchResponse_responseAttachments_attachments_attachmentType
     {

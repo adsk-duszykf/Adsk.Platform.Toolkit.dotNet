@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
     public partial class PackagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item.packages.item collection</summary>
-        /// <param name="position">The takeoff package ID.To find the ID, call `GET packages &lt;/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-GET/&gt;`_.</param>
+        /// <param name="position">The takeoff package ID.To find the ID, call [GET packages](https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item.packages.item collection</summary>
-        /// <param name="position">The takeoff package ID.To find the ID, call `GET packages &lt;/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-GET/&gt;`_.</param>
+        /// <param name="position">The takeoff package ID.To find the ID, call [GET packages](https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PackagesRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of packages per page.Acceptable values: ``1-200``.Default value: ``200``.</summary>
+            /// <summary>The maximum number of packages per page.Acceptable values: `1-200`.Default value: `200`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The package index from which the pagination starts. This is zero-based.</summary>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item
 {
-    /// <summary>Specifies how much recipient information each recipient can see.- ``ALL`` – All recipients can view the full recipient list.- ``LIMITED`` – Each recipient can view only their own recipient information.Project Admins and the sender always see the full list.Possible values: ``ALL``, ``LIMITED``</summary>
+    /// <summary>Specifies how much recipient information each recipient can see.- `ALL` – All recipients can view the full recipient list.- `LIMITED` – Each recipient can view only their own recipient information.Project Admins and the sender always see the full list.Possible values: `ALL`, `LIMITED`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithTransmittalGetResponse_displayRecipients
     {

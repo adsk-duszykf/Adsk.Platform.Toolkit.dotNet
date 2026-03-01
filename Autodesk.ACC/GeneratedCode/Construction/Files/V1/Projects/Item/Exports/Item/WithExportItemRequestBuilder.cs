@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
         {
         }
         /// <summary>
-        /// Retrieves the status of an export job. The S3 signed URL (in ``result.output.signedUrl``) will be available for downloading the exported file.
+        /// Retrieves the status of an export job. The S3 signed URL (in `result.output.signedUrl`) will be available for downloading the exported file.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the status of an export job. The S3 signed URL (in ``result.output.signedUrl``) will be available for downloading the exported file.
+        /// Retrieves the status of an export job. The S3 signed URL (in `result.output.signedUrl`) will be available for downloading the exported file.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportResponse>(requestInfo, global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the status of an export job. The S3 signed URL (in ``result.output.signedUrl``) will be available for downloading the exported file.
+        /// Retrieves the status of an export job. The S3 signed URL (in `result.output.signedUrl`) will be available for downloading the exported file.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

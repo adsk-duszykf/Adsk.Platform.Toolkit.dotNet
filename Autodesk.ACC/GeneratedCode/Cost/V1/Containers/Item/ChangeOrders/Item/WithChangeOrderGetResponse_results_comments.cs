@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The BIM 360/ACC user ID of the comment&apos;s author. For details about the author, see `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The BIM 360/ACC user ID of the comment&apos;s author. For details about the author, see [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatorId { get; set; }

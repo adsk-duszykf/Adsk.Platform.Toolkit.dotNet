@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>``true``: users can select more than one value for this attribute.``false``: (default) users can select only one value.</summary>
+        /// <summary>`true`: users can select more than one value for this attribute.`false`: (default) users can select only one value.</summary>
         public bool? MultipleChoice { get; set; }
         /// <summary>The name of the custom attribute as displayed in the UI.Max length: 50</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Updates the list of possible values for the attribute.To overwrite an existing possible value, specify both ``newAttributes`` (the new value name) and ``deletedAttributes`` (the ID of the value to remove).</summary>
+        /// <summary>Updates the list of possible values for the attribute.To overwrite an existing possible value, specify both `newAttributes` (the new value name) and `deletedAttributes` (the ID of the value to remove).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues>? PossibleValues { get; set; }
@@ -38,7 +38,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues> PossibleValues { get; set; }
 #endif
-        /// <summary>The display status of the attribute in the UI. Possible values: ``active``, ``inactive``, ``hidden``.</summary>
+        /// <summary>The display status of the attribute in the UI. Possible values: `active`, `inactive`, `hidden`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

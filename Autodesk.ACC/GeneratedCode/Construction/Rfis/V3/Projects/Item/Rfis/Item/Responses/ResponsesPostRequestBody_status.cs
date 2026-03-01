@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 {
-    /// <summary>The status of the response.To determine which status values the user is allowed to submit, call `GET users/me &lt;/en/docs/acc/v1/reference/http/rfis-users-me-GET/&gt;`_.Possible values: ``answered``, ``rejected``.</summary>
+    /// <summary>The status of the response.To determine which status values the user is allowed to submit, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET/).Possible values: `answered`, `rejected`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ResponsesPostRequestBody_status
     {

@@ -179,7 +179,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Attachments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the associated item, for example, the ID of a budget, contract, change order or cost item.Separate multiple IDs with commas, for example, ``filter[associationId]=id1,id2``.</summary>
+            /// <summary>The ID of the associated item, for example, the ID of a budget, contract, change order or cost item.Separate multiple IDs with commas, for example, `filter[associationId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassociationId%5D")]
@@ -189,7 +189,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Attachments
             [QueryParameter("filter%5BassociationId%5D")]
             public string[] FilterassociationId { get; set; }
 #endif
-            /// <summary>The type of the associated item.Possible values ``Budget``, ``Contract``, ``CostItem``, ``FormInstance``, ``CostPayment``, ``BudgetPayment``, ``Expense``, ``ExpenseItem``.For example, ``filter[associationType]=Budget``.</summary>
+            /// <summary>The type of the associated item.Possible values `Budget`, `Contract`, `CostItem`, `FormInstance`, `CostPayment`, `BudgetPayment`, `Expense`, `ExpenseItem`.For example, `filter[associationType]=Budget`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassociationType%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Attachments
             [QueryParameter("filter%5BassociationType%5D")]
             public string FilterassociationType { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -209,7 +209,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Attachments
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>A list of the nested resources related to the attachment to include in the response. For example, ``include=complianceRequirement`` returns compliance documents related to each attachment. Possible values: ``complianceRequirement``.</summary>
+            /// <summary>A list of the nested resources related to the attachment to include in the response. For example, `include=complianceRequirement` returns compliance documents related to each attachment. Possible values: `complianceRequirement`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -219,13 +219,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Attachments
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

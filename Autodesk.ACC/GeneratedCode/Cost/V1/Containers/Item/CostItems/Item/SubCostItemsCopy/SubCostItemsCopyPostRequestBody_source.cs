@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
     public partial class SubCostItemsCopyPostRequestBody_source : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A list of budget IDs or Schedule of Value (SOV) IDs from a contract, used as the source for copying sub cost items. To retrieve the relevant IDs, call `GET budgets &lt;/en/docs/bim360/v1/reference/http/cost-budgets-GET/&gt;`_ or `GET contracts &lt;/en/docs/bim360/v1/reference/http/cost-contracts-GET/&gt;`_.</summary>
+        /// <summary>A list of budget IDs or Schedule of Value (SOV) IDs from a contract, used as the source for copying sub cost items. To retrieve the relevant IDs, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) or [GET contracts](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-contracts-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ids { get; set; }

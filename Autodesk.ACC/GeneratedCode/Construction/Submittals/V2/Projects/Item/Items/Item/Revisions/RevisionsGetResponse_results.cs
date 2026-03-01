@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
     public partial class RevisionsGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The unique identifier of the submittal item whose revision history is being retrieved. It remains the same across all revisions of the item. Use this ID to track changes and access previous versions. To get the most recent version of a submittal item, call `GET items/:itemId &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.</summary>
+        /// <summary>The unique identifier of the submittal item whose revision history is being retrieved. It remains the same across all revisions of the item. Use this ID to track changes and access previous versions. To get the most recent version of a submittal item, call [GET items/:itemId](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/).</summary>
         public Guid? ItemId { get; set; }
-        /// <summary>The Autodesk ID of the user, company, or role assigned as the manager of the submittal item.In order to get more info about the manager, use:- `GET projects/users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_ to verify the actual name of the user in case the typs is a ``user`` (1).- `GET companies &lt;/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_ to determine the name of the company in case the typs is a ``company`` (2).Note that we do not currently support verifying names of roles.</summary>
+        /// <summary>The Autodesk ID of the user, company, or role assigned as the manager of the submittal item.In order to get more info about the manager, use:- [GET projects/users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET) to verify the actual name of the user in case the typs is a `user` (1).- [GET companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/) to determine the name of the company in case the typs is a `company` (2).Note that we do not currently support verifying names of roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manager { get; set; }
@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string Manager { get; set; }
 #endif
-        /// <summary>The date by which the manager is expected to prepare the submittal item for review, formatted as YYYY-MM-DD in UTC (ISO 8601). For example, ``2018-02-15``. This corresponds to the ``mgr-1`` state ``Open (Submitted)``.</summary>
+        /// <summary>The date by which the manager is expected to prepare the submittal item for review, formatted as YYYY-MM-DD in UTC (ISO 8601). For example, `2018-02-15`. This corresponds to the `mgr-1` state `Open (Submitted)`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagerDueDate { get; set; }
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string ManagerDueDate { get; set; }
 #endif
-        /// <summary>The type of entity assigned as the manager of the submittal item.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+        /// <summary>The type of entity assigned as the manager of the submittal item.Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results_managerType? ManagerType { get; set; }
         /// <summary>The Autodesk ID of the user who published the submittal item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,13 +40,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string PublishedBy { get; set; }
 #endif
-        /// <summary>The date when the manager closed and distributed the submittal item,  formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date when the manager closed and distributed the submittal item,  formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? PublishedDate { get; set; }
-        /// <summary>The date and time when the submittal item transitioned from the ``rev`` state (``Open - In Review``) to the ``mgr-2`` state ``(Close and distribute)``, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the submittal item transitioned from the `rev` state (`Open - In Review`) to the `mgr-2` state `(Close and distribute)`, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? ReceivedFromReview { get; set; }
-        /// <summary>The date when the subcontractor submitted the submittal item back to the manager, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``. This corresponds to transition to the ``mgr-1`` state.</summary>
+        /// <summary>The date when the subcontractor submitted the submittal item back to the manager, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`. This corresponds to transition to the `mgr-1` state.</summary>
         public DateTimeOffset? ReceivedFromSubmitter { get; set; }
-        /// <summary>The date and time when the response was added, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the response was added, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? RespondedAt { get; set; }
         /// <summary>The Autodesk ID of the user that gave the response to the submittal item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,15 +64,15 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string ResponseComment { get; set; }
 #endif
-        /// <summary>The ID of the response associated with the submittal item, linking to the specific feedback or action taken. For information about the response, call `GET responses &lt;/en/docs/acc/v1/reference/http/submittals-responses-GET/&gt;`_.</summary>
+        /// <summary>The ID of the response associated with the submittal item, linking to the specific feedback or action taken. For information about the response, call [GET responses](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-responses-GET/).</summary>
         public Guid? ResponseId { get; set; }
         /// <summary>Not relevant</summary>
         public DateTimeOffset? ReviewerDueDate { get; set; }
         /// <summary>The version number of the submittal item, representing its revision history.</summary>
         public int? Revision { get; set; }
-        /// <summary>The date and time when the submittal item was transitioned to the ``rev`` state ``(Open - In review)``, formatted as ISO 8601.</summary>
+        /// <summary>The date and time when the submittal item was transitioned to the `rev` state `(Open - In review)`, formatted as ISO 8601.</summary>
         public DateTimeOffset? SentToReview { get; set; }
-        /// <summary>The Autodesk ID of the user who transitioned the submittal item to the ``rev`` state (``Open - In review``).</summary>
+        /// <summary>The Autodesk ID of the user who transitioned the submittal item to the `rev` state (`Open - In review`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SentToReviewBy { get; set; }
@@ -80,7 +80,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string SentToReviewBy { get; set; }
 #endif
-        /// <summary>The date when the submittal item transitioned to the subcontractor for review, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``. This corresponds to transition to the ``sbc-1`` state.</summary>
+        /// <summary>The date when the submittal item transitioned to the subcontractor for review, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`. This corresponds to transition to the `sbc-1` state.</summary>
         public DateTimeOffset? SentToSubmitter { get; set; }
         /// <summary>A list of workflow steps for the submittal item at a specific revision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results_steps> Steps { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the user, company, or role assigned as the subcontractor for the submittal item.In order to get more info about the subcontractor, use:- `GET projects/users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_ to verify the actual name of the user in case the typs is a ``user`` (1).- `GET companies &lt;/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_ to determine the name of the company in case the typs is a ``company`` (2).Note that we do not currently support verifying names of roles.</summary>
+        /// <summary>The Autodesk ID of the user, company, or role assigned as the subcontractor for the submittal item.In order to get more info about the subcontractor, use:- [GET projects/users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET) to verify the actual name of the user in case the typs is a `user` (1).- [GET companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/) to determine the name of the company in case the typs is a `company` (2).Note that we do not currently support verifying names of roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subcontractor { get; set; }
@@ -98,7 +98,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string Subcontractor { get; set; }
 #endif
-        /// <summary>The type of manager.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+        /// <summary>The type of manager.Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results_subcontractorType? SubcontractorType { get; set; }
         /// <summary>The Autodesk ID of the user who transitioned the submittal item to the manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string SubmittedBy { get; set; }
 #endif
-        /// <summary>The date when the subcontractor is expected to submit the submittal to the manager, in the following format: YYYY-MM-DD in UTC (ISO 8601). For example, ``2017-02-15``. This corresponds to the ``sbc-1`` state ``Waiting for submission``.</summary>
+        /// <summary>The date when the subcontractor is expected to submit the submittal to the manager, in the following format: YYYY-MM-DD in UTC (ISO 8601). For example, `2017-02-15`. This corresponds to the `sbc-1` state `Waiting for submission`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmitterDueDate { get; set; }

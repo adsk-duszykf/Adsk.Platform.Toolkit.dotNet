@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
 {
-    /// <summary>The status of the project.Possible values: ``active``, ``pending``, ``archived`` and ``suspended``.</summary>
+    /// <summary>The status of the project.Possible values: `active`, `pending`, `archived` and `suspended`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ProjectsGetResponse_results_status
     {

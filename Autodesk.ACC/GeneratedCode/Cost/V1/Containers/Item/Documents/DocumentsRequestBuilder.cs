@@ -113,7 +113,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Documents
             [QueryParameter("associationId")]
             public string[] AssociationId { get; set; }
 #endif
-            /// <summary>The type of the item is associated to. Possible values ``Budget``, ``Contract``, ``CostItem``, ``FormInstance``, ``Payment``, ``BudgetPayment``, ``Expense``, ``OCO``, ``SCO``.</summary>
+            /// <summary>The type of the item is associated to. Possible values `Budget`, `Contract`, `CostItem`, `FormInstance`, `Payment`, `BudgetPayment`, `Expense`, `OCO`, `SCO`.</summary>
             [Obsolete("This property is deprecated, use AssociationTypeAsGetAssociationTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +124,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Documents
             [QueryParameter("associationType")]
             public string AssociationType { get; set; }
 #endif
-            /// <summary>The type of the item is associated to. Possible values ``Budget``, ``Contract``, ``CostItem``, ``FormInstance``, ``Payment``, ``BudgetPayment``, ``Expense``, ``OCO``, ``SCO``.</summary>
+            /// <summary>The type of the item is associated to. Possible values `Budget`, `Contract`, `CostItem`, `FormInstance`, `Payment`, `BudgetPayment`, `Expense`, `OCO`, `SCO`.</summary>
             [QueryParameter("associationType")]
             public global::Autodesk.ACC.Cost.V1.Containers.Item.Documents.GetAssociationTypeQueryParameterType? AssociationTypeAsGetAssociationTypeQueryParameterType { get; set; }
             /// <summary>Filter to get only the latest version of a document if it has been generated multiple times. For example, filter[latest]=true. This is deprecated as we&apos;ll always response the latest document.</summary>

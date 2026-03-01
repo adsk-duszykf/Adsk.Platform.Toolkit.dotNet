@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
     public partial class MainContractsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.mainContracts.item collection</summary>
-        /// <param name="position">The object ID of the main contract. You can obtain this ID from the response to the `POST mainContract &lt;/en/docs/bim360/v1/reference/http/cost-main-contracts-POST/&gt;`_ or `GET mainContract &lt;/en/docs/bim360/v1/reference/http/cost-main-contracts-GET/&gt;`_ endpoint.</param>
+        /// <param name="position">The object ID of the main contract. You can obtain this ID from the response to the [POST mainContract](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-main-contracts-POST/) or [GET mainContract](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-main-contracts-GET/) endpoint.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.mainContracts.item collection</summary>
-        /// <param name="position">The object ID of the main contract. You can obtain this ID from the response to the `POST mainContract &lt;/en/docs/bim360/v1/reference/http/cost-main-contracts-POST/&gt;`_ or `GET mainContract &lt;/en/docs/bim360/v1/reference/http/cost-main-contracts-GET/&gt;`_ endpoint.</param>
+        /// <param name="position">The object ID of the main contract. You can obtain this ID from the response to the [POST mainContract](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-main-contracts-POST/) or [GET mainContract](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-main-contracts-GET/) endpoint.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MainContractsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, ``filter[code]=``2703,2704````.Note that even single codes in number format must be enclosed in double quotes:``filter[code]=``1```` or ``filter[code]=``122. 221````.</summary>
+            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, `filter[code]=`2703,2704```.Note that even single codes in number format must be enclosed in double quotes:`filter[code]=`1`` or `filter[code]=`122. 221```.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bcode%5D")]
@@ -202,7 +202,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             [QueryParameter("filter%5Bcode%5D")]
             public string[] Filtercode { get; set; }
 #endif
-            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, ``filter[externalId]=id1,id2``.</summary>
+            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, `filter[externalId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalId%5D")]
@@ -212,7 +212,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             [QueryParameter("filter%5BexternalId%5D")]
             public string[] FilterexternalId { get; set; }
 #endif
-            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, ``filter[externalSystem]=Sage300``.Max length: 255</summary>
+            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, `filter[externalSystem]=Sage300`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalSystem%5D")]
@@ -222,7 +222,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             [QueryParameter("filter%5BexternalSystem%5D")]
             public string FilterexternalSystem { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -232,7 +232,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -242,7 +242,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>Returns only main contracts that have a status on the provided list of statuses. Separate multiple values with commas; for example, ``filter[status]=draft,pending``.Possible values:``draft``, ``pending``, ``submitted``, ``revise``, ``sent``, ``signed``, ``executed``, ``closed``, ``inReview``.</summary>
+            /// <summary>Returns only main contracts that have a status on the provided list of statuses. Separate multiple values with commas; for example, `filter[status]=draft,pending`.Possible values:`draft`, `pending`, `submitted`, `revise`, `sent`, `signed`, `executed`, `closed`, `inReview`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -252,7 +252,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>A list of the types of sub-main contract components to include in the response with the main contracts, separated by commas.For example, ``include=mainContractItems`` returns the items that comprise each of the returned main contracts; ``include=attributes`` returns custom attributes of the main contracts.Possible values ``mainContractItems``, ``attributes``.</summary>
+            /// <summary>A list of the types of sub-main contract components to include in the response with the main contracts, separated by commas.For example, `include=mainContractItems` returns the items that comprise each of the returned main contracts; `include=attributes` returns custom attributes of the main contracts.Possible values `mainContractItems`, `attributes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -262,13 +262,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

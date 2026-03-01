@@ -8,16 +8,16 @@ using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 {
     /// <summary>
-    /// (``Reviewer Type`` in the UI) Defines whether multiple reviewers can participate in this step and how their responses are handled. It applies only to ``REVIEWER`` steps.
+    /// (`Reviewer Type` in the UI) Defines whether multiple reviewers can participate in this step and how their responses are handled. It applies only to `REVIEWER` steps.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowsPostResponse_steps_groupReview : IParsable
     {
-        /// <summary>Indicates whether group review is enabled for this step.``true``: multiple reviewers can participate in the step.``false``: (default) only a single reviewer is allowed.</summary>
+        /// <summary>Indicates whether group review is enabled for this step.`true`: multiple reviewers can participate in the step.`false`: (default) only a single reviewer is allowed.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The minimum number of reviewers required for this step. This field is set automatically when the group review type is set to ``MINIMUM``. It is not independently configurable. Valid range: ``1–30``.</summary>
+        /// <summary>The minimum number of reviewers required for this step. This field is set automatically when the group review type is set to `MINIMUM`. It is not independently configurable. Valid range: `1-30`.</summary>
         public int? Min { get; set; }
-        /// <summary>(Displayed under ``More options`` in the UI) Specifies the group review rule for this step.Possible values:- ``ALL``: every reviewer assigned to the step must submit a response (up to 30).- ``MINIMUM``: only a specified number of reviewers must respond, as defined in ``min``.</summary>
+        /// <summary>(Displayed under `More options` in the UI) Specifies the group review rule for this step.Possible values:- `ALL`: every reviewer assigned to the step must submit a response (up to 30).- `MINIMUM`: only a specified number of reviewers must respond, as defined in `min`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_steps_groupReview_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

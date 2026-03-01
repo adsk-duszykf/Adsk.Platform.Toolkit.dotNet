@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
     public partial class WithRfiPatchRequestBody_attachments : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates that this attachment is part of the final official response. Will always be ``rfiOfficialResponse``.</summary>
+        /// <summary>Indicates that this attachment is part of the final official response. Will always be `rfiOfficialResponse`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_attachments_attachmentType? AttachmentType { get; set; }
-        /// <summary>The name shown for the attachment in the UI. If omitted, the UI displays the ``fileName``.</summary>
+        /// <summary>The name shown for the attachment in the UI. If omitted, the UI displays the `fileName`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }

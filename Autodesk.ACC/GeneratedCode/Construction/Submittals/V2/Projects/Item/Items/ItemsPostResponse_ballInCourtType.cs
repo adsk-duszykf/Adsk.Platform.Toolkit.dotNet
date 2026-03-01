@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
 {
-    /// <summary>&apos;The type of submittal role assigned to the user currently assigned to the submittal item.Possible values: ``reviewer``, ``manager``, ``subcontractor``.&apos;</summary>
+    /// <summary>&apos;The type of submittal role assigned to the user currently assigned to the submittal item.Possible values: `reviewer`, `manager`, `subcontractor`.&apos;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ItemsPostResponse_ballInCourtType
     {

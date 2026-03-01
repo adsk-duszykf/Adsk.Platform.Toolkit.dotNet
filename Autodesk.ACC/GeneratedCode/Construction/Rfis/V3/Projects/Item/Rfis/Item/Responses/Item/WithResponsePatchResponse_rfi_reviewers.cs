@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
     public partial class WithResponsePatchResponse_rfi_reviewers : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID of the reviewer.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the reviewer.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The type of reviewer. Will always be ``user``.</summary>
+        /// <summary>The type of reviewer. Will always be `user`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi_reviewers_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

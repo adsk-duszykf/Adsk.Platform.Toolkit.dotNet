@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
     public partial class LinkedFilesGetResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Metadata about the host model (the main Revit model that contains linked files). This object is only returned in the response when ``includeHost`` is set to ``true``.</summary>
+        /// <summary>Metadata about the host model (the main Revit model that contains linked files). This object is only returned in the response when `includeHost` is set to `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_hostFile? HostFile { get; set; }

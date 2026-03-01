@@ -60,9 +60,9 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchG
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A flag indicating whether the component is active or inactive (``isActive`` is ``true`` if-and-only-if ``deletedAt`` is empty).</summary>
+        /// <summary>A flag indicating whether the component is active or inactive (`isActive` is `true` if-and-only-if `deletedAt` is empty).</summary>
         public bool? IsActive { get; set; }
-        /// <summary>Specifies if this is the status set that is assigned to categories by default - that is, this is thestatus set that will be assigned to categories if no other status set has been assigned, eitherexplicitly or through inheritance. If ``true``, it&apos;s the default status set. If ``false``, it&apos;s not.</summary>
+        /// <summary>Specifies if this is the status set that is assigned to categories by default - that is, this is thestatus set that will be assigned to categories if no other status set has been assigned, eitherexplicitly or through inheritance. If `true`, it&apos;s the default status set. If `false`, it&apos;s not.</summary>
         public bool? IsDefault { get; set; }
         /// <summary>The display name for the status set. This name appears in the Assets UI when viewing status sets.Max length: 100</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchG
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form ``b.{UUID}``.</summary>
+        /// <summary>The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form `b.{UUID}`.</summary>
         public Guid? ProjectId { get; set; }
         /// <summary>The time when the component was last updated (ISO8601 Date time format in UTC).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

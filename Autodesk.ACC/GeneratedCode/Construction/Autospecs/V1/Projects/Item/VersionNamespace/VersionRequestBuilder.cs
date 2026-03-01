@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace
     public partial class VersionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.autospecs.v1.projects.item.version.item collection</summary>
-        /// <param name="position">The AutoSpecs version ID of the project. For information about how to find the version ID, see the first few steps of the `Retrieve Submittal Log &lt;/en/docs/acc/v1/tutorials/autospecs/upload-document/&gt;`_ tutorial.</param>
+        /// <param name="position">The AutoSpecs version ID of the project. For information about how to find the version ID, see the first few steps of the [Retrieve Submittal Log](https://aps.autodesk.com/en/docs/acc/v1/tutorials/autospecs/upload-document/) tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.WithVersionItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.WithVersionItemRequestBuilder this[string position]
         {

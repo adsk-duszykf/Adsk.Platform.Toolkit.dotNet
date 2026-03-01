@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchDelete
         {
         }
         /// <summary>
-        /// POST assets:batch-delete V2
+        /// Deletes one or more assets.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchDelete
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST assets:batch-delete V2
+        /// Deletes one or more assets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

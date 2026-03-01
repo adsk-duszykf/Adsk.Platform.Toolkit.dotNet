@@ -20,11 +20,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The unit of measurement.Possible values: ``EA``, ``IN``, ``LF``, ``YD``, ``SI``, ``SF``, ``SY``, ``CI``, ``CF``, ``CY``, ``LBS``, ``TON``, ``MM``, ``M``, ``M2``, ``M3``, ``KG``, ``T``.</summary>
+        /// <summary>The unit of measurement.Possible values: `EA`, `IN`, `LF`, `YD`, `SI`, `SF`, `SY`, `CI`, `CF`, `CY`, `LBS`, `TON`, `MM`, `M`, `M2`, `M3`, `KG`, `T`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_propertyDefinitions_unitOfMeasure? UnitOfMeasure { get; set; }
         /// <summary>The value of the property.</summary>
         public double? Value { get; set; }
-        /// <summary>The location of the value.For properties Length, Width, Height, Depth and Thickness: ``valueLocation`` is ``INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT``.For properties WeightByLength, WeightByArea and WeightByVolume: ``valueLocation`` is ``TAKEOFF_TYPE``.Possible values: ``TAKEOFF_TYPE``, ``INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT``</summary>
+        /// <summary>The location of the value.For properties Length, Width, Height, Depth and Thickness: `valueLocation` is `INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT`.For properties WeightByLength, WeightByArea and WeightByVolume: `valueLocation` is `TAKEOFF_TYPE`.Possible values: `TAKEOFF_TYPE`, `INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT`</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_propertyDefinitions_valueLocation? ValueLocation { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

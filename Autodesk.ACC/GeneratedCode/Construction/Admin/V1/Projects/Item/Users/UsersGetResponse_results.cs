@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call `GET projects/:projectId/companies &lt;/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.</summary>
+        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call [GET projects/:projectId/companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }
@@ -200,7 +200,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
 #else
         public string StateOrProvince { get; set; }
 #endif
-        /// <summary>The status of the user in the project. A pending user could be waiting for their products to activate, or the user hasn&apos;t accepted an email to create an account with Autodesk.Possible values:- ``active``: The user has been added to the project.- ``pending``: The user is in the process of being added to the project.- ``disabled``: The user has been temporarily suspended from the project.- ``deleted``: The user has been removed from the project.</summary>
+        /// <summary>The status of the user in the project. A pending user could be waiting for their products to activate, or the user hasn&apos;t accepted an email to create an account with Autodesk.Possible values:- `active`: The user has been added to the project.- `pending`: The user is in the process of being added to the project.- `disabled`: The user has been temporarily suspended from the project.- `deleted`: The user has been removed from the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

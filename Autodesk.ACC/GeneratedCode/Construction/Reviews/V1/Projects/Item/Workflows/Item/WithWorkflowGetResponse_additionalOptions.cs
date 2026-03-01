@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithWorkflowGetResponse_additionalOptions : IParsable
     {
-        /// <summary>(``Allow Initiators to edit the review`` in the UI). Indicates whether the initiator can adjust reviewer assignments and step durations.``true``: the initiator can change reviewer assignments and durations.``false``: (default) reviewers and durations are fixed.</summary>
+        /// <summary>(`Allow Initiators to edit the review` in the UI). Indicates whether the initiator can adjust reviewer assignments and step durations.`true`: the initiator can change reviewer assignments and durations.`false`: (default) reviewers and durations are fixed.</summary>
         public bool? AllowInitiatorToEdit { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

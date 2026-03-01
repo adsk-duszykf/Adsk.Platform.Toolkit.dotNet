@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
 {
-    /// <summary>The type of pushpin. Possible values: ``TwoDVectorPushpin``.</summary>
+    /// <summary>The type of pushpin. Possible values: `TwoDVectorPushpin`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IssuesPostRequestBody_pushpin_type
     {

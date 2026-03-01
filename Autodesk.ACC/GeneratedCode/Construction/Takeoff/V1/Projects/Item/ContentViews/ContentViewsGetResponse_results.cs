@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
     {
         /// <summary>The content view ID.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The content view type.Possible values: ``SHEET`` (2D Sheet), ``FILE_MODEL`` (3D Model).</summary>
+        /// <summary>The content view type.Possible values: `SHEET` (2D Sheet), `FILE_MODEL` (3D Model).</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_type? Type { get; set; }
         /// <summary>The content view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

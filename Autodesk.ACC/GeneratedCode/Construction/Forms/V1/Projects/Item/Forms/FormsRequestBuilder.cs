@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
     public partial class FormsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.forms.v1.projects.item.forms.item collection</summary>
-        /// <param name="position">The unique identifier of the form.Use `GET forms &lt;/en/docs/acc/v1/reference/http/forms-forms-GET/&gt;`_ to retrieve the form ID.</param>
+        /// <param name="position">The unique identifier of the form.Use [GET forms](https://aps.autodesk.com/en/docs/acc/v1/reference/http/forms-forms-GET/) to retrieve the form ID.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.WithFormItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.WithFormItemRequestBuilder this[string position]
         {
@@ -149,7 +149,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
             /// <summary>The number of records to return in a single request. Can be a number between 1 and 50. Defaults to 50.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>A sequence of location IDs. Each returned object must be associated with one of the locations specified by the IDs. For example, ?locationId=123e102a-36de-14e7-8c56-1b1234ccbba8&amp;locationId=cee45678-fcc4-43ae-80a2-8ca819dfa70d. See the usage example in the `Retrieve Forms Associated With Locations &lt;/en/docs/acc/v1/tutorials/forms/retrieve-forms-based-on-locations/&gt;`_ tutorial.</summary>
+            /// <summary>A sequence of location IDs. Each returned object must be associated with one of the locations specified by the IDs. For example, ?locationId=123e102a-36de-14e7-8c56-1b1234ccbba8&amp;locationId=cee45678-fcc4-43ae-80a2-8ca819dfa70d. See the usage example in the [Retrieve Forms Associated With Locations](https://aps.autodesk.com/en/docs/acc/v1/tutorials/forms/retrieve-forms-based-on-locations/) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("locationIds")]

@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
     public partial class TemplatesGetResponse_results_steps_tasks : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID or member group ID of the ``user``, ``company``, or ``role`` assigned to the task.</summary>
+        /// <summary>The Autodesk ID or member group ID of the `user`, `company`, or `role` assigned to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo { get; set; }
@@ -20,11 +20,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+        /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse_results_steps_tasks_assignedToType? AssignedToType { get; set; }
         /// <summary>The internal, globally unique identifier (UUID) for the task.</summary>
         public Guid? Id { get; set; }
-        /// <summary>- ``true``: the task is required to complete the step.- ``false``: (default) the task is not required to complete the step.</summary>
+        /// <summary>- `true`: the task is required to complete the step.- `false`: (default) the task is not required to complete the step.</summary>
         public bool? IsRequired { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

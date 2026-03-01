@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
     public partial class IssuesPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID of the member, role or company you want to assign to the issue. Note that if you select an assignee ID, you also need to select a type (``assignedToType``).We do not currently provide endpoints to programmatically find the member, role, or company IDs that you are permitted to assign to the issue. We recommend using the Data Connector API to extract the permitted IDs. See the `Retrieve Available Members Roles and Companies &lt;/en/docs/acc/v1/tutorials/issues/retrieve-available-members-roles-companies&gt;`_ tutorial for more details.</summary>
+        /// <summary>The Autodesk ID of the member, role or company you want to assign to the issue. Note that if you select an assignee ID, you also need to select a type (`assignedToType`).We do not currently provide endpoints to programmatically find the member, role, or company IDs that you are permitted to assign to the issue. We recommend using the Data Connector API to extract the permitted IDs. See the [Retrieve Available Members Roles and Companies](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/retrieve-available-members-roles-companies) tutorial for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>The type of the current assignee of this issue. Possible values: ``user``, ``company``, ``role``, ``null``. Note that if you select a type, you also need to select the assignee ID (``assignedTo``).</summary>
+        /// <summary>The type of the current assignee of this issue. Possible values: `user`, `company`, `role`, `null`. Note that if you select a type, you also need to select the assignee ID (`assignedTo`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedToType { get; set; }
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #endif
         /// <summary>The unique LBS (Location Breakdown Structure) identifier that relates to the issue.</summary>
         public Guid? LocationId { get; set; }
-        /// <summary>The list of actions permitted for the user for this issue in its current state.Note that if a user with *View and assign to their company* permissions attempts to assign a user from a another company to the issue, it will return an error.Possible Values: ``assign_all`` (can assign another user from another company to the issue), ``assign_same_company`` (can only assign another user from the same company to the issue), ``clear_assignee``, ``delete``, ``add_comment``, ``add_attachment``, ``remove_attachment``.The following values are not relevant: ``add_attachment``, ``remove_attachment``.</summary>
+        /// <summary>The list of actions permitted for the user for this issue in its current state.Note that if a user with *View and assign to their company* permissions attempts to assign a user from a another company to the issue, it will return an error.Possible Values: `assign_all` (can assign another user from another company to the issue), `assign_same_company` (can only assign another user from the same company to the issue), `clear_assignee`, `delete`, `add_comment`, `add_attachment`, `remove_attachment`.The following values are not relevant: `add_attachment`, `remove_attachment`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedActions { get; set; }
@@ -82,7 +82,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #else
         public List<string> PermittedActions { get; set; }
 #endif
-        /// <summary>States whether the issue is published. Default value: ``false`` (e.g. unpublished).</summary>
+        /// <summary>States whether the issue is published. Default value: `false` (e.g. unpublished).</summary>
         public bool? Published { get; set; }
         /// <summary>The unique identifier of the type of root cause for the issue.</summary>
         public Guid? RootCauseId { get; set; }
@@ -104,7 +104,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #else
         public string StartDate { get; set; }
 #endif
-        /// <summary>The current status of the issue. To check the available statuses for the project, call `GET users/me &lt;/en/docs/acc/v1/reference/http/issues-me-GET&gt;`_ and check the list of permitted statuses (``issue.new.permittedStatuses``). For more information about statuses, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Statuses&gt;`_.Possible values: ``draft``, ``open``, ``pending``, ``in_progress``, ``completed``, ``in_review``, ``not_approved``, ``in_dispute``, ``closed``</summary>
+        /// <summary>The current status of the issue. To check the available statuses for the project, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-me-GET) and check the list of permitted statuses (`issue.new.permittedStatuses`). For more information about statuses, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Statuses).Possible values: `draft`, `open`, `pending`, `in_progress`, `completed`, `in_review`, `not_approved`, `in_dispute`, `closed`</summary>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody_status? Status { get; set; }
         /// <summary>The title of the issue. Maximum 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the member you want to assign as a watcher for the issue.We do not currently provide endpoints to programmatically find the member IDs that you are permitted to assign as watchers for the issue. We recommend using the Data Connector API to extract the permitted IDs. See the `Retrieve Available Members &lt;/en/docs/acc/v1/tutorials/issues/retrieve-available-members-roles-companies&gt;`_ tutorial for more details.</summary>
+        /// <summary>The Autodesk ID of the member you want to assign as a watcher for the issue.We do not currently provide endpoints to programmatically find the member IDs that you are permitted to assign as watchers for the issue. We recommend using the Data Connector API to extract the permitted IDs. See the [Retrieve Available Members](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/retrieve-available-members-roles-companies) tutorial for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Watchers { get; set; }

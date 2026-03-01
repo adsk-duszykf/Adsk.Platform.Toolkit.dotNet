@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
         {
         }
         /// <summary>
-        /// Retrieves the business units structure for the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the business units in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the business units structure for the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the business units in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the business units structure for the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Creates or redefines the business units of a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the business units structure for the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Creates or redefines the business units of a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the business units structure for the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the business units in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
             return requestInfo;
         }
         /// <summary>
-        /// Updates the business units structure for the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Creates or redefines the business units of a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

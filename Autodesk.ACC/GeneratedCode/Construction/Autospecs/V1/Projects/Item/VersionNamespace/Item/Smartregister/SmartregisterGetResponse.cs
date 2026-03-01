@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 #else
         public string ParaCode { get; set; }
 #endif
-        /// <summary>The type of specification category associated with the submittal. This is equivalent to *Submittal type* in the UI.Possible values: ``Test Reports``, ``Shop Drawings``, ``Schedules``, ``Samples``, ``Sample Warranty``, ``Reports``, ``Qualification Data``, ``QUALITY ASSURANCE``, ``Product Data``, ``Performance Data``, ``Mfg. Instructions``, ``Meeting/Conferences``, ``Drawings``, ``Delegated-Design``, ``Certifications``, ``Certificates``, ``Calculations``, ``Attic Stock``, ``Demonstrations``, ``General Warranties``, ``O&amp;M Manuals``, ``Special Warranties``, ``LEED``, ``As-Builts``, ``TESTS AND INSPECTIONS``, ``General``, ``Manufacturers Instructions``, ``Substitutions``, ``Mix Design``, ``Others``</summary>
+        /// <summary>The type of specification category associated with the submittal. This is equivalent to *Submittal type* in the UI.Possible values: `Test Reports`, `Shop Drawings`, `Schedules`, `Samples`, `Sample Warranty`, `Reports`, `Qualification Data`, `QUALITY ASSURANCE`, `Product Data`, `Performance Data`, `Mfg. Instructions`, `Meeting/Conferences`, `Drawings`, `Delegated-Design`, `Certifications`, `Certificates`, `Calculations`, `Attic Stock`, `Demonstrations`, `General Warranties`, `O&amp;M Manuals`, `Special Warranties`, `LEED`, `As-Builts`, `TESTS AND INSPECTIONS`, `General`, `Manufacturers Instructions`, `Substitutions`, `Mix Design`, `Others`</summary>
         public global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse_specCategory? SpecCategory { get; set; }
         /// <summary>The CSI specification name of the submittal. This is equivalent of the *Section name* column in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 #else
         public string TargetDate { get; set; }
 #endif
-        /// <summary>The submittal group associcated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: ``ACTION AND INFORMATIONAL``, ``Closeout Submittals``, ``DIVISION 01 REQUIREMENTS``, ``Field Quality Control``, ``Mockups``, ``QUALITY ASSURANCE``, ``TESTS AND INSPECTIONS``</summary>
+        /// <summary>The submittal group associcated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: `ACTION AND INFORMATIONAL`, `Closeout Submittals`, `DIVISION 01 REQUIREMENTS`, `Field Quality Control`, `Mockups`, `QUALITY ASSURANCE`, `TESTS AND INSPECTIONS`</summary>
         public global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse_targetGroup? TargetGroup { get; set; }
         /// <summary>The user notes associcated with the submittal. This is equivalent to the *User notes* column in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

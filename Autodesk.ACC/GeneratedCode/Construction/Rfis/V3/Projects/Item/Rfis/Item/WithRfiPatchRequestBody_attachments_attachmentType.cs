@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
-    /// <summary>Indicates that this attachment is part of the final official response. Will always be ``rfiOfficialResponse``.</summary>
+    /// <summary>Indicates that this attachment is part of the final official response. Will always be `rfiOfficialResponse`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithRfiPatchRequestBody_attachments_attachmentType
     {

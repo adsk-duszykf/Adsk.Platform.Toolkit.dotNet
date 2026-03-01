@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item
 {
-    /// <summary>The type of this LBS node. Note that only ``Area`` is a currently supported request value.Possible values: ``Area``, ``Level``, ``Root``</summary>
+    /// <summary>The type of this LBS node. Note that only `Area` is a currently supported request value.Possible values: `Area`, `Level`, `Root`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithNodePatchResponse_type
     {

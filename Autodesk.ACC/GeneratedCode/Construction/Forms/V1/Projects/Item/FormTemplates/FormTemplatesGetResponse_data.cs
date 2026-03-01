@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Status of template: ````active````, ````inactive```` (archived), or ````deleted````</summary>
+        /// <summary>Status of template: `active`, ``inactive` (archived), or ``deleted`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

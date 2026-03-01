@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.It
         {
         }
         /// <summary>
-        /// Many PATCH and POST calls to model set endpoints result in a job. You can use this endpoint to track the progress of these jobs.
+        /// Retrieves information about a given model set job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item.WithJobGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.It
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item.WithJobGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item.WithJobGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Many PATCH and POST calls to model set endpoints result in a job. You can use this endpoint to track the progress of these jobs.
+        /// Retrieves information about a given model set job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item.WithJobResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.It
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item.WithJobResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item.WithJobResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Many PATCH and POST calls to model set endpoints result in a job. You can use this endpoint to track the progress of these jobs.
+        /// Retrieves information about a given model set job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     public partial class ReviewsPostRequestBody_fileVersions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The URN of the file version.You can find this value by following the first four steps of the `Download a File &lt;/en/docs/acc/v1/tutorials/files/download-document-s3/&gt;`_ tutorial and noting the ``included.id`` field in the response. Note that the Step 4 request in the tutorial returns only the latest version of each file in the folder.Use the ``included.attributes.name`` or ``included.attributes.displayName`` fields in the response to confirm you have the correct file.</summary>
+        /// <summary>The URN of the file version.You can find this value by following the first four steps of the [Download a File](https://aps.autodesk.com/en/docs/acc/v1/tutorials/files/download-document-s3/) tutorial and noting the `included.id` field in the response. Note that the Step 4 request in the tutorial returns only the latest version of each file in the folder.Use the `included.attributes.name` or `included.attributes.displayName` fields in the response to confirm you have the correct file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Urn { get; set; }

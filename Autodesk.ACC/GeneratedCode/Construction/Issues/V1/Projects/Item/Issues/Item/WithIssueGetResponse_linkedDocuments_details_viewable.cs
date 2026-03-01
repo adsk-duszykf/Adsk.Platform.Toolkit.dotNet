@@ -29,7 +29,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>``true`` if it is a 3D viewable``false`` if it is a 2D viewable</summary>
+        /// <summary>`true` if it is a 3D viewable`false` if it is a 2D viewable</summary>
         public bool? Is3D { get; set; }
         /// <summary>The name of the viewable.Max length: 1000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

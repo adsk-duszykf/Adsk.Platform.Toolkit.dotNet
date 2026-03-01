@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
     public partial class MeGetResponse_workflow : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of RFI workflow roles assigned to the user. Possible values:``projectSC`` — Creator``projectGC`` — Manager``projectCoordinator`` — Reviewer 1 (EMEA workflow only)``projectReviewer`` — Reviewer 1 (US) or Reviewer 2 (EMEA)For information about workflow roles, see the `RFIs Permission &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Statuses&gt;`_ documentation.</summary>
+        /// <summary>The list of RFI workflow roles assigned to the user. Possible values:`projectSC` — Creator`projectGC` — Manager`projectCoordinator` — Reviewer 1 (EMEA workflow only)`projectReviewer` — Reviewer 1 (US) or Reviewer 2 (EMEA)For information about workflow roles, see the [RFIs Permission](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Statuses) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Roles { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #else
         public List<string> Roles { get; set; }
 #endif
-        /// <summary>The RFI workflow type assigned to the project.Possible values:``US`` Single-reviewer workflow``EU`` Two-reviewer workflowNote that you cannot set the workflow type via the API. To change it, use the Project Admin UI.</summary>
+        /// <summary>The RFI workflow type assigned to the project.Possible values:`US` Single-reviewer workflow`EU` Two-reviewer workflowNote that you cannot set the workflow type via the API. To change it, use the Project Admin UI.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

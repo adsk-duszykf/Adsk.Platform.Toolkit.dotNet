@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
     public partial class SubCostItemsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A user-defined identifier for the sub cost item, used for categorization or identification.If the sub cost item is created by copying from another model, for example, ``Contract SOV``, it will inherit the code from the source model. Otherwise, it must be manually assigned.To verify the code is unique, call `GET sub-cost-items &lt;/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/&gt;`_.Max length: 255</summary>
+        /// <summary>A user-defined identifier for the sub cost item, used for categorization or identification.If the sub cost item is created by copying from another model, for example, `Contract SOV`, it will inherit the code from the source model. Otherwise, it must be manually assigned.To verify the code is unique, call [GET sub-cost-items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/).Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>The recorded input quantity, typically used in performance tracking. For example, in labor tracking, ``inputQuantity`` represents man-hours utilized.</summary>
+        /// <summary>The recorded input quantity, typically used in performance tracking. For example, in labor tracking, `inputQuantity` represents man-hours utilized.</summary>
         public double? InputQuantity { get; set; }
         /// <summary>The name to give to the sub cost item.Max length: 1024</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The unique ID of the parent sub cost item. Set this to ``null`` if there is no parent sub cost item.To find the parent ID, call `GET sub-cost-items &lt;/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/&gt;`_.</summary>
+        /// <summary>The unique ID of the parent sub cost item. Set this to `null` if there is no parent sub cost item.To find the parent ID, call [GET sub-cost-items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentId { get; set; }
@@ -42,9 +42,9 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         public double? Position { get; set; }
         /// <summary>The planned number of units for the sub cost item.</summary>
         public double? Quantity { get; set; }
-        /// <summary>The classification of the sub cost item that indicates its role in cost tracking and approval workflows. Possible values: ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``.Max length: 255</summary>
+        /// <summary>The classification of the sub cost item that indicates its role in cost tracking and approval workflows. Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`.Max length: 255</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody_type? Type { get; set; }
-        /// <summary>The unit of measurement for the sub cost item. This value is configured in the ``Unit of measure`` settings for the project. Common units include ``ea`` (Each), ``gal`` (Gallon), and various volume, length, and time measurements.Max length: 1024</summary>
+        /// <summary>The unit of measurement for the sub cost item. This value is configured in the `Unit of measure` settings for the project. Common units include `ea` (Each), `gal` (Gallon), and various volume, length, and time measurements.Max length: 1024</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; set; }
@@ -54,7 +54,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
 #endif
         /// <summary>The price per unit of the sub cost item.</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>The total value of the sub cost item, calculated as ``quantity`` * ``unitPrice``.</summary>
+        /// <summary>The total value of the sub cost item, calculated as `quantity` * `unitPrice`.</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

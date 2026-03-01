@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
     public partial class TimeSheetsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The code that identifies the budget to which the timesheet belongs. Required if both ``trackingItemInstanceId`` and ``trackingItemInstanceNumber`` are omitted from this request. To find the budget code, call `GET budgets &lt;/en/docs/bim360/v1/reference/http/cost-budgets-GET/&gt;`_ and inspect ``results.code`` in the response.</summary>
+        /// <summary>The code that identifies the budget to which the timesheet belongs. Required if both `trackingItemInstanceId` and `trackingItemInstanceNumber` are omitted from this request. To find the budget code, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.code` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BudgetCode { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
 #else
         public string BudgetCode { get; set; }
 #endif
-        /// <summary>The last date of the time period covered by the timesheet. This is also the date that the tracked ``inputQuantity`` and ``outputQuantity`` values are considered to have been reported.</summary>
+        /// <summary>The last date of the time period covered by the timesheet. This is also the date that the tracked `inputQuantity` and `outputQuantity` values are considered to have been reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EndDate { get; set; }
@@ -40,7 +40,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
 #else
         public string StartDate { get; set; }
 #endif
-        /// <summary>The ID of the tracking item instance to which the timesheet will belong. Required if both ``trackingItemInstanceNumber`` and ``budgetCode`` are omitted from this request. To find the instance ID, call `GET performance-tracking-item-instances &lt;/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-GET/&gt;`_ and inspect ``results.id`` in the response.</summary>
+        /// <summary>The ID of the tracking item instance to which the timesheet will belong. Required if both `trackingItemInstanceNumber` and `budgetCode` are omitted from this request. To find the instance ID, call [GET performance-tracking-item-instances](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-GET/) and inspect `results.id` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingItemInstanceId { get; set; }
@@ -48,7 +48,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
 #else
         public string TrackingItemInstanceId { get; set; }
 #endif
-        /// <summary>The user-provided code that represents the tracking item instance to which the timesheet will belong. Required if both ``trackingItemInstanceId`` and ``budgetCode`` are omitted from this request. To find the instance number, call `GET performance-tracking-item-instances &lt;/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-GET/&gt;`_ and inspect ``results.number`` in the response.</summary>
+        /// <summary>The user-provided code that represents the tracking item instance to which the timesheet will belong. Required if both `trackingItemInstanceId` and `budgetCode` are omitted from this request. To find the instance number, call [GET performance-tracking-item-instances](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-GET/) and inspect `results.number` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrackingItemInstanceNumber { get; set; }

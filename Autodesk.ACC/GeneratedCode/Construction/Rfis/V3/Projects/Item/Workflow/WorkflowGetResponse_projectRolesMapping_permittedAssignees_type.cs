@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow
 {
-    /// <summary>The type of assignee. Possible values: ``user``, ``company``, ``role``.</summary>
+    /// <summary>The type of assignee. Possible values: `user`, `company`, `role`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WorkflowGetResponse_projectRolesMapping_permittedAssignees_type
     {

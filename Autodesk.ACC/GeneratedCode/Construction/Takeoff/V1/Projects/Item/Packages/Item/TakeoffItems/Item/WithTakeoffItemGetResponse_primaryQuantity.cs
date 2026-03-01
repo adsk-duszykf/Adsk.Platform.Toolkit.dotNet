@@ -39,7 +39,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #endif
         /// <summary>The quantity of the takeoff.</summary>
         public double? Quantity { get; set; }
-        /// <summary>The unit of measurement.Possible values: ``EA``, ``IN``, ``LF``, ``YD``, ``SI``, ``SF``, ``SY``, ``CI``, ``CF``, ``CY``, ``LBS``, ``TON``, ``MM``, ``M``, ``M2``, ``M3``, ``KG``, ``T``.</summary>
+        /// <summary>The unit of measurement.Possible values: `EA`, `IN`, `LF`, `YD`, `SI`, `SF`, `SY`, `CI`, `CF`, `CY`, `LBS`, `TON`, `MM`, `M`, `M2`, `M3`, `KG`, `T`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.Item.WithTakeoffItemGetResponse_primaryQuantity_unitOfMeasure? UnitOfMeasure { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

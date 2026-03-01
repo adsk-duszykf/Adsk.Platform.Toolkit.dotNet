@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
 {
     /// <summary>
-    /// Information about the sheet relevant for loading the sheet to the Viewer. See `Add Viewer to an HTML Page &lt;https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/&gt;`_ for more information.
+    /// Information about the sheet relevant for loading the sheet to the Viewer. See [Add Viewer to an HTML Page](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/) for more information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SheetsGetResponse_results_viewable : IParsable

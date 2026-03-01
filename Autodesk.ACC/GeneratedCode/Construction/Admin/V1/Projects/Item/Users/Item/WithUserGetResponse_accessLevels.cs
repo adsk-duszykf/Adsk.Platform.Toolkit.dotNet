@@ -13,11 +13,11 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithUserGetResponse_accessLevels : IParsable
     {
-        /// <summary>Indicates whether the user is an account administrator for the account. Possible values:- ``true``: The user is an account administrator.- ``false``: The user is not an account administrator.</summary>
+        /// <summary>Indicates whether the user is an account administrator for the account. Possible values:- `true`: The user is an account administrator.- `false`: The user is not an account administrator.</summary>
         public bool? AccountAdmin { get; set; }
-        /// <summary>Indicates whether the user is an executive in the account. Possible values:- ``true``: The user is an executive.- ``false``: The user is not an executive.</summary>
+        /// <summary>Indicates whether the user is an executive in the account. Possible values:- `true`: The user is an executive.- `false`: The user is not an executive.</summary>
         public bool? Executive { get; set; }
-        /// <summary>Indicates whether the user is a project administrator for the project. Possible values:- ``true``: The user is a project administrator.- ``false``: The user is not a project administrator.</summary>
+        /// <summary>Indicates whether the user is a project administrator for the project. Possible values:- `true`: The user is a project administrator.- `false`: The user is not a project administrator.</summary>
         public bool? ProjectAdmin { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

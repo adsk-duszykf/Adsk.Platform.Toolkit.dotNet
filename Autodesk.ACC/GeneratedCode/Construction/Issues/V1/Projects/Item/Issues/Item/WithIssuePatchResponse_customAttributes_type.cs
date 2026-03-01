@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 {
-    /// <summary>The type of attribute. Possible values: ``numeric``, ``paragraph``, ``list`` (this corresponds to ``dropdown`` in the UI), ``text``.</summary>
+    /// <summary>The type of attribute. Possible values: `numeric`, `paragraph`, `list` (this corresponds to `dropdown` in the UI), `text`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIssuePatchResponse_customAttributes_type
     {

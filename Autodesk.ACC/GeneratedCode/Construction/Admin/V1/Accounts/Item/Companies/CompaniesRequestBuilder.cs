@@ -143,7 +143,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
             [QueryParameter("filter%5BtaxId%5D")]
             public string FiltertaxId { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +154,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
             [QueryParameter("filterTextMatch")]
             public string FilterTextMatch { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [QueryParameter("filterTextMatch")]
             public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
             /// <summary>Filter companies by trade.  Can be a partial match based on the value of `filterTextMatch` provided.Max length: 255</summary>
@@ -177,13 +177,13 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>The maximum number of records to return in the response.Default: ``20``Minimum: ``1``Maximum: ``200`` (If a larger value is provided, only 200 records are returned)</summary>
+            /// <summary>The maximum number of records to return in the response.Default: `20`Minimum: `1`Maximum: `200` (If a larger value is provided, only 200 records are returned)</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first record to return.Used for pagination in combination with the ``limit`` parameter.Example: ``limit=20`` and ``offset=40`` returns records 41–60.</summary>
+            /// <summary>The index of the first record to return.Used for pagination in combination with the `limit` parameter.Example: `limit=20` and `offset=40` returns records 41-60.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>List of filtered fields to apply an ``or`` operator. Valid list of fields are `erpId`, `name`, `taxId`, `trade`, `updatedAt`.</summary>
+            /// <summary>List of filtered fields to apply an `or` operator. Valid list of fields are `erpId`, `name`, `taxId`, `trade`, `updatedAt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("orFilters")]

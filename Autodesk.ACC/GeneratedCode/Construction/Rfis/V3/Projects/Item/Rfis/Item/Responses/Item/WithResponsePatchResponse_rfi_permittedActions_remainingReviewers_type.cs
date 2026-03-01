@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item
 {
-    /// <summary>The type of reviewer. Will always be ``user``.</summary>
+    /// <summary>The type of reviewer. Will always be `user`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithResponsePatchResponse_rfi_permittedActions_remainingReviewers_type
     {

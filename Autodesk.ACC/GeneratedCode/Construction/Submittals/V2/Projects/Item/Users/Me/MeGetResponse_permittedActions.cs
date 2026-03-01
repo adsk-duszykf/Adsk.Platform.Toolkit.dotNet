@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
     public partial class MeGetResponse_permittedActions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A mapping of field names to lists of possible values for each field, specific to the associated action. An empty array indicates that there is no specific set of values for those fields.For example, in the action ``Spec::create``, fields might contain mapping for title (``title``) and identifier (``identifier``).</summary>
+        /// <summary>A mapping of field names to lists of possible values for each field, specific to the associated action. An empty array indicates that there is no specific set of values for those fields.For example, in the action `Spec::create`, fields might contain mapping for title (`title`) and identifier (`identifier`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me.MeGetResponse_permittedActions_fields? Fields { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
 #else
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me.MeGetResponse_permittedActions_fields Fields { get; set; }
 #endif
-        /// <summary>ID of the action in the format ``type_of_object::action``. For example, ``item::create``, ``Spec::create``.</summary>
+        /// <summary>ID of the action in the format `type_of_object::action`. For example, `item::create`, `Spec::create`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A subset of fields (``fields``) that are required to perform specific actions, such as creating or transitioning a submittal item. The required fields depend on the user’s role and the action.For example, creating a submittal item in the ``mgr-1`` state as a manager or in the ``sbc-1`` state as a subcontractor requires different fields. For example, [``stateId``, ``specId``, ``title``, ``typeId``, ``manager``, ``managerType``].</summary>
+        /// <summary>A subset of fields (`fields`) that are required to perform specific actions, such as creating or transitioning a submittal item. The required fields depend on the user’s role and the action.For example, creating a submittal item in the `mgr-1` state as a manager or in the `sbc-1` state as a subcontractor requires different fields. For example, [`stateId`, `specId`, `title`, `typeId`, `manager`, `managerType`].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MandatoryFields { get; set; }

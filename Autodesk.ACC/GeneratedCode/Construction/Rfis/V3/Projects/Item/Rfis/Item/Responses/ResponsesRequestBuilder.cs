@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
     public partial class ResponsesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.rfis.v3.projects.item.rfis.item.responses.item collection</summary>
-        /// <param name="position">The ID of the response. To find the ID, call `GET rfis/:id &lt;/en/docs/acc/v1/reference/http/rfis-rfis-id-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the response. To find the ID, call [GET rfis/:id](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfis-id-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponseItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponseItemRequestBuilder this[string position]
         {

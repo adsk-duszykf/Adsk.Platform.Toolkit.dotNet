@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item
 {
-    /// <summary>The forge type associated with this document (used by the Document Management APIs). Possible values: ``versions:autodesk.bim360:Document``, ``versions:autodesk.bim360:File``.</summary>
+    /// <summary>The forge type associated with this document (used by the Document Management APIs). Possible values: `versions:autodesk.bim360:Document`, `versions:autodesk.bim360:File`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithViewGetResponse_documentVersions_forgeType
     {

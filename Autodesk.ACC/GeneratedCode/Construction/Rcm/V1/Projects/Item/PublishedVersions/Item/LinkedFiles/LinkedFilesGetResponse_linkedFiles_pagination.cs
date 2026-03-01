@@ -15,9 +15,9 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
     {
         /// <summary>The number of results returned in this response. This may be lower than the requested limit if fewer results are available.</summary>
         public int? Limit { get; set; }
-        /// <summary>The offset value to use when requesting the next page. This field is useful for clients that build the request URL manually instead of using the ``nextUrl`` link.</summary>
+        /// <summary>The offset value to use when requesting the next page. This field is useful for clients that build the request URL manually instead of using the `nextUrl` link.</summary>
         public int? NextOffset { get; set; }
-        /// <summary>A URL for retrieving the next page of results. If this field is not included, there are no additional pages. A page may be empty but still include a ``nextUrl``, so continue paging until this field is no longer returned.</summary>
+        /// <summary>A URL for retrieving the next page of results. If this field is not included, there are no additional pages. A page may be empty but still include a `nextUrl`, so continue paging until this field is no longer returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextUrl { get; set; }

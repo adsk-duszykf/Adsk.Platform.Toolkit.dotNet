@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions_updateRfi_permittedStatuses_wfEU_requiredAttributes> RequiredAttributes { get; set; }
 #endif
-        /// <summary>The current response status of the RFI for a multi-reviewer workflow (EMEA):Possible values:``draft``, ``submitted``, ``openRev1`` (manager), ``openRev2`` (reviewer), ``answeredRev1``, ``answeredManager``, ``closed``, ``void``.For more information about workflows, see `About RFI Workflows – Autodesk Help &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types&gt;`_.</summary>
+        /// <summary>The current response status of the RFI for a multi-reviewer workflow (EMEA):Possible values:`draft`, `submitted`, `openRev1` (manager), `openRev2` (reviewer), `answeredRev1`, `answeredManager`, `closed`, `void`.For more information about workflows, see [About RFI Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions_updateRfi_permittedStatuses_wfEU_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

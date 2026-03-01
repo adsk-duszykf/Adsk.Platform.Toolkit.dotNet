@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
     public partial class ReviewSheetsGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>- ``true`` if the review sheet has been deleted.- ``false`` if the review sheet has not been deleted.Note that if the review sheet has been deleted, it will not be published.</summary>
+        /// <summary>- `true` if the review sheet has been deleted.- `false` if the review sheet has not been deleted.Note that if the review sheet has been deleted, it will not be published.</summary>
         public bool? Deleted { get; set; }
         /// <summary>The source file name of the review sheet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,9 +40,9 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
 #endif
         /// <summary>The page number of the source file from which the review sheet was generated.</summary>
         public double? Page { get; set; }
-        /// <summary>The processing state of the review sheet. Possible values:- ``PROCESSING``: the review sheet is being processed.- ``AUDITING``: the review sheet is being audited.- ``ROTATING``: the review sheet is being rotated.- ``READY``: the review sheet is ready for updating or publishing.- ``FAILED``: the processing of the review sheet failed.- ``PUBLISHING`` the review sheet is publishing.</summary>
+        /// <summary>The processing state of the review sheet. Possible values:- `PROCESSING`: the review sheet is being processed.- `AUDITING`: the review sheet is being audited.- `ROTATING`: the review sheet is being rotated.- `READY`: the review sheet is ready for updating or publishing.- `FAILED`: the processing of the review sheet failed.- `PUBLISHING` the review sheet is publishing.</summary>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsGetResponse_results_processingState? ProcessingState { get; set; }
-        /// <summary>The rotation of the review sheet. Possible values: ``0``, ``90``, ``180``, ``270``.</summary>
+        /// <summary>The rotation of the review sheet. Possible values: `0`, `90`, `180`, `270`.</summary>
         public double? Rotation { get; set; }
         /// <summary>The tags of the review sheet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

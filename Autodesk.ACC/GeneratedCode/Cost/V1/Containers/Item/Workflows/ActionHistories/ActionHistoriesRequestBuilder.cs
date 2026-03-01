@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
         {
         }
         /// <summary>
-        /// Retrieves workflow action histories for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves the action history records associated with specified cost items, such as contracts, budget payments, or RFQs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves workflow action histories for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves the action history records associated with specified cost items, such as contracts, budget payments, or RFQs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves workflow action histories for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves the action history records associated with specified cost items, such as contracts, budget payments, or RFQs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             return new global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves workflow action histories for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves the action history records associated with specified cost items, such as contracts, budget payments, or RFQs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActionHistoriesRequestBuilderGetQueryParameters 
@@ -113,7 +113,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             [QueryParameter("associationId")]
             public string[] AssociationId { get; set; }
 #endif
-            /// <summary>The type of the item is associated to. Possible values ``Contract``, ``Payment``, ``BudgetPayment``, ``CostPayment``, ``Expense``, ``PCO``, ``OCO``, ``SCO``, ``RCO``, ``RFQ``, ``DistributionItem``.</summary>
+            /// <summary>The type of the item is associated to. Possible values `Contract`, `Payment`, `BudgetPayment`, `CostPayment`, `Expense`, `PCO`, `OCO`, `SCO`, `RCO`, `RFQ`, `DistributionItem`.</summary>
             [Obsolete("This property is deprecated, use AssociationTypeAsGetAssociationTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +124,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             [QueryParameter("associationType")]
             public string AssociationType { get; set; }
 #endif
-            /// <summary>The type of the item is associated to. Possible values ``Contract``, ``Payment``, ``BudgetPayment``, ``CostPayment``, ``Expense``, ``PCO``, ``OCO``, ``SCO``, ``RCO``, ``RFQ``, ``DistributionItem``.</summary>
+            /// <summary>The type of the item is associated to. Possible values `Contract`, `Payment`, `BudgetPayment`, `CostPayment`, `Expense`, `PCO`, `OCO`, `SCO`, `RCO`, `RFQ`, `DistributionItem`.</summary>
             [QueryParameter("associationType")]
             public global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.GetAssociationTypeQueryParameterType? AssociationTypeAsGetAssociationTypeQueryParameterType { get; set; }
             /// <summary>A cursor token used for paginating results.This value is returned in the response when additional pages of data are available. Pass the returned `cursorState` into a subsequent request to retrieve the next page of results.The cursor token is an opaque string. Do not modify or parse its contents.</summary>
@@ -137,7 +137,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             [QueryParameter("cursorState")]
             public string CursorState { get; set; }
 #endif
-            /// <summary>Filters the results by action history type.Possible values:``Approval`` – actions related to approval workflows (e.g., approve, reject).``Normal`` – other types of non-approval actions (e.g., created, updated).If not specified, both types are included.Values are case-sensitive.</summary>
+            /// <summary>Filters the results by action history type.Possible values:`Approval` – actions related to approval workflows (e.g., approve, reject).`Normal` – other types of non-approval actions (e.g., created, updated).If not specified, both types are included.Values are case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Btype%5D")]
@@ -147,10 +147,10 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             [QueryParameter("filter%5Btype%5D")]
             public string Filtertype { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

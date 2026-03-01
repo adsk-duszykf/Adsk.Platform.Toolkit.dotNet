@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests
         {
         }
         /// <summary>
-        /// Retrieves clash tests for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of summaries for all clash tests that have been executed for a given model set. If no tests have yet been completed for the specified model set, no tests are returned.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves clash tests for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of summaries for all clash tests that have been executed for a given model set. If no tests have yet been completed for the specified model set, no tests are returned.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves clash tests for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of summaries for all clash tests that have been executed for a given model set. If no tests have yet been completed for the specified model set, no tests are returned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

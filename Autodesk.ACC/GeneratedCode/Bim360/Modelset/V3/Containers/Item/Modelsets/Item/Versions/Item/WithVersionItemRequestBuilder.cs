@@ -39,7 +39,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
         {
         }
         /// <summary>
-        /// Returns the requested model set version object.
+        /// Retrieves a specific version of a given model set based on the model set ID and version number.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested model set version object.
+        /// Retrieves a specific version of a given model set based on the model set ID and version number.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested model set version object.
+        /// Retrieves a specific version of a given model set based on the model set ID and version number.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

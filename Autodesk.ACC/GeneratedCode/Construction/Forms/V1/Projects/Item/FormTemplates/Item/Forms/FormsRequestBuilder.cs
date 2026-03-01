@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
     public partial class FormsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.forms.v1.projects.item.formTemplates.item.forms.item collection</summary>
-        /// <param name="position">The unique identifier of the form.Use `GET forms &lt;/en/docs/acc/v1/reference/http/forms-forms-GET/&gt;`_ to retrieve the form ID.</param>
+        /// <param name="position">The unique identifier of the form.Use [GET forms](https://aps.autodesk.com/en/docs/acc/v1/reference/http/forms-forms-GET/) to retrieve the form ID.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormItemRequestBuilder this[string position]
         {

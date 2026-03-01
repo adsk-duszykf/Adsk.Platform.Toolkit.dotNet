@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Q
         {
         }
         /// <summary>
-        /// Creates a new query for a specified diff. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Applies the given query to the given properties index.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -66,7 +66,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Q
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new query for a specified diff. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Applies the given query to the given properties index.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -87,7 +87,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Q
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new query for a specified diff. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Applies the given query to the given properties index.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

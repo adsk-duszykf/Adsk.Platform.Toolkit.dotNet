@@ -19,7 +19,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
     public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.submittals.v2.projects.item.items.item.steps.item.tasks.item collection</summary>
-        /// <param name="position">The ID of the task. To get the task ID, call `GET tasks &lt;/en/docs/acc/v1/reference/http/submittals-tasks-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the task. To get the task ID, call [GET tasks](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-tasks-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskItemRequestBuilder this[string position]
         {
@@ -106,7 +106,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
         /// Builds and executes requests for operations under \construction\submittals\v2\projects\{projectId}\items\{itemId}\steps\{stepId}\tasks\{taskId}:close
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdCloseRequestBuilder"/></returns>
-        /// <param name="taskId">The ID of the task. To get the task ID, call `GET tasks &lt;/en/docs/acc/v1/reference/http/submittals-tasks-GET/&gt;`_.</param>
+        /// <param name="taskId">The ID of the task. To get the task ID, call [GET tasks](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-tasks-GET/).</param>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdCloseRequestBuilder WithTaskIdClose(string taskId)
         {
             if(string.IsNullOrEmpty(taskId)) throw new ArgumentNullException(nameof(taskId));
@@ -127,10 +127,10 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TasksRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

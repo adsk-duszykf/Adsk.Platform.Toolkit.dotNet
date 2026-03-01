@@ -29,7 +29,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versio
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The internal value representing the approval status outcome. Possible values: ``APPROVED``, ``REJECTED``.</summary>
+        /// <summary>The internal value representing the approval status outcome. Possible values: `APPROVED`, `REJECTED`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versions.VersionsGetResponse_results_approveStatus_value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

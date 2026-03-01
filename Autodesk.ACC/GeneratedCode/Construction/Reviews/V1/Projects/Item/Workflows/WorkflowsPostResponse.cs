@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_additionalOptions AdditionalOptions { get; set; }
 #endif
-        /// <summary>A list of approval status options defined for this workflow.It includes two built-in options by default (typically ``APPROVED`` and ``REJECTED``), and may also include custom statuses added by the user.</summary>
+        /// <summary>A list of approval status options defined for this workflow.It includes two built-in options by default (typically `APPROVED` and `REJECTED`), and may also include custom statuses added by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_approvalStatusOptions>? ApprovalStatusOptions { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_approvalStatusOptions> ApprovalStatusOptions { get; set; }
 #endif
-        /// <summary>(``Update Attributes`` in the UI)The list of attributes added in the ``Update Attributes`` action.These attributes will be applied to the approved files in the target folder, or optionally also in the source folder depending on the configuration.</summary>
+        /// <summary>(`Update Attributes` in the UI)The list of attributes added in the `Update Attributes` action.These attributes will be applied to the approved files in the target folder, or optionally also in the source folder depending on the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_attachedAttributes>? AttachedAttributes { get; set; }
@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_attachedAttributes> AttachedAttributes { get; set; }
 #endif
-        /// <summary>(``Copy approved files`` in the UI) The configuration for copying approved files to a target folder when the review is complete.</summary>
+        /// <summary>(`Copy approved files` in the UI) The configuration for copying approved files to a target folder when the review is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_copyFilesOptions? CopyFilesOptions { get; set; }
@@ -72,7 +72,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The current status of the approval workflow. Possible values:``ACTIVE``: the workflow is active and available for use.``INACTIVE``: the workflow has been deactivated and cannot be used to create new reviews.</summary>
+        /// <summary>The current status of the approval workflow. Possible values:`ACTIVE`: the workflow is active and available for use.`INACTIVE`: the workflow has been deactivated and cannot be used to create new reviews.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_status? Status { get; set; }
         /// <summary>A list of steps defined in the approval workflow. Each step defines who reviews the files, how long they have, and whether it involves multiple reviewers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_steps> Steps { get; set; }
 #endif
-        /// <summary>The configuration for applying attribute updates when a review is completed.This applies only if the workflow includes a file copy action and the ``Update Attributes`` action is enabled.</summary>
+        /// <summary>The configuration for applying attribute updates when a review is completed.This applies only if the workflow includes a file copy action and the `Update Attributes` action is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_updateAttributesOptions? UpdateAttributesOptions { get; set; }

@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttribute
         {
         }
         /// <summary>
-        /// To retrieve the values that were assigned to a document&apos;s custom attributes, call `POST versions:batch-get &lt;/en/docs/bim360/v1/reference/http/document-management-versionsbatch-get-POST/&gt;`_.
+        /// Retrieves a complete list of custom attribute definitions for all the documents in a specific folder, including custom attributes that have not been assigned a value, as well as the potential drop-down (`array`) values.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttribute
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the values that were assigned to a document&apos;s custom attributes, call `POST versions:batch-get &lt;/en/docs/bim360/v1/reference/http/document-management-versionsbatch-get-POST/&gt;`_.
+        /// Retrieves a complete list of custom attribute definitions for all the documents in a specific folder, including custom attributes that have not been assigned a value, as well as the potential drop-down (`array`) values.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttribute
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsResponse>(requestInfo, global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the values that were assigned to a document&apos;s custom attributes, call `POST versions:batch-get &lt;/en/docs/bim360/v1/reference/http/document-management-versionsbatch-get-POST/&gt;`_.
+        /// Retrieves a complete list of custom attribute definitions for all the documents in a specific folder, including custom attributes that have not been assigned a value, as well as the potential drop-down (`array`) values.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,15 +161,15 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttribute
             return new global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve the values that were assigned to a document&apos;s custom attributes, call `POST versions:batch-get &lt;/en/docs/bim360/v1/reference/http/document-management-versionsbatch-get-POST/&gt;`_.
+        /// Retrieves a complete list of custom attribute definitions for all the documents in a specific folder, including custom attributes that have not been assigned a value, as well as the potential drop-down (`array`) values.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAttributeDefinitionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The number of results to return in the response. Acceptable values: 1-200. Default value: 10. For example, to limit the response to two custom attributes per page, use ``limit=2``.</summary>
+            /// <summary>The number of results to return in the response. Acceptable values: 1-200. Default value: 10. For example, to limit the response to two custom attributes per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The item number that you want to begin results from. Default value: 0. For example, to begin the results from item three, use ``offset=3``.</summary>
+            /// <summary>The item number that you want to begin results from. Default value: 0. For example, to begin the results from item three, use `offset=3`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
 #else
         public string AssigneeId { get; set; }
 #endif
-        /// <summary>Type of entity the form is assigned to.Possible values: ``company``, ``role``, ``user``</summary>
+        /// <summary>Type of entity the form is assigned to.Possible values: `company`, `role`, `user`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse_data_assigneeType? AssigneeType { get; set; }
         /// <summary>When form was created on the server, UTC date and time in ISO-8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -90,7 +90,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
 #else
         public string LastSubmitterSignature { get; set; }
 #endif
-        /// <summary>Location identifier associated with the form. For more information about the location, see `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_.</summary>
+        /// <summary>Location identifier associated with the form. For more information about the location, see [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get; set; }
@@ -138,7 +138,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The current status of the form. Note that forms are created in ``draft`` status. Possible values:``draft``: you can edit forms.``inReview``: you cannot edit forms, however, they can be approved by form reviewers.``submitted``: forms are closed and no longer editable.``archived`` forms are not edtiable and hidden in the UI.</summary>
+        /// <summary>The current status of the form. Note that forms are created in `draft` status. Possible values:`draft`: you can edit forms.`inReview`: you cannot edit forms, however, they can be approved by form reviewers.`submitted`: forms are closed and no longer editable.`archived` forms are not edtiable and hidden in the UI.</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse_data_status? Status { get; set; }
         /// <summary>For non-PDF forms, data stored in the tables on the form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

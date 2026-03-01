@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
-    /// <summary>The type of watcher.Possible values: ``user``, ``role``, ``company``</summary>
+    /// <summary>The type of watcher.Possible values: `user`, `role`, `company`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithRfiPatchRequestBody_returnForReviewerList_type
     {

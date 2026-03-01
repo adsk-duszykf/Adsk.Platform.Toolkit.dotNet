@@ -103,10 +103,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProgressRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of review-progress records to return. Valid range: ``1–50``. Default: ``50``. For example: ``limit=2``.</summary>
+            /// <summary>The maximum number of review-progress records to return. Valid range: `1-50`. Default: `50`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The zero-based index of the first record to return. Use with ``limit`` for pagination. Default: ``0``. For example: ``offset=10``.</summary>
+            /// <summary>The zero-based index of the first record to return. Use with `limit` for pagination. Default: `0`. For example: `offset=10`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

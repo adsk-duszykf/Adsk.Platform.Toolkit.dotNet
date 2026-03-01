@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The region of the specification PDFs that were uploaded for this project. Currently, AutoSpecs supports CSI MasterFormat for the United States and Canada.Possible values: ``USA``, ``Canada``, ``Others``</summary>
+        /// <summary>The region of the specification PDFs that were uploaded for this project. Currently, AutoSpecs supports CSI MasterFormat for the United States and Canada.Possible values: `USA`, `Canada`, `Others`</summary>
         public global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataGetResponse_region? Region { get; set; }
         /// <summary>Information about the versions for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

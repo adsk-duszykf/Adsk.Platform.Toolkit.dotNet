@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
     public partial class SpecsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.submittals.v2.projects.item.specs.item collection</summary>
-        /// <param name="position">The ID of the submittal item to retrieve revisions for. To obtain this ID, call `GET items &lt;/en/docs/acc/v1/reference/http/submittals-items-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the submittal item to retrieve revisions for. To obtain this ID, call [GET items](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
         {
         }
         /// <summary>
-        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections&gt;`_.
+        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections&gt;`_.
+        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections&gt;`_.
+        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,12 +174,12 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
             return new global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections&gt;`_.
+        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SpecsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter spec sections with the specified spec section ID (the spec section ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, ``filter[identifier]=2.``</summary>
+            /// <summary>Filter spec sections with the specified spec section ID (the spec section ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, `filter[identifier]=2.`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bidentifier%5D")]
@@ -189,13 +189,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
             [QueryParameter("filter%5Bidentifier%5D")]
             public string Filteridentifier { get; set; }
 #endif
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Search for spec sections by querying a specified string within specific fields (``identifier``, ``title``), and retrieve the associated items that match the search criteria. This includes spec sections where the string matches part of a field. For example, search=1.</summary>
+            /// <summary>Search for spec sections by querying a specified string within specific fields (`identifier`, `title`), and retrieve the associated items that match the search criteria. This includes spec sections where the string matches part of a field. For example, search=1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -205,7 +205,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Sort spec sections by specified fields. Separate multiple values with commas. To sort in descending or ascending order, add ``desc`` or ``asc`` after the sort criteria. For example, ``identifier asc``.Possible values: ``identifier``, ``title``.</summary>
+            /// <summary>Sort spec sections by specified fields. Separate multiple values with commas. To sort in descending or ascending order, add `desc` or `asc` after the sort criteria. For example, `identifier asc`.Possible values: `identifier`, `title`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

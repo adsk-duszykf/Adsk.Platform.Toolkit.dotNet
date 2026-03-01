@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item
 {
-    /// <summary>job status.Possible values: ``PROCESSING``, ``FINISHED``, ``FAILED``</summary>
+    /// <summary>job status.Possible values: `PROCESSING`, `FINISHED`, `FAILED`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithQueryGetResponse_state
     {

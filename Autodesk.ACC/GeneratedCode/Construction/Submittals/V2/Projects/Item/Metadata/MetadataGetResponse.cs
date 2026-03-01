@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_attachmentUrnTypes> AttachmentUrnTypes { get; set; }
 #endif
-        /// <summary>The custom numbering sequence type for the current project. Possible values: ``1`` (Global sequence), ``2`` (Spec sequence).</summary>
+        /// <summary>The custom numbering sequence type for the current project. Possible values: `1` (Global sequence), `2` (Spec sequence).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_customIdentifierSequenceType? CustomIdentifierSequenceType { get; set; }
         /// <summary>An object containing the default values for various settings and configurations in the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,9 +56,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 #endif
         /// <summary>The unique identifier (UUID) for the metadata object.</summary>
         public Guid? Id { get; set; }
-        /// <summary>``true``: if there is at least one manager mapping in the project.``false``: if there are no manager mappings in the project.</summary>
+        /// <summary>`true`: if there is at least one manager mapping in the project.`false`: if there are no manager mappings in the project.</summary>
         public bool? IsManagerMappingDefined { get; set; }
-        /// <summary>A list of submittal item types. This is the same as calling `GET item-types &lt;/en/docs/acc/v1/reference/http/submittals-item-types-GET/&gt;`_</summary>
+        /// <summary>A list of submittal item types. This is the same as calling [GET item-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-item-types-GET/)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_itemTypes>? ItemTypes { get; set; }
@@ -66,9 +66,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_itemTypes> ItemTypes { get; set; }
 #endif
-        /// <summary>``true``: if there are no submittal items in the project.``false``: if there are submittal items in the project.</summary>
+        /// <summary>`true`: if there are no submittal items in the project.`false`: if there are submittal items in the project.</summary>
         public bool? NoItemsInProject { get; set; }
-        /// <summary>``true``: if there are no packages in the project.``false``: if there are packages in the project.</summary>
+        /// <summary>`true`: if there are no packages in the project.`false`: if there are packages in the project.</summary>
         public bool? NoPackagesInProject { get; set; }
         /// <summary>A list of categories for responses to submittals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_responseCategories> ResponseCategories { get; set; }
 #endif
-        /// <summary>A list of responses.This is the same as calling `GET responses &lt;/en/docs/acc/v1/reference/http/submittals-responses-GET/&gt;`_</summary>
+        /// <summary>A list of responses.This is the same as calling [GET responses](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-responses-GET/)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_responses>? Responses { get; set; }

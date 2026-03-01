@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate
 {
-    /// <summary>The name of the column to update. Possible values:For the Work Log table:``trade`` (Crew) - use ``textVal``, ``timespan`` (Total hours) - use ``timespanVal``, ``headcount`` (workers) - use ``numberVal``, ``description`` (work performed) - use ``textVal``For the Equipment table:``item`` (equipment) - use ``textVal``, ``timespan`` (Hours used) -  use ``timespanVal``, ``quantity`` (Quantity) - use ``numberVal``, ``description`` (comment) - use ``textVal``For the Materials table:``item`` (Material) - use ``textVal``, ``quantity`` (Quantity) - use ``numberVal``, ``unit`` (Unit) - use ``textVal``, ``description`` (Comment) - use ``textVal``.</summary>
+    /// <summary>The name of the column to update. Possible values:For the Work Log table:`trade` (Crew) - use `textVal`, `timespan` (Total hours) - use `timespanVal`, `headcount` (workers) - use `numberVal`, `description` (work performed) - use `textVal`For the Equipment table:`item` (equipment) - use `textVal`, `timespan` (Hours used) -  use `timespanVal`, `quantity` (Quantity) - use `numberVal`, `description` (comment) - use `textVal`For the Materials table:`item` (Material) - use `textVal`, `quantity` (Quantity) - use `numberVal`, `unit` (Unit) - use `textVal`, `description` (Comment) - use `textVal`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ValuesBatchUpdatePutRequestBody_tabularValues_columns_columnName
     {

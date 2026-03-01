@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Cl
         {
         }
         /// <summary>
-        /// Retrieves closed clashes for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of closed clash groups in a given model set which match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Cl
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves closed clashes for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of closed clash groups in a given model set which match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Cl
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves closed clashes for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of closed clash groups in a given model set which match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

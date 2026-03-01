@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 {
     /// <summary>
-    /// Custom attribute value. Possible value types: ``string``, ``number``, ``null``.
+    /// Custom attribute value. Possible value types: `string`, `number`, `null`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIssuePatchResponse_customAttributes_value : IParsable

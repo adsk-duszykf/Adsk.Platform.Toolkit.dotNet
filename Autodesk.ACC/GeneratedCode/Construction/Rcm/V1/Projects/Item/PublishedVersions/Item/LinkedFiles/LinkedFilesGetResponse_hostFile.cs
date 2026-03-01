@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles
 {
     /// <summary>
-    /// Metadata about the host model (the main Revit model that contains linked files). This object is only returned in the response when ``includeHost`` is set to ``true``.
+    /// Metadata about the host model (the main Revit model that contains linked files). This object is only returned in the response when `includeHost` is set to `true`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkedFilesGetResponse_hostFile : IParsable
@@ -29,7 +29,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
 #else
         public string ModelName { get; set; }
 #endif
-        /// <summary>Indicates whether the host model has been published. Possible values:``published`` – The model has been published.``notPublished`` – The model has not been published.</summary>
+        /// <summary>Indicates whether the host model has been published. Possible values:`published` – The model has been published.`notPublished` – The model has not been published.</summary>
         public global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_hostFile_publishStatus? PublishStatus { get; set; }
         /// <summary>A temporary URL used to download the host model. Signed URLs are valid for 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

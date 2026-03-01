@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call `GET projects/:projectId/companies &lt;/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.</summary>
+        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call [GET projects/:projectId/companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }
@@ -202,7 +202,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
 #else
         public string StateOrProvince { get; set; }
 #endif
-        /// <summary>The status of the user on the account. A pending user could be waiting for its products to activate or the user hasn&apos;t accepted an email to create an account with Autodesk.Possible values: ``active``, ``pending``, ``disabled``, and ``deleted``.&apos;</summary>
+        /// <summary>The status of the user on the account. A pending user could be waiting for its products to activate or the user hasn&apos;t accepted an email to create an account with Autodesk.Possible values: `active`, `pending`, `disabled`, and `deleted`.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

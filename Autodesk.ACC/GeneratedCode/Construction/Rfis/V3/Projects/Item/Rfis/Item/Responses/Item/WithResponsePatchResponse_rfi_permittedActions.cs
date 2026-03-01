@@ -13,13 +13,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithResponsePatchResponse_rfi_permittedActions : IParsable
     {
-        /// <summary>``true``: The user can create a comment for the RFI.``false`` (default): The user cannot create a comment for the RFI.</summary>
+        /// <summary>`true`: The user can create a comment for the RFI.`false` (default): The user cannot create a comment for the RFI.</summary>
         public bool? CreateComment { get; set; }
-        /// <summary>``true``: The user can add a document reference to the RFI.``false``: The user cannot add a document reference to the RFI.</summary>
+        /// <summary>`true`: The user can add a document reference to the RFI.`false`: The user cannot add a document reference to the RFI.</summary>
         public bool? CreateDocumentReference { get; set; }
-        /// <summary>``true``: The user can create a response for the RFI.``false``: The user cannot create a response for the RFI.</summary>
+        /// <summary>`true`: The user can create a response for the RFI.`false`: The user cannot create a response for the RFI.</summary>
         public bool? CreateResponse { get; set; }
-        /// <summary>``true``: The user can create a response on behalf of another user for the RFI.``false``: The user cannot create a response on behalf of another user for the RFI.</summary>
+        /// <summary>`true`: The user can create a response on behalf of another user for the RFI.`false`: The user cannot create a response on behalf of another user for the RFI.</summary>
         public bool? CreateResponseOnBehalf { get; set; }
         /// <summary>Not relevant</summary>
         public bool? Nudge { get; set; }
@@ -31,7 +31,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi_permittedActions_remainingReviewers> RemainingReviewers { get; set; }
 #endif
-        /// <summary>``true``: The user can remove a document reference to the RFI.``false``: The user cannot remove a document reference to the RFI.</summary>
+        /// <summary>`true`: The user can remove a document reference to the RFI.`false`: The user cannot remove a document reference to the RFI.</summary>
         public bool? RemoveDocumentReference { get; set; }
         /// <summary>Not relevant</summary>
         public bool? Share { get; set; }

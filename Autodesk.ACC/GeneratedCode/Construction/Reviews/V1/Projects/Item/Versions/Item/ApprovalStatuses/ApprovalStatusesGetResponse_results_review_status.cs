@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses
 {
-    /// <summary>The current status of the review.Possible values: ``OPEN``, ``CLOSED``, ``VOID``, ``FAILED``.</summary>
+    /// <summary>The current status of the review.Possible values: `OPEN`, `CLOSED`, `VOID`, `FAILED`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ApprovalStatusesGetResponse_results_review_status
     {

@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.assets.v2.projects.item collection</summary>
-        /// <param name="position">The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form ``b.{UUID}``.</param>
+        /// <param name="position">The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form `b.{UUID}`.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.WithProjectItemRequestBuilder this[string position]
         {

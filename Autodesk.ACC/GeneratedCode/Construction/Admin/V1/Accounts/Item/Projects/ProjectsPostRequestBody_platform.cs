@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 {
-    /// <summary>The APS platform where the project is stored. Possible values: ``acc``, ``bim360``.Note that this field is relevant only in responses. It is ignored in requests.</summary>
+    /// <summary>The APS platform where the project is stored. Possible values: `acc`, `bim360`.Note that this field is relevant only in responses. It is ignored in requests.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ProjectsPostRequestBody_platform
     {

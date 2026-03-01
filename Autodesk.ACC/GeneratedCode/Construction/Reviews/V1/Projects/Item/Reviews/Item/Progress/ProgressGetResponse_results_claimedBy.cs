@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProgressGetResponse_results_claimedBy : IParsable
     {
-        /// <summary>The Autodesk ID of the user. To find details about the user, call `GET users/:Id &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user. To find details about the user, call [GET users/:Id](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutodeskId { get; set; }

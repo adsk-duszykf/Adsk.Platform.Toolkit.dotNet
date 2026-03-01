@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
 #endif
         /// <summary>The GUID that uniquely identifies the model set.</summary>
         public Guid? ModelSetId { get; set; }
-        /// <summary>The creation status of the model set version. Possible values: ``Pending``, ``Processing``, ``Successful``, ``Partial``, ``Failed``.</summary>
+        /// <summary>The creation status of the model set version. Possible values: `Pending`, `Processing`, `Successful`, `Partial`, `Failed`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionGetResponse_status? Status { get; set; }
         /// <summary>The model set version number.</summary>
         public int? Version { get; set; }

@@ -8,12 +8,12 @@ using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 {
     /// <summary>
-    /// The list of statuses the user is permitted to transition an RFI to, without differentiating between workflow types (e.g., ``us`` and ``emea``).
+    /// The list of statuses the user is permitted to transition an RFI to, without differentiating between workflow types (e.g., `us` and `emea`).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MeGetResponse_permittedActions_createRfi_permittedStatuses : IParsable
     {
-        /// <summary>The list of statuses the user is permitted to transition an RFI to in workflows of type ``emea``.</summary>
+        /// <summary>The list of statuses the user is permitted to transition an RFI to in workflows of type `emea`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU>? WfEU { get; set; }
@@ -21,7 +21,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU> WfEU { get; set; }
 #endif
-        /// <summary>The list of statuses the user is permitted to transition an RFI to in workflows of type ``US``.</summary>
+        /// <summary>The list of statuses the user is permitted to transition an RFI to in workflows of type `US`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfUS>? WfUS { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item
 {
-    /// <summary>The language for the project. Only valid for the ``field`` product.Possible values: ``en``, ``de``, ``nl``, ``zh``, ``de-CH``</summary>
+    /// <summary>The language for the project. Only valid for the `field` product.Possible values: `en`, `de`, `nl`, `zh`, `de-CH`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithProjectGetResponse_products_language
     {

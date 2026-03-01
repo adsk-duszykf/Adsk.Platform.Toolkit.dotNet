@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items
     public partial class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.mainContracts.item.items.item collection</summary>
-        /// <param name="position">The object ID of the item. To find the item IDs, call `GET main-contracts/:mainContractId/items &lt;/en/docs/bim360/v1/reference/http/cost-main-contracts-mainContractId-items-GET/&gt;`_ and inspect ``results.id`` in the response.</param>
+        /// <param name="position">The object ID of the item. To find the item IDs, call [GET main-contracts/:mainContractId/items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-main-contracts-mainContractId-items-GET/) and inspect `results.id` in the response.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.mainContracts.item.items.item collection</summary>
-        /// <param name="position">The object ID of the item. To find the item IDs, call `GET main-contracts/:mainContractId/items &lt;/en/docs/bim360/v1/reference/http/cost-main-contracts-mainContractId-items-GET/&gt;`_ and inspect ``results.id`` in the response.</param>
+        /// <param name="position">The object ID of the item. To find the item IDs, call [GET main-contracts/:mainContractId/items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-main-contracts-mainContractId-items-GET/) and inspect `results.id` in the response.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, ``filter[externalId]=id1,id2``.</summary>
+            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, `filter[externalId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalId%5D")]
@@ -202,7 +202,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items
             [QueryParameter("filter%5BexternalId%5D")]
             public string[] FilterexternalId { get; set; }
 #endif
-            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, ``filter[externalSystem]=Sage300``.Max length: 255</summary>
+            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, `filter[externalSystem]=Sage300`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalSystem%5D")]
@@ -212,7 +212,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items
             [QueryParameter("filter%5BexternalSystem%5D")]
             public string FilterexternalSystem { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -222,7 +222,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>A list of the types of nested resources to include in the response with the main contract items, separated by commas.For example, ``include=budget`` returns the budgets that are associated with each returned main contract item.Possible values: ``budget``, ``mainContract``.</summary>
+            /// <summary>A list of the types of nested resources to include in the response with the main contract items, separated by commas.For example, `include=budget` returns the budgets that are associated with each returned main contract item.Possible values: `budget`, `mainContract`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -232,13 +232,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

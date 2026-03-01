@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
 {
-    /// <summary>The current processing state of the transmittal.- ``SENDING`` – The transmittal is being processed or packaged; some fields may be temporarily empty. The ``recipients`` and ``externalMembers`` fields may be temporarily empty.- ``COMPLETED`` – The transmittal has been successfully issued and all data is available.- ``FAILED`` – The transmittal failed to process or send.Possible values: ``SENDING``, ``COMPLETED``, ``FAILED``.</summary>
+    /// <summary>The current processing state of the transmittal.- `SENDING` – The transmittal is being processed or packaged; some fields may be temporarily empty. The `recipients` and `externalMembers` fields may be temporarily empty.- `COMPLETED` – The transmittal has been successfully issued and all data is available.- `FAILED` – The transmittal failed to process or send.Possible values: `SENDING`, `COMPLETED`, `FAILED`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransmittalsGetResponse_results_status
     {

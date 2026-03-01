@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
     public partial class PackagesPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The package name (user defined).Corresponding UI name: ``Title``.Max length: 64</summary>
+        /// <summary>The package name (user defined).Corresponding UI name: `Title`.Max length: 64</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

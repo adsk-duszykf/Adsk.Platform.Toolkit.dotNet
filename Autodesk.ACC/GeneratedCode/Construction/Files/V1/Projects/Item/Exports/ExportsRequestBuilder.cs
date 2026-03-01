@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
     public partial class ExportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.files.v1.projects.item.exports.item collection</summary>
-        /// <param name="position">The ID of the export job. The export ID is generated when you initialize an export job using `POST exports &lt;/en/docs/acc/v1/reference/http/export-pdf-files-POST/&gt;`_.</param>
+        /// <param name="position">The ID of the export job. The export ID is generated when you initialize an export job using [POST exports](https://aps.autodesk.com/en/docs/acc/v1/reference/http/export-pdf-files-POST/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportItemRequestBuilder this[string position]
         {

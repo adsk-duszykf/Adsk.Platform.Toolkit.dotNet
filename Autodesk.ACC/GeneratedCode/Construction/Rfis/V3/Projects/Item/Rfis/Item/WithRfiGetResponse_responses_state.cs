@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
-    /// <summary>The state of the response. Possible values:- ``draft``: The response was returned to the reviewer for changes.- ``submitted``: The reviewer submitted a finalized response.</summary>
+    /// <summary>The state of the response. Possible values:- `draft`: The response was returned to the reviewer for changes.- `submitted`: The reviewer submitted a finalized response.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithRfiGetResponse_responses_state
     {

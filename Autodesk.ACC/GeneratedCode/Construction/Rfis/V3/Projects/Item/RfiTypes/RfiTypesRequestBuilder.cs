@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RfiTypesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters the response to only include RFI types with the specified status. Possible values: ``active``, ``inactive``, ``hidden``.</summary>
+            /// <summary>Filters the response to only include RFI types with the specified status. Possible values: `active`, `inactive`, `hidden`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -113,10 +113,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>The number of RFIs to return in the response. Acceptable values: ``1–200``. Default: ``10``. For example, to limit the response to two items per page, use ``limit=2``</summary>
+            /// <summary>The number of RFIs to return in the response. Acceptable values: `1-200`. Default: `10`. For example, to limit the response to two items per page, use `limit=2`</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of items to skip before starting to return results.For example, to begin the results from the fourth item, use ``offset=3``.</summary>
+            /// <summary>The number of items to skip before starting to return results.For example, to begin the results from the fourth item, use `offset=3`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

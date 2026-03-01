@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles
 {
-    /// <summary>Indicates whether the host model has been published. Possible values:``published`` – The model has been published.``notPublished`` – The model has not been published.</summary>
+    /// <summary>Indicates whether the host model has been published. Possible values:`published` – The model has been published.`notPublished` – The model has not been published.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LinkedFilesGetResponse_hostFile_publishStatus
     {

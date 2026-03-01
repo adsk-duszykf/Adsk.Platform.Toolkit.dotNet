@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
     public partial class PerformanceTrackingItemInstancesPatchResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The overriding output quantity that you specified to reflect a change (if any) in the scope of the tracking item instance. This value will be used instead of the value of ``outputQuantity`` in future performance tracking and forecasting for this tracking item instance.</summary>
+        /// <summary>The overriding output quantity that you specified to reflect a change (if any) in the scope of the tracking item instance. This value will be used instead of the value of `outputQuantity` in future performance tracking and forecasting for this tracking item instance.</summary>
         public double? AdjustedOutputQuantity { get; set; }
         /// <summary>The code of the budget to which the tracking item instance belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,9 +46,9 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
 #endif
         /// <summary>The ID of the tracking item instance.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The input quantity of the tracking item instance. You can multiply this by the value of ``inputUnitPrice`` to determine the planned total for this instance.</summary>
+        /// <summary>The input quantity of the tracking item instance. You can multiply this by the value of `inputUnitPrice` to determine the planned total for this instance.</summary>
         public double? InputQuantity { get; set; }
-        /// <summary>The input unit of measurement of the tracking item instance. This value should always be ``hr``.</summary>
+        /// <summary>The input unit of measurement of the tracking item instance. This value should always be `hr`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InputUnit { get; set; }
@@ -56,9 +56,9 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
 #else
         public string InputUnit { get; set; }
 #endif
-        /// <summary>The input unit price of the tracking item instance. You can multiply this by the value of ``inputQuantity`` to determine the planned total for this instance.</summary>
+        /// <summary>The input unit price of the tracking item instance. You can multiply this by the value of `inputQuantity` to determine the planned total for this instance.</summary>
         public double? InputUnitPrice { get; set; }
-        /// <summary>A list of the IDs of the project locations where this item applies, along with the node paths of these locations in the project&apos;s locations tree.For more information, see the Locations `Help documentation &lt;https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/&gt;`_ help.</summary>
+        /// <summary>A list of the IDs of the project locations where this item applies, along with the node paths of these locations in the project&apos;s locations tree.For more information, see the Locations [Help documentation](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/) help.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LocationPaths { get; set; }
@@ -66,7 +66,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
 #else
         public List<string> LocationPaths { get; set; }
 #endif
-        /// <summary>A list of the IDs of the project locations where this item applies.For more information, see the Locations `Help documentation &lt;https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/&gt;`_ help.</summary>
+        /// <summary>A list of the IDs of the project locations where this item applies.For more information, see the Locations [Help documentation](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/) help.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Locations { get; set; }
@@ -90,7 +90,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The output quantity of the tracking item instance. You can multiply this by the value of ``outputUnitPrice`` to determine the planned total for this instance.</summary>
+        /// <summary>The output quantity of the tracking item instance. You can multiply this by the value of `outputUnitPrice` to determine the planned total for this instance.</summary>
         public double? OutputQuantity { get; set; }
         /// <summary>The output unit of measurement of the tracking item instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,9 +100,9 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
 #else
         public string OutputUnit { get; set; }
 #endif
-        /// <summary>The output unit price of the tracking item instance. You can multiply this by the value of ``outputQuantity`` to determine the planned total for this instance.</summary>
+        /// <summary>The output unit price of the tracking item instance. You can multiply this by the value of `outputQuantity` to determine the planned total for this instance.</summary>
         public double? OutputUnitPrice { get; set; }
-        /// <summary>The tracking item instance&apos;s planned productivity rate (``inputQuantity``/``outputQuantity``) divided by its tracked productivity rate (``trackedInputQuantity``/``trackedOutputQuantity``).</summary>
+        /// <summary>The tracking item instance&apos;s planned productivity rate (`inputQuantity`/`outputQuantity`) divided by its tracked productivity rate (`trackedInputQuantity`/`trackedOutputQuantity`).</summary>
         public double? PerformanceRatio { get; set; }
         /// <summary>The reported hours worked so far on the tracking item instance.</summary>
         public double? TrackedInputQuantity { get; set; }

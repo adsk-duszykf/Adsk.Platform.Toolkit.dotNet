@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 {
-    /// <summary>The current response status of the RFI for single-reviewer workflows (US):Possible values:``draft``, ``submitted``, ``open``, ``answered``, ``rejected``, ``closed``, ``void``.For more information about workflows, see `About RFI Workflows – Autodesk Help &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types&gt;`_.</summary>
+    /// <summary>The current response status of the RFI for single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.For more information about workflows, see [About RFI Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses_wfUS_status
     {

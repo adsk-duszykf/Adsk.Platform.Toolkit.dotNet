@@ -57,7 +57,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         {
         }
         /// <summary>
-        /// Retrieves a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the indexing status for the given index ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the indexing status for the given index ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the indexing status for the given index ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

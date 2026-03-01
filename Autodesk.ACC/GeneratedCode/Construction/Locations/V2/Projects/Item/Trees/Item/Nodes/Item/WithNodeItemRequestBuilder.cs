@@ -50,7 +50,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the ``name`` or ``barcode`` of the specified node of the specified locations tree.
+        /// Updates the `name` or `barcode` of the specified node of the specified locations tree.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodePatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodePatchResponse>(requestInfo, global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodePatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the ``name`` or ``barcode`` of the specified node of the specified locations tree.
+        /// Updates the `name` or `barcode` of the specified node of the specified locations tree.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
             return requestInfo;
         }
         /// <summary>
-        /// Updates the ``name`` or ``barcode`` of the specified node of the specified locations tree.
+        /// Updates the `name` or `barcode` of the specified node of the specified locations tree.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
 {
-    /// <summary>The current status of the approval workflow. Possible values:``ACTIVE``: the workflow is active and available for use.``INACTIVE``: the workflow has been deactivated and cannot be used to create new reviews.</summary>
+    /// <summary>The current status of the approval workflow. Possible values:`ACTIVE`: the workflow is active and available for use.`INACTIVE`: the workflow has been deactivated and cannot be used to create new reviews.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithWorkflowGetResponse_status
     {

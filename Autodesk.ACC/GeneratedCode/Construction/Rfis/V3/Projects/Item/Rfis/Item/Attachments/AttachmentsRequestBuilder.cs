@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters the response to only include attachments of the specified types.Possible values: ``rfiResponse``, ``rfiOfficialResponse``, ``rfiWebHiddenFiles``, ``bridgeFiles``.If not provided, the default filter is: ``rfiResponse``, ``rfiOfficialResponse``.</summary>
+            /// <summary>Filters the response to only include attachments of the specified types.Possible values: `rfiResponse`, `rfiOfficialResponse`, `rfiWebHiddenFiles`, `bridgeFiles`.If not provided, the default filter is: `rfiResponse`, `rfiOfficialResponse`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BattachmentTypes%5D")]
@@ -113,10 +113,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
             [QueryParameter("filter%5BattachmentTypes%5D")]
             public string[] FilterattachmentTypes { get; set; }
 #endif
-            /// <summary>The number of attachments to return in the response.Possible values: ``1–200``. Default: ``10``.For example, to limit the response to two attachments per page, use ``limit=2``.</summary>
+            /// <summary>The number of attachments to return in the response.Possible values: `1-200`. Default: `10`.For example, to limit the response to two attachments per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of items to skip before starting to return results.For example, to begin the results from the fourth item, use ``offset=3``.</summary>
+            /// <summary>The number of items to skip before starting to return results.For example, to begin the results from the fourth item, use `offset=3`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

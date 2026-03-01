@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Q
         {
         }
         /// <summary>
-        /// Retrieves properties for a specific diff query. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the query specific properties of the given diff.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.Item.Properties.PropertiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Q
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.Item.Properties.PropertiesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.Item.Properties.PropertiesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves properties for a specific diff query. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the query specific properties of the given diff.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.Item.Properties.PropertiesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Q
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.Item.Properties.PropertiesResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.Item.Properties.PropertiesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves properties for a specific diff query. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the query specific properties of the given diff.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -39,7 +39,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
         {
         }
         /// <summary>
-        /// The response contains information about the created model set job.
+        /// Deletes a specific model set view based on the view ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The response contains information about the created model set job.
+        /// Deletes a specific model set view based on the view ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested model set view object.
+        /// Retrieves a specific model set view based on the view ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested model set view object.
+        /// Retrieves a specific model set view based on the view ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,6 +112,9 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Updates a specific model set view.
+        /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,6 +132,9 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Updates a specific model set view.
+        /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -148,7 +154,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The response contains information about the created model set job.
+        /// Deletes a specific model set view based on the view ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +173,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             return requestInfo;
         }
         /// <summary>
-        /// Returns the requested model set view object.
+        /// Retrieves a specific model set view based on the view ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,6 +191,9 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Updates a specific model set view.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

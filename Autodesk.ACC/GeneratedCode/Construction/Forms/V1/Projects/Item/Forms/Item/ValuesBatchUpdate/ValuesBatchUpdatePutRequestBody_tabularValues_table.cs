@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate
 {
-    /// <summary>The table to update.Possible values: ``worklogEntries``, ``materialsEntries``, ``equipmentEntries``</summary>
+    /// <summary>The table to update.Possible values: `worklogEntries`, `materialsEntries`, `equipmentEntries`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ValuesBatchUpdatePutRequestBody_tabularValues_table
     {

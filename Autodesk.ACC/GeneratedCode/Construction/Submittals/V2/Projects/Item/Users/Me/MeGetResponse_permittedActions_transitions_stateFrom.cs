@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MeGetResponse_permittedActions_transitions_stateFrom : IParsable
     {
-        /// <summary>The unique ID of the starting state. Possible values: ``create``, ``mgr-1``, ``sbc-1``. A ``rev`` (review), refers to the state where a submittal item is undergoing revisions or is being reviewed.</summary>
+        /// <summary>The unique ID of the starting state. Possible values: `create`, `mgr-1`, `sbc-1`. A `rev` (review), refers to the state where a submittal item is undergoing revisions or is being reviewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name of the starting state. Possible values: ``Create``, ``Manager Review``, ``Review``.</summary>
+        /// <summary>The name of the starting state. Possible values: `Create`, `Manager Review`, `Review`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

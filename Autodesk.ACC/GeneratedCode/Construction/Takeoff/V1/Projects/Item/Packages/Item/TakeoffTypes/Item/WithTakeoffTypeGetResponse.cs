@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
     public partial class WithTakeoffTypeGetResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The color of the takeoff type as it appears on the sheet or model.A color is represented by a value consisting of 6 or 8 hexadecimal digits, prefixed with a hash (#) symbol. In the 6-digit notation, the first pair of digits represent the red channel, the middle pair of digits represent the green channel and the last pair of digits represent the blue channel. The color is completely opaque.The 8-digit notation follows the structure of the 6-digit notation, where the additional last 2-digits represent the alpha channel (``00`` is transparent and ``ff`` is fully opaque).</summary>
+        /// <summary>The color of the takeoff type as it appears on the sheet or model.A color is represented by a value consisting of 6 or 8 hexadecimal digits, prefixed with a hash (#) symbol. In the 6-digit notation, the first pair of digits represent the red channel, the middle pair of digits represent the green channel and the last pair of digits represent the blue channel. The color is completely opaque.The 8-digit notation follows the structure of the 6-digit notation, where the additional last 2-digits represent the alpha channel (`00` is transparent and `ff` is fully opaque).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BorderColor { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #else
         public string BorderColor { get; set; }
 #endif
-        /// <summary>The color of the takeoff type as it appears on the sheet or model.A color is represented by a value consisting of 6 or 8 hexadecimal digits, prefixed with a hash (#) symbol. In the 6-digit notation, the first pair of digits represent the red channel, the middle pair of digits represent the green channel and the last pair of digits represent the blue channel. The color is completely opaque.The 8-digit notation follows the structure of the 6-digit notation, where the additional last 2-digits represent the alpha channel (``00`` is transparent and ``ff`` is fully opaque).</summary>
+        /// <summary>The color of the takeoff type as it appears on the sheet or model.A color is represented by a value consisting of 6 or 8 hexadecimal digits, prefixed with a hash (#) symbol. In the 6-digit notation, the first pair of digits represent the red channel, the middle pair of digits represent the green channel and the last pair of digits represent the blue channel. The color is completely opaque.The 8-digit notation follows the structure of the 6-digit notation, where the additional last 2-digits represent the alpha channel (`00` is transparent and `ff` is fully opaque).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #endif
         /// <summary>The size of the count marker.You must set this value in the UI.</summary>
         public double? CountMarkerSize { get; set; }
-        /// <summary>The date and time when the resource was created, in the following format: ``YYYY-MM-DDThh:mm:ssZ``.</summary>
+        /// <summary>The date and time when the resource was created, in the following format: `YYYY-MM-DDThh:mm:ssZ`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>A description of the takeoff type.Max length: 256</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,11 +82,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #else
         public List<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_secondaryQuantityDefinitions> SecondaryQuantityDefinitions { get; set; }
 #endif
-        /// <summary>The shape of the count marker.A count marker is one of the takeoff tool type options that is selected in the UI when creating a takeoff type.Possible values: ``CIRCLE``, ``TRIANGLE``, ``SQUARE``, ``DIAMOND``, ``CHECKMARK``.</summary>
+        /// <summary>The shape of the count marker.A count marker is one of the takeoff tool type options that is selected in the UI when creating a takeoff type.Possible values: `CIRCLE`, `TRIANGLE`, `SQUARE`, `DIAMOND`, `CHECKMARK`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_shapeType? ShapeType { get; set; }
-        /// <summary>The type of tool used to create takeoff items of this takeoff type.Possible values: ``COUNT``, ``DISTANCE``, ``AREA``, ``SELECT``.Corresponding UI names: ``COUNT``, ``LINEAR``, ``AREA``, ``BIM``.</summary>
+        /// <summary>The type of tool used to create takeoff items of this takeoff type.Possible values: `COUNT`, `DISTANCE`, `AREA`, `SELECT`.Corresponding UI names: `COUNT`, `LINEAR`, `AREA`, `BIM`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_tool? Tool { get; set; }
-        /// <summary>The date and time when the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ssZ``.</summary>
+        /// <summary>The date and time when the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ssZ`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The name of the user who last updated the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

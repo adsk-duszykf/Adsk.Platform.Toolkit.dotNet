@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MeGetResponse_permittedActions_createRfi : IParsable
     {
-        /// <summary>The list of statuses the user is permitted to transition an RFI to, without differentiating between workflow types (e.g., ``us`` and ``emea``).</summary>
+        /// <summary>The list of statuses the user is permitted to transition an RFI to, without differentiating between workflow types (e.g., `us` and `emea`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses? PermittedStatuses { get; set; }

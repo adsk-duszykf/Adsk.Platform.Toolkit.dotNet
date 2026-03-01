@@ -192,10 +192,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReviewsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by archive status in URL-encoded format.``true``: retrieves only archived reviews.``false``: retrieves only active (non-archived) reviews.If omitted, only active reviews are retrieved.For example: ``filter[archived]=false``.</summary>
+            /// <summary>Filter by archive status in URL-encoded format.`true`: retrieves only archived reviews.`false`: retrieves only active (non-archived) reviews.If omitted, only active reviews are retrieved.For example: `filter[archived]=false`.</summary>
             [QueryParameter("filter%5Barchived%5D")]
             public bool? Filterarchived { get; set; }
-            /// <summary>Filter by the date the review was archived, in URL-encoded format.It only applies if ``filter[archived]=true``.Provide a date range using the format ``startDate..endDate``.Both values must be in ISO 8601 format.For example: ``filter[archivedAt]=2023-06-01..2023-06-30``.</summary>
+            /// <summary>Filter by the date the review was archived, in URL-encoded format.It only applies if `filter[archived]=true`.Provide a date range using the format `startDate..endDate`.Both values must be in ISO 8601 format.For example: `filter[archivedAt]=2023-06-01..2023-06-30`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BarchivedAt%5D")]
@@ -205,7 +205,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BarchivedAt%5D")]
             public string FilterarchivedAt { get; set; }
 #endif
-            /// <summary>Filter by the Autodesk ID of the user who archived the review, in URL-encoded format. To find the ID, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.It only takes effect when ``filter[archived]=true`` is also set.For example: ``filter[archivedBy]=A96JX8NUKRLVFWSR``.</summary>
+            /// <summary>Filter by the Autodesk ID of the user who archived the review, in URL-encoded format. To find the ID, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).It only takes effect when `filter[archived]=true` is also set.For example: `filter[archivedBy]=A96JX8NUKRLVFWSR`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BarchivedBy%5D")]
@@ -215,7 +215,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BarchivedBy%5D")]
             public string FilterarchivedBy { get; set; }
 #endif
-            /// <summary>Filter by review creation date in URL-encoded format.Provide a date range using the format ``startDate..endDate``.Both values must be in ISO 8601 format.For example: ``filter[createdAt]=2023-06-01..2023-06-30``</summary>
+            /// <summary>Filter by review creation date in URL-encoded format.Provide a date range using the format `startDate..endDate`.Both values must be in ISO 8601 format.For example: `filter[createdAt]=2023-06-01..2023-06-30`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedAt%5D")]
@@ -225,7 +225,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BcreatedAt%5D")]
             public string FiltercreatedAt { get; set; }
 #endif
-            /// <summary>Filter by the due date of the current review step in URL-encoded format.Provide a date range using the format ``startDate..endDate``.Both values must be in ISO 8601 format.For example: ``filter[updatedAt]=2023-06-01..2023-06-30``.</summary>
+            /// <summary>Filter by the due date of the current review step in URL-encoded format.Provide a date range using the format `startDate..endDate`.Both values must be in ISO 8601 format.For example: `filter[updatedAt]=2023-06-01..2023-06-30`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcurrentStepDueDate%5D")]
@@ -235,7 +235,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BcurrentStepDueDate%5D")]
             public string FiltercurrentStepDueDate { get; set; }
 #endif
-            /// <summary>Filter by the date the review was finished, in URL-encoded format.Provide a date range using the format ``startDate..endDate``.Both values must be in ISO 8601 format.For example: ``filter[finishedAt]=2023-06-01..2023-06-30``.</summary>
+            /// <summary>Filter by the date the review was finished, in URL-encoded format.Provide a date range using the format `startDate..endDate`.Both values must be in ISO 8601 format.For example: `filter[finishedAt]=2023-06-01..2023-06-30`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BfinishedAt%5D")]
@@ -245,7 +245,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BfinishedAt%5D")]
             public string FilterfinishedAt { get; set; }
 #endif
-            /// <summary>Filter by review name in URL-encoded format.Retrieves reviews with names that contain the specified string (not case-sensitive).For example: ``filter[name]=Apartment`` retrieves reviews like ``Apartment Block A`` and ``apartment_rendering``.</summary>
+            /// <summary>Filter by review name in URL-encoded format.Retrieves reviews with names that contain the specified string (not case-sensitive).For example: `filter[name]=Apartment` retrieves reviews like `Apartment Block A` and `apartment_rendering`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bname%5D")]
@@ -255,7 +255,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5Bname%5D")]
             public string Filtername { get; set; }
 #endif
-            /// <summary>Filter by Autodesk ID of a company responsible for the next action, in URL-encoded format.For example: ``filter[nextActionByCompany]=81768771``.</summary>
+            /// <summary>Filter by Autodesk ID of a company responsible for the next action, in URL-encoded format.For example: `filter[nextActionByCompany]=81768771`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BnextActionByCompany%5D")]
@@ -265,7 +265,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BnextActionByCompany%5D")]
             public string FilternextActionByCompany { get; set; }
 #endif
-            /// <summary>Filter by Autodesk ID of a role responsible for the next action, in URL-encoded format.For example: ``filter[nextActionByRole]=1572818``.</summary>
+            /// <summary>Filter by Autodesk ID of a role responsible for the next action, in URL-encoded format.For example: `filter[nextActionByRole]=1572818`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BnextActionByRole%5D")]
@@ -275,7 +275,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BnextActionByRole%5D")]
             public string FilternextActionByRole { get; set; }
 #endif
-            /// <summary>Filter by Autodesk ID of a user responsible for the next action, in URL-encoded format.This includes reviews assigned directly to the user or to their role or company.For example: ``filter[nextActionByUser]=A96JX8NUKRLVFWSR``.</summary>
+            /// <summary>Filter by Autodesk ID of a user responsible for the next action, in URL-encoded format.This includes reviews assigned directly to the user or to their role or company.For example: `filter[nextActionByUser]=A96JX8NUKRLVFWSR`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BnextActionByUser%5D")]
@@ -285,10 +285,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BnextActionByUser%5D")]
             public string FilternextActionByUser { get; set; }
 #endif
-            /// <summary>Filter by review sequence ID in URL-encoded format.Retrieves reviews with sequence IDs that partially match the specified number.For example: ``filter[sequenceId]=11`` may retrieve ``113`` and ``211``.</summary>
+            /// <summary>Filter by review sequence ID in URL-encoded format.Retrieves reviews with sequence IDs that partially match the specified number.For example: `filter[sequenceId]=11` may retrieve `113` and `211`.</summary>
             [QueryParameter("filter%5BsequenceId%5D")]
             public int? FiltersequenceId { get; set; }
-            /// <summary>Filter by the review status in URL-encoded format.Possible values: ``OPEN``, ``CLOSED``, ``VOID``, ``FAILED``.For example: ``filter[status]=OPEN``.Reviews with status ``FAILED`` are only visible to project administrators.</summary>
+            /// <summary>Filter by the review status in URL-encoded format.Possible values: `OPEN`, `CLOSED`, `VOID`, `FAILED`.For example: `filter[status]=OPEN`.Reviews with status `FAILED` are only visible to project administrators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -298,7 +298,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5Bstatus%5D")]
             public string Filterstatus { get; set; }
 #endif
-            /// <summary>Filter by the review’s last updated date in URL-encoded format.Provide a date range using the format ``startDate..endDate``.Both values must be in ISO 8601 format.For example: ``filter[updatedAt]=2023-06-01..2023-06-30``.</summary>
+            /// <summary>Filter by the review’s last updated date in URL-encoded format.Provide a date range using the format `startDate..endDate`.Both values must be in ISO 8601 format.For example: `filter[updatedAt]=2023-06-01..2023-06-30`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -308,16 +308,16 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>Filter by a specific approval workflow ID in URL-encoded format.For example: ``filter[workflowId]=497f6eca-6276-4993-bfeb-53cbbbba6f08``.</summary>
+            /// <summary>Filter by a specific approval workflow ID in URL-encoded format.For example: `filter[workflowId]=497f6eca-6276-4993-bfeb-53cbbbba6f08`.</summary>
             [QueryParameter("filter%5BworkflowId%5D")]
             public Guid? FilterworkflowId { get; set; }
-            /// <summary>The maximum number of reviews to retrieve.Possible values: ``1-50``. Maximum: ``50``. Default: ``50``. For example: ``limit=2``.</summary>
+            /// <summary>The maximum number of reviews to retrieve.Possible values: `1-50`. Maximum: `50`. Default: `50`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first result to return (zero-based).Default: ``0``. For example: ``offset=10``.</summary>
+            /// <summary>The index of the first result to return (zero-based).Default: `0`. For example: `offset=10`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sorts the results by a single field.Use the format ``fieldName`` (ascending) or ``fieldName desc`` (descending).If no direction is specified, sorting defaults to ascending.Possible values: ``name``, ``status``, ``sequenceId``, ``currentStepDueDate``, ``createdAt``, ``finishedAt``.For example: ``sort=createdAt desc``.</summary>
+            /// <summary>Sorts the results by a single field.Use the format `fieldName` (ascending) or `fieldName desc` (descending).If no direction is specified, sorting defaults to ascending.Possible values: `name`, `status`, `sequenceId`, `currentStepDueDate`, `createdAt`, `finishedAt`.For example: `sort=createdAt desc`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

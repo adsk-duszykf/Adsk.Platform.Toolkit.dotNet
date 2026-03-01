@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
 {
-    /// <summary>The user&apos;s phone type.Possible values: ``home``, ``mobile``, or ``office``. Default value: ``mobile``.</summary>
+    /// <summary>The user&apos;s phone type.Possible values: `home`, `mobile`, or `office`. Default value: `mobile`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithUserGetResponse_phone_phoneType
     {

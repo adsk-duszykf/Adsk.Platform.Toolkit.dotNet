@@ -13,11 +13,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExportsPostRequestBody_options_standardMarkups : IParsable
     {
-        /// <summary>``true``: include links in the markups. Supported links are links to Sheets, Files, RFIs, Forms, Submittals, and Assets.``false``: (default) do not include links in markups.Note that if both ``includePublishedMarkups`` and ``includeUnpublishedMarkups`` are set to ``false``, this parameter will be treated as ``false``.</summary>
+        /// <summary>`true`: include links in the markups. Supported links are links to Sheets, Files, RFIs, Forms, Submittals, and Assets.`false`: (default) do not include links in markups.Note that if both `includePublishedMarkups` and `includeUnpublishedMarkups` are set to `false`, this parameter will be treated as `false`.</summary>
         public bool? IncludeMarkupLinks { get; set; }
-        /// <summary>``true``: (default) include all published standard markups in the exported sheets. Note that published markups are visible to all project members.``false``: export sheets without including published standard markups.</summary>
+        /// <summary>`true`: (default) include all published standard markups in the exported sheets. Note that published markups are visible to all project members.`false`: export sheets without including published standard markups.</summary>
         public bool? IncludePublishedMarkups { get; set; }
-        /// <summary>``true``: (default) standard markups that are visible only to their creators will be included in the exported sheets.``false``: exported sheets will exclude unpublished markups.</summary>
+        /// <summary>`true`: (default) standard markups that are visible only to their creators will be included in the exported sheets.`false`: exported sheets will exclude unpublished markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

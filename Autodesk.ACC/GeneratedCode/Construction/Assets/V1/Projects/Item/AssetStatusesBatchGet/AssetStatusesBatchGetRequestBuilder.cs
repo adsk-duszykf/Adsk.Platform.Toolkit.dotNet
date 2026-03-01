@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGe
         {
         }
         /// <summary>
-        /// POST asset-statuses:batch-get
+        /// Returns a specified set of statuses.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGe
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST asset-statuses:batch-get
+        /// Returns a specified set of statuses.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGe
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST asset-statuses:batch-get
+        /// Returns a specified set of statuses.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -105,12 +105,12 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGe
             return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// POST asset-statuses:batch-get
+        /// Returns a specified set of statuses.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssetStatusesBatchGetRequestBuilderPostQueryParameters 
         {
-            /// <summary>Whether or not soft-deleted object should be included in the response. If ``true``, soft-deleted objects are returned. If ``false``, they are not. The default is ``false``.</summary>
+            /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
         }

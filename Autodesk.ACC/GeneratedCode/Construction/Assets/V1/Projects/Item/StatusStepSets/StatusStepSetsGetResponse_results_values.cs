@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
 #else
         public string Bucket { get; set; }
 #endif
-        /// <summary>The color of the status as the status appears in the Assets UI.This field is not restricted as it is primarily a tool for the Assets UI to use.However, there are only certain colors that the Autodesk Construction Cloud Assets UI knows how tooperate with. Understood color values are: ``adsk-black``, ``adsk-white``, ``adsk-charcoal-900``,``adsk-charcoal-800``, ``adsk-charcoal-700``, ``adsk-charcoal-600``, ``adsk-charcoal-500``,``adsk-charcoal-400``, ``adsk-charcoal-300``, ``adsk-charcoal-200``, ``adsk-charcoal-100``,``adsk-charcoal-050``, ``adsk-blue-700``, ``adsk-blue-500``, ``adsk-blue-300``, ``adsk-blue-100``,``adsk-red-700``, ``adsk-red-500``, ``adsk-red-300``, ``adsk-green-700``, ``adsk-green-500``,``adsk-green-300``, ``adsk-yellow-orange-700``, ``adsk-yellow-orange-500``, ``adsk-yellow-orange-300``,``adsk-dark-blue-700``, ``adsk-dark-blue-500``, ``adsk-dark-blue-300``, ``adsk-pink-700``,``adsk-pink-500``, ``adsk-pink-300``, ``adsk-turquoise-700``, ``adsk-turquoise-500``,``adsk-turquoise-300``, ``adsk-purple-700``, ``adsk-purple-500``, ``adsk-purple-300``,``adsk-salmon-700``, ``adsk-salmon-500``, ``adsk-salmon-300``, ``adsk-brown-700``, ``adsk-brown-500``,``adsk-brown-300``.Using colors other than those specified here is not disallowed, but may result in unexpected behavior inthe Assets UI.</summary>
+        /// <summary>The color of the status as the status appears in the Assets UI.This field is not restricted as it is primarily a tool for the Assets UI to use.However, there are only certain colors that the Autodesk Construction Cloud Assets UI knows how tooperate with. Understood color values are: `adsk-black`, `adsk-white`, `adsk-charcoal-900`,`adsk-charcoal-800`, `adsk-charcoal-700`, `adsk-charcoal-600`, `adsk-charcoal-500`,`adsk-charcoal-400`, `adsk-charcoal-300`, `adsk-charcoal-200`, `adsk-charcoal-100`,`adsk-charcoal-050`, `adsk-blue-700`, `adsk-blue-500`, `adsk-blue-300`, `adsk-blue-100`,`adsk-red-700`, `adsk-red-500`, `adsk-red-300`, `adsk-green-700`, `adsk-green-500`,`adsk-green-300`, `adsk-yellow-orange-700`, `adsk-yellow-orange-500`, `adsk-yellow-orange-300`,`adsk-dark-blue-700`, `adsk-dark-blue-500`, `adsk-dark-blue-300`, `adsk-pink-700`,`adsk-pink-500`, `adsk-pink-300`, `adsk-turquoise-700`, `adsk-turquoise-500`,`adsk-turquoise-300`, `adsk-purple-700`, `adsk-purple-500`, `adsk-purple-300`,`adsk-salmon-700`, `adsk-salmon-500`, `adsk-salmon-300`, `adsk-brown-700`, `adsk-brown-500`,`adsk-brown-300`.Using colors other than those specified here is not disallowed, but may result in unexpected behavior inthe Assets UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -76,9 +76,9 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A flag indicating whether the component is active or inactive (``isActive`` is ``true`` if-and-only-if ``deletedAt`` is empty).</summary>
+        /// <summary>A flag indicating whether the component is active or inactive (`isActive` is `true` if-and-only-if `deletedAt` is empty).</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The display label of the status. This label appears in the Assets UI when viewing statuses. The label mustbe unique within this status set, but does not need to be unique within the project (in other words, thesame label can be used in multiple status sets in the same project). ``Uniqueness`` in this context meanscase-insensitive.</summary>
+        /// <summary>The display label of the status. This label appears in the Assets UI when viewing statuses. The label mustbe unique within this status set, but does not need to be unique within the project (in other words, thesame label can be used in multiple status sets in the same project). `Uniqueness` in this context meanscase-insensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -86,7 +86,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form ``b.{UUID}``.</summary>
+        /// <summary>The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form `b.{UUID}`.</summary>
         public Guid? ProjectId { get; set; }
         /// <summary>A value that indicates the order of a status within its status set. Each status in the set has a sortorder value that indicates its order relative to other statuses in the set. A status set&apos;s sort ordervalues don&apos;t necessarily start at 1, and may not be sequential. The only way to know a status&apos;s orderwithin a set is to compare its sort order value with the sort order values of other statuses.</summary>
         public int? SortOrder { get; set; }

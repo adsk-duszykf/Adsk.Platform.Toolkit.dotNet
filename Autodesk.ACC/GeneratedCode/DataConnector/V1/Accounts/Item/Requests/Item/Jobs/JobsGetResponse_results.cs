@@ -16,7 +16,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
         public Guid? AccountId { get; set; }
         /// <summary>The date and time the job was completed, presented in ISO 8601 format. If the job has not yet completed, the value is null.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The completion status for completed jobs. Possible values: ``success``, ``failed``, ``cancelled``.</summary>
+        /// <summary>The completion status for completed jobs. Possible values: `success`, `failed`, `cancelled`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompletionStatus { get; set; }
@@ -88,7 +88,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
 #endif
         /// <summary>The date and time the job was started, presented in ISO 8601 format. If the job has not yet started, the value is null.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The current status of the job. Possible values: ``queued``, ``running``, ``complete``.</summary>
+        /// <summary>The current status of the job. Possible values: `queued`, `running`, `complete`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.admin.v2.projects.item collection</summary>
-        /// <param name="position">The ID of the project. This corresponds to project ID in the `Data Management API &lt;/en/docs/data/v2/&gt;`_. To convert a project ID in the Data Management API into a project ID in the ACC API you need to remove the ``**b.**`` prefix. For example, a project ID of ``b.a4be0c34a-4ab7`` translates to a project ID of ``a4be0c34a-4ab7``.</param>
+        /// <param name="position">The ID of the project. This corresponds to project ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). To convert a project ID in the Data Management API into a project ID in the ACC API you need to remove the `b.` prefix. For example, a project ID of `b.a4be0c34a-4ab7` translates to a project ID of `a4be0c34a-4ab7`.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.WithProjectItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.admin.v2.projects.item collection</summary>
-        /// <param name="position">The ID of the project. This corresponds to project ID in the `Data Management API &lt;/en/docs/data/v2/&gt;`_. To convert a project ID in the Data Management API into a project ID in the ACC API you need to remove the ``**b.**`` prefix. For example, a project ID of ``b.a4be0c34a-4ab7`` translates to a project ID of ``a4be0c34a-4ab7``.</param>
+        /// <param name="position">The ID of the project. This corresponds to project ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). To convert a project ID in the Data Management API into a project ID in the ACC API you need to remove the `b.` prefix. For example, a project ID of `b.a4be0c34a-4ab7` translates to a project ID of `a4be0c34a-4ab7`.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.WithProjectItemRequestBuilder this[string position]

@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
     {
         /// <summary>The ID of the PDF export job.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The result of a completed export job:- If the exporting job&apos;s ``status`` value is ``successful``, the downloadable signed url will be included in the ``result.output`` object- If the exporting job&apos;s ``status`` value is ``failed`` (e.g. the files have been deleted), the ``result.error`` object will be present with details.- If the exporting job&apos;s ``status`` value is ``partialSuccess`` (e.g. when some dwg/rvt files do not contain any exportable views or sheets), the ``result.output.failedFiles`` object will be present with file urn and reason.</summary>
+        /// <summary>The result of a completed export job:- If the exporting job&apos;s `status` value is `successful`, the downloadable signed url will be included in the `result.output` object- If the exporting job&apos;s `status` value is `failed` (e.g. the files have been deleted), the `result.error` object will be present with details.- If the exporting job&apos;s `status` value is `partialSuccess` (e.g. when some dwg/rvt files do not contain any exportable views or sheets), the `result.output.failedFiles` object will be present with file urn and reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>? Result { get; set; }

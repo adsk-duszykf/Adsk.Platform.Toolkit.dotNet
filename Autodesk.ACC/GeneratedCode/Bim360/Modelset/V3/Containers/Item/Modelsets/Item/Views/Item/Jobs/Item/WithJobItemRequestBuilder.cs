@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
         {
         }
         /// <summary>
-        /// Many PATCH, POST and DELETE calls to model set views endpoints will result in a job. You can use this endpoint to track the progress of these jobs.
+        /// Retrieves information about a given model set view job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.Jobs.Item.WithJobGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.Jobs.Item.WithJobGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.Jobs.Item.WithJobGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Many PATCH, POST and DELETE calls to model set views endpoints will result in a job. You can use this endpoint to track the progress of these jobs.
+        /// Retrieves information about a given model set view job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.Jobs.Item.WithJobResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.Jobs.Item.WithJobResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.Jobs.Item.WithJobResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Many PATCH, POST and DELETE calls to model set views endpoints will result in a job. You can use this endpoint to track the progress of these jobs.
+        /// Retrieves information about a given model set view job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

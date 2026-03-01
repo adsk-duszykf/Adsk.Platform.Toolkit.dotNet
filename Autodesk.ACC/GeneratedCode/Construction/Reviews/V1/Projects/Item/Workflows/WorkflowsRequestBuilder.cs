@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
     public partial class WorkflowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.reviews.v1.projects.item.workflows.item collection</summary>
-        /// <param name="position">The ID of the approval workflow.To find available workflow IDs, call `GET Workflows &lt;/en/docs/acc/v1/reference/http/reviews-workflows-GET&gt;`_.</param>
+        /// <param name="position">The ID of the approval workflow.To find available workflow IDs, call [GET Workflows](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-workflows-GET).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.reviews.v1.projects.item.workflows.item collection</summary>
-        /// <param name="position">The ID of the approval workflow.To find available workflow IDs, call `GET Workflows &lt;/en/docs/acc/v1/reference/http/reviews-workflows-GET&gt;`_.</param>
+        /// <param name="position">The ID of the approval workflow.To find available workflow IDs, call [GET Workflows](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-workflows-GET).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder this[string position]
@@ -192,10 +192,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkflowsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters the results based on who initiated the workflow. For example: ``filter[initiator]=true``.``true``: return only workflows initiated by the current user.This filter is ignored if the user is a project admin.``false``: (default) return workflows regardless of who initiated them.Note that this filter cannot be used together with ``filter[status]``.</summary>
+            /// <summary>Filters the results based on who initiated the workflow. For example: `filter[initiator]=true`.`true`: return only workflows initiated by the current user.This filter is ignored if the user is a project admin.`false`: (default) return workflows regardless of who initiated them.Note that this filter cannot be used together with `filter[status]`.</summary>
             [QueryParameter("filter%5Binitiator%5D")]
             public bool? Filterinitiator { get; set; }
-            /// <summary>Filters the results by workflow status. For example: ``filter[status]=INACTIVE``. Possible values:``ACTIVE``: return only active workflows.``INACTIVE``: return only inactive (disabled) workflows.Default: ``ACTIVE``.Note that this filter cannot be used together with ``filter[initiator]``.</summary>
+            /// <summary>Filters the results by workflow status. For example: `filter[status]=INACTIVE`. Possible values:`ACTIVE`: return only active workflows.`INACTIVE`: return only inactive (disabled) workflows.Default: `ACTIVE`.Note that this filter cannot be used together with `filter[initiator]`.</summary>
             [Obsolete("This property is deprecated, use FilterstatusAsGetFilterStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,16 +206,16 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             [QueryParameter("filter%5Bstatus%5D")]
             public string Filterstatus { get; set; }
 #endif
-            /// <summary>Filters the results by workflow status. For example: ``filter[status]=INACTIVE``. Possible values:``ACTIVE``: return only active workflows.``INACTIVE``: return only inactive (disabled) workflows.Default: ``ACTIVE``.Note that this filter cannot be used together with ``filter[initiator]``.</summary>
+            /// <summary>Filters the results by workflow status. For example: `filter[status]=INACTIVE`. Possible values:`ACTIVE`: return only active workflows.`INACTIVE`: return only inactive (disabled) workflows.Default: `ACTIVE`.Note that this filter cannot be used together with `filter[initiator]`.</summary>
             [QueryParameter("filter%5Bstatus%5D")]
             public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.GetFilterStatusQueryParameterType? FilterstatusAsGetFilterStatusQueryParameterType { get; set; }
-            /// <summary>The maximum number of approval workflows to return in a single request. Possible values: ``1-50``. Maximum: ``50``. Default: ``50``. For example: ``limit=2``.</summary>
+            /// <summary>The maximum number of approval workflows to return in a single request. Possible values: `1-50`. Maximum: `50`. Default: `50`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index at which the endpoint starts returning results. Used for pagination. Default: ``0``. For example: ``offset=10``.</summary>
+            /// <summary>The index at which the endpoint starts returning results. Used for pagination. Default: `0`. For example: `offset=10`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Specifies a single field to sort the results by. The default order is ascending (``asc``); to sort in descending order, add ``desc``.Possible sorting fields: ``name``, ``status``, ``updatedAt``.For example: ``sort=name desc``.</summary>
+            /// <summary>Specifies a single field to sort the results by. The default order is ascending (`asc`); to sort in descending order, add `desc`.Possible sorting fields: `name`, `status`, `updatedAt`.For example: `sort=name desc`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

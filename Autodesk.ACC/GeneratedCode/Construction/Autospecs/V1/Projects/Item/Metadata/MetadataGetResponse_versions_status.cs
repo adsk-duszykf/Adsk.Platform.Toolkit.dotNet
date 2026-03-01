@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
 {
-    /// <summary>The status of the specification extraction. Note that Smart Register data (GET smartRegster) is only available when the status is ``Completed``.Note that we do not currently support webhooks for the AutoSpecs API.Possible values: ``Completed``, ``In Progress``, ``Failed``</summary>
+    /// <summary>The status of the specification extraction. Note that Smart Register data (GET smartRegster) is only available when the status is `Completed`.Note that we do not currently support webhooks for the AutoSpecs API.Possible values: `Completed`, `In Progress`, `Failed`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MetadataGetResponse_versions_status
     {

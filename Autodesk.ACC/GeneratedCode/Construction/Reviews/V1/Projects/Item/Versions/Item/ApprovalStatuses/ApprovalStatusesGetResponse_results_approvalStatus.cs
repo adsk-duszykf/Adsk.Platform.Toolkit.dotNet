@@ -29,7 +29,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The value of the approval status. Possible values: ``APPROVED``, ``REJECTED``, ``IN_REVIEW``.</summary>
+        /// <summary>The value of the approval status. Possible values: `APPROVED`, `REJECTED`, `IN_REVIEW`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_approvalStatus_value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
         public double? DaysToRespond { get; set; }
         /// <summary>The internal, globally unique identifier (UUID) for the step. Each step in the workflow has a unique ID.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The number representing the order of the steps, where ``1`` is the first step.</summary>
+        /// <summary>The number representing the order of the steps, where `1` is the first step.</summary>
         public double? StepNumber { get; set; }
         /// <summary>A list of tasks associated with this template. Each task has its own unique identifier (UUID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

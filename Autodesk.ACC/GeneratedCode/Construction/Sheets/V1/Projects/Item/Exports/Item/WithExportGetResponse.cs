@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
     {
         /// <summary>The ID of the sheets export job.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The result of a completed export job.- If the ``status`` is ``successful``, a downloadable signed URL will be included in the ``result.output`` object.- If the ``status`` value is ``failed`` (e.g., because some files were deleted), the ``result.error`` object will include details of the error.</summary>
+        /// <summary>The result of a completed export job.- If the `status` is `successful`, a downloadable signed URL will be included in the `result.output` object.- If the `status` value is `failed` (e.g., because some files were deleted), the `result.error` object will include details of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse_result? Result { get; set; }
@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
 #else
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse_result Result { get; set; }
 #endif
-        /// <summary>The status of the sheets export job.Possible values: ``successful``, ``processing``, ``failed``</summary>
+        /// <summary>The status of the sheets export job.Possible values: `successful`, `processing`, `failed`</summary>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

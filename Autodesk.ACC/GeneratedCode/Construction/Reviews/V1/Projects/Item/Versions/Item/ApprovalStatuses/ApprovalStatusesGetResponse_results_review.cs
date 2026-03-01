@@ -17,7 +17,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
         public Guid? Id { get; set; }
         /// <summary>A unique, auto-incrementing number assigned to the review when it is first submitted.This ID does not change, even if the review is sent back to the initiator and goes through multiple rounds.It identifies the review within the project and reflects the order in which reviews were created.</summary>
         public int? SequenceId { get; set; }
-        /// <summary>The current status of the review.Possible values: ``OPEN``, ``CLOSED``, ``VOID``, ``FAILED``.</summary>
+        /// <summary>The current status of the review.Possible values: `OPEN`, `CLOSED`, `VOID`, `FAILED`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_review_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

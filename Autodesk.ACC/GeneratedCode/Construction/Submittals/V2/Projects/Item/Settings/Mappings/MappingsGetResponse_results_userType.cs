@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings
 {
-    /// <summary>The ID for the type of user in the record. Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+    /// <summary>The ID for the type of user in the record. Possible values: `1` (user), `2` (company), `3` (role).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MappingsGetResponse_results_userType
     {

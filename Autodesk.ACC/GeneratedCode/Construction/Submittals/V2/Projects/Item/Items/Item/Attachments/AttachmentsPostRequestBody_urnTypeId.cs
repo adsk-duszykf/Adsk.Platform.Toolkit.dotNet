@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments
 {
-    /// <summary>Specifies the type of URN associated with the attachment.Possible values: ``2``</summary>
+    /// <summary>Specifies the type of URN associated with the attachment.Possible values: `2`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttachmentsPostRequestBody_urnTypeId
     {

@@ -15,7 +15,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
     {
         /// <summary>The scale used in the sheet view calibration.</summary>
         public double? ScaleFactor { get; set; }
-        /// <summary>The units used in the sheet view calibration.Possible values: ``FT_AND_DECIMAL_IN``, ``FT_AND_FRACTIONAL_IN``, ``M``, ``CM``, ``MM``.</summary>
+        /// <summary>The units used in the sheet view calibration.Possible values: `FT_AND_DECIMAL_IN`, `FT_AND_FRACTIONAL_IN`, `M`, `CM`, `MM`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_view_SheetView_calibration_units? Units { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

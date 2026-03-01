@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public List<string> BridgeTargetProjectIds { get; set; }
 #endif
-        /// <summary>A list of predefined categories to assign to the RFI.Categories help group RFIs for filtering and reporting. Each value must match a category configured in the project’s RFI settings. Categories are case-sensitive and project-specific.RFI categories are configured in Project Admin and may differ between projects.Some possible values: ``Code Compliance``, ``Constructability``, ``Design Coordination``, ``Documentation Conflict``, ``Documentation Incomplete``, ``Field condition``, ``Other``.</summary>
+        /// <summary>A list of predefined categories to assign to the RFI.Categories help group RFIs for filtering and reporting. Each value must match a category configured in the project’s RFI settings. Categories are case-sensitive and project-specific.RFI categories are configured in Project Admin and may differ between projects.Some possible values: `Code Compliance`, `Constructability`, `Design Coordination`, `Documentation Conflict`, `Documentation Incomplete`, `Field condition`, `Other`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Category { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public List<string> Category { get; set; }
 #endif
-        /// <summary>The default cost impact value for new RFIs of this type.Possible values: ``null``, ``Yes``, ``No``, ``Unknown``.</summary>
+        /// <summary>The default cost impact value for new RFIs of this type.Possible values: `null`, `Yes`, `No`, `Unknown`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostImpact { get; set; }
@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public string CostImpact { get; set; }
 #endif
-        /// <summary>The list of available disciplines for RFIs.Each discipline is configured in Project Admin.Some possible values: ``Architectural``, ``Civil/Site``, ``Concrete``, ``Electrical``, ``Exterior Envelope``, ``Fire Protection``, ``Interior/Finishes``, ``Landscaping``, ``Masonry``, ``Mechanical``, ``Plumbing``, ``Structural``, ``Other``.</summary>
+        /// <summary>The list of available disciplines for RFIs.Each discipline is configured in Project Admin.Some possible values: `Architectural`, `Civil/Site`, `Concrete`, `Electrical`, `Exterior Envelope`, `Fire Protection`, `Interior/Finishes`, `Landscaping`, `Masonry`, `Mechanical`, `Plumbing`, `Structural`, `Other`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Discipline { get; set; }
@@ -48,7 +48,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
         public int? DueDateOffset { get; set; }
         /// <summary>The ID of the default RFI type assigned to the project. This is the unique identifier of the RFI type that will be selected by default when creating a new RFI.</summary>
         public Guid? Id { get; set; }
-        /// <summary>``true``: This RFI type is the default for the project.``false``: (default) This RFI type is not the default.</summary>
+        /// <summary>`true`: This RFI type is the default for the project.`false`: (default) This RFI type is not the default.</summary>
         public bool? IsDefault { get; set; }
         /// <summary>The default text for the **Location** field when creating a new RFI.Note that the API does not auto-populate this value.Clients are responsible for applying the default if desired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The default priority for new RFIs of this type.The available priority values are configured in Project Admin.If no default is set, this field is ``null``.Note that the API does not auto-populate this value when creating an RFI.Clients are responsible for applying the default if desired.Some possible values: ``null``, ``High``, ``Normal``, ``Low``.</summary>
+        /// <summary>The default priority for new RFIs of this type.The available priority values are configured in Project Admin.If no default is set, this field is `null`.Note that the API does not auto-populate this value when creating an RFI.Clients are responsible for applying the default if desired.Some possible values: `null`, `High`, `Normal`, `Low`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Priority { get; set; }
@@ -106,7 +106,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The default schedule impact value for new RFIs of this type.Possible values: ``null``, ``Yes``, ``No``, ``Unknown``.</summary>
+        /// <summary>The default schedule impact value for new RFIs of this type.Possible values: `null`, `Yes`, `No`, `Unknown`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScheduleImpact { get; set; }
@@ -114,7 +114,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public string ScheduleImpact { get; set; }
 #endif
-        /// <summary>The current status of the RFI type.Possible values:- ``active``: The type is available for use when creating or updating RFIs.- ``inactive``: The type exists but cannot currently be selected when creating RFIs.- ``hidden``: The type is hidden from users in the UI but may still appear in the API.Only active types are available by default when creating new RFIs.</summary>
+        /// <summary>The current status of the RFI type.Possible values:- `active`: The type is available for use when creating or updating RFIs.- `inactive`: The type exists but cannot currently be selected when creating RFIs.- `hidden`: The type is hidden from users in the UI but may still appear in the API.Only active types are available by default when creating new RFIs.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_status? Status { get; set; }
         /// <summary>A list of users, companies, or roles that can be assigned to this project role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_watchers> Watchers { get; set; }
 #endif
-        /// <summary>The workflow type used for this RFI type.Possible values:- ``US``: The US-style workflow, with a Reviewer and optional Manager.- ``EU``: The EU-style workflow, with a Project Coordinator and Project Reviewer.The workflow type determines the available statuses and workflow roles for RFIs of this type.</summary>
+        /// <summary>The workflow type used for this RFI type.Possible values:- `US`: The US-style workflow, with a Reviewer and optional Manager.- `EU`: The EU-style workflow, with a Project Coordinator and Project Reviewer.The workflow type determines the available statuses and workflow roles for RFIs of this type.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_wfType? WfType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

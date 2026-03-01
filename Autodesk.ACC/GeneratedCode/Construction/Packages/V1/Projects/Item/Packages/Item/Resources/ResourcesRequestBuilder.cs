@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ResourcesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by file type. This can be a single value or a comma-separated list of values.For example: ``filter[fileType]=pdf,rvt``. Refer to `Supported Files &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Supported_Files_Docs&gt;`_ for more details.</summary>
+            /// <summary>Filter by file type. This can be a single value or a comma-separated list of values.For example: `filter[fileType]=pdf,rvt`. Refer to [Supported Files](https://help.autodesk.com/view/BUILD/ENU/?guid=Supported_Files_Docs) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BfileType%5D")]
@@ -113,7 +113,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
             [QueryParameter("filter%5BfileType%5D")]
             public string FilterfileType { get; set; }
 #endif
-            /// <summary>Filter by file version number. This can be a single value or a comma-separated list of values.For example: ``filter[version]=1,2,3``</summary>
+            /// <summary>Filter by file version number. This can be a single value or a comma-separated list of values.For example: `filter[version]=1,2,3`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bversion%5D")]
@@ -123,13 +123,13 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
             [QueryParameter("filter%5Bversion%5D")]
             public string Filterversion { get; set; }
 #endif
-            /// <summary>The number of resources to return in the response payload.Possible values: ``1-1000``. Default: ``200``. For example: ``limit=2``.</summary>
+            /// <summary>The number of resources to return in the response payload.Possible values: `1-1000`. Default: `200`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of resources that you want to begin retrieving results from.Default: ``0``. For example: ``offset=10``.</summary>
+            /// <summary>The number of resources that you want to begin retrieving results from.Default: `0`. For example: `offset=10`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Provide options to sort on single field, in ascending (``asc``) by default or descending (``desc``) order.Possible values of sorting field: ``name``, ``description``, ``updatedAt``, ``approvalStatus``, ``version``. For example: ``sort=name desc``.</summary>
+            /// <summary>Provide options to sort on single field, in ascending (`asc`) by default or descending (`desc`) order.Possible values of sorting field: `name`, `description`, `updatedAt`, `approvalStatus`, `version`. For example: `sort=name desc`.</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,7 +140,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            /// <summary>Provide options to sort on single field, in ascending (``asc``) by default or descending (``desc``) order.Possible values of sorting field: ``name``, ``description``, ``updatedAt``, ``approvalStatus``, ``version``. For example: ``sort=name desc``.</summary>
+            /// <summary>Provide options to sort on single field, in ascending (`asc`) by default or descending (`desc`) order.Possible values of sorting field: `name`, `description`, `updatedAt`, `approvalStatus`, `version`. For example: `sort=name desc`.</summary>
             [QueryParameter("sort")]
             public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
         }

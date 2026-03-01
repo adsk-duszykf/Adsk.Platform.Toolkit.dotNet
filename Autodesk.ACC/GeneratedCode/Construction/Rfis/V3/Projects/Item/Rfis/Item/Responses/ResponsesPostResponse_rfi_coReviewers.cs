@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
     public partial class ResponsesPostResponse_rfi_coReviewers : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID of the reviewer. The reviewer can be a user (``autodeskId``), role (``memberGroupId``), or company (``memberGroupId``).To find details about users, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_, to find details about companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.Note that we do not currently support finding details about roles for a project.</summary>
+        /// <summary>The Autodesk ID of the reviewer. The reviewer can be a user (`autodeskId`), role (`memberGroupId`), or company (`memberGroupId`).To find details about users, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET), to find details about companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.Note that we do not currently support finding details about roles for a project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The type of reviewer.Possible values: ``user``, ``role``, ``company``</summary>
+        /// <summary>The type of reviewer.Possible values: `user`, `role`, `company`</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_rfi_coReviewers_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

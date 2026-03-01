@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
         {
         }
         /// <summary>
-        /// POST categories:batch-get
+        /// Returns a specified set of categories.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST categories:batch-get
+        /// Returns a specified set of categories.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST categories:batch-get
+        /// Returns a specified set of categories.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -105,12 +105,12 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
             return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// POST categories:batch-get
+        /// Returns a specified set of categories.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CategoriesBatchGetRequestBuilderPostQueryParameters 
         {
-            /// <summary>If provided, and set to ``true``, the globally-unique category ``uid`` field will be present in the response.The globally unique category ID is used with the (upcoming) ``v3`` category APIs. The option to include theglobally-unique ID with the ``v1`` category APIs is to help consumers transition to the new IDs.</summary>
+            /// <summary>If provided, and set to `true`, the globally-unique category `uid` field will be present in the response.The globally unique category ID is used with the (upcoming) `v3` category APIs. The option to include theglobally-unique ID with the `v1` category APIs is to help consumers transition to the new IDs.</summary>
             [QueryParameter("includeUid")]
             public bool? IncludeUid { get; set; }
         }

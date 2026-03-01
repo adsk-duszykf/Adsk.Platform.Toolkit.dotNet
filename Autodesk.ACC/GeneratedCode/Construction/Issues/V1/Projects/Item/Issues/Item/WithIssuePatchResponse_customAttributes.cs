@@ -22,9 +22,9 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The type of attribute. Possible values: ``numeric``, ``paragraph``, ``list`` (this corresponds to ``dropdown`` in the UI), ``text``.</summary>
+        /// <summary>The type of attribute. Possible values: `numeric`, `paragraph`, `list` (this corresponds to `dropdown` in the UI), `text`.</summary>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchResponse_customAttributes_type? Type { get; set; }
-        /// <summary>Custom attribute value. Possible value types: ``string``, ``number``, ``null``.</summary>
+        /// <summary>Custom attribute value. Possible value types: `string`, `number`, `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchResponse_customAttributes_value? Value { get; set; }

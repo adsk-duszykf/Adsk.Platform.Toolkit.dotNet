@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostRequestBody_attachments> Attachments { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the reviewer for whom the response is being submitted.To find user details, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.&apos;</summary>
+        /// <summary>The Autodesk ID of the reviewer for whom the response is being submitted.To find user details, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostRequestBody_onBehalf? OnBehalf { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostRequestBody_onBehalf OnBehalf { get; set; }
 #endif
-        /// <summary>The status of the response.To determine which status values the user is allowed to submit, call `GET users/me &lt;/en/docs/acc/v1/reference/http/rfis-users-me-GET/&gt;`_.Possible values: ``answered``, ``rejected``.</summary>
+        /// <summary>The status of the response.To determine which status values the user is allowed to submit, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET/).Possible values: `answered`, `rejected`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostRequestBody_status? Status { get; set; }
         /// <summary>The body text of the RFI response. This field supports plain text only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

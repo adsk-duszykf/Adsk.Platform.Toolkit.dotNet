@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item
     public partial class ResponsesGetResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of response. Possible values: ``1`` (Approved), ``2`` (Revise and submit), ``3`` (Rejected).</summary>
+        /// <summary>The type of response. Possible values: `1` (Approved), `2` (Revise and submit), `3` (Rejected).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CategoryId { get; set; }
@@ -32,11 +32,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item
 #endif
         /// <summary>The internal, globally unique identifier (UUID) for the response.</summary>
         public Guid? Id { get; set; }
-        /// <summary>``true``: if the response was not deleted.``false``: if the response was deleted.</summary>
+        /// <summary>`true`: if the response was not deleted.`false`: if the response was deleted.</summary>
         public bool? IsActive { get; set; }
-        /// <summary>``true``: settings this response for a submittal item means an approval.``false``: settings this response for a submittal item means dis-approval.This attribute is taken from the related categoryId</summary>
+        /// <summary>`true`: settings this response for a submittal item means an approval.`false`: settings this response for a submittal item means dis-approval.This attribute is taken from the related categoryId</summary>
         public bool? IsApproval { get; set; }
-        /// <summary>``true``: if the response is currently associated with a submittal item.``false``: if the response is not currently associated with a submittal item.</summary>
+        /// <summary>`true`: if the response is currently associated with a submittal item.`false`: if the response is not currently associated with a submittal item.</summary>
         public bool? IsInUse { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

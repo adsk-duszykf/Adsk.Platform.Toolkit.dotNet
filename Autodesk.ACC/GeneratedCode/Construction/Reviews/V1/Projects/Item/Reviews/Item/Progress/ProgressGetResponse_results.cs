@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
     public partial class ProgressGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Information about the user recorded when the step status is ``SUBMITTED`` or ``VOID``. In the Reviews UI, these statuses occur when a participant submits their decision or when a step is voided.</summary>
+        /// <summary>Information about the user recorded when the step status is `SUBMITTED` or `VOID`. In the Reviews UI, these statuses occur when a participant submits their decision or when a step is voided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse_results_actionBy? ActionBy { get; set; }
@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The current status of the step. Possible values:- ``CLAIMED``: A user has claimed the step.- ``UNCLAIMED``: No user has claimed the step.- ``SUBMITTED``: A user submitted the step (e.g., approved/rejected/custom).- ``VOID``: The step was voided.</summary>
+        /// <summary>The current status of the step. Possible values:- `CLAIMED`: A user has claimed the step.- `UNCLAIMED`: No user has claimed the step.- `SUBMITTED`: A user submitted the step (e.g., approved/rejected/custom).- `VOID`: The step was voided.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse_results_status? Status { get; set; }
         /// <summary>The ID of the review step this progress record relates to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

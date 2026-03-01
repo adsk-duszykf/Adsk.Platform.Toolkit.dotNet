@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
         {
         }
         /// <summary>
-        /// Retrieves a specified submittal item. Note that this endpoint is not compatible with BIM 360 projects.
+        /// Retrieve information about a single submittal item that the user has permission to view.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specified submittal item. Note that this endpoint is not compatible with BIM 360 projects.
+        /// Retrieve information about a single submittal item that the user has permission to view.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates specific attributes of an existing submittal item. Only fields listed in the ``permittedActions`` object can be modified.
+        /// Updates specific attributes of an existing submittal item. Only fields listed in the `permittedActions` object can be modified.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemPatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +108,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemPatchResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates specific attributes of an existing submittal item. Only fields listed in the ``permittedActions`` object can be modified.
+        /// Updates specific attributes of an existing submittal item. Only fields listed in the `permittedActions` object can be modified.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specified submittal item. Note that this endpoint is not compatible with BIM 360 projects.
+        /// Retrieve information about a single submittal item that the user has permission to view.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates specific attributes of an existing submittal item. Only fields listed in the ``permittedActions`` object can be modified.
+        /// Updates specific attributes of an existing submittal item. Only fields listed in the `permittedActions` object can be modified.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

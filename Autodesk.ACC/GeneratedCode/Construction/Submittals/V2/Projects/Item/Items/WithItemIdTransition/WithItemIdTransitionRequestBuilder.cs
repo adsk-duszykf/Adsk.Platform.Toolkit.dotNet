@@ -19,7 +19,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionRequestBuilder"/> and sets the default values.
         /// </summary>
-        /// <param name="itemId">The ID of the submittal item. To find the item ID, call `GET items &lt;/en/docs/acc/v1/reference/http/submittals-items-GET/&gt;`_.</param>
+        /// <param name="itemId">The ID of the submittal item. To find the item ID, call [GET items](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-GET/).</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithItemIdTransitionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string itemId = "") : base(requestAdapter, "{+baseurl}/construction/submittals/v2/projects/{projectId}/items/{itemId}:transition", pathParameters)
@@ -35,7 +35,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
         {
         }
         /// <summary>
-        /// To identify permitted transitions and required fields, call `GET Item/:id &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.
+        /// Transitions a submittal item to a specified state in the submittal workflow, allowing it to progress according to the defined process.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -55,7 +55,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To identify permitted transitions and required fields, call `GET Item/:id &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.
+        /// Transitions a submittal item to a specified state in the submittal workflow, allowing it to progress according to the defined process.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To identify permitted transitions and required fields, call `GET Item/:id &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.
+        /// Transitions a submittal item to a specified state in the submittal workflow, allowing it to progress according to the defined process.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

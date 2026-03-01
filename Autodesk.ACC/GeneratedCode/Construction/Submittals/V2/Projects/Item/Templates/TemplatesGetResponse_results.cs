@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
     public partial class TemplatesGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time when the template was originally created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2025-01-20T12:00:00.198466Z``.</summary>
+        /// <summary>The date and time when the template was originally created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2025-01-20T12:00:00.198466Z`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user that created the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse_results_steps> Steps { get; set; }
 #endif
-        /// <summary>The date and time when the template was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2025-01-20T12:00:00.198466Z``.</summary>
+        /// <summary>The date and time when the template was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2025-01-20T12:00:00.198466Z`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The Autodesk ID of the user that last updated the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

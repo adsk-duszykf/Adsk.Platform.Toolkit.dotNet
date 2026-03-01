@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms
 {
-    /// <summary>Indicates the type of value used for this item.Possible values: ``textVal``, ``toggleVal``, ``arrayVal``, ``numberVal``, ``choiceVal``, ``dateVal``, ``svgVal``</summary>
+    /// <summary>Indicates the type of value used for this item.Possible values: `textVal`, `toggleVal`, `arrayVal`, `numberVal`, `choiceVal`, `dateVal`, `svgVal`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FormsPostResponse_customValues_valueName
     {

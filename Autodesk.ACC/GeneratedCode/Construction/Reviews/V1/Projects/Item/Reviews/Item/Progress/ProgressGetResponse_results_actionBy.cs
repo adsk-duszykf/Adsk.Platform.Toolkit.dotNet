@@ -8,12 +8,12 @@ using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress
 {
     /// <summary>
-    /// Information about the user recorded when the step status is ``SUBMITTED`` or ``VOID``. In the Reviews UI, these statuses occur when a participant submits their decision or when a step is voided.
+    /// Information about the user recorded when the step status is `SUBMITTED` or `VOID`. In the Reviews UI, these statuses occur when a participant submits their decision or when a step is voided.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProgressGetResponse_results_actionBy : IParsable
     {
-        /// <summary>The Autodesk ID of the user. To find details about the user, call `GET users/:Id &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user. To find details about the user, call [GET users/:Id](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutodeskId { get; set; }

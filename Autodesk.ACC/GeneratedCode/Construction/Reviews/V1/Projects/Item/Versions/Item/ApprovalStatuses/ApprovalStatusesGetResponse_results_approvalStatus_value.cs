@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses
 {
-    /// <summary>The value of the approval status. Possible values: ``APPROVED``, ``REJECTED``, ``IN_REVIEW``.</summary>
+    /// <summary>The value of the approval status. Possible values: `APPROVED`, `REJECTED`, `IN_REVIEW`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ApprovalStatusesGetResponse_results_approvalStatus_value
     {

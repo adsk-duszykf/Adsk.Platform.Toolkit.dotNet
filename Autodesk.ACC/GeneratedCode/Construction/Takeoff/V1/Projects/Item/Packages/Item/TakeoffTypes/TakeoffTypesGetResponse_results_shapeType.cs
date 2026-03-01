@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes
 {
-    /// <summary>The shape of the count marker.A count marker is one of the takeoff tool type options that is selected in the UI when creating a takeoff type.Possible values: ``CIRCLE``, ``TRIANGLE``, ``SQUARE``, ``DIAMOND``, ``CHECKMARK``.</summary>
+    /// <summary>The shape of the count marker.A count marker is one of the takeoff tool type options that is selected in the UI when creating a takeoff type.Possible values: `CIRCLE`, `TRIANGLE`, `SQUARE`, `DIAMOND`, `CHECKMARK`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TakeoffTypesGetResponse_results_shapeType
     {

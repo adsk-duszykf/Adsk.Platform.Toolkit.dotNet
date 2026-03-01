@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
     public partial class UsersImportPostRequestBody_users : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call `GET projects/:projectId/companies &lt;/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.</summary>
+        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call [GET projects/:projectId/companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
 #else
         public List<global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users_products> Products { get; set; }
 #endif
-        /// <summary>A list of the IDs of the user&apos;s roles in the project.To obtain role IDs for this parameter, you can call `GET projects/:projectId/users &lt;/en/docs/acc/v1/reference/http/admin-projects-projectId-users-GET/&gt;`_ endpoint or `GET projects/:projectId/users/:userId &lt;/en/docs/acc/v1/reference/http/admin-projects-projectId-users-userId-GET/&gt;`_ and inspect the ``roleId`` field in the response.</summary>
+        /// <summary>A list of the IDs of the user&apos;s roles in the project.To obtain role IDs for this parameter, you can call [GET projects/:projectId/users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-projectId-users-GET/) endpoint or [GET projects/:projectId/users/:userId](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-projectId-users-userId-GET/) and inspect the `roleId` field in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RoleIds { get; set; }

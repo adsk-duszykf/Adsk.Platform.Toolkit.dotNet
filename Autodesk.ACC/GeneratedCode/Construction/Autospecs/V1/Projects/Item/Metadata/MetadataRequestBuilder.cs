@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
         {
         }
         /// <summary>
-        /// GET projects/{projectId}/metadata
+        /// Retrieves Autospecs-related information about the specified ACC project, including details about the project versions and the region.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET projects/{projectId}/metadata
+        /// Retrieves Autospecs-related information about the specified ACC project, including details about the project versions and the region.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataResponse>(requestInfo, global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET projects/{projectId}/metadata
+        /// Retrieves Autospecs-related information about the specified ACC project, including details about the project versions and the region.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

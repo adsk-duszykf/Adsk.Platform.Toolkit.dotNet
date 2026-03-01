@@ -46,9 +46,9 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
 #else
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewGetResponse_documentVersions_documentLineage DocumentLineage { get; set; }
 #endif
-        /// <summary>The status of the document. Possible values: ``Succeeded``, ``Failed``, ``Running``, ``Skipped``.</summary>
+        /// <summary>The status of the document. Possible values: `Succeeded`, `Failed`, `Running`, `Skipped`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewGetResponse_documentVersions_documentStatus? DocumentStatus { get; set; }
-        /// <summary>The forge type associated with this document (used by the Document Management APIs). Possible values: ``versions:autodesk.bim360:Document``, ``versions:autodesk.bim360:File``.</summary>
+        /// <summary>The forge type associated with this document (used by the Document Management APIs). Possible values: `versions:autodesk.bim360:Document`, `versions:autodesk.bim360:File`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewGetResponse_documentVersions_forgeType? ForgeType { get; set; }
         /// <summary>The name of the seed file version from which this document was originally extracted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

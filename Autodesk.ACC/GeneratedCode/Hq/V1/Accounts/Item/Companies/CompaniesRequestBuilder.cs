@@ -71,7 +71,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
         {
         }
         /// <summary>
-        /// Retrieves all companies in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the partner companies in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all companies in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the partner companies in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new company in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Create a new partner company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -128,7 +128,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new company in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Create a new partner company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +149,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all companies in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the partner companies in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -168,7 +168,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new company in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Create a new partner company.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +199,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
             return new global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves all companies in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the partner companies in a specific BIM 360 account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CompaniesRequestBuilderGetQueryParameters 

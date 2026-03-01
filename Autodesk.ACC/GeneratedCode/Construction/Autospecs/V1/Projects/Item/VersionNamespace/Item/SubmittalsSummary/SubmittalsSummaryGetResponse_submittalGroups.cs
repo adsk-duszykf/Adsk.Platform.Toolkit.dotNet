@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
     public partial class SubmittalsSummaryGetResponse_submittalGroups : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The submittal group associated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: ``ACTION AND INFORMATIONAL``, ``CLOSEOUT SUBMITTALS``, ``FIELD QUALITY CONTROL``, ``Mockups``, ``QUALITY ASSURANCE``, ``Tests And Inspections``, ``DIVISION 01 REQUIREMENTS``</summary>
+        /// <summary>The submittal group associated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: `ACTION AND INFORMATIONAL`, `CLOSEOUT SUBMITTALS`, `FIELD QUALITY CONTROL`, `Mockups`, `QUALITY ASSURANCE`, `Tests And Inspections`, `DIVISION 01 REQUIREMENTS`</summary>
         public global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.SubmittalsSummary.SubmittalsSummaryGetResponse_submittalGroups_submittalGroup? SubmittalGroup { get; set; }
         /// <summary>A list of submittal group types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

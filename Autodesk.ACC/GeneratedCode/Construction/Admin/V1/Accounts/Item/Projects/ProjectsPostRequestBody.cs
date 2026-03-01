@@ -38,11 +38,11 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The classification of the project. Possible values:- ``production`` – Standard project.- ``template`` – A project that serves as a template for creating new projects.- ``component`` – A placeholder project containing reusable components (e.g., forms). Only one component project is allowed per account. Known as a library in the ACC UI.- ``sample`` – A single sample project automatically created for ACC trials (limited to one per account).</summary>
+        /// <summary>The classification of the project. Possible values:- `production` – Standard project.- `template` – A project that serves as a template for creating new projects.- `component` – A placeholder project containing reusable components (e.g., forms). Only one component project is allowed per account. Known as a library in the ACC UI.- `sample` – A single sample project automatically created for ACC trials (limited to one per account).</summary>
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_classification? Classification { get; set; }
         /// <summary>The total number of companies associated with the project.Note that this field is relevant only in responses. It is ignored in requests.</summary>
         public int? CompanyCount { get; set; }
-        /// <summary>The type of construction for the project. Recommended values: ``New Construction``, ``Renovation``. Any value is accepted.</summary>
+        /// <summary>The type of construction for the project. Recommended values: `New Construction`, `Renovation`. Any value is accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConstructionType { get; set; }
@@ -50,7 +50,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string ConstructionType { get; set; }
 #endif
-        /// <summary>The type of contract for the project. For example, ``Lump Sum``, ``Cost Plus``, ``Guaranteed Maximum Price``, ``Unit Price``. Any value is accepted.</summary>
+        /// <summary>The type of contract for the project. For example, `Lump Sum`, `Cost Plus`, `Guaranteed Maximum Price`, `Unit Price`. Any value is accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContractType { get; set; }
@@ -66,7 +66,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The current phase of the project. Recommended values include, ``Concept``, ``Design``, ``Bidding``, ``Planning``, ``Preconstruction``, ``Construction``, ``Commissioning``, ``Warranty``, ``Complete``, ``Facility Management``, ``Operation``, ``Strategic Definition``, ``Preparation and Brief``, ``Concept Design``, ``Developed Design``, ``Technical Design``, ``Construction``, ``Handover and Close Out`` and ``In Use``.Any value is accepted.</summary>
+        /// <summary>The current phase of the project. Recommended values include, `Concept`, `Design`, `Bidding`, `Planning`, `Preconstruction`, `Construction`, `Commissioning`, `Warranty`, `Complete`, `Facility Management`, `Operation`, `Strategic Definition`, `Preparation and Brief`, `Concept Design`, `Developed Design`, `Technical Design`, `Construction`, `Handover and Close Out` and `In Use`.Any value is accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrentPhase { get; set; }
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string CurrentPhase { get; set; }
 #endif
-        /// <summary>The method used to deliver the project. Recommended values include ``Design-Bid-Build``, ``Construction Management (CM) at Risk``, and ``Integrated Project Delivery (IPD)``. Any value is accepted.</summary>
+        /// <summary>The method used to deliver the project. Recommended values include `Design-Bid-Build`, `Construction Management (CM) at Risk`, and `Integrated Project Delivery (IPD)`. Any value is accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeliveryMethod { get; set; }
@@ -90,7 +90,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string EndDate { get; set; }
 #endif
-        /// <summary>A user-defined identifier for the project. This value is assigned when the project is created and can be used to filter projects. It supports partial matches when used with ``filterTextMatch``.Max length: 100</summary>
+        /// <summary>A user-defined identifier for the project. This value is assigned when the project is created and can be used to filter projects. It supports partial matches when used with `filterTextMatch`.Max length: 100</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobNumber { get; set; }
@@ -124,7 +124,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The APS platform where the project is stored. Possible values: ``acc``, ``bim360``.Note that this field is relevant only in responses. It is ignored in requests.</summary>
+        /// <summary>The APS platform where the project is stored. Possible values: `acc`, `bim360`.Note that this field is relevant only in responses. It is ignored in requests.</summary>
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_platform? Platform { get; set; }
         /// <summary>The postal or ZIP code of the project location.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>Contains details about the estimated cost of the project, including the amount (``value``) and the currency (``currency``).</summary>
+        /// <summary>Contains details about the estimated cost of the project, including the amount (`value`) and the currency (`currency`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_projectValue? ProjectValue { get; set; }
@@ -160,7 +160,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string StateOrProvince { get; set; }
 #endif
-        /// <summary>Information about a project in the current user&apos;s account that is configured as a template from which to copy products and settings when creating a new project:- If you *include* this object in a `POST accounts/:accountId/projects &lt;/en/docs/acc/v1/reference/http/admin-accountsaccountidprojects-POST/&gt;`_ request, the cloned project&apos;s products and settings will match those of the template project.- If you *omit* this object from a `POST accounts/:accountId/projects &lt;/en/docs/acc/v1/reference/http/admin-accountsaccountidprojects-POST/&gt;`_ request, all of the current ACC account&apos;s products are added to the cloned project and activated.</summary>
+        /// <summary>Information about a project in the current user&apos;s account that is configured as a template from which to copy products and settings when creating a new project:- If you *include* this object in a [POST accounts/:accountId/projects](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-accountsaccountidprojects-POST/) request, the cloned project&apos;s products and settings will match those of the template project.- If you *omit* this object from a [POST accounts/:accountId/projects](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-accountsaccountidprojects-POST/) request, all of the current ACC account&apos;s products are added to the cloned project and activated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template? Template { get; set; }
@@ -168,7 +168,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template Template { get; set; }
 #endif
-        /// <summary>The time zone where the project is located. It must be a valid IANA time zone name from the `IANA Time Zone Database &lt;https://www.iana.org/time-zones&gt;`_ (e.g., ``America/New_York``). If no time zone is set, this field may be ``null``.Possible values: ``Pacific/Honolulu``, ``America/Juneau``, ``America/Los_Angeles``, ``America/Phoenix``, ``America/Denver``, ``America/Chicago``, ``America/New_York``, ``America/Indiana/Indianapolis``, ``Pacific/Pago_Pago``, ``Pacific/Midway``, ``America/Tijuana``, ``America/Chihuahua``, ``America/Mazatlan``, ``America/Guatemala``, ``America/Mexico_City``, ``America/Monterrey``, ``America/Regina``, ``America/Bogota``, ``America/Lima``, ``America/Caracas``, ``America/Halifax``, ``America/Guyana``, ``America/La_Paz``, ``America/Santiago``, ``America/St_Johns``, ``America/Sao_Paulo``, ``America/Argentina/Buenos_Aires``, ``America/Godthab``, ``Atlantic/South_Georgia``, ``Atlantic/Azores``, ``Atlantic/Cape_Verde``, ``Africa/Casablanca``, ``Europe/Dublin``, ``Europe/Lisbon``, ``Europe/London``, ``Africa/Monrovia``, ``Etc/UTC``, ``Europe/Amsterdam``, ``Europe/Belgrade``, ``Europe/Berlin``, ``Europe/Bratislava``, ``Europe/Brussels``, ``Europe/Budapest``, ``Europe/Copenhagen``, ``Europe/Ljubljana``, ``Europe/Madrid``, ``Europe/Paris``, ``Europe/Prague``, ``Europe/Rome``, ``Europe/Sarajevo``, ``Europe/Skopje``, ``Europe/Stockholm``, ``Europe/Vienna``, ``Europe/Warsaw``, ``Africa/Algiers``, ``Europe/Zagreb``, ``Europe/Athens``, ``Europe/Bucharest``, ``Africa/Cairo``, ``Africa/Harare``, ``Europe/Helsinki``, ``Europe/Istanbul``, ``Asia/Jerusalem``, ``Europe/Kiev``, ``Africa/Johannesburg``, ``Europe/Riga``, ``Europe/Sofia``, ``Europe/Tallinn``, ``Europe/Vilnius``, ``Asia/Baghdad``, ``Asia/Kuwait``, ``Europe/Minsk``, ``Africa/Nairobi``, ``Asia/Riyadh``, ``Asia/Tehran``, ``Asia/Muscat``, ``Asia/Baku``, ``Europe/Moscow``, ``Asia/Tbilisi``, ``Asia/Yerevan``, ``Asia/Kabul``, ``Asia/Karachi``, ``Asia/Tashkent``, ``Asia/Kolkata``, ``Asia/Colombo``, ``Asia/Kathmandu``, ``Asia/Almaty``, ``Asia/Dhaka``, ``Asia/Yekaterinburg``, ``Asia/Rangoon``, ``Asia/Bangkok``, ``Asia/Jakarta``, ``Asia/Novosibirsk``, ``Asia/Shanghai``, ``Asia/Chongqing``, ``Asia/Hong_Kong``, ``Asia/Krasnoyarsk``, ``Asia/Kuala_Lumpur``, ``Australia/Perth``, ``Asia/Singapore``, ``Asia/Taipei``, ``Asia/Ulaanbaatar``, ``Asia/Urumqi``, ``Asia/Irkutsk``, ``Asia/Tokyo``, ``Asia/Seoul``, ``Australia/Adelaide``, ``Australia/Darwin``, ``Australia/Brisbane``, ``Australia/Melbourne``, ``Pacific/Guam``, ``Australia/Hobart``, ``Pacific/Port_Moresby``, ``Australia/Sydney``, ``Asia/Yakutsk``, ``Pacific/Noumea``, ``Asia/Vladivostok``, ``Pacific/Auckland``, ``Pacific/Fiji``, ``Asia/Kamchatka``, ``Asia/Magadan``, ``Pacific/Majuro``, ``Pacific/Guadalcanal``, ``Pacific/Tongatapu``, ``Pacific/Apia``, ``Pacific/Fakaofo``</summary>
+        /// <summary>The time zone where the project is located. It must be a valid IANA time zone name from the [IANA Time Zone Database](https://www.iana.org/time-zones) (e.g., `America/New_York`). If no time zone is set, this field may be `null`.Possible values: `Pacific/Honolulu`, `America/Juneau`, `America/Los_Angeles`, `America/Phoenix`, `America/Denver`, `America/Chicago`, `America/New_York`, `America/Indiana/Indianapolis`, `Pacific/Pago_Pago`, `Pacific/Midway`, `America/Tijuana`, `America/Chihuahua`, `America/Mazatlan`, `America/Guatemala`, `America/Mexico_City`, `America/Monterrey`, `America/Regina`, `America/Bogota`, `America/Lima`, `America/Caracas`, `America/Halifax`, `America/Guyana`, `America/La_Paz`, `America/Santiago`, `America/St_Johns`, `America/Sao_Paulo`, `America/Argentina/Buenos_Aires`, `America/Godthab`, `Atlantic/South_Georgia`, `Atlantic/Azores`, `Atlantic/Cape_Verde`, `Africa/Casablanca`, `Europe/Dublin`, `Europe/Lisbon`, `Europe/London`, `Africa/Monrovia`, `Etc/UTC`, `Europe/Amsterdam`, `Europe/Belgrade`, `Europe/Berlin`, `Europe/Bratislava`, `Europe/Brussels`, `Europe/Budapest`, `Europe/Copenhagen`, `Europe/Ljubljana`, `Europe/Madrid`, `Europe/Paris`, `Europe/Prague`, `Europe/Rome`, `Europe/Sarajevo`, `Europe/Skopje`, `Europe/Stockholm`, `Europe/Vienna`, `Europe/Warsaw`, `Africa/Algiers`, `Europe/Zagreb`, `Europe/Athens`, `Europe/Bucharest`, `Africa/Cairo`, `Africa/Harare`, `Europe/Helsinki`, `Europe/Istanbul`, `Asia/Jerusalem`, `Europe/Kiev`, `Africa/Johannesburg`, `Europe/Riga`, `Europe/Sofia`, `Europe/Tallinn`, `Europe/Vilnius`, `Asia/Baghdad`, `Asia/Kuwait`, `Europe/Minsk`, `Africa/Nairobi`, `Asia/Riyadh`, `Asia/Tehran`, `Asia/Muscat`, `Asia/Baku`, `Europe/Moscow`, `Asia/Tbilisi`, `Asia/Yerevan`, `Asia/Kabul`, `Asia/Karachi`, `Asia/Tashkent`, `Asia/Kolkata`, `Asia/Colombo`, `Asia/Kathmandu`, `Asia/Almaty`, `Asia/Dhaka`, `Asia/Yekaterinburg`, `Asia/Rangoon`, `Asia/Bangkok`, `Asia/Jakarta`, `Asia/Novosibirsk`, `Asia/Shanghai`, `Asia/Chongqing`, `Asia/Hong_Kong`, `Asia/Krasnoyarsk`, `Asia/Kuala_Lumpur`, `Australia/Perth`, `Asia/Singapore`, `Asia/Taipei`, `Asia/Ulaanbaatar`, `Asia/Urumqi`, `Asia/Irkutsk`, `Asia/Tokyo`, `Asia/Seoul`, `Australia/Adelaide`, `Australia/Darwin`, `Australia/Brisbane`, `Australia/Melbourne`, `Pacific/Guam`, `Australia/Hobart`, `Pacific/Port_Moresby`, `Australia/Sydney`, `Asia/Yakutsk`, `Pacific/Noumea`, `Asia/Vladivostok`, `Pacific/Auckland`, `Pacific/Fiji`, `Asia/Kamchatka`, `Asia/Magadan`, `Pacific/Majuro`, `Pacific/Guadalcanal`, `Pacific/Tongatapu`, `Pacific/Apia`, `Pacific/Fakaofo`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }
@@ -176,7 +176,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public string Timezone { get; set; }
 #endif
-        /// <summary>The type of the project. Any value is accepted, but the following are recommended:Possible values: ``Convention Center``, ``Data Center``, ``Hotel / Motel``, ``Office``, ``Parking Structure / Garage``, ``Performing Arts``, ``Restaurant``, ``Retail``, ``Stadium / Arena``, ``Theme Park``, ``Warehouse (non-manufacturing)``, ``Assisted Living / Nursing Home``, ``Hospital``, ``Medical Laboratory``, ``Medical Office``, ``OutPatient Surgery Center``, ``Court House``, ``Dormitory``, ``Education Facility``, ``Government Building``, ``Library``, ``Military Facility``, ``Museum``, ``Prison / Correctional Facility``, ``Recreation Building``, ``Religious Building``, ``Research Facility / Laboratory``, ``Multi-Family Housing``, ``Single-Family Housing``, ``Airport``, ``Bridge``, ``Canal / Waterway``, ``Dams / Flood Control / Reservoirs``, ``Harbor / River Development``, ``Rail``, ``Seaport``, ``Streets / Roads / Highways``, ``Transportation Building``, ``Tunnel``, ``Waste Water / Sewers``, ``Water Supply``, ``Manufacturing / Factory``, ``Mining Facility``, ``Oil &amp; Gas``, ``Plant``, ``Power Plant``, ``Solar Farm``, ``Utilities``, ``Wind Farm``, ``Demonstration Project``, ``Template Project`` and ``Training Project``.Max length: 255</summary>
+        /// <summary>The type of the project. Any value is accepted, but the following are recommended:Possible values: `Convention Center`, `Data Center`, `Hotel / Motel`, `Office`, `Parking Structure / Garage`, `Performing Arts`, `Restaurant`, `Retail`, `Stadium / Arena`, `Theme Park`, `Warehouse (non-manufacturing)`, `Assisted Living / Nursing Home`, `Hospital`, `Medical Laboratory`, `Medical Office`, `OutPatient Surgery Center`, `Court House`, `Dormitory`, `Education Facility`, `Government Building`, `Library`, `Military Facility`, `Museum`, `Prison / Correctional Facility`, `Recreation Building`, `Religious Building`, `Research Facility / Laboratory`, `Multi-Family Housing`, `Single-Family Housing`, `Airport`, `Bridge`, `Canal / Waterway`, `Dams / Flood Control / Reservoirs`, `Harbor / River Development`, `Rail`, `Seaport`, `Streets / Roads / Highways`, `Transportation Building`, `Tunnel`, `Waste Water / Sewers`, `Water Supply`, `Manufacturing / Factory`, `Mining Facility`, `Oil &amp; Gas`, `Plant`, `Power Plant`, `Solar Farm`, `Utilities`, `Wind Farm`, `Demonstration Project`, `Template Project` and `Training Project`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

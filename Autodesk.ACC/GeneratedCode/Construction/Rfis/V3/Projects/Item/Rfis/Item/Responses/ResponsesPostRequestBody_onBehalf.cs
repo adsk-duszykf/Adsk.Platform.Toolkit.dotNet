@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 {
     /// <summary>
-    /// The Autodesk ID of the reviewer for whom the response is being submitted.To find user details, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.&apos;
+    /// The Autodesk ID of the reviewer for whom the response is being submitted.To find user details, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).&apos;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponsesPostRequestBody_onBehalf : IParsable

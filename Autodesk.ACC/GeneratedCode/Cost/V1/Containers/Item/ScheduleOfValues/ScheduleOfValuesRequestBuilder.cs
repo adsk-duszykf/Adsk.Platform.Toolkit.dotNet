@@ -179,7 +179,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScheduleOfValuesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Returns only tracking item instances that belong to the budgets identified by the provided list of budget IDs (separated with commas). For example, ``filter[budgetId]=id1,id2``. Note that you can return the instances that are not linked to any budget using ``filter[budgetId]=blank``. To find budget IDs, call `GET budgets &lt;/en/docs/bim360/v1/reference/http/cost-budgets-GET/&gt;`_ and inspect ``results.id`` in the response.</summary>
+            /// <summary>Returns only tracking item instances that belong to the budgets identified by the provided list of budget IDs (separated with commas). For example, `filter[budgetId]=id1,id2`. Note that you can return the instances that are not linked to any budget using `filter[budgetId]=blank`. To find budget IDs, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.id` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BbudgetId%5D")]
@@ -189,7 +189,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             [QueryParameter("filter%5BbudgetId%5D")]
             public string[] FilterbudgetId { get; set; }
 #endif
-            /// <summary>Returns only items associated with the contracts identified on this list of IDs. Separate multiple IDs with commas; for example:``filter[contractId]=id1,id2``.You can also provide a value of ``blank`` to return items that are not linked to any contract; for example:``filter[contractId]=blank``.</summary>
+            /// <summary>Returns only items associated with the contracts identified on this list of IDs. Separate multiple IDs with commas; for example:`filter[contractId]=id1,id2`.You can also provide a value of `blank` to return items that are not linked to any contract; for example:`filter[contractId]=blank`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcontractId%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             [QueryParameter("filter%5BcontractId%5D")]
             public string[] FiltercontractId { get; set; }
 #endif
-            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, ``filter[externalId]=id1,id2``.</summary>
+            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, `filter[externalId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalId%5D")]
@@ -209,7 +209,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             [QueryParameter("filter%5BexternalId%5D")]
             public string[] FilterexternalId { get; set; }
 #endif
-            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, ``filter[externalSystem]=Sage300``.Max length: 255</summary>
+            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, `filter[externalSystem]=Sage300`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalSystem%5D")]
@@ -219,7 +219,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             [QueryParameter("filter%5BexternalSystem%5D")]
             public string FilterexternalSystem { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -229,10 +229,10 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>``false``: (default) will Returns only original contracted SOV items.``true``:  will include items from approved change orders.</summary>
+            /// <summary>`false`: (default) will Returns only original contracted SOV items.`true`:  will include items from approved change orders.</summary>
             [QueryParameter("filter%5BincludeChangeOrders%5D")]
             public bool? FilterincludeChangeOrders { get; set; }
-            /// <summary>Return the specified nested resources in the response. For example, ``include=subitems`` returns the project&apos;s SOV items. Note that for a value of ``idOnly``, the response includes only a list of SOV item IDs, and other ``include`` values are ignored. Possible values: ``subitems``, ``attributes``, ``idOnly``.</summary>
+            /// <summary>Return the specified nested resources in the response. For example, `include=subitems` returns the project&apos;s SOV items. Note that for a value of `idOnly`, the response includes only a list of SOV item IDs, and other `include` values are ignored. Possible values: `subitems`, `attributes`, `idOnly`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -242,13 +242,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

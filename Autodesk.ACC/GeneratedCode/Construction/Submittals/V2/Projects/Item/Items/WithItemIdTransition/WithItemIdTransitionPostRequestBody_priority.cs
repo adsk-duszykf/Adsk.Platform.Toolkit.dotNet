@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition
 {
-    /// <summary>The priority level of the submittal item.Possible values:- ``Low``- ``Normal``- ``High``When the priority is not set, the default value is ``Normal``.</summary>
+    /// <summary>The priority level of the submittal item.Possible values:- `Low`- `Normal`- `High`When the priority is not set, the default value is `Normal`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithItemIdTransitionPostRequestBody_priority
     {

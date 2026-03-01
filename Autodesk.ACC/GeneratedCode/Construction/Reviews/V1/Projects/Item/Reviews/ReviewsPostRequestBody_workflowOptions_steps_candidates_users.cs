@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     public partial class ReviewsPostRequestBody_workflowOptions_steps_candidates_users : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID of the user. To find the Autodesk IDs of users for a project, call `GET projects/users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user. To find the Autodesk IDs of users for a project, call [GET projects/users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutodeskId { get; set; }

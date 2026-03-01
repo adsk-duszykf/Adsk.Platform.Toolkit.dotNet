@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
     public partial class SearchRfisPostRequestBody_filter : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Filter RFIs assigned to specific users.To find the ID call `GET users/me &lt;/en/docs/bim360/v1/reference/http/rfis-users-me-GET/&gt;`_ and check ``user.id``.</summary>
+        /// <summary>Filter RFIs assigned to specific users.To find the ID call [GET users/me](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-users-me-GET/) and check `user.id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AssignedTo { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> AssignedTo { get; set; }
 #endif
-        /// <summary>Filter RFIs by category.Categories are customizable per project. Examples include ``Constructability``, ``Code Compliance``. For example, ``filter[category]=Constructability``.Possible values: ``Code Compliance``, ``Constructability``, ``Design Coordination``, ``Documentation Conflict``, ``Documentation Incomplete``, ``Field condition``, ``Other``, ``Unspecified``.</summary>
+        /// <summary>Filter RFIs by category.Categories are customizable per project. Examples include `Constructability`, `Code Compliance`. For example, `filter[category]=Constructability`.Possible values: `Code Compliance`, `Constructability`, `Design Coordination`, `Documentation Conflict`, `Documentation Incomplete`, `Field condition`, `Other`, `Unspecified`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Category { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Category { get; set; }
 #endif
-        /// <summary>Filter RFIs by close date or date range.Format: ``YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>Filter RFIs by close date or date range.Format: `YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClosedAt { get; set; }
@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string ClosedAt { get; set; }
 #endif
-        /// <summary>Filter RFIs by cost impact value.Possible values: ``Yes``, ``No``, ``Unknown``. For example, ``filter[costImpact]=Yes``&apos;</summary>
+        /// <summary>Filter RFIs by cost impact value.Possible values: `Yes`, `No`, `Unknown`. For example, `filter[costImpact]=Yes`&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CostImpact { get; set; }
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> CostImpact { get; set; }
 #endif
-        /// <summary>Filter RFIs created after a specific date or within a date range.Format: ``YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>Filter RFIs created after a specific date or within a date range.Format: `YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>Filter RFIs by the user who created them.To find the ID call `GET users/me &lt;/en/docs/bim360/v1/reference/http/rfis-users-me-GET/&gt;`_ and check ``user.id``.``</summary>
+        /// <summary>Filter RFIs by the user who created them.To find the ID call [GET users/me](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-users-me-GET/) and check `user.id`.``</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CreatedBy { get; set; }
@@ -60,7 +60,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> CreatedBy { get; set; }
 #endif
-        /// <summary>Filter RFIs by custom attributes.Provide a map of key-value pairs using attribute ID and selected value ID.For example, ``fd9a1234-aaaa-4444-bbbb-8888aa77ee66: value-id-1``.</summary>
+        /// <summary>Filter RFIs by custom attributes.Provide a map of key-value pairs using attribute ID and selected value ID.For example, `fd9a1234-aaaa-4444-bbbb-8888aa77ee66: value-id-1`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter_customAttributes? CustomAttributes { get; set; }
@@ -68,7 +68,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter_customAttributes CustomAttributes { get; set; }
 #endif
-        /// <summary>Filter RFIs by discipline.Values depend on the project configuration. Examples include ``Architectural``. For example, ``filter[discipline]=Architectural``.Possible values: ``Building Management System``, ``Electrical Substation``, ``Security``, ``Audio Visual``, ``Food Service``, ``Fire Alarm``, ``Power Systems``, ``Design Systems Integrator``, ``Signage``, ``Pathways``, ``Cabling``, ``Networks``, ``Distributed Antenna System``, ``Lighting``, ``Vertical Transportation``, ``Roofing``, ``Architectural``, ``Civil/Site``, ``Concrete``, ``Electrical``, ``Exterior Envelope``, ``Fire Protection``, ``Interior/Finishes``, ``Landscaping``, ``Masonry``, ``Mechanical``, ``Plumbing``, ``Structural``, ``Other``, ``Unspecified``.</summary>
+        /// <summary>Filter RFIs by discipline.Values depend on the project configuration. Examples include `Architectural`. For example, `filter[discipline]=Architectural`.Possible values: `Building Management System`, `Electrical Substation`, `Security`, `Audio Visual`, `Food Service`, `Fire Alarm`, `Power Systems`, `Design Systems Integrator`, `Signage`, `Pathways`, `Cabling`, `Networks`, `Distributed Antenna System`, `Lighting`, `Vertical Transportation`, `Roofing`, `Architectural`, `Civil/Site`, `Concrete`, `Electrical`, `Exterior Envelope`, `Fire Protection`, `Interior/Finishes`, `Landscaping`, `Masonry`, `Mechanical`, `Plumbing`, `Structural`, `Other`, `Unspecified`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Discipline { get; set; }
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Discipline { get; set; }
 #endif
-        /// <summary>Filter RFIs by due date or due date range.Format: ``YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>Filter RFIs by due date or due date range.Format: `YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DueDate { get; set; }
@@ -84,7 +84,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string DueDate { get; set; }
 #endif
-        /// <summary>Filter by a list of specific RFI IDs.To find the RFI IDs call `GET rfis &lt;/en/docs/bim360/v1/reference/http/rfis-v2-rfis-GET/&gt;`_ and check ``results.id``.</summary>
+        /// <summary>Filter by a list of specific RFI IDs.To find the RFI IDs call [GET rfis](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-rfis-GET/) and check `results.id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Id { get; set; }
@@ -92,9 +92,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Id { get; set; }
 #endif
-        /// <summary>``true``: include RFIs that are hidden from the user.``false``: (default) exclude hidden RFIs from the results.</summary>
+        /// <summary>`true`: include RFIs that are hidden from the user.`false`: (default) exclude hidden RFIs from the results.</summary>
         public bool? IncludeHidden { get; set; }
-        /// <summary>Filter RFIs by location using Location Breakdown Structure (LBS) node IDs.To retrieve location IDs, call `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_.&apos;</summary>
+        /// <summary>Filter RFIs by location using Location Breakdown Structure (LBS) node IDs.To retrieve location IDs, call [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/).&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Locations { get; set; }
@@ -102,7 +102,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Locations { get; set; }
 #endif
-        /// <summary>Filters RFIs by the official response status. Possible values: ``answered``, ``unanswered``.</summary>
+        /// <summary>Filters RFIs by the official response status. Possible values: `answered`, `unanswered`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OfficialResponseStatus { get; set; }
@@ -110,7 +110,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> OfficialResponseStatus { get; set; }
 #endif
-        /// <summary>Filter RFIs by priority level.Possible values: ``High``, ``Normal``, ``Low``. For example, ``filter[priority]=High``.&apos;</summary>
+        /// <summary>Filter RFIs by priority level.Possible values: `High`, `Normal`, `Low`. For example, `filter[priority]=High`.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Priority { get; set; }
@@ -134,7 +134,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> RfiTypeId { get; set; }
 #endif
-        /// <summary>Filter RFIs by schedule impact value.Possible values**: ``Yes``, ``No``, ``Unknown``. For example, ``filter[scheduleImpact]=Yes``&apos;</summary>
+        /// <summary>Filter RFIs by schedule impact value.Possible values**: `Yes`, `No`, `Unknown`. For example, `filter[scheduleImpact]=Yes`&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScheduleImpact { get; set; }
@@ -142,7 +142,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> ScheduleImpact { get; set; }
 #endif
-        /// <summary>Filter by RFI status. Possible values: ``draft``, ``submitted``, ``open``, ``openRev1``, ``openRev2``, answered, ``answeredRev1``, ``answeredManager``, ``closed``, ``void``. Note that workflow types determine which statuses are used.</summary>
+        /// <summary>Filter by RFI status. Possible values: `draft`, `submitted`, `open`, `openRev1`, `openRev2`, answered, `answeredRev1`, `answeredManager`, `closed`, `void`. Note that workflow types determine which statuses are used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Status { get; set; }
@@ -150,7 +150,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<string> Status { get; set; }
 #endif
-        /// <summary>Filter RFIs updated after a specific date, or within a date range.Format: ``YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>Filter RFIs updated after a specific date, or within a date range.Format: `YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedAt { get; set; }

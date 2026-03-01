@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Cost.V1.Containers
     public partial class ContainersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item collection</summary>
-        /// <param name="position">The ID of the project (the container ID is the same as the project ID). To obtain the project ID, see `GET projects &lt;/en/docs/bim360/v1/reference/http/admin-accounts-accountidprojects-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the project (the container ID is the same as the project ID). To obtain the project ID, see [GET projects](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-accounts-accountidprojects-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.WithContainerItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.WithContainerItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Cost.V1.Containers
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item collection</summary>
-        /// <param name="position">The ID of the project (the container ID is the same as the project ID). To obtain the project ID, see `GET projects &lt;/en/docs/bim360/v1/reference/http/admin-accounts-accountidprojects-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the project (the container ID is the same as the project ID). To obtain the project ID, see [GET projects](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-accounts-accountidprojects-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.WithContainerItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Cost.V1.Containers.Item.WithContainerItemRequestBuilder this[string position]

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
-    /// <summary>The status of the official response. Possible values: ``answered``, ``rejected``.Set this field when closing the RFI to mark the final response as ``answered`` or ``rejected``.This field is not used in other status transitions.</summary>
+    /// <summary>The status of the official response. Possible values: `answered`, `rejected`.Set this field when closing the RFI to mark the final response as `answered` or `rejected`.This field is not used in other status transitions.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithRfiPatchRequestBody_officialResponseStatus
     {

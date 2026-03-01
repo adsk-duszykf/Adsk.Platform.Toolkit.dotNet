@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions
 {
-    /// <summary>The type of custom attribute. Possible values: ``list``, ``text``, ``paragraph``, ``numeric``.</summary>
+    /// <summary>The type of custom attribute. Possible values: `list`, `text`, `paragraph`, `numeric`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IssueAttributeDefinitionsGetResponse_results_dataType
     {

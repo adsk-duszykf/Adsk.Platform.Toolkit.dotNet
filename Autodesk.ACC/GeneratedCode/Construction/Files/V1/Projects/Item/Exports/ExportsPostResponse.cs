@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
     {
         /// <summary>The ID of the PDF export job.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The status of the PDF export job.Possible values: ``successful``, ``processing``, ``failed``</summary>
+        /// <summary>The status of the PDF export job.Possible values: `successful`, `processing`, `failed`</summary>
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -116,7 +116,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PaymentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Returns only the payments that are associated with the provided list of contract or main contract IDs. Separate multiple IDs with commas. For example, ``filter[associationId]=id1,id2``.</summary>
+            /// <summary>Returns only the payments that are associated with the provided list of contract or main contract IDs. Separate multiple IDs with commas. For example, `filter[associationId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassociationId%5D")]
@@ -126,7 +126,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5BassociationId%5D")]
             public string[] FilterassociationId { get; set; }
 #endif
-            /// <summary>Returns only the payments that are associated with the type of contract specified. Possible values:``Contract`` for cost payments; ``MainContract`` for budget payments. For example, ``filter[associationType]=Contract``.</summary>
+            /// <summary>Returns only the payments that are associated with the type of contract specified. Possible values:`Contract` for cost payments; `MainContract` for budget payments. For example, `filter[associationType]=Contract`.</summary>
             [Obsolete("This property is deprecated, use FilterassociationTypeAsGetFilterAssociationTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,10 +137,10 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5BassociationType%5D")]
             public string FilterassociationType { get; set; }
 #endif
-            /// <summary>Returns only the payments that are associated with the type of contract specified. Possible values:``Contract`` for cost payments; ``MainContract`` for budget payments. For example, ``filter[associationType]=Contract``.</summary>
+            /// <summary>Returns only the payments that are associated with the type of contract specified. Possible values:`Contract` for cost payments; `MainContract` for budget payments. For example, `filter[associationType]=Contract`.</summary>
             [QueryParameter("filter%5BassociationType%5D")]
             public global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.GetFilterAssociationTypeQueryParameterType? FilterassociationTypeAsGetFilterAssociationTypeQueryParameterType { get; set; }
-            /// <summary>Returns only the payments associated with the budget payments (used to query the related cost payments or expenses) that are identified on this list of IDs. Separate multiple IDs with commas; for example, ``filter[budgetPaymentId]=id1,id2``.</summary>
+            /// <summary>Returns only the payments associated with the budget payments (used to query the related cost payments or expenses) that are identified on this list of IDs. Separate multiple IDs with commas; for example, `filter[budgetPaymentId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BbudgetPaymentId%5D")]
@@ -150,7 +150,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5BbudgetPaymentId%5D")]
             public string[] FilterbudgetPaymentId { get; set; }
 #endif
-            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, ``filter[externalId]=id1,id2``.</summary>
+            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, `filter[externalId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalId%5D")]
@@ -160,7 +160,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5BexternalId%5D")]
             public string[] FilterexternalId { get; set; }
 #endif
-            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, ``filter[externalSystem]=Sage300``.Max length: 255</summary>
+            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, `filter[externalSystem]=Sage300`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalSystem%5D")]
@@ -170,7 +170,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5BexternalSystem%5D")]
             public string FilterexternalSystem { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -180,7 +180,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -190,7 +190,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of auto-generated sequence numbers. Separate multiple numbers with commas; for example, ``filter[number]=0001,0002``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of auto-generated sequence numbers. Separate multiple numbers with commas; for example, `filter[number]=0001,0002`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bnumber%5D")]
@@ -200,7 +200,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5Bnumber%5D")]
             public string[] Filternumber { get; set; }
 #endif
-            /// <summary>Returns only payments that have a status on the provided list of statuses. Separate multiple values with commas. For example, ``filter[status]=draft,submitted``. Possible values:``draft``, ``pendingInput``, ``submitted``, ``revise``, ``inReview``, ``accepted``, ``paid``.</summary>
+            /// <summary>Returns only payments that have a status on the provided list of statuses. Separate multiple values with commas. For example, `filter[status]=draft,submitted`. Possible values:`draft`, `pendingInput`, `submitted`, `revise`, `inReview`, `accepted`, `paid`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -210,7 +210,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>Include nested resources in the response. For example, ``include=paymentReferences`` will return payment references to each payment. ``include=attributes`` will return custom attributes which represents the ``properties`` in the response. Possible values: ``paymentReferences``, ``attributes``, ``summaryCalculatedFields``, ``complianceExpiration``.</summary>
+            /// <summary>Include nested resources in the response. For example, `include=paymentReferences` will return payment references to each payment. `include=attributes` will return custom attributes which represents the `properties` in the response. Possible values: `paymentReferences`, `attributes`, `summaryCalculatedFields`, `complianceExpiration`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -220,13 +220,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

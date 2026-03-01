@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions
         {
         }
         /// <summary>
-        /// For more details about retrieving a user&apos;s permissions, see the `Retrieve Permissions &lt;/en/docs/bim360/v1/tutorials/retrieve-user-permissions&gt;`_ tutorial.
+        /// Retrieves information about the permissions assigned to users, roles and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder, including details about the name and the status.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions.PermissionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions.PermissionsGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions.PermissionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details about retrieving a user&apos;s permissions, see the `Retrieve Permissions &lt;/en/docs/bim360/v1/tutorials/retrieve-user-permissions&gt;`_ tutorial.
+        /// Retrieves information about the permissions assigned to users, roles and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder, including details about the name and the status.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions.PermissionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions.PermissionsResponse>(requestInfo, global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions.PermissionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details about retrieving a user&apos;s permissions, see the `Retrieve Permissions &lt;/en/docs/bim360/v1/tutorials/retrieve-user-permissions&gt;`_ tutorial.
+        /// Retrieves information about the permissions assigned to users, roles and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder, including details about the name and the status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

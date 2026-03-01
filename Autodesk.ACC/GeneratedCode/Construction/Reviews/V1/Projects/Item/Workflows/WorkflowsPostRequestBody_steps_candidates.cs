@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 {
     /// <summary>
-    /// (Displayed in the UI when selecting Reviewers/Approvers for a step) Defines the users, roles, or companies to specify for this step of the approval workflow. At least one of the fields (``users``, ``roles``, or ``companies``) must be provided.
+    /// (Displayed in the UI when selecting Reviewers/Approvers for a step) Defines the users, roles, or companies to specify for this step of the approval workflow. At least one of the fields (`users`, `roles`, or `companies`) must be provided.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowsPostRequestBody_steps_candidates : IParsable

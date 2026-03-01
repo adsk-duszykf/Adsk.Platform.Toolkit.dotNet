@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties
 {
-    /// <summary>object change type.Possible values: ``OBJECT_ADDED``, ``OBJECT_REMOVED``, ``OBJECT_CHANGED``</summary>
+    /// <summary>object change type.Possible values: `OBJECT_ADDED`, `OBJECT_REMOVED`, `OBJECT_CHANGED`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PropertiesGetResponse_type
     {

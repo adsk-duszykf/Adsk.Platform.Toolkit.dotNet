@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
     public partial class WithAttachmentPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether the attachment upload is complete.Set this field to ``true`` once the file upload is finished.``true``: the attachment upload is complete.``false``: (default) the attachment upload is still in progress or pending completion.</summary>
+        /// <summary>Indicates whether the attachment upload is complete.Set this field to `true` once the file upload is finished.`true`: the attachment upload is complete.`false`: (default) the attachment upload is still in progress or pending completion.</summary>
         public bool? IsFileUploaded { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPhotoItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Extra fields to be returned for each Photo Objects. (e.g. ``signedUrls``) Will always be: ``signedUrls``</summary>
+            /// <summary>Extra fields to be returned for each Photo Objects. (e.g. `signedUrls`) Will always be: `signedUrls`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

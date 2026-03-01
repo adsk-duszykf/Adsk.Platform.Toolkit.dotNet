@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item
 {
-    /// <summary>The location of the value.For properties Length, Width, Height, Depth and Thickness: ``valueLocation`` is ``INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT``.For properties WeightByLength, WeightByArea and WeightByVolume: ``valueLocation`` is ``TAKEOFF_TYPE``.Possible values: ``TAKEOFF_TYPE``, ``INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT``</summary>
+    /// <summary>The location of the value.For properties Length, Width, Height, Depth and Thickness: `valueLocation` is `INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT`.For properties WeightByLength, WeightByArea and WeightByVolume: `valueLocation` is `TAKEOFF_TYPE`.Possible values: `TAKEOFF_TYPE`, `INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithTakeoffTypeGetResponse_propertyDefinitions_valueLocation
     {

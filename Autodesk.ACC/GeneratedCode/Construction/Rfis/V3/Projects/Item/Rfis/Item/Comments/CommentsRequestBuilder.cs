@@ -166,7 +166,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Comments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify which attributes you want to see in the response. Separate multiple values with commas. For example, ``fields = title,description``.</summary>
+            /// <summary>Specify which attributes you want to see in the response. Separate multiple values with commas. For example, `fields = title,description`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -186,7 +186,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Comments
             [QueryParameter("filter%5BcreatedAt%5D")]
             public string FiltercreatedAt { get; set; }
 #endif
-            /// <summary>Retrieves comments created by the user.  For example, ``filter[createdBy]=PER8KQPK2JRT``</summary>
+            /// <summary>Retrieves comments created by the user.  For example, `filter[createdBy]=PER8KQPK2JRT`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedBy%5D")]
@@ -196,10 +196,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Comments
             [QueryParameter("filter%5BcreatedBy%5D")]
             public string[] FiltercreatedBy { get; set; }
 #endif
-            /// <summary>The number of RFIs to return in the response. Acceptable values: ``1–200``. Default: ``10``. For example, to limit the response to two items per page, use ``limit=2``</summary>
+            /// <summary>The number of RFIs to return in the response. Acceptable values: `1-200`. Default: `10`. For example, to limit the response to two items per page, use `limit=2`</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of items to skip before starting to return results.For example, to begin the results from the fourth item, use ``offset=3``.</summary>
+            /// <summary>The number of items to skip before starting to return results.For example, to begin the results from the fourth item, use `offset=3`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>The fields to sort the list by</summary>

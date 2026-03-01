@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 {
-    /// <summary>Indicates the step type in the workflow. Possible values:- ``INITIATOR``: the first step. It typically represents the person who launches the review.- ``REVIEWER``: an intermediate step. It allows one or more reviewers to evaluate the files.- ``APPROVER``: the final step. It represents the decision maker who approves or rejects the files.</summary>
+    /// <summary>Indicates the step type in the workflow. Possible values:- `INITIATOR`: the first step. It typically represents the person who launches the review.- `REVIEWER`: an intermediate step. It allows one or more reviewers to evaluate the files.- `APPROVER`: the final step. It represents the decision maker who approves or rejects the files.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WorkflowsPostRequestBody_steps_type
     {

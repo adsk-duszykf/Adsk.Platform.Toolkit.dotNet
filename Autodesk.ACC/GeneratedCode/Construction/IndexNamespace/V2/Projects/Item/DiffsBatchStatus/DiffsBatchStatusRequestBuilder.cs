@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
         {
         }
         /// <summary>
-        /// Retrieves status for multiple diffs in a batch. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the job status for several jobs in a single request.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves status for multiple diffs in a batch. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the job status for several jobs in a single request.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves status for multiple diffs in a batch. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the job status for several jobs in a single request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

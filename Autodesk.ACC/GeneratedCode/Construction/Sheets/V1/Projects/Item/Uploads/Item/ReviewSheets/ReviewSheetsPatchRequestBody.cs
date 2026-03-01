@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
     public partial class ReviewSheetsPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>- ``true`` if you want to delete the review sheet.- ``false`` if you want to restore the review sheet.Note that if the review sheet has been deleted, it will not be published.</summary>
+        /// <summary>- `true` if you want to delete the review sheet.- `false` if you want to restore the review sheet.Note that if the review sheet has been deleted, it will not be published.</summary>
         public bool? Deleted { get; set; }
         /// <summary>The ID of the review sheet to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The new number of the review sheet. Note the following limitations:- The number should not contain these reserved characters: ``&lt;``, ``&gt;``, ``:``, ``````, ``/``, ````, ``|``, ``?``, ``*``, ``n``, ``r``, ``t``, ``0``, ``f``, ``&apos;``.- You cannot assign the following reserved names to the number: CON, PRN, AUX, NUL, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, and LPT9.- You cannot put a period at the end of the number.- The number should not be space only.- The max length is 255.The API will format the number in the following ways before applying it to the review sheet:- Remove spaces at the end and beginning of the number.- Reduce multiple continuous spaces to a single space.Max length: 255</summary>
+        /// <summary>The new number of the review sheet. Note the following limitations:- The number should not contain these reserved characters: `&lt;`, `&gt;`, `:`, `````, `/`, ``, `|`, `?`, `*`, `n`, `r`, `t`, `0`, `f`, `&apos;``.- You cannot assign the following reserved names to the number: CON, PRN, AUX, NUL, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, and LPT9.- You cannot put a period at the end of the number.- The number should not be space only.- The max length is 255.The API will format the number in the following ways before applying it to the review sheet:- Remove spaces at the end and beginning of the number.- Reduce multiple continuous spaces to a single space.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }

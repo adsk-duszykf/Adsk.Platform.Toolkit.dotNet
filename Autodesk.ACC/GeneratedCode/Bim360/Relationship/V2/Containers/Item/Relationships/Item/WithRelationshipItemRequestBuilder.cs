@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item
         {
         }
         /// <summary>
-        /// Returns the requested relationship object.
+        /// Retrieves a requested relationship based on the relationship&apos;s ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested relationship object.
+        /// Retrieves a requested relationship based on the relationship&apos;s ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested relationship object.
+        /// Retrieves a requested relationship based on the relationship&apos;s ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 {
-    /// <summary>The status of the submittal item.Possible values: ``1`` - (Required), ``2`` - (Open), ``3`` - (Closed), ``4`` - (Void), ``5`` - (Empty), ``6`` - (Draft).To retrieve the full list of possible statuses, call `GET metadata &lt;/en/docs/acc/v1/reference/http/submittals-metadata-GET/&gt;`_.</summary>
+    /// <summary>The status of the submittal item.Possible values: `1` - (Required), `2` - (Open), `3` - (Closed), `4` - (Void), `5` - (Empty), `6` - (Draft).To retrieve the full list of possible statuses, call [GET metadata](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET/).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithItemPatchResponse_statusId
     {

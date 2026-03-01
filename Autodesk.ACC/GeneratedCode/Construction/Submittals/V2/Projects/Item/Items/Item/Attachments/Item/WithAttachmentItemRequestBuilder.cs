@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
         {
         }
         /// <summary>
-        /// For more details about submittal attachments, see the `Submittal Attachments Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Attachments&gt;`_.
+        /// Updates the upload status of an attachment associated with a submittal item.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details about submittal attachments, see the `Submittal Attachments Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Attachments&gt;`_.
+        /// Updates the upload status of an attachment associated with a submittal item.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details about submittal attachments, see the `Submittal Attachments Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Attachments&gt;`_.
+        /// Updates the upload status of an attachment associated with a submittal item.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

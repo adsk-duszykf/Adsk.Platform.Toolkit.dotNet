@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
     public partial class SheetsGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The collection object, if assigned. If no collection is assigned, this value is ``null``.</summary>
+        /// <summary>The collection object, if assigned. If no collection is assigned, this value is `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets.SheetsGetResponse_results_collection? Collection { get; set; }
@@ -38,7 +38,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
 #else
         public string CreatedByName { get; set; }
 #endif
-        /// <summary>- ``true`` if the sheet has been deleted.- ``false`` if the sheet has not been deleted.</summary>
+        /// <summary>- `true` if the sheet has been deleted.- `false` if the sheet has not been deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>The time when the sheet was deleted, in ISO-8601 format (YYYY-MM-DDTHH:mm:ss.SSSZ).</summary>
         public DateTimeOffset? DeletedAt { get; set; }
@@ -60,7 +60,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
 #endif
         /// <summary>The ID of the sheet.</summary>
         public Guid? Id { get; set; }
-        /// <summary>- ``true`` if the sheet is the version with the most recent issuance date. This is only relevant if you uploaded multiple versions of the same sheet that were assigned the same number. The ``current`` sheet is the sheet with the most recent issuance date.- ``false`` if the sheet is not the version with the most recent issuance date.</summary>
+        /// <summary>- `true` if the sheet is the version with the most recent issuance date. This is only relevant if you uploaded multiple versions of the same sheet that were assigned the same number. The `current` sheet is the sheet with the most recent issuance date.- `false` if the sheet is not the version with the most recent issuance date.</summary>
         public bool? IsCurrent { get; set; }
         /// <summary>The number of the sheet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
 #endif
         /// <summary>The ID of the upload that generated the sheet.</summary>
         public Guid? UploadId { get; set; }
-        /// <summary>Basic version set data. For a complete collection of version set data, call `GET version-sets &lt;/en/docs/acc/v1/reference/http/sheets-version-sets-GET/&gt;`_.</summary>
+        /// <summary>Basic version set data. For a complete collection of version set data, call [GET version-sets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets.SheetsGetResponse_results_versionSet? VersionSet { get; set; }
@@ -130,7 +130,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
 #else
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets.SheetsGetResponse_results_versionSet VersionSet { get; set; }
 #endif
-        /// <summary>Information about the sheet relevant for loading the sheet to the Viewer. See `Add Viewer to an HTML Page &lt;https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/&gt;`_ for more information.</summary>
+        /// <summary>Information about the sheet relevant for loading the sheet to the Viewer. See [Add Viewer to an HTML Page](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets.SheetsGetResponse_results_viewable? Viewable { get; set; }

@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomI
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsNextCustomIdentifierRequestBuilderGetQueryParameters 
         {
-            /// <summary>The item spec ID. This parameter is only required when the project is in spec sequence type (as opposed to global sequence).To verify the sequence type, call `GET metadata &lt;/en/docs/acc/v1/reference/http/submittals-metadata-GET/&gt;`_, and check ``customIdentifierSequenceType``.To get the spec ID, call `GET specs &lt;/en/docs/acc/v1/reference/http/submittals-specs-GET/&gt;`_, and select the relevant ID (``id``).</summary>
+            /// <summary>The item spec ID. This parameter is only required when the project is in spec sequence type (as opposed to global sequence).To verify the sequence type, call [GET metadata](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET/), and check `customIdentifierSequenceType`.To get the spec ID, call [GET specs](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-GET/), and select the relevant ID (`id`).</summary>
             [QueryParameter("specId")]
             public Guid? SpecId { get; set; }
         }

@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition
 {
     /// <summary>
-    /// The type of watcher assigned to the submittal item.Possible values:- ``1`` (user)- ``2`` (company)- ``3`` (role)
+    /// The type of watcher assigned to the submittal item.Possible values:- `1` (user)- `2` (company)- `3` (role)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithItemIdTransitionPostResponse_watchers_userType : IParsable

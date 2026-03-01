@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
 {
-    /// <summary>The status of the new issue. Possible values: ``Open``, ``Draft``.</summary>
+    /// <summary>The status of the new issue. Possible values: `Open`, `Draft`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ClashesAssignPostRequestBody_status
     {

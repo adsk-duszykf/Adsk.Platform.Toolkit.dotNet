@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
         {
         }
         /// <summary>
-        /// Returns the requested model set version object.
+        /// Retrieves the latest version of a given model set based on the model set ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest.LatestGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest.LatestGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest.LatestGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested model set version object.
+        /// Retrieves the latest version of a given model set based on the model set ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest.LatestResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest.LatestResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest.LatestResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the requested model set version object.
+        /// Retrieves the latest version of a given model set based on the model set ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

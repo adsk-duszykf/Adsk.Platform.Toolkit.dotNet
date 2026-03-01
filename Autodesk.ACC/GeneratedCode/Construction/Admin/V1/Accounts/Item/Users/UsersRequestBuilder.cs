@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.admin.v1.accounts.item.users.item collection</summary>
-        /// <param name="position">The ID of the user. To find the ID call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_. You can use either the ACC ID (``id``) or the Autodesk ID (``autodeskId``).</param>
+        /// <param name="position">The ID of the user. To find the ID call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/). You can use either the ACC ID (`id`) or the Autodesk ID (`autodeskId`).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.WithUserItemRequestBuilder this[string position]
         {

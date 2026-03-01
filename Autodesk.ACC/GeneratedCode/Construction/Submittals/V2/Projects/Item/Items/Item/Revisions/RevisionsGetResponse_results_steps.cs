@@ -12,13 +12,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
     public partial class RevisionsGetResponse_results_steps : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date when the step was completed, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``. Note that this value will be ``null`` if not completed.</summary>
+        /// <summary>The date when the step was completed, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`. Note that this value will be `null` if not completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The date when the step was created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date when the step was created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>A way to specify a dynamic due date instead of the the regular dueDate field. When the step will start the due date will be calculated and assigned according to this field.</summary>
+        /// <summary>A way to specify a dynamic due date instead of the regular dueDate field. When the step will start the due date will be calculated and assigned according to this field.</summary>
         public double? DaysToRespond { get; set; }
-        /// <summary>The due date for this step, in the following format: YYYY-MM-DD (ISO 8601) in UTC.  For example, ``2025-01-27T12:09:24.198466Z``.</summary>
+        /// <summary>The due date for this step, in the following format: YYYY-MM-DD (ISO 8601) in UTC.  For example, `2025-01-27T12:09:24.198466Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DueDate { get; set; }
@@ -28,11 +28,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #endif
         /// <summary>The revision number of the submittal item when this step was recorded.</summary>
         public int? Revision { get; set; }
-        /// <summary>The date and time when the step began, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``. Note that this value will be ``null`` if not started.</summary>
+        /// <summary>The date and time when the step began, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`. Note that this value will be `null` if not started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The unique identifier of the step within the submittal item&apos;s workflow for this revision.</summary>
         public Guid? StepId { get; set; }
-        /// <summary>The order of the step in the workflow at this revision. The first step is ``1``.</summary>
+        /// <summary>The order of the step in the workflow at this revision. The first step is `1`.</summary>
         public double? StepNumber { get; set; }
         /// <summary>A list of tasks related to a specific step within the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +42,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results_steps_tasks> Tasks { get; set; }
 #endif
-        /// <summary>The date when the step was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date when the step was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

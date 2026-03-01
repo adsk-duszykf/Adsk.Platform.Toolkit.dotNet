@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions
 {
-    /// <summary>The type of attribute. Possible values: ``string`` (text field), ``date``, ``array`` (drop-list).</summary>
+    /// <summary>The type of attribute. Possible values: `string` (text field), `date`, `array` (drop-list).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CustomAttributeDefinitionsGetResponse_results_type
     {

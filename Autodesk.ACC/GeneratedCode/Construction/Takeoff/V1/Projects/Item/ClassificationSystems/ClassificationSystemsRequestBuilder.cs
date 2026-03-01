@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
     public partial class ClassificationSystemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item.classificationSystems.item collection</summary>
-        /// <param name="position">The classification system ID.To find the ID, call `GET classification-systems &lt;/en/docs/acc/v1/reference/http/takeoff-projects-project_id-classification-systems-GET/&gt;`_.</param>
+        /// <param name="position">The classification system ID.To find the ID, call [GET classification-systems](https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-classification-systems-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.WithSystemItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.WithSystemItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item.classificationSystems.item collection</summary>
-        /// <param name="position">The classification system ID.To find the ID, call `GET classification-systems &lt;/en/docs/acc/v1/reference/http/takeoff-projects-project_id-classification-systems-GET/&gt;`_.</param>
+        /// <param name="position">The classification system ID.To find the ID, call [GET classification-systems](https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-classification-systems-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.WithSystemItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.WithSystemItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClassificationSystemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of classification systems per page.Acceptable values: ``1-200``.Default value: ``200``.</summary>
+            /// <summary>The maximum number of classification systems per page.Acceptable values: `1-200`.Default value: `200`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The classification system index from which the pagination starts. This is zero-based.</summary>

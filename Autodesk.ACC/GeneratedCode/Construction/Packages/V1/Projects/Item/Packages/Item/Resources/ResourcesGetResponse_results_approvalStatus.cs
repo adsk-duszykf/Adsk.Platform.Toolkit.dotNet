@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources
 {
     /// <summary>
-    /// The approval status of the file version.For more information, see `File Status &lt;https://help.autodesk.com/view/DOCS/ENU/?guid=Reviews_Files&gt;`_ documentation.
+    /// The approval status of the file version.For more information, see [File Status](https://help.autodesk.com/view/DOCS/ENU/?guid=Reviews_Files) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourcesGetResponse_results_approvalStatus : IParsable

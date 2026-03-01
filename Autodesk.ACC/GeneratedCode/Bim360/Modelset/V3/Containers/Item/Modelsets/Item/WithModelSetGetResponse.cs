@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item
         public bool? IsDisabled { get; set; }
         /// <summary>The GUID that uniquely identifies the model set.</summary>
         public Guid? ModelSetId { get; set; }
-        /// <summary>The type of content this model set tracks. Possible values: ``Plans``, ``ProjectFiles``.</summary>
+        /// <summary>The type of content this model set tracks. Possible values: `Plans`, `ProjectFiles`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.WithModelSetGetResponse_modelSetType? ModelSetType { get; set; }
         /// <summary>The name of the model set. This name must be unique within the specified container. Min length: 1 Max length: 64.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

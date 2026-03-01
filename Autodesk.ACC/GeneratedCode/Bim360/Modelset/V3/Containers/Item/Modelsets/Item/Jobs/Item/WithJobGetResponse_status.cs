@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item
 {
-    /// <summary>The current job status. Possible values: ``Failed``, ``Running``, ``Succeeded``, ``Archived``.</summary>
+    /// <summary>The current job status. Possible values: `Failed`, `Running`, `Succeeded`, `Archived`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithJobGetResponse_status
     {

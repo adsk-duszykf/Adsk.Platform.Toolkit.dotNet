@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     public partial class ReviewsPostRequestBody_workflowOptions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>(``Copy approved files`` in the UI) Option for copying approved files when the review is complete.</summary>
+        /// <summary>(`Copy approved files` in the UI) Option for copying approved files when the review is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_copyFilesOptions? CopyFilesOptions { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_copyFilesOptions CopyFilesOptions { get; set; }
 #endif
-        /// <summary>Assigns participants to the steps defined in the approval workflow. If omitted, the review inherits default candidates from the workflow. If provided, your assignments replace the defaults for that step. Multiple ``REVIEWER`` steps run sequentially in the order returned by `GET workflows &lt;/en/docs/acc/v1/reference/http/reviews-workflows-GET/&gt;`_.</summary>
+        /// <summary>Assigns participants to the steps defined in the approval workflow. If omitted, the review inherits default candidates from the workflow. If provided, your assignments replace the defaults for that step. Multiple `REVIEWER` steps run sequentially in the order returned by [GET workflows](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-workflows-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_steps>? Steps { get; set; }

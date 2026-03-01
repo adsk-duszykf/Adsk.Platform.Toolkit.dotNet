@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
         {
         }
         /// <summary>
-        /// The RFIs API does not currently support adding users to a project or assigning workflow roles. Only project members can create or edit RFIs.
+        /// Retrieves information about the current user in the context of the specified project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The RFIs API does not currently support adding users to a project or assigning workflow roles. Only project members can create or edit RFIs.
+        /// Retrieves information about the current user in the context of the specified project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeResponse>(requestInfo, global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The RFIs API does not currently support adding users to a project or assigning workflow roles. Only project members can create or edit RFIs.
+        /// Retrieves information about the current user in the context of the specified project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

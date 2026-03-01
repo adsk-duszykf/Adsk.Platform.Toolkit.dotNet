@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item
         {
         }
         /// <summary>
-        /// Retrieve the information about a single submittal type. For more information about submittal types, see the `Help documnentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types&gt;`_.
+        /// Retrieve the information about a single submittal type. For more information about submittal types, see the [Help documnentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the information about a single submittal type. For more information about submittal types, see the `Help documnentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types&gt;`_.
+        /// Retrieve the information about a single submittal type. For more information about submittal types, see the [Help documnentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the information about a single submittal type. For more information about submittal types, see the `Help documnentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types&gt;`_.
+        /// Retrieve the information about a single submittal type. For more information about submittal types, see the [Help documnentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents
 {
     /// <summary>
-    /// The approval status of the file version.For more information, see `File Review Statuses &lt;https://help.autodesk.com/view/DOCS/ENU/?guid=BIM360D_Document_Management_About_Reviews_Reviews_FAQs_Reference_html#file-review-statuses&gt;`_ documentation.
+    /// The approval status of the file version.For more information, see [File Review Statuses](https://help.autodesk.com/view/DOCS/ENU/?guid=BIM360D_Document_Management_About_Reviews_Reviews_FAQs_Reference_html#file-review-statuses) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DocumentsGetResponse_results_approveStatus : IParsable
@@ -21,7 +21,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The value of the approval status.Possible values: ``APPROVED``, ``REJECTED``</summary>
+        /// <summary>The value of the approval status.Possible values: `APPROVED`, `REJECTED`</summary>
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse_results_approveStatus_value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

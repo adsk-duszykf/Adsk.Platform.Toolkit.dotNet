@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 {
-    /// <summary>The workflow type assigned to the RFI, which determines the allowed status transitions and the review path.Possible values:- ``US``: Single-reviewer workflow- ``EU``: Multi-reviewer workflowThis value affects how statuses like ``submitted``, ``openRev1``, or ``answeredManager`` behave.For status definitions, see the ``status`` and ``previousStatus`` fields.</summary>
+    /// <summary>The workflow type assigned to the RFI, which determines the allowed status transitions and the review path.Possible values:- `US`: Single-reviewer workflow- `EU`: Multi-reviewer workflowThis value affects how statuses like `submitted`, `openRev1`, or `answeredManager` behave.For status definitions, see the `status` and `previousStatus` fields.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ResponsesPostResponse_rfi_workflowType
     {

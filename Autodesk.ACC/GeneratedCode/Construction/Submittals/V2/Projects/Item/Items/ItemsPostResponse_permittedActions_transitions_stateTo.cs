@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemsPostResponse_permittedActions_transitions_stateTo : IParsable
     {
-        /// <summary>The unique ID of the target state. For example, ``mgr-1``, ``mgr-2``, ``void``.</summary>
+        /// <summary>The unique ID of the target state. For example, `mgr-1`, `mgr-2`, `void`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name of the target state. For example, ``Manager Review``, ``Manager Final Review``, ``Void``.</summary>
+        /// <summary>The name of the target state. For example, `Manager Review`, `Manager Final Review`, `Void`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

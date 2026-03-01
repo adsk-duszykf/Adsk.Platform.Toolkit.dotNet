@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
     {
         /// <summary>The date and time that the model set version was created.</summary>
         public DateTimeOffset? CreateTime { get; set; }
-        /// <summary>The creation status of the model set version. Possible values: ``Pending``, ``Processing``, ``Successful``, ``Partial``, ``Failed``.</summary>
+        /// <summary>The creation status of the model set version. Possible values: `Pending`, `Processing`, `Successful`, `Partial`, `Failed`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse_modelSetVersions_status? Status { get; set; }
         /// <summary>The model set version number.</summary>
         public int? Version { get; set; }

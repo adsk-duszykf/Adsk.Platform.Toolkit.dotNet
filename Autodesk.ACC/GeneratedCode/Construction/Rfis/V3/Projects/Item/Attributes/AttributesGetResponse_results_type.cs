@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
 {
-    /// <summary>The type of the attribute.Possible values: ``text``, ``numeric``</summary>
+    /// <summary>The type of the attribute.Possible values: `text`, `numeric`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttributesGetResponse_results_type
     {

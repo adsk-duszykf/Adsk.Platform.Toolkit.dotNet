@@ -12,11 +12,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
     public partial class ValuesBatchUpdatePutRequestBody_tabularValues_columns : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the column to update. Possible values:For the Work Log table:``trade`` (Crew) - use ``textVal``, ``timespan`` (Total hours) - use ``timespanVal``, ``headcount`` (workers) - use ``numberVal``, ``description`` (work performed) - use ``textVal``For the Equipment table:``item`` (equipment) - use ``textVal``, ``timespan`` (Hours used) -  use ``timespanVal``, ``quantity`` (Quantity) - use ``numberVal``, ``description`` (comment) - use ``textVal``For the Materials table:``item`` (Material) - use ``textVal``, ``quantity`` (Quantity) - use ``numberVal``, ``unit`` (Unit) - use ``textVal``, ``description`` (Comment) - use ``textVal``.</summary>
+        /// <summary>The name of the column to update. Possible values:For the Work Log table:`trade` (Crew) - use `textVal`, `timespan` (Total hours) - use `timespanVal`, `headcount` (workers) - use `numberVal`, `description` (work performed) - use `textVal`For the Equipment table:`item` (equipment) - use `textVal`, `timespan` (Hours used) -  use `timespanVal`, `quantity` (Quantity) - use `numberVal`, `description` (comment) - use `textVal`For the Materials table:`item` (Material) - use `textVal`, `quantity` (Quantity) - use `numberVal`, `unit` (Unit) - use `textVal`, `description` (Comment) - use `textVal`.</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutRequestBody_tabularValues_columns_columnName? ColumnName { get; set; }
-        /// <summary>The attribute used for updating number columns. For example, ````numberVal``: ``42````.Each tabular field is assigned a specific value type, which you need to specify when updating the field. ``numberVal`` is relevant for updating the following columns: ``headcount`` (Workers) and ``quantity`` (Quantity).</summary>
+        /// <summary>The attribute used for updating number columns. For example, `numberVal`: `42``.Each tabular field is assigned a specific value type, which you need to specify when updating the field. `numberVal` is relevant for updating the following columns: `headcount` (Workers) and `quantity` (Quantity).</summary>
         public double? NumberVal { get; set; }
-        /// <summary>The attribute used for updating text value columns.Each tabular field is assigned a specific value type, which you need to specify when updating the field. ``textVal`` is relevant for updating the following columns: ``description`` (Work performed), ``description`` (comment), ``item`` (Equipment), ``item`` (Material), ``trade`` (Crew), and ``unit`` (Unit).Max length: 8000</summary>
+        /// <summary>The attribute used for updating text value columns.Each tabular field is assigned a specific value type, which you need to specify when updating the field. `textVal` is relevant for updating the following columns: `description` (Work performed), `description` (comment), `item` (Equipment), `item` (Material), `trade` (Crew), and `unit` (Unit).Max length: 8000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TextVal { get; set; }
@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public string TextVal { get; set; }
 #endif
-        /// <summary>The attribute used for updating time-related columns.Each tabular field is assigned a specific value type, which you need to specify when updating the field. ``timespanVal`` is relevant for updating the following columns: ``timespan`` (Total hours), ``timespan`` (Hours used).</summary>
+        /// <summary>The attribute used for updating time-related columns.Each tabular field is assigned a specific value type, which you need to specify when updating the field. `timespanVal` is relevant for updating the following columns: `timespan` (Total hours), `timespan` (Hours used).</summary>
         public double? TimespanVal { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

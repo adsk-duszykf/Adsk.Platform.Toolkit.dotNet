@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable
 #else
         public List<global::Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse_entityTypes_allow> Allow { get; set; }
 #endif
-        /// <summary>An individual entity type.For example: ``asset``.</summary>
+        /// <summary>An individual entity type.For example: `asset`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EntityType { get; set; }

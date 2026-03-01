@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.admin.v1.projects.item.users.item collection</summary>
-        /// <param name="position">The ID of the user. To find the ID call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_. You can use either the ACC ID (``id``) or the Autodesk ID (``autodeskId``).</param>
+        /// <param name="position">The ID of the user. To find the ID call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/). You can use either the ACC ID (`id`) or the Autodesk ID (`autodeskId`).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder this[string position]
         {
@@ -179,7 +179,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
         {
-            /// <summary>A list of the project fields to include in the response. Default value: all fields.Possible values: ``name``, ``email``, ``firstName``, ``lastName``, ``autodeskId``, ``analyticsId``, ``addressLine1``, ``addressLine2``, ``city``, ``stateOrProvince``, ``postalCode``, ``country``, ``imageUrl``, ``phone``, ``jobTitle``, ``industry``, ``aboutMe``, ``companyId``, ``accessLevels``, ``roleIds``, ``roles``, ``status``, ``addedOn`` and ``products``.</summary>
+            /// <summary>A list of the project fields to include in the response. Default value: all fields.Possible values: `name`, `email`, `firstName`, `lastName`, `autodeskId`, `analyticsId`, `addressLine1`, `addressLine2`, `city`, `stateOrProvince`, `postalCode`, `country`, `imageUrl`, `phone`, `jobTitle`, `industry`, `aboutMe`, `companyId`, `accessLevels`, `roleIds`, `roles`, `status`, `addedOn` and `products`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -189,7 +189,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
-            /// <summary>A list of user access levels that the returned users must have.Possible values: ``accouantAdmin``, ``projectAdmin``, ``executive``.Max length: 255</summary>
+            /// <summary>A list of user access levels that the returned users must have.Possible values: `accouantAdmin`, `projectAdmin`, `executive`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BaccessLevels%5D")]
@@ -219,7 +219,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filter%5BcompanyId%5D")]
             public string FiltercompanyId { get; set; }
 #endif
-            /// <summary>The name of a company that returned users must be associated with. Can be a partial match based on the value of ``filterTextMatch`` that you provide.For example: ``filter[companyName]=Sample filterTextMatch=startsWith``Max length: 255</summary>
+            /// <summary>The name of a company that returned users must be associated with. Can be a partial match based on the value of `filterTextMatch` that you provide.For example: `filter[companyName]=Sample filterTextMatch=startsWith`Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcompanyName%5D")]
@@ -229,7 +229,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filter%5BcompanyName%5D")]
             public string FiltercompanyName { get; set; }
 #endif
-            /// <summary>A user email address or address pattern that the returned users must have. This can be a partial match based on the value of ``filterTextMatch`` that you provide.For example:``filter[email]=sample filterTextMatch=startsWith``Max length: 255</summary>
+            /// <summary>A user email address or address pattern that the returned users must have. This can be a partial match based on the value of `filterTextMatch` that you provide.For example:`filter[email]=sample filterTextMatch=startsWith`Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bemail%5D")]
@@ -249,7 +249,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>A user name or name pattern that the returned users must have. Can be a partial match based on the value of ``filterTextMatch`` that you provide.For example:``filter[name]=Sample filterTextMatch=startsWith``Max length: 255</summary>
+            /// <summary>A user name or name pattern that the returned users must have. Can be a partial match based on the value of `filterTextMatch` that you provide.For example:`filter[name]=Sample filterTextMatch=startsWith`Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bname%5D")]
@@ -259,7 +259,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filter%5Bname%5D")]
             public string Filtername { get; set; }
 #endif
-            /// <summary>A comma-separated list of the products that the returned users must have access to in the specified project. Only users that have access to one or more of the specified products are returned.Note that every product in the same account as the project is activated for the project, and a separate subset of these products is active for each user. This endpoint can retrieve users from ACC or BIM 360 projects.Some products are exclusive to ACC or to BIM 360, others are available on both platforms. Specify only the products on the appropriate platform for the users you want to retrieve.Possible ACC values: ``accountAdministration``, ``autoSpecs``, ``build``, ``buildingConnected``, ``capitalPlanning``, ``cloudWorksharing``, ``cost``, ``designCollaboration``, ``docs``, ``financials``, ``insight``, ``modelCoordination``, ``projectAdministration``, ``takeoff``, and ``workshopxr``.Possible BIM 360 values: ``accountAdministration``, ``assets``, ``cloudWorksharing``, ``costManagement``, ``designCollaboration``, ``documentManagement``, ``field``, ``fieldManagement``, ``glue``, ``insight``, ``modelCoordination``, ``plan``, ``projectAdministration``, ``projectHome``, ``projectManagement``, and ``quantification``.</summary>
+            /// <summary>A comma-separated list of the products that the returned users must have access to in the specified project. Only users that have access to one or more of the specified products are returned.Note that every product in the same account as the project is activated for the project, and a separate subset of these products is active for each user. This endpoint can retrieve users from ACC or BIM 360 projects.Some products are exclusive to ACC or to BIM 360, others are available on both platforms. Specify only the products on the appropriate platform for the users you want to retrieve.Possible ACC values: `accountAdministration`, `autoSpecs`, `build`, `buildingConnected`, `capitalPlanning`, `cloudWorksharing`, `cost`, `designCollaboration`, `docs`, `financials`, `insight`, `modelCoordination`, `projectAdministration`, `takeoff`, and `workshopxr`.Possible BIM 360 values: `accountAdministration`, `assets`, `cloudWorksharing`, `costManagement`, `designCollaboration`, `documentManagement`, `field`, `fieldManagement`, `glue`, `insight`, `modelCoordination`, `plan`, `projectAdministration`, `projectHome`, `projectManagement`, and `quantification`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bproducts%5D")]
@@ -269,10 +269,10 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filter%5Bproducts%5D")]
             public string[] Filterproducts { get; set; }
 #endif
-            /// <summary>The ID of a user role that the returned users must have.To obtain a role ID for this filter, you can inspect the ``roleId`` field in previous responses to this endpoint or to the `GET projects/:projectId/users/:userId &lt;/en/docs/acc/v1/reference/http/admin-projects-projectId-users-userId-GET/&gt;`_ endpoint.Max length: 255</summary>
+            /// <summary>The ID of a user role that the returned users must have.To obtain a role ID for this filter, you can inspect the `roleId` field in previous responses to this endpoint or to the [GET projects/:projectId/users/:userId](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-projectId-users-userId-GET/) endpoint.Max length: 255</summary>
             [QueryParameter("filter%5BroleId%5D")]
             public Guid? FilterroleId { get; set; }
-            /// <summary>A list of the IDs of user roles that the returned users must have.To obtain a role ID for this filter, you can inspect the ``roleId`` field in previous responses to this endpoint or to the `GET projects/:projectId/users/:userId &lt;/en/docs/acc/v1/reference/http/admin-projects-projectId-users-userId-GET/&gt;`_ endpoint.</summary>
+            /// <summary>A list of the IDs of user roles that the returned users must have.To obtain a role ID for this filter, you can inspect the `roleId` field in previous responses to this endpoint or to the [GET projects/:projectId/users/:userId](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-projectId-users-userId-GET/) endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BroleIds%5D")]
@@ -282,7 +282,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filter%5BroleIds%5D")]
             public string[] FilterroleIds { get; set; }
 #endif
-            /// <summary>A list of statuses that the returned project users must be in. The default values are ``active`` and ``pending``.Possible values: ``active``, ``pending``, and ``deleted``.</summary>
+            /// <summary>A list of statuses that the returned project users must be in. The default values are `active` and `pending`.Possible values: `active`, `pending`, and `deleted`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -292,7 +292,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -303,16 +303,16 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("filterTextMatch")]
             public string FilterTextMatch { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [QueryParameter("filterTextMatch")]
             public global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
-            /// <summary>The maximum number of records to return in the response.Default: ``20``Minimum: ``1``Maximum: ``200`` (If a larger value is provided, only 200 records are returned)</summary>
+            /// <summary>The maximum number of records to return in the response.Default: `20`Minimum: `1`Maximum: `200` (If a larger value is provided, only 200 records are returned)</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first record to return.Used for pagination in combination with the ``limit`` parameter.Example: ``limit=20`` and ``offset=40`` returns records 41–60.</summary>
+            /// <summary>The index of the first record to return.Used for pagination in combination with the `limit` parameter.Example: `limit=20` and `offset=40` returns records 41-60.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>A list of user fields to combine with the SQL *OR* operator for filtering the returned project users. The *OR* is automatically incorporated between the fields; any one of them can produce a valid match.Possible values: ``id``, ``name``, ``email``, ``autodeskId``, ``status`` and ``accessLevels``.</summary>
+            /// <summary>A list of user fields to combine with the SQL *OR* operator for filtering the returned project users. The *OR* is automatically incorporated between the fields; any one of them can produce a valid match.Possible values: `id`, `name`, `email`, `autodeskId`, `status` and `accessLevels`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("orFilters")]
@@ -322,7 +322,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             [QueryParameter("orFilters")]
             public string[] OrFilters { get; set; }
 #endif
-            /// <summary>A list of fields to sort the returned users by. Multiple sort fields are applied in sequence order - each sort field produces groupings of projects with the same values of that field; the next sort field applies within the groupings produced by the previous sort field.Each property can be followed by a direction modifier of either ``asc`` (ascending) or ``desc`` (descending). The default is ``asc``.Possible values: ``name``, ``email``, ``firstName``, ``lastName``, ``addressLine1``, ``addressLine2``, ``city``, ``companyName``, ``stateOrProvince``, ``status``, ``phone``, ``postalCode``, ``country`` and ``addedOn``. Default value: ``name``.</summary>
+            /// <summary>A list of fields to sort the returned users by. Multiple sort fields are applied in sequence order - each sort field produces groupings of projects with the same values of that field; the next sort field applies within the groupings produced by the previous sort field.Each property can be followed by a direction modifier of either `asc` (ascending) or `desc` (descending). The default is `asc`.Possible values: `name`, `email`, `firstName`, `lastName`, `addressLine1`, `addressLine2`, `city`, `companyName`, `stateOrProvince`, `status`, `phone`, `postalCode`, `country` and `addedOn`. Default value: `name`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

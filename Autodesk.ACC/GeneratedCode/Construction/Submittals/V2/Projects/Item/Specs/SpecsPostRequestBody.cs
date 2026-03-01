@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
     public partial class SpecsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The unique ID to be assigned to the spec section within the UI. Ensure this ID is unique by checking existing spec sections using `GET specs &lt;/en/docs/acc/v1/reference/http/submittals-specs-GET/&gt;`_.</summary>
+        /// <summary>The unique ID to be assigned to the spec section within the UI. Ensure this ID is unique by checking existing spec sections using [GET specs](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identifier { get; set; }

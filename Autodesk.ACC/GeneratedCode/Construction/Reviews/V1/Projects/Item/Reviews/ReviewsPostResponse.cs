@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     public partial class ReviewsPostResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether the review has been archived.``true``: the review is archived.``false``: (default) the review is active.</summary>
+        /// <summary>Indicates whether the review has been archived.`true`: the review is archived.`false`: (default) the review is active.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The date and time when the review was archived. If the review has not been archived, this value is ``null``.</summary>
+        /// <summary>The date and time when the review was archived. If the review has not been archived, this value is `null`.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>Information about the user who archived the review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #endif
         /// <summary>A unique, auto-incrementing number assigned to the review when it is first submitted.This ID does not change, even if the review is sent back to the initiator and goes through multiple rounds.It identifies the review within the project and reflects the order in which reviews were created.</summary>
         public int? SequenceId { get; set; }
-        /// <summary>The current status of the review.Possible values: ``OPEN``, ``CLOSED``, ``VOID``, ``FAILED``.</summary>
+        /// <summary>The current status of the review.Possible values: `OPEN`, `CLOSED`, `VOID`, `FAILED`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_status? Status { get; set; }
         /// <summary>The date time when the review was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

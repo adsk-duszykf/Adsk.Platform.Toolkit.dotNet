@@ -96,7 +96,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.P
 #endif
         /// <summary>The stable SVF2 ID of the object.</summary>
         public int? Svf2Id { get; set; }
-        /// <summary>object change type.Possible values: ``OBJECT_ADDED``, ``OBJECT_REMOVED``, ``OBJECT_CHANGED``</summary>
+        /// <summary>object change type.Possible values: `OBJECT_ADDED`, `OBJECT_REMOVED`, `OBJECT_CHANGED`</summary>
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_type? Type { get; set; }
         /// <summary>List of corresponding view IDs in the index manifest that this object is visible in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

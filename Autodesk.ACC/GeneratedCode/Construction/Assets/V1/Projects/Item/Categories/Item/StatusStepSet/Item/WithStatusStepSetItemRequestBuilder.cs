@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Stat
         {
         }
         /// <summary>
-        /// PUT categories/:categoryId/status-step-set/:statusStepSetId
+        /// Assigns a status set to a category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetPutResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Stat
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetPutResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT categories/:categoryId/status-step-set/:statusStepSetId
+        /// Assigns a status set to a category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Stat
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT categories/:categoryId/status-step-set/:statusStepSetId
+        /// Assigns a status set to a category.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

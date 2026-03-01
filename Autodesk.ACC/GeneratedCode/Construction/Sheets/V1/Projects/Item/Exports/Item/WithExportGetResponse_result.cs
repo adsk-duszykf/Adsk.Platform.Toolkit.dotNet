@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
 {
     /// <summary>
-    /// The result of a completed export job.- If the ``status`` is ``successful``, a downloadable signed URL will be included in the ``result.output`` object.- If the ``status`` value is ``failed`` (e.g., because some files were deleted), the ``result.error`` object will include details of the error.
+    /// The result of a completed export job.- If the `status` is `successful`, a downloadable signed URL will be included in the `result.output` object.- If the `status` value is `failed` (e.g., because some files were deleted), the `result.error` object will include details of the error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithExportGetResponse_result : IParsable

@@ -59,7 +59,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
         {
         }
         /// <summary>
-        /// GET categories/:categoryId/custom-attributes
+        /// Returns the custom attribute assignments for a specified category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET categories/:categoryId/custom-attributes
+        /// Returns the custom attribute assignments for a specified category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET categories/:categoryId/custom-attributes
+        /// Returns the custom attribute assignments for a specified category.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,12 +124,12 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
             return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET categories/:categoryId/custom-attributes
+        /// Returns the custom attribute assignments for a specified category.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAttributesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies whether or not to return custom attributes that were inherited from the specified category&apos;sparent category. If ``true``, then it returns inherited custom attributes. If ``false``, then it returns only customattributes explicitly assigned to the specified category. Default is ``false``.</summary>
+            /// <summary>Specifies whether or not to return custom attributes that were inherited from the specified category&apos;sparent category. If `true`, then it returns inherited custom attributes. If `false`, then it returns only customattributes explicitly assigned to the specified category. Default is `false`.</summary>
             [QueryParameter("includeInherited")]
             public bool? IncludeInherited { get; set; }
         }

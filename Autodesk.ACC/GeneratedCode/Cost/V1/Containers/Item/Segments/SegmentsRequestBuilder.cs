@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments
     public partial class SegmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.segments.item collection</summary>
-        /// <param name="position">The segment ID. To obtain a segment ID, use `GET templates/:templateId/segments &lt;/en/docs/bim360/v1/reference/http/cost-segments-GET/&gt;`_.</param>
+        /// <param name="position">The segment ID. To obtain a segment ID, use [GET templates/:templateId/segments](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-segments-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.segments.item collection</summary>
-        /// <param name="position">The segment ID. To obtain a segment ID, use `GET templates/:templateId/segments &lt;/en/docs/bim360/v1/reference/http/cost-segments-GET/&gt;`_.</param>
+        /// <param name="position">The segment ID. To obtain a segment ID, use [GET templates/:templateId/segments](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-segments-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder this[string position]

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
 {
-    /// <summary>Specifies the type that the assignedTo parameter refers to. Possible values: ``User``, ``Role``, ``Company``.</summary>
+    /// <summary>Specifies the type that the assignedTo parameter refers to. Possible values: `User`, `Role`, `Company`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ClashesAssignPostRequestBody_assignedToType
     {

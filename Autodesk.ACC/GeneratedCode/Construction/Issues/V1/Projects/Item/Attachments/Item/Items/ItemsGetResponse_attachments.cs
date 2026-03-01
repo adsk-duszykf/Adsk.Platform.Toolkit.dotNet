@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
     {
         /// <summary>The unique identifier for the attachment, set by the client when creating the attachment reference. This can be any unique GUID, but it is recommended to use the OSS storage GUID.</summary>
         public Guid? AttachmentId { get; set; }
-        /// <summary>The type of attachment. For issue attachments, this value is always ``issue-attachment``. Will always be: ``issue-attachment``</summary>
+        /// <summary>The type of attachment. For issue attachments, this value is always `issue-attachment`. Will always be: `issue-attachment`</summary>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse_attachments_attachmentType? AttachmentType { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
 #else
         public string BubbleUrn { get; set; }
 #endif
-        /// <summary>The ID of the user who created the issue attachment. For details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The ID of the user who created the issue attachment. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -34,7 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
 #endif
         /// <summary>The date and time when the issue attachment was created, in ISO8601 format.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
-        /// <summary>The ID of the user who deleted the issue attachment, if applicable. For details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The ID of the user who deleted the issue attachment, if applicable. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeletedBy { get; set; }
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
 #endif
         /// <summary>The date and time when the issue attachment was deleted, if applicable.</summary>
         public DateTimeOffset? DeletedOn { get; set; }
-        /// <summary>The human-readable display name for the attachment, including the file extension (for example, ``.pdf``, ``.jpg``, ``.dwg``). This name appears in the ACC web UI and is used when downloading the file from the issue.</summary>
+        /// <summary>The human-readable display name for the attachment, including the file extension (for example, `.pdf`, `.jpg`, `.dwg`). This name appears in the ACC web UI and is used when downloading the file from the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -64,7 +64,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
 #endif
         /// <summary>The size of the file in bytes.</summary>
         public int? FileSize { get; set; }
-        /// <summary>The file extension (without the dot), for example ``pdf`` or ``jpg``.</summary>
+        /// <summary>The file extension (without the dot), for example `pdf` or `jpg`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileType { get; set; }
@@ -72,7 +72,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
 #else
         public string FileType { get; set; }
 #endif
-        /// <summary>``true``: The attachment has been deleted.``false``: (default) The attachment has not been deleted.</summary>
+        /// <summary>`true`: The attachment has been deleted.`false`: (default) The attachment has not been deleted.</summary>
         public bool? IsDeleted { get; set; }
         /// <summary>The document lineage URN for the attachment’s source file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
 #endif
         /// <summary>Not relevant</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>The Object Storage Service (OSS) URN identifying where the attachment file is stored in Autodesk’s cloud infrastructure. Use this value when downloading the file (see the Download Issue Attachment &lt;/en/docs/acc/v1/tutorials/issues/download-issue-attachments/&gt;_ tutorial).</summary>
+        /// <summary>The Object Storage Service (OSS) URN identifying where the attachment file is stored in Autodesk’s cloud infrastructure. Use this value when downloading the file (see the [Download Issue Attachment](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/download-issue-attachments/) tutorial).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageUrn { get; set; }
@@ -110,7 +110,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
 #endif
         /// <summary>The document version number.</summary>
         public int? Version { get; set; }
-        /// <summary>The URN for the specific file version that was attached to the issue. This may differ from the latest version URN (``tipVersionUrn``) if a newer version of the file exists in Autodesk Docs.</summary>
+        /// <summary>The URN for the specific file version that was attached to the issue. This may differ from the latest version URN (`tipVersionUrn`) if a newer version of the file exists in Autodesk Docs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VersionUrn { get; set; }

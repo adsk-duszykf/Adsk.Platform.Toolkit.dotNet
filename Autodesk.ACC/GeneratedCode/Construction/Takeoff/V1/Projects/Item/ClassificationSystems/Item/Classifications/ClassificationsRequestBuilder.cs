@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClassificationsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of classification objects per page.Acceptable values: ``1-10000``.Default value: ``10000``.</summary>
+            /// <summary>The maximum number of classification objects per page.Acceptable values: `1-10000`.Default value: `10000`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The classification index from which the pagination starts. This is zero-based.</summary>

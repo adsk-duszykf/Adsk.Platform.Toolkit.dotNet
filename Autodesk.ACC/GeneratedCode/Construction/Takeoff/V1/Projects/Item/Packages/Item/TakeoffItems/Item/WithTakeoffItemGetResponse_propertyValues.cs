@@ -20,9 +20,9 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Specifies how a takeoff property value was obtained.Possible values: ``MANUAL_ENTRY``, ``BIM_PROPERTY``, ``MEASUREMENT``</summary>
+        /// <summary>Specifies how a takeoff property value was obtained.Possible values: `MANUAL_ENTRY`, `BIM_PROPERTY`, `MEASUREMENT`</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.Item.WithTakeoffItemGetResponse_propertyValues_source? Source { get; set; }
-        /// <summary>The unit of measurement.Possible values: ``EA``, ``IN``, ``LF``, ``YD``, ``SI``, ``SF``, ``SY``, ``CI``, ``CF``, ``CY``, ``LBS``, ``TON``, ``MM``, ``M``, ``M2``, ``M3``, ``KG``, ``T``.</summary>
+        /// <summary>The unit of measurement.Possible values: `EA`, `IN`, `LF`, `YD`, `SI`, `SF`, `SY`, `CI`, `CF`, `CY`, `LBS`, `TON`, `MM`, `M`, `M2`, `M3`, `KG`, `T`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.Item.WithTakeoffItemGetResponse_propertyValues_unitOfMeasure? UnitOfMeasure { get; set; }
         /// <summary>The value of a takeoff instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

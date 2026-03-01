@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets
 {
     /// <summary>
-    /// The collection object, if assigned. If no collection is assigned, this value is ``null``.
+    /// The collection object, if assigned. If no collection is assigned, this value is `null`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VersionSetsPostResponse_collection : IParsable

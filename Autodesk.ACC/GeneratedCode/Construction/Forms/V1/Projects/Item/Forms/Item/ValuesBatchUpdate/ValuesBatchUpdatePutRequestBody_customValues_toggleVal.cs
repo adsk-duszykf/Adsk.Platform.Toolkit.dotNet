@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate
 {
-    /// <summary>The attribute used for updating preconfigured fields. For example, ``toggleVal``: ``Yes``.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``toggleVal`` is only relevant for updating preconfigured fields. To verify whether the field you want to update is a preconfigured field, call GET forms and check the field&apos;s ``valueName``.Possible values: ``Yes``, ``No``, ``False``, ``True``, ``Minus``, ``Plus``, ``Fail``, ``Pass``, ``NA``</summary>
+    /// <summary>The attribute used for updating preconfigured fields. For example, `toggleVal`: `Yes`.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `toggleVal` is only relevant for updating preconfigured fields. To verify whether the field you want to update is a preconfigured field, call GET forms and check the field&apos;s `valueName`.Possible values: `Yes`, `No`, `False`, `True`, `Minus`, `Plus`, `Fail`, `Pass`, `NA`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ValuesBatchUpdatePutRequestBody_customValues_toggleVal
     {

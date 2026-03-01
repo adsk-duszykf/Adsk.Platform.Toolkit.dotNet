@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
     public partial class WithResponsePatchRequestBody_attachments : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of the attachment. Will always be: ``rfiResponse``</summary>
+        /// <summary>The type of the attachment. Will always be: `rfiResponse`</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchRequestBody_attachments_attachmentType? AttachmentType { get; set; }
         /// <summary>The user-facing name to show in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>The storage URN of the uploaded file.Use this value to generate a signed URL and download the file via the Data Management API.For more details, see the `Submit RFI Response &lt;/en/docs/acc/v1/tutorials/create-rfi-response/&gt;`_ tutorial.</summary>
+        /// <summary>The storage URN of the uploaded file.Use this value to generate a signed URL and download the file via the Data Management API.For more details, see the [Submit RFI Response](https://aps.autodesk.com/en/docs/acc/v1/tutorials/create-rfi-response/) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageUrn { get; set; }

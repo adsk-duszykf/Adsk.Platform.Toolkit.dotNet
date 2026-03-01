@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 {
-    /// <summary>The type of file. Possible values:``TwoDVectorPushpin`` (3D models)``TwoDRasterPushpin`` (2D sheets and views)</summary>
+    /// <summary>The type of file. Possible values:`TwoDVectorPushpin` (3D models)`TwoDRasterPushpin` (2D sheets and views)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIssueGetResponse_linkedDocuments_type
     {

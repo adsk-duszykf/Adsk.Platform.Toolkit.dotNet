@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
     public partial class SearchRfisPostRequestBody_sort : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The field to sort by.Possible values: ``createdAt``, ``status``, ``dueDate``, ``title``, ``location``, ``updatedAt``, ``closedAt``, ``costImpact``, ``scheduleImpact``, ``priority``, ``discipline``, ``category``, ``reference``, ``customIdentifier``, ``customAttribute``</summary>
+        /// <summary>The field to sort by.Possible values: `createdAt`, `status`, `dueDate`, `title`, `location`, `updatedAt`, `closedAt`, `costImpact`, `scheduleImpact`, `priority`, `discipline`, `category`, `reference`, `customIdentifier`, `customAttribute`</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_sort_field? Field { get; set; }
-        /// <summary>The sort order.Possible values: ``DESC``, ``ASC``</summary>
+        /// <summary>The sort order.Possible values: `DESC`, `ASC`</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_sort_order? Order { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

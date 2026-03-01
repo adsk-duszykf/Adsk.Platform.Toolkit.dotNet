@@ -29,7 +29,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The user’s role in the project. Possible values: ``project_user``, ``project_admin``.</summary>
+        /// <summary>The user’s role in the project. Possible values: `project_user`, `project_admin`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_user_role? Role { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

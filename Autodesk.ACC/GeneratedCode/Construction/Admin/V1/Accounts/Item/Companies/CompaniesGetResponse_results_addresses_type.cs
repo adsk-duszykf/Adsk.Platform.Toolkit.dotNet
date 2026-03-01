@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
 {
-    /// <summary>The address type. Will always be: ``Main``</summary>
+    /// <summary>The address type. Will always be: `Main`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CompaniesGetResponse_results_addresses_type
     {

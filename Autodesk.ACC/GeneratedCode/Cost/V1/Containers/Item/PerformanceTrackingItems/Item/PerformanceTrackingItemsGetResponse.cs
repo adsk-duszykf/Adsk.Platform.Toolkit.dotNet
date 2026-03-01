@@ -34,7 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.Item
 #endif
         /// <summary>The ID of the tracking item.</summary>
         public Guid? Id { get; set; }
-        /// <summary>A list of the IDs of the project locations where this item applies, along with the node paths of these locations in the project&apos;s locations tree.For more information, see the Locations `Help documentation &lt;https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/&gt;`_ help.</summary>
+        /// <summary>A list of the IDs of the project locations where this item applies, along with the node paths of these locations in the project&apos;s locations tree.For more information, see the Locations [Help documentation](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/) help.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LocationPaths { get; set; }
@@ -42,7 +42,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.Item
 #else
         public List<string> LocationPaths { get; set; }
 #endif
-        /// <summary>A list of the IDs of the project locations where this item applies.For more information, see the Locations `Help documentation &lt;https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/&gt;`_ help.</summary>
+        /// <summary>A list of the IDs of the project locations where this item applies.For more information, see the Locations [Help documentation](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET/) help.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Locations { get; set; }
@@ -58,7 +58,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.Item
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Original amount of the budget, equals to ``quantity`` * ``unitPrice``</summary>
+        /// <summary>Original amount of the budget, equals to `quantity` * `unitPrice`</summary>
         public double? OriginalAmount { get; set; }
         /// <summary>The planned end date of the performance tracking item&apos;s underlying budget.</summary>
         public DateTimeOffset? PlannedEndDate { get; set; }

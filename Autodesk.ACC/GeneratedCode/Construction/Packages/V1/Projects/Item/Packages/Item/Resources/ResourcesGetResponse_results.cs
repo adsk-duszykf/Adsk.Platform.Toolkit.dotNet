@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
     public partial class ResourcesGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The approval status of the file version.For more information, see `File Status &lt;https://help.autodesk.com/view/DOCS/ENU/?guid=Reviews_Files&gt;`_ documentation.</summary>
+        /// <summary>The approval status of the file version.For more information, see [File Status](https://help.autodesk.com/view/DOCS/ENU/?guid=Reviews_Files) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse_results_approvalStatus? ApprovalStatus { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the user who created the version. For details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who created the version. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
 #else
         public string CreatedByName { get; set; }
 #endif
-        /// <summary>A list of custom attributes assigned to the file version.For more information, see `Customize Documents with Attributes &lt;https://help.autodesk.com/view/DOCS/ENU/?guid=File_attributes&gt;`_.</summary>
+        /// <summary>A list of custom attributes assigned to the file version.For more information, see [Customize Documents with Attributes](https://help.autodesk.com/view/DOCS/ENU/?guid=File_attributes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse_results_customAttributes>? CustomAttributes { get; set; }
@@ -60,9 +60,9 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The type of file version. Possible values:- ``SEED_FILE`` – A document that was not split into sheets when uploaded to ACC Files.- ``DOCUMENT`` – A document that was split into sheets when uploaded to ACC Files.</summary>
+        /// <summary>The type of file version. Possible values:- `SEED_FILE` – A document that was not split into sheets when uploaded to ACC Files.- `DOCUMENT` – A document that was split into sheets when uploaded to ACC Files.</summary>
         public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse_results_entityType? EntityType { get; set; }
-        /// <summary>The file type of the version.For more details, see the `Supported Files &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Supported_Files_Docs&gt;`_ documentation.</summary>
+        /// <summary>The file type of the version.For more details, see the [Supported Files](https://help.autodesk.com/view/BUILD/ENU/?guid=Supported_Files_Docs) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileType { get; set; }
@@ -72,7 +72,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
 #endif
         /// <summary>The unique identifier (UUID) of the file version.</summary>
         public Guid? Id { get; set; }
-        /// <summary>Indicates whether the file version has been deleted.``true`` – The file version is deleted, either directly or because its parent folder was deleted.``false`` – The file version is not deleted.</summary>
+        /// <summary>Indicates whether the file version has been deleted.`true` – The file version is deleted, either directly or because its parent folder was deleted.`false` – The file version is not deleted.</summary>
         public bool? IsDeleted { get; set; }
         /// <summary>The file name in ACC Files.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
 #else
         public string UpdatedAt { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the user who last modified the version. For details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who last modified the version. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy { get; set; }

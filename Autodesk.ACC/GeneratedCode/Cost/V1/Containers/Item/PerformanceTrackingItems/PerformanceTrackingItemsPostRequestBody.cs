@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems
     public partial class PerformanceTrackingItemsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The unique ID of the budget from which to create the performance tracking item. To find the budget ID, call `GET budgets &lt;/en/docs/bim360/v1/reference/http/cost-budgets-GET/&gt;`_ and inspect ``results.id`` in the response.</summary>
+        /// <summary>The unique ID of the budget from which to create the performance tracking item. To find the budget ID, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.id` in the response.</summary>
         public Guid? BudgetId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

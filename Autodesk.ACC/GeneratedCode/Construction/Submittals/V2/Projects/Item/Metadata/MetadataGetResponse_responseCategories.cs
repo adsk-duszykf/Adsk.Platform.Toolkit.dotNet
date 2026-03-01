@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>``true``: if this option is for an approved submittal response.``false``: if this option is for other-typed submittal responses.</summary>
+        /// <summary>`true`: if this option is for an approved submittal response.`false`: if this option is for other-typed submittal responses.</summary>
         public bool? IsApproval { get; set; }
         /// <summary>The display name of the category as shown in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

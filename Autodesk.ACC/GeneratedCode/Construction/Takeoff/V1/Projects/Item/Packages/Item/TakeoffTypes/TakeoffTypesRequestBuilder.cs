@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
     public partial class TakeoffTypesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item.packages.item.takeoffTypes.item collection</summary>
-        /// <param name="position">The takeoff type ID.To find the ID, call `GET takeoff-types &lt;/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-package_id-takeoff-types-GET/&gt;`_.</param>
+        /// <param name="position">The takeoff type ID.To find the ID, call [GET takeoff-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-package_id-takeoff-types-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item.packages.item.takeoffTypes.item collection</summary>
-        /// <param name="position">The takeoff type ID.To find the ID, call `GET takeoff-types &lt;/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-package_id-takeoff-types-GET/&gt;`_.</param>
+        /// <param name="position">The takeoff type ID.To find the ID, call [GET takeoff-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-package_id-takeoff-types-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeItemRequestBuilder this[string position]
@@ -129,7 +129,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TakeoffTypesRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of takeoff types per page.Accepatble values: ``1-10000``.Default value: ``1000``.</summary>
+            /// <summary>The maximum number of takeoff types per page.Accepatble values: `1-10000`.Default value: `1000`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The takeoff type index from which the pagination starts. This is zero-based.</summary>

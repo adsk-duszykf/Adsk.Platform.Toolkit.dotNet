@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
         {
         }
         /// <summary>
-        /// To learn more about using this endpoint within the submittal workflow, see the `Process Submittal Items tutorial &lt;/en/docs/acc/v1/tutorials/submittals/submittal-transitions.rst.rst/&gt;`_.
+        /// Retrieves details of a specific task associated with a review step in a submittal item.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To learn more about using this endpoint within the submittal workflow, see the `Process Submittal Items tutorial &lt;/en/docs/acc/v1/tutorials/submittals/submittal-transitions.rst.rst/&gt;`_.
+        /// Retrieves details of a specific task associated with a review step in a submittal item.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.Item.WithTaskResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To learn more about using this endpoint within the submittal workflow, see the `Process Submittal Items tutorial &lt;/en/docs/acc/v1/tutorials/submittals/submittal-transitions.rst.rst/&gt;`_.
+        /// Retrieves details of a specific task associated with a review step in a submittal item.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

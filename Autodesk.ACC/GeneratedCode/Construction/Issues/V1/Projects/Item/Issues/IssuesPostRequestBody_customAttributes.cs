@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
     {
         /// <summary>The unique identifier of the custom attribute.</summary>
         public Guid? AttributeDefinitionId { get; set; }
-        /// <summary>Custom attribute value. Possible value types: ``string``, ``number``, ``null``.</summary>
+        /// <summary>Custom attribute value. Possible value types: `string`, `number`, `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody_customAttributes_value? Value { get; set; }

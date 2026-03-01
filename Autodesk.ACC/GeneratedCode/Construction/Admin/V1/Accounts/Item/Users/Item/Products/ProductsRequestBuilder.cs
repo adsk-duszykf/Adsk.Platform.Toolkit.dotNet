@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Products
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProductsRequestBuilderGetQueryParameters 
         {
-            /// <summary>List of fields to return in the response. Defaults to all fields.Possible values: ``projectIds``, ``name`` and ``icon``.</summary>
+            /// <summary>List of fields to return in the response. Defaults to all fields.Possible values: `projectIds`, `name` and `icon`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -113,7 +113,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Products
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
-            /// <summary>Filters the list of products by product key — a machine-readable identifier for an ACC product (such as ``docs``, ``build``, or ``cost``).You can specify one or more keys to return only those products the user is associated with.Example: ``filter[key]=docs,build``Possible values: ``accountAdministration``, ``autoSpecs``, ``build``, ``buildingConnected``, ``capitalPlanning``, ``cloudWorksharing``, ``cost``, ``designCollaboration``, ``docs``, ``financials``, ``insight``, ``modelCoordination``, ``projectAdministration``, ``takeoff``, and ``workshopxr``.</summary>
+            /// <summary>Filters the list of products by product key — a machine-readable identifier for an ACC product (such as `docs`, `build`, or `cost`).You can specify one or more keys to return only those products the user is associated with.Example: `filter[key]=docs,build`Possible values: `accountAdministration`, `autoSpecs`, `build`, `buildingConnected`, `capitalPlanning`, `cloudWorksharing`, `cost`, `designCollaboration`, `docs`, `financials`, `insight`, `modelCoordination`, `projectAdministration`, `takeoff`, and `workshopxr`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bkey%5D")]
@@ -133,13 +133,13 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Products
             [QueryParameter("filter%5BprojectId%5D")]
             public string[] FilterprojectId { get; set; }
 #endif
-            /// <summary>The maximum number of records to return in the response.Default: ``20``Minimum: ``1``Maximum: ``200`` (If a larger value is provided, only 200 records are returned)</summary>
+            /// <summary>The maximum number of records to return in the response.Default: `20`Minimum: `1`Maximum: `200` (If a larger value is provided, only 200 records are returned)</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first record to return.Used for pagination in combination with the ``limit`` parameter.Example: ``limit=20`` and ``offset=40`` returns records 41–60.</summary>
+            /// <summary>The index of the first record to return.Used for pagination in combination with the `limit` parameter.Example: `limit=20` and `offset=40` returns records 41-60.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>The list of fields to sort by.Each property can be followed by a direction modifier of either ``asc`` (ascending) or ``desc`` (descending). The default is ``asc``.Possible values:  ``name``.Default is the order in database.</summary>
+            /// <summary>The list of fields to sort by.Each property can be followed by a direction modifier of either `asc` (ascending) or `desc` (descending). The default is `asc`.Possible values:  `name`.Default is the order in database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

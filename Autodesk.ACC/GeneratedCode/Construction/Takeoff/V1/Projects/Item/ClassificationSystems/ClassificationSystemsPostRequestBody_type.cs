@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems
 {
-    /// <summary>The type of classification system.Possible values: ``CLASSIFICATION_SYSTEM_1``, ``CLASSIFICATION_SYSTEM_2``.See the `Help documentation &lt;https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Configure_Takeoff_Settings&gt;`_ for more details about the classification systems.</summary>
+    /// <summary>The type of classification system.Possible values: `CLASSIFICATION_SYSTEM_1`, `CLASSIFICATION_SYSTEM_2`.See the [Help documentation](https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Configure_Takeoff_Settings) for more details about the classification systems.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ClassificationSystemsPostRequestBody_type
     {

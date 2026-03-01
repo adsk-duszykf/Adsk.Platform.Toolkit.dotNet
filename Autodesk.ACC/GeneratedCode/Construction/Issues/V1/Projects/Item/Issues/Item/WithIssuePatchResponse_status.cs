@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 {
-    /// <summary>The current status of the issue.Possible values: ``draft``, ``open``, ``pending``, ``in_progress``, ``completed``, ``in_review``,  ``not_approved``, ``in_dispute``,  ``closed``.For more information about statuses, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Statuses&gt;`_.</summary>
+    /// <summary>The current status of the issue.Possible values: `draft`, `open`, `pending`, `in_progress`, `completed`, `in_review`,  `not_approved`, `in_dispute`,  `closed`.For more information about statuses, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Statuses).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIssuePatchResponse_status
     {

@@ -19,7 +19,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
     public partial class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.submittals.v2.projects.item.items.item collection</summary>
-        /// <param name="position">The ID of the submittal item. To find the item ID, call `GET items &lt;/en/docs/acc/v1/reference/http/submittals-items-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the submittal item. To find the item ID, call [GET items](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemItemRequestBuilder this[string position]
         {
@@ -169,7 +169,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
         /// Builds and executes requests for operations under \construction\submittals\v2\projects\{projectId}\items\{itemId}:transition
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionRequestBuilder"/></returns>
-        /// <param name="itemId">The ID of the submittal item. To find the item ID, call `GET items &lt;/en/docs/acc/v1/reference/http/submittals-items-GET/&gt;`_.</param>
+        /// <param name="itemId">The ID of the submittal item. To find the item ID, call [GET items](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-GET/).</param>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionRequestBuilder WithItemIdTransition(string itemId)
         {
             if(string.IsNullOrEmpty(itemId)) throw new ArgumentNullException(nameof(itemId));
@@ -190,7 +190,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter items associated with the specified ball-in-court company ID. You can specify multiple companies. Separate multiple values with commas. For example, ``filter[ballInCourtCompanies]=WD43ZJGKDFLFH``.</summary>
+            /// <summary>Filter items associated with the specified ball-in-court company ID. You can specify multiple companies. Separate multiple values with commas. For example, `filter[ballInCourtCompanies]=WD43ZJGKDFLFH`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BballInCourtCompanies%5D")]
@@ -200,7 +200,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BballInCourtCompanies%5D")]
             public string FilterballInCourtCompanies { get; set; }
 #endif
-            /// <summary>Filter items associated with the specified ball-in-court role ID. You can specify multiple roles. Separate multiple values with commas. For example, ``filter[ballInCourtRoles]=WD43ZJGKDFLFH``.</summary>
+            /// <summary>Filter items associated with the specified ball-in-court role ID. You can specify multiple roles. Separate multiple values with commas. For example, `filter[ballInCourtRoles]=WD43ZJGKDFLFH`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BballInCourtRoles%5D")]
@@ -210,7 +210,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BballInCourtRoles%5D")]
             public string FilterballInCourtRoles { get; set; }
 #endif
-            /// <summary>Filter items associated with the specified ball-in-court user ID. You can specify multiple users. Separate multiple values with commas. For example, ``filter[ballInCourtUsers]=HNRCQ6JTWAED``.</summary>
+            /// <summary>Filter items associated with the specified ball-in-court user ID. You can specify multiple users. Separate multiple values with commas. For example, `filter[ballInCourtUsers]=HNRCQ6JTWAED`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BballInCourtUsers%5D")]
@@ -220,7 +220,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BballInCourtUsers%5D")]
             public string FilterballInCourtUsers { get; set; }
 #endif
-            /// <summary>Filter items with the specified creation date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items with the specified creation date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedAt%5D")]
@@ -230,7 +230,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BcreatedAt%5D")]
             public string FiltercreatedAt { get; set; }
 #endif
-            /// <summary>Filter items that were created by the specified user by specifying the user’s Autodesk ID. For example, ``filter[createdBy]=PER8KQPK2JRT``. To find the ID call `GET users &lt;https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+            /// <summary>Filter items that were created by the specified user by specifying the user’s Autodesk ID. For example, `filter[createdBy]=PER8KQPK2JRT`. To find the ID call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedBy%5D")]
@@ -240,7 +240,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BcreatedBy%5D")]
             public string FiltercreatedBy { get; set; }
 #endif
-            /// <summary>Filter items with the specified due date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items with the specified due date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BdueDate%5D")]
@@ -250,7 +250,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BdueDate%5D")]
             public string FilterdueDate { get; set; }
 #endif
-            /// <summary>Filter submittal items by their unique internal submittal item ID (UUID). You can specify multiple values. Separate multiple values with commas. For example ``filter[id]=b8cc9324-6759-4f07-8ce3-725d5afd4f11``.</summary>
+            /// <summary>Filter submittal items by their unique internal submittal item ID (UUID). You can specify multiple values. Separate multiple values with commas. For example `filter[id]=b8cc9324-6759-4f07-8ce3-725d5afd4f11`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -260,7 +260,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5Bid%5D")]
             public string Filterid { get; set; }
 #endif
-            /// <summary>Filter items with the specified submittal item ID (the submittal item ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, ``filter[identifier]=2``.</summary>
+            /// <summary>Filter items with the specified submittal item ID (the submittal item ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, `filter[identifier]=2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bidentifier%5D")]
@@ -270,7 +270,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5Bidentifier%5D")]
             public string Filteridentifier { get; set; }
 #endif
-            /// <summary>Filter items with the specified lead time. You can specify multiple values. Separate multiple values with commas. For example, ``filter[leadTime]=100``.</summary>
+            /// <summary>Filter items with the specified lead time. You can specify multiple values. Separate multiple values with commas. For example, `filter[leadTime]=100`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BleadTime%5D")]
@@ -280,7 +280,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BleadTime%5D")]
             public string FilterleadTime { get; set; }
 #endif
-            /// <summary>Filter items with the specified manager Autodesk ID. You can specify multiple values. Separate multiple values with commas. For example, ``filter[manager]=WD43ZJGKDFLFH``.</summary>
+            /// <summary>Filter items with the specified manager Autodesk ID. You can specify multiple values. Separate multiple values with commas. For example, `filter[manager]=WD43ZJGKDFLFH`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bmanager%5D")]
@@ -290,7 +290,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5Bmanager%5D")]
             public string Filtermanager { get; set; }
 #endif
-            /// <summary>Filter items with the specified manager&apos;s due date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items with the specified manager&apos;s due date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BmanagerDueDate%5D")]
@@ -300,7 +300,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BmanagerDueDate%5D")]
             public string FiltermanagerDueDate { get; set; }
 #endif
-            /// <summary>Filter items with the specified manager type. You can specify multiple values. Separate multiple values with commas. For example, ``filter[managerType]=1``.</summary>
+            /// <summary>Filter items with the specified manager type. You can specify multiple values. Separate multiple values with commas. For example, `filter[managerType]=1`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BmanagerType%5D")]
@@ -310,7 +310,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BmanagerType%5D")]
             public string FiltermanagerType { get; set; }
 #endif
-            /// <summary>Filter items with the specified package ID. You can specify multiple values. Separate multiple values with commas.For example, ``filter[packageId]=06fa0c1b-6462-459d-8a38-0aff11bfe868``.In order to filter items with no package, use &apos;noPackage&apos; value.</summary>
+            /// <summary>Filter items with the specified package ID. You can specify multiple values. Separate multiple values with commas.For example, `filter[packageId]=06fa0c1b-6462-459d-8a38-0aff11bfe868`.In order to filter items with no package, use &apos;noPackage&apos; value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BpackageId%5D")]
@@ -320,7 +320,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BpackageId%5D")]
             public string FilterpackageId { get; set; }
 #endif
-            /// <summary>Filter items based on their published date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on their published date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BpublishedDate%5D")]
@@ -330,7 +330,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BpublishedDate%5D")]
             public string FilterpublishedDate { get; set; }
 #endif
-            /// <summary>Filter items based on the date they were moved forward by the reviewer using the URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on the date they were moved forward by the reviewer using the URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BreceivedFromReview%5D")]
@@ -340,7 +340,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BreceivedFromReview%5D")]
             public string FilterreceivedFromReview { get; set; }
 #endif
-            /// <summary>Filter items based on the date they were received from the submitter. Use the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on the date they were received from the submitter. Use the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BreceivedFromSubmitter%5D")]
@@ -350,7 +350,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BreceivedFromSubmitter%5D")]
             public string FilterreceivedFromSubmitter { get; set; }
 #endif
-            /// <summary>Filter items based on their required approval date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on their required approval date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BrequiredApprovalDate%5D")]
@@ -360,7 +360,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BrequiredApprovalDate%5D")]
             public string FilterrequiredApprovalDate { get; set; }
 #endif
-            /// <summary>Filter items based on the date the responsible contractor needs to submit the submittal to the submittal manager, using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on the date the responsible contractor needs to submit the submittal to the submittal manager, using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BrequiredDate%5D")]
@@ -370,7 +370,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BrequiredDate%5D")]
             public string FilterrequiredDate { get; set; }
 #endif
-            /// <summary>Filter items based on their required on-job (jobsite) date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on their required on-job (jobsite) date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BrequiredOnJobDate%5D")]
@@ -380,7 +380,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BrequiredOnJobDate%5D")]
             public string FilterrequiredOnJobDate { get; set; }
 #endif
-            /// <summary>Filter items with the specified final response ID. You can specify multiple IDs. You can specify multiple values. Separate multiple values with commas. For example, ``filter[responseId]=1w66d30b-7dc1-4a65-991d-d739a1381rf4``.</summary>
+            /// <summary>Filter items with the specified final response ID. You can specify multiple IDs. You can specify multiple values. Separate multiple values with commas. For example, `filter[responseId]=1w66d30b-7dc1-4a65-991d-d739a1381rf4`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BresponseId%5D")]
@@ -390,7 +390,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BresponseId%5D")]
             public string FilterresponseId { get; set; }
 #endif
-            /// <summary>Filter items with the specified review response ID. You can specify multiple IDs. You can specify multiple values. Separate multiple values with commas. For example, ``filter[reviewResponseId]=1w66d30b-7dc1-4a65-991d-d739a1381rf4``.</summary>
+            /// <summary>Filter items with the specified review response ID. You can specify multiple IDs. You can specify multiple values. Separate multiple values with commas. For example, `filter[reviewResponseId]=1w66d30b-7dc1-4a65-991d-d739a1381rf4`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BreviewResponseId%5D")]
@@ -400,7 +400,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BreviewResponseId%5D")]
             public string FilterreviewResponseId { get; set; }
 #endif
-            /// <summary>Filter items with the specified revision number. You can specify multiple values. Separate multiple values with commas. For example, ``filter[revision]=1``.</summary>
+            /// <summary>Filter items with the specified revision number. You can specify multiple values. Separate multiple values with commas. For example, `filter[revision]=1`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Brevision%5D")]
@@ -410,7 +410,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5Brevision%5D")]
             public string Filterrevision { get; set; }
 #endif
-            /// <summary>Filter items based on the date they were sent for review, in the URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on the date they were sent for review, in the URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BsentToReview%5D")]
@@ -420,7 +420,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BsentToReview%5D")]
             public string FiltersentToReview { get; set; }
 #endif
-            /// <summary>Filter items based on the date they were sent to the submitter. Use the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items based on the date they were sent to the submitter. Use the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BsentToSubmitter%5D")]
@@ -430,7 +430,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BsentToSubmitter%5D")]
             public string FiltersentToSubmitter { get; set; }
 #endif
-            /// <summary>Filter items with the specified spec ID. You can specify multiple values. Separate multiple values with commas. For example, ``filter[specId]=b4aa3864-5706-4a7b-b06c-a792e8b2df23``</summary>
+            /// <summary>Filter items with the specified spec ID. You can specify multiple values. Separate multiple values with commas. For example, `filter[specId]=b4aa3864-5706-4a7b-b06c-a792e8b2df23`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BspecId%5D")]
@@ -440,7 +440,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BspecId%5D")]
             public string FilterspecId { get; set; }
 #endif
-            /// <summary>Filter items with the specified state ID. You can specify multiple values. Separate multiple values with commas. For example, ``filter[stateId]=rev``.</summary>
+            /// <summary>Filter items with the specified state ID. You can specify multiple values. Separate multiple values with commas. For example, `filter[stateId]=rev`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BstateId%5D")]
@@ -450,7 +450,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BstateId%5D")]
             public string FilterstateId { get; set; }
 #endif
-            /// <summary>Filter items with the specified status ID. You can specify multiple values. Separate multiple values with commas. For example, ``filter[statusId]=1``</summary>
+            /// <summary>Filter items with the specified status ID. You can specify multiple values. Separate multiple values with commas. For example, `filter[statusId]=1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BstatusId%5D")]
@@ -460,7 +460,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BstatusId%5D")]
             public string FilterstatusId { get; set; }
 #endif
-            /// <summary>Filter items with the specified subcontractor Autodesk ID. You can specify multiple values. Separate multiple values with commas. For example, ``filter[subcontractor]=WD43ZJGKDFLFH``.</summary>
+            /// <summary>Filter items with the specified subcontractor Autodesk ID. You can specify multiple values. Separate multiple values with commas. For example, `filter[subcontractor]=WD43ZJGKDFLFH`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bsubcontractor%5D")]
@@ -470,7 +470,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5Bsubcontractor%5D")]
             public string Filtersubcontractor { get; set; }
 #endif
-            /// <summary>Filter items with the specified subcontractor type. You can specify multiple values. Separate multiple values with commas. For example, ``filter[subcontractorType]=1``.</summary>
+            /// <summary>Filter items with the specified subcontractor type. You can specify multiple values. Separate multiple values with commas. For example, `filter[subcontractorType]=1`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BsubcontractorType%5D")]
@@ -480,7 +480,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BsubcontractorType%5D")]
             public string FiltersubcontractorType { get; set; }
 #endif
-            /// <summary>Filter items with the specified submitter&apos;s due date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items with the specified submitter&apos;s due date, using the following URL-encoded format YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BsubmitterDueDate%5D")]
@@ -490,7 +490,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BsubmitterDueDate%5D")]
             public string FiltersubmitterDueDate { get; set; }
 #endif
-            /// <summary>Filter items with the specified title. You can specify multiple values. Separate multiple values with commas. For example, ``filter[title]=``Shop Drawings````.</summary>
+            /// <summary>Filter items with the specified title. You can specify multiple values. Separate multiple values with commas. For example, `filter[title]=`Shop Drawings``.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Btitle%5D")]
@@ -500,7 +500,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5Btitle%5D")]
             public string Filtertitle { get; set; }
 #endif
-            /// <summary>Filter items with the specified type ID. You can specify multiple values. Separate multiple values with commas. For example, ``filter[typeId]=06fa0c1b-6462-459d-8a38-0aff11bfe868``.</summary>
+            /// <summary>Filter items with the specified type ID. You can specify multiple values. Separate multiple values with commas. For example, `filter[typeId]=06fa0c1b-6462-459d-8a38-0aff11bfe868`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BtypeId%5D")]
@@ -510,7 +510,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BtypeId%5D")]
             public string FiltertypeId { get; set; }
 #endif
-            /// <summary>Filter items by their last updated date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter items by their last updated date using the following URL-encoded format: YYYY-MM-DD. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -520,7 +520,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>Filter items that are associated with the specified watcher, by specifying the watcher’s Autodesk ID. For example, ``filter[watchers]=PER8KQPK2JRT``. You can specify more than one watcher. Separate multiple values with commas. To find the ID call `GET users &lt;https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+            /// <summary>Filter items that are associated with the specified watcher, by specifying the watcher’s Autodesk ID. For example, `filter[watchers]=PER8KQPK2JRT`. You can specify more than one watcher. Separate multiple values with commas. To find the ID call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bwatchers%5D")]
@@ -530,13 +530,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("filter%5Bwatchers%5D")]
             public string Filterwatchers { get; set; }
 #endif
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Search for items by querying a specified string within specific fields (``identifier``, ``title``, ``specIdentifier``, ``ballInCourt``), and retrieve the associated items that match the search criteria. This includes items where the string matches part of a field. For example, ``search=1``.</summary>
+            /// <summary>Search for items by querying a specified string within specific fields (`identifier`, `title`, `specIdentifier`, `ballInCourt`), and retrieve the associated items that match the search criteria. This includes items where the string matches part of a field. For example, `search=1`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -546,7 +546,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Sort items by specified fields. Separate multiple values with commas. To sort in descending or ascending order, add ``desc`` or ``asc`` after the sort criteria. For example, ``statusId asc``.Possible values: ``ballInCourtUsers``, ``ballInCourtCompanies``, ``ballInCourtRoles``, ``ballInCourtType``, ``customIdentifier``, ``customIdentifierHumanReadable``, ``createdAt``, ``createdBy``, ``description``, ``dueDate``, ``id``, ``identifier``, ``leadTime``, ``manager``, ``managerType``, ``managerDueDate``, ``package.identifier``, ``package.spec.identifier``, ``packageId``, ``packageIdentifier``, ``packageSpecIdentifier``, ``packageTitle``, ``priority``, ``publishedBy``, ``publishedDate``, ``receivedFromReview``, ``receivedFromSubmitter``, ``requiredApprovalDate``, ``requiredDate``, ``requiredOnJobDate``, ``respondedAt``, ``respondedBy``, ``response.value``, ``responseComment``, ``responseId``, ``revision``, ``sentToReview``, ``sentToReviewBy``, ``sentToSubmitter``, ``spec.identifier``, ``specId``, ``specIdentifier``, ``specTitle``, ``stateId``, ``statusId``, ``subcontractor``, ``subcontractorType``, ``submittedBy``, ``submitterDueDate``, ``subsection``, ``title``, ``type.value``, ``typeId``, ``updatedAt``, ``updatedBy``, ``watchers``.</summary>
+            /// <summary>Sort items by specified fields. Separate multiple values with commas. To sort in descending or ascending order, add `desc` or `asc` after the sort criteria. For example, `statusId asc`.Possible values: `ballInCourtUsers`, `ballInCourtCompanies`, `ballInCourtRoles`, `ballInCourtType`, `customIdentifier`, `customIdentifierHumanReadable`, `createdAt`, `createdBy`, `description`, `dueDate`, `id`, `identifier`, `leadTime`, `manager`, `managerType`, `managerDueDate`, `package.identifier`, `package.spec.identifier`, `packageId`, `packageIdentifier`, `packageSpecIdentifier`, `packageTitle`, `priority`, `publishedBy`, `publishedDate`, `receivedFromReview`, `receivedFromSubmitter`, `requiredApprovalDate`, `requiredDate`, `requiredOnJobDate`, `respondedAt`, `respondedBy`, `response.value`, `responseComment`, `responseId`, `revision`, `sentToReview`, `sentToReviewBy`, `sentToSubmitter`, `spec.identifier`, `specId`, `specIdentifier`, `specTitle`, `stateId`, `statusId`, `subcontractor`, `subcontractorType`, `submittedBy`, `submitterDueDate`, `subsection`, `title`, `type.value`, `typeId`, `updatedAt`, `updatedBy`, `watchers`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

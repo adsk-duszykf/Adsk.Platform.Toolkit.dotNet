@@ -42,9 +42,9 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>``true``: this related attribute is required.``false``: this related attribute is not required.</summary>
+        /// <summary>`true`: this related attribute is required.`false`: this related attribute is not required.</summary>
         public bool? Optional { get; set; }
-        /// <summary>A drop-down list of possible values for the related attribute.Only relevant for a related attribute of type ``ARRAY`` (drop-down list).</summary>
+        /// <summary>A drop-down list of possible values for the related attribute.Only relevant for a related attribute of type `ARRAY` (drop-down list).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata_options>? Options { get; set; }
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 #else
         public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata_options> Options { get; set; }
 #endif
-        /// <summary>The related attribute type.Possible values:- ``ALPHANUMERIC``: Accepts all characters.- ``NONNUMERIC_TEXT``: Accepts all characters, excluding ``0-9``.- ``NUMERIC``: Includes ``0-9``, comma ``&apos;,&apos;``, plus ``&apos;+&apos;``, minus ``&apos;-&apos;``, percent ``&apos;%&apos;``, period ``&apos;.&apos;``, underscore ``&apos;_&apos;``.- ``ARRAY``: A drop-down list.- ``CLASSIFICATION``: Only relevant for a classification attribute.Note that the ``minLength`` and ``maxLength`` properties are not included in the response for the ``ARRAY`` type.</summary>
+        /// <summary>The related attribute type.Possible values:- `ALPHANUMERIC`: Accepts all characters.- `NONNUMERIC_TEXT`: Accepts all characters, excluding `0-9`.- `NUMERIC`: Includes `0-9`, comma `&apos;,&apos;`, plus `&apos;+&apos;`, minus `&apos;-&apos;`, percent `&apos;%&apos;`, period `&apos;.&apos;`, underscore `&apos;_&apos;`.- `ARRAY`: A drop-down list.- `CLASSIFICATION`: Only relevant for a classification attribute.Note that the `minLength` and `maxLength` properties are not included in the response for the `ARRAY` type.</summary>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

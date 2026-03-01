@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
     public partial class ResponsesPostResponse_rfi_responses : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time the response was created, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time the response was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The Autodesk ID of the assigned user.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.To retrieve the list of available assignees, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_ and check the ``manager`` and ``projectReviewer`` fields.</summary>
+        /// <summary>The Autodesk ID of the assigned user.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).To retrieve the list of available assignees, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET) and check the `manager` and `projectReviewer` fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -22,13 +22,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string CreatedBy { get; set; }
 #endif
-        /// <summary>The date and time the response was deleted, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time the response was deleted, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>The unique identifier of the response.</summary>
         public Guid? Id { get; set; }
-        /// <summary>Indicates whether the response can be edited.``true``: The response is editable.``false`` (default): The response cannot be edited.</summary>
+        /// <summary>Indicates whether the response can be edited.`true`: The response is editable.`false` (default): The response cannot be edited.</summary>
         public bool? IsEditable { get; set; }
-        /// <summary>The Autodesk ID of the assigned user.To find details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.To retrieve the list of available assignees, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_ and check the ``manager`` and ``projectReviewer`` fields.</summary>
+        /// <summary>The Autodesk ID of the assigned user.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).To retrieve the list of available assignees, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET) and check the `manager` and `projectReviewer` fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnBehalf { get; set; }
@@ -44,9 +44,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string RfiId { get; set; }
 #endif
-        /// <summary>The state of the response. Possible values:- ``draft``: The response was returned to the reviewer for changes.- ``submitted``: The reviewer submitted a finalized response.</summary>
+        /// <summary>The state of the response. Possible values:- `draft`: The response was returned to the reviewer for changes.- `submitted`: The reviewer submitted a finalized response.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_rfi_responses_state? State { get; set; }
-        /// <summary>Indicates whether the response was accepted (``answered``) or declined (``rejected``).Possible values: ``answered``, ``rejected``</summary>
+        /// <summary>Indicates whether the response was accepted (`answered`) or declined (`rejected`).Possible values: `answered`, `rejected`</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_rfi_responses_status? Status { get; set; }
         /// <summary>The body of the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,9 +56,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The date and time the response was updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time the response was updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who updated the response. To find the name of the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who updated the response. To find the name of the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 {
-    /// <summary>The current status of the step. Possible values: ``not-started``, ``in-progress``, ``completed``.</summary>
+    /// <summary>The current status of the step. Possible values: `not-started`, `in-progress`, `completed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum StepsGetResponse_results_status
     {

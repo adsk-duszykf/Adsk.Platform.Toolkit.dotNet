@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item
         {
         }
         /// <summary>
-        /// Retrieve the details about a single spec section. For information about spec sections, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections&gt;`_.
+        /// Retrieve the details about a single spec section. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the details about a single spec section. For information about spec sections, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections&gt;`_.
+        /// Retrieve the details about a single spec section. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the details about a single spec section. For information about spec sections, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections&gt;`_.
+        /// Retrieve the details about a single spec section. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -13,9 +13,9 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExportsPostRequestBody_options_issueMarkups : IParsable
     {
-        /// <summary>``true``: published issue markups will be included in the exported sheets.``false``: (default) published issue markups will not be included in the exported sheets.</summary>
+        /// <summary>`true`: published issue markups will be included in the exported sheets.`false`: (default) published issue markups will not be included in the exported sheets.</summary>
         public bool? IncludePublishedMarkups { get; set; }
-        /// <summary>``true``: include issue markups in the exported sheets that are visible only to their creators or assignees.``false``: (default) export sheets without including unpublished issue markups.</summary>
+        /// <summary>`true`: include issue markups in the exported sheets that are visible only to their creators or assignees.`false`: (default) export sheets without including unpublished issue markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

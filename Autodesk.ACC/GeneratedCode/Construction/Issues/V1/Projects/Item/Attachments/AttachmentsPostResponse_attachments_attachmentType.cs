@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
 {
-    /// <summary>The type of attachment. For issue attachments, this value is always ``issue-attachment``. Will always be: ``issue-attachment``</summary>
+    /// <summary>The type of attachment. For issue attachments, this value is always `issue-attachment`. Will always be: `issue-attachment`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttachmentsPostResponse_attachments_attachmentType
     {

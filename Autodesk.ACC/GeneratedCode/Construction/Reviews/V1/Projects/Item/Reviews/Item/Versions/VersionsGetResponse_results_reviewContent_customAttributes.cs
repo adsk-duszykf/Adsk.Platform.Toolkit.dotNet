@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versio
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The data type of the attribute. Possible values: ``string`` (text field), ``date``, ``array`` (drop-list).</summary>
+        /// <summary>The data type of the attribute. Possible values: `string` (text field), `date`, `array` (drop-list).</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versions.VersionsGetResponse_results_reviewContent_customAttributes_type? Type { get; set; }
         /// <summary>The value of the attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

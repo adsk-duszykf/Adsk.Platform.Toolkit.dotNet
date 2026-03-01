@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type of classification system.Possible values: ``CLASSIFICATION_SYSTEM_1``, ``CLASSIFICATION_SYSTEM_2``.See the `Help documentation &lt;https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Configure_Takeoff_Settings&gt;`_ for more details about the classification systems.</summary>
+        /// <summary>The type of classification system.Possible values: `CLASSIFICATION_SYSTEM_1`, `CLASSIFICATION_SYSTEM_2`.See the [Help documentation](https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Configure_Takeoff_Settings) for more details about the classification systems.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.ClassificationSystemsGetResponse_results_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

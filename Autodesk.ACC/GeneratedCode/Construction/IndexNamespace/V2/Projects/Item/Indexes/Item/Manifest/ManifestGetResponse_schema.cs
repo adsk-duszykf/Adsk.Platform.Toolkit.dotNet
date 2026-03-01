@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest
 {
-    /// <summary>current schema version.Possible values: ``2.0.0``</summary>
+    /// <summary>current schema version.Possible values: `2.0.0`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManifestGetResponse_schema
     {

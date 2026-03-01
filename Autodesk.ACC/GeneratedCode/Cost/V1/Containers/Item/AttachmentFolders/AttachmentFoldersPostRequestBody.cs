@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.AttachmentFolders
     {
         /// <summary>The object ID of the item is associated to. For example, ID of the budget, contract or cost item.</summary>
         public Guid? AssociationId { get; set; }
-        /// <summary>The type of the item with which the attachment is associated. Possible values: ``Budget``, ``Contract``, ``FormInstance``, ``CostItem``, ``Payment``, ``MainContract``, ``BudgetPayment``.</summary>
+        /// <summary>The type of the item with which the attachment is associated. Possible values: `Budget`, `Contract`, `FormInstance`, `CostItem`, `Payment`, `MainContract`, `BudgetPayment`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociationType { get; set; }

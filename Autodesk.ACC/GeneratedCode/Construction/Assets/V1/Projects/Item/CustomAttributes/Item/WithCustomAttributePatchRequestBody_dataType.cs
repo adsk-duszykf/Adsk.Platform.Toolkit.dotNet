@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.Item
 {
-    /// <summary>The data type that this custom attribute&apos;s value must take. Once set, the data type can&apos;t be changed.Possible values:- ``boolean``: ``true`` or ``false``- ``text``: a string- ``numeric``: a string that parses as a valid floating point number (not localized)- ``date``: an ISO8601 date string with no time, for example, ``2021-04-01``.- ``select``: a valid ID from the list of values defined by ``enumValues``.- ``multi_select``: an array of valid IDs from the list of values defined by ``enumValues``.</summary>
+    /// <summary>The data type that this custom attribute&apos;s value must take. Once set, the data type can&apos;t be changed.Possible values:- `boolean`: `true` or `false`- `text`: a string- `numeric`: a string that parses as a valid floating point number (not localized)- `date`: an ISO8601 date string with no time, for example, `2021-04-01`.- `select`: a valid ID from the list of values defined by `enumValues`.- `multi_select`: an array of valid IDs from the list of values defined by `enumValues`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithCustomAttributePatchRequestBody_dataType
     {

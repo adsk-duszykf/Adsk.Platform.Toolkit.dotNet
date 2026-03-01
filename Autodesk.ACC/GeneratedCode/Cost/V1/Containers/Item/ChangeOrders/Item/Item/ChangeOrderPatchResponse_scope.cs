@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item
 {
-    /// <summary>The scope of the change order. Possible values: ``out``, ``in``, ``tbd`` , ``budgetOnly``, ``contingency``.</summary>
+    /// <summary>The scope of the change order. Possible values: `out`, `in`, `tbd` , `budgetOnly`, `contingency`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ChangeOrderPatchResponse_scope
     {

@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
         {
         }
         /// <summary>
-        /// POST assets:batch-create V2
+        /// Creates a set of new assets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST assets:batch-create V2
+        /// Creates a set of new assets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreateResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST assets:batch-create V2
+        /// Creates a set of new assets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

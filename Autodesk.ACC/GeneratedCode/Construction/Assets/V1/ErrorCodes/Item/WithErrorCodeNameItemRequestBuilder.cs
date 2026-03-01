@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item
         {
         }
         /// <summary>
-        /// GET error-codes/:errorCodeName
+        /// Retrieves details about an error code by name.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item.WithErrorCodeNameGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item.WithErrorCodeNameGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item.WithErrorCodeNameGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET error-codes/:errorCodeName
+        /// Retrieves details about an error code by name.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item.WithErrorCodeNameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item.WithErrorCodeNameResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.ErrorCodes.Item.WithErrorCodeNameResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET error-codes/:errorCodeName
+        /// Retrieves details about an error code by name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

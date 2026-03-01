@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
     public partial class WithNodePatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The barcode of the specified LBS node to update. This value must be unique per project. Note that you must specify ``barcode``, ``name``, or both for this endpoint to succeed.Max length: 255</summary>
+        /// <summary>The barcode of the specified LBS node to update. This value must be unique per project. Note that you must specify `barcode`, `name`, or both for this endpoint to succeed.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Barcode { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
 #else
         public string Barcode { get; set; }
 #endif
-        /// <summary>The name of the specified LBS node to update. Note that you must specify ``name``, ``barcode``, or both for this endpoint to succeed.Max length: 255</summary>
+        /// <summary>The name of the specified LBS node to update. Note that you must specify `name`, `barcode`, or both for this endpoint to succeed.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

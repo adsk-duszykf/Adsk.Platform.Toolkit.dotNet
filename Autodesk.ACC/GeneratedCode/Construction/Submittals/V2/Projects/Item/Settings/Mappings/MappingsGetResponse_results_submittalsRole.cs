@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings
 {
-    /// <summary>The role of the user in Submittals. Possible values: ``1`` (manager).</summary>
+    /// <summary>The role of the user in Submittals. Possible values: `1` (manager).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MappingsGetResponse_results_submittalsRole
     {

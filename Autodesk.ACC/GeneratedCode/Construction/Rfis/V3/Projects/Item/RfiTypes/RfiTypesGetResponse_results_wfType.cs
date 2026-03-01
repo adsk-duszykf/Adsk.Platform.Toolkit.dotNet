@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 {
-    /// <summary>The workflow type used for this RFI type.Possible values:- ``US``: The US-style workflow, with a Reviewer and optional Manager.- ``EU``: The EU-style workflow, with a Project Coordinator and Project Reviewer.The workflow type determines the available statuses and workflow roles for RFIs of this type.</summary>
+    /// <summary>The workflow type used for this RFI type.Possible values:- `US`: The US-style workflow, with a Reviewer and optional Manager.- `EU`: The EU-style workflow, with a Project Coordinator and Project Reviewer.The workflow type determines the available statuses and workflow roles for RFIs of this type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RfiTypesGetResponse_results_wfType
     {

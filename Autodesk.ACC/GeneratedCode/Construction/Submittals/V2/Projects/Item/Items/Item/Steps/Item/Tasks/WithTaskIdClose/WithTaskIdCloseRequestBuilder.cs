@@ -21,7 +21,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// <param name="taskId">The ID of the task. To get the task ID, call `GET tasks &lt;/en/docs/acc/v1/reference/http/submittals-tasks-GET/&gt;`_.</param>
+        /// <param name="taskId">The ID of the task. To get the task ID, call [GET tasks](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-tasks-GET/).</param>
         public WithTaskIdCloseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string taskId = "") : base(requestAdapter, "{+baseurl}/construction/submittals/v2/projects/{projectId}/items/{itemId}/steps/{stepId}/tasks/{taskId}:close", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(taskId)) PathParameters.Add("taskId", taskId);
@@ -35,7 +35,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
         {
         }
         /// <summary>
-        /// The submittal item progresses to the ``Close and distribute`` state only after all review steps and required tasks are completed. Note that closing a task corresponds to adding a review in the UI.
+        /// Closes a task by adding a required review response, marking it as complete within the submittal review workflow.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdClosePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -55,7 +55,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdClosePostResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdClosePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The submittal item progresses to the ``Close and distribute`` state only after all review steps and required tasks are completed. Note that closing a task corresponds to adding a review in the UI.
+        /// Closes a task by adding a required review response, marking it as complete within the submittal review workflow.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdCloseResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdCloseResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdCloseResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The submittal item progresses to the ``Close and distribute`` state only after all review steps and required tasks are completed. Note that closing a task corresponds to adding a review in the UI.
+        /// Closes a task by adding a required review response, marking it as complete within the submittal review workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

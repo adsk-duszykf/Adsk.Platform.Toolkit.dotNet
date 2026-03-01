@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
     public partial class DocumentsGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The approval status of the file version.For more information, see `File Review Statuses &lt;https://help.autodesk.com/view/DOCS/ENU/?guid=BIM360D_Document_Management_About_Reviews_Reviews_FAQs_Reference_html#file-review-statuses&gt;`_ documentation.</summary>
+        /// <summary>The approval status of the file version.For more information, see [File Review Statuses](https://help.autodesk.com/view/DOCS/ENU/?guid=BIM360D_Document_Management_About_Reviews_Reviews_FAQs_Reference_html#file-review-statuses) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse_results_approveStatus? ApproveStatus { get; set; }
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string FolderType { get; set; }
 #endif
-        /// <summary>Indicates whether the file is deleted.``true`` – The file is deleted, either directly or because its parent folder was deleted.``false`` – The file is not deleted.</summary>
+        /// <summary>Indicates whether the file is deleted.`true` – The file is deleted, either directly or because its parent folder was deleted.`false` – The file is not deleted.</summary>
         public bool? IsDeleted { get; set; }
         /// <summary>The date and time when the file was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? LastUpdatedAt { get; set; }
@@ -72,7 +72,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string RevisionLabel { get; set; }
 #endif
-        /// <summary>The storage URN of the document. You can use the storage URN to download the document. For details, see the `Download Files &lt;/en/docs/acc/v1/tutorials/files/download-document-s3/&gt;`_ tutorial.</summary>
+        /// <summary>The storage URN of the document. You can use the storage URN to download the document. For details, see the [Download Files](https://aps.autodesk.com/en/docs/acc/v1/tutorials/files/download-document-s3/) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageUrn { get; set; }
@@ -88,7 +88,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the user who created the file. For details about the user, call `GET user &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who created the file. For details about the user, call [GET user](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy { get; set; }

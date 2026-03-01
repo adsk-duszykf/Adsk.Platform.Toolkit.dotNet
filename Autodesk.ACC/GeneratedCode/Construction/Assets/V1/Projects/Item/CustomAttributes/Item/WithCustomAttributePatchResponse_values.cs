@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.Ite
 #else
         public string DeletedBy { get; set; }
 #endif
-        /// <summary>The display name of the value. Must be unique within the custom attribute (case-insensitive). Use togenerate the ``enumValues`` field for the custom attribute.</summary>
+        /// <summary>The display name of the value. Must be unique within the custom attribute (case-insensitive). Use togenerate the `enumValues` field for the custom attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -62,9 +62,9 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.Ite
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A flag indicating whether the component is active or inactive (``isActive`` is ``true`` if-and-only-if ``deletedAt`` is empty).</summary>
+        /// <summary>A flag indicating whether the component is active or inactive (`isActive` is `true` if-and-only-if `deletedAt` is empty).</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form ``b.{UUID}``.</summary>
+        /// <summary>The Autodesk Construction Cloud project ID. Must be a UUID or a project ID of the form `b.{UUID}`.</summary>
         public Guid? ProjectId { get; set; }
         /// <summary>The time when the component was last updated (ISO8601 Date time format in UTC).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

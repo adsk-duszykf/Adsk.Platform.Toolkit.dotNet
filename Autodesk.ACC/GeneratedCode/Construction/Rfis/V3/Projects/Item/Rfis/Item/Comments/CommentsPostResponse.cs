@@ -20,9 +20,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Comments
 #else
         public string Body { get; set; }
 #endif
-        /// <summary>The timestamp of the date and time the comment was created, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The timestamp of the date and time the comment was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who created the comment.To check the name of the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-v1-projects-projectId-users-GET&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who created the comment.To check the name of the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-v1-projects-projectId-users-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -46,9 +46,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Comments
 #else
         public string RfiId { get; set; }
 #endif
-        /// <summary>The source of the comment. Indicates how the comment was created.Possible values:- ``web`` – The comment was created through the web interface or API.- ``email`` – The comment was created by replying via email.</summary>
+        /// <summary>The source of the comment. Indicates how the comment was created.Possible values:- `web` – The comment was created through the web interface or API.- `email` – The comment was created by replying via email.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Comments.CommentsPostResponse_source? Source { get; set; }
-        /// <summary>The timestamp of the date and time the comment was updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The timestamp of the date and time the comment was updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

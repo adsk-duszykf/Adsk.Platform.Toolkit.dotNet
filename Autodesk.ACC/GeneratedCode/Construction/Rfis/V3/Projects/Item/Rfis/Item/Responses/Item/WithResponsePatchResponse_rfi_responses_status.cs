@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item
 {
-    /// <summary>Indicates whether the response was accepted (``answered``) or declined (``rejected``).Possible values: ``answered``, ``rejected``</summary>
+    /// <summary>Indicates whether the response was accepted (`answered`) or declined (`rejected`).Possible values: `answered`, `rejected`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithResponsePatchResponse_rfi_responses_status
     {

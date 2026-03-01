@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
     public partial class ClassificationsImportPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The classification hierarchy.The classification hierarchy is configured as a JSON array in the payload, created from a spreadsheet file.Max size: ``30000``.For more details, see the `ACC Configure Takeoff Settings &lt;https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Configure_Takeoff_Settings&gt;`_ help documentation.</summary>
+        /// <summary>The classification hierarchy.The classification hierarchy is configured as a JSON array in the payload, created from a spreadsheet file.Max size: `30000`.For more details, see the [ACC Configure Takeoff Settings](https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Configure_Takeoff_Settings) help documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.ClassificationsImport.ClassificationsImportPostRequestBody_classifications>? Classifications { get; set; }

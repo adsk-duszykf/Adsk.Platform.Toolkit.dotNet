@@ -39,7 +39,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         {
         }
         /// <summary>
-        /// Retrieves a specific query for an index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Depending on the state different properties might be present or missing.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryGetResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specific query for an index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Depending on the state different properties might be present or missing.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specific query for an index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Depending on the state different properties might be present or missing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -68,7 +68,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
 #else
         public string StateOrProvince { get; set; }
 #endif
-        /// <summary>The address type. Will always be: ``Main``</summary>
+        /// <summary>The address type. Will always be: `Main`</summary>
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse_results_addresses_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

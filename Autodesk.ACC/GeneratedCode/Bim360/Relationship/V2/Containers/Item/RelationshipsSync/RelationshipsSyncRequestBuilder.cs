@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
         {
         }
         /// <summary>
-        /// Syncs relationships in a container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Synchronise relationships using the (optional) synchronization token passed by the caller.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Syncs relationships in a container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Synchronise relationships using the (optional) synchronization token passed by the caller.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Syncs relationships in a container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Synchronise relationships using the (optional) synchronization token passed by the caller.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

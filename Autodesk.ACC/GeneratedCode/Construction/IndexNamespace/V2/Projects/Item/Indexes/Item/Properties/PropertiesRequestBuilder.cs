@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         {
         }
         /// <summary>
-        /// Retrieves properties for a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the specific properties index. Since the properties index, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Properties.PropertiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Properties.PropertiesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Properties.PropertiesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves properties for a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the specific properties index. Since the properties index, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Properties.PropertiesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Properties.PropertiesResponse>(requestInfo, global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Properties.PropertiesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves properties for a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the specific properties index. Since the properties index, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

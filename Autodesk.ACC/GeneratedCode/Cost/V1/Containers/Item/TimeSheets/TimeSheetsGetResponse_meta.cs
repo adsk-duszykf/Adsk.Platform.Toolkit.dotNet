@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
     public partial class TimeSheetsGetResponse_meta : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Total sum of timesheet logs input quantity before given ``trackingItemInstanceId`` and ``endDate`` filter. ``null`` if not applicable.</summary>
+        /// <summary>Total sum of timesheet logs input quantity before given `trackingItemInstanceId` and `endDate` filter. `null` if not applicable.</summary>
         public double? TotalPreviousInputQuantity { get; set; }
-        /// <summary>Total sum of timesheet logs output quantity before given ``trackingItemInstanceId`` and ``endDate`` filter. ``null`` if not applicable.</summary>
+        /// <summary>Total sum of timesheet logs output quantity before given `trackingItemInstanceId` and `endDate` filter. `null` if not applicable.</summary>
         public double? TotalPreviousOutputQuantity { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

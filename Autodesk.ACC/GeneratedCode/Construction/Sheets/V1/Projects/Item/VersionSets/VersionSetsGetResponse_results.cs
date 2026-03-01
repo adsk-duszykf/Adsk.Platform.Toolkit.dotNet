@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets
     public partial class VersionSetsGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The collection object, if assigned. If no collection is assigned, this value is ``null``.</summary>
+        /// <summary>The collection object, if assigned. If no collection is assigned, this value is `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.VersionSetsGetResponse_results_collection? Collection { get; set; }

@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
 #else
         public List<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.UploadsPostRequestBody_files> Files { get; set; }
 #endif
-        /// <summary>The ID of the version set you want to upload the sheets to.To create a new version set, call `POST version-sets &lt;/en/docs/acc/v1/reference/http/sheets-version-sets-POST/&gt;`_.To find the ID of an existing version set, call `GET version-sets &lt;/en/docs/acc/v1/reference/http/sheets-version-sets-GET/&gt;`_.</summary>
+        /// <summary>The ID of the version set you want to upload the sheets to.To create a new version set, call [POST version-sets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-POST/).To find the ID of an existing version set, call [GET version-sets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VersionSetId { get; set; }

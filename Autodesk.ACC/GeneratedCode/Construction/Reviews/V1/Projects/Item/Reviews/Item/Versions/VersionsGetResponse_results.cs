@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versio
 #else
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versions.VersionsGetResponse_results_reviewContent ReviewContent { get; set; }
 #endif
-        /// <summary>The URN of the file version currently under review.This value is used when retrieving the full approval and review history of a specific version.See `GET approval-statuses &lt;/en/docs/acc/v1/reference/http/reviews-getversionapprovalstatuses-GET/&gt;`_ for more details.</summary>
+        /// <summary>The URN of the file version currently under review.This value is used when retrieving the full approval and review history of a specific version.See [GET approval-statuses](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-getversionapprovalstatuses-GET/) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Urn { get; set; }

@@ -39,7 +39,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item
         {
         }
         /// <summary>
-        /// Retrieves a company by ID from the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query the details of a specific partner company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a company by ID from the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query the details of a specific partner company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a company in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Update the properties of only the specified attributes of a specific partner company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a company in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Update the properties of only the specified attributes of a specific partner company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +117,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a company by ID from the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query the details of a specific partner company.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a company in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Update the properties of only the specified attributes of a specific partner company.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

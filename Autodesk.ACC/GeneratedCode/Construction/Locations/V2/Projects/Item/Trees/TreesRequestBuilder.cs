@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees
     public partial class TreesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.locations.v2.projects.item.trees.item collection</summary>
-        /// <param name="position">Must be ``default``. Currently a project can contain only the default tree.</param>
+        /// <param name="position">Must be `default`. Currently a project can contain only the default tree.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.WithTreeItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.WithTreeItemRequestBuilder this[string position]
         {

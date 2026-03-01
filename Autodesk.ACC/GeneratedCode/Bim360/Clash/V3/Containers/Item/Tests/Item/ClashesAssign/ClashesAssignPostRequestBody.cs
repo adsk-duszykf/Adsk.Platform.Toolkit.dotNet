@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>Specifies the type that the assignedTo parameter refers to. Possible values: ``User``, ``Role``, ``Company``.</summary>
+        /// <summary>Specifies the type that the assignedTo parameter refers to. Possible values: `User`, `Role`, `Company`.</summary>
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_assignedToType? AssignedToType { get; set; }
         /// <summary>The clashes to be included in the new assigned clash group. Min items: 1 Max items: 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
 #else
         public List<string> ScreenShots { get; set; }
 #endif
-        /// <summary>The status of the new issue. Possible values: ``Open``, ``Draft``.</summary>
+        /// <summary>The status of the new issue. Possible values: `Open`, `Draft`.</summary>
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_status? Status { get; set; }
         /// <summary>The title of the new assigned clash group. Min length: 1 Max length: 4200.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

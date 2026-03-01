@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
 #endif
         /// <summary>project ID.</summary>
         public Guid? ProjectId { get; set; }
-        /// <summary>current schema version.Possible values: ``2.0.0``</summary>
+        /// <summary>current schema version.Possible values: `2.0.0`</summary>
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse_schema? Schema { get; set; }
         /// <summary>seed files.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +42,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
 #else
         public List<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse_stats> Stats { get; set; }
 #endif
-        /// <summary>manifest status.Possible values: ``Failed``, ``Running``, ``Succeeded``</summary>
+        /// <summary>manifest status.Possible values: `Failed`, `Running`, `Succeeded`</summary>
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

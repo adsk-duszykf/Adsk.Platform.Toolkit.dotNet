@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister
 {
-    /// <summary>The type of specification category associated with the submittal. This is equivalent to *Submittal type* in the UI.Possible values: ``Test Reports``, ``Shop Drawings``, ``Schedules``, ``Samples``, ``Sample Warranty``, ``Reports``, ``Qualification Data``, ``QUALITY ASSURANCE``, ``Product Data``, ``Performance Data``, ``Mfg. Instructions``, ``Meeting/Conferences``, ``Drawings``, ``Delegated-Design``, ``Certifications``, ``Certificates``, ``Calculations``, ``Attic Stock``, ``Demonstrations``, ``General Warranties``, ``O&amp;M Manuals``, ``Special Warranties``, ``LEED``, ``As-Builts``, ``TESTS AND INSPECTIONS``, ``General``, ``Manufacturers Instructions``, ``Substitutions``, ``Mix Design``, ``Others``</summary>
+    /// <summary>The type of specification category associated with the submittal. This is equivalent to *Submittal type* in the UI.Possible values: `Test Reports`, `Shop Drawings`, `Schedules`, `Samples`, `Sample Warranty`, `Reports`, `Qualification Data`, `QUALITY ASSURANCE`, `Product Data`, `Performance Data`, `Mfg. Instructions`, `Meeting/Conferences`, `Drawings`, `Delegated-Design`, `Certifications`, `Certificates`, `Calculations`, `Attic Stock`, `Demonstrations`, `General Warranties`, `O&amp;M Manuals`, `Special Warranties`, `LEED`, `As-Builts`, `TESTS AND INSPECTIONS`, `General`, `Manufacturers Instructions`, `Substitutions`, `Mix Design`, `Others`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SmartregisterGetResponse_specCategory
     {

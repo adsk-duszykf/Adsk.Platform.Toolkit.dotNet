@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
     public partial class SubCostItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.costItems.item.subCostItems.item collection</summary>
-        /// <param name="position">The ID of the sub cost item to be updated. To find the sub cost item ID, call `GET sub-cost-items &lt;/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the sub cost item to be updated. To find the sub cost item ID, call [GET sub-cost-items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.costItems.item.subCostItems.item collection</summary>
-        /// <param name="position">The ID of the sub cost item to be updated. To find the sub cost item ID, call `GET sub-cost-items &lt;/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the sub cost item to be updated. To find the sub cost item ID, call [GET sub-cost-items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubCostItemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The type of the value to break down.Possible values: ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``</summary>
+            /// <summary>The type of the value to break down.Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`</summary>
             [Obsolete("This property is deprecated, use FiltertypeAsGetFilterTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,16 +203,16 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
             [QueryParameter("filter%5Btype%5D")]
             public string Filtertype { get; set; }
 #endif
-            /// <summary>The type of the value to break down.Possible values: ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``</summary>
+            /// <summary>The type of the value to break down.Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`</summary>
             [QueryParameter("filter%5Btype%5D")]
             public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.GetFilterTypeQueryParameterType? FiltertypeAsGetFilterTypeQueryParameterType { get; set; }
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

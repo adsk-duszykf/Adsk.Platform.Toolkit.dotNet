@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 {
-    /// <summary>The RFI workflow type assigned to the project.Possible values:``US`` Single-reviewer workflow``EU`` Two-reviewer workflowNote that you cannot set the workflow type via the API. To change it, use the Project Admin UI.</summary>
+    /// <summary>The RFI workflow type assigned to the project.Possible values:`US` Single-reviewer workflow`EU` Two-reviewer workflowNote that you cannot set the workflow type via the API. To change it, use the Project Admin UI.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MeGetResponse_workflow_type
     {

@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
     {
         /// <summary>The ID of the custom attribute to be applied after review completion.</summary>
         public int? Id { get; set; }
-        /// <summary>(``Attribute – Required by approver`` in the UI)Indicates whether the approver must enter a value for this attribute to submit the review.``true``: the attribute is required.``false``: (default) the attribute is optional.</summary>
+        /// <summary>(`Attribute – Required by approver` in the UI)Indicates whether the approver must enter a value for this attribute to submit the review.`true`: the attribute is required.`false`: (default) the attribute is optional.</summary>
         public bool? Required { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus
 {
     /// <summary>
-    /// `SQL AST for describing columns/projections &lt;/en/docs/acc/v1/tutorials/model-properties/query-ref/&gt;`_
+    /// [SQL AST for describing columns/projections](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndexesBatchStatusPostRequestBody_versions_columns : IParsable

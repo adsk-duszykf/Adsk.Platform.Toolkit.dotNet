@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 {
-    /// <summary>The field to sort by.Possible values: ``createdAt``, ``status``, ``dueDate``, ``title``, ``location``, ``updatedAt``, ``closedAt``, ``costImpact``, ``scheduleImpact``, ``priority``, ``discipline``, ``category``, ``reference``, ``customIdentifier``, ``customAttribute``</summary>
+    /// <summary>The field to sort by.Possible values: `createdAt`, `status`, `dueDate`, `title`, `location`, `updatedAt`, `closedAt`, `costImpact`, `scheduleImpact`, `priority`, `discipline`, `category`, `reference`, `customIdentifier`, `customAttribute`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SearchRfisPostRequestBody_sort_field
     {

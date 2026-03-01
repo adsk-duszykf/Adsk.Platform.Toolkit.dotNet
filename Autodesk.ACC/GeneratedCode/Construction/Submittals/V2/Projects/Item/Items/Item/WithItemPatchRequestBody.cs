@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
     public partial class WithItemPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A custom number to assign to the submittal item. Before updating an item, check what the custom numbering type is for the current project by calling `GET metadata &lt;/en/docs/acc/v1/reference/http/submittals-metadata-GET/&gt;`_ to get the custom identifier sequence type.Submittals support two custom numbering types:- Global Numbering: The custom identifier only contains the sequential number.- Spec Section Numbering: When the project uses spec section numbering for custom numbering, ensure that only the sequential number part of the custom identifier is sent in the request, excluding the spec ID.To find the next available custom number in the sequence, call `GET items:next-custom-identifier &lt;/en/docs/acc/v1/reference/http/submittals-itemsnext-custom-identifier-GET/&gt;`_.To verify whether the custom number has not been used and is in a supported format, call `POST items:validate-custom-identifier &lt;/en/docs/acc/v1/reference/http/submittals-itemsvalidate-custom-identifier-POST/&gt;`_.For more information on custom numbering, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Custom_Numbering&gt;`_.</summary>
+        /// <summary>A custom number to assign to the submittal item. Before updating an item, check what the custom numbering type is for the current project by calling [GET metadata](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET/) to get the custom identifier sequence type.Submittals support two custom numbering types:- Global Numbering: The custom identifier only contains the sequential number.- Spec Section Numbering: When the project uses spec section numbering for custom numbering, ensure that only the sequential number part of the custom identifier is sent in the request, excluding the spec ID.To find the next available custom number in the sequence, call [GET items:next-custom-identifier](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-itemsnext-custom-identifier-GET/).To verify whether the custom number has not been used and is in a supported format, call [POST items:validate-custom-identifier](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-itemsvalidate-custom-identifier-POST/).For more information on custom numbering, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Custom_Numbering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomIdentifier { get; set; }
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #endif
         /// <summary>The duration (in days) from the approval of the submittal to the delivery of materials or products to the construction site.</summary>
         public int? LeadTime { get; set; }
-        /// <summary>The Autodesk ID (``autodeskId``) or Group ID (``memberGroupId``) specifying the manager to assign to the submittal item. The manager could be a user, role, or a company. Note that the user must be defined as a manager in the project. You can verify this by calling `GET mappings &lt;/en/docs/acc/v1/reference/http/submittals-mappings-GET/&gt;`_.To get the possible values for a manager, call `GET mappings &lt;/en/docs/acc/v1/reference/http/submittals-mappings-GET/&gt;`_ and check the autodeskId. This returns a list of all the users, roles, and companies that are managers in the project. Call `GET projects/users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_ to verify the actual name of the user. If a copmany is a manager, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_ to verify the actual name of the company. Note that we do not currently support verifying names of roles.</summary>
+        /// <summary>The Autodesk ID (`autodeskId`) or Group ID (`memberGroupId`) specifying the manager to assign to the submittal item. The manager could be a user, role, or a company. Note that the user must be defined as a manager in the project. You can verify this by calling [GET mappings](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-mappings-GET/).To get the possible values for a manager, call [GET mappings](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-mappings-GET/) and check the autodeskId. This returns a list of all the users, roles, and companies that are managers in the project. Call [GET projects/users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET) to verify the actual name of the user. If a copmany is a manager, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_ to verify the actual name of the company. Note that we do not currently support verifying names of roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manager { get; set; }
@@ -38,7 +38,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string Manager { get; set; }
 #endif
-        /// <summary>The date by which the manager is expected to prepare the submittal item for review to the reviewer, in the following format: YYYY-MM-DD in UTC (ISO 8601). For example, ``2018-02-15``.</summary>
+        /// <summary>The date by which the manager is expected to prepare the submittal item for review to the reviewer, in the following format: YYYY-MM-DD in UTC (ISO 8601). For example, `2018-02-15`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagerDueDate { get; set; }
@@ -46,19 +46,19 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string ManagerDueDate { get; set; }
 #endif
-        /// <summary>The type of manager. This attribute is required when a manager is specified. To determine the type of manager, call `GET mappings &lt;/en/docs/acc/v1/reference/http/submittals-mappings-GET/&gt;`_ and check the user type.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+        /// <summary>The type of manager. This attribute is required when a manager is specified. To determine the type of manager, call [GET mappings](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-mappings-GET/) and check the user type.Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemPatchRequestBody_managerType? ManagerType { get; set; }
-        /// <summary>The ID of the package associated with the submittal item. This attribute is optional and is used for workflows involving attachments.To retrieve package details, call `GET packages &lt;/en/docs/acc/v1/reference/http/submittals-packages-GET/&gt;`_.</summary>
+        /// <summary>The ID of the package associated with the submittal item. This attribute is optional and is used for workflows involving attachments.To retrieve package details, call [GET packages](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-packages-GET/).</summary>
         public Guid? PackageId { get; set; }
-        /// <summary>The priority level of the submittal item.Possible values:- ``Low``- ``Normal``- ``High``When the priority is not set, the default value is ``Normal``.</summary>
+        /// <summary>The priority level of the submittal item.Possible values:- `Low`- `Normal`- `High`When the priority is not set, the default value is `Normal`.</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemPatchRequestBody_priority? Priority { get; set; }
-        /// <summary>The date when the manager closed and distributed the submittal item, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date when the manager closed and distributed the submittal item, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? PublishedDate { get; set; }
-        /// <summary>The timestamp marking when the item transitioned from the ``rev`` state ``(Open - In Review)`` to the ``mgr-2`` state ``(close and distribute)``, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The timestamp marking when the item transitioned from the `rev` state `(Open - In Review)` to the `mgr-2` state `(close and distribute)`, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? ReceivedFromReview { get; set; }
-        /// <summary>The date and time when the submittal was received back from the subcontractor after review, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the submittal was received back from the subcontractor after review, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? ReceivedFromSubmitter { get; set; }
-        /// <summary>The date by which approval for the submittal is required, in the following format: YYYY-MM-DD in UTC (ISO 8601). For example, ``2018-02-15``.</summary>
+        /// <summary>The date by which approval for the submittal is required, in the following format: YYYY-MM-DD in UTC (ISO 8601). For example, `2018-02-15`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequiredApprovalDate { get; set; }
@@ -66,7 +66,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string RequiredApprovalDate { get; set; }
 #endif
-        /// <summary>The date the responsible contractor needs to submit the submittal to the submittal manager, in the following format: YYYY-MM-DD (ISO 8601) in UTC. For example, ``2018-02-15``.</summary>
+        /// <summary>The date the responsible contractor needs to submit the submittal to the submittal manager, in the following format: YYYY-MM-DD (ISO 8601) in UTC. For example, `2018-02-15`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequiredDate { get; set; }
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string RequiredDate { get; set; }
 #endif
-        /// <summary>The date when the materials are expected to arrive on the site, in the following format: YYYY-MM-DD (ISO 8601) in UTC. For example, ``2018-02-15``.</summary>
+        /// <summary>The date when the materials are expected to arrive on the site, in the following format: YYYY-MM-DD (ISO 8601) in UTC. For example, `2018-02-15`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequiredOnJobDate { get; set; }
@@ -82,13 +82,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string RequiredOnJobDate { get; set; }
 #endif
-        /// <summary>The date and time when the submittal item was transitioned to the ``rev`` state ``(Open - In review)``, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the submittal item was transitioned to the `rev` state `(Open - In review)`, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? SentToReview { get; set; }
-        /// <summary>The date and time when the submittal was sent to the subcontrator for review, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the submittal was sent to the subcontrator for review, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? SentToSubmitter { get; set; }
-        /// <summary>The unique identifier (UUID) of the spec section to assign to the submittal item, which can be obtained by calling `GET specs &lt;/en/docs/acc/v1/reference/http/submittals-specs-GET/&gt;`_.</summary>
+        /// <summary>The unique identifier (UUID) of the spec section to assign to the submittal item, which can be obtained by calling [GET specs](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-GET/).</summary>
         public Guid? SpecId { get; set; }
-        /// <summary>The Autodesk ID of the subcontractor to assign to the submittal item. When updating a submittal item as a manager in the UI, you will see ‘assign to responsible contractor’. The subcontractor can be a user (``autodeskId``), role (``memberGroupId``), or company (``memberGroupId``).For users, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_.For companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.Note that we do not currently support finding details about roles for a project.</summary>
+        /// <summary>The Autodesk ID of the subcontractor to assign to the submittal item. When updating a submittal item as a manager in the UI, you will see ‘assign to responsible contractor’. The subcontractor can be a user (`autodeskId`), role (`memberGroupId`), or company (`memberGroupId`).For users, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).For companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.Note that we do not currently support finding details about roles for a project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subcontractor { get; set; }
@@ -96,9 +96,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string Subcontractor { get; set; }
 #endif
-        /// <summary>The type of subcontractor. This attribute is required when a subcontrator is specified.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+        /// <summary>The type of subcontractor. This attribute is required when a subcontrator is specified.Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemPatchRequestBody_subcontractorType? SubcontractorType { get; set; }
-        /// <summary>The date by which the subcontractor is expected to submit the submittal to the manager, formatted as YYYY-MM-DD in UTC (ISO 8601). For example, ``2018-02-15``.</summary>
+        /// <summary>The date by which the subcontractor is expected to submit the submittal to the manager, formatted as YYYY-MM-DD in UTC (ISO 8601). For example, `2018-02-15`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmitterDueDate { get; set; }
@@ -106,7 +106,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string SubmitterDueDate { get; set; }
 #endif
-        /// <summary>Define the subsection details of the submittal item. For example, ``1.05-B``.</summary>
+        /// <summary>Define the subsection details of the submittal item. For example, `1.05-B`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subsection { get; set; }
@@ -122,7 +122,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The ID of the item type to assign to the submittal item. To retrieve the type ID, call `GET item-types &lt;/en/docs/acc/v1/reference/http/submittals-item-types-GET/&gt;`_ or `GET item-types/:id &lt;/en/docs/acc/v1/reference/http/submittals-item-types-id-GET/&gt;`_.</summary>
+        /// <summary>The ID of the item type to assign to the submittal item. To retrieve the type ID, call [GET item-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-item-types-GET/) or [GET item-types/:id](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-item-types-id-GET/).</summary>
         public Guid? TypeId { get; set; }
         /// <summary>A list of project watchers, who can be individual users, roles, or companies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

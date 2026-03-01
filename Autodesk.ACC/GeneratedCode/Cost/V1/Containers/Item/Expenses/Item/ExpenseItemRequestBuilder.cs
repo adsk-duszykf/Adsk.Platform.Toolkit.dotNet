@@ -215,7 +215,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExpenseItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A list of the nested expense resources to include in the response with the expenses. For example, ``include=expenseItems`` returns the expense items related to each expense. ``include=attributes`` will return custom attributes which represents the ``properties`` in the response.Possible values: ``expenseItems``, ``mainContract``, ``attributes``, ``externalRelationship``, ``paymentReferences``.</summary>
+            /// <summary>A list of the nested expense resources to include in the response with the expenses. For example, `include=expenseItems` returns the expense items related to each expense. `include=attributes` will return custom attributes which represents the `properties` in the response.Possible values: `expenseItems`, `mainContract`, `attributes`, `externalRelationship`, `paymentReferences`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

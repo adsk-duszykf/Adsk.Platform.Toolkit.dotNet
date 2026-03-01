@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.sheets.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project. Use the `Data Management API &lt;/en/docs/data/v2/developers_guide/overview/&gt;`_ to retrieve the project ID. For more information, see the `Retrieve a Project ID tutorial &lt;/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_. You can use a project ID either with a “b.” prefix or without a “b.” prefix. For instance, a project ID of ``b.a4be0c34a-4ab7`` can also be referred to as ``a4be0c34a-4ab7``.</param>
+        /// <param name="position">The ID of the project. Use the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/developers_guide/overview/) to retrieve the project ID. For more information, see the [Retrieve a Project ID tutorial](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/). You can use a project ID either with a “b.” prefix or without a “b.” prefix. For instance, a project ID of `b.a4be0c34a-4ab7` can also be referred to as `a4be0c34a-4ab7`.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.WithProjectItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.sheets.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project. Use the `Data Management API &lt;/en/docs/data/v2/developers_guide/overview/&gt;`_ to retrieve the project ID. For more information, see the `Retrieve a Project ID tutorial &lt;/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_. You can use a project ID either with a “b.” prefix or without a “b.” prefix. For instance, a project ID of ``b.a4be0c34a-4ab7`` can also be referred to as ``a4be0c34a-4ab7``.</param>
+        /// <param name="position">The ID of the project. Use the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/developers_guide/overview/) to retrieve the project ID. For more information, see the [Retrieve a Project ID tutorial](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/). You can use a project ID either with a “b.” prefix or without a “b.” prefix. For instance, a project ID of `b.a4be0c34a-4ab7` can also be referred to as `a4be0c34a-4ab7`.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]

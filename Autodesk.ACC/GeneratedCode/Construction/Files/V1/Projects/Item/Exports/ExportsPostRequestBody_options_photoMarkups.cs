@@ -8,14 +8,14 @@ using System;
 namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
 {
     /// <summary>
-    /// The options for which Photos markups to export.No Photos markups will be exported if both options are set to ``false``.
+    /// The options for which Photos markups to export.No Photos markups will be exported if both options are set to `false`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExportsPostRequestBody_options_photoMarkups : IParsable
     {
-        /// <summary>``true``: Include all published Photos markups in the exported files.``false``: (Default) Export files without including any published Photos markups.</summary>
+        /// <summary>`true`: Include all published Photos markups in the exported files.`false`: (Default) Export files without including any published Photos markups.</summary>
         public bool? IncludePublishedMarkups { get; set; }
-        /// <summary>``true``: Include in the exported files all Photos markups that are only visible to their creators or assignees.``false``: (default) Export files without including any unpublished Photos markups.</summary>
+        /// <summary>`true`: Include in the exported files all Photos markups that are only visible to their creators or assignees.`false`: (default) Export files without including any unpublished Photos markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

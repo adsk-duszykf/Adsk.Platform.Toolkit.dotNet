@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
 #else
         public string ModelName { get; set; }
 #endif
-        /// <summary>Indicates whether the linked model has been published. Possible values:``published`` – The model has been published.``notPublished`` – The model has not been published.</summary>
+        /// <summary>Indicates whether the linked model has been published. Possible values:`published` – The model has been published.`notPublished` – The model has not been published.</summary>
         public global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles_results_publishStatus? PublishStatus { get; set; }
         /// <summary>A temporary URL used to download the linked model. Signed URLs are valid for 1 hour.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

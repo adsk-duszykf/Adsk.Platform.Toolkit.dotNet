@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values
     public partial class ValuesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.segments.item.values.item collection</summary>
-        /// <param name="position">The segment value ID. To obtain a segment value ID, use `GET segments/:segmentId/values &lt;/en/docs/bim360/v1/reference/http/cost-values-GET/&gt;`_.</param>
+        /// <param name="position">The segment value ID. To obtain a segment value ID, use [GET segments/:segmentId/values](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-values-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values.Item.WithValueItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values.Item.WithValueItemRequestBuilder this[string position]
         {
@@ -179,7 +179,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ValuesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, ``filter[code]=``2703,2704````.Note that even single codes in number format must be enclosed in double quotes:``filter[code]=``1```` or ``filter[code]=``122. 221````.</summary>
+            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, `filter[code]=`2703,2704```.Note that even single codes in number format must be enclosed in double quotes:`filter[code]=`1`` or `filter[code]=`122. 221```.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bcode%5D")]
@@ -189,7 +189,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values
             [QueryParameter("filter%5Bcode%5D")]
             public string[] Filtercode { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>Returns only the values of segments with the specified original codes, including delimiters. For example, ``filter[originalCode]=27-03,27-04``.</summary>
+            /// <summary>Returns only the values of segments with the specified original codes, including delimiters. For example, `filter[originalCode]=27-03,27-04`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BoriginalCode%5D")]
@@ -209,7 +209,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values
             [QueryParameter("filter%5BoriginalCode%5D")]
             public string[] FilteroriginalCode { get; set; }
 #endif
-            /// <summary>Returns only the values of segments with the specified IDs of parent segments. Separate multiple parent IDs with commas. For example, ``filter[parentId]=parentId1,parentId2``. You can also return the values of segments that have no parent by including ``filter[parentId]=blank``.</summary>
+            /// <summary>Returns only the values of segments with the specified IDs of parent segments. Separate multiple parent IDs with commas. For example, `filter[parentId]=parentId1,parentId2`. You can also return the values of segments that have no parent by including `filter[parentId]=blank`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BparentId%5D")]
@@ -219,13 +219,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.Values
             [QueryParameter("filter%5BparentId%5D")]
             public string[] FilterparentId { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item
         {
         }
         /// <summary>
-        /// Retrieve details about a single submittal response for the specified project, see the  `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittals_Responses&gt;`_.
+        /// Retrieve details about a single submittal response for the specified project, see the  [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittals_Responses).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about a single submittal response for the specified project, see the  `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittals_Responses&gt;`_.
+        /// Retrieve details about a single submittal response for the specified project, see the  [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittals_Responses).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve details about a single submittal response for the specified project, see the  `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittals_Responses&gt;`_.
+        /// Retrieve details about a single submittal response for the specified project, see the  [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittals_Responses).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

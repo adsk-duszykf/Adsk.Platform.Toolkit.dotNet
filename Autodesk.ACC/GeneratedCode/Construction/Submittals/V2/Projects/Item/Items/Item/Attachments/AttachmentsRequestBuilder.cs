@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
     public partial class AttachmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.submittals.v2.projects.item.items.item.attachments.item collection</summary>
-        /// <param name="position">The ID of the attachment. To find the ID, call `GET attachments &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-attachments-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the attachment. To find the ID, call [GET attachments](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemId-attachments-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
         {
         }
         /// <summary>
-        /// Retrieves attachments for a specified submittal item. Note that this endpoint is not compatible with BIM 360 projects.
+        /// Retrieve information about attachments associated with a specified item.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves attachments for a specified submittal item. Note that this endpoint is not compatible with BIM 360 projects.
+        /// Retrieve information about attachments associated with a specified item.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves attachments for a specified submittal item. Note that this endpoint is not compatible with BIM 360 projects.
+        /// Retrieve information about attachments associated with a specified item.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,7 +174,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             return new global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves attachments for a specified submittal item. Note that this endpoint is not compatible with BIM 360 projects.
+        /// Retrieve information about attachments associated with a specified item.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 
@@ -189,7 +189,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             [QueryParameter("filter%5BcategoryId%5D")]
             public string FiltercategoryId { get; set; }
 #endif
-            /// <summary>``true``: to filter files that are uploaded.``false``: to filter files that are not uploaded.</summary>
+            /// <summary>`true`: to filter files that are uploaded.`false`: to filter files that are not uploaded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BisFileUploaded%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             [QueryParameter("filter%5BisFileUploaded%5D")]
             public string FilterisFileUploaded { get; set; }
 #endif
-            /// <summary>Filter items with the specified revision number. You can specify multiple values. Separate multiple values with commas. For example, ``filter[revision]=1``.</summary>
+            /// <summary>Filter items with the specified revision number. You can specify multiple values. Separate multiple values with commas. For example, `filter[revision]=1`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Brevision%5D")]
@@ -209,13 +209,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             [QueryParameter("filter%5Brevision%5D")]
             public string Filterrevision { get; set; }
 #endif
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sort attachments by specific fields in either ascending (``asc``) or descending (``desc``) order. Separate multiple criteria with commas. For example, ``statusId asc``.Possible values: ``id``, ``isFileUploaded``, ``asyncState``, ``createdBy``, ``createdAt``, ``updatedBy``, ``updatedAt``, ``name``, ``uploadUrn``, ``urn``, ``urnPage``, ``resourceUrns``, ``urnTypeId``, ``urnVersion``, ``revision``, ``categoryId``, ``isReview``, ``isResponse``.</summary>
+            /// <summary>Sort attachments by specific fields in either ascending (`asc`) or descending (`desc`) order. Separate multiple criteria with commas. For example, `statusId asc`.Possible values: `id`, `isFileUploaded`, `asyncState`, `createdBy`, `createdAt`, `updatedBy`, `updatedAt`, `name`, `uploadUrn`, `urn`, `urnPage`, `resourceUrns`, `urnTypeId`, `urnVersion`, `revision`, `categoryId`, `isReview`, `isResponse`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

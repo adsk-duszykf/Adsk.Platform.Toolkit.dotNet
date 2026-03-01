@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContentViewsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of content view objects per page.Acceptable values: ``1-200``.Default value: ``200``.</summary>
+            /// <summary>The maximum number of content view objects per page.Acceptable values: `1-200`.Default value: `200`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The content view object number from which the pagination starts. This is zero-based.</summary>

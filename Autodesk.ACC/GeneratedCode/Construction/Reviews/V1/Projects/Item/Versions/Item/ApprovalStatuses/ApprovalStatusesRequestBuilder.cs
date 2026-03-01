@@ -103,10 +103,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApprovalStatusesRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results to return in the response. Possible values: ``1–50``. Maximum: ``50``. Default: ``50``. For example: ``limit=2``.</summary>
+            /// <summary>The maximum number of results to return in the response. Possible values: `1-50`. Maximum: `50`. Default: `50`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip from the beginning of the list. Used for pagination. Default: ``0``. For example: ``offset=10``.</summary>
+            /// <summary>The number of results to skip from the beginning of the list. Used for pagination. Default: `0`. For example: `offset=10`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

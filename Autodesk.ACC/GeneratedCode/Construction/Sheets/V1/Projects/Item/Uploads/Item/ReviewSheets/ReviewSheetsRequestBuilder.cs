@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
         {
         }
         /// <summary>
-        /// It enables you to review the sheets that you uploaded before publishing them. For more details, see the `Upload Sheets &lt;/en/docs/acc/v1/tutorials/upload-sheets/&gt;`_ tutorial.
+        /// Retrieves a list of review sheets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// It enables you to review the sheets that you uploaded before publishing them. For more details, see the `Upload Sheets &lt;/en/docs/acc/v1/tutorials/upload-sheets/&gt;`_ tutorial.
+        /// Retrieves a list of review sheets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// It enables you to review the sheets that you uploaded before publishing them. For more details, see the `Upload Sheets &lt;/en/docs/acc/v1/tutorials/upload-sheets/&gt;`_ tutorial.
+        /// Retrieves a list of review sheets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
             return new global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// It enables you to review the sheets that you uploaded before publishing them. For more details, see the `Upload Sheets &lt;/en/docs/acc/v1/tutorials/upload-sheets/&gt;`_ tutorial.
+        /// Retrieves a list of review sheets.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReviewSheetsRequestBuilderGetQueryParameters 
@@ -169,7 +169,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
             /// <summary>The number of results to return in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The starting point for the results, specified by item number. The default value is ``0``. For example, use ``offset=3`` to start the results from the third item.</summary>
+            /// <summary>The starting point for the results, specified by item number. The default value is `0`. For example, use `offset=3` to start the results from the third item.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

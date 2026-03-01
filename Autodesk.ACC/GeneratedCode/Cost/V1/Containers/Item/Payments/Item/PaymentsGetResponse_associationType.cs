@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments.Item
 {
-    /// <summary>The type of contract associated with this payment.Possible values: ``Contract``, ``MainContract``.</summary>
+    /// <summary>The type of contract associated with this payment.Possible values: `Contract`, `MainContract`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentsGetResponse_associationType
     {

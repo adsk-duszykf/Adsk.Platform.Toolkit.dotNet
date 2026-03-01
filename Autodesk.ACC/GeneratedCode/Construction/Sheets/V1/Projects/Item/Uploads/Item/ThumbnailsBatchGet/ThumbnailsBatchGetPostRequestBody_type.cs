@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ThumbnailsBatchGet
 {
-    /// <summary>The size type of the thumbnails. Possible values:- ``big``: the max size will be 512 pixels.- ``small``: the max size will be 256 pixels.- ``tiny``: the max size will be 64 pixels.</summary>
+    /// <summary>The size type of the thumbnails. Possible values:- `big`: the max size will be 512 pixels.- `small`: the max size will be 256 pixels.- `tiny`: the max size will be 64 pixels.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ThumbnailsBatchGetPostRequestBody_type
     {

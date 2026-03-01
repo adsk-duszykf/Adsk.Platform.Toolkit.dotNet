@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
 {
     /// <summary>
-    /// Additional context for the action. The fields present in this object depend on the action history type.For Approval workflows, the object includes:``stepName`` – the name of the workflow step.``taskDefinitionKey`` – the key that identifies the workflow task.``workflowInstanceId`` – the ID of the workflow instance.These fields provide task-level process information.For Normal workflows, the object may include fields such as to and from that indicate a change in status.
+    /// Additional context for the action. The fields present in this object depend on the action history type.For Approval workflows, the object includes:`stepName` – the name of the workflow step.`taskDefinitionKey` – the key that identifies the workflow task.`workflowInstanceId` – the ID of the workflow instance.These fields provide task-level process information.For Normal workflows, the object may include fields such as to and from that indicate a change in status.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActionHistoriesGetResponse_results_options : IParsable

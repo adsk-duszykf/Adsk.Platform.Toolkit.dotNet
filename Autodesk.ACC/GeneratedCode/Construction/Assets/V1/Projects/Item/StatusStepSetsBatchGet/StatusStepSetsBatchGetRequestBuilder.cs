@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchG
         {
         }
         /// <summary>
-        /// POST status-step-sets:batch-get
+        /// Returns a specified set of status sets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchG
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST status-step-sets:batch-get
+        /// Returns a specified set of status sets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchG
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST status-step-sets:batch-get
+        /// Returns a specified set of status sets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -105,12 +105,12 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchG
             return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// POST status-step-sets:batch-get
+        /// Returns a specified set of status sets.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatusStepSetsBatchGetRequestBuilderPostQueryParameters 
         {
-            /// <summary>Whether or not soft-deleted object should be included in the response. If ``true``, soft-deleted objects are returned. If ``false``, they are not. The default is ``false``.</summary>
+            /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
         }

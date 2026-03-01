@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
 {
     /// <summary>
-    /// A mapping of field names to lists of possible values for each field, specific to the associated action. An empty array indicates that there is no specific set of values for those fields.For example, in the action ``Spec::create``, fields might contain mapping for title (``title``) and identifier (``identifier``).
+    /// A mapping of field names to lists of possible values for each field, specific to the associated action. An empty array indicates that there is no specific set of values for those fields.For example, in the action `Spec::create`, fields might contain mapping for title (`title`) and identifier (`identifier`).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MeGetResponse_permittedActions_fields : IParsable

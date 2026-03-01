@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfUS_requiredAttributes> RequiredAttributes { get; set; }
 #endif
-        /// <summary>The current response status of the RFI for single-reviewer workflows (US):Possible values:``draft``, ``submitted``, ``open``, ``answered``, ``rejected``, ``closed``, ``void``.For more information about workflows, see `About RFI Workflows – Autodesk Help &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types&gt;`_.</summary>
+        /// <summary>The current response status of the RFI for single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.For more information about workflows, see [About RFI Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfUS_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

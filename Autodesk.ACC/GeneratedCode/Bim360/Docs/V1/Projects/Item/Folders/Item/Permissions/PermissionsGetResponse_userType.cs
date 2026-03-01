@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions
 {
-    /// <summary>The type of project user. Possible values: ``PROJECT_ADMIN`` or ``PROJECT_MEMBER``. Only relevant if the subject is a user.</summary>
+    /// <summary>The type of project user. Possible values: `PROJECT_ADMIN` or `PROJECT_MEMBER`. Only relevant if the subject is a user.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PermissionsGetResponse_userType
     {

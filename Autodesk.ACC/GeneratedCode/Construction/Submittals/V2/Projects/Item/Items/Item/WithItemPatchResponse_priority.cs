@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
 {
-    /// <summary>The priority of the submittal item.Possible values:- ``Low``- ``Normal``- ``High``</summary>
+    /// <summary>The priority of the submittal item.Possible values:- `Low`- `Normal`- `High`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithItemPatchResponse_priority
     {

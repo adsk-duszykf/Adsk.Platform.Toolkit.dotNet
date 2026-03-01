@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions
     public partial class ActionsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Name of the action to perform. The possible actions are from ``GET /actions``.Max length: 255</summary>
+        /// <summary>Name of the action to perform. The possible actions are from `GET /actions`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions
 #else
         public string AssociationId { get; set; }
 #endif
-        /// <summary>The type of the item on which to perform the action. Possible values: ``FormInstance``, ``OCO``, ``PCO``, ``RCO``, ``RFQ``, ``SCO``, ``Expense``, ``Contract``, ``CostPayment``, ``BudgetPayment``, ``BudgetTransfer``, ``MainContract``, ``DistributionItem``.</summary>
+        /// <summary>The type of the item on which to perform the action. Possible values: `FormInstance`, `OCO`, `PCO`, `RCO`, `RFQ`, `SCO`, `Expense`, `Contract`, `CostPayment`, `BudgetPayment`, `BudgetTransfer`, `MainContract`, `DistributionItem`.</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostRequestBody_associationType? AssociationType { get; set; }
         /// <summary>Extra data required by the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

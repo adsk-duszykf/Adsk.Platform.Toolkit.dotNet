@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
     public partial class UploadsPostRequestBody_files : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the file.Currently the Sheets tool only supports PDF files.To create a storage URN, call `POST storage &lt;/en/docs/acc/v1/reference/http/sheets-storage-POST/&gt;`_.Max length: 255</summary>
+        /// <summary>The name of the file.Currently the Sheets tool only supports PDF files.To create a storage URN, call [POST storage](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-storage-POST/).Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The storage type of the file. Will always be ``OSS``.</summary>
+        /// <summary>The storage type of the file. Will always be `OSS`.</summary>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.UploadsPostRequestBody_files_storageType? StorageType { get; set; }
         /// <summary>The storage URN of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

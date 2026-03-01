@@ -38,7 +38,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReo
 #endif
         /// <summary>The GUID that uniquely identifies the job.</summary>
         public Guid? JobId { get; set; }
-        /// <summary>The current job status. Possible values: ``Failed``, ``Running``, ``Succeeded``, ``Archived``.</summary>
+        /// <summary>The current job status. Possible values: `Failed`, `Running`, `Succeeded`, `Archived`.</summary>
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenPostResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

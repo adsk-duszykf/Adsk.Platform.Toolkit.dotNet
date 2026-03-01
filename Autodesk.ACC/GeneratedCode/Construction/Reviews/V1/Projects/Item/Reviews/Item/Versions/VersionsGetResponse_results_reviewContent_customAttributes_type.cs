@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versions
 {
-    /// <summary>The data type of the attribute. Possible values: ``string`` (text field), ``date``, ``array`` (drop-list).</summary>
+    /// <summary>The data type of the attribute. Possible values: `string` (text field), `date`, `array` (drop-list).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VersionsGetResponse_results_reviewContent_customAttributes_type
     {

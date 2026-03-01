@@ -8,12 +8,12 @@ using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 {
     /// <summary>
-    /// (``Copy approved files`` in the UI) Option for copying approved files when the review is complete.
+    /// (`Copy approved files` in the UI) Option for copying approved files when the review is complete.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReviewsPostRequestBody_workflowOptions_copyFilesOptions : IParsable
     {
-        /// <summary>(``Then copy approved files to`` in the UI) The URN of the target folder where approved files will be copied.To find the folder URN, follow the first four steps of the `Upload Files to the ACC Files tool &lt;/en/docs/acc/v1/tutorials/files/upload-document-s3/&gt;`_ tutorial and note the ``data.id`` field in the response. Use ``data.attributes.name`` or ``data.attributes.displayName`` to confirm you have the correct folder.</summary>
+        /// <summary>(`Then copy approved files to` in the UI) The URN of the target folder where approved files will be copied.To find the folder URN, follow the first four steps of the [Upload Files to the ACC Files tool](https://aps.autodesk.com/en/docs/acc/v1/tutorials/files/upload-document-s3/) tutorial and note the `data.id` field in the response. Use `data.attributes.name` or `data.attributes.displayName` to confirm you have the correct folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FolderUrn { get; set; }

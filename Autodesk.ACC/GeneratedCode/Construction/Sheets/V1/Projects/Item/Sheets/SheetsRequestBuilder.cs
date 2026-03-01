@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SheetsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by sheet collection. If not provided, only results in the ungrouped collection are returned.Possible values:- The UUID of an existing collection: Returns only the results within that collection.- ``*`` Returns results from all collections.</summary>
+            /// <summary>Filter by sheet collection. If not provided, only results in the ungrouped collection are returned.Possible values:- The UUID of an existing collection: Returns only the results within that collection.- `*` Returns results from all collections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("collectionId")]
@@ -113,10 +113,10 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
             [QueryParameter("collectionId")]
             public string CollectionId { get; set; }
 #endif
-            /// <summary>- ``true`` to only return versions of the sheets with the newest issuance date (this includes future issuance dates). This is only relevant if you uploaded multiple versions of the same sheet that were assigned the same number identifier. If you do not assign a value to the version set ID filter (``filter[versionSetId]``) this defaults to ``true``.- ``false`` to return all sheets in the project.If you specify a value for the version set ID filter (``filter[versionSetId]``) this defaults to ``false``.If you do not specify a version set, the default is ``true``.</summary>
+            /// <summary>- `true` to only return versions of the sheets with the newest issuance date (this includes future issuance dates). This is only relevant if you uploaded multiple versions of the same sheet that were assigned the same number identifier. If you do not assign a value to the version set ID filter (`filter[versionSetId]`) this defaults to `true`.- `false` to return all sheets in the project.If you specify a value for the version set ID filter (`filter[versionSetId]`) this defaults to `false`.If you do not specify a version set, the default is `true`.</summary>
             [QueryParameter("currentOnly")]
             public bool? CurrentOnly { get; set; }
-            /// <summary>Specify which attributes you want to appear in the response. You can specify multiple attributes.For example, to only return the sheet ID and sheet number in the response, use ``fields=id&amp;fields=number``.</summary>
+            /// <summary>Specify which attributes you want to appear in the response. You can specify multiple attributes.For example, to only return the sheet ID and sheet number in the response, use `fields=id&amp;fields=number`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -126,7 +126,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
-            /// <summary>Filter sheets by tags. You can filter by multiple tags. For example,``filter[tags]=architecture&amp;filter[tags]=structure`` returns sheets that include both ``architecture`` and ``structure`` tags.Use ``filter[tags]=__UNTAGGED`` to only return sheets without any tags.</summary>
+            /// <summary>Filter sheets by tags. You can filter by multiple tags. For example,`filter[tags]=architecture&amp;filter[tags]=structure` returns sheets that include both `architecture` and `structure` tags.Use `filter[tags]=__UNTAGGED` to only return sheets without any tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Btags%5D")]
@@ -136,7 +136,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
             [QueryParameter("filter%5Btags%5D")]
             public string Filtertags { get; set; }
 #endif
-            /// <summary>Filter sheets by the version set ID. If you assign a value to this filter, ``currentOnly`` defaults to ``false``. If you do not assign a value, ``currentOnly`` default to ``true``.</summary>
+            /// <summary>Filter sheets by the version set ID. If you assign a value to this filter, `currentOnly` defaults to `false`. If you do not assign a value, `currentOnly` default to `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BversionSetId%5D")]
@@ -146,16 +146,16 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
             [QueryParameter("filter%5BversionSetId%5D")]
             public string FilterversionSetId { get; set; }
 #endif
-            /// <summary>- ``true`` to only return deleted sheets.- ``false`` to only return non-deleted sheets.The default value is ``false``. You cannot retrieve both deleted and non-deleted sheets in one call.</summary>
+            /// <summary>- `true` to only return deleted sheets.- `false` to only return non-deleted sheets.The default value is `false`. You cannot retrieve both deleted and non-deleted sheets in one call.</summary>
             [QueryParameter("isDeleted")]
             public bool? IsDeleted { get; set; }
-            /// <summary>The number of results to return in the response. Acceptable values: ``1``-``100``. Default value: ``100``.</summary>
+            /// <summary>The number of results to return in the response. Acceptable values: `1`-`100`. Default value: `100`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The starting point for the results, specified by item number. The default value is ``0``. For example, use ``offset=3`` to start the results from the third item.</summary>
+            /// <summary>The starting point for the results, specified by item number. The default value is `0`. For example, use `offset=3` to start the results from the third item.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Search for sheets with the specified text. The API only searches in the ``number`` and ``title`` attributes.You can specify a string or part of a string. The search is case sensitive.You can only use one search string per call. For example, ``searchText=kitchen``.</summary>
+            /// <summary>Search for sheets with the specified text. The API only searches in the `number` and `title` attributes.You can specify a string or part of a string. The search is case sensitive.You can only use one search string per call. For example, `searchText=kitchen`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("searchText")]
@@ -165,7 +165,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
             [QueryParameter("searchText")]
             public string SearchText { get; set; }
 #endif
-            /// <summary>- ``true`` to return sheets that contain all search tags.- ``false`` to return sheets that contain at least one tag.If ``filter[tags]=__UNTAGGED`` is already in query parameters, ``withAllTags`` does not work.</summary>
+            /// <summary>- `true` to return sheets that contain all search tags.- `false` to return sheets that contain at least one tag.If `filter[tags]=__UNTAGGED` is already in query parameters, `withAllTags` does not work.</summary>
             [QueryParameter("withAllTags")]
             public bool? WithAllTags { get; set; }
         }

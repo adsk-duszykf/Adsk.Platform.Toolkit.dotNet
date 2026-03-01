@@ -12,11 +12,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
     public partial class AttachmentsPostResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the state of the asynchronous process triggered after marking the file upload as complete (``isFileUploaded=true``). The backend initiates this process to generate the ``URN`` for the attachment.Possible values:- ``1`` - Pending (the request is queued and awaiting processing).- ``2`` - Started (the backend process to generate the ``URN`` has begun).- ``3`` - Success (the ``URN`` was successfully created).- ``4`` - Failure (the process failed, and the ``URN`` was not created).</summary>
+        /// <summary>Represents the state of the asynchronous process triggered after marking the file upload as complete (`isFileUploaded=true`). The backend initiates this process to generate the `URN` for the attachment.Possible values:- `1` - Pending (the request is queued and awaiting processing).- `2` - Started (the backend process to generate the `URN` has begun).- `3` - Success (the `URN` was successfully created).- `4` - Failure (the process failed, and the `URN` was not created).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsPostResponse_asyncState? AsyncState { get; set; }
-        /// <summary>The workflow state of the submittal item associated with the attachment.- ``Category IDs 1-4``: These represent active workflow states and can be set when creating an attachment.- ``Category IDs 5-8``: These represent historical records of attachments from earlier revisions of the submittal process and are automatically assigned by the system.Possible values:- ``1`` (Submission)- ``2`` (For Review)- ``3`` (Review Response)- ``4`` (Final Response)- ``5`` (Previous Submission)- ``6`` (Previous For Review)- ``7`` (Previous Review Response)- ``8`` (Previous Final Response)</summary>
+        /// <summary>The workflow state of the submittal item associated with the attachment.- `Category IDs 1-4`: These represent active workflow states and can be set when creating an attachment.- `Category IDs 5-8`: These represent historical records of attachments from earlier revisions of the submittal process and are automatically assigned by the system.Possible values:- `1` (Submission)- `2` (For Review)- `3` (Review Response)- `4` (Final Response)- `5` (Previous Submission)- `6` (Previous For Review)- `7` (Previous Review Response)- `8` (Previous Final Response)</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsPostResponse_categoryId? CategoryId { get; set; }
-        /// <summary>The date and time when the attachment created, in ISO 8601 format. For example, ``2018-02-01T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the attachment created, in ISO 8601 format. For example, `2018-02-01T12:09:24.198466Z`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
         public Guid? DuplicatedFrom { get; set; }
         /// <summary>The internal, globally unique identifier (UUID) for the attachment.</summary>
         public Guid? Id { get; set; }
-        /// <summary>Indicates whether the attachment upload is complete.``true``: the attachment upload is complete.``false``: the upload is still in progress or pending completion.</summary>
+        /// <summary>Indicates whether the attachment upload is complete.`true`: the attachment upload is complete.`false`: the upload is still in progress or pending completion.</summary>
         public bool? IsFileUploaded { get; set; }
         /// <summary>The ID of the submittal item associated with the attachment.</summary>
         public Guid? ItemId { get; set; }
@@ -68,9 +68,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
 #else
         public string RevisionFolderUrn { get; set; }
 #endif
-        /// <summary>The ID of the task within the review step to which the attachment is associated.- If the attachment was added to a review step, this field contains the task ID that identifies the relevant task.- If the attachment was not part of a review, this field is ``null``.</summary>
+        /// <summary>The ID of the task within the review step to which the attachment is associated.- If the attachment was added to a review step, this field contains the task ID that identifies the relevant task.- If the attachment was not part of a review, this field is `null`.</summary>
         public Guid? TaskId { get; set; }
-        /// <summary>The date and time the attachment was last updated, in ISO 8601 format. For example, ``2018-02-01T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time the attachment was last updated, in ISO 8601 format. For example, `2018-02-01T12:09:24.198466Z`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who last updated the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
 #else
         public string UrnPage { get; set; }
 #endif
-        /// <summary>Specifies the type of urn associated with the attachment. This value identifies the storage type for the file reference.Possible values: ``2``This value is always set to ``2`` for both local and Files tool attachments.</summary>
+        /// <summary>Specifies the type of urn associated with the attachment. This value identifies the storage type for the file reference.Possible values: `2`This value is always set to `2` for both local and Files tool attachments.</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsPostResponse_urnTypeId? UrnTypeId { get; set; }
         /// <summary>The version number of the file in Autodesk Docs.</summary>
         public int? UrnVersion { get; set; }

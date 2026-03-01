@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
 #else
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse_permittedActions_fields Fields { get; set; }
 #endif
-        /// <summary>The ID of the action in the format ``type_of_object::action``. For example, ``Attachment::retrieve``.</summary>
+        /// <summary>The ID of the action in the format `type_of_object::action`. For example, `Attachment::retrieve`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -22,7 +22,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #endif
         /// <summary>The ID of the table row. You need to generarte the ID (UUID) for the row.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The table to update.Possible values: ``worklogEntries``, ``materialsEntries``, ``equipmentEntries``</summary>
+        /// <summary>The table to update.Possible values: `worklogEntries`, `materialsEntries`, `equipmentEntries`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutRequestBody_tabularValues_table? Table { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

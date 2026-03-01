@@ -38,7 +38,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #endif
         /// <summary>Whether to generate an RFI report for the target projects.</summary>
         public bool? BridgeGenerateRfiReport { get; set; }
-        /// <summary>A list of predefined categories to assign to the RFI.Categories help group RFIs for filtering and reporting. Each value must match a category configured in the project’s RFI settings. Categories are case-sensitive and project-specific.RFI categories are configured in Project Admin and may differ between projects. Call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_ to retrieve the allowed values for this field.Some possible values: ``Code Compliance``, ``Constructability``, ``Design Coordination``, ``Documentation Conflict``, ``Documentation Incomplete``, ``Field condition``, ``Other``.</summary>
+        /// <summary>A list of predefined categories to assign to the RFI.Categories help group RFIs for filtering and reporting. Each value must match a category configured in the project’s RFI settings. Categories are case-sensitive and project-specific.RFI categories are configured in Project Admin and may differ between projects. Call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET) to retrieve the allowed values for this field.Some possible values: `Code Compliance`, `Constructability`, `Design Coordination`, `Documentation Conflict`, `Documentation Incomplete`, `Field condition`, `Other`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Category { get; set; }
@@ -54,7 +54,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_coReviewers> CoReviewers { get; set; }
 #endif
-        /// <summary>The default cost impact value for new RFIs of this type.Possible values: ``null``, ``Yes``, ``No``, ``Unknown``.To check whether cost impact options are enabled and to retrieve the default value, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
+        /// <summary>The default cost impact value for new RFIs of this type.Possible values: `null`, `Yes`, `No`, `Unknown`.To check whether cost impact options are enabled and to retrieve the default value, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostImpact { get; set; }
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_customAttributes> CustomAttributes { get; set; }
 #endif
-        /// <summary>The discipline associated with the RFI. To retrieve the supported values for the current project, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_.Some possible values: ``Building Management System``, ``Electrical Substation``, ``Security``, ``Audio Visual``, ``Food Service``, ``Fire Alarm``, ``Power Systems``, ``Design Systems Integrator``, ``Signage``, ``Pathways``, ``Cabling``, ``Networks``, ``Distributed Antenna System``, ``Lighting``, ``Vertical Transportation``, ``Roofing``, ``Architectural``, ``Civil/Site``, ``Concrete``, ``Electrical``, ``Exterior Envelope``, ``Fire Protection``, ``Interior/Finishes``, ``Landscaping``, ``Masonry``, ``Mechanical``, ``Plumbing``, ``Structural``, ``Other``.&apos;</summary>
+        /// <summary>The discipline associated with the RFI. To retrieve the supported values for the current project, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET).Some possible values: `Building Management System`, `Electrical Substation`, `Security`, `Audio Visual`, `Food Service`, `Fire Alarm`, `Power Systems`, `Design Systems Integrator`, `Signage`, `Pathways`, `Cabling`, `Networks`, `Distributed Antenna System`, `Lighting`, `Vertical Transportation`, `Roofing`, `Architectural`, `Civil/Site`, `Concrete`, `Electrical`, `Exterior Envelope`, `Fire Protection`, `Interior/Finishes`, `Landscaping`, `Masonry`, `Mechanical`, `Plumbing`, `Structural`, `Other`.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Discipline { get; set; }
@@ -78,7 +78,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public List<string> Discipline { get; set; }
 #endif
-        /// <summary>The response due date, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.The due date is not auto-calculated by the API. To determine the recommended due date for a new RFI, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_ and use the value of the ``dueDateOffset`` field to add days to the current date.</summary>
+        /// <summary>The response due date, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.The due date is not auto-calculated by the API. To determine the recommended due date for a new RFI, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET) and use the value of the `dueDateOffset` field to add days to the current date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DueDate { get; set; }
@@ -86,7 +86,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public string DueDate { get; set; }
 #endif
-        /// <summary>The default text for the Location field when creating a new RFI.Note that the API does not auto-populate this value.Clients are responsible for applying the default if desired.To retrieve the default value configured for this field, call `GET rfi-types &lt;/en/docs/acc/v1/reference/http/rfis-rfi-types-GET&gt;`_.</summary>
+        /// <summary>The default text for the Location field when creating a new RFI.Note that the API does not auto-populate this value.Clients are responsible for applying the default if desired.To retrieve the default value configured for this field, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationDescription { get; set; }
@@ -94,7 +94,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public string LocationDescription { get; set; }
 #endif
-        /// <summary>A list of location IDs to associate with the RFI. These must be valid UUIDs from the project’s Location Breakdown Structure (LBS).To retrieve them, call `GET nodes &lt;/en/docs/acc/v1/reference/http/projects-projectId-locations-nodes-GET&gt;`_.</summary>
+        /// <summary>A list of location IDs to associate with the RFI. These must be valid UUIDs from the project’s Location Breakdown Structure (LBS).To retrieve them, call [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-projectId-locations-nodes-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Locations { get; set; }
@@ -110,9 +110,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public string OfficialResponse { get; set; }
 #endif
-        /// <summary>The status of the official response. Possible values: ``answered``, ``rejected``.Set this field when closing the RFI to mark the final response as ``answered`` or ``rejected``.This field is not used in other status transitions.</summary>
+        /// <summary>The status of the official response. Possible values: `answered`, `rejected`.Set this field when closing the RFI to mark the final response as `answered` or `rejected`.This field is not used in other status transitions.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_officialResponseStatus? OfficialResponseStatus { get; set; }
-        /// <summary>The default priority for new RFIs of this type.The available priority values are configured in Project Admin.If no default is set, this field is ``null``.Note that the API does not auto-populate this value when creating an RFI.Clients are responsible for applying the default if desired.The valid priority options can be retrieved by calling `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;_. Some possible values: ``null``, ``High``, ``Normal``, ``Low``.</summary>
+        /// <summary>The default priority for new RFIs of this type.The available priority values are configured in Project Admin.If no default is set, this field is `null`.Note that the API does not auto-populate this value when creating an RFI.Clients are responsible for applying the default if desired.The valid priority options can be retrieved by calling [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-RFI-types-GET/). Some possible values: `null`, `High`, `Normal`, `Low`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Priority { get; set; }
@@ -144,7 +144,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_returnForReviewerList> ReturnForReviewerList { get; set; }
 #endif
-        /// <summary>The default schedule impact value for new RFIs of this type.Possible values: ``null``, ``Yes``, ``No``, ``Unknown``.To verify whether schedule impact tracking is enabled for the project and what the default value is, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
+        /// <summary>The default schedule impact value for new RFIs of this type.Possible values: `null`, `Yes`, `No`, `Unknown`.To verify whether schedule impact tracking is enabled for the project and what the default value is, call `GET rfi-types &lt;en/docs/acc/v1/reference/http/rfis-RFI-types-GET/&gt;`_.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScheduleImpact { get; set; }
@@ -152,7 +152,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public string ScheduleImpact { get; set; }
 #endif
-        /// <summary>The current status of the RFI. Available values depend on the RFI’s workflow type:- For single-reviewer workflows (US):Possible values:``draft``, ``submitted``, ``open``, ``answered``, ``rejected``, ``closed``, ``void``.- For multi-reviewer workflows (EMEA):Possible values:``draft``, ``submitted``, ``openRev1`` (manager), ``openRev2`` (reviewers), ``answeredRev1``, ``answeredManager``, ``closed``, ``void``.To determine the workflow type, call `GET users/me &lt;/en/docs/acc/v1/reference/http/rfis-users-me-GET/&gt;`_ and check the ``workflowType`` value.For details on RFI workflows in the ACC UI, see `About RFI  Workflows – Autodesk Help &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup&gt;`_.</summary>
+        /// <summary>The current status of the RFI. Available values depend on the RFI’s workflow type:- For single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.- For multi-reviewer workflows (EMEA):Possible values:`draft`, `submitted`, `openRev1` (manager), `openRev2` (reviewers), `answeredRev1`, `answeredManager`, `closed`, `void`.To determine the workflow type, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET/) and check the `workflowType` value.For details on RFI workflows in the ACC UI, see [About RFI  Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_status? Status { get; set; }
         /// <summary>The suggested answer for the RFI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

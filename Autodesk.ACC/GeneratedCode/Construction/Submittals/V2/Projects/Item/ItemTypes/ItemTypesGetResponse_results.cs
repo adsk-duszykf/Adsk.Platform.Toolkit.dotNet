@@ -24,9 +24,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
 #endif
         /// <summary>The internal, globally unique identifier (UUID) for the item type.</summary>
         public Guid? Id { get; set; }
-        /// <summary>``true``: (default) if the submittal item type has not been deleted.``false``: if the submittal item type has been deleted.</summary>
+        /// <summary>`true`: (default) if the submittal item type has not been deleted.`false`: if the submittal item type has been deleted.</summary>
         public bool? IsActive { get; set; }
-        /// <summary>``true``: if the submittal item type is currently associated with a submittal item.``false``: if the submittal item type is not currently associated with a submittal item.</summary>
+        /// <summary>`true`: if the submittal item type is currently associated with a submittal item.`false`: if the submittal item type is not currently associated with a submittal item.</summary>
         public bool? IsInUse { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

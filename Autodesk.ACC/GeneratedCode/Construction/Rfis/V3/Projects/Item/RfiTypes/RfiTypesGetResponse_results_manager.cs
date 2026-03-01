@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
     public partial class RfiTypesGetResponse_results_manager : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID of the user, company, or role.To find details about users, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET&gt;`_, to find details about companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.Note that we do not currently support finding details about roles for a project.</summary>
+        /// <summary>The Autodesk ID of the user, company, or role.To find details about users, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET), to find details about companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.Note that we do not currently support finding details about roles for a project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The type of assignee. Possible values: ``user``, ``company``, ``role``.</summary>
+        /// <summary>The type of assignee. Possible values: `user`, `company`, `role`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_manager_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

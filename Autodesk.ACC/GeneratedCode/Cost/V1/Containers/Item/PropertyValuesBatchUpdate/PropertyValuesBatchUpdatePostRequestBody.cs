@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PropertyValuesBatchUpdate
     {
         /// <summary>The object ID of the item associated with the actions, such as a budget, contract, or cost item.</summary>
         public Guid? AssociationId { get; set; }
-        /// <summary>The type of item to which it is associated.Possible values: ``Budget``, ``Contract``, ``ScheduleOfValue``, ``FormInstance``, ``CostItem``, ``Payment``, ``MainContract``, ``BudgetPayment``, ``Expense``, ``CostPayment``, ``ExpenseItem``, ``PaymentItem``, ``OCO``, ``RCO``, ``SCO``, ``PCO``, ``RFQ``, ``DistributionItem``, ``BudgetTransfer``, ``Fee``</summary>
+        /// <summary>The type of item to which it is associated.Possible values: `Budget`, `Contract`, `ScheduleOfValue`, `FormInstance`, `CostItem`, `Payment`, `MainContract`, `BudgetPayment`, `Expense`, `CostPayment`, `ExpenseItem`, `PaymentItem`, `OCO`, `RCO`, `SCO`, `PCO`, `RFQ`, `DistributionItem`, `BudgetTransfer`, `Fee`</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.PropertyValuesBatchUpdate.PropertyValuesBatchUpdatePostRequestBody_associationType? AssociationType { get; set; }
         /// <summary>ID of the custom attribute definition.</summary>
         public Guid? PropertyDefinitionId { get; set; }

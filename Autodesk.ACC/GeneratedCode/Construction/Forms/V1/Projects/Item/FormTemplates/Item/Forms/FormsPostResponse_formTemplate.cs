@@ -37,7 +37,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Possible values: ``active``, ``inactive``, ``deleted``</summary>
+        /// <summary>Possible values: `active`, `inactive`, `deleted`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse_formTemplate_status? Status { get; set; }
         /// <summary>User defined type of the form template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

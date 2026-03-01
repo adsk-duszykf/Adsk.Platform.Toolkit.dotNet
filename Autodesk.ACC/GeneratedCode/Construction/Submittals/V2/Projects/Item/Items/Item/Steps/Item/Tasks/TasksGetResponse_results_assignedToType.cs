@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks
 {
-    /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+    /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: `1` (user), `2` (company), `3` (role).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TasksGetResponse_results_assignedToType
     {

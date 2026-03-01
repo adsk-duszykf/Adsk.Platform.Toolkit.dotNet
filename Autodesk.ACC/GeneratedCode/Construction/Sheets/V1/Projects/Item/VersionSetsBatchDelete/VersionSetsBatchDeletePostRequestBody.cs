@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSetsBatchDele
     public partial class VersionSetsBatchDeletePostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The IDs of the version set to delete. To find the version set IDs, call `GET version-sets &lt;/en/docs/acc/v1/reference/http/sheets-version-sets-GET/&gt;`_.- The max number of items is 10.</summary>
+        /// <summary>The IDs of the version set to delete. To find the version set IDs, call [GET version-sets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-GET/).- The max number of items is 10.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ids { get; set; }

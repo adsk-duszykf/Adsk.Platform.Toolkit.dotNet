@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Documents
     {
         /// <summary>The object ID of the item associated with the actions, such as a budget, contract, or cost item.</summary>
         public Guid? AssociationId { get; set; }
-        /// <summary>The type of item to which it is associated.Possible values: ``Budget``, ``Contract``, ``ScheduleOfValue``, ``FormInstance``, ``CostItem``, ``Payment``, ``MainContract``, ``BudgetPayment``, ``Expense``, ``CostPayment``, ``ExpenseItem``, ``PaymentItem``, ``OCO``, ``RCO``, ``SCO``, ``PCO``, ``RFQ``, ``DistributionItem``, ``BudgetTransfer``, ``Fee``</summary>
+        /// <summary>The type of item to which it is associated.Possible values: `Budget`, `Contract`, `ScheduleOfValue`, `FormInstance`, `CostItem`, `Payment`, `MainContract`, `BudgetPayment`, `Expense`, `CostPayment`, `ExpenseItem`, `PaymentItem`, `OCO`, `RCO`, `SCO`, `PCO`, `RFQ`, `DistributionItem`, `BudgetTransfer`, `Fee`</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Documents.DocumentsGetResponse_associationType? AssociationType { get; set; }
         /// <summary>The date and time that the item was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -54,7 +54,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Documents
 #else
         public string SignedBy { get; set; }
 #endif
-        /// <summary>Current status of the document. Possible values: ``Pending``, ``Started``, ``Completed``, ``Failed``, ``PendingSign``, ``Signed``.</summary>
+        /// <summary>Current status of the document. Possible values: `Pending`, `Started`, `Completed`, `Failed`, `PendingSign`, `Signed`.</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Documents.DocumentsGetResponse_status? Status { get; set; }
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

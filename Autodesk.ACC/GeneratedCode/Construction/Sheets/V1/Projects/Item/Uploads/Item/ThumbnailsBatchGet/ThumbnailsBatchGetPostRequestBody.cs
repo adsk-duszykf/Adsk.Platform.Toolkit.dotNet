@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.Thumbna
     public partial class ThumbnailsBatchGetPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The IDs of the review sheets you want to get the thumbnails from.To find the review sheet IDs, call `GET review-sheets &lt;/en/docs/acc/v1/reference/http/sheets-review-sheets-GET/&gt;`_.- The max number of items is 100.</summary>
+        /// <summary>The IDs of the review sheets you want to get the thumbnails from.To find the review sheet IDs, call [GET review-sheets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-review-sheets-GET/).- The max number of items is 100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ReviewSheetIds { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.Thumbna
 #else
         public List<string> ReviewSheetIds { get; set; }
 #endif
-        /// <summary>The size type of the thumbnails. Possible values:- ``big``: the max size will be 512 pixels.- ``small``: the max size will be 256 pixels.- ``tiny``: the max size will be 64 pixels.</summary>
+        /// <summary>The size type of the thumbnails. Possible values:- `big`: the max size will be 512 pixels.- `small`: the max size will be 256 pixels.- `tiny`: the max size will be 64 pixels.</summary>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ThumbnailsBatchGet.ThumbnailsBatchGetPostRequestBody_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

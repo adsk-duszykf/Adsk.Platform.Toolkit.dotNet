@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
         {
         }
         /// <summary>
-        /// To retrieve the most recent version of a submittal item, call `GET item &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.
+        /// Retrieves the revision history of a specified submittal item, returning previous versions of its fields and associated workflow details.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the most recent version of a submittal item, call `GET item &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.
+        /// Retrieves the revision history of a specified submittal item, returning previous versions of its fields and associated workflow details.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To retrieve the most recent version of a submittal item, call `GET item &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.
+        /// Retrieves the revision history of a specified submittal item, returning previous versions of its fields and associated workflow details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,15 +98,15 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
             return new global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To retrieve the most recent version of a submittal item, call `GET item &lt;/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/&gt;`_.
+        /// Retrieves the revision history of a specified submittal item, returning previous versions of its fields and associated workflow details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RevisionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
 {
-    /// <summary>The storage type of the file. Will always be ``OSS``.</summary>
+    /// <summary>The storage type of the file. Will always be `OSS`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UploadsPostRequestBody_files_storageType
     {

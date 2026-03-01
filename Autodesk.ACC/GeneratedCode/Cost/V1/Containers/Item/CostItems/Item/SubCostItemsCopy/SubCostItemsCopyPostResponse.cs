@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
     public partial class SubCostItemsCopyPostResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identifier for the sub cost item. If copied from another model, for example, a ``Contract SOV``, it inherits the code. Otherwise, it is manually assigned.Max length: 255</summary>
+        /// <summary>The identifier for the sub cost item. If copied from another model, for example, a `Contract SOV`, it inherits the code. Otherwise, it is manually assigned.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -32,7 +32,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The unique ID of the sub cost item.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The recorded input quantity, typically used in performance tracking. For example, in labor tracking, ``inputQuantity`` represents man-hours utilized.</summary>
+        /// <summary>The recorded input quantity, typically used in performance tracking. For example, in labor tracking, `inputQuantity` represents man-hours utilized.</summary>
         public double? InputQuantity { get; set; }
         /// <summary>The name of the sub cost item.Max length: 1024</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,9 +54,9 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
         public double? Position { get; set; }
         /// <summary>The planned number of units allocated for the sub cost item.</summary>
         public double? Quantity { get; set; }
-        /// <summary>The classification of the sub cost item that indicates its role in cost tracking and approval workflows. Possible values: ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``.Max length: 255</summary>
+        /// <summary>The classification of the sub cost item that indicates its role in cost tracking and approval workflows. Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`.Max length: 255</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostResponse_type? Type { get; set; }
-        /// <summary>The unit of measurement for the sub cost item. This value is configured in the ``Unit of measure`` settings for the project. Common units include ``ea`` (Each), ``gal`` (Gallon), and various volume, length, and time measurements.Max length: 1024</summary>
+        /// <summary>The unit of measurement for the sub cost item. This value is configured in the `Unit of measure` settings for the project. Common units include `ea` (Each), `gal` (Gallon), and various volume, length, and time measurements.Max length: 1024</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; set; }
@@ -68,7 +68,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
         public double? UnitPrice { get; set; }
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The total value of the sub cost item, calculated as ``quantity`` * ``unitPrice``.</summary>
+        /// <summary>The total value of the sub cost item, calculated as `quantity` * `unitPrice`.</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

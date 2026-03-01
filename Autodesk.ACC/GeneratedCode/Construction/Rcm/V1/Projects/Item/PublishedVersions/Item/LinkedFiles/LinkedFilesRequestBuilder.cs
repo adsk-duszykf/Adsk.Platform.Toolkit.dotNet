@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LinkedFilesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies criteria for filtering the linked files by name or publish status.- Filter by file name:- Example: ``filter[name]=StructuralModel_2023.rvt&amp;filter[name]=ArchitecturalModel_2023.rvt``- Filter by publish status:- Published files: ``filter[publishStatus]=published``- Unpublished files: ``filter[publishStatus]=notPublished``- Both published and unpublished: ``filter[publishStatus]=published,notPublished``</summary>
+            /// <summary>Specifies criteria for filtering the linked files by name or publish status.- Filter by file name:- Example: `filter[name]=StructuralModel_2023.rvt&amp;filter[name]=ArchitecturalModel_2023.rvt`- Filter by publish status:- Published files: `filter[publishStatus]=published`- Unpublished files: `filter[publishStatus]=notPublished`- Both published and unpublished: `filter[publishStatus]=published,notPublished`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]
@@ -113,13 +113,13 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
             [QueryParameter("filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>Indicates whether to include the signed URL for the host model in the response.``true`` (default): the host model’s signed URL is included.``false``: only includes the signed URLs of the linked files.</summary>
+            /// <summary>Indicates whether to include the signed URL for the host model in the response.`true` (default): the host model’s signed URL is included.`false`: only includes the signed URLs of the linked files.</summary>
             [QueryParameter("includeHost")]
             public bool? IncludeHost { get; set; }
-            /// <summary>The maximum number of linked models to return in a single request. Maxium: ``600``. Default: ``600``.</summary>
+            /// <summary>The maximum number of linked models to return in a single request. Maxium: `600`. Default: `600`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index at which the endpoint starts returning results. Used for pagination. Default: ``0``.This is a zero-based index (if set to ``100``, results start from the 101st entry).</summary>
+            /// <summary>The index at which the endpoint starts returning results. Used for pagination. Default: `0`.This is a zero-based index (if set to `100`, results start from the 101st entry).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

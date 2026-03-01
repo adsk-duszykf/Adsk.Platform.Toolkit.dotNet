@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.WithStepGetResponse_permittedActions_fields Fields { get; set; }
 #endif
-        /// <summary>The ID of the action in the format ``type_of_object::action``. For example, ``Step::partial_update``.</summary>
+        /// <summary>The ID of the action in the format `type_of_object::action`. For example, `Step::partial_update`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A list of fields required to perform specific actions on a step, such as ``tasks`` for the ``Step::partial_update`` action. The required fields depend on the user&apos;s role and the action.</summary>
+        /// <summary>A list of fields required to perform specific actions on a step, such as `tasks` for the `Step::partial_update` action. The required fields depend on the user&apos;s role and the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MandatoryFields { get; set; }

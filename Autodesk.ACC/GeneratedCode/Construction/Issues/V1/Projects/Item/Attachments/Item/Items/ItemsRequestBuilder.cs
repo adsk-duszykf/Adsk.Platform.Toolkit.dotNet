@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
     public partial class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.attachments.item.items.item collection</summary>
-        /// <param name="position">The unique identifier of the attachment. To find the ID, call `GET attachments &lt;/en/docs/acc/v1/reference/http/issues-attachments-issueId-items-GET/&gt;`_.</param>
+        /// <param name="position">The unique identifier of the attachment. To find the ID, call [GET attachments](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-attachments-issueId-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.attachments.item.items.item collection</summary>
-        /// <param name="position">The unique identifier of the attachment. To find the ID, call `GET attachments &lt;/en/docs/acc/v1/reference/http/issues-attachments-issueId-items-GET/&gt;`_.</param>
+        /// <param name="position">The unique identifier of the attachment. To find the ID, call [GET attachments](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-attachments-issueId-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder this[string position]

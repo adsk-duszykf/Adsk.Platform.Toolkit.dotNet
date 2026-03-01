@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me.MeGetResponse_permittedActions> PermittedActions { get; set; }
 #endif
-        /// <summary>The roles assigned to the user in Submittals. Possible values: ``1`` - ``Manager``, ``2`` - ``User``, ``4`` - ``Admin``</summary>
+        /// <summary>The roles assigned to the user in Submittals. Possible values: `1` - `Manager`, `2` - `User`, `4` - `Admin`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Roles { get; set; }

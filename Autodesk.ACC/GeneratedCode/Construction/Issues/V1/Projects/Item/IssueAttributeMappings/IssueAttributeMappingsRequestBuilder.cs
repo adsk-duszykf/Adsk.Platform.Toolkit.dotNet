@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappin
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssueAttributeMappingsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Retrieves issue custom attribute mappings associated with the specified issue custom attribute definitions. Separate multiple values with commas. For example: ``filter[attributeDefinitionId]=18ee5858-cbf1-451a-a525-7c6ff8156775``.</summary>
+            /// <summary>Retrieves issue custom attribute mappings associated with the specified issue custom attribute definitions. Separate multiple values with commas. For example: `filter[attributeDefinitionId]=18ee5858-cbf1-451a-a525-7c6ff8156775`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BattributeDefinitionId%5D")]
@@ -113,13 +113,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappin
             [QueryParameter("filter%5BattributeDefinitionId%5D")]
             public string FilterattributeDefinitionId { get; set; }
 #endif
-            /// <summary>Retrieves items that were created at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves items that were created at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BcreatedAt%5D")]
             public DateTimeOffset? FiltercreatedAt { get; set; }
-            /// <summary>Retrieves types that were deleted at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``To include non-deleted items in the response, add ``null`` to the filter: ``filter[deletedAt]=null,YYYY-MM-DDThh:mm:ss.sz...YYYY-MM-DDThh:mm:ss.sz``.For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves types that were deleted at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`To include non-deleted items in the response, add `null` to the filter: `filter[deletedAt]=null,YYYY-MM-DDThh:mm:ss.sz...YYYY-MM-DDThh:mm:ss.sz`.For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BdeletedAt%5D")]
             public DateTimeOffset? FilterdeletedAt { get; set; }
-            /// <summary>Retrieves issue custom attribute mappings associated with the specified items (project, type, or subtype). Separate multiple values with commas. For example: ``filter[mappedItemId]=18ee5858-cbf1-451a-a525-7c6ff8156775``. Note that this does not retrieve inherited custom attribute mappings or custom attribute mappings of descendants.</summary>
+            /// <summary>Retrieves issue custom attribute mappings associated with the specified items (project, type, or subtype). Separate multiple values with commas. For example: `filter[mappedItemId]=18ee5858-cbf1-451a-a525-7c6ff8156775`. Note that this does not retrieve inherited custom attribute mappings or custom attribute mappings of descendants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BmappedItemId%5D")]
@@ -129,10 +129,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappin
             [QueryParameter("filter%5BmappedItemId%5D")]
             public string FiltermappedItemId { get; set; }
 #endif
-            /// <summary>Retrieves items that were last updated at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves items that were last updated at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BupdatedAt%5D")]
             public DateTimeOffset? FilterupdatedAt { get; set; }
-            /// <summary>The number of custom attribute mappings to return in the response payload.  For example, ``limit=2``. Acceptable values: ``1-200``. Default value: ``200``.</summary>
+            /// <summary>The number of custom attribute mappings to return in the response payload.  For example, `limit=2`. Acceptable values: `1-200`. Default value: `200`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The number of custom attribute mappings you want to begin retrieving results from.</summary>

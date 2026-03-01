@@ -8,12 +8,12 @@ using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Sheets
 {
     /// <summary>
-    /// Basic version set data. For a complete collection of version set data, call `GET version-sets &lt;/en/docs/acc/v1/reference/http/sheets-version-sets-GET/&gt;`_.
+    /// Basic version set data. For a complete collection of version set data, call [GET version-sets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-GET/).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SheetsGetResponse_results_versionSet : IParsable
     {
-        /// <summary>- ``true`` if the version set has been deleted.- ``false`` if the version set has not been deleted.</summary>
+        /// <summary>- `true` if the version set has been deleted.- `false` if the version set has not been deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>The ID of the version set.</summary>
         public Guid? Id { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item
 {
-    /// <summary>The status of the document. Possible values: ``Succeeded``, ``Failed``, ``Running``, ``Skipped``.</summary>
+    /// <summary>The status of the document. Possible values: `Succeeded`, `Failed`, `Running`, `Skipped`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithViewGetResponse_documentVersions_documentStatus
     {

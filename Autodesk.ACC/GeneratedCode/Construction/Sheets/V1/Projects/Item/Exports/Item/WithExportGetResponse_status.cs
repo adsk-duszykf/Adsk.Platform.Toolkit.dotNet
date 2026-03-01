@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
 {
-    /// <summary>The status of the sheets export job.Possible values: ``successful``, ``processing``, ``failed``</summary>
+    /// <summary>The status of the sheets export job.Possible values: `successful`, `processing`, `failed`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithExportGetResponse_status
     {

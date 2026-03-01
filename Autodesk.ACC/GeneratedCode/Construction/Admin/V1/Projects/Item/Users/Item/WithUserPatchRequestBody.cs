@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
     public partial class WithUserPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call `GET projects/:projectId/companies &lt;/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.</summary>
+        /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call [GET projects/:projectId/companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyId { get; set; }

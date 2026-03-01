@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
     public partial class AttachmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.attachments.item collection</summary>
-        /// <param name="position">The unique identifier of the issue. To find the ID, call `GET issues &lt;/en/docs/acc/v1/reference/http/issues-issues-GET/&gt;`_.</param>
+        /// <param name="position">The unique identifier of the issue. To find the ID, call [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.WithIssueItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.WithIssueItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.attachments.item collection</summary>
-        /// <param name="position">The unique identifier of the issue. To find the ID, call `GET issues &lt;/en/docs/acc/v1/reference/http/issues-issues-GET/&gt;`_.</param>
+        /// <param name="position">The unique identifier of the issue. To find the ID, call [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.WithIssueItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.WithIssueItemRequestBuilder this[string position]

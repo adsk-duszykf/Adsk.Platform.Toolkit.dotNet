@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
 #else
         public string CreatedBy { get; set; }
 #endif
-        /// <summary>The type of custom attribute. Possible values: ``list``, ``text``, ``paragraph``, ``numeric``.</summary>
+        /// <summary>The type of custom attribute. Possible values: `list`, `text`, `paragraph`, `numeric`.</summary>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_dataType? DataType { get; set; }
         /// <summary>The date and time the custom attribute was deleted, in the following format: YYYY-MM-DDThh:mm:ss.sz.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
 #endif
         /// <summary>The ID of the custom attribute.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The metadata object; only relevant for ``list`` custom attributes.</summary>
+        /// <summary>The metadata object; only relevant for `list` custom attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata? Metadata { get; set; }

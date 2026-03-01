@@ -8,14 +8,14 @@ using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow
 {
     /// <summary>
-    /// The configuration for applying attribute updates when a review is completed.This applies only if the workflow includes a file copy action and the ``Update Attributes`` action is enabled.
+    /// The configuration for applying attribute updates when a review is completed.This applies only if the workflow includes a file copy action and the `Update Attributes` action is enabled.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowGetResponse_updateAttributesOptions : IParsable
     {
-        /// <summary>(``Update attributes`` in the UI)Indicates whether the ``Update Attributes`` action is enabled.``true``: attributes will be applied after the review.``false``: (default) attributes will not be updated.</summary>
+        /// <summary>(`Update attributes` in the UI)Indicates whether the `Update Attributes` action is enabled.`true`: attributes will be applied after the review.`false`: (default) attributes will not be updated.</summary>
         public bool? EnableAttachedAttributes { get; set; }
-        /// <summary>(``Update attributes both for target folder and source folder`` or ``Update attributes only for target folder`` in the UI)Determines whether attributes are updated only for files in the target folder, or for both the target and source folders.``true``: update attributes in both folders.``false``: (default) update only the target folder.Only available when the approval workflow includes a copy post-action.</summary>
+        /// <summary>(`Update attributes both for target folder and source folder` or `Update attributes only for target folder` in the UI)Determines whether attributes are updated only for files in the target folder, or for both the target and source folders.`true`: update attributes in both folders.`false`: (default) update only the target folder.Only available when the approval workflow includes a copy post-action.</summary>
         public bool? UpdateSourceAndCopiedFiles { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

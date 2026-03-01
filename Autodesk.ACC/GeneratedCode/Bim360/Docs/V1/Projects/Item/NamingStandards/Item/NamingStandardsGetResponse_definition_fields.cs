@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
     {
         /// <summary>The ID of the field.</summary>
         public double? AttributeId { get; set; }
-        /// <summary>The default value of the field.For example, ``PROJ``.</summary>
+        /// <summary>The default value of the field.For example, `PROJ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue { get; set; }
@@ -42,9 +42,9 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>``true``: this field is required in the file naming convention.``false``: this field is not required in the file naming convention.</summary>
+        /// <summary>`true`: this field is required in the file naming convention.`false`: this field is not required in the file naming convention.</summary>
         public bool? Optional { get; set; }
-        /// <summary>A drop-down list of possible values for the field.Only relevant for a field of type ``ARRAY`` (drop-down list).</summary>
+        /// <summary>A drop-down list of possible values for the field.Only relevant for a field of type `ARRAY` (drop-down list).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields_options>? Options { get; set; }
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 #else
         public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields_options> Options { get; set; }
 #endif
-        /// <summary>The field type.Possible values:- ``ALPHANUMERIC``: Accepts all characters.- ``NONNUMERIC_TEXT``: Accepts all characters, excluding ``0-9``.- ``NUMERIC``: Accepts ``0-9``, comma ``&apos;,&apos;``, plus ``&apos;+&apos;``, minus ``&apos;-&apos;``, percent ``&apos;%&apos;``, period ``&apos;.&apos;``, underscore ``&apos;_&apos;``.- ``ARRAY``: A drop-down list.Note that the ``minLength`` and ``maxLength`` properties are not included in the response for the ``ARRAY`` type.</summary>
+        /// <summary>The field type.Possible values:- `ALPHANUMERIC`: Accepts all characters.- `NONNUMERIC_TEXT`: Accepts all characters, excluding `0-9`.- `NUMERIC`: Accepts `0-9`, comma `&apos;,&apos;`, plus `&apos;+&apos;`, minus `&apos;-&apos;`, percent `&apos;%&apos;`, period `&apos;.&apos;`, underscore `&apos;_&apos;`.- `ARRAY`: A drop-down list.Note that the `minLength` and `maxLength` properties are not included in the response for the `ARRAY` type.</summary>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

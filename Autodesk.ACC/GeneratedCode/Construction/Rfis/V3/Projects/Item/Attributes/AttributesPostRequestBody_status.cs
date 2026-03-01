@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
 {
-    /// <summary>The display status of the attribute in the UI. Possible values: ``active``, ``inactive``, ``hidden``.</summary>
+    /// <summary>The display status of the attribute in the UI. Possible values: `active`, `inactive`, `hidden`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttributesPostRequestBody_status
     {

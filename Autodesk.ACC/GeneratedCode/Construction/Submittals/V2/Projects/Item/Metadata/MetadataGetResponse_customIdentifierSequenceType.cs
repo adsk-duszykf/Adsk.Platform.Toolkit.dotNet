@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 {
-    /// <summary>The custom numbering sequence type for the current project. Possible values: ``1`` (Global sequence), ``2`` (Spec sequence).</summary>
+    /// <summary>The custom numbering sequence type for the current project. Possible values: `1` (Global sequence), `2` (Spec sequence).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MetadataGetResponse_customIdentifierSequenceType
     {

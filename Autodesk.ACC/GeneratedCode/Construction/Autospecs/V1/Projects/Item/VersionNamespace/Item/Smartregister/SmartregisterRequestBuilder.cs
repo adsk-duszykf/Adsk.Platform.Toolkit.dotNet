@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
         {
         }
         /// <summary>
-        /// GET projects/{projectId}/version/{versionId}/smartregister
+        /// Retrieves the submittal logs (Smart Register) that are part of the specification PDFs that were imported into AutoSpecs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET projects/{projectId}/version/{versionId}/smartregister
+        /// Retrieves the submittal logs (Smart Register) that are part of the specification PDFs that were imported into AutoSpecs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterResponse>(requestInfo, global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET projects/{projectId}/version/{versionId}/smartregister
+        /// Retrieves the submittal logs (Smart Register) that are part of the specification PDFs that were imported into AutoSpecs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

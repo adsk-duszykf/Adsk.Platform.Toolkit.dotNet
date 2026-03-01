@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
     public partial class PackagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.submittals.v2.projects.item.packages.item collection</summary>
-        /// <param name="position">The ID of the submittal item to retrieve revisions for. To obtain this ID, call `GET items &lt;/en/docs/acc/v1/reference/http/submittals-items-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the submittal item to retrieve revisions for. To obtain this ID, call [GET items](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item.PackagesItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item.PackagesItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
         {
         }
         /// <summary>
-        /// Retrieve all the packages for the specified project. For information about packages, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages&gt;`_.
+        /// Retrieve all the packages for the specified project. For information about packages, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all the packages for the specified project. For information about packages, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages&gt;`_.
+        /// Retrieve all the packages for the specified project. For information about packages, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all the packages for the specified project. For information about packages, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages&gt;`_.
+        /// Retrieve all the packages for the specified project. For information about packages, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,12 +111,12 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             return new global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve all the packages for the specified project. For information about packages, see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages&gt;`_.
+        /// Retrieve all the packages for the specified project. For information about packages, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PackagesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter packages with the specified package ID (the package ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, ``filter[identifier]=2``.</summary>
+            /// <summary>Filter packages with the specified package ID (the package ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, `filter[identifier]=2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bidentifier%5D")]
@@ -126,7 +126,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             [QueryParameter("filter%5Bidentifier%5D")]
             public string Filteridentifier { get; set; }
 #endif
-            /// <summary>Filter packages with the associated specified section ID (the spec section ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, ``filter[identifier]=2``.</summary>
+            /// <summary>Filter packages with the associated specified section ID (the spec section ID in the UI). You can specify multiple values. Separate multiple values with commas. For example, `filter[identifier]=2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bspec%26%2346%3Bidentifier%5D")]
@@ -136,7 +136,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             [QueryParameter("filter%5Bspec%26%2346%3Bidentifier%5D")]
             public string Filterspec46identifier { get; set; }
 #endif
-            /// <summary>Filter packages with the associated specified spec section internal, globally unique ID (UUID). You can specify multiple values. Separate multiple values with commas. For example, ``filter[specId]=b4aa3864-5706-4a7b-b06c-a792e8b2df23``.</summary>
+            /// <summary>Filter packages with the associated specified spec section internal, globally unique ID (UUID). You can specify multiple values. Separate multiple values with commas. For example, `filter[specId]=b4aa3864-5706-4a7b-b06c-a792e8b2df23`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BspecId%5D")]
@@ -146,7 +146,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             [QueryParameter("filter%5BspecId%5D")]
             public string FilterspecId { get; set; }
 #endif
-            /// <summary>Filter packages with the specified title. You can specify multiple values. Separate multiple values with commas. For example, ``filter[title]=Structural Steel``.</summary>
+            /// <summary>Filter packages with the specified title. You can specify multiple values. Separate multiple values with commas. For example, `filter[title]=Structural Steel`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Btitle%5D")]
@@ -156,13 +156,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             [QueryParameter("filter%5Btitle%5D")]
             public string Filtertitle { get; set; }
 #endif
-            /// <summary>The maximum number of results per page. Possible values: ``1``- ``50``. Default value: ``20``. For example, to limit the response to two results per page, use ``limit=2``.</summary>
+            /// <summary>The maximum number of results per page. Possible values: `1`- `50`. Default value: `20`. For example, to limit the response to two results per page, use `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include ``offset=20`` in the query string. For more details, see the `JSON API Paging Help documentation &lt;https://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Search for packages by querying a specified string within specific fields (``identifier``, ``title``, ``spec.identifier``), and retrieve the associated packages that match the search criteria. This includes packages where the string matches part of a field. For example, ``search=1``.</summary>
+            /// <summary>Search for packages by querying a specified string within specific fields (`identifier`, `title`, `spec.identifier`), and retrieve the associated packages that match the search criteria. This includes packages where the string matches part of a field. For example, `search=1`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -172,7 +172,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Sort packages by specified fields. Separate multiple values with commas. To sort in descending or ascending order, add ``desc`` or ``asc`` after the sort criteria. For example, ``spec asc``.Possible values: ``id``, ``identifier``, ``title``, ``description``, ``spec``, ``spec.identifier``.</summary>
+            /// <summary>Sort packages by specified fields. Separate multiple values with commas. To sort in descending or ascending order, add `desc` or `asc` after the sort criteria. For example, `spec asc`.Possible values: `id`, `identifier`, `title`, `description`, `spec`, `spec.identifier`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

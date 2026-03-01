@@ -8,14 +8,14 @@ using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow
 {
     /// <summary>
-    /// (``Copy approved files`` in the UI) The configuration for copying approved files to a target folder when the review is complete.
+    /// (`Copy approved files` in the UI) The configuration for copying approved files to a target folder when the review is complete.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowGetResponse_copyFilesOptions : IParsable
     {
-        /// <summary>(``Allow the initiator to change the target folder`` in the UI)  Allows the initiator to change the target folder when creating a review.``true``: the initiator can choose a different target folder.``false``: the folder defined in the workflow is used.</summary>
+        /// <summary>(`Allow the initiator to change the target folder` in the UI)  Allows the initiator to change the target folder when creating a review.`true`: the initiator can choose a different target folder.`false`: the folder defined in the workflow is used.</summary>
         public bool? AllowOverride { get; set; }
-        /// <summary>(``All/Any files in the review have been approved`` in the UI)Specifies the condition under which approved files will be copied.Possible values:``ANY``: copy files if at least one file in the review is approved.``ALL``: copy files only if all files in the review are approved.</summary>
+        /// <summary>(`All/Any files in the review have been approved` in the UI)Specifies the condition under which approved files will be copied.Possible values:`ANY`: copy files if at least one file in the review is approved.`ALL`: copy files only if all files in the review are approved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Condition { get; set; }
@@ -23,11 +23,11 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
 #else
         public string Condition { get; set; }
 #endif
-        /// <summary>(``Allow approvers to change whether or not markups are included`` in the UI)Controls whether approvers or admins can change the markup inclusion setting when starting the review.``true``: the markup setting is locked and cannot be changed.``false``: the setting can be changed during review setup.</summary>
+        /// <summary>(`Allow approvers to change whether or not markups are included` in the UI)Controls whether approvers or admins can change the markup inclusion setting when starting the review.`true`: the markup setting is locked and cannot be changed.`false`: the setting can be changed during review setup.</summary>
         public bool? DisableOverrideMarkupSetting { get; set; }
-        /// <summary>Indicates whether approved files should be copied to a target folder after the review is complete.``true``: copy approved files to the target folder.``false``: do not copy approved files.</summary>
+        /// <summary>Indicates whether approved files should be copied to a target folder after the review is complete.`true`: copy approved files to the target folder.`false`: do not copy approved files.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>(``Then copy approved files to`` in the UI)The URN of the target folder where approved files will be copied.</summary>
+        /// <summary>(`Then copy approved files to` in the UI)The URN of the target folder where approved files will be copied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FolderUrn { get; set; }
@@ -35,7 +35,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
 #else
         public string FolderUrn { get; set; }
 #endif
-        /// <summary>(``Include all published markups on approved files`` in the UI)Indicates whether published markups should be included when copying files.``true``: include all published (unarchived) markups from the source version.``false``: (default) do not include markups.</summary>
+        /// <summary>(`Include all published markups on approved files` in the UI)Indicates whether published markups should be included when copying files.`true`: include all published (unarchived) markups from the source version.`false`: (default) do not include markups.</summary>
         public bool? IncludeMarkups { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

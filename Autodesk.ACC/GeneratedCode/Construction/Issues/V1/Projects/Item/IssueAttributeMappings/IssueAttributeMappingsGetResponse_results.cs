@@ -40,7 +40,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappin
         public Guid? Id { get; set; }
         /// <summary>The ID of the item (type, or subtype) the custom attribute is mapped to.</summary>
         public Guid? MappedItemId { get; set; }
-        /// <summary>The type of item the custom attribute is mapped to.Possible values:``issueType`` - this corresponds to ``Issue Category`` in the UI.``issueSubtype`` - this corresponds to ``Issue Type`` in the UI.Note that ``issueSubtype``&apos;s inherit ``issueType``&apos;s.</summary>
+        /// <summary>The type of item the custom attribute is mapped to.Possible values:`issueType` - this corresponds to `Issue Category` in the UI.`issueSubtype` - this corresponds to `Issue Type` in the UI.Note that `issueSubtype`&apos;s inherit `issueType`&apos;s.</summary>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse_results_mappedItemType? MappedItemType { get; set; }
         /// <summary>The order that the custom attributes were mapped to the item (type, subtype). This is only relevant to non-inherited mappings.</summary>
         public int? Order { get; set; }

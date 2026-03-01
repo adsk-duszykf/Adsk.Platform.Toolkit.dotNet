@@ -25,7 +25,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
 #endif
         /// <summary>The offset from the start of the collection to the first entry in the page. It is zero-based.</summary>
         public int? Offset { get; set; }
-        /// <summary>The total number of results that match the query, regardless of the ``limit`` value.</summary>
+        /// <summary>The total number of results that match the query, regardless of the `limit` value.</summary>
         public int? TotalResults { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

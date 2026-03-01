@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #else
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.TakeoffItemsGetResponse_results_contentView ContentView { get; set; }
 #endif
-        /// <summary>The date and time when the resource was created, in the following format: ``YYYY-MM-DDThh:mm:ssZ``.</summary>
+        /// <summary>The date and time when the resource was created, in the following format: `YYYY-MM-DDThh:mm:ssZ`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The geometry of a 2D takeoff item specified in SVG. This property is not returned for a 3D takeoff item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #endif
         /// <summary>The takeoff item ID.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The location ID associated with the takeoff item.For more information about the location, see `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_.</summary>
+        /// <summary>The location ID associated with the takeoff item.For more information about the location, see [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/).</summary>
         public Guid? LocationId { get; set; }
         /// <summary>The ID of the selected BIM model element in the viewing model.</summary>
         public int? ObjectId { get; set; }
@@ -70,9 +70,9 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #endif
         /// <summary>The takeoff type ID.</summary>
         public Guid? TakeoffTypeId { get; set; }
-        /// <summary>The takeoff type method.Possible values: ``COUNT``, ``DISTANCE``, ``AREA``, ``SELECT``.Corresponding UI names: ``COUNT``, ``LINEAR``, ``AREA``, ``BIM``.</summary>
+        /// <summary>The takeoff type method.Possible values: `COUNT`, `DISTANCE`, `AREA`, `SELECT`.Corresponding UI names: `COUNT`, `LINEAR`, `AREA`, `BIM`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.TakeoffItemsGetResponse_results_type? Type { get; set; }
-        /// <summary>The date and time when the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ssZ``.</summary>
+        /// <summary>The date and time when the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ssZ`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The name of the user who last updated the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

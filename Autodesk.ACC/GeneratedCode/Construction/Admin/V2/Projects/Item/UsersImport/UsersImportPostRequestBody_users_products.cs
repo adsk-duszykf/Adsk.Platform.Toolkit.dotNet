@@ -12,9 +12,9 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
     public partial class UsersImportPostRequestBody_users_products : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The user&apos;s type of access to the product identified by ``key``. Possible values:- ``administrator``- ``member``- ``none``Note that when you&apos;re using a POST or PATCH endpoint to set this value, you must adhere to the following guidelines:- If you set a product&apos;s ``key`` to ``projectAdministration`` and you set ``access`` to ``none``, all other products should be set to ``member`` access for the user.- If you set a product&apos;s ``key`` to ``projectAdministration`` and you set ``access`` to ``administrator``, all other products should be set to ``administrator`` access for the user.- You cannot set a product&apos;s ``key`` to ``projectAdministration`` and set ``access`` to ``member``.</summary>
+        /// <summary>The user&apos;s type of access to the product identified by `key`. Possible values:- `administrator`- `member`- `none`Note that when you&apos;re using a POST or PATCH endpoint to set this value, you must adhere to the following guidelines:- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `none`, all other products should be set to `member` access for the user.- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `administrator`, all other products should be set to `administrator` access for the user.- You cannot set a product&apos;s `key` to `projectAdministration` and set `access` to `member`.</summary>
         public global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users_products_access? Access { get; set; }
-        /// <summary>A keyword that identifies the product.Possible values: ``autoSpecs``, ``build``, ``cost``, ``designCollaboration``, ``docs``, ``insight``, ``modelCoordination``, ``projectAdministration``, and ``takeoff``.</summary>
+        /// <summary>A keyword that identifies the product.Possible values: `autoSpecs`, `build`, `cost`, `designCollaboration`, `docs`, `insight`, `modelCoordination`, `projectAdministration`, and `takeoff`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }

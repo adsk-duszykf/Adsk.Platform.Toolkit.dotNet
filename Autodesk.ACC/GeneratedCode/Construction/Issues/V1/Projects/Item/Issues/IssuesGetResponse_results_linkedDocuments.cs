@@ -26,7 +26,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #endif
         /// <summary>The date and time the pushpin was created, in ISO8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The version of the file the pushin issue was added to. For information about file versions, see the `Data Management API &lt;/en/docs/data/v2/&gt;`_.</summary>
+        /// <summary>The version of the file the pushin issue was added to. For information about file versions, see the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/).</summary>
         public int? CreatedAtVersion { get; set; }
         /// <summary>The Autodesk ID of the user who created the pushpin issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #else
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse_results_linkedDocuments_details Details { get; set; }
 #endif
-        /// <summary>The type of file. Possible values:``TwoDVectorPushpin`` (3D models)``TwoDRasterPushpin`` (2D sheets and views)</summary>
+        /// <summary>The type of file. Possible values:`TwoDVectorPushpin` (3D models)`TwoDRasterPushpin` (2D sheets and views)</summary>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse_results_linkedDocuments_type? Type { get; set; }
         /// <summary>The ID of the file associated with the issue (pushpin). Note that we do not currently support data associated with the ACC Build Sheet tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

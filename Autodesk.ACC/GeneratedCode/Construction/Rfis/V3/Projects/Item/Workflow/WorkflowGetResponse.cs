@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow.WorkflowGetResponse_projectRolesMapping> ProjectRolesMapping { get; set; }
 #endif
-        /// <summary>The region type of the workflow. Possible values: ``US``, ``EU``.</summary>
+        /// <summary>The region type of the workflow. Possible values: `US`, `EU`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow.WorkflowGetResponse_workflowType? WorkflowType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

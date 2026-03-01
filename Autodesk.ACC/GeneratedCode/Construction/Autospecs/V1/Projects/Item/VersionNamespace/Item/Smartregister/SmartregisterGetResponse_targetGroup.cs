@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister
 {
-    /// <summary>The submittal group associcated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: ``ACTION AND INFORMATIONAL``, ``Closeout Submittals``, ``DIVISION 01 REQUIREMENTS``, ``Field Quality Control``, ``Mockups``, ``QUALITY ASSURANCE``, ``TESTS AND INSPECTIONS``</summary>
+    /// <summary>The submittal group associcated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: `ACTION AND INFORMATIONAL`, `Closeout Submittals`, `DIVISION 01 REQUIREMENTS`, `Field Quality Control`, `Mockups`, `QUALITY ASSURANCE`, `TESTS AND INSPECTIONS`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SmartregisterGetResponse_targetGroup
     {

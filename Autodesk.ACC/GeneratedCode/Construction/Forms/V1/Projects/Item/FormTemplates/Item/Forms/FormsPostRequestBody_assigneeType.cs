@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms
 {
-    /// <summary>Type of entity to assign the form to.Possible values: ``company``, ``role``, ``user``</summary>
+    /// <summary>Type of entity to assign the form to.Possible values: `company`, `role`, `user`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FormsPostRequestBody_assigneeType
     {

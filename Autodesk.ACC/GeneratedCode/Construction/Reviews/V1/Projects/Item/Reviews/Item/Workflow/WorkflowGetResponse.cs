@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_approvalStatusOptions> ApprovalStatusOptions { get; set; }
 #endif
-        /// <summary>(``Update Attributes`` in the UI)The list of attributes added in the ``Update Attributes`` action.These attributes will be applied to the approved files in the target folder, or optionally also in the source folder depending on the configuration.</summary>
+        /// <summary>(`Update Attributes` in the UI)The list of attributes added in the `Update Attributes` action.These attributes will be applied to the approved files in the target folder, or optionally also in the source folder depending on the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_attachedAttributes>? AttachedAttributes { get; set; }
@@ -36,7 +36,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_attachedAttributes> AttachedAttributes { get; set; }
 #endif
-        /// <summary>(``Copy approved files`` in the UI) The configuration for copying approved files to a target folder when the review is complete.</summary>
+        /// <summary>(`Copy approved files` in the UI) The configuration for copying approved files to a target folder when the review is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_copyFilesOptions? CopyFilesOptions { get; set; }
@@ -78,7 +78,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_steps> Steps { get; set; }
 #endif
-        /// <summary>The configuration for applying attribute updates when a review is completed.This applies only if the workflow includes a file copy action and the ``Update Attributes`` action is enabled.</summary>
+        /// <summary>The configuration for applying attribute updates when a review is completed.This applies only if the workflow includes a file copy action and the `Update Attributes` action is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse_updateAttributesOptions? UpdateAttributesOptions { get; set; }

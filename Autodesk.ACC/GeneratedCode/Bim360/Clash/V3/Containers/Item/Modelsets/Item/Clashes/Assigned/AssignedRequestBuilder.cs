@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.As
         {
         }
         /// <summary>
-        /// Retrieves assigned clashes for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of assigned clash groups in a given model set which match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.As
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedGetResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves assigned clashes for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of assigned clash groups in a given model set which match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.As
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves assigned clashes for a specified model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of assigned clash groups in a given model set which match the provided search parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -86,7 +86,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
 #else
         public string SelfUrl { get; set; }
 #endif
-        /// <summary>job status.Possible values: ``PROCESSING``, ``FINISHED``, ``FAILED``</summary>
+        /// <summary>job status.Possible values: `PROCESSING`, `FINISHED`, `FAILED`</summary>
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostResponse_state? State { get; set; }
         /// <summary>some higher level index statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
 #else
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostResponse_stats Stats { get; set; }
 #endif
-        /// <summary>type.Possible values: ``INDEX``</summary>
+        /// <summary>type.Possible values: `INDEX`</summary>
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostResponse_type? Type { get; set; }
         /// <summary>timestamp.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

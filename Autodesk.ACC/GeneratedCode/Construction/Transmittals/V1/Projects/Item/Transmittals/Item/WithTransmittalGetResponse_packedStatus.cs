@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item
 {
-    /// <summary>Indicates the progress of packaging transmittal files into a ZIP archive.Possible values: ``SUCCESS``, ``PARTIAL_SUCCESS``, ``FAILED``, ``PROCESSING``, ``EXPIRED``, ``NOT_ALLOWED``</summary>
+    /// <summary>Indicates the progress of packaging transmittal files into a ZIP archive.Possible values: `SUCCESS`, `PARTIAL_SUCCESS`, `FAILED`, `PROCESSING`, `EXPIRED`, `NOT_ALLOWED`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithTransmittalGetResponse_packedStatus
     {

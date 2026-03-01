@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
     public partial class RevisionsGetResponse_results_steps_tasks : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID or member group ID of the ``user``, ``company``, or ``role`` assigned to the task.</summary>
+        /// <summary>The Autodesk ID or member group ID of the `user`, `company`, or `role` assigned to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo { get; set; }
@@ -20,9 +20,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+        /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results_steps_tasks_assignedToType? AssignedToType { get; set; }
-        /// <summary>The date and time when the task was completed, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the task was completed, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The Autodesk ID of the user who completed the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,13 +32,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #else
         public string CompletedBy { get; set; }
 #endif
-        /// <summary>The date and time when the task was originally created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the task was originally created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>``true``: the task is required to complete the step.``false``: (default) the task is not required to complete the step.</summary>
+        /// <summary>`true`: the task is required to complete the step.`false`: (default) the task is not required to complete the step.</summary>
         public bool? IsRequired { get; set; }
         /// <summary>The ID of the submittal item associated with the task.</summary>
         public Guid? ItemId { get; set; }
-        /// <summary>The date and time when the response was added, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the response was added, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? RespondedAt { get; set; }
         /// <summary>The Autodesk ID of the user that gave the response to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,13 +66,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 #endif
         /// <summary>The revision number of the submittal item.</summary>
         public int? Revision { get; set; }
-        /// <summary>The date and time when the task started, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the task started, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The ID of the step associated with this task in this revision.</summary>
         public Guid? StepId { get; set; }
         /// <summary>The unique identifier of the task within this step, specific to the submittal item&apos;s revision.</summary>
         public Guid? TaskId { get; set; }
-        /// <summary>The date and time when the task was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2018-02-15T12:09:24.198466Z``.</summary>
+        /// <summary>The date and time when the task was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2018-02-15T12:09:24.198466Z`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

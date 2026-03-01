@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions
 {
-    /// <summary>The status of the user, role, or company.Possible values:- For a user: ``INACTIVE``, ``ACTIVE``, ``PENDING``, ``DISABLED``- For a role: ``INACTIVE``, ``ACTIVE``- For a company: ``ACTIVE``</summary>
+    /// <summary>The status of the user, role, or company.Possible values:- For a user: `INACTIVE`, `ACTIVE`, `PENDING`, `DISABLED`- For a role: `INACTIVE`, `ACTIVE`- For a company: `ACTIVE`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PermissionsGetResponse_subjectStatus
     {

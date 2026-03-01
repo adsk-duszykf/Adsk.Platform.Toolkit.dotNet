@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
     {
         /// <summary>The time the package was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who created the package. For details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who created the package. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -34,11 +34,11 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
         public int? DisplayId { get; set; }
         /// <summary>The unique identifier (UUID) of the package.</summary>
         public Guid? Id { get; set; }
-        /// <summary>``true``: The package is locked. Its contents cannot be modified until it is unlocked.``false``: The package is not locked. Files and resources can still be added, removed, or updated.</summary>
+        /// <summary>`true`: The package is locked. Its contents cannot be modified until it is unlocked.`false`: The package is not locked. Files and resources can still be added, removed, or updated.</summary>
         public bool? Locked { get; set; }
         /// <summary>The time the package was locked.</summary>
         public DateTimeOffset? LockedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who locked the package. For details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who locked the package. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LockedBy { get; set; }
@@ -58,7 +58,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
         public int? ResourceCount { get; set; }
         /// <summary>The time the package was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The Autodesk ID of the user who last updated the package. For details about the user, call `GET users &lt;/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the user who last updated the package. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy { get; set; }
@@ -66,7 +66,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
 #else
         public string UpdatedBy { get; set; }
 #endif
-        /// <summary>The version type of the package.Possible values:- ``FIXED`` – The files in the package remain fixed at the selected versions.- ``CURRENT`` – The files in the package automatically update to the latest current versions.- ``CHANGING`` – The package is temporarily changing from one version type to another. This state usually lasts only a few seconds and cannot be used as a filter.For more details, see the `Change Package Version Type &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=View_Manage_Packages#change-package-version-type&gt;`_ documentation.</summary>
+        /// <summary>The version type of the package.Possible values:- `FIXED` – The files in the package remain fixed at the selected versions.- `CURRENT` – The files in the package automatically update to the latest current versions.- `CHANGING` – The package is temporarily changing from one version type to another. This state usually lasts only a few seconds and cannot be used as a filter.For more details, see the [Change Package Version Type](https://help.autodesk.com/view/BUILD/ENU/?guid=View_Manage_Packages#change-package-version-type) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse_results_versionType? VersionType { get; set; }

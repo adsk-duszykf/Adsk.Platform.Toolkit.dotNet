@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExportsPostRequestBody_options : IParsable
     {
-        /// <summary>The options for which Issues markups to export.No Issues markups will be exported if both options are set to ``false``.</summary>
+        /// <summary>The options for which Issues markups to export.No Issues markups will be exported if both options are set to `false`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody_options_issueMarkups? IssueMarkups { get; set; }
@@ -29,7 +29,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
 #else
         public string OutputFileName { get; set; }
 #endif
-        /// <summary>The options for which Photos markups to export.No Photos markups will be exported if both options are set to ``false``.</summary>
+        /// <summary>The options for which Photos markups to export.No Photos markups will be exported if both options are set to `false`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody_options_photoMarkups? PhotoMarkups { get; set; }
@@ -37,7 +37,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
 #else
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody_options_photoMarkups PhotoMarkups { get; set; }
 #endif
-        /// <summary>The options for which standard markups and associated links to export.No markups or links will be exported if all options are set to ``false``.</summary>
+        /// <summary>The options for which standard markups and associated links to export.No markups or links will be exported if all options are set to `false`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody_options_standardMarkups? StandardMarkups { get; set; }

@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
     public partial class UploadsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.sheets.v1.projects.item.uploads.item collection</summary>
-        /// <param name="position">The ID of the upload. The upload ID is generated when you `create an upload object &lt;/en/docs/acc/v1/reference/http/sheets-uploads-POST/&gt;`_.</param>
+        /// <param name="position">The ID of the upload. The upload ID is generated when you [create an upload object](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-uploads-POST/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.WithUploadItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.WithUploadItemRequestBuilder this[string position]
         {
@@ -182,10 +182,10 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
             /// <summary>The number of results to return in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The starting point for the results, specified by item number. The default value is ``0``. For example, use ``offset=3`` to start the results from the third item.</summary>
+            /// <summary>The starting point for the results, specified by item number. The default value is `0`. For example, use `offset=3` to start the results from the third item.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sort the uploads by ``createdAt`` or ``issuanceDate``. You need to add whether to sort in ascending (``asc``) or descending (``desc``) order. For example, ``sort=issuanceDate desc``.</summary>
+            /// <summary>Sort the uploads by `createdAt` or `issuanceDate`. You need to add whether to sort in ascending (`asc`) or descending (`desc`) order. For example, `sort=issuanceDate desc`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

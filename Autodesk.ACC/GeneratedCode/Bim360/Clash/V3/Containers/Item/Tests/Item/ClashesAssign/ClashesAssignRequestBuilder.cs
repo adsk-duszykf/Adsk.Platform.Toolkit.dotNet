@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
         {
         }
         /// <summary>
-        /// The data associated with ``pushpin`` is supported by the Viewer&apos;s Pushpin extension. See the `pushpin tutorial &lt;/en/docs/bim360/v1/tutorials/pushpins/&gt;`_ for more information.
+        /// Creates a batch of new assigned clash groups for the given clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The data associated with ``pushpin`` is supported by the Viewer&apos;s Pushpin extension. See the `pushpin tutorial &lt;/en/docs/bim360/v1/tutorials/pushpins/&gt;`_ for more information.
+        /// Creates a batch of new assigned clash groups for the given clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignResponse>(requestInfo, global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The data associated with ``pushpin`` is supported by the Viewer&apos;s Pushpin extension. See the `pushpin tutorial &lt;/en/docs/bim360/v1/tutorials/pushpins/&gt;`_ for more information.
+        /// Creates a batch of new assigned clash groups for the given clash test.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

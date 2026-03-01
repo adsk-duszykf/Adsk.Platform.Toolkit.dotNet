@@ -40,7 +40,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets
 #else
         public string Resource { get; set; }
 #endif
-        /// <summary>The current job status. Possible values: ``Failed``, ``Running``, ``Succeeded``, ``Archived``.</summary>
+        /// <summary>The current job status. Possible values: `Failed`, `Running`, `Succeeded`, `Archived`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.ModelsetsPostResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

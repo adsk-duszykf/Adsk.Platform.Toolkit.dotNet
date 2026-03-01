@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.locations.v2.projects.item collection</summary>
-        /// <param name="position">The identifier of the project that contains your locations tree.Use the Data Management API to `retrieve the relevant ACC account and project IDs &lt;/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_.</param>
+        /// <param name="position">The identifier of the project that contains your locations tree.Use the Data Management API to [retrieve the relevant ACC account and project IDs](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.WithProjectItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.locations.v2.projects.item collection</summary>
-        /// <param name="position">The identifier of the project that contains your locations tree.Use the Data Management API to `retrieve the relevant ACC account and project IDs &lt;/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_.</param>
+        /// <param name="position">The identifier of the project that contains your locations tree.Use the Data Management API to [retrieve the relevant ACC account and project IDs](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.WithProjectItemRequestBuilder this[string position]

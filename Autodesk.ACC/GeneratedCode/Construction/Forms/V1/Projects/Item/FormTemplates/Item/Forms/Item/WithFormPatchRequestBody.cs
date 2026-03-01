@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public string AssigneeId { get; set; }
 #endif
-        /// <summary>Type of entity the form is assigned to.Possible values: ``company``, ``role``, ``user``</summary>
+        /// <summary>Type of entity the form is assigned to.Possible values: `company`, `role`, `user`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchRequestBody_assigneeType? AssigneeType { get; set; }
         /// <summary>Text for the form&apos;s description field.Max length: 8000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,9 +38,9 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public string FormDate { get; set; }
 #endif
-        /// <summary>Location identifier associated with the form. For more information about the location, see `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_.</summary>
+        /// <summary>Location identifier associated with the form. For more information about the location, see [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/).</summary>
         public Guid? LocationId { get; set; }
-        /// <summary>The name of the form instance. If the specified value is ``null`` or empty, it defaults to the form&apos;s template name.Max length: 100</summary>
+        /// <summary>The name of the form instance. If the specified value is `null` or empty, it defaults to the form&apos;s template name.Max length: 100</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -56,9 +56,9 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>New status for the form.````draft```` (in progress) forms may be edited.````inReview```` forms may not be edited but may be approved by the form reviewers.````submitted```` forms are closed and no longer editable.````archived```` forms are not editable and hidden in the uiPossible values: ``draft``, ``discarded``, ``submitted``, ``archived``, ``in_review``</summary>
+        /// <summary>New status for the form.`draft` (in progress) forms may be edited.``inReview` forms may not be edited but may be approved by the form reviewers.``submitted` forms are closed and no longer editable.``archived` forms are not editable and hidden in the uiPossible values: `draft`, `discarded`, `submitted`, `archived`, `in_review`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchRequestBody_status? Status { get; set; }
-        /// <summary>Signature of the reviewer who is submitting the form (should be included when submitting an ``inReview`` form) as a base64 encoded SVG.Note: the SVG will be sanitized: tags and attributes are limited to the basics (&lt;path&gt;, &lt;g&gt;, &lt;polyline&gt;, etc) needed to represent a signature.</summary>
+        /// <summary>Signature of the reviewer who is submitting the form (should be included when submitting an `inReview` form) as a base64 encoded SVG.Note: the SVG will be sanitized: tags and attributes are limited to the basics (&lt;path&gt;, &lt;g&gt;, &lt;polyline&gt;, etc) needed to represent a signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmitterSignature { get; set; }

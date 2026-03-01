@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithItemIdTransitionPostResponse_permittedActions_transitions_stateFrom : IParsable
     {
-        /// <summary>The unique ID of the starting state. For example, ``create``, ``mgr-1``, ``rev``. The ``rev`` state indicates that the submittal item is currently under review.</summary>
+        /// <summary>The unique ID of the starting state. For example, `create`, `mgr-1`, `rev`. The `rev` state indicates that the submittal item is currently under review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -21,7 +21,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name of the starting state. For example, ``Create``, ``Manager Review``, ``Review``.</summary>
+        /// <summary>The name of the starting state. For example, `Create`, `Manager Review`, `Review`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

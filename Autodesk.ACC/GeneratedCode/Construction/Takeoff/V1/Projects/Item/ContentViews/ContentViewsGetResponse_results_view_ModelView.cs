@@ -13,7 +13,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentViewsGetResponse_results_view_ModelView : IParsable
     {
-        /// <summary>The URN of the 3D model view.To learn how to use this attribute to retrieve details of the 3D model, see the `Takeoff Extract Inventory &lt;/en/docs/acc/v1/tutorials/takeoff/takeoff-extract-inventory&gt;`_ tutorial.</summary>
+        /// <summary>The URN of the 3D model view.To learn how to use this attribute to retrieve details of the 3D model, see the [Takeoff Extract Inventory](https://aps.autodesk.com/en/docs/acc/v1/tutorials/takeoff/takeoff-extract-inventory) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LineageUrn { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Settings
 {
-    /// <summary>The project measurement system.Possible values: ``IMPERIAL``, ``METRIC``.</summary>
+    /// <summary>The project measurement system.Possible values: `IMPERIAL`, `METRIC`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SettingsGetResponse_measurementSystem
     {

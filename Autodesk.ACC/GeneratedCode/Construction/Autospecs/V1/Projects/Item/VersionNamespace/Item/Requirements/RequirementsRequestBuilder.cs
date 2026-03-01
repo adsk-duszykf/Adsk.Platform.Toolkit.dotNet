@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
         {
         }
         /// <summary>
-        /// GET projects/{projectId}/version/{versionId}/requirements
+        /// Retrieves the number of submittals for the submittal groups in each submittal section.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET projects/{projectId}/version/{versionId}/requirements
+        /// Retrieves the number of submittals for the submittal groups in each submittal section.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsResponse>(requestInfo, global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET projects/{projectId}/version/{versionId}/requirements
+        /// Retrieves the number of submittals for the submittal groups in each submittal section.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

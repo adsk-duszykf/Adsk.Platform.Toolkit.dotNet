@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.packages.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.You can retrieve the project ID using the `Data Management API &lt;/en/docs/data/v2/&gt;`_. For more details, see the `Retrieve a Project ID &lt;/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_ tutorial.You may provide the project ID with or without the ``b.`` prefix:- With prefix: ``b.657a5565-09b7-48e0-bd03-acacfe42efaf``- Without prefix: ``657a5565-09b7-48e0-bd03-acacfe42efaf``</param>
+        /// <param name="position">The ID of the project.You can retrieve the project ID using the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). For more details, see the [Retrieve a Project ID](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial.You may provide the project ID with or without the `b.` prefix:- With prefix: `b.657a5565-09b7-48e0-bd03-acacfe42efaf`- Without prefix: `657a5565-09b7-48e0-bd03-acacfe42efaf`</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.WithProjectItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.packages.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.You can retrieve the project ID using the `Data Management API &lt;/en/docs/data/v2/&gt;`_. For more details, see the `Retrieve a Project ID &lt;/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_ tutorial.You may provide the project ID with or without the ``b.`` prefix:- With prefix: ``b.657a5565-09b7-48e0-bd03-acacfe42efaf``- Without prefix: ``657a5565-09b7-48e0-bd03-acacfe42efaf``</param>
+        /// <param name="position">The ID of the project.You can retrieve the project ID using the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). For more details, see the [Retrieve a Project ID](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial.You may provide the project ID with or without the `b.` prefix:- With prefix: `b.657a5565-09b7-48e0-bd03-acacfe42efaf`- Without prefix: `657a5565-09b7-48e0-bd03-acacfe42efaf`</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]

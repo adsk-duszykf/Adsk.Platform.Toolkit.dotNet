@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
     public partial class IssuesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.issues.item collection</summary>
-        /// <param name="position">The unique identifier of the issue. To find the ID, call `GET issues &lt;/en/docs/acc/v1/reference/http/issues-issues-GET/&gt;`_.</param>
+        /// <param name="position">The unique identifier of the issue. To find the ID, call [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             }
         }
         /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.issues.item collection</summary>
-        /// <param name="position">The unique identifier of the issue. To find the ID, call `GET issues &lt;/en/docs/acc/v1/reference/http/issues-issues-GET/&gt;`_.</param>
+        /// <param name="position">The unique identifier of the issue. To find the ID, call [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Return only specific fields in issue object. Separate multiple values with commas. Fields which will be returned in any case: ``id``, ``title``, ``status``, ``issueTypeId``. Possible values: ``id``, ``displayId``, ``title``, ``description``, ``issueTypeId``, ``issueSubtypeId``, ``status``, ``assignedTo``, ``assignedToType``, ``dueDate``, ``startDate``, ``locationId``, ``locationDetails``, ``rootCauseTitle``, ``rootCauseId``, ``permittedStatuses``, ``permittedAttributes``, ``permittedActions``, ``published``, ``commentCount``, ``openedBy``, ``openedAt``, ``closedBy``, ``closedAt``, ``createdBy``, ``createdAt``, ``updatedBy``, ``updatedAt``, ``customAttributes``.</summary>
+            /// <summary>Return only specific fields in issue object. Separate multiple values with commas. Fields which will be returned in any case: `id`, `title`, `status`, `issueTypeId`. Possible values: `id`, `displayId`, `title`, `description`, `issueTypeId`, `issueSubtypeId`, `status`, `assignedTo`, `assignedToType`, `dueDate`, `startDate`, `locationId`, `locationDetails`, `rootCauseTitle`, `rootCauseId`, `permittedStatuses`, `permittedAttributes`, `permittedActions`, `published`, `commentCount`, `openedBy`, `openedAt`, `closedBy`, `closedAt`, `createdBy`, `createdAt`, `updatedBy`, `updatedAt`, `customAttributes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -202,7 +202,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
-            /// <summary>Filter issues by the unique Autodesk ID of the User/Company/Role identifier of the current assignee of this issue. Separate multiple values with commas. For Example: ``A3RGM375QTZ7``.</summary>
+            /// <summary>Filter issues by the unique Autodesk ID of the User/Company/Role identifier of the current assignee of this issue. Separate multiple values with commas. For Example: `A3RGM375QTZ7`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassignedTo%5D")]
@@ -212,7 +212,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BassignedTo%5D")]
             public string[] FilterassignedTo { get; set; }
 #endif
-            /// <summary>Filter issues by the type of the current assignee of this issue. Separate multiple values with commas. Possible values: Possible values: ``user``, ``company``, ``role``, ``null``. For Example: ``user``.</summary>
+            /// <summary>Filter issues by the type of the current assignee of this issue. Separate multiple values with commas. Possible values: Possible values: `user`, `company`, `role`, `null`. For Example: `user`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassignedToType%5D")]
@@ -222,10 +222,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BassignedToType%5D")]
             public string FilterassignedToType { get; set; }
 #endif
-            /// <summary>Filter issues closed at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter issues closed at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BclosedAt%5D")]
             public DateTimeOffset? FilterclosedAt { get; set; }
-            /// <summary>Filter issues by the unique identifier of the user who closed the issue. Separate multiple values with commas. For Example: ``A3RGM375QTZ7``.</summary>
+            /// <summary>Filter issues by the unique identifier of the user who closed the issue. Separate multiple values with commas. For Example: `A3RGM375QTZ7`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BclosedBy%5D")]
@@ -235,10 +235,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BclosedBy%5D")]
             public string[] FilterclosedBy { get; set; }
 #endif
-            /// <summary>Filter issues created at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter issues created at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BcreatedAt%5D")]
             public DateTimeOffset? FiltercreatedAt { get; set; }
-            /// <summary>Filter issues by the unique identifier of the user who created the issue. Separate multiple values with commas. For Example: ``A3RGM375QTZ7``.</summary>
+            /// <summary>Filter issues by the unique identifier of the user who created the issue. Separate multiple values with commas. For Example: `A3RGM375QTZ7`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedBy%5D")]
@@ -248,7 +248,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BcreatedBy%5D")]
             public string[] FiltercreatedBy { get; set; }
 #endif
-            /// <summary>Filter issues by the custom attributes. Each custom attribute filter should be defined by it&apos;s uuid. For example: ``filter[customAttributes][f227d940-ae9b-4722-9297-389f4411f010]=1,2,3``. Separate multiple values with commas.</summary>
+            /// <summary>Filter issues by the custom attributes. Each custom attribute filter should be defined by it&apos;s uuid. For example: `filter[customAttributes][f227d940-ae9b-4722-9297-389f4411f010]=1,2,3`. Separate multiple values with commas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcustomAttributes%5D")]
@@ -258,13 +258,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BcustomAttributes%5D")]
             public string[] FiltercustomAttributes { get; set; }
 #endif
-            /// <summary>Filter deleted issues. For example, ``filter[deleted]=true``. If set to ``true`` it only returns deleted issues. If set to ``false`` it only returns undeleted issues. Note that we do not currently support returning both deleted and undeleted issues. Default value: ``false``.Project members with *View and assign to their company* and *Full visibility* can view deleted published and unpublished issues they originally created. Project members with Manage issues or Manage member permissions access can view all published issues that were deleted in a project. In addition, they can see unpublished deleted issues if they are an issue watcher, assignee, or creator.For more information about deleted issues see the `Help documentation &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Search_Filter&gt;`_.</summary>
+            /// <summary>Filter deleted issues. For example, `filter[deleted]=true`. If set to `true` it only returns deleted issues. If set to `false` it only returns undeleted issues. Note that we do not currently support returning both deleted and undeleted issues. Default value: `false`.Project members with *View and assign to their company* and *Full visibility* can view deleted published and unpublished issues they originally created. Project members with Manage issues or Manage member permissions access can view all published issues that were deleted in a project. In addition, they can see unpublished deleted issues if they are an issue watcher, assignee, or creator.For more information about deleted issues see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Search_Filter).</summary>
             [QueryParameter("filter%5Bdeleted%5D")]
             public bool? Filterdeleted { get; set; }
             /// <summary>Filter issues by the chronological user-friendly identifier. Separate multiple values with commas.</summary>
             [QueryParameter("filter%5BdisplayId%5D")]
             public int? FilterdisplayId { get; set; }
-            /// <summary>Filter issues by due date, in one of the following URL-encoded format: YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``- Specific start date: e.g.,  ``2022-03-02..``- Specific end date: e.g., ``..2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter issues by due date, in one of the following URL-encoded format: YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`- Specific start date: e.g.,  `2022-03-02..`- Specific end date: e.g., `..2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BdueDate%5D")]
@@ -284,7 +284,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Filter issues by the unique identifier of the type of the issue. Note that the API name for type is ``subtype``. Separate multiple values with commas.</summary>
+            /// <summary>Filter issues by the unique identifier of the type of the issue. Note that the API name for type is `subtype`. Separate multiple values with commas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BissueSubtypeId%5D")]
@@ -294,7 +294,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BissueSubtypeId%5D")]
             public string[] FilterissueSubtypeId { get; set; }
 #endif
-            /// <summary>Filter issues by the unique identifier of the category of the issue. Note that the API name for category is ``type``.  Separate multiple values with commas.</summary>
+            /// <summary>Filter issues by the unique identifier of the category of the issue. Note that the API name for category is `type`.  Separate multiple values with commas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BissueTypeId%5D")]
@@ -304,7 +304,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BissueTypeId%5D")]
             public string[] FilterissueTypeId { get; set; }
 #endif
-            /// <summary>Retrieves pushpin issues associated with the specified files. We support all file types that are compatible with the Files tool. You need to specify the URL-encoded file item IDs. To find the file item IDs, use the `Data Management &lt;en/docs/data/v2/developers_guide/overview/&gt;`_ API.Note that you need to specify the 3D model item ID, which retrieves all pushpins associated with all 2D sheets and views associated with the 3D model. Similarly, if you specify a specific PDF file it retrieves all the pushpin issues associated with all the PDF file pages. We do not currently support retrieving pushpin issues associated with a specific 2D sheet or view.By default, it returns pushpins for the latest version of the file. To retrieve pushpins for a specific version of a file together with pushpins for all previous versions of the specified file version, specify the version number, in the following format: ``@[version-number]``.For example, ``filter[linkedDocument]=urn%3Aadsk.wipprod%3Adm.lineage%3AtFbo9zuDTW-nPh45gnM4gA@2``.Separate multiple values with commas.Note that we do not currently support filtering sheets from the ACC Build Sheets tool.</summary>
+            /// <summary>Retrieves pushpin issues associated with the specified files. We support all file types that are compatible with the Files tool. You need to specify the URL-encoded file item IDs. To find the file item IDs, use the `Data Management &lt;en/docs/data/v2/developers_guide/overview/&gt;`_ API.Note that you need to specify the 3D model item ID, which retrieves all pushpins associated with all 2D sheets and views associated with the 3D model. Similarly, if you specify a specific PDF file it retrieves all the pushpin issues associated with all the PDF file pages. We do not currently support retrieving pushpin issues associated with a specific 2D sheet or view.By default, it returns pushpins for the latest version of the file. To retrieve pushpins for a specific version of a file together with pushpins for all previous versions of the specified file version, specify the version number, in the following format: `@[version-number]`.For example, `filter[linkedDocument]=urn%3Aadsk.wipprod%3Adm.lineage%3AtFbo9zuDTW-nPh45gnM4gA@2`.Separate multiple values with commas.Note that we do not currently support filtering sheets from the ACC Build Sheets tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlinkedDocumentUrn%5D")]
@@ -314,7 +314,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BlinkedDocumentUrn%5D")]
             public string[] FilterlinkedDocumentUrn { get; set; }
 #endif
-            /// <summary>Retrieves issues associated with the specified location but not the location&apos;s sublocations. To also retrieve issues that relate to the locations&apos;s sublocations use the ``sublocationId`` filter. Separate multiple values with commas.</summary>
+            /// <summary>Retrieves issues associated with the specified location but not the location&apos;s sublocations. To also retrieve issues that relate to the locations&apos;s sublocations use the `sublocationId` filter. Separate multiple values with commas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlocationId%5D")]
@@ -344,7 +344,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5Bsearch%5D")]
             public string Filtersearch { get; set; }
 #endif
-            /// <summary>Filter issues by start date, in one of the following URL-encoded format: YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03``- Specific day: e.g., ``2022-03-02``- Specific start date: e.g.,  ``2022-03-02..``- Specific end date: e.g., ``..2022-03-02``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter issues by start date, in one of the following URL-encoded format: YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03`- Specific day: e.g., `2022-03-02`- Specific start date: e.g.,  `2022-03-02..`- Specific end date: e.g., `..2022-03-02`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BstartDate%5D")]
@@ -374,10 +374,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BsubLocationId%5D")]
             public string[] FiltersubLocationId { get; set; }
 #endif
-            /// <summary>Filter issues updated at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Filter issues updated at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BupdatedAt%5D")]
             public DateTimeOffset? FilterupdatedAt { get; set; }
-            /// <summary>Filter issues by the unique identifier of the user who updated the issue. Separate multiple values with commas. For Example: ``A3RGM375QTZ7``.</summary>
+            /// <summary>Filter issues by the unique identifier of the user who updated the issue. Separate multiple values with commas. For Example: `A3RGM375QTZ7`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedBy%5D")]
@@ -387,16 +387,16 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("filter%5BupdatedBy%5D")]
             public string[] FilterupdatedBy { get; set; }
 #endif
-            /// <summary>Only return valid issues (=no empty type/subtype). Default value: ``undefined`` (meaning will return both valid &amp; invalid issues).</summary>
+            /// <summary>Only return valid issues (=no empty type/subtype). Default value: `undefined` (meaning will return both valid &amp; invalid issues).</summary>
             [QueryParameter("filter%5Bvalid%5D")]
             public bool? Filtervalid { get; set; }
-            /// <summary>Return specified number of issues. Acceptable values are 1-100. Default value: ``100``.</summary>
+            /// <summary>Return specified number of issues. Acceptable values are 1-100. Default value: `100`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Return issues starting from the specified offset number. Default value: ``0``.</summary>
+            /// <summary>Return issues starting from the specified offset number. Default value: `0`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sort issues by specified fields. Separate multiple values with commas. To sort in descending order add a ``-`` (minus sign) before the sort criteria. Possible values: ``displayId``, ``title``, ``description``, ``status``, ``assignedTo``, ``assignedToType``, ``dueDate``, ``locationDetails``, ``published``, ``closedBy``, ``closedAt``, ``createdBy``, ``createdAt``, ``updatedAt``, ``issueSubType``, ``issueType``, ``customAttributes``, ``startDate``, ``rootCause``. For example: ``sortBy=status,-displayId,-dueDate,customAttributes[5c07cbe2-256a-48f1-b35b-2e5e00914104]``.</summary>
+            /// <summary>Sort issues by specified fields. Separate multiple values with commas. To sort in descending order add a `-` (minus sign) before the sort criteria. Possible values: `displayId`, `title`, `description`, `status`, `assignedTo`, `assignedToType`, `dueDate`, `locationDetails`, `published`, `closedBy`, `closedAt`, `createdBy`, `createdAt`, `updatedAt`, `issueSubType`, `issueType`, `customAttributes`, `startDate`, `rootCause`. For example: `sortBy=status,-displayId,-dueDate,customAttributes[5c07cbe2-256a-48f1-b35b-2e5e00914104]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]

@@ -59,7 +59,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
         {
         }
         /// <summary>
-        /// Note that in order to create a relationship between two entities, the entities must already exist, and you must have permission to access both entities in the proposed relationship.
+        /// Creates a relationship between two entities (for example, asset and document). Relationships are stored in the project container, and are retrievable via the relationships search endpoints.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -79,7 +79,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that in order to create a relationship between two entities, the entities must already exist, and you must have permission to access both entities in the proposed relationship.
+        /// Creates a relationship between two entities (for example, asset and document). Relationships are stored in the project container, and are retrievable via the relationships search endpoints.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -100,7 +100,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that in order to create a relationship between two entities, the entities must already exist, and you must have permission to access both entities in the proposed relationship.
+        /// Creates a relationship between two entities (for example, asset and document). Relationships are stored in the project container, and are retrievable via the relationships search endpoints.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

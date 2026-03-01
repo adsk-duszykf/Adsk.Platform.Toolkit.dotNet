@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
 {
-    /// <summary>The status of the PDF export job.Possible values: ``successful``, ``processing``, ``failed``</summary>
+    /// <summary>The status of the PDF export job.Possible values: `successful`, `processing`, `failed`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExportsPostResponse_status
     {

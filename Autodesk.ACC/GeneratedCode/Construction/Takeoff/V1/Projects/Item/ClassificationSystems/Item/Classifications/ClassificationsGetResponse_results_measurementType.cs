@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.Classifications
 {
-    /// <summary>**Deprecated. Will be removed on September 15, 2025.**The type of measurement.Possible values: ``AREA``, ``COUNT``, ``DISTANCE``, ``VOLUME``.</summary>
+    /// <summary>**Deprecated. Will be removed on September 15, 2025.**The type of measurement.Possible values: `AREA`, `COUNT`, `DISTANCE`, `VOLUME`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ClassificationsGetResponse_results_measurementType
     {

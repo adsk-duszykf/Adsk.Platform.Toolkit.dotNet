@@ -39,7 +39,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
         {
         }
         /// <summary>
-        /// Retrieves detailed information about a single issue. For general information about all the issues in a project, see `GET issues &lt;/en/docs/acc/v1/reference/http/issues-issues-GET&gt;`_.
+        /// Retrieves detailed information about a single issue. For general information about all the issues in a project, see [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves detailed information about a single issue. For general information about all the issues in a project, see `GET issues &lt;/en/docs/acc/v1/reference/http/issues-issues-GET&gt;`_.
+        /// Retrieves detailed information about a single issue. For general information about all the issues in a project, see [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +117,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves detailed information about a single issue. For general information about all the issues in a project, see `GET issues &lt;/en/docs/acc/v1/reference/http/issues-issues-GET&gt;`_.
+        /// Retrieves detailed information about a single issue. For general information about all the issues in a project, see [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

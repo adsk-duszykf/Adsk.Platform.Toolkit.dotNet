@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
 {
-    /// <summary>The units used in the sheet view calibration.Possible values: ``FT_AND_DECIMAL_IN``, ``FT_AND_FRACTIONAL_IN``, ``M``, ``CM``, ``MM``.</summary>
+    /// <summary>The units used in the sheet view calibration.Possible values: `FT_AND_DECIMAL_IN`, `FT_AND_FRACTIONAL_IN`, `M`, `CM`, `MM`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ContentViewsGetResponse_results_view_SheetView_calibration_units
     {

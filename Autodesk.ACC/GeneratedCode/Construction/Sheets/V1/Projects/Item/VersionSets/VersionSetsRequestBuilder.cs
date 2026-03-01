@@ -18,7 +18,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets
     public partial class VersionSetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.sheets.v1.projects.item.versionSets.item collection</summary>
-        /// <param name="position">The ID of the version set. To find the version set ID, call `GET version-sets &lt;/en/docs/acc/v1/reference/http/sheets-version-sets-GET/&gt;`_.</param>
+        /// <param name="position">The ID of the version set. To find the version set ID, call [GET version-sets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item.WithVersionSetItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item.WithVersionSetItemRequestBuilder this[string position]
         {
@@ -179,7 +179,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VersionSetsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by sheet collection. If not provided, only results in the ungrouped collection are returned.Possible values:- The UUID of an existing collection: Returns only the results within that collection.- ``*`` Returns results from all collections.</summary>
+            /// <summary>Filter by sheet collection. If not provided, only results in the ungrouped collection are returned.Possible values:- The UUID of an existing collection: Returns only the results within that collection.- `*` Returns results from all collections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("collectionId")]
@@ -189,13 +189,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets
             [QueryParameter("collectionId")]
             public string CollectionId { get; set; }
 #endif
-            /// <summary>The maximum number of results to return per page. The default is ``200``.</summary>
+            /// <summary>The maximum number of results to return per page. The default is `200`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The starting point for the results, specified by item number. The default value is ``0``. For example, use ``offset=3`` to start the results from the third item.</summary>
+            /// <summary>The starting point for the results, specified by item number. The default value is `0`. For example, use `offset=3` to start the results from the third item.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sort the version sets by ``issuanceDate`` or ``name``. You need to add whether to sort in ascending (``asc``) or descending (``desc``) order. For example, ``sort=issuanceDate desc``.</summary>
+            /// <summary>Sort the version sets by `issuanceDate` or `name`. You need to add whether to sort in ascending (`asc`) or descending (`desc`) order. For example, `sort=issuanceDate desc`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

@@ -14,7 +14,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
     {
         /// <summary>The unique ID of the attachment.</summary>
         public Guid? AttachmentId { get; set; }
-        /// <summary>The type of the attachment.Possible values: ``rfiResponse``, ``rfiOfficialResponse``, ``bridgeFiles``, ``rfiWebHiddenFiles``.</summary>
+        /// <summary>The type of the attachment.Possible values: `rfiResponse`, `rfiOfficialResponse`, `bridgeFiles`, `rfiWebHiddenFiles`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_responseAttachments_attachments_attachmentType? AttachmentType { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string CreatedByName { get; set; }
 #endif
-        /// <summary>The timestamp of the date and time the attachment was created, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The timestamp of the date and time the attachment was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>The Autodesk ID of the user who deleted the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string DeletedBy { get; set; }
 #endif
-        /// <summary>The timestamp of the date and time the attachment was deleted, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The timestamp of the date and time the attachment was deleted, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? DeletedOn { get; set; }
         /// <summary>The name of the attachment file as it appears in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string ModifiedBy { get; set; }
 #endif
-        /// <summary>The timestamp of the date and time the attachment was modified, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The timestamp of the date and time the attachment was modified, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The ID of the RFI associated with the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public string RfiId { get; set; }
 #endif
-        /// <summary>The storage URN of the attachment file.Use this value to generate a signed URL and download the file via the Data Management API.For more details, see the `Submit RFI Response &lt;/en/docs/acc/v1/tutorials/create-rfi-response/&gt;`_ tutorial.</summary>
+        /// <summary>The storage URN of the attachment file.Use this value to generate a signed URL and download the file via the Data Management API.For more details, see the [Submit RFI Response](https://aps.autodesk.com/en/docs/acc/v1/tutorials/create-rfi-response/) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageUrn { get; set; }

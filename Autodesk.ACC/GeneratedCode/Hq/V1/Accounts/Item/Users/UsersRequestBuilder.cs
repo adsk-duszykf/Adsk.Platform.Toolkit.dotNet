@@ -71,7 +71,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
         {
         }
         /// <summary>
-        /// Retrieves all users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the users in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersGetResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the users in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new user in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Create a new user in the BIM 360 member directory.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -128,7 +128,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersPostResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new user in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Create a new user in the BIM 360 member directory.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +149,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the users in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -168,7 +168,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new user in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Create a new user in the BIM 360 member directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +199,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
             return new global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves all users in the specified account. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Query all the users in a specific BIM 360 account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 

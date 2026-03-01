@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 {
-    /// <summary>The user’s role in the project. Possible values: ``project_user``, ``project_admin``.</summary>
+    /// <summary>The user’s role in the project. Possible values: `project_user`, `project_admin`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MeGetResponse_user_role
     {

@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Settings
     public partial class SettingsPatchResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The project measurement system.Possible values: ``IMPERIAL``, ``METRIC``.</summary>
+        /// <summary>The project measurement system.Possible values: `IMPERIAL`, `METRIC`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Settings.SettingsPatchResponse_measurementSystem? MeasurementSystem { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

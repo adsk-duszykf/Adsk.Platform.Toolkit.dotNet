@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus
 {
-    /// <summary>type.Possible values: ``DIFF``</summary>
+    /// <summary>type.Possible values: `DIFF`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DiffsBatchStatusPostResponse_diffs_type
     {

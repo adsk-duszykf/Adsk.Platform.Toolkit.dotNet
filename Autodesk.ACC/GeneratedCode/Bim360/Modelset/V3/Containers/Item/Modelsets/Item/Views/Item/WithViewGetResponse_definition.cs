@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.I
 #else
         public string LineageUrn { get; set; }
 #endif
-        /// <summary>The name of the viewable in the Model Derivative manifest to track along the seed file lineage. This value is ignored if ``lineageUrn`` is the URN of a BIM360 Docs Plans folder document. Min length: 1 Max length: 430.</summary>
+        /// <summary>The name of the viewable in the Model Derivative manifest to track along the seed file lineage. This value is ignored if `lineageUrn` is the URN of a BIM360 Docs Plans folder document. Min length: 1 Max length: 430.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ViewableName { get; set; }

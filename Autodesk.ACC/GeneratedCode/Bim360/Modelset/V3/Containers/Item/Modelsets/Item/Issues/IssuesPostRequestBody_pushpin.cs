@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
 #endif
         /// <summary>The ID of the object in the viewer with which to link this issue.</summary>
         public int? ObjectId { get; set; }
-        /// <summary>The type of pushpin. Possible values: ``TwoDVectorPushpin``.</summary>
+        /// <summary>The type of pushpin. Possible values: `TwoDVectorPushpin`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_pushpin_type? Type { get; set; }
         /// <summary>An object describing the current state of the viewer, such as the camera position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

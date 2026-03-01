@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item
 #endif
         /// <summary>The order of the custom attribute displayed in the BIM 360 Cost Management. Inherited from the custom attribute definition.</summary>
         public double? Position { get; set; }
-        /// <summary>The ID of the custom attribute definition. This is the ID from ``/properties``.</summary>
+        /// <summary>The ID of the custom attribute definition. This is the ID from `/properties`.</summary>
         public Guid? PropertyDefinitionId { get; set; }
         /// <summary>The type of the custom attribute. Inherited from the custom attribute definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

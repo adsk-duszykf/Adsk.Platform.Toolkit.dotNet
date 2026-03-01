@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
     public partial class SearchRfisPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specify which attributes to include in the response.Use this to limit the response to only the fields you need.For example, ``fields=id, title``.</summary>
+        /// <summary>Specify which attributes to include in the response.Use this to limit the response to only the fields you need.For example, `fields=id, title`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Fields { get; set; }
@@ -28,11 +28,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter> Filter { get; set; }
 #endif
-        /// <summary>The number of RFIs to return. Default: ``10``. Maximum: ``200``.</summary>
+        /// <summary>The number of RFIs to return. Default: `10`. Maximum: `200`.</summary>
         public int? Limit { get; set; }
-        /// <summary>The number of items to skip before starting the result set. Default: ``0``.</summary>
+        /// <summary>The number of items to skip before starting the result set. Default: `0`.</summary>
         public int? Offset { get; set; }
-        /// <summary>Searches for a string in the ``title``, ``question``, and ``officialResponse`` fields.</summary>
+        /// <summary>Searches for a string in the `title`, `question`, and `officialResponse` fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Search { get; set; }
@@ -40,7 +40,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public string Search { get; set; }
 #endif
-        /// <summary>A list of sort rules to apply. Each item includes a ``field`` to sort by and the sort ``order``.</summary>
+        /// <summary>A list of sort rules to apply. Each item includes a `field` to sort by and the sort `order`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_sort>? Sort { get; set; }

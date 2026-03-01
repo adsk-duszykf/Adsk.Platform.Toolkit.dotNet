@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public string AssigneeId { get; set; }
 #endif
-        /// <summary>Type of entity to assign the form to.Possible values: ``company``, ``role``, ``user``</summary>
+        /// <summary>Type of entity to assign the form to.Possible values: `company`, `role`, `user`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostRequestBody_assigneeType? AssigneeType { get; set; }
         /// <summary>Text for the form description field.Max length: 8000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,9 +40,9 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #endif
         /// <summary>The unique identifier of the form. If you do not specify an ID, one will be assigned.</summary>
         public Guid? Id { get; set; }
-        /// <summary>Location associated with the Form. For more information about the location, see `GET nodes &lt;/en/docs/acc/v1/reference/http/locations-nodes-GET/&gt;`_.</summary>
+        /// <summary>Location associated with the Form. For more information about the location, see [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/).</summary>
         public Guid? LocationId { get; set; }
-        /// <summary>The name of the form instance. If the specified value is ``null`` or empty, it defaults to the form&apos;s template name.Max length: 100</summary>
+        /// <summary>The name of the form instance. If the specified value is `null` or empty, it defaults to the form&apos;s template name.Max length: 100</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

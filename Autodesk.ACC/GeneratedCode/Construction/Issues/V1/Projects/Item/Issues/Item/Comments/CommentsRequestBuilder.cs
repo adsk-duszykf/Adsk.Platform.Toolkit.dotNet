@@ -166,13 +166,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Add ``limit=20`` to limit the results count (together with the offset to support pagination).</summary>
+            /// <summary>Add `limit=20` to limit the results count (together with the offset to support pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Add ``offset=20`` to get partial results (together with the limit to support pagination).</summary>
+            /// <summary>Add `offset=20` to get partial results (together with the limit to support pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sort issue comments by specified fields. Separate multiple values with commas. To sort in descending order add a ``-`` (minus sign) before the sort criteria. For example: ``sortBy=createdAt,-updatedAt``. Possible values: ``createdAt``, ``updatedAt``, ``createdBy``.</summary>
+            /// <summary>Sort issue comments by specified fields. Separate multiple values with commas. To sort in descending order add a `-` (minus sign) before the sort criteria. For example: `sortBy=createdAt,-updatedAt`. Possible values: `createdAt`, `updatedAt`, `createdBy`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]

@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The ID of the category. This is a numeric string for ``v1`` category APIs.</summary>
+        /// <summary>The ID of the category. This is a numeric string for `v1` category APIs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -60,11 +60,11 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A flag indicating whether the component is active or inactive (``isActive`` is ``true`` if-and-only-if ``deletedAt`` is empty).</summary>
+        /// <summary>A flag indicating whether the component is active or inactive (`isActive` is `true` if-and-only-if `deletedAt` is empty).</summary>
         public bool? IsActive { get; set; }
-        /// <summary>Whether or not this category is a leaf category of the category tree. If ``true``, it&apos;s a leaf; if ``false``,it&apos;s not.Note that this is a derived field and should not be persisted as this field may be updated withoutupdating the category itself.</summary>
+        /// <summary>Whether or not this category is a leaf category of the category tree. If `true`, it&apos;s a leaf; if `false`,it&apos;s not.Note that this is a derived field and should not be persisted as this field may be updated withoutupdating the category itself.</summary>
         public bool? IsLeaf { get; set; }
-        /// <summary>Whether or not this category is the root category of the category tree. If ``true``, it&apos;s the root; if``false``, it&apos;s not. There will only ever be one (immutable) root category for a project, which is createdautomatically when the project is created.</summary>
+        /// <summary>Whether or not this category is the root category of the category tree. If `true`, it&apos;s the root; if`false`, it&apos;s not. There will only ever be one (immutable) root category for a project, which is createdautomatically when the project is created.</summary>
         public bool? IsRoot { get; set; }
         /// <summary>The name of the category. Must be unique among children of the same parent category. This name is displayedfor the category in the Assets user interface where a user chooses categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
 #else
         public string ParentId { get; set; }
 #endif
-        /// <summary>An array of category IDs of this category&apos;s child categories.Note that this is a derived field and should not be persisted as this field may be updated withoutupdating the category itself. As such, it is highly recommended to use the ``parentId`` field toconstruct the tree locally instead of ``subcategoryIds``.</summary>
+        /// <summary>An array of category IDs of this category&apos;s child categories.Note that this is a derived field and should not be persisted as this field may be updated withoutupdating the category itself. As such, it is highly recommended to use the `parentId` field toconstruct the tree locally instead of `subcategoryIds`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SubcategoryIds { get; set; }
@@ -90,7 +90,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
 #else
         public List<string> SubcategoryIds { get; set; }
 #endif
-        /// <summary>The globally-unique ID of a ``Category`` from the ``v3`` (upcoming) Category APIs. This is providedfor interoperability with other APIs that use the globally-unique category ID. Only included if the``includeUid=true`` query param is included.</summary>
+        /// <summary>The globally-unique ID of a `Category` from the `v3` (upcoming) Category APIs. This is providedfor interoperability with other APIs that use the globally-unique category ID. Only included if the`includeUid=true` query param is included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uid { get; set; }

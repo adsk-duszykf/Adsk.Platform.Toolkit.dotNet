@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes
 {
-    /// <summary>The type of tool used to create takeoff items of this takeoff type.Possible values: ``COUNT``, ``DISTANCE``, ``AREA``, ``SELECT``.Corresponding UI names: ``COUNT``, ``LINEAR``, ``AREA``, ``BIM``.</summary>
+    /// <summary>The type of tool used to create takeoff items of this takeoff type.Possible values: `COUNT`, `DISTANCE`, `AREA`, `SELECT`.Corresponding UI names: `COUNT`, `LINEAR`, `AREA`, `BIM`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TakeoffTypesGetResponse_results_tool
     {

@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
     public partial class WithStepGetResponse_tasks : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Autodesk ID or member group ID of the ``user``, ``company``, or ``role`` assigned to the task.</summary>
+        /// <summary>The Autodesk ID or member group ID of the `user`, `company`, or `role` assigned to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo { get; set; }
@@ -20,9 +20,9 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: ``1`` (user), ``2`` (company), ``3`` (role).</summary>
+        /// <summary>Specifies whether the task is assigned to a user, company, or role.Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.WithStepGetResponse_tasks_assignedToType? AssignedToType { get; set; }
-        /// <summary>The date and time when the task was completed, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2025-01-20T12:00:00.198466Z``.</summary>
+        /// <summary>The date and time when the task was completed, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2025-01-20T12:00:00.198466Z`.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The Autodesk ID of the user who completed the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public string CompletedBy { get; set; }
 #endif
-        /// <summary>The date and time when the task was originally created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2025-01-20T12:00:00.198466Z``.</summary>
+        /// <summary>The date and time when the task was originally created, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2025-01-20T12:00:00.198466Z`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #endif
         /// <summary>The internal, globally unique identifier (UUID) for the task.</summary>
         public Guid? Id { get; set; }
-        /// <summary>``true``: the task is required to complete the step.``false``: (default) the task is not required to complete the step.</summary>
+        /// <summary>`true`: the task is required to complete the step.`false`: (default) the task is not required to complete the step.</summary>
         public bool? IsRequired { get; set; }
         /// <summary>A list of actions that the user is allowed to perform on the task within the submittal workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.WithStepGetResponse_tasks_permittedActions> PermittedActions { get; set; }
 #endif
-        /// <summary>The date and time when the response was added, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2025-01-20T12:00:00.198466Z``.</summary>
+        /// <summary>The date and time when the response was added, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2025-01-20T12:00:00.198466Z`.</summary>
         public DateTimeOffset? RespondedAt { get; set; }
         /// <summary>The Autodesk ID of the user who provided the response to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,11 +74,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #endif
         /// <summary>The ID of the response associated with the task, linking to the specific feedback or action taken.</summary>
         public Guid? ResponseId { get; set; }
-        /// <summary>The date and time when the related step was marked as started (``In Progress``), formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2025-01-20T12:00:00.198466Z``.</summary>
+        /// <summary>The date and time when the related step was marked as started (`In Progress`), formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2025-01-20T12:00:00.198466Z`.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The current status of the task. Possible values: ``not-started``, ``in-progress``, ``completed``.</summary>
+        /// <summary>The current status of the task. Possible values: `not-started`, `in-progress`, `completed`.</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.WithStepGetResponse_tasks_status? Status { get; set; }
-        /// <summary>The due date of the related step, formatted as YYYY-MM-DD (ISO 8601) in UTC. For example, ``2025-01-20``.</summary>
+        /// <summary>The due date of the related step, formatted as YYYY-MM-DD (ISO 8601) in UTC. For example, `2025-01-20`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StepDueDate { get; set; }
@@ -88,7 +88,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #endif
         /// <summary>The ID of the review step associated with the task.</summary>
         public Guid? StepId { get; set; }
-        /// <summary>The date and time when the task was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, ``2025-01-20T12:00:00.198466Z``.</summary>
+        /// <summary>The date and time when the task was last updated, formatted as YYYY-MM-DDTHH:mm:ss.SSSSSSZ (ISO 8601) in UTC. For example, `2025-01-20T12:00:00.198466Z`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who last updated the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

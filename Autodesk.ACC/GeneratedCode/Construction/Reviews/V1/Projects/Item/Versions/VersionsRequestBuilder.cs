@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions
     public partial class VersionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.construction.reviews.v1.projects.item.versions.item collection</summary>
-        /// <param name="position">The URL-encoded unique identifier (URN) of the file version whose review and approval history you want to retrieve.For example, encode ``urn:adsk.wipprod:fs.file:vf.Ibsc4cPuQEqBHRJdBjhr6w?version=2``as ``urn%3Aadsk.wipprod%3Afs.file%3Avf.Ibsc4cPuQEqBHRJdBjhr6w%3Fversion%3D2``.To find the latest version, call `GET versions &lt;/en/docs/acc/v1/reference/http/reviews-getreviewversions-GET/&gt;`_ and check the ``urn`` field.</param>
+        /// <param name="position">The URL-encoded unique identifier (URN) of the file version whose review and approval history you want to retrieve.For example, encode `urn:adsk.wipprod:fs.file:vf.Ibsc4cPuQEqBHRJdBjhr6w?version=2`as `urn%3Aadsk.wipprod%3Afs.file%3Avf.Ibsc4cPuQEqBHRJdBjhr6w%3Fversion%3D2`.To find the latest version, call [GET versions](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-getreviewversions-GET/) and check the `urn` field.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.WithVersionItemRequestBuilder this[string position]
         {

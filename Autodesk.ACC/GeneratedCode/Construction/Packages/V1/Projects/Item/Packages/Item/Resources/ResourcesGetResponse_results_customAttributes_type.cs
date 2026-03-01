@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources
 {
-    /// <summary>The data type of the custom attribute. Possible values:- ``string`` – Text field.- ``date`` – Date field.- ``array`` – Drop-down list.</summary>
+    /// <summary>The data type of the custom attribute. Possible values:- `string` – Text field.- `date` – Date field.- `array` – Drop-down list.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ResourcesGetResponse_results_customAttributes_type
     {

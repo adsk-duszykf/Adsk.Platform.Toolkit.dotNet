@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Versions.Item.CustomAttribut
     public partial class CustomAttributesBatchUpdatePostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the custom attribute. To find the ID, call `GET custom-attribute-definitions &lt;/en/docs/bim360/v1/reference/http/document-management-custom-attribute-definitions-GET/&gt;`_.</summary>
+        /// <summary>The ID of the custom attribute. To find the ID, call [GET custom-attribute-definitions](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-custom-attribute-definitions-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Versions.Item.CustomAttribut
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The value of the custom attribute. If you are assigning a value to a drop-list attribute, call `GET custom-attribute-definitions &lt;/en/docs/bim360/v1/reference/http/document-management-custom-attribute-definitions-GET/&gt;`_ to retrieve a list of possible values. If you are clearing a custom attribute value, assign a ``null`` value to the attribute.- For text field (``string``) attributes, the max length is 255.- Date attributes need to be compliant with ISO8601. Milliseconds are discarded.</summary>
+        /// <summary>The value of the custom attribute. If you are assigning a value to a drop-list attribute, call [GET custom-attribute-definitions](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-custom-attribute-definitions-GET/) to retrieve a list of possible values. If you are clearing a custom attribute value, assign a `null` value to the attribute.- For text field (`string`) attributes, the max length is 255.- Date attributes need to be compliant with ISO8601. Milliseconds are discarded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

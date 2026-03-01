@@ -39,7 +39,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item
         {
         }
         /// <summary>
-        /// Retrieves a project specified by project ID. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a project specified by project ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.WithProjectGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.WithProjectGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.WithProjectGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a project specified by project ID. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a project specified by project ID.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.WithProjectResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.WithProjectResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.WithProjectResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a project specified by project ID. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a project specified by project ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,12 +104,12 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item
             return new global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.WithProjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a project specified by project ID. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a project specified by project ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithProjectItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma-separated list of the project fields to include in the response. Default value: all fields.Possible values: ``accountId``, ``addressLine1``, ``addressLine2``, ``businessUnitId``, ``city``, ``companyCount``, ``constructionType``, ``country``, ``createdAt``, ``deliveryMethod``, ``endDate``, ``imageUrl``, ``jobNumber``, ``lastSignIn``, ``latitude``, ``longitude``, ``memberCount``, ``name``, ``platform``, ``postalCode``, ``products``, ``projectValue``, ``sheetCount``, ``startDate``, ``stateOrProvince``, ``status``, ``thumbnailImageUrl``, ``timezone``, ``type`` and ``updatedAt``.</summary>
+            /// <summary>A comma-separated list of the project fields to include in the response. Default value: all fields.Possible values: `accountId`, `addressLine1`, `addressLine2`, `businessUnitId`, `city`, `companyCount`, `constructionType`, `country`, `createdAt`, `deliveryMethod`, `endDate`, `imageUrl`, `jobNumber`, `lastSignIn`, `latitude`, `longitude`, `memberCount`, `name`, `platform`, `postalCode`, `products`, `projectValue`, `sheetCount`, `startDate`, `stateOrProvince`, `status`, `thumbnailImageUrl`, `timezone`, `type` and `updatedAt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]

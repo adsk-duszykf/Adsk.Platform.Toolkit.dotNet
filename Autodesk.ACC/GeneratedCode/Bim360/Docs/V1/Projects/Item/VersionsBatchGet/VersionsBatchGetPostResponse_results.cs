@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
     public partial class VersionsBatchGetPostResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The approval status of the version. Only available when the review has been approved or rejected. For more information about the approval workflow, see the `Approval Workflows and Document Review &lt;http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2CC9A86E-2F4F-48EB-8EFA-FAA5FBECC20E&gt;`_ documentation.</summary>
+        /// <summary>The approval status of the version. Only available when the review has been approved or rejected. For more information about the approval workflow, see the [Approval Workflows and Document Review](http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2CC9A86E-2F4F-48EB-8EFA-FAA5FBECC20E) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_approvalStatus? ApprovalStatus { get; set; }
@@ -44,7 +44,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #else
         public string CreateUserName { get; set; }
 #endif
-        /// <summary>The list of custom attributes for each document. For more information about custom attributes, see the `Customize Documents with Attributes &lt;http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-244FAB32-8E3B-4D1B-A1EB-C982DB93ABB3&gt;`_ documentation.</summary>
+        /// <summary>The list of custom attributes for each document. For more information about custom attributes, see the [Customize Documents with Attributes](http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-244FAB32-8E3B-4D1B-A1EB-C982DB93ABB3) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_customAttributes>? CustomAttributes { get; set; }
@@ -52,7 +52,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #else
         public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_customAttributes> CustomAttributes { get; set; }
 #endif
-        /// <summary>The type of version. Possible values:- ``SEED_FILE``: Documents that were not split into sheets when they were uploaded to BIM 360 Document Management.- ``DOCUMENT``: Documents that were split into sheets when they were uploaded to BIM 360 Document Management.</summary>
+        /// <summary>The type of version. Possible values:- `SEED_FILE`: Documents that were not split into sheets when they were uploaded to BIM 360 Document Management.- `DOCUMENT`: Documents that were split into sheets when they were uploaded to BIM 360 Document Management.</summary>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_entityType? EntityType { get; set; }
         /// <summary>The ID of the related item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +102,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The process state of the version.Possible values: ``NEEDS_PROCESSING``, ``PROCESSING``, ``PREVIOUS_SEED_PENDING``, ``EXTRACTION_PENDING``, ``SPLITTING``, ``PREVIOUS_DOC_PENDING``, ``PROCESSING_ABORTING``, ``PROCESSING_ABORTED``, ``PROCESSING_COMPLETE``, ``PROCESSING_PROMOTION``, ``PROCESSING_COPY``, ``PROCESSING_PROMOTING``, ``PROCESSING_COPYING``, ``PROCESSING_SUSPEND``</summary>
+        /// <summary>The process state of the version.Possible values: `NEEDS_PROCESSING`, `PROCESSING`, `PREVIOUS_SEED_PENDING`, `EXTRACTION_PENDING`, `SPLITTING`, `PREVIOUS_DOC_PENDING`, `PROCESSING_ABORTING`, `PROCESSING_ABORTED`, `PROCESSING_COMPLETE`, `PROCESSING_PROMOTION`, `PROCESSING_COPY`, `PROCESSING_PROMOTING`, `PROCESSING_COPYING`, `PROCESSING_SUSPEND`</summary>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_processState? ProcessState { get; set; }
         /// <summary>The revision number of the version. The revision number increases when you completely replace the version. For example when you reupload a document and overwrite the current document. Note that this is not the same as the version number, which increases when you update the document. For example, when you save the document. The revision number corresponds to the version in BIM 360 Document Management.</summary>
         public int? RevisionNumber { get; set; }

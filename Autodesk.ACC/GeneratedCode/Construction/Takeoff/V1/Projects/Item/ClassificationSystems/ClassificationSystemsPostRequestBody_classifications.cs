@@ -28,9 +28,9 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>**Deprecated. Will be removed on September 15, 2025.**The type of measurement.Possible values: ``AREA``, ``COUNT``, ``DISTANCE``, ``VOLUME``.</summary>
+        /// <summary>**Deprecated. Will be removed on September 15, 2025.**The type of measurement.Possible values: `AREA`, `COUNT`, `DISTANCE`, `VOLUME`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.ClassificationSystemsPostRequestBody_classifications_measurementType? MeasurementType { get; set; }
-        /// <summary>The classification parent code.Its value may be ``null``, indicating that this classification is at the top level of the hierarchy.Max length: 256</summary>
+        /// <summary>The classification parent code.Its value may be `null`, indicating that this classification is at the top level of the hierarchy.Max length: 256</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentCode { get; set; }

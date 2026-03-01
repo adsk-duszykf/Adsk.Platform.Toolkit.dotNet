@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
 {
     /// <summary>
-    /// The list of recipients included in the transmittal, grouped by user, company, and role.For more information on how to add recipients to a transmittal, see the `Create Transmittals &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Create_Transmittal&amp;p=DOCS&gt;`_ documentation.
+    /// The list of recipients included in the transmittal, grouped by user, company, and role.For more information on how to add recipients to a transmittal, see the [Create Transmittals](https://help.autodesk.com/view/BUILD/ENU/?guid=Create_Transmittal&amp;p=DOCS) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransmittalsGetResponse_results_recipients : IParsable

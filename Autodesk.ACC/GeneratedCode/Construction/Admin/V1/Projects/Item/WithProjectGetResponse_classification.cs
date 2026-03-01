@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item
 {
-    /// <summary>The classification of the project. Possible values:- ``production`` – Standard project.- ``template`` – A project that serves as a template for creating new projects.- ``component`` – A placeholder project containing reusable components (e.g., forms). Only one component project is allowed per account. Known as a library in the ACC UI.- ``sample`` – A single sample project automatically created for ACC trials (limited to one per account).</summary>
+    /// <summary>The classification of the project. Possible values:- `production` – Standard project.- `template` – A project that serves as a template for creating new projects.- `component` – A placeholder project containing reusable components (e.g., forms). Only one component project is allowed per account. Known as a library in the ACC UI.- `sample` – A single sample project automatically created for ACC trials (limited to one per account).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithProjectGetResponse_classification
     {

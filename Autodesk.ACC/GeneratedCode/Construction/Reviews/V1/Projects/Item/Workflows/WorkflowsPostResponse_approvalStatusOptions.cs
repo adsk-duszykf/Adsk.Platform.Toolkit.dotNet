@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
     public partial class WorkflowsPostResponse_approvalStatusOptions : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether the approval status is a built-in option.``true``: the status is built in (e.g., ``APPROVED``, ``REJECTED``).``false``: the status is a custom option created by a user.</summary>
+        /// <summary>Indicates whether the approval status is a built-in option.`true`: the status is built in (e.g., `APPROVED`, `REJECTED`).`false`: the status is a custom option created by a user.</summary>
         public bool? BuiltIn { get; set; }
         /// <summary>The unique identifier of this approval status entry in the workflow.</summary>
         public Guid? Id { get; set; }
@@ -24,7 +24,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The value representing the approval outcome. Possible values: ``APPROVED``, ``REJECTED``.</summary>
+        /// <summary>The value representing the approval outcome. Possible values: `APPROVED`, `REJECTED`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_approvalStatusOptions_value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

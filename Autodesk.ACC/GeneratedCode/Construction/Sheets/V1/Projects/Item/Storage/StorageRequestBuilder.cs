@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage
         {
         }
         /// <summary>
-        /// For more details, see the `Upload Sheets &lt;/en/docs/acc/v1/tutorials/upload-sheets/&gt;`_ tutorial.
+        /// Creates a storage location in the Object Storage Service (OSS) for you to upload the file to.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StoragePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StoragePostResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StoragePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details, see the `Upload Sheets &lt;/en/docs/acc/v1/tutorials/upload-sheets/&gt;`_ tutorial.
+        /// Creates a storage location in the Object Storage Service (OSS) for you to upload the file to.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StorageResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StorageResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StorageResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details, see the `Upload Sheets &lt;/en/docs/acc/v1/tutorials/upload-sheets/&gt;`_ tutorial.
+        /// Creates a storage location in the Object Storage Service (OSS) for you to upload the file to.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

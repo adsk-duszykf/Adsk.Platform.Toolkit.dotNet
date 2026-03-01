@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
     public partial class UsersImportPostResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>We don&apos;t currently support this field, but expect to in a future release.If the response returns ``jobId`` with a valid UUID value, the user import operation was successful.</summary>
+        /// <summary>We don&apos;t currently support this field, but expect to in a future release.If the response returns `jobId` with a valid UUID value, the user import operation was successful.</summary>
         public Guid? JobId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate
 {
-    /// <summary>Indicates the source of the weather data.Possible values: ``darksky``, ``weatherkit``</summary>
+    /// <summary>Indicates the source of the weather data.Possible values: `darksky`, `weatherkit`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ValuesBatchUpdatePutResponse_weather_provider
     {

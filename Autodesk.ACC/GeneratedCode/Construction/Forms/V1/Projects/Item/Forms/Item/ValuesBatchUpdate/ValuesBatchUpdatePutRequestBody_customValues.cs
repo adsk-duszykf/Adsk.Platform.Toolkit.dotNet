@@ -12,7 +12,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
     public partial class ValuesBatchUpdatePutRequestBody_customValues : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The attribute used for updating multi-select fields. For example, ``arrayVal:`` ``[``Answer 1``, ``Answer 2``]``.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``arrayVal`` is only relevant for updating multi-select fields. To verify whether the field you want to update is a multi-select field, call GET forms and check the field&apos;s ``valueName``.</summary>
+        /// <summary>The attribute used for updating multi-select fields. For example, `arrayVal:` `[`Answer 1`, `Answer 2`]`.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `arrayVal` is only relevant for updating multi-select fields. To verify whether the field you want to update is a multi-select field, call GET forms and check the field&apos;s `valueName`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ArrayVal { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public List<string> ArrayVal { get; set; }
 #endif
-        /// <summary>The attribute used for updating single-select and dropdown fields. For example, ``choiceVal: Answer 3``.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``choiceVal`` is only relevant for updating single-select and dropdown fields. To verify whether the field you want to update is a single-select or dropdown field, call GET forms and check the field&apos;s ``valueName``.</summary>
+        /// <summary>The attribute used for updating single-select and dropdown fields. For example, `choiceVal: Answer 3`.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `choiceVal` is only relevant for updating single-select and dropdown fields. To verify whether the field you want to update is a single-select or dropdown field, call GET forms and check the field&apos;s `valueName`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChoiceVal { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public string ChoiceVal { get; set; }
 #endif
-        /// <summary>The attribute used for updating date fields, in the following format ``(YYYY-MM-DD)``. For example, ````dateVal``: ``1999-12-31````.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``dateVal`` is only relevant for updating date fields. To verify whether the field you want to update is a date field, call GET forms and check the field&apos;s ``valueName``.</summary>
+        /// <summary>The attribute used for updating date fields, in the following format `(YYYY-MM-DD)`. For example, `dateVal`: `1999-12-31``.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `dateVal` is only relevant for updating date fields. To verify whether the field you want to update is a date field, call GET forms and check the field&apos;s `valueName`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateVal { get; set; }
@@ -54,9 +54,9 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The attribute used for updating number fields. For example, ````numberVal``: ``42````.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``numberVal`` is only relevant for updating number fields. To verify whether the field you want to update is a number field, call GET forms and check the field&apos;s ``valueName``.</summary>
+        /// <summary>The attribute used for updating number fields. For example, `numberVal`: `42``.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `numberVal` is only relevant for updating number fields. To verify whether the field you want to update is a number field, call GET forms and check the field&apos;s `valueName`.</summary>
         public double? NumberVal { get; set; }
-        /// <summary>The attribute used for updating signature fields.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``svgVal`` is only relevant for updating signature fields. To verify whether the field you want to update is a signature field, call GET forms and check the field&apos;s ``valueName``.The signature needs to be in SVG format and it needs to be base64 encoded.</summary>
+        /// <summary>The attribute used for updating signature fields.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `svgVal` is only relevant for updating signature fields. To verify whether the field you want to update is a signature field, call GET forms and check the field&apos;s `valueName`.The signature needs to be in SVG format and it needs to be base64 encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SvgVal { get; set; }
@@ -64,7 +64,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public string SvgVal { get; set; }
 #endif
-        /// <summary>The attribute used for updating text value fields, For example, ``textVal: This is my response!``.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``textVal`` is only relevant for updating text value fields. To verify whether the field you want to update is a text value field, call GET forms and check the field&apos;s ``valueName``.Max length: 8000</summary>
+        /// <summary>The attribute used for updating text value fields, For example, `textVal: This is my response!`.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `textVal` is only relevant for updating text value fields. To verify whether the field you want to update is a text value field, call GET forms and check the field&apos;s `valueName`.Max length: 8000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TextVal { get; set; }
@@ -72,7 +72,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public string TextVal { get; set; }
 #endif
-        /// <summary>The attribute used for updating preconfigured fields. For example, ``toggleVal``: ``Yes``.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. ``toggleVal`` is only relevant for updating preconfigured fields. To verify whether the field you want to update is a preconfigured field, call GET forms and check the field&apos;s ``valueName``.Possible values: ``Yes``, ``No``, ``False``, ``True``, ``Minus``, ``Plus``, ``Fail``, ``Pass``, ``NA``</summary>
+        /// <summary>The attribute used for updating preconfigured fields. For example, `toggleVal`: `Yes`.Each non-tabular field is assigned a specific value type, which you need to specify when updating the field. `toggleVal` is only relevant for updating preconfigured fields. To verify whether the field you want to update is a preconfigured field, call GET forms and check the field&apos;s `valueName`.Possible values: `Yes`, `No`, `False`, `True`, `Minus`, `Plus`, `Fail`, `Pass`, `NA`</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutRequestBody_customValues_toggleVal? ToggleVal { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

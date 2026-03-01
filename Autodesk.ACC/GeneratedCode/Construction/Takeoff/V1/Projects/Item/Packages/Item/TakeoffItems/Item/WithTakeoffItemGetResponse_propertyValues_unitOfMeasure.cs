@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.Item
 {
-    /// <summary>The unit of measurement.Possible values: ``EA``, ``IN``, ``LF``, ``YD``, ``SI``, ``SF``, ``SY``, ``CI``, ``CF``, ``CY``, ``LBS``, ``TON``, ``MM``, ``M``, ``M2``, ``M3``, ``KG``, ``T``.</summary>
+    /// <summary>The unit of measurement.Possible values: `EA`, `IN`, `LF`, `YD`, `SI`, `SF`, `SY`, `CI`, `CF`, `CY`, `LBS`, `TON`, `MM`, `M`, `M2`, `M3`, `KG`, `T`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithTakeoffItemGetResponse_propertyValues_unitOfMeasure
     {

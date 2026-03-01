@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Comments
 {
-    /// <summary>The source of the comment. Indicates how the comment was created.Possible values:- ``web`` – The comment was created through the web interface or API.- ``email`` – The comment was created by replying via email.</summary>
+    /// <summary>The source of the comment. Indicates how the comment was created.Possible values:- `web` – The comment was created through the web interface or API.- `email` – The comment was created by replying via email.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CommentsGetResponse_results_source
     {

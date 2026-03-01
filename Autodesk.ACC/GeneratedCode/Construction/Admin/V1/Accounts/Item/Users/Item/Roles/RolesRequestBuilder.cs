@@ -103,7 +103,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RolesRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma-separated list of response fields to include.Defaults to all fields if not specified.Use this parameter to reduce the response size by retrieving only the fields you need.Possible values:``projectIds`` – Projects where the user holds this role``name`` – Role name``status`` – Role status (active or inactive)``key`` – Internal key used to translate the role name``createdAt`` – Timestamp when the role was created``updatedAt`` – Timestamp when the role was last updated</summary>
+            /// <summary>A comma-separated list of response fields to include.Defaults to all fields if not specified.Use this parameter to reduce the response size by retrieving only the fields you need.Possible values:`projectIds` – Projects where the user holds this role`name` – Role name`status` – Role status (active or inactive)`key` – Internal key used to translate the role name`createdAt` – Timestamp when the role was created`updatedAt` – Timestamp when the role was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -113,7 +113,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
-            /// <summary>Filters roles by name.By default, this performs a partial match (case-insensitive).You can control how the match behaves by using the ``filterTextMatch`` parameter. For example, to match only names that start with (`startsWith`), end with (`endsWith`), or exactly equal (`equals`) the provided value.</summary>
+            /// <summary>Filters roles by name.By default, this performs a partial match (case-insensitive).You can control how the match behaves by using the `filterTextMatch` parameter. For example, to match only names that start with (`startsWith`), end with (`endsWith`), or exactly equal (`equals`) the provided value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bname%5D")]
@@ -133,7 +133,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
             [QueryParameter("filter%5BprojectId%5D")]
             public string[] FilterprojectId { get; set; }
 #endif
-            /// <summary>Filters roles by their status. Accepts one or more of the following values:``active`` – The role is currently in use.``inactive`` – The role has been removed or is no longer in use.</summary>
+            /// <summary>Filters roles by their status. Accepts one or more of the following values:`active` – The role is currently in use.`inactive` – The role has been removed or is no longer in use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -143,7 +143,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,16 +154,16 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
             [QueryParameter("filterTextMatch")]
             public string FilterTextMatch { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [QueryParameter("filterTextMatch")]
             public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
-            /// <summary>The maximum number of records to return in the response.Default: ``20``Minimum: ``1``Maximum: ``200`` (If a larger value is provided, only 200 records are returned)</summary>
+            /// <summary>The maximum number of records to return in the response.Default: `20`Minimum: `1`Maximum: `200` (If a larger value is provided, only 200 records are returned)</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first record to return.Used for pagination in combination with the ``limit`` parameter.Example: ``limit=20`` and ``offset=40`` returns records 41–60.</summary>
+            /// <summary>The index of the first record to return.Used for pagination in combination with the `limit` parameter.Example: `limit=20` and `offset=40` returns records 41-60.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sorts the results by one or more fields.Each field can be followed by a direction modifier:``asc`` – Ascending order (default)``desc`` – Descending orderPossible values: ``name``, ``createdAt``, ``updatedAt``.Default sort: ``name asc``Example: ``sort=name,updatedAt desc``</summary>
+            /// <summary>Sorts the results by one or more fields.Each field can be followed by a direction modifier:`asc` – Ascending order (default)`desc` – Descending orderPossible values: `name`, `createdAt`, `updatedAt`.Default sort: `name asc`Example: `sort=name,updatedAt desc`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

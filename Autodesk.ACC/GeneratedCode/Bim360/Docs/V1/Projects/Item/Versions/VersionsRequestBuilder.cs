@@ -16,7 +16,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Versions
     public partial class VersionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.ACC.bim360.docs.v1.projects.item.versions.item collection</summary>
-        /// <param name="position">The URL-encoded ID (URN) of the version. To find the version ID of a document follow the initial steps of the `Download Files &lt;/en/docs/bim360/v1/tutorials/document-management/download-document-s3/&gt;`_ tutorial.</param>
+        /// <param name="position">The URL-encoded ID (URN) of the version. To find the version ID of a document follow the initial steps of the [Download Files](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/document-management/download-document-s3/) tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Versions.Item.WithVersion_ItemRequestBuilder"/></returns>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Versions.Item.WithVersion_ItemRequestBuilder this[string position]
         {

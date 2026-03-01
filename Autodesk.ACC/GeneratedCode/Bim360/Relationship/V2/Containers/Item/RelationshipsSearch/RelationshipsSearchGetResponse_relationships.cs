@@ -26,11 +26,11 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSearc
 #endif
         /// <summary>The UUID that uniquely identifies the relationship.</summary>
         public Guid? Id { get; set; }
-        /// <summary>``true`` if this relationship is deleted.``false`` if this relationship is not deleted.</summary>
+        /// <summary>`true` if this relationship is deleted.`false` if this relationship is not deleted.</summary>
         public bool? IsDeleted { get; set; }
-        /// <summary>``true`` if this relationship is read only for the current caller.``false`` if this relationship is not read only for the current caller.</summary>
+        /// <summary>`true` if this relationship is read only for the current caller.`false` if this relationship is not read only for the current caller.</summary>
         public bool? IsReadOnly { get; set; }
-        /// <summary>``true`` if this relationship was created by a service.``false`` if this relationship was not created by a service.</summary>
+        /// <summary>`true` if this relationship was created by a service.`false` if this relationship was not created by a service.</summary>
         public bool? IsService { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

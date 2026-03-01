@@ -38,7 +38,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
 #endif
         /// <summary>The identifier of the parent node of this LBS node.</summary>
         public Guid? ParentId { get; set; }
-        /// <summary>The type of this LBS node. Note that only ``Area`` is a currently supported request value.Possible values: ``Area``, ``Level``, ``Root``</summary>
+        /// <summary>The type of this LBS node. Note that only `Area` is a currently supported request value.Possible values: `Area`, `Level`, `Root`</summary>
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostRequestBody_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 {
-    /// <summary>The field type.Possible values:- ``ALPHANUMERIC``: Accepts all characters.- ``NONNUMERIC_TEXT``: Accepts all characters, excluding ``0-9``.- ``NUMERIC``: Accepts ``0-9``, comma ``&apos;,&apos;``, plus ``&apos;+&apos;``, minus ``&apos;-&apos;``, percent ``&apos;%&apos;``, period ``&apos;.&apos;``, underscore ``&apos;_&apos;``.- ``ARRAY``: A drop-down list.Note that the ``minLength`` and ``maxLength`` properties are not included in the response for the ``ARRAY`` type.</summary>
+    /// <summary>The field type.Possible values:- `ALPHANUMERIC`: Accepts all characters.- `NONNUMERIC_TEXT`: Accepts all characters, excluding `0-9`.- `NUMERIC`: Accepts `0-9`, comma `&apos;,&apos;`, plus `&apos;+&apos;`, minus `&apos;-&apos;`, percent `&apos;%&apos;`, period `&apos;.&apos;`, underscore `&apos;_&apos;`.- `ARRAY`: A drop-down list.Note that the `minLength` and `maxLength` properties are not included in the response for the `ARRAY` type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NamingStandardsGetResponse_definition_fields_type
     {

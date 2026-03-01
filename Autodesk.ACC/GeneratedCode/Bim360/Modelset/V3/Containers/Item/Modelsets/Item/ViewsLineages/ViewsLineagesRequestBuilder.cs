@@ -33,7 +33,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLi
         {
         }
         /// <summary>
-        /// Retrieves a list of model set views in a given model set that contain the provided set of document lineage URNs. To match the provided list exactly, set the ``exact`` property to true.
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLi
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesPostResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of model set views in a given model set that contain the provided set of document lineage URNs. To match the provided list exactly, set the ``exact`` property to true.
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLi
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesResponse>(requestInfo, global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of model set views in a given model set that contain the provided set of document lineage URNs. To match the provided list exactly, set the ``exact`` property to true.
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

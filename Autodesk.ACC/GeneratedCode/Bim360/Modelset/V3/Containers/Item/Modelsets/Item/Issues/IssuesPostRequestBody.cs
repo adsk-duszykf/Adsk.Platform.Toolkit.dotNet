@@ -20,7 +20,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>Specifies the type that the assignedTo parameter refers to. Possible values: ``User``, ``Role``, ``Company``.</summary>
+        /// <summary>Specifies the type that the assignedTo parameter refers to. Possible values: `User`, `Role`, `Company`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_assignedToType? AssignedToType { get; set; }
         /// <summary>The list of attributes to associate with the new issue. Max items: 64.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
 #else
         public List<string> ScreenShots { get; set; }
 #endif
-        /// <summary>The status of the new issue. Possible values: ``Open``, ``Draft``.</summary>
+        /// <summary>The status of the new issue. Possible values: `Open`, `Draft`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_status? Status { get; set; }
         /// <summary>The title of the new issue. Min length: 1 Max length: 4200.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The name of the viewable in the Model Derivative manifest to track along the seed file lineage. This setting is ignored if the ``lineageUrn`` is the URN of a BIM360 Docs Plans folder document. Min length: 1 Max length: 430.</summary>
+        /// <summary>The name of the viewable in the Model Derivative manifest to track along the seed file lineage. This setting is ignored if the `lineageUrn` is the URN of a BIM360 Docs Plans folder document. Min length: 1 Max length: 430.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ViewableName { get; set; }

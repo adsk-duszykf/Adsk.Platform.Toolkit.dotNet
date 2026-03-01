@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources
 {
-    /// <summary>The type of file version. Possible values:- ``SEED_FILE`` – A document that was not split into sheets when uploaded to ACC Files.- ``DOCUMENT`` – A document that was split into sheets when uploaded to ACC Files.</summary>
+    /// <summary>The type of file version. Possible values:- `SEED_FILE` – A document that was not split into sheets when uploaded to ACC Files.- `DOCUMENT` – A document that was split into sheets when uploaded to ACC Files.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ResourcesGetResponse_results_entityType
     {
