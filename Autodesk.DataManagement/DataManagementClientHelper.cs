@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Web;
 using Autodesk.DataManagement.Data.V1;
 using Autodesk.DataManagement.Data.V1.Projects.Item.Folders.Item.Contents;
 using Autodesk.DataManagement.Helpers.Models;
@@ -12,9 +13,18 @@ using SDKmodels = Autodesk.DataManagement.Models;
 
 namespace Autodesk.DataManagement.Helpers;
 
+/// <summary>
+/// Helper class for Data Management API. It provides methods to perform common operations such as getting file item by path, downloading file, etc. It uses the generated clients but also implements some custom logic to handle specific cases such as ACC/BIM360 limitations, pagination, etc.
+/// </summary>
 public class DataManagementClientHelper
 {
-    private readonly HttpClient httpClient = new();
+    private static readonly HttpClient httpClient = new(new SocketsHttpHandler
+    {
+        MaxConnectionsPerServer = 64,
+        PooledConnectionLifetime = TimeSpan.FromMinutes(15),
+        EnableMultipleHttp2Connections = true,
+    });
+
     private readonly V1RequestBuilder _dataMgtClient;
     private readonly V2RequestBuilder _ossClient;
     private static readonly char[] separator = ['\\', '/'];
@@ -93,7 +103,6 @@ public class DataManagementClientHelper
             });
 
         return (
-
                 result?.Included?.FirstOrDefault()?.Id ?? throw new UnreachableException("Version 'id' is not defined"),
                 result?.Data?.Id ?? throw new UnreachableException("Item 'id' is not defined")
                 );
@@ -259,21 +268,54 @@ public class DataManagementClientHelper
     }
 
     /// <summary>
-    /// Download file from storage url
+    /// Download file from storage url using CDN-accelerated S3 signed download.
     /// </summary>
-    /// <param name="storageUrl"></param>
-    /// <returns>File content</returns>
-    public async Task<Stream> DownloadFromStorageAsync(string storageUrl)
+    /// <param name="storageUrl">Storage URL from version/item relationships</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>File content stream</returns>
+    /// <remarks>
+    /// <para>Uses CloudFront CDN (<c>useCdn=true</c>) and <c>public-resource-fallback=true</c> for optimal performance.</para>
+    /// <para>Handles both <c>complete</c>/<c>fallback</c> (single URL) and <c>chunked</c> (byte-range URLs for unmerged resumable uploads) statuses.</para>
+    /// <para>The generated <c>Signeds3download_response_urls</c> model cannot deserialize dynamic byte-range keys,
+    /// so this method uses raw JSON parsing via <see cref="JsonDocument"/> to handle chunked responses.</para>
+    /// </remarks>
+    public async Task<Stream> DownloadFromStorageAsync(string storageUrl, CancellationToken cancellationToken = default)
+    {
+        var (bucketKey, objectKey) = ParseStorageUrl(storageUrl);
+
+        var signedUrls = await _ossClient.Buckets[bucketKey].Objects[objectKey].Signeds3download
+            .GetAsync(r =>
+            {
+                r.QueryParameters.PublicResourceFallback=false;
+                r.QueryParameters.UseCdn = true;
+            });
+
+        var status = signedUrls?.Status;
+
+        // Complete or fallback: single signed URL
+        if (status == Signeds3download_response_status.Complete )
+        {
+            var signedUrl = signedUrls?.Url;
+            return await httpClient.GetStreamAsync(
+                signedUrl ?? throw new InvalidOperationException($"Signed URL is null for bucket '{bucketKey}', object '{objectKey}' (status: {status})"),
+                cancellationToken);
+        }
+
+        throw new InvalidOperationException(
+            $"Cannot download object from bucket '{bucketKey}', object '{objectKey}'. Unexpected status: '{status}'");
+    }
+
+    /// <summary>
+    /// Parses a storage URL and extracts the bucket key and object key.
+    /// </summary>
+    /// <param name="storageUrl">The storage URL to parse</param>
+    /// <returns>A tuple containing the bucket key and object key</returns>
+    private static (string BucketKey, string ObjectKey) ParseStorageUrl(string storageUrl)
     {
         var storageUrlAsUri = new Uri(storageUrl);
         var bucketKey = storageUrlAsUri.Segments[4].TrimEnd('/');
         var objectKey = storageUrlAsUri.Segments[6];
-
-        var signedUrlInfo = await _ossClient.Buckets[bucketKey].Objects[objectKey].Signeds3download.GetAsync();
-
-        var signedUrl = signedUrlInfo?.Url ?? throw new InvalidOperationException();
-
-        return await httpClient.GetStreamAsync(signedUrl);
+        return (bucketKey, objectKey);
     }
 
     /// <summary>
