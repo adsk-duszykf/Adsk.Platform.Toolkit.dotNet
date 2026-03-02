@@ -1,5 +1,7 @@
 # Autodesk.BIM360 - BIM 360 SDK
 
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+
 A .NET SDK providing a [Fluent API](https://dzone.com/articles/java-fluent-api) for the [Autodesk BIM 360](https://aps.autodesk.com/en/docs/bim360/v1/overview/) APIs, generated from the official OpenAPI specifications using [Microsoft Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview).
 
 ## Features

@@ -1,5 +1,7 @@
 # Autodesk.Common.HttpClientLibrary
 
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+
 A resilient HttpClient library designed to serve the Autodesk Platform Services (APS) Toolkit SDKs. This library provides a robust foundation for making HTTP requests with built-in error handling, rate limiting, query parameter management, and authentication support.
 
 ## Overview

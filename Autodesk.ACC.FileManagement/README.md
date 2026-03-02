@@ -1,5 +1,7 @@
 # Autodesk Construction Cloud - File Management
 
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+
 The package `Adsk.Platform.ACC.FileManagement` provides a set of APIs to interact with the [Autodesk Construction Cloud - File Management Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/v1-files-export-pdf-files-POST/).
 
 ## Documentation

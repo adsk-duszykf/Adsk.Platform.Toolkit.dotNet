@@ -1,5 +1,7 @@
 # Autodesk.ACC - Autodesk Construction Cloud SDK
 
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+
 A .NET SDK providing a [Fluent API](https://dzone.com/articles/java-fluent-api) for the [Autodesk Construction Cloud (ACC)](https://aps.autodesk.com/en/docs/acc/v1/overview/) APIs, generated from the official OpenAPI specifications using [Microsoft Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview).
 
 ## Features

@@ -1,5 +1,7 @@
 # Autodesk Construction Cloud (ACC) - Issues
 
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+
 The package `Adsk.Platform.ACC.Issues` provides a set of APIs to interact with the [Autodesk Construction Cloud (ACC) - Issues Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-users-me-GET/).
 
 ## Documentation

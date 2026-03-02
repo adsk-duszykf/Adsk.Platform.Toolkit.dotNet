@@ -1,5 +1,7 @@
 # Autodesk Construction Cloud - Data Connector
 
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+
 The package `Adsk.Platform.ACC.DataConnector` provides a set of APIs to interact with the [Autodesk Construction Cloud - Data Connector Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/data-connector-introduction/).
 
 ## Documentation

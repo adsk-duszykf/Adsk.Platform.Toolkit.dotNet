@@ -1,4 +1,6 @@
-﻿# Adsk.Platform.DataManagement
+# Adsk.Platform.DataManagement
+
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
 
 The `Adsk.Platform.DataManagement` toolkit provides a set of APIs to interact with the [Autodesk Data Management Service](https://aps.autodesk.com/developer/overview/data-management-api).
 

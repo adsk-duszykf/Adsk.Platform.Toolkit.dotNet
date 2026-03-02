@@ -1,4 +1,6 @@
-# Autodesk.Tandem - Autodesk Tandem Digital Twin SDK
+# Adsk.Platform.Tandem
+
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
 
 A .NET SDK providing a [Fluent API](https://dzone.com/articles/java-fluent-api) for the [Autodesk Tandem](https://aps.autodesk.com/en/docs/tandem/v1/overview/) APIs, generated from the official OpenAPI specifications using [Microsoft Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview).
 

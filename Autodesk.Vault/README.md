@@ -1,5 +1,7 @@
 # Autodesk.Vault - Vault Data SDK
 
+> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+
 A .NET SDK providing a [Fluent API](https://dzone.com/articles/java-fluent-api) for the [Autodesk Vault](https://www.autodesk.com/products/vault/overview) Data APIs, generated from the official OpenAPI specifications using [Microsoft Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview).
 
 ## Features
