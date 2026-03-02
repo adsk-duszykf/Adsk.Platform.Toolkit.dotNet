@@ -12,6 +12,14 @@ namespace Autodesk.DataManagement.Models
     public partial class VersionRequest_data : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The attributes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Autodesk.DataManagement.Models.VersionRequest_data_attributes? Attributes { get; set; }
+#nullable restore
+#else
+        public global::Autodesk.DataManagement.Models.VersionRequest_data_attributes Attributes { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,7 +43,7 @@ namespace Autodesk.DataManagement.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.DataManagement.Models.VersionRequest_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.DataManagement.Models.VersionRequest_data();
         }
         /// <summary>
@@ -46,6 +54,7 @@ namespace Autodesk.DataManagement.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "attributes", n => { Attributes = n.GetObjectValue<global::Autodesk.DataManagement.Models.VersionRequest_data_attributes>(global::Autodesk.DataManagement.Models.VersionRequest_data_attributes.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -56,7 +65,8 @@ namespace Autodesk.DataManagement.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Autodesk.DataManagement.Models.VersionRequest_data_attributes>("attributes", Attributes);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("type", Type);
         }

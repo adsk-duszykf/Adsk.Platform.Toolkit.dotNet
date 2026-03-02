@@ -2,6 +2,9 @@
 using Autodesk.DataManagement.OSS;
 
 namespace Autodesk.DataManagement;
+/// <summary>
+/// Data Management client.
+/// </summary>
 public class DataManagementClient
 {
     /// <summary>

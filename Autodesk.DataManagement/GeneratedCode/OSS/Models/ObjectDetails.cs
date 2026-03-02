@@ -11,8 +11,10 @@ namespace Autodesk.DataManagement.OSS.Models
     /// Object json response
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ObjectDetails : IParsable
+    public partial class ObjectDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bucket key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,13 +58,20 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <summary>Object SHA1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha1 { get; set; }
+        public byte[]? Sha1 { get; set; }
 #nullable restore
 #else
-        public string Sha1 { get; set; }
+        public byte[] Sha1 { get; set; }
 #endif
         /// <summary>Object size</summary>
         public int? Size { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.OSS.Models.ObjectDetails"/> and sets the default values.
+        /// </summary>
+        public ObjectDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,7 +79,7 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.DataManagement.OSS.Models.ObjectDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.DataManagement.OSS.Models.ObjectDetails();
         }
         /// <summary>
@@ -86,7 +95,7 @@ namespace Autodesk.DataManagement.OSS.Models
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "objectId", n => { ObjectId = n.GetStringValue(); } },
                 { "objectKey", n => { ObjectKey = n.GetStringValue(); } },
-                { "sha1", n => { Sha1 = n.GetStringValue(); } },
+                { "sha1", n => { Sha1 = n.GetByteArrayValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
             };
         }
@@ -96,14 +105,15 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucketKey", BucketKey);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("objectKey", ObjectKey);
-            writer.WriteStringValue("sha1", Sha1);
+            writer.WriteByteArrayValue("sha1", Sha1);
             writer.WriteIntValue("size", Size);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "2C7C461B92A5BA91F3C75C82AB654C4A5E468F1867592428E65DF6316450D970C51AC81A81A222EB6050C1ABA54FCAF1C6179A075E921AB422E3BEB802EB0907",
-  "descriptionLocation": "../../../../private/Autodesk.DataManagement/OpenAPI/datamanagement.yaml",
+  "descriptionHash": "17F3015D815015383A622C976A00CD9010369F5497F82F3C6C01ED1888820EACC0F9B2869C28B492482F45CCEFE9B8553AF8B23FBE8E5C56979E54B4412223E3",
+  "descriptionLocation": "../../../../_spec/output/datamanagement/datamanagement-openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.25.1",
+  "kiotaVersion": "1.30.0",
   "clientClassName": "BaseDataManagementClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Autodesk.DataManagement",

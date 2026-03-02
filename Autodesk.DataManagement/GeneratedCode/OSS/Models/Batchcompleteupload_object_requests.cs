@@ -9,9 +9,11 @@ namespace Autodesk.DataManagement.OSS.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Batchcompleteupload_object_requests : IParsable
+    public partial class Batchcompleteupload_object_requests : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The eTags of the parts uploaded to S3, exactly as returned by S3. The index of an eTag in the array corresponds to the number of the part in the entire object. If provided, OSS will fail the upload completion if any part does not match the data found in S3.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,13 +81,20 @@ namespace Autodesk.DataManagement.OSS.Models
         public string XAdsUserDefinedMetadata { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_object_requests"/> and sets the default values.
+        /// </summary>
+        public Batchcompleteupload_object_requests()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_object_requests"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_object_requests CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_object_requests();
         }
         /// <summary>
@@ -113,7 +122,7 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("eTags", ETags);
             writer.WriteStringValue("objectKey", ObjectKey);
             writer.WriteIntValue("size", Size);
@@ -123,6 +132,7 @@ namespace Autodesk.DataManagement.OSS.Models
             writer.WriteStringValue("x-ads-meta-Content-Encoding", XAdsMetaContentEncoding);
             writer.WriteStringValue("x-ads-meta-Content-Type", XAdsMetaContentType);
             writer.WriteStringValue("x-ads-user-defined-metadata", XAdsUserDefinedMetadata);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

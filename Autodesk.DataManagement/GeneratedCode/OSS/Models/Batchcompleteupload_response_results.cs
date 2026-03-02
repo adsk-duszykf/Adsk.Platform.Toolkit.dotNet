@@ -11,8 +11,17 @@ namespace Autodesk.DataManagement.OSS.Models
     /// A map of the returned results; each key in the map corresponds to an object key in the batch, and the value includes the results for that object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Batchcompleteupload_response_results : IParsable
+    public partial class Batchcompleteupload_response_results : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_response_results"/> and sets the default values.
+        /// </summary>
+        public Batchcompleteupload_response_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -20,7 +29,7 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_response_results CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_response_results();
         }
         /// <summary>
@@ -39,7 +48,8 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

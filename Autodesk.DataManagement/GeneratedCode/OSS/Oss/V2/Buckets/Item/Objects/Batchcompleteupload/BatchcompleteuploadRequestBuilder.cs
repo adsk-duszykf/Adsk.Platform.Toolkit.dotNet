@@ -49,7 +49,7 @@ namespace Autodesk.DataManagement.OSS.Oss.V2.Buckets.Item.Objects.Batchcompleteu
         public async Task<global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_response> PostAsync(global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_object body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_response>(requestInfo, global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace Autodesk.DataManagement.OSS.Oss.V2.Buckets.Item.Objects.Batchcompleteu
         public RequestInformation ToPostRequestInformation(global::Autodesk.DataManagement.OSS.Models.Batchcompleteupload_object body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/vnd.api+json");

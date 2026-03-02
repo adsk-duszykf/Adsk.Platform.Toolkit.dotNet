@@ -28,8 +28,13 @@ public class DataManagementClientHelper
     private readonly V1RequestBuilder _dataMgtClient;
     private readonly V2RequestBuilder _ossClient;
     private static readonly char[] separator = ['\\', '/'];
-
+    /// <summary>
+    /// The Data Management API client.
+    /// </summary>
     public BaseDataManagementClient DataMgtApi { get; init; }
+    /// <summary>
+    /// The OSS API client.
+    /// </summary>
     public BaseOSSClient OssApi { get; init; }
     internal DataManagementClientHelper(BaseDataManagementClient dataMgtApi, BaseOSSClient ossApi)
     {
@@ -276,8 +281,6 @@ public class DataManagementClientHelper
     /// <remarks>
     /// <para>Uses CloudFront CDN (<c>useCdn=true</c>) and <c>public-resource-fallback=true</c> for optimal performance.</para>
     /// <para>Handles both <c>complete</c>/<c>fallback</c> (single URL) and <c>chunked</c> (byte-range URLs for unmerged resumable uploads) statuses.</para>
-    /// <para>The generated <c>Signeds3download_response_urls</c> model cannot deserialize dynamic byte-range keys,
-    /// so this method uses raw JSON parsing via <see cref="JsonDocument"/> to handle chunked responses.</para>
     /// </remarks>
     public async Task<Stream> DownloadFromStorageAsync(string storageUrl, CancellationToken cancellationToken = default)
     {
@@ -321,7 +324,8 @@ public class DataManagementClientHelper
     /// <summary>
     /// Return the files in a folder
     /// </summary>
-    /// <param name="folderPath"></param>
+    /// <param name="folderPath">The path of the folder to get the files from.</param>
+    /// <param name="recursive">Optional: 'true' returns files within the sub folders. Default: 'false'</param>
     /// <returns>List of file ids</returns>
     public async Task<(FolderPath Folder, List<FileItem> Files)> GetAllFilesByFolderPathAsync(string folderPath, bool recursive = false)
     {

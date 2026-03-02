@@ -11,8 +11,10 @@ namespace Autodesk.DataManagement.OSS.Models
     /// Object Details json response
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ObjectFullDetails : IParsable
+    public partial class ObjectFullDetails : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bucket key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,10 +64,10 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <summary>Object SHA1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha1 { get; set; }
+        public byte[]? Sha1 { get; set; }
 #nullable restore
 #else
-        public string Sha1 { get; set; }
+        public byte[] Sha1 { get; set; }
 #endif
         /// <summary>Object size</summary>
         public int? Size { get; set; }
@@ -78,13 +80,20 @@ namespace Autodesk.DataManagement.OSS.Models
         public string UserDefinedMetadata { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.OSS.Models.ObjectFullDetails"/> and sets the default values.
+        /// </summary>
+        public ObjectFullDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.DataManagement.OSS.Models.ObjectFullDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.DataManagement.OSS.Models.ObjectFullDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.DataManagement.OSS.Models.ObjectFullDetails();
         }
         /// <summary>
@@ -103,7 +112,7 @@ namespace Autodesk.DataManagement.OSS.Models
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "objectId", n => { ObjectId = n.GetStringValue(); } },
                 { "objectKey", n => { ObjectKey = n.GetStringValue(); } },
-                { "sha1", n => { Sha1 = n.GetStringValue(); } },
+                { "sha1", n => { Sha1 = n.GetByteArrayValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "userDefinedMetadata", n => { UserDefinedMetadata = n.GetStringValue(); } },
             };
@@ -114,7 +123,7 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucketKey", BucketKey);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteLongValue("createdDate", CreatedDate);
@@ -123,9 +132,10 @@ namespace Autodesk.DataManagement.OSS.Models
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("objectKey", ObjectKey);
-            writer.WriteStringValue("sha1", Sha1);
+            writer.WriteByteArrayValue("sha1", Sha1);
             writer.WriteIntValue("size", Size);
             writer.WriteStringValue("userDefinedMetadata", UserDefinedMetadata);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -12,8 +12,10 @@ namespace Autodesk.DataManagement.OSS.Models
     /// reason for failure
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Reason : ApiException, IParsable
+    public partial class Reason : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>reason for failure</summary>
@@ -25,13 +27,20 @@ namespace Autodesk.DataManagement.OSS.Models
         public string ReasonProp { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.OSS.Models.Reason"/> and sets the default values.
+        /// </summary>
+        public Reason()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.DataManagement.OSS.Models.Reason"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.DataManagement.OSS.Models.Reason CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.DataManagement.OSS.Models.Reason();
         }
         /// <summary>
@@ -51,8 +60,9 @@ namespace Autodesk.DataManagement.OSS.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("reason", ReasonProp);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

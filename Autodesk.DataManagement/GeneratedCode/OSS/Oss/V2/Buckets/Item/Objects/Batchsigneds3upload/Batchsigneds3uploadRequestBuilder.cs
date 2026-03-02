@@ -49,7 +49,7 @@ namespace Autodesk.DataManagement.OSS.Oss.V2.Buckets.Item.Objects.Batchsigneds3u
         public async Task<global::Autodesk.DataManagement.OSS.Models.Batchsigneds3upload_response> PostAsync(global::Autodesk.DataManagement.OSS.Models.Batchsigneds3upload_object body, Action<RequestConfiguration<global::Autodesk.DataManagement.OSS.Oss.V2.Buckets.Item.Objects.Batchsigneds3upload.Batchsigneds3uploadRequestBuilder.Batchsigneds3uploadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.DataManagement.OSS.Models.Batchsigneds3upload_response>(requestInfo, global::Autodesk.DataManagement.OSS.Models.Batchsigneds3upload_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace Autodesk.DataManagement.OSS.Oss.V2.Buckets.Item.Objects.Batchsigneds3u
         public RequestInformation ToPostRequestInformation(global::Autodesk.DataManagement.OSS.Models.Batchsigneds3upload_object body, Action<RequestConfiguration<global::Autodesk.DataManagement.OSS.Oss.V2.Buckets.Item.Objects.Batchsigneds3upload.Batchsigneds3uploadRequestBuilder.Batchsigneds3uploadRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json, application/vnd.api+json");
