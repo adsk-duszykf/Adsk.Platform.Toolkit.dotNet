@@ -72,8 +72,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.ACC", "Autodesk.AC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.BIM360", "Autodesk.BIM360\Autodesk.BIM360.csproj", "{5B545F1F-5F3D-4B5B-A443-EC83332F0DB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.ACC.App", "Autodesk.ACC.App\Autodesk.ACC.App.csproj", "{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.Tandem", "Autodesk.Tandem\Autodesk.Tandem.csproj", "{DD67FCF4-79AE-47EC-BC22-8E49202DE10F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autodesk.Common.HttpClient", "Autodesk.Common.HttpClient", "{C533DC84-E033-ECCB-C6C9-CD5B25C89C6C}"
@@ -302,18 +300,6 @@ Global
 		{5B545F1F-5F3D-4B5B-A443-EC83332F0DB3}.Release|x64.Build.0 = Release|Any CPU
 		{5B545F1F-5F3D-4B5B-A443-EC83332F0DB3}.Release|x86.ActiveCfg = Release|Any CPU
 		{5B545F1F-5F3D-4B5B-A443-EC83332F0DB3}.Release|x86.Build.0 = Release|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Debug|x64.Build.0 = Debug|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Debug|x86.Build.0 = Debug|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Release|x64.ActiveCfg = Release|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Release|x64.Build.0 = Release|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Release|x86.ActiveCfg = Release|Any CPU
-		{A21CA78F-1E7E-4AC1-8483-FBF22D35BAC3}.Release|x86.Build.0 = Release|Any CPU
 		{DD67FCF4-79AE-47EC-BC22-8E49202DE10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD67FCF4-79AE-47EC-BC22-8E49202DE10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD67FCF4-79AE-47EC-BC22-8E49202DE10F}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -336,7 +322,6 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CommonUtils\CommonUtils.projitems*{202fdd15-d741-41eb-9772-4b9f58ba92f1}*SharedItemsImports = 5
 		CommonUtils\CommonUtils.projitems*{5202a86c-4745-4288-bc12-f1dd71b3c124}*SharedItemsImports = 5
-		CommonUtils\CommonUtils.projitems*{a21ca78f-1e7e-4ac1-8483-fbf22d35bac3}*SharedItemsImports = 5
 		CommonUtils\CommonUtils.projitems*{a46ef087-9934-4f90-82aa-e76a9c4f1a79}*SharedItemsImports = 5
 		CommonUtils\CommonUtils.projitems*{c005059e-57ed-49fa-8aaa-d31ce52dc395}*SharedItemsImports = 5
 		CommonUtils\CommonUtils.projitems*{cc48c5d2-463d-439c-b642-690476fce018}*SharedItemsImports = 13
