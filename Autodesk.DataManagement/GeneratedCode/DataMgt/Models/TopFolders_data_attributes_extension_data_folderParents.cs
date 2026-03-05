@@ -9,9 +9,11 @@ namespace Autodesk.DataManagement.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TopFolders_data_attributes_extension_data_folderParents : IParsable
+    public partial class TopFolders_data_attributes_extension_data_folderParents : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The isRoot property</summary>
         public bool? IsRoot { get; set; }
         /// <summary>The parentUrn property</summary>
@@ -38,6 +40,13 @@ namespace Autodesk.DataManagement.Models
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.Models.TopFolders_data_attributes_extension_data_folderParents"/> and sets the default values.
+        /// </summary>
+        public TopFolders_data_attributes_extension_data_folderParents()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.DataManagement.Models
             writer.WriteStringValue("parentUrn", ParentUrn);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

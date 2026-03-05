@@ -11,8 +11,10 @@ namespace Autodesk.DataManagement.Models
     /// Links for multiple pages of data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Paging : IParsable
+    public partial class Paging : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The first property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +47,13 @@ namespace Autodesk.DataManagement.Models
 #else
         public global::Autodesk.DataManagement.Models.Paging_self Self { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.Models.Paging"/> and sets the default values.
+        /// </summary>
+        public Paging()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,6 +89,7 @@ namespace Autodesk.DataManagement.Models
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Paging_next>("next", Next);
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Paging_prev>("prev", Prev);
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Paging_self>("self", Self);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

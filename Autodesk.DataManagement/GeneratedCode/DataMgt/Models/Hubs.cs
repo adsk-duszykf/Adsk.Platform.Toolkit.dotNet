@@ -11,8 +11,10 @@ namespace Autodesk.DataManagement.Models
     /// Successful retrieval of the hubs collection.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Hubs : IParsable
+    public partial class Hubs : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.DataManagement.Models
 #else
         public global::Autodesk.DataManagement.Models.Hubs_links Links { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.Models.Hubs"/> and sets the default values.
+        /// </summary>
+        public Hubs()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.DataManagement.Models
             writer.WriteCollectionOfObjectValues<global::Autodesk.DataManagement.Models.Hubs_data>("data", Data);
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Hubs_jsonapi>("jsonapi", Jsonapi);
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Hubs_links>("links", Links);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

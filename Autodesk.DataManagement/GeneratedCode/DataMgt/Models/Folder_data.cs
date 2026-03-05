@@ -9,9 +9,11 @@ namespace Autodesk.DataManagement.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Folder_data : IParsable
+    public partial class Folder_data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Autodesk.DataManagement.Models
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.Models.Folder_data"/> and sets the default values.
+        /// </summary>
+        public Folder_data()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.DataManagement.Models.Folder_data"/></returns>
@@ -89,6 +98,7 @@ namespace Autodesk.DataManagement.Models
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Folder_data_links>("links", Links);
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Folder_data_relationships>("relationships", Relationships);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

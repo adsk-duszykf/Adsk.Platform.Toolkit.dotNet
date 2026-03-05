@@ -9,9 +9,11 @@ namespace Autodesk.DataManagement.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Search_data_relationships_derivatives : IParsable
+    public partial class Search_data_relationships_derivatives : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.DataManagement.Models
 #else
         public global::Autodesk.DataManagement.Models.Search_data_relationships_derivatives_meta Meta { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.DataManagement.Models.Search_data_relationships_derivatives"/> and sets the default values.
+        /// </summary>
+        public Search_data_relationships_derivatives()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.DataManagement.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Search_data_relationships_derivatives_data>("data", Data);
             writer.WriteObjectValue<global::Autodesk.DataManagement.Models.Search_data_relationships_derivatives_meta>("meta", Meta);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
