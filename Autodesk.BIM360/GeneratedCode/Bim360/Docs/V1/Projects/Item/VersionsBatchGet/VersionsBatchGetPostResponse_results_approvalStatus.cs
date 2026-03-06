@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
     /// <summary>
-    /// The approval status of the version. Only available when the review has been approved or rejected. For more information about the approval workflow, see the `Approval Workflows and Document Review &lt;http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2CC9A86E-2F4F-48EB-8EFA-FAA5FBECC20E&gt;`_ documentation.
+    /// The approval status of the version. Only available when the review has been approved or rejected. For more information about the approval workflow, see the [Approval Workflows and Document Review](http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2CC9A86E-2F4F-48EB-8EFA-FAA5FBECC20E) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VersionsBatchGetPostResponse_results_approvalStatus : IParsable
@@ -21,7 +21,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The value of the approval status.Possible values: ``approved``, ``rejected``</summary>
+        /// <summary>The value of the approval status.Possible values: `approved`, `rejected`</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_approvalStatus_value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

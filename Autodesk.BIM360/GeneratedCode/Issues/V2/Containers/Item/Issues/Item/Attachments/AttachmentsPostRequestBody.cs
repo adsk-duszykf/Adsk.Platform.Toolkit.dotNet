@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Use this attribute if ``urnType=dm``.Note that response format can be either dm -``urn:adsk.objects:os.object:wip.dm.prod/...`` or oss - ``urn:adsk.wipprod:dm.lineage:...``</summary>
+        /// <summary>Use this attribute if `urnType=dm`.Note that response format can be either dm -`urn:adsk.objects:os.object:wip.dm.prod/...` or oss - `urn:adsk.wipprod:dm.lineage:...`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Urn { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 #else
         public string Urn { get; set; }
 #endif
-        /// <summary>urnType attribute indicates the type of storage where the attachment will be stored.If urnType is set to ``oss``, it indicates that the URN refers to a file stored in an Object Storage Service (OSS). see the `Attach local attachment to an Issue &lt;/en/docs/bim360/v1/tutorials/attach-local-attachment-issues-v2/&gt;`_ tutorialIf urnType is set to ``dm``, it indicates that the URN refers to a file stored in a BIM360 Document Management (DM).Possible Values: ``oss`` or ``dm``.</summary>
+        /// <summary>urnType attribute indicates the type of storage where the attachment will be stored.If urnType is set to `oss`, it indicates that the URN refers to a file stored in an Object Storage Service (OSS). see the [Attach local attachment to an Issue](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/attach-local-attachment-issues-v2/) tutorialIf urnType is set to `dm`, it indicates that the URN refers to a file stored in a BIM360 Document Management (DM).Possible Values: `oss` or `dm`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsPostRequestBody_urnType? UrnType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

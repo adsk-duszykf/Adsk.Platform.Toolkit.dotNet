@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers
     public partial class ContainersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.locations.v2.containers.item collection</summary>
-        /// <param name="position">The container ID. To find the ID, see the `Retrieve a container ID tutorial &lt;/en/docs/bim360/v1/tutorials/retrieve-locations-container-id&gt;`_.</param>
+        /// <param name="position">The container ID. To find the ID, see the [Retrieve a container ID tutorial](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/retrieve-locations-container-id).</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.WithContainerItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.WithContainerItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers
             }
         }
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.locations.v2.containers.item collection</summary>
-        /// <param name="position">The container ID. To find the ID, see the `Retrieve a container ID tutorial &lt;/en/docs/bim360/v1/tutorials/retrieve-locations-container-id&gt;`_.</param>
+        /// <param name="position">The container ID. To find the ID, see the [Retrieve a container ID tutorial](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/retrieve-locations-container-id).</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.WithContainerItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.WithContainerItemRequestBuilder this[string position]

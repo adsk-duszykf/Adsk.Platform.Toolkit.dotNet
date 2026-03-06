@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Payments.Item
 #else
         public string CompanyId { get; set; }
 #endif
-        /// <summary>The unique ID (UUID) of the company in this account. Detailed company information can be retrieved using this UUID by calling `GET companies/:company_id &lt;en/docs/bim360/v1/reference/http/companies-:company_id-GET/&gt;`_ in the response.</summary>
+        /// <summary>The unique ID (UUID) of the company in this account. Detailed company information can be retrieved using this UUID by calling [GET companies/:company_id](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/companies-:company_id-GET/) in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyUid { get; set; }

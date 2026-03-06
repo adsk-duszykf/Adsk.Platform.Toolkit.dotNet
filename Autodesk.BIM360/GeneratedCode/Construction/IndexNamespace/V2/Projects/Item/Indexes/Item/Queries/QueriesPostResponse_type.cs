@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries
 {
-    /// <summary>type.Possible values: ``INDEX``</summary>
+    /// <summary>type.Possible values: `INDEX`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum QueriesPostResponse_type
     {

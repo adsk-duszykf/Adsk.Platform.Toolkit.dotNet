@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows
             get => new global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.workflows.item collection</summary>
-        /// <param name="position">The type of the item with which the actions are associated. Possible values: ``FormInstance``, ``CostItem``, ``OCO``, ``PCO``, ``RCO``, ``RFQ``, ``SCO``, ``Expense``, ``Contract``, ``CostPayment``, ``BudgetPayment``, ``BudgetTransfer``, ``MainContract``.</param>
+        /// <param name="position">The type of the item with which the actions are associated. Possible values: `FormInstance`, `CostItem`, `OCO`, `PCO`, `RCO`, `RFQ`, `SCO`, `Expense`, `Contract`, `CostPayment`, `BudgetPayment`, `BudgetTransfer`, `MainContract`.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Item.WithAssociationTypeItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Item.WithAssociationTypeItemRequestBuilder this[string position]
         {

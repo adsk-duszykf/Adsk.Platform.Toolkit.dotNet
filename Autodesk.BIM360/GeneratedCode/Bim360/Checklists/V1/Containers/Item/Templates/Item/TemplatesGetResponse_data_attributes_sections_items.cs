@@ -24,13 +24,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_instructions> Instructions { get; set; }
 #endif
-        /// <summary>* If ``true``, it is required to answer this question.* If ``false``, it is optional to answer this question.</summary>
+        /// <summary>* If `true`, it is required to answer this question.* If `false`, it is optional to answer this question.</summary>
         public bool? IsRequired { get; set; }
         /// <summary>identifier for existing item</summary>
         public double? ItemId { get; set; }
         /// <summary>identifier for item version. if not given the lastest version is selected</summary>
         public double? ItemVersionId { get; set; }
-        /// <summary>&apos;The item number according to the order the item was created in the template. The number is displayed in the format that is defined in ``included.items.attributes.sectionNumbering.id``.</summary>
+        /// <summary>&apos;The item number according to the order the item was created in the template. The number is displayed in the format that is defined in `included.items.attributes.sectionNumbering.id`.</summary>
         public double? Number { get; set; }
         /// <summary>The list of properties that a user with edit permission is allowed to modify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

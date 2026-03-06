@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
+    /// <summary>
+    /// The data object.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class InstancesGetResponse_data : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The attributes object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_data_relationships Relationships { get; set; }
 #endif
-        /// <summary>The type of object; will always be ``instances``.</summary>
+        /// <summary>The type of object; will always be `instances`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

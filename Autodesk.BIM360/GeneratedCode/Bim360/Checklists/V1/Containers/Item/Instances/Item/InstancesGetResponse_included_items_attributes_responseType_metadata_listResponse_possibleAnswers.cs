@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     public partial class InstancesGetResponse_included_items_attributes_responseType_metadata_listResponse_possibleAnswers : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether the answer is conforming. Possible values:``1`` - conforming - indicates that the answer is an acceptible response to the question.``2`` - non-conforming - indicates that the answer is not an acceptible response to the question.</summary>
+        /// <summary>Indicates whether the answer is conforming. Possible values:`1` - conforming - indicates that the answer is an acceptible response to the question.`2` - non-conforming - indicates that the answer is not an acceptible response to the question.</summary>
         public double? ConformanceType { get; set; }
         /// <summary>The ID of the answer.</summary>
         public Guid? Id { get; set; }

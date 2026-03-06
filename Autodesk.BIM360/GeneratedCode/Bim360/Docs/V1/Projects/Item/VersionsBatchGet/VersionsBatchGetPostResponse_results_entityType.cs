@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
-    /// <summary>The type of version. Possible values:- ``SEED_FILE``: Documents that were not split into sheets when they were uploaded to BIM 360 Document Management.- ``DOCUMENT``: Documents that were split into sheets when they were uploaded to BIM 360 Document Management.</summary>
+    /// <summary>The type of version. Possible values:- `SEED_FILE`: Documents that were not split into sheets when they were uploaded to BIM 360 Document Management.- `DOCUMENT`: Documents that were split into sheets when they were uploaded to BIM 360 Document Management.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VersionsBatchGetPostResponse_results_entityType
     {

@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
     public partial class WithIssueGetResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The unique Autodesk ID of the User/Company/Role of the current assignee for this issue. Note that if you select an assignee ID, you also need to select a type (``assignedToType``).</summary>
+        /// <summary>The unique Autodesk ID of the User/Company/Role of the current assignee for this issue. Note that if you select an assignee ID, you also need to select a type (`assignedToType`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>The type of the current assignee of this issue. Possible values: ``user``, ``company``, ``role``, ``null``.</summary>
+        /// <summary>The type of the current assignee of this issue. Possible values: `user`, `company`, `role`, `null`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_assignedToType? AssignedToType { get; set; }
         /// <summary>The Asterisk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public string OwnerId { get; set; }
 #endif
-        /// <summary>The list of actions permitted for the user for this issue in its current state.Possible Values: ``assign_all``, ``assign_same_company``, ``assign_creator_or_owner``, ``clear_assignee``, ``add_comment``, ``add_attachment``, ``remove_attachment``.The following values are not relevant: ``add_attachment``, ``remove_attachment``.</summary>
+        /// <summary>The list of actions permitted for the user for this issue in its current state.Possible Values: `assign_all`, `assign_same_company`, `assign_creator_or_owner`, `clear_assignee`, `add_comment`, `add_attachment`, `remove_attachment`.The following values are not relevant: `add_attachment`, `remove_attachment`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_permittedActions? PermittedActions { get; set; }
@@ -154,7 +154,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_permittedActions PermittedActions { get; set; }
 #endif
-        /// <summary>A list of attributes the current user can manipulate in the current context. ``issueTypeId``, ``linkedDocument``, ``links``, ``ownerId``, ``officialResponse``, ``rootCauseId``, ``snapshotUrn`` are not applicable.Possible Values: ``title``, ``description``, ``issueTypeId``, ``issueSubtypeId``, ``status``, ``assignedTo``, ``assignedToType``, ``dueDate``, ``locationId``, ``locationDetails``, ``linkedDocuments``, ``links``, ``ownerId``, ``rootCauseId``, ``officialResponse``, ``customAttributes``, ``clientUpdatedAt``, ``snapshotUrn``.</summary>
+        /// <summary>A list of attributes the current user can manipulate in the current context. `issueTypeId`, `linkedDocument`, `links`, `ownerId`, `officialResponse`, `rootCauseId`, `snapshotUrn` are not applicable.Possible Values: `title`, `description`, `issueTypeId`, `issueSubtypeId`, `status`, `assignedTo`, `assignedToType`, `dueDate`, `locationId`, `locationDetails`, `linkedDocuments`, `links`, `ownerId`, `rootCauseId`, `officialResponse`, `customAttributes`, `clientUpdatedAt`, `snapshotUrn`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedAttributes { get; set; }
@@ -162,7 +162,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
-        /// <summary>A list of statuses accessible to the current user, this is based on the current status of the issue and the user permissions.Possible Values: ``draft``, ``open``, ``work_completed``, ``ready_to_inspect``, ``in_dispute``, ``not_approved``, ``answered``, ``void``, ``closed``.</summary>
+        /// <summary>A list of statuses accessible to the current user, this is based on the current status of the issue and the user permissions.Possible Values: `draft`, `open`, `work_completed`, `ready_to_inspect`, `in_dispute`, `not_approved`, `answered`, `void`, `closed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedStatuses { get; set; }
@@ -188,7 +188,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public string SnapshotWipUrn { get; set; }
 #endif
-        /// <summary>The unique identifier of the current status of the issuePossible values: ``draft``, ``open``, ``work_completed``, ``ready_to_inspect``, ``in_dispute``, ``not_approved``, ``answered``, ``void``, ``closed``</summary>
+        /// <summary>The unique identifier of the current status of the issuePossible values: `draft`, `open`, `work_completed`, `ready_to_inspect`, `in_dispute`, `not_approved`, `answered`, `void`, `closed`</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_status? Status { get; set; }
         /// <summary>The title of the issue.Max length: 4200</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

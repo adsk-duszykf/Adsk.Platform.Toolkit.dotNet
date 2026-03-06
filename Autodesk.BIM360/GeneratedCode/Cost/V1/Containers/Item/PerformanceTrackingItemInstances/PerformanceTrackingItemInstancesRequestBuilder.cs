@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
     public partial class PerformanceTrackingItemInstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.performanceTrackingItemInstances.item collection</summary>
-        /// <param name="position">The tracking item instance ID. To find the instance ID, call `GET performance-tracking-item-instances &lt;/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-GET/&gt;`_ and inspect ``results.id`` in the response.</param>
+        /// <param name="position">The tracking item instance ID. To find the instance ID, call [GET performance-tracking-item-instances](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-GET/) and inspect `results.id` in the response.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         {
         }
         /// <summary>
-        /// Retrieves performance tracking item instances for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves one or more performance tracking item instances in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves performance tracking item instances for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves one or more performance tracking item instances in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that a default tracking item instance is automatically generated when a tracking item is created, so use this endpoint only to create additional tracking item instances.
+        /// Creates a performance tracking item instance based on the specified tracking item in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesPostResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that a default tracking item instance is automatically generated when a tracking item is created, so use this endpoint only to create additional tracking item instances.
+        /// Creates a performance tracking item instance based on the specified tracking item in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -124,7 +124,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves performance tracking item instances for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves one or more performance tracking item instances in the given project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return requestInfo;
         }
         /// <summary>
-        /// Note that a default tracking item instance is automatically generated when a tracking item is created, so use this endpoint only to create additional tracking item instances.
+        /// Creates a performance tracking item instance based on the specified tracking item in the given project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -174,12 +174,12 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return new global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves performance tracking item instances for the specified container. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves one or more performance tracking item instances in the given project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PerformanceTrackingItemInstancesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter data that belong to associated budget code. For example, ``filter[budgetCode]=code1,code2``.</summary>
+            /// <summary>Filter data that belong to associated budget code. For example, `filter[budgetCode]=code1,code2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BbudgetCode%5D")]
@@ -189,7 +189,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             [QueryParameter("filter%5BbudgetCode%5D")]
             public string[] FilterbudgetCode { get; set; }
 #endif
-            /// <summary>Returns only tracking item instances that belong to the budgets identified by the provided list of budget IDs (separated with commas). For example, ``filter[budgetId]=id1,id2``. Note that you can return the instances that are not linked to any budget using ``filter[budgetId]=blank``. To find budget IDs, call `GET budgets &lt;/en/docs/bim360/v1/reference/http/cost-budgets-GET/&gt;`_ and inspect ``results.id`` in the response.</summary>
+            /// <summary>Returns only tracking item instances that belong to the budgets identified by the provided list of budget IDs (separated with commas). For example, `filter[budgetId]=id1,id2`. Note that you can return the instances that are not linked to any budget using `filter[budgetId]=blank`. To find budget IDs, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.id` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BbudgetId%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             [QueryParameter("filter%5BbudgetId%5D")]
             public string[] FilterbudgetId { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -209,7 +209,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -219,7 +219,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>The item&apos;s name. For example, ``filter[name]=Labor,Material``.</summary>
+            /// <summary>The item&apos;s name. For example, `filter[name]=Labor,Material`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bname%5D")]
@@ -229,7 +229,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             [QueryParameter("filter%5Bname%5D")]
             public string[] Filtername { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of auto-generated sequence numbers. Separate multiple numbers with commas; for example, ``filter[number]=0001,0002``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of auto-generated sequence numbers. Separate multiple numbers with commas; for example, `filter[number]=0001,0002`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bnumber%5D")]
@@ -239,13 +239,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             [QueryParameter("filter%5Bnumber%5D")]
             public string[] Filternumber { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

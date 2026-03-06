@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
         {
         }
         /// <summary>
-        /// GET containers/{containerId}/instances/{id}
+        /// Retrieves detailed information about a single [BIM 360 Field Management](https://field.b360.autodesk.com/) checklist (`instance`).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/instances/{id}
+        /// Retrieves detailed information about a single [BIM 360 Field Management](https://field.b360.autodesk.com/) checklist (`instance`).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/instances/{id}
+        /// Retrieves detailed information about a single [BIM 360 Field Management](https://field.b360.autodesk.com/) checklist (`instance`).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,12 +98,12 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             return new global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET containers/{containerId}/instances/{id}
+        /// Retrieves detailed information about a single [BIM 360 Field Management](https://field.b360.autodesk.com/) checklist (`instance`).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InstancesItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas; for example, ``fields[instances]=createdAt,templateType.`` For more details, see `JSON API Sparse Fieldsets &lt;http://jsonapi.org/format/#fetching-sparse-fieldsets&gt;`_.</summary>
+            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas; for example, `fields[instances]=createdAt,templateType.` For more details, see [JSON API Sparse Fieldsets](http://jsonapi.org/format/#fetching-sparse-fieldsets).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields%5Binstances%5D")]
@@ -113,7 +113,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             [QueryParameter("fields%5Binstances%5D")]
             public string Fieldsinstances { get; set; }
 #endif
-            /// <summary>Include additional data about the checklist&apos;s items, sections, and attachments.Possible values:``sections`` - sections``sections.items`` - items``sections.items.attachments`` - attachmentsFor example, ``include=sections,sections.items,items.attachments``.</summary>
+            /// <summary>Include additional data about the checklist&apos;s items, sections, and attachments.Possible values:`sections` - sections`sections.items` - items`sections.items.attachments` - attachmentsFor example, `include=sections,sections.items,items.attachments`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -123,7 +123,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>Indicates whether the reponse should include the checklist&apos;s instance-level signature.* If ``true``, this endpoint will return the instance-level ``signatures`` object containing the requested checklist&apos;s final signoff signature, along with all section signatures.* If ``false``, this endpoint will not return the instance-level ``signatures`` object for the requested checklist, but will still return the section signatures.</summary>
+            /// <summary>Indicates whether the reponse should include the checklist&apos;s instance-level signature.* If `true`, this endpoint will return the instance-level `signatures` object containing the requested checklist&apos;s final signoff signature, along with all section signatures.* If `false`, this endpoint will not return the instance-level `signatures` object for the requested checklist, but will still return the section signatures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("signatures")]

@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssuePatchResponse_links_data Data { get; set; }
 #endif
-        /// <summary>The type of the entity link Will always be: ``checklist``</summary>
+        /// <summary>The type of the entity link Will always be: `checklist`</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssuePatchResponse_links_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
     public partial class InstancesGetResponse_data_attributes_signatures : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time that the resource was created, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The type of object in which the signature is defined. This can be an instance or a template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public string DefinedAt { get; set; }
 #endif
-        /// <summary>The date and time that the resource was deleted, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``. This is used for offline mobile database managment.</summary>
+        /// <summary>The date and time that the resource was deleted, in the following format: `YYYY-MM-DDThh:mm:ss.sz`. This is used for offline mobile database managment.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>The properties of the individual signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,9 +44,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public string InstanceRevision { get; set; }
 #endif
-        /// <summary>* If ``true``, the signature is required.* If ``false``, the signature is not required.Currently, all signatures are required.</summary>
+        /// <summary>* If `true`, the signature is required.* If `false`, the signature is not required.Currently, all signatures are required.</summary>
         public bool? IsRequired { get; set; }
-        /// <summary>* If ``true``, the instance is signed.* If ``false``, the instance is not signed.</summary>
+        /// <summary>* If `true`, the instance is signed.* If `false`, the instance is not signed.</summary>
         public bool? IsSigned { get; set; }
         /// <summary>The list of actions that the user is permitted to perform on the signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public string SubmittedBy { get; set; }
 #endif
-        /// <summary>The date and time that the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The URN of the signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

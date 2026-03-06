@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts
     public partial class AccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.construction.admin.v1.accounts.item collection</summary>
-        /// <param name="position">The ID of the ACC account that contains the project being created or the projects being retrieved. This corresponds to the hub ID in the `Data Management API &lt;/en/docs/data/v2/&gt;`_. To convert a hub ID into an account ID, remove the ``**b.**`` prefix. For example, a hub ID of ``b.c8b0c73d-3ae9`` translates to an account ID of ``c8b0c73d-3ae9``.</param>
+        /// <param name="position">The ID of the ACC account that contains the project being created or the projects being retrieved. This corresponds to the hub ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). To convert a hub ID into an account ID, remove the `b.` prefix. For example, a hub ID of `b.c8b0c73d-3ae9` translates to an account ID of `c8b0c73d-3ae9`.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.WithAccountItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.WithAccountItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts
             }
         }
         /// <summary>Gets an item from the Autodesk.BIM360.construction.admin.v1.accounts.item collection</summary>
-        /// <param name="position">The ID of the ACC account that contains the project being created or the projects being retrieved. This corresponds to the hub ID in the `Data Management API &lt;/en/docs/data/v2/&gt;`_. To convert a hub ID into an account ID, remove the ``**b.**`` prefix. For example, a hub ID of ``b.c8b0c73d-3ae9`` translates to an account ID of ``c8b0c73d-3ae9``.</param>
+        /// <param name="position">The ID of the ACC account that contains the project being created or the projects being retrieved. This corresponds to the hub ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). To convert a hub ID into an account ID, remove the `b.` prefix. For example, a hub ID of `b.c8b0c73d-3ae9` translates to an account ID of `c8b0c73d-3ae9`.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.WithAccountItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.WithAccountItemRequestBuilder this[string position]

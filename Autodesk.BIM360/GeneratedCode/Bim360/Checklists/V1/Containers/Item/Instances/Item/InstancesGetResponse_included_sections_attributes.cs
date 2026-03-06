@@ -55,7 +55,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string ModifiedBy { get; set; }
 #endif
-        /// <summary>The section number according to the order the section was created in the template. The number is displayed in the format that is defined in ``included.sections.attributes.sectionNumbering.id``.To find the section number according to the order it appears in the UI, see ``included.sections.attributes.index``.</summary>
+        /// <summary>The section number according to the order the section was created in the template. The number is displayed in the format that is defined in `included.sections.attributes.sectionNumbering.id`.To find the section number according to the order it appears in the UI, see `included.sections.attributes.index`.</summary>
         public double? Number { get; set; }
         /// <summary>List of Actions that the user is permitted to do on the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_attributes_sectionNumbering SectionNumbering { get; set; }
 #endif
-        /// <summary>The list of signature items in a particular section. For information about checklist-level signatures, see the ``data`` object.</summary>
+        /// <summary>The list of signature items in a particular section. For information about checklist-level signatures, see the `data` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_attributes_sectionSignatures>? SectionSignatures { get; set; }
@@ -89,7 +89,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_attributes_sectionSignatures> SectionSignatures { get; set; }
 #endif
-        /// <summary>The status of the section. Possible values: ``Completed``, ``Not Completed``.</summary>
+        /// <summary>The status of the section. Possible values: `Completed`, `Not Completed`.</summary>
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_attributes_status? Status { get; set; }
         /// <summary>The ID of the section in the template.</summary>
         public double? TemplateSectionId { get; set; }
@@ -101,7 +101,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The date and time that the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

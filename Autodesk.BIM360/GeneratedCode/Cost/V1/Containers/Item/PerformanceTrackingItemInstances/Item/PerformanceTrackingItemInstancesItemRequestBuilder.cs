@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         {
         }
         /// <summary>
-        /// Deletes a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Deletes a performance tracking item instance with the specified ID in the given project.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a performance tracking item instance by ID in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a performance tracking item instance by ID in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Updates a performance tracking item instance by ID in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Updates a performance tracking item instance by ID in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -128,7 +128,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Deletes a performance tracking item instance with the specified ID in the given project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +146,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a performance tracking item instance by ID in the given project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             return requestInfo;
         }
         /// <summary>
-        /// Updates a specific performance tracking item instance. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Updates a performance tracking item instance by ID in the given project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

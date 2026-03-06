@@ -13,7 +13,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_data_attributes : IParsable
     {
-        /// <summary>* If ``true``, the user can be assigned to the checklist sections.* If ``false``, the user cannot be assigned to the checklist sections.</summary>
+        /// <summary>* If `true`, the user can be assigned to the checklist sections.* If `false`, the user cannot be assigned to the checklist sections.</summary>
         public bool? AllowSectionAssignee { get; set; }
         /// <summary>A list of users who have been assigned to the checklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +25,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #endif
         /// <summary>The number of completed checklist items.</summary>
         public double? CompletedItemsCount { get; set; }
-        /// <summary>The date and time that the resource was created, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the checklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,7 +35,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public string CreatedBy { get; set; }
 #endif
-        /// <summary>The date and time that the resource was deleted, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``. This is used for offline mobile database managment.</summary>
+        /// <summary>The date and time that the resource was deleted, in the following format: `YYYY-MM-DDThh:mm:ss.sz`. This is used for offline mobile database managment.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,9 +79,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
-        /// <summary>The percentage of checklist items that are completed; calculated using ``data.attributes.completedItemsCount`` and ``data.meta.totalItems``.</summary>
+        /// <summary>The percentage of checklist items that are completed; calculated using `data.attributes.completedItemsCount` and `data.meta.totalItems`.</summary>
         public double? Progress { get; set; }
-        /// <summary>The due date for the checklist, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The due date for the checklist, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? ScheduledDate { get; set; }
         /// <summary>A list of final signoff signatures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes_signatures> Signatures { get; set; }
 #endif
-        /// <summary>The signatures status of the checklist. Possible values:``Pending`` - all sections are complete but one or more signatures are required.``Required`` - not all sections are complete, and one or more signatures are required.``Signed`` - no more signatures are required.``None`` - signatures are not needed.</summary>
+        /// <summary>The signatures status of the checklist. Possible values:`Pending` - all sections are complete but one or more signatures are required.`Required` - not all sections are complete, and one or more signatures are required.`Signed` - no more signatures are required.`None` - signatures are not needed.</summary>
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes_signaturesStatus? SignaturesStatus { get; set; }
         /// <summary>Information about the status of the checklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes_status Status { get; set; }
 #endif
-        /// <summary>Information about the type of template.Possible values:``1`` - Quality``6`` - Punch List``11`` - Safety``15`` - Commissioning</summary>
+        /// <summary>Information about the type of template.Possible values:`1` - Quality`6` - Punch List`11` - Safety`15` - Commissioning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes_templateType? TemplateType { get; set; }
@@ -127,7 +127,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes_trades> Trades { get; set; }
 #endif
-        /// <summary>The date and time that the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

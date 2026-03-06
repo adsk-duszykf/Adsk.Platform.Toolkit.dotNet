@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSetsBatchGet
 #else
         public string Bucket { get; set; }
 #endif
-        /// <summary>The color of the status as the status appears in the Assets UI.This field is not restricted as it is primarily a tool for the Assets UI to use.However, there are only certain colors that the BIM 360 Assets UI knows how to operate with. Understoodcolor values are: ``red-orange``, ``red``, ``magenta``, ``indigo``, ``purple``, ``dark-blue``, ``blue``,``light-blue``, ``turquoise``, ``sea-green``, ``green``, ``light-green``, ``yellow-green``, ``yellow``,``yellow-orange``, ``orange``, ``brown``, ``pink``, and ``gray-dark``.Using colors other than those specified here is not disallowed, but may result in unexpected behavior inthe Assets UI.</summary>
+        /// <summary>The color of the status as the status appears in the Assets UI.This field is not restricted as it is primarily a tool for the Assets UI to use.However, there are only certain colors that the BIM 360 Assets UI knows how to operate with. Understoodcolor values are: `red-orange`, `red`, `magenta`, `indigo`, `purple`, `dark-blue`, `blue`,`light-blue`, `turquoise`, `sea-green`, `green`, `light-green`, `yellow-green`, `yellow`,`yellow-orange`, `orange`, `brown`, `pink`, and `gray-dark`.Using colors other than those specified here is not disallowed, but may result in unexpected behavior inthe Assets UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -76,9 +76,9 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSetsBatchGet
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A flag indicating whether the component is active or inactive (``isActive`` is ``true`` if-and-only-if ``deletedAt`` is empty).</summary>
+        /// <summary>A flag indicating whether the component is active or inactive (`isActive` is `true` if-and-only-if `deletedAt` is empty).</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The display label of the status. This label appears in the Assets UI when viewing statuses. The label mustbe unique within this status set, but does not need to be unique within the project (in other words, thesame label can be used in multiple status sets in the same project). ``Uniqueness`` in this context meanscase-insensitive.</summary>
+        /// <summary>The display label of the status. This label appears in the Assets UI when viewing statuses. The label mustbe unique within this status set, but does not need to be unique within the project (in other words, thesame label can be used in multiple status sets in the same project). `Uniqueness` in this context meanscase-insensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -86,7 +86,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSetsBatchGet
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The BIM 360 project ID. Must be a UUID or a project ID of the form ``b.{UUID}``.</summary>
+        /// <summary>The BIM 360 project ID. Must be a UUID or a project ID of the form `b.{UUID}`.</summary>
         public Guid? ProjectId { get; set; }
         /// <summary>A value that indicates the order of a status within its status set. Each status in the set has a sortorder value that indicates its order relative to other statuses in the set. A status set&apos;s sort ordervalues don&apos;t necessarily start at 1, and may not be sequential. The only way to know a status&apos;s orderwithin a set is to compare its sort order value with the sort order values of other statuses.</summary>
         public int? SortOrder { get; set; }

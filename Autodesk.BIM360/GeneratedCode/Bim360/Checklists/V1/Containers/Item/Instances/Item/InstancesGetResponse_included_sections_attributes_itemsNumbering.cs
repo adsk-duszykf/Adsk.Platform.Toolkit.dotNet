@@ -13,9 +13,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_included_sections_attributes_itemsNumbering : IParsable
     {
-        /// <summary>The ID of the numbering system. Possible values: ``1`` (Numeric), ``2`` (Alphabetical), ``3`` (Numeric-Hierarchy).</summary>
+        /// <summary>The ID of the numbering system. Possible values: `1` (Numeric), `2` (Alphabetical), `3` (Numeric-Hierarchy).</summary>
         public int? Id { get; set; }
-        /// <summary>The name of the numbering system. Possible values: ``Numeric``, ``Alphabetical``, ``Numeric-Hierarchy``.</summary>
+        /// <summary>The name of the numbering system. Possible values: `Numeric`, `Alphabetical`, `Numeric-Hierarchy`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

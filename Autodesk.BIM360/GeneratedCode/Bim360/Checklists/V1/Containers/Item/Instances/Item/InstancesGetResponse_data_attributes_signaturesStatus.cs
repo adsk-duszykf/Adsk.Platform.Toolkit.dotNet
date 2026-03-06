@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
-    /// <summary>The signatures status of the checklist. Possible values:``Pending`` - all sections are complete but one or more signatures are required.``Required`` - not all sections are complete, and one or more signatures are required.``Signed`` - no more signatures are required.``None`` - signatures are not needed.</summary>
+    /// <summary>The signatures status of the checklist. Possible values:`Pending` - all sections are complete but one or more signatures are required.`Required` - not all sections are complete, and one or more signatures are required.`Signed` - no more signatures are required.`None` - signatures are not needed.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InstancesGetResponse_data_attributes_signaturesStatus
     {

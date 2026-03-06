@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus
 {
     /// <summary>
-    /// `SQL AST for binary expression/filter &lt;/en/docs/acc/v1/tutorials/model-properties/query-ref/&gt;`_
+    /// [SQL AST for binary expression/filter](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndexesBatchStatusPostRequestBody_versions_query : IParsable

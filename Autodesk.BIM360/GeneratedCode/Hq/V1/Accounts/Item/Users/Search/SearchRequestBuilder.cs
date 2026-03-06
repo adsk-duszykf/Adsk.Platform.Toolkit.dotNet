@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
         {
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
             return new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Search users in the master member directory of a specific BIM 360 account by specified fields.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 

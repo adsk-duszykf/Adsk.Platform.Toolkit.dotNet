@@ -59,7 +59,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Scre
         {
         }
         /// <summary>
-        /// Returns a token representing the uploaded screenshot.
+        /// Uploads a screenshot, associating it with a given model set.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -79,7 +79,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Scre
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a token representing the uploaded screenshot.
+        /// Uploads a screenshot, associating it with a given model set.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -100,7 +100,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Scre
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a token representing the uploaded screenshot.
+        /// Uploads a screenshot, associating it with a given model set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

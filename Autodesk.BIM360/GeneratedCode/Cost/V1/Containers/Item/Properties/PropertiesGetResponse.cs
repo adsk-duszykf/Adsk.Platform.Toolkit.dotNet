@@ -50,7 +50,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Properties
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>List of items for an ``options`` type attribute.</summary>
+        /// <summary>List of items for an `options` type attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Options { get; set; }
@@ -60,7 +60,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Properties
 #endif
         /// <summary>The position of the attribute definition as displayed in BIM 360 Cost Management.</summary>
         public double? Position { get; set; }
-        /// <summary>Type of the attribute definition.Possible values: ``text``, ``multiline``, ``richtext``, ``options``, ``boolean``, ``integer``, ``percent``, ``currency``, ``number``, ``datetime``</summary>
+        /// <summary>Type of the attribute definition.Possible values: `text`, `multiline`, `richtext`, `options`, `boolean`, `integer`, `percent`, `currency`, `number`, `datetime`</summary>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Properties.PropertiesGetResponse_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

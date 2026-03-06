@@ -20,9 +20,9 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.It
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>The recorded input quantity, typically used in performance tracking. For example, in labor tracking, ``inputQuantity`` represents man-hours utilized.</summary>
+        /// <summary>The recorded input quantity, typically used in performance tracking. For example, in labor tracking, `inputQuantity` represents man-hours utilized.</summary>
         public double? InputQuantity { get; set; }
-        /// <summary>The field that is locked for cost calculations. This ensures the locked value remains unchanged during updates. Possible values: ``value``, ``quantity``, ``unitPrice``. For example, if you set ``unitPrice`` at $100, you can adjust the ``quantity`` while keeping the cost fixed.</summary>
+        /// <summary>The field that is locked for cost calculations. This ensures the locked value remains unchanged during updates. Possible values: `value`, `quantity`, `unitPrice`. For example, if you set `unitPrice` at $100, you can adjust the `quantity` while keeping the cost fixed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LockedField { get; set; }
@@ -40,7 +40,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.It
 #endif
         /// <summary>The planned number of units for the sub cost item.</summary>
         public double? Quantity { get; set; }
-        /// <summary>The unit of measurement for the sub cost item. This value is configured in the ``Unit of measure`` settings for the project. Common units include ``ea`` (Each), ``gal`` (Gallon), and various volume, length, and time measurements.Max length: 1024</summary>
+        /// <summary>The unit of measurement for the sub cost item. This value is configured in the `Unit of measure` settings for the project. Common units include `ea` (Each), `gal` (Gallon), and various volume, length, and time measurements.Max length: 1024</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; set; }
@@ -50,7 +50,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.It
 #endif
         /// <summary>The price per unit of the sub cost item.</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>The total value of the sub cost item, calculated as ``quantity`` * ``unitPrice``.</summary>
+        /// <summary>The total value of the sub cost item, calculated as `quantity` * `unitPrice`.</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

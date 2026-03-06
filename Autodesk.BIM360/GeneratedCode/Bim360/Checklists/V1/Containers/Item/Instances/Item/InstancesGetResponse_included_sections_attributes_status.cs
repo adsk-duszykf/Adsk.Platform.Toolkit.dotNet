@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
-    /// <summary>The status of the section. Possible values: ``Completed``, ``Not Completed``.</summary>
+    /// <summary>The status of the section. Possible values: `Completed`, `Not Completed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InstancesGetResponse_included_sections_attributes_status
     {

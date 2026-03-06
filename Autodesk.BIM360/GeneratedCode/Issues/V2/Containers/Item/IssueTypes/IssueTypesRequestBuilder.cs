@@ -103,7 +103,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssueTypesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Retrieves types that were last deleted at the specified date and time range, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``To include non-deleted items in the response, add ``null`` to the filter:  ``filter[deletedAt]=null,YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz``.For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves types that were last deleted at the specified date and time range, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`To include non-deleted items in the response, add `null` to the filter:  `filter[deletedAt]=null,YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz`.For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BdeletedAt%5D")]
@@ -113,10 +113,10 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
             [QueryParameter("filter%5BdeletedAt%5D")]
             public string FilterdeletedAt { get; set; }
 #endif
-            /// <summary>Filter types by status, e.g. ``filter[isActive]=true`` will only return active types. Default value: ``undefined`` (meaning both active &amp; inactive issue types will return).</summary>
+            /// <summary>Filter types by status, e.g. `filter[isActive]=true` will only return active types. Default value: `undefined` (meaning both active &amp; inactive issue types will return).</summary>
             [QueryParameter("filter%5BisActive%5D")]
             public bool? FilterisActive { get; set; }
-            /// <summary>Retrieves types that were last updated at the specified date and time range, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., ``2022-03-02..2022-03-03`` or ``2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z``- Specific day: e.g., ``2022-03-02`` or ``2022-02-28T22:00:00.000Z``- Specific start date: e.g.,  ``2022-03-02..`` or ``2022-02-28T22:00:00.000Z..``- Specific end date: e.g., ``..2022-03-02`` or ``..2022-02-28T22:00:00.000Z``For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves types that were last updated at the specified date and time range, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -126,7 +126,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>Add ``include=subtypes`` to add the subtypes for each type.</summary>
+            /// <summary>Add `include=subtypes` to add the subtypes for each type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -136,10 +136,10 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
             [QueryParameter("include")]
             public string Include { get; set; }
 #endif
-            /// <summary>Add ``limit=20`` to limit the results count, maximum limit - ``limit=200`` (together with the offset to support pagination).</summary>
+            /// <summary>Add `limit=20` to limit the results count, maximum limit - `limit=200` (together with the offset to support pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Add ``offset=20`` to get partial results (together with the limit to support pagination).</summary>
+            /// <summary>Add `offset=20` to get partial results (together with the limit to support pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

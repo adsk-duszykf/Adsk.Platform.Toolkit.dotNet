@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 {
-    /// <summary>The type of the relationshipPossible values: ``TwoDVectorPushpin``, ``TwoDRasterPushpin``</summary>
+    /// <summary>The type of the relationshipPossible values: `TwoDVectorPushpin`, `TwoDRasterPushpin`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IssuesPostRequestBody_linkedDocuments_type
     {

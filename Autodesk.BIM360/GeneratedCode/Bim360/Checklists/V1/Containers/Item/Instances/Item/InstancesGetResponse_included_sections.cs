@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_relationships Relationships { get; set; }
 #endif
-        /// <summary>The type of object; will be always be ``instance_sections``.</summary>
+        /// <summary>The type of object; will be always be `instance_sections`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

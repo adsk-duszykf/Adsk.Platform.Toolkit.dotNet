@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
     public partial class RelationshipsWritableGetResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The domain to which the entity types belong.For example: ``autodesk-bim360-asset``To learn more about domains and entities, see the `Relationship Service Field Guide &lt;/en/docs/bim360/v1/overview/field-guide/relationships&gt;`_.</summary>
+        /// <summary>The domain to which the entity types belong.For example: `autodesk-bim360-asset`To learn more about domains and entities, see the [Relationship Service Field Guide](https://aps.autodesk.com/en/docs/bim360/v1/overview/field-guide/relationships).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }

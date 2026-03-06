@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest
 {
-    /// <summary>The creation status of the model set version. Possible values: ``Pending``, ``Processing``, ``Successful``, ``Partial``, ``Failed``.</summary>
+    /// <summary>The creation status of the model set version. Possible values: `Pending`, `Processing`, `Successful`, `Partial`, `Failed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LatestGetResponse_status
     {

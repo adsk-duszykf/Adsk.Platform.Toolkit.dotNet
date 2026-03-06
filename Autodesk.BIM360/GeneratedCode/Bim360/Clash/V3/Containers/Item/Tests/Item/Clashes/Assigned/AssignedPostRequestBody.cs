@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
     public partial class AssignedPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of clash group IDs OR BIM 360 issue IDs to query (depending on the value of the ``issues`` query parameter). Min items: 1 Max items: 20.</summary>
+        /// <summary>The list of clash group IDs OR BIM 360 issue IDs to query (depending on the value of the `issues` query parameter). Min items: 1 Max items: 20.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ArrayStringUUID { get; set; }

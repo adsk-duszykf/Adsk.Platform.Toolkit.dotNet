@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
     public partial class StatusStepSetsPostRequestBody_values : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The color of the status as the status appears in the Assets UI.This field is not restricted as it is primarily a tool for the Assets UI to use.However, there are only certain colors that the BIM 360 Assets UI knows how to operate with. Understoodcolor values are: ``red-orange``, ``red``, ``magenta``, ``indigo``, ``purple``, ``dark-blue``, ``blue``,``light-blue``, ``turquoise``, ``sea-green``, ``green``, ``light-green``, ``yellow-green``, ``yellow``,``yellow-orange``, ``orange``, ``brown``, ``pink``, and ``gray-dark``.Using colors other than those specified here is not disallowed, but may result in unexpected behavior inthe Assets UI.</summary>
+        /// <summary>The color of the status as the status appears in the Assets UI.This field is not restricted as it is primarily a tool for the Assets UI to use.However, there are only certain colors that the BIM 360 Assets UI knows how to operate with. Understoodcolor values are: `red-orange`, `red`, `magenta`, `indigo`, `purple`, `dark-blue`, `blue`,`light-blue`, `turquoise`, `sea-green`, `green`, `light-green`, `yellow-green`, `yellow`,`yellow-orange`, `orange`, `brown`, `pink`, and `gray-dark`.Using colors other than those specified here is not disallowed, but may result in unexpected behavior inthe Assets UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The display label of the status. This label appears in the Assets UI when viewing statuses. The label mustbe unique within this status set, but does not need to be unique within the project (in other words, thesame label can be used in multiple status sets in the same project). ``Uniqueness`` in this context meanscase-insensitive.</summary>
+        /// <summary>The display label of the status. This label appears in the Assets UI when viewing statuses. The label mustbe unique within this status set, but does not need to be unique within the project (in other words, thesame label can be used in multiple status sets in the same project). `Uniqueness` in this context meanscase-insensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }

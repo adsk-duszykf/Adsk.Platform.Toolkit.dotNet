@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries
 {
     /// <summary>
-    /// `SQL AST for describing columns/projections &lt;/en/docs/acc/v1/tutorials/model-properties/query-ref/&gt;`_
+    /// [SQL AST for describing columns/projections](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueriesPostRequestBody_columns : IParsable

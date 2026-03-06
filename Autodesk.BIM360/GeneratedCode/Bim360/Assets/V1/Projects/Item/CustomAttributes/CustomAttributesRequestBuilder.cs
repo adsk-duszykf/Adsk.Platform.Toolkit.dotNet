@@ -59,7 +59,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
         {
         }
         /// <summary>
-        /// GET custom-attributes
+        /// Searches for and returns all specified custom attributes.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET custom-attributes
+        /// Searches for and returns all specified custom attributes.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST custom-attributes
+        /// Creates a new Asset custom attribute.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -116,7 +116,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST custom-attributes
+        /// Creates a new Asset custom attribute.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -137,7 +137,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET custom-attributes
+        /// Searches for and returns all specified custom attributes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +156,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             return requestInfo;
         }
         /// <summary>
-        /// POST custom-attributes
+        /// Creates a new Asset custom attribute.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,12 +187,12 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET custom-attributes
+        /// Searches for and returns all specified custom attributes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAttributesRequestBuilderGetQueryParameters 
         {
-            /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;s returned ineach paginated response so that it can be supplied in the next request to continue paginated results. If apaginated response contains no ``cursorState`` value, then there are no further pages to return.Omit this field to initiate a paginated request or to restart pagination.</summary>
+            /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;s returned ineach paginated response so that it can be supplied in the next request to continue paginated results. If apaginated response contains no `cursorState` value, then there are no further pages to return.Omit this field to initiate a paginated request or to restart pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cursorState")]
@@ -202,7 +202,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             [QueryParameter("cursorState")]
             public string CursorState { get; set; }
 #endif
-            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: ``YYYY-MM-DDThh:mm:ss.SSSZ``, A date and time range takes thisformat: ``YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ``. Range queries can be closed or open in eitherdirection: ``YYYY-MM-DDThh:mm:ss.SSSZ..`` or ``..YYYY-MM-DDThh:mm:ss.SSSZ``.</summary>
+            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: `YYYY-MM-DDThh:mm:ss.SSSZ`, A date and time range takes thisformat: `YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ`. Range queries can be closed or open in eitherdirection: `YYYY-MM-DDThh:mm:ss.SSSZ..` or `..YYYY-MM-DDThh:mm:ss.SSSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -212,10 +212,10 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>Whether or not soft-deleted object should be included in the response. If ``true``, soft-deleted objects are returned. If ``false``, they are not. The default is ``false``.</summary>
+            /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
-            /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects than the limit if the Assets service runs out of specified objects to return - at the end of a set of paged results, for example. The maximum limit is ``200``; the default limit is ``25``.</summary>
+            /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects than the limit if the Assets service runs out of specified objects to return - at the end of a set of paged results, for example. The maximum limit is `200`; the default limit is `25`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }
@@ -228,7 +228,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
         {
         }
         /// <summary>
-        /// POST custom-attributes
+        /// Creates a new Asset custom attribute.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAttributesRequestBuilderPostQueryParameters 

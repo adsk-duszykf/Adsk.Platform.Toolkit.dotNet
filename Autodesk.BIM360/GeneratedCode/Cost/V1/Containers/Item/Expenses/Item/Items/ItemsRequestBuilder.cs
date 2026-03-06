@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items
     public partial class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.expenses.item.items.item collection</summary>
-        /// <param name="position">A list of the object IDs of the expense items whose items you want to retrieve, separated by commas. You can obtain these IDs from the response to the `POST expenses/:expenseId/items &lt;/en/docs/bim360/v1/reference/http/cost-expenses-expenseId-items-POST/&gt;`_ or `GET expenses/:expenseId/items &lt;/en/docs/bim360/v1/reference/http/cost-expenses-expenseId-items-GET/&gt;`_ endpoint.</param>
+        /// <param name="position">A list of the object IDs of the expense items whose items you want to retrieve, separated by commas. You can obtain these IDs from the response to the [POST expenses/:expenseId/items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-expenses-expenseId-items-POST/) or [GET expenses/:expenseId/items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-expenses-expenseId-items-GET/) endpoint.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items.Item.ItemsItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items.Item.ItemsItemRequestBuilder this[string position]
         {
@@ -179,7 +179,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, ``filter[externalId]=id1,id2``.</summary>
+            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, `filter[externalId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalId%5D")]
@@ -189,7 +189,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items
             [QueryParameter("filter%5BexternalId%5D")]
             public string[] FilterexternalId { get; set; }
 #endif
-            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, ``filter[externalSystem]=Sage300``.Max length: 255</summary>
+            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, `filter[externalSystem]=Sage300`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalSystem%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items
             [QueryParameter("filter%5BexternalSystem%5D")]
             public string FilterexternalSystem { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -209,7 +209,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -219,7 +219,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>A list of the nested expense resources to include in the response with the expense items. For example, ``include=budget`` returns the IDs of budgets related to the expense items, ``include=attributes`` will return custom attributes which represents the ``properties`` in the response.Possible values: ``budget``, ``contract``, ``attributes``, ``externalRelationship``.</summary>
+            /// <summary>A list of the nested expense resources to include in the response with the expense items. For example, `include=budget` returns the IDs of budgets related to the expense items, `include=attributes` will return custom attributes which represents the `properties` in the response.Possible values: `budget`, `contract`, `attributes`, `externalRelationship`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -229,13 +229,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

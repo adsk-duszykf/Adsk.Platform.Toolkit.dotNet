@@ -21,7 +21,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The type of object; will always be ``containers``.</summary>
+        /// <summary>The type of object; will always be `containers`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

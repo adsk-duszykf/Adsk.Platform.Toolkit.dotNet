@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 {
     /// <summary>
-    /// The list of actions permitted for the user for this issue in its current state.Possible Values: ``assign_all``, ``assign_same_company``, ``assign_creator_or_owner``, ``clear_assignee``, ``add_comment``, ``add_attachment``, ``remove_attachment``.The following values are not relevant: ``add_attachment``, ``remove_attachment``.
+    /// The list of actions permitted for the user for this issue in its current state.Possible Values: `assign_all`, `assign_same_company`, `assign_creator_or_owner`, `clear_assignee`, `add_comment`, `add_attachment`, `remove_attachment`.The following values are not relevant: `add_attachment`, `remove_attachment`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIssueGetResponse_permittedActions : IParsable

@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
     /// <summary>
-    /// The answer selected by the user. Note the following:* For a checkbox, ``answer`` should be a string containing the ID of the answer.* For multiple choice, ``answer`` should be an array of strings containing the IDs of the answers.* For a numeric value, ``answer`` should be a number.* For a text value, ``answer`` should be a string.* For all other value types, ``answer`` should be a string containing one of the following values: ``true``, ``false``, ``na``.
+    /// The answer selected by the user. Note the following:* For a checkbox, `answer` should be a string containing the ID of the answer.* For multiple choice, `answer` should be an array of strings containing the IDs of the answers.* For a numeric value, `answer` should be a number.* For a text value, `answer` should be a string.* For all other value types, `answer` should be a string containing one of the following values: `true`, `false`, `na`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_included_items_attributes_answer : IParsable

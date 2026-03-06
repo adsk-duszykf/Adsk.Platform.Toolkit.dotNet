@@ -87,7 +87,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.BudgetsImport
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BudgetsImportRequestBuilderPostQueryParameters 
         {
-            /// <summary>``true``: This request forces an override of locked budgeting so the request can succeed. The ability to create, update, or delete budgets can be locked at the project level, and ``force`` enables administrators to override the lock. A locked budget. Only a project administrator is allowed to update, create, or delete budgets when locked.``false``: This request does not override locked budgeting.</summary>
+            /// <summary>`true`: This request forces an override of locked budgeting so the request can succeed. The ability to create, update, or delete budgets can be locked at the project level, and `force` enables administrators to override the lock. A locked budget. Only a project administrator is allowed to update, create, or delete budgets when locked.`false`: This request does not override locked budgeting.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
         }

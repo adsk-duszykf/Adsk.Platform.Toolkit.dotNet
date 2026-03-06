@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext
 {
+    /// <summary>
+    /// A Clash Group.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ViewcontextPostResponse_clashGroup : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The clashes included in the assigned clash group. Min items: 1 Max items: 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

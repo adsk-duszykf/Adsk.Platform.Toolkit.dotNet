@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
         {
         }
         /// <summary>
-        /// Retrieves the manifest for a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve a specific manifest associated with a properties index. Since the manifest, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse>(requestInfo, global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the manifest for a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve a specific manifest associated with a properties index. Since the manifest, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestResponse>(requestInfo, global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the manifest for a specified index. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve a specific manifest associated with a properties index. Since the manifest, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

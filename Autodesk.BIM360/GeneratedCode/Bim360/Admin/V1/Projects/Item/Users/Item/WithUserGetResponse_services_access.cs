@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
 {
-    /// <summary>The user access to the service.Possible values: ``none``, ``member``, ``administrator``</summary>
+    /// <summary>The user access to the service.Possible values: `none`, `member`, `administrator`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithUserGetResponse_services_access
     {

@@ -29,7 +29,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>User&apos;s phone type. Can be `home`, `mobile` or `office`.  Defaults to `mobile`.Possible values: ``mobile``, ``home``, ``office``</summary>
+        /// <summary>User&apos;s phone type. Can be `home`, `mobile` or `office`.  Defaults to `mobile`.Possible values: `mobile`, `home`, `office`</summary>
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_results_phone_phoneType? PhoneType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

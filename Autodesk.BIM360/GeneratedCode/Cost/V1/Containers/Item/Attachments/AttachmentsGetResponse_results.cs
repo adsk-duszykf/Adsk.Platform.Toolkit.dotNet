@@ -14,11 +14,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
     {
         /// <summary>The object ID of the item associated with the actions, such as a budget, contract, or cost item.</summary>
         public Guid? AssociationId { get; set; }
-        /// <summary>The type of item to which it is associated.Possible values: ``Budget``, ``Contract``, ``ScheduleOfValue``, ``FormInstance``, ``CostItem``, ``Payment``, ``MainContract``, ``BudgetPayment``, ``Expense``, ``CostPayment``, ``ExpenseItem``, ``PaymentItem``, ``OCO``, ``RCO``, ``SCO``, ``PCO``, ``RFQ``, ``DistributionItem``, ``BudgetTransfer``, ``Fee``</summary>
+        /// <summary>The type of item to which it is associated.Possible values: `Budget`, `Contract`, `ScheduleOfValue`, `FormInstance`, `CostItem`, `Payment`, `MainContract`, `BudgetPayment`, `Expense`, `CostPayment`, `ExpenseItem`, `PaymentItem`, `OCO`, `RCO`, `SCO`, `PCO`, `RFQ`, `DistributionItem`, `BudgetTransfer`, `Fee`</summary>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.AttachmentsGetResponse_results_associationType? AssociationType { get; set; }
         /// <summary>The date and time that the item was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The unique identifier (UUID) of the folder named ``attachment-folder`` where the attachment is stored. This ID is automatically retrieved by the backend and returned in the response.</summary>
+        /// <summary>The unique identifier (UUID) of the folder named `attachment-folder` where the attachment is stored. This ID is automatically retrieved by the backend and returned in the response.</summary>
         public Guid? FolderId { get; set; }
         /// <summary>The unique auto-generated identifier of the attachment.</summary>
         public Guid? Id { get; set; }
@@ -56,7 +56,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The type of attachment.Possible values:``Upload``: is a locally uploaded file.``DocsFile`` is a file referenced from BIM 360 Docs.``Reference`` is a file referenced form report.``Document`` is for document generation.Max length: 64</summary>
+        /// <summary>The type of attachment.Possible values:`Upload`: is a locally uploaded file.`DocsFile` is a file referenced from BIM 360 Docs.`Reference` is a file referenced form report.`Document` is for document generation.Max length: 64</summary>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.AttachmentsGetResponse_results_type? Type { get; set; }
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

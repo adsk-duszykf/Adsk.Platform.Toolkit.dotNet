@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
         {
         }
         /// <summary>
-        /// Retrieves payment items in the given project based on ``associationId`` and ``paymentId``.
+        /// Retrieves payment items in the given project based on `associationId` and `paymentId`.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves payment items in the given project based on ``associationId`` and ``paymentId``.
+        /// Retrieves payment items in the given project based on `associationId` and `paymentId`.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves payment items in the given project based on ``associationId`` and ``paymentId``.
+        /// Retrieves payment items in the given project based on `associationId` and `paymentId`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,12 +98,12 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
             return new global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves payment items in the given project based on ``associationId`` and ``paymentId``.
+        /// Retrieves payment items in the given project based on `associationId` and `paymentId`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PaymentItemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Return only the payment items that are associated with the provided list of contract or main contract IDs. Separate multiple IDs with commas. For example, ``filter[associationId]=id1,id2``.</summary>
+            /// <summary>Return only the payment items that are associated with the provided list of contract or main contract IDs. Separate multiple IDs with commas. For example, `filter[associationId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassociationId%5D")]
@@ -113,7 +113,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
             [QueryParameter("filter%5BassociationId%5D")]
             public string[] FilterassociationId { get; set; }
 #endif
-            /// <summary>Return only the payment items that are associated with the type of original entities specified. For example, ``filter[associationType]=SOV,SCO``.Possible values for cost payment: ``SOV,SCO,CostItem,MaterialsOnSite``, and budget payments: ``MainContractItem,OCO,CostItem,SubCostItem,MaterialsOnSite``.</summary>
+            /// <summary>Return only the payment items that are associated with the type of original entities specified. For example, `filter[associationType]=SOV,SCO`.Possible values for cost payment: `SOV,SCO,CostItem,MaterialsOnSite`, and budget payments: `MainContractItem,OCO,CostItem,SubCostItem,MaterialsOnSite`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassociationType%5D")]
@@ -123,7 +123,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
             [QueryParameter("filter%5BassociationType%5D")]
             public string[] FilterassociationType { get; set; }
 #endif
-            /// <summary>Return only the payment items that are associated with the payments identified by the provided list of payment IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Return only the payment items that are associated with the payments identified by the provided list of payment IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BpaymentId%5D")]
@@ -133,13 +133,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
             [QueryParameter("filter%5BpaymentId%5D")]
             public string[] FilterpaymentId { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

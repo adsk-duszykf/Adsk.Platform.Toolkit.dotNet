@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
         {
         }
         /// <summary>
-        /// GET assets V2
+        /// Searches for and returns all specified assets within a project visible to the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET assets V2
+        /// Searches for and returns all specified assets within a project visible to the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET assets V2
+        /// Searches for and returns all specified assets within a project visible to the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,12 +98,12 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             return new global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET assets V2
+        /// Searches for and returns all specified assets within a project visible to the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssetsRequestBuilderGetQueryParameters 
         {
-            /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;s returned ineach paginated response so that it can be supplied in the next request to continue paginated results. If apaginated response contains no ``cursorState`` value, then there are no further pages to return.Omit this field to initiate a paginated request or to restart pagination.</summary>
+            /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;s returned ineach paginated response so that it can be supplied in the next request to continue paginated results. If apaginated response contains no `cursorState` value, then there are no further pages to return.Omit this field to initiate a paginated request or to restart pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cursorState")]
@@ -113,7 +113,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("cursorState")]
             public string CursorState { get; set; }
 #endif
-            /// <summary>An exploded array of category IDs to which all returned objects must belong. For example,``?filter[categoryId]=123&amp;filter[categoryId]=456``.</summary>
+            /// <summary>An exploded array of category IDs to which all returned objects must belong. For example,`?filter[categoryId]=123&amp;filter[categoryId]=456`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcategoryId%5D")]
@@ -123,7 +123,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("filter%5BcategoryId%5D")]
             public string[] FiltercategoryId { get; set; }
 #endif
-            /// <summary>A custom attribute and value that each returned object must have. This filter is keyed by the custom attribute&apos;sname field and set equal to the desired value. As an example, ``?filter[customAttributes][ca1]=true``. Use thisfield multiple times to specify more than one custom attribute filter.The value supplied for a custom attribute filter must match the type specified by the attribute. Values can be:- A single value, or exploded array of values, of string, boolean, or number (for ``text``, ``numeric``, ``date``, ``boolean``, ``select``, or ``multi_select`` types). Note that a string value for a ``text`` data type will perform a case-insensitive, substring match.- A range of values (inclusive) in the form: ``startValue..endValue`` (for ``numeric`` or ``date`` Types).- Partial ranges (inclusive): ``...endValue`` or ``startValue..`` (for ``numeric`` or ``date`` Types).Select and Multi-Select filters should use Custom Attribute Value IDs as values.Note that explicit value filters and range filters for a given attribute cannot be used in conjunction.Examples (without URL escaping)Example 1) Filter a ``boolean`` custom attribute:``?filter[customAttributes][ca1]=true``Example 2) Filter a ``numeric`` range custom attribute:``?filter[customAttributes][ca2]=1..5``Example 3) Filter a ``date`` custom attribute to on or before a given date:``?filter[customAttributes][ca3]=..2020-11-01``Example 4) Filter a ``select`` custom attribute:``?filter[customAttributes][ca4]=b959daad-4d00-4209-9acc-e900ac5832cf``Example 5) Filter a ``multi_select`` custom attribute to multiple values:``?filter[customAttributes][ca5]=63801bb7-db1f-49bf-9000-a392a5879f22&amp;filter[customAttributes][ca5]=757d0934-a4a0-4af8-821d-64d611e84a56``Example 6) Filter a ``text`` custom attribute to a given input:``?filter[customAttributes][ca6]=Some text input``</summary>
+            /// <summary>A custom attribute and value that each returned object must have. This filter is keyed by the custom attribute&apos;sname field and set equal to the desired value. As an example, `?filter[customAttributes][ca1]=true`. Use thisfield multiple times to specify more than one custom attribute filter.The value supplied for a custom attribute filter must match the type specified by the attribute. Values can be:- A single value, or exploded array of values, of string, boolean, or number (for `text`, `numeric`, `date`, `boolean`, `select`, or `multi_select` types). Note that a string value for a `text` data type will perform a case-insensitive, substring match.- A range of values (inclusive) in the form: `startValue..endValue` (for `numeric` or `date` Types).- Partial ranges (inclusive): `...endValue` or `startValue..` (for `numeric` or `date` Types).Select and Multi-Select filters should use Custom Attribute Value IDs as values.Note that explicit value filters and range filters for a given attribute cannot be used in conjunction.Examples (without URL escaping)Example 1) Filter a `boolean` custom attribute:`?filter[customAttributes][ca1]=true`Example 2) Filter a `numeric` range custom attribute:`?filter[customAttributes][ca2]=1..5`Example 3) Filter a `date` custom attribute to on or before a given date:`?filter[customAttributes][ca3]=..2020-11-01`Example 4) Filter a `select` custom attribute:`?filter[customAttributes][ca4]=b959daad-4d00-4209-9acc-e900ac5832cf`Example 5) Filter a `multi_select` custom attribute to multiple values:`?filter[customAttributes][ca5]=63801bb7-db1f-49bf-9000-a392a5879f22&amp;filter[customAttributes][ca5]=757d0934-a4a0-4af8-821d-64d611e84a56`Example 6) Filter a `text` custom attribute to a given input:`?filter[customAttributes][ca6]=Some text input`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcustomAttributes%5D")]
@@ -133,7 +133,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("filter%5BcustomAttributes%5D")]
             public string FiltercustomAttributes { get; set; }
 #endif
-            /// <summary>An exploded array of location IDs. Each returned object must be associated with one of the locations specifiedby the IDs. To specify sub-locations of a location, provide a single location ID here and then set the``includeSubLocations`` field in the request to ``true``. For example,``?filter[locationId]=826e102a-36de-41e7-8c58-1b1696ccbba8&amp;filter[locationId]=cee49807-fcc4-43ae-80a2-8ca819dfa70d``.</summary>
+            /// <summary>An exploded array of location IDs. Each returned object must be associated with one of the locations specifiedby the IDs. To specify sub-locations of a location, provide a single location ID here and then set the`includeSubLocations` field in the request to `true`. For example,`?filter[locationId]=826e102a-36de-41e7-8c58-1b1696ccbba8&amp;filter[locationId]=cee49807-fcc4-43ae-80a2-8ca819dfa70d`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlocationId%5D")]
@@ -143,7 +143,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("filter%5BlocationId%5D")]
             public string[] FilterlocationId { get; set; }
 #endif
-            /// <summary>A string that must be contained within any of a returned object&apos;s searchable text fields, including text customattributes. ``searchText`` is case-insensitive, and will match substrings as well as full strings.</summary>
+            /// <summary>A string that must be contained within any of a returned object&apos;s searchable text fields, including text customattributes. `searchText` is case-insensitive, and will match substrings as well as full strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BsearchText%5D")]
@@ -153,7 +153,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("filter%5BsearchText%5D")]
             public string FiltersearchText { get; set; }
 #endif
-            /// <summary>An exploded array of status IDs. Each returned object must have one of the statuses specified by the IDs. Forexample, ``?filter[statusId]=84eb6a10-dde3-475f-aaf4-b5df3aebbd0b&amp;filter[statusId]=5ba5c1af-fcd6-4506-b5e4-f20f5321dd69``.</summary>
+            /// <summary>An exploded array of status IDs. Each returned object must have one of the statuses specified by the IDs. Forexample, `?filter[statusId]=84eb6a10-dde3-475f-aaf4-b5df3aebbd0b&amp;filter[statusId]=5ba5c1af-fcd6-4506-b5e4-f20f5321dd69`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BstatusId%5D")]
@@ -163,7 +163,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("filter%5BstatusId%5D")]
             public string[] FilterstatusId { get; set; }
 #endif
-            /// <summary>An exploded array of status labels. Each returned object must have one of the statuses bearing any of theselabels, case-insensitive. For example, ``?filter[statusLabel]=ordered&amp;filter[statusLabel]=delivered``.</summary>
+            /// <summary>An exploded array of status labels. Each returned object must have one of the statuses bearing any of theselabels, case-insensitive. For example, `?filter[statusLabel]=ordered&amp;filter[statusLabel]=delivered`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BstatusLabel%5D")]
@@ -173,7 +173,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("filter%5BstatusLabel%5D")]
             public string[] FilterstatusLabel { get; set; }
 #endif
-            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: ``YYYY-MM-DDThh:mm:ss.SSSZ``, A date and time range takes thisformat: ``YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ``. Range queries can be closed or open in eitherdirection: ``YYYY-MM-DDThh:mm:ss.SSSZ..`` or ``..YYYY-MM-DDThh:mm:ss.SSSZ``.</summary>
+            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: `YYYY-MM-DDThh:mm:ss.SSSZ`, A date and time range takes thisformat: `YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ`. Range queries can be closed or open in eitherdirection: `YYYY-MM-DDThh:mm:ss.SSSZ..` or `..YYYY-MM-DDThh:mm:ss.SSSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -183,19 +183,19 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>Specifies whether or not returned assets include custom attributes or not. If ``true``, they&apos;re included. If``false``, they&apos;re not. Default is ``false``.</summary>
+            /// <summary>Specifies whether or not returned assets include custom attributes or not. If `true`, they&apos;re included. If`false`, they&apos;re not. Default is `false`.</summary>
             [QueryParameter("includeCustomAttributes")]
             public bool? IncludeCustomAttributes { get; set; }
-            /// <summary>Whether or not soft-deleted object should be included in the response. If ``true``, soft-deleted objects are returned. If ``false``, they are not. The default is ``false``.</summary>
+            /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
-            /// <summary>Specifies whether or not to consider sub-locations when filtering by ``locationId``. For this setting to work,the request must contain only a single for ``filter[locationId]``. If ``true``, the search looks for assets withinthe specified location and in all the sub-locations of the specified location. If ``false``, the search looks forassets only within the specified location(s). Default is ``false``.</summary>
+            /// <summary>Specifies whether or not to consider sub-locations when filtering by `locationId`. For this setting to work,the request must contain only a single for `filter[locationId]`. If `true`, the search looks for assets withinthe specified location and in all the sub-locations of the specified location. If `false`, the search looks forassets only within the specified location(s). Default is `false`.</summary>
             [QueryParameter("includeSubLocations")]
             public bool? IncludeSubLocations { get; set; }
-            /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects than the limit if the Assets service runs out of specified objects to return - at the end of a set of paged results, for example. The maximum limit is ``200``; the default limit is ``25``.</summary>
+            /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects than the limit if the Assets service runs out of specified objects to return - at the end of a set of paged results, for example. The maximum limit is `200`; the default limit is `25`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>A string that specifies how to sort returned objects. The string provides a valid API field name with anoptional direction, either ``asc`` (ascending) or ``desc`` (descending). In the case of custom attributes, use dotnotation to specify the attribute by name—for example, ``customAttributes.ca3 desc``. The string may containmultiple comma-separated expressions for secondary sorts. The default sort order is ``asc`` if not provided.</summary>
+            /// <summary>A string that specifies how to sort returned objects. The string provides a valid API field name with anoptional direction, either `asc` (ascending) or `desc` (descending). In the case of custom attributes, use dotnotation to specify the attribute by name—for example, `customAttributes.ca3 desc`. The string may containmultiple comma-separated expressions for secondary sorts. The default sort order is `asc` if not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

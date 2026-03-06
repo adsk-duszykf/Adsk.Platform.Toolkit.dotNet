@@ -45,7 +45,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
         {
         }
         /// <summary>
-        /// You can retrieve both document-related (pusphin) RFIs and project-related RFIs.
+        /// Retrieves detailed information about a single BIM 360 RFI (request for information), including the type of workflow roles assigned to the user, whether the user is permitted to create RFIs, which states the user can create the RFIs in, and the attributes that are required when creating the RFIs in the different states.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can retrieve both document-related (pusphin) RFIs and project-related RFIs.
+        /// Retrieves detailed information about a single BIM 360 RFI (request for information), including the type of workflow roles assigned to the user, whether the user is permitted to create RFIs, which states the user can create the RFIs in, and the attributes that are required when creating the RFIs in the different states.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Updates a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Updates a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can retrieve both document-related (pusphin) RFIs and project-related RFIs.
+        /// Retrieves detailed information about a single BIM 360 RFI (request for information), including the type of workflow roles assigned to the user, whether the user is permitted to create RFIs, which states the user can create the RFIs in, and the attributes that are required when creating the RFIs in the different states.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +142,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Updates a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

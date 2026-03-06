@@ -189,10 +189,10 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
         /// <summary>The permittedActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions>? PermittedActions { get; set; }
+        public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions? PermittedActions { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions> PermittedActions { get; set; }
+        public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions PermittedActions { get; set; }
 #endif
         /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -355,7 +355,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
                 { "location", n => { Location = n.GetObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_location>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_location.CreateFromDiscriminatorValue); } },
                 { "managerId", n => { ManagerId = n.GetStringValue(); } },
                 { "officialResponse", n => { OfficialResponse = n.GetStringValue(); } },
-                { "permittedActions", n => { PermittedActions = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permittedActions", n => { PermittedActions = n.GetObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions.CreateFromDiscriminatorValue); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "pushpinAttributes", n => { PushpinAttributes = n.GetObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_pushpinAttributes>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_pushpinAttributes.CreateFromDiscriminatorValue); } },
@@ -408,7 +408,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_location>("location", Location);
             writer.WriteStringValue("managerId", ManagerId);
             writer.WriteStringValue("officialResponse", OfficialResponse);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions>("permittedActions", PermittedActions);
+            writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions>("permittedActions", PermittedActions);
             writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_pushpinAttributes>("pushpinAttributes", PushpinAttributes);

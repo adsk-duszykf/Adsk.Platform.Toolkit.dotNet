@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers
     public partial class ContainersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.issues.v2.containers.item collection</summary>
-        /// <param name="position">The ID of the container.Each project is assigned to a container that stores all the issues for the project.Use the `Data Management API &lt;/en/docs/data/v2/&gt;`_ to retrieve the container ID. For more information, see the `Retrieve Issues Container ID &lt;/en/docs/bim360/v1/tutorials/issuesv2/retrieve-container-id/&gt;`_ tutorial.</param>
+        /// <param name="position">The ID of the container.Each project is assigned to a container that stores all the issues for the project.Use the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/) to retrieve the container ID. For more information, see the [Retrieve Issues Container ID](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/issuesv2/retrieve-container-id/) tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.WithContainerItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.WithContainerItemRequestBuilder this[string position]
         {

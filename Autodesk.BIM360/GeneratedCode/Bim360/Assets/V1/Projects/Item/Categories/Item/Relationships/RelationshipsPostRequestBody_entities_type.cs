@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships
 {
-    /// <summary>The entity type of the entity to link.Within BIM 360 projects, the only allowable type is ``checklisttemplate``.Specifying any other entity types will return a ``400`` status code.Possible values: ``checklisttemplate``, ``formtemplate``</summary>
+    /// <summary>The entity type of the entity to link.Within BIM 360 projects, the only allowable type is `checklisttemplate`.Specifying any other entity types will return a `400` status code.Possible values: `checklisttemplate`, `formtemplate`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RelationshipsPostRequestBody_entities_type
     {

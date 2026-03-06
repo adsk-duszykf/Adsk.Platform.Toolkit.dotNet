@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
         {
         }
         /// <summary>
-        /// PATCH assets:batch-patch V2
+        /// Updates a set of one or more assets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PATCH assets:batch-patch V2
+        /// Updates a set of one or more assets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PATCH assets:batch-patch V2
+        /// Updates a set of one or more assets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

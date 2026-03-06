@@ -13,7 +13,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_included_attachments_attributes : IParsable
     {
-        /// <summary>The type of attachment; will always be ``OSS``.</summary>
+        /// <summary>The type of attachment; will always be `OSS`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttachmentType { get; set; }
@@ -21,7 +21,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string AttachmentType { get; set; }
 #endif
-        /// <summary>The date and time that the resource was created, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the checklist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,11 +79,11 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
-        /// <summary>The date and time that the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The upload status of the attachment. Possible values: ``completed``, ``not-completed``.</summary>
+        /// <summary>The upload status of the attachment. Possible values: `completed`, `not-completed`.</summary>
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_attachments_attributes_uploadStatus? UploadStatus { get; set; }
-        /// <summary>A list of attachment URNs.You can use the last section of the OSS URN to download the attachment. See `GET buckets/:bucket_key/objects/:object_name &lt;/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-GET&gt;`_ for more details. Note that you need a 2-legged token to download the attachment.You can use the WIP URN to find details about the attachment. For example, the name of the attachment. See `GET projects/:project_id/versions/:version_id &lt;/en/docs/data/v1/projects/:project_id/versions/:version_id-GET&gt;`_ for more details.</summary>
+        /// <summary>A list of attachment URNs.You can use the last section of the OSS URN to download the attachment. See [GET buckets/:bucket_key/objects/:object_name](https://aps.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-GET) for more details. Note that you need a 2-legged token to download the attachment.You can use the WIP URN to find details about the attachment. For example, the name of the attachment. See [GET projects/:project_id/versions/:version_id](https://aps.autodesk.com/en/docs/data/v1/projects/:project_id/versions/:version_id-GET) for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_attachments_attributes_urns>? Urns { get; set; }

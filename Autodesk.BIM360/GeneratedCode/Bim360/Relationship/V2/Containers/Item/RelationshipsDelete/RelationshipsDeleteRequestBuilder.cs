@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDe
         {
         }
         /// <summary>
-        /// Note that in order to delete a relationship, you must have access to both entities in the relationship.
+        /// Deletes one or more relationships by passing an array of relationship UUIDs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDelete.RelationshipsDeletePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDe
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDelete.RelationshipsDeletePostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDelete.RelationshipsDeletePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that in order to delete a relationship, you must have access to both entities in the relationship.
+        /// Deletes one or more relationships by passing an array of relationship UUIDs.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDelete.RelationshipsDeleteResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDe
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDelete.RelationshipsDeleteResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDelete.RelationshipsDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that in order to delete a relationship, you must have access to both entities in the relationship.
+        /// Deletes one or more relationships by passing an array of relationship UUIDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

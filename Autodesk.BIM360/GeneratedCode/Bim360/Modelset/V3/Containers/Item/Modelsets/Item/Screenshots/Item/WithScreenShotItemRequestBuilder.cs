@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Scre
         {
         }
         /// <summary>
-        /// Newly uploaded screenshots can be retrieved with this endpoint. You must first associate the screenshot with a model set view.
+        /// Retrieves a specific screenshot based on the screenshot ID.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Scre
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Newly uploaded screenshots can be retrieved with this endpoint. You must first associate the screenshot with a model set view.
+        /// Retrieves a specific screenshot based on the screenshot ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

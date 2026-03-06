@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets
 {
-    /// <summary>The scope of the budget. Possible values are ``budgetOnly`` and ``budgetAndCost``.</summary>
+    /// <summary>The scope of the budget. Possible values are `budgetOnly` and `budgetAndCost`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BudgetsPostRequestBody_scope
     {

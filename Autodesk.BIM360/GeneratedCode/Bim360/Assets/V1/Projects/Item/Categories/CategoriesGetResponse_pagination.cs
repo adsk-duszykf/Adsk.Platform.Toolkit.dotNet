@@ -13,7 +13,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CategoriesGetResponse_pagination : IParsable
     {
-        /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects thanthe limit if the Assets service runs out of specified objects to return - at the end of a set of pagedresults, for example. The maximum limit is ``200``; the default limit is ``25``.</summary>
+        /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects thanthe limit if the Assets service runs out of specified objects to return - at the end of a set of pagedresults, for example. The maximum limit is `200`; the default limit is `25`.</summary>
         public int? Limit { get; set; }
         /// <summary>The offset of the first entry in the pagination results.</summary>
         public int? Offset { get; set; }

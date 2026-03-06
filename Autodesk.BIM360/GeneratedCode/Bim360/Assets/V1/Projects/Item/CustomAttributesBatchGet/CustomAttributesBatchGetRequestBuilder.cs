@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
         {
         }
         /// <summary>
-        /// POST custom-attributes:batch-get
+        /// Returns a specified set of custom attributes.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST custom-attributes:batch-get
+        /// Returns a specified set of custom attributes.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST custom-attributes:batch-get
+        /// Returns a specified set of custom attributes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -105,12 +105,12 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
             return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// POST custom-attributes:batch-get
+        /// Returns a specified set of custom attributes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAttributesBatchGetRequestBuilderPostQueryParameters 
         {
-            /// <summary>Whether or not soft-deleted object should be included in the response. If ``true``, soft-deleted objects are returned. If ``false``, they are not. The default is ``false``.</summary>
+            /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
         }

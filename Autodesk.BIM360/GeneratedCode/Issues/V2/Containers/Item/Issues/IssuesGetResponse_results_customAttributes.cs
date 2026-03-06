@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 #else
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse_results_customAttributes_title Title { get; set; }
 #endif
-        /// <summary>Type of the attribute: value should of the corresponding formatPossible values: ``numeric``, ``paragraph``, ``list``, ``text``</summary>
+        /// <summary>Type of the attribute: value should of the corresponding formatPossible values: `numeric`, `paragraph`, `list`, `text`</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse_results_customAttributes_type? Type { get; set; }
         /// <summary>Custom attributes value. in case of a list option, the id of the selected option, otherwise can be string/text/date/boolean</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

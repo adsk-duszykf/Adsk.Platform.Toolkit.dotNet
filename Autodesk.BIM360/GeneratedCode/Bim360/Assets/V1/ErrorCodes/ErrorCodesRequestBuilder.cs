@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
     public partial class ErrorCodesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.assets.v1.errorCodes.item collection</summary>
-        /// <param name="position">The name of an error code returned in an error response, in the ``errorCode`` field.</param>
+        /// <param name="position">The name of an error code returned in an error response, in the `errorCode` field.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.Item.WithErrorCodeNameItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.Item.WithErrorCodeNameItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
         {
         }
         /// <summary>
-        /// GET error-codes
+        /// Retrieves a list of all error codes returned by the Assets API.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET error-codes
+        /// Retrieves a list of all error codes returned by the Assets API.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET error-codes
+        /// Retrieves a list of all error codes returned by the Assets API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

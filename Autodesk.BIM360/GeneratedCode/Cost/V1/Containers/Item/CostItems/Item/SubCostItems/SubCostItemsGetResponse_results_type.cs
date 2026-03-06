@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
 {
-    /// <summary>The classification of the sub cost item that indicates its role in cost tracking and approval workflows. Possible values: ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``.Max length: 255</summary>
+    /// <summary>The classification of the sub cost item that indicates its role in cost tracking and approval workflows. Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`.Max length: 255</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SubCostItemsGetResponse_results_type
     {

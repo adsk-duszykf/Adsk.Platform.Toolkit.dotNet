@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.assets.v1.projects.item collection</summary>
-        /// <param name="position">The BIM 360 project ID. Must be a UUID or a project ID of the form ``b.{UUID}``.</param>
+        /// <param name="position">The BIM 360 project ID. Must be a UUID or a project ID of the form `b.{UUID}`.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]
         {

@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Version
         {
         }
         /// <summary>
-        /// Retrieves clash tests for a specific version of a model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of summaries for all clash tests that have been executed for a given model set version.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Version
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves clash tests for a specific version of a model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of summaries for all clash tests that have been executed for a given model set version.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Version
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves clash tests for a specific version of a model set. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieves a list of summaries for all clash tests that have been executed for a given model set version.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

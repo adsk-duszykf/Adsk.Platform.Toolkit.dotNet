@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete
         {
         }
         /// <summary>
-        /// POST relationships:delete
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete.RelationshipsDeletePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete.RelationshipsDeletePostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete.RelationshipsDeletePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST relationships:delete
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete.RelationshipsDeleteResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete.RelationshipsDeleteResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete.RelationshipsDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST relationships:delete
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

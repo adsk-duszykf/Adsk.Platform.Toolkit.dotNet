@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import
         {
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Bulk import users to the master member directory in a BIM 360 account. (50 users maximum can be included in each call.)
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Bulk import users to the master member directory in a BIM 360 account. (50 users maximum can be included in each call.)
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import.ImportResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import.ImportResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import.ImportResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Bulk import users to the master member directory in a BIM 360 account. (50 users maximum can be included in each call.)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

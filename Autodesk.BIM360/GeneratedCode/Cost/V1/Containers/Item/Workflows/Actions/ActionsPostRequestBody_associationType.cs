@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions
 {
-    /// <summary>The type of the item on which to perform the action. Possible values: ``FormInstance``, ``OCO``, ``PCO``, ``RCO``, ``RFQ``, ``SCO``, ``Expense``, ``Contract``, ``CostPayment``, ``BudgetPayment``, ``BudgetTransfer``, ``MainContract``, ``DistributionItem``.</summary>
+    /// <summary>The type of the item on which to perform the action. Possible values: `FormInstance`, `OCO`, `PCO`, `RCO`, `RFQ`, `SCO`, `Expense`, `Contract`, `CostPayment`, `BudgetPayment`, `BudgetTransfer`, `MainContract`, `DistributionItem`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ActionsPostRequestBody_associationType
     {

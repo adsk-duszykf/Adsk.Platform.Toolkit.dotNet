@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 {
-    /// <summary>urnType attribute indicates the type of storage where the attachment will be stored.If urnType is set to ``oss``, it indicates that the URN refers to a file stored in an Object Storage Service (OSS). see the `Attach local attachment to an Issue &lt;/en/docs/bim360/v1/tutorials/attach-local-attachment-issues-v2/&gt;`_ tutorialIf urnType is set to ``dm``, it indicates that the URN refers to a file stored in a BIM360 Document Management (DM).Possible Values: ``oss`` or ``dm``.</summary>
+    /// <summary>urnType attribute indicates the type of storage where the attachment will be stored.If urnType is set to `oss`, it indicates that the URN refers to a file stored in an Object Storage Service (OSS). see the [Attach local attachment to an Issue](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/attach-local-attachment-issues-v2/) tutorialIf urnType is set to `dm`, it indicates that the URN refers to a file stored in a BIM360 Document Management (DM).Possible Values: `oss` or `dm`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttachmentsPostResponse_urnType
     {

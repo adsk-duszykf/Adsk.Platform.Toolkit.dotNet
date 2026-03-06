@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClos
         {
         }
         /// <summary>
-        /// Clash groups that are closed are not presented should they occur in subsequent clash tests. The clash is still present in the model; it is not necessary to remove it.
+        /// Adds a batch of new closed clash groups to the given clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesClosePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClos
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesClosePostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesClosePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Clash groups that are closed are not presented should they occur in subsequent clash tests. The clash is still present in the model; it is not necessary to remove it.
+        /// Adds a batch of new closed clash groups to the given clash test.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesCloseResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClos
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesCloseResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesCloseResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Clash groups that are closed are not presented should they occur in subsequent clash tests. The clash is still present in the model; it is not necessary to remove it.
+        /// Adds a batch of new closed clash groups to the given clash test.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

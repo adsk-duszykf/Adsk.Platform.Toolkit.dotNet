@@ -209,7 +209,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Items.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A list of the types of nested resources to include in the response with the main contract items, separated by commas.For example, ``include=budget`` returns the budgets that are associated with each returned main contract item.Possible values: ``budget``, ``mainContract``.</summary>
+            /// <summary>A list of the types of nested resources to include in the response with the main contract items, separated by commas.For example, `include=budget` returns the budgets that are associated with each returned main contract item.Possible values: `budget`, `mainContract`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

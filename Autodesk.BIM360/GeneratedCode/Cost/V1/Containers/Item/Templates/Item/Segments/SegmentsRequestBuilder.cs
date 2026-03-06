@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
     public partial class SegmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.templates.item.segments.item collection</summary>
-        /// <param name="position">The segment ID. To obtain a segment ID, use `GET templates/:templateId/segments &lt;/en/docs/bim360/v1/reference/http/cost-segments-GET/&gt;`_.</param>
+        /// <param name="position">The segment ID. To obtain a segment ID, use [GET templates/:templateId/segments](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-segments-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
             }
         }
         /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.templates.item.segments.item collection</summary>
-        /// <param name="position">The segment ID. To obtain a segment ID, use `GET templates/:templateId/segments &lt;/en/docs/bim360/v1/reference/http/cost-segments-GET/&gt;`_.</param>
+        /// <param name="position">The segment ID. To obtain a segment ID, use [GET templates/:templateId/segments](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-segments-GET/).</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder this[string position]
@@ -192,7 +192,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SegmentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -202,7 +202,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>Returns only items with the specified name. For example, ``filter[name]=Labor``.Max length: 255</summary>
+            /// <summary>Returns only items with the specified name. For example, `filter[name]=Labor`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bname%5D")]
@@ -212,13 +212,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
             [QueryParameter("filter%5Bname%5D")]
             public string Filtername { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

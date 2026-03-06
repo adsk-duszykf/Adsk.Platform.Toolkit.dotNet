@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders
     public partial class ChangeOrdersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.changeOrders.item collection</summary>
-        /// <param name="position">The change order type. Possible values: ``pco``, ``rfq``, ``rco``, ``oco``, ``sco``.</param>
+        /// <param name="position">The change order type. Possible values: `pco`, `rfq`, `rco`, `oco`, `sco`.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders
         {
         }
         /// <summary>
-        /// Note that requests for change order (RCO) may be referred to as ``change order requests`` (COR) in some Construction Cloud contexts. These two terms are interchangeable.
+        /// Retrieves a list of all change orders in a specified project, including PCO (potential change orders), RFQ (requests for quote), SCO (supplier change orders), RCO (requests for change order), and OCO (owner change orders).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.ChangeOrdersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.ChangeOrdersGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.ChangeOrdersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that requests for change order (RCO) may be referred to as ``change order requests`` (COR) in some Construction Cloud contexts. These two terms are interchangeable.
+        /// Retrieves a list of all change orders in a specified project, including PCO (potential change orders), RFQ (requests for quote), SCO (supplier change orders), RCO (requests for change order), and OCO (owner change orders).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.ChangeOrdersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.ChangeOrdersResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.ChangeOrdersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that requests for change order (RCO) may be referred to as ``change order requests`` (COR) in some Construction Cloud contexts. These two terms are interchangeable.
+        /// Retrieves a list of all change orders in a specified project, including PCO (potential change orders), RFQ (requests for quote), SCO (supplier change orders), RCO (requests for change order), and OCO (owner change orders).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

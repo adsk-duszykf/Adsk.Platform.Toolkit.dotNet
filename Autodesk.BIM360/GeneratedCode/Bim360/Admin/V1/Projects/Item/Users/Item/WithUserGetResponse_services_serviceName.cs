@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
 {
-    /// <summary>The name of the service.Possible values: ``costManagement``, ``designCollaboration``, ``documentManagement``, ``field``, ``fieldManagement``, ``assets``, ``glue``, ``insight``, ``modelCoordination``, ``plan``, ``projectAdministration``, ``projectManagement``</summary>
+    /// <summary>The name of the service.Possible values: `costManagement`, `designCollaboration`, `documentManagement`, `field`, `fieldManagement`, `assets`, `glue`, `insight`, `modelCoordination`, `plan`, `projectAdministration`, `projectManagement`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithUserGetResponse_services_serviceName
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item
 {
-    /// <summary>Defines the project&apos;s scope status of the cost item. Possible values: ``out``, ``in``, ``tbd``, ``budgetOnly``, ``contingency``.</summary>
+    /// <summary>Defines the project&apos;s scope status of the cost item. Possible values: `out`, `in`, `tbd`, `budgetOnly`, `contingency`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithCostItemGetResponse_scope
     {

@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
 #else
         public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities> Entities { get; set; }
 #endif
-        /// <summary>The UUID that uniquely identifies the relationship. If no ``id`` is supplied, the system automatically allocates one.</summary>
+        /// <summary>The UUID that uniquely identifies the relationship. If no `id` is supplied, the system automatically allocates one.</summary>
         public Guid? Id { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 {
-    /// <summary>The status of an attachment file to an issue.``pre-upload``: The file has not yet been uploaded.``file-uploaded``: The file has been successfully uploaded, but the process of attaching it to an issue is not yet complete.``completed``: The process of attaching the file to issue is finished and the file is now fully accessible and ready for use.Possible Values: ``pre-upload``, ``file-uploaded``, ``completed``.</summary>
+    /// <summary>The status of an attachment file to an issue.`pre-upload`: The file has not yet been uploaded.`file-uploaded`: The file has been successfully uploaded, but the process of attaching it to an issue is not yet complete.`completed`: The process of attaching the file to issue is finished and the file is now fully accessible and ready for use.Possible Values: `pre-upload`, `file-uploaded`, `completed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttachmentsPostResponse_status
     {

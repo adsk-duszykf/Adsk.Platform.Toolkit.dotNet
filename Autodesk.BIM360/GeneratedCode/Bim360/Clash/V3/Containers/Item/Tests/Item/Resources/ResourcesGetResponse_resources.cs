@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
     public partial class ResourcesGetResponse_resources : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The file extension used by the clash test resource. Possible values: ``json.gz``, ``sqlite``.</summary>
+        /// <summary>The file extension used by the clash test resource. Possible values: `json.gz`, `sqlite`.</summary>
         public global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesGetResponse_resources_extension? Extension { get; set; }
         /// <summary>The headers used to retrieve the clash test resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

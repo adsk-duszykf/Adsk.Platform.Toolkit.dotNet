@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
     public partial class ExportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.docs.v1.projects.item.versions.item.exports.item collection</summary>
-        /// <param name="position">The ID of the export job; returned when initiating `POST projects/:project_id/versions/:version_id/exports &lt;/en/docs/bim360/v1/reference/http/document-management-projects-project_id-versions-version_id-exports-POST&gt;`_.</param>
+        /// <param name="position">The ID of the export job; returned when initiating [POST projects/:project_id/versions/:version_id/exports](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-projects-project_id-versions-version_id-exports-POST).</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder this[Guid position]
         {
@@ -30,7 +30,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
             }
         }
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.docs.v1.projects.item.versions.item.exports.item collection</summary>
-        /// <param name="position">The ID of the export job; returned when initiating `POST projects/:project_id/versions/:version_id/exports &lt;/en/docs/bim360/v1/reference/http/document-management-projects-project_id-versions-version_id-exports-POST&gt;`_.</param>
+        /// <param name="position">The ID of the export job; returned when initiating [POST projects/:project_id/versions/:version_id/exports](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-projects-project_id-versions-version_id-exports-POST).</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder this[string position]

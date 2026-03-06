@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
 {
-    /// <summary>The type of attachment.Possible values:``Upload``: is a locally uploaded file.``DocsFile`` is a file referenced from BIM 360 Docs.``Reference`` is a file referenced form report.``Document`` is for document generation .Max length: 64</summary>
+    /// <summary>The type of attachment.Possible values:`Upload`: is a locally uploaded file.`DocsFile` is a file referenced from BIM 360 Docs.`Reference` is a file referenced form report.`Document` is for document generation .Max length: 64</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttachmentsPostRequestBody_type
     {

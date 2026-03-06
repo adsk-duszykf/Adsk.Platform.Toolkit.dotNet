@@ -86,7 +86,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
 #else
         public string SelfUrl { get; set; }
 #endif
-        /// <summary>job status.Possible values: ``PROCESSING``, ``FINISHED``, ``FAILED``</summary>
+        /// <summary>job status.Possible values: `PROCESSING`, `FINISHED`, `FAILED`</summary>
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryGetResponse_state? State { get; set; }
         /// <summary>Some higher level index statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
 #else
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryGetResponse_stats Stats { get; set; }
 #endif
-        /// <summary>type.Possible values: ``INDEX``</summary>
+        /// <summary>type.Possible values: `INDEX`</summary>
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.WithQueryGetResponse_type? Type { get; set; }
         /// <summary>timestamp.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

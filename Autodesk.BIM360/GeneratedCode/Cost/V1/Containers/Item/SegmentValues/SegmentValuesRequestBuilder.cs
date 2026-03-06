@@ -113,7 +113,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.SegmentValues
             [QueryParameter("cursorState")]
             public string CursorState { get; set; }
 #endif
-            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, ``filter[code]=``2703,2704````.Note that even single codes in number format must be enclosed in double quotes:``filter[code]=``1```` or ``filter[code]=``122. 221````.</summary>
+            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, `filter[code]=`2703,2704```.Note that even single codes in number format must be enclosed in double quotes:`filter[code]=`1`` or `filter[code]=`122. 221```.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bcode%5D")]
@@ -123,7 +123,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.SegmentValues
             [QueryParameter("filter%5Bcode%5D")]
             public string[] Filtercode { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -133,7 +133,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.SegmentValues
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -143,7 +143,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.SegmentValues
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>Returns only the values of segments with the specified original codes, including delimiters. For example, ``filter[originalCode]=27-03,27-04``.</summary>
+            /// <summary>Returns only the values of segments with the specified original codes, including delimiters. For example, `filter[originalCode]=27-03,27-04`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BoriginalCode%5D")]
@@ -153,7 +153,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.SegmentValues
             [QueryParameter("filter%5BoriginalCode%5D")]
             public string[] FilteroriginalCode { get; set; }
 #endif
-            /// <summary>Returns only the values of segments with the specified IDs of parent segments. Separate multiple parent IDs with commas. For example, ``filter[parentId]=parentId1,parentId2``. You can also return the values of segments that have no parent by including ``filter[parentId]=blank``.</summary>
+            /// <summary>Returns only the values of segments with the specified IDs of parent segments. Separate multiple parent IDs with commas. For example, `filter[parentId]=parentId1,parentId2`. You can also return the values of segments that have no parent by including `filter[parentId]=blank`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BparentId%5D")]
@@ -163,7 +163,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.SegmentValues
             [QueryParameter("filter%5BparentId%5D")]
             public string[] FilterparentId { get; set; }
 #endif
-            /// <summary>The budget code segment ID. Separate multiple IDs with commas. For example, ``filter[segmentId]=id1,id2``.</summary>
+            /// <summary>The budget code segment ID. Separate multiple IDs with commas. For example, `filter[segmentId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BsegmentId%5D")]
@@ -173,10 +173,10 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.SegmentValues
             [QueryParameter("filter%5BsegmentId%5D")]
             public string[] FiltersegmentId { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

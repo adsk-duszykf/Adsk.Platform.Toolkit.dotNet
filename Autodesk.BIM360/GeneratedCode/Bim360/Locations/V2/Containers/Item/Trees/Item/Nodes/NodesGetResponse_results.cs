@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
     public partial class NodesGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A flag that indicates if a linked document contains marked areas. A marked area is a highlighted section of a document.``true`` if a linked document contains marked areas.``false`` if a linked document does not contain marked areas.</summary>
+        /// <summary>A flag that indicates if a linked document contains marked areas. A marked area is a highlighted section of a document.`true` if a linked document contains marked areas.`false` if a linked document does not contain marked areas.</summary>
         public bool? AreaDefined { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
 #endif
         /// <summary>The node order. This number represents the relative position of a node under its parent.A node with a lower order value will be positioned before a node with a higherorder value.</summary>
         public int? Order { get; set; }
-        /// <summary>The parent node ID. ``null`` if this is the root node.</summary>
+        /// <summary>The parent node ID. `null` if this is the root node.</summary>
         public Guid? ParentId { get; set; }
         /// <summary>The path from the root node to the current node. Note that this is only included if you use `filter[id]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

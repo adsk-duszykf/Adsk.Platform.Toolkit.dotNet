@@ -179,7 +179,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContractsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, ``filter[code]=``2703,2704````.Note that even single codes in number format must be enclosed in double quotes:``filter[code]=``1```` or ``filter[code]=``122. 221````.</summary>
+            /// <summary>Returns only items that are identified by the specified codes (separated by commas). For example, `filter[code]=`2703,2704```.Note that even single codes in number format must be enclosed in double quotes:`filter[code]=`1`` or `filter[code]=`122. 221```.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bcode%5D")]
@@ -189,7 +189,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("filter%5Bcode%5D")]
             public string[] Filtercode { get; set; }
 #endif
-            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, ``filter[externalId]=id1,id2``.</summary>
+            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, `filter[externalId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalId%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("filter%5BexternalId%5D")]
             public string[] FilterexternalId { get; set; }
 #endif
-            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, ``filter[externalSystem]=Sage300``.Max length: 255</summary>
+            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, `filter[externalSystem]=Sage300`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalSystem%5D")]
@@ -209,7 +209,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("filter%5BexternalSystem%5D")]
             public string FilterexternalSystem { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -219,7 +219,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -239,7 +239,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("filter%5Bsource%5D")]
             public string Filtersource { get; set; }
 #endif
-            /// <summary>Returns only contracts with the specified statuses. Separate multiple values with commas. For example, ``filter[status]=draft,pending``. Possible values:``draft``, ``pending``, ``submitted``, ``revise``, ``sent``, ``signed``, ``executed``, ``closed``, ``inReview``.</summary>
+            /// <summary>Returns only contracts with the specified statuses. Separate multiple values with commas. For example, `filter[status]=draft,pending`. Possible values:`draft`, `pending`, `submitted`, `revise`, `sent`, `signed`, `executed`, `closed`, `inReview`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -249,7 +249,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>Returns only contracts that are identified by the provided list of types. Separate multiple types with commas; for example:``filter[type]=type1,type2``.</summary>
+            /// <summary>Returns only contracts that are identified by the provided list of types. Separate multiple types with commas; for example:`filter[type]=type1,type2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Btype%5D")]
@@ -259,7 +259,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("filter%5Btype%5D")]
             public string[] Filtertype { get; set; }
 #endif
-            /// <summary>A list of resources related to the contract to include in the response. For example, ``include=budgets`` returns budgets related to the contract. ``include=attributes`` will return custom attributes which represents the ``properties`` in the response. If ``idOnly`` is set, the response contains only the contract IDs (``id``), and the other include items are ignored. Possible values: ``budgets``, ``attributes``, ``idOnly``, ``scheduleOfValues``, ``compounded``, ``companyERPId``, ``companyTaxId``.</summary>
+            /// <summary>A list of resources related to the contract to include in the response. For example, `include=budgets` returns budgets related to the contract. `include=attributes` will return custom attributes which represents the `properties` in the response. If `idOnly` is set, the response contains only the contract IDs (`id`), and the other include items are ignored. Possible values: `budgets`, `attributes`, `idOnly`, `scheduleOfValues`, `compounded`, `companyERPId`, `companyTaxId`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -269,13 +269,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

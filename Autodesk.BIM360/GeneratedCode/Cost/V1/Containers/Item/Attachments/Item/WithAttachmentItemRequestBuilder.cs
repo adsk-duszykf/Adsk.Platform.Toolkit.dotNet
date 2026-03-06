@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.Item
         {
         }
         /// <summary>
-        /// Deletes a ``Attachment``
+        /// Deletes a `Attachment`
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a ``Attachment``
+        /// Deletes a `Attachment`
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

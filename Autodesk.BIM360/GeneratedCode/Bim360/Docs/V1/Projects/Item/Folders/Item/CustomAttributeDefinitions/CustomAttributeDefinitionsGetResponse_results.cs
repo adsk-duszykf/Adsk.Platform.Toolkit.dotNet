@@ -30,7 +30,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttrib
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type of attribute. Possible values: ``string`` (text field), ``date``, ``array`` (drop-list).</summary>
+        /// <summary>The type of attribute. Possible values: `string` (text field), `date`, `array` (drop-list).</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsGetResponse_results_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

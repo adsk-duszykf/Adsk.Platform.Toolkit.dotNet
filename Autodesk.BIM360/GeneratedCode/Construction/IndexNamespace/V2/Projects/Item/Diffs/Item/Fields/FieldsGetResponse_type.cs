@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Fields
 {
-    /// <summary>field data type.Possible values: ``Unknown``, ``Boolean``, ``Integer``, ``Double``, ``Blob``, ``DbKey``, ``String``, ``LocalizableString``, ``DateTime``, ``GeoLocation``, ``Position``</summary>
+    /// <summary>field data type.Possible values: `Unknown`, `Boolean`, `Integer`, `Double`, `Blob`, `DbKey`, `String`, `LocalizableString`, `DateTime`, `GeoLocation`, `Position`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FieldsGetResponse_type
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item
 {
-    /// <summary>The status of the export job. Possible values: ``committed``, ``completed``, ``failed``. When the job is complete, an object representing the result of the job is returned in the response.</summary>
+    /// <summary>The status of the export job. Possible values: `committed`, `completed`, `failed`. When the job is complete, an object representing the result of the job is returned in the response.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithExport_GetResponse_status
     {

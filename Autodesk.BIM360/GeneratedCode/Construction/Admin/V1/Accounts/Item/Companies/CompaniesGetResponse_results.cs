@@ -58,7 +58,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Original name of the company. Only returned when a company is deleted, since, in this case, the company ``name`` will be updated to ``removed at MMDDYYYY``.</summary>
+        /// <summary>Original name of the company. Only returned when a company is deleted, since, in this case, the company `name` will be updated to `removed at MMDDYYYY`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalName { get; set; }
@@ -68,7 +68,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies
 #endif
         /// <summary>The number of projects associated with the company.</summary>
         public int? ProjectSize { get; set; }
-        /// <summary>The status of the company.Possible values: ``deleted``, ``active``</summary>
+        /// <summary>The status of the company.Possible values: `deleted`, `active`</summary>
         public global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse_results_status? Status { get; set; }
         /// <summary>The Tax ID.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

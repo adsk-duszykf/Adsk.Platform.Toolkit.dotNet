@@ -26,11 +26,11 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
 #endif
         /// <summary>The relationship ID, a GUID that uniquely identifies the relationship.</summary>
         public Guid? Id { get; set; }
-        /// <summary>Indicates whether this relationship is deleted. If ``true``, it is deleted. If ``false``, it is not.</summary>
+        /// <summary>Indicates whether this relationship is deleted. If `true`, it is deleted. If `false`, it is not.</summary>
         public bool? IsDeleted { get; set; }
-        /// <summary>Indicates whether this relationship is read-only for the current caller. If ``true``, the relationship isread-only. If ``false``, it is not.</summary>
+        /// <summary>Indicates whether this relationship is read-only for the current caller. If `true`, the relationship isread-only. If `false`, it is not.</summary>
         public bool? IsReadOnly { get; set; }
-        /// <summary>Indicates whether or not this relationship was created by a service. If ``true``, it was created by a service.If ``false``, it was not.</summary>
+        /// <summary>Indicates whether or not this relationship was created by a service. If `true`, it was created by a service.If `false`, it was not.</summary>
         public bool? IsService { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

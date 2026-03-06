@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
         {
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Query the details of a specific user.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_GetResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_GetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Query the details of a specific user.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_Response>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Update a specific user&apos;s status or default company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_PatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_PatchResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_PatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Update a specific user&apos;s status or default company.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_Response"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_Response>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Query the details of a specific user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
             return requestInfo;
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Update a specific user&apos;s status or default company.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

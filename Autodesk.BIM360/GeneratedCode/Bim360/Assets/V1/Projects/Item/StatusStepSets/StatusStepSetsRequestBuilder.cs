@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
         {
         }
         /// <summary>
-        /// GET status-step-sets
+        /// Searches for and returns all specified status sets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET status-step-sets
+        /// Searches for and returns all specified status sets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST status-step-sets
+        /// Creates a new status set.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST status-step-sets
+        /// Creates a new status set.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET status-step-sets
+        /// Searches for and returns all specified status sets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             return requestInfo;
         }
         /// <summary>
-        /// POST status-step-sets
+        /// Creates a new status set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -161,12 +161,12 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET status-step-sets
+        /// Searches for and returns all specified status sets.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatusStepSetsRequestBuilderGetQueryParameters 
         {
-            /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;s returned ineach paginated response so that it can be supplied in the next request to continue paginated results. If apaginated response contains no ``cursorState`` value, then there are no further pages to return.Omit this field to initiate a paginated request or to restart pagination.</summary>
+            /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;s returned ineach paginated response so that it can be supplied in the next request to continue paginated results. If apaginated response contains no `cursorState` value, then there are no further pages to return.Omit this field to initiate a paginated request or to restart pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cursorState")]
@@ -176,7 +176,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             [QueryParameter("cursorState")]
             public string CursorState { get; set; }
 #endif
-            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: ``YYYY-MM-DDThh:mm:ss.SSSZ``, A date and time range takes thisformat: ``YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ``. Range queries can be closed or open in eitherdirection: ``YYYY-MM-DDThh:mm:ss.SSSZ..`` or ``..YYYY-MM-DDThh:mm:ss.SSSZ``.</summary>
+            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: `YYYY-MM-DDThh:mm:ss.SSSZ`, A date and time range takes thisformat: `YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ`. Range queries can be closed or open in eitherdirection: `YYYY-MM-DDThh:mm:ss.SSSZ..` or `..YYYY-MM-DDThh:mm:ss.SSSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -186,10 +186,10 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>Whether or not soft-deleted object should be included in the response. If ``true``, soft-deleted objects are returned. If ``false``, they are not. The default is ``false``.</summary>
+            /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
-            /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects than the limit if the Assets service runs out of specified objects to return - at the end of a set of paged results, for example. The maximum limit is ``200``; the default limit is ``25``.</summary>
+            /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects than the limit if the Assets service runs out of specified objects to return - at the end of a set of paged results, for example. The maximum limit is `200`; the default limit is `25`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }
@@ -202,7 +202,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
         {
         }
         /// <summary>
-        /// POST status-step-sets
+        /// Creates a new status set.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatusStepSetsRequestBuilderPostQueryParameters 

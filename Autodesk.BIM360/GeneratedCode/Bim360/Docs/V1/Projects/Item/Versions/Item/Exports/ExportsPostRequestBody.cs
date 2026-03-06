@@ -12,9 +12,9 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
     public partial class ExportsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>``true``: export the page with hyperlinks.``false``: (default) export the page without hyperlinks.Note that all hyperlinks in the page are exported, including external links and internal links to other BIM 360 documents, whether the links were imported when the PDF was originally uploaded or whether they were added within BIM 360 Document Management.</summary>
+        /// <summary>`true`: export the page with hyperlinks.`false`: (default) export the page without hyperlinks.Note that all hyperlinks in the page are exported, including external links and internal links to other BIM 360 documents, whether the links were imported when the PDF was originally uploaded or whether they were added within BIM 360 Document Management.</summary>
         public bool? IncludeHyperlinks { get; set; }
-        /// <summary>``true``: export the page with markups (annotations). Note thatthe endpoint only exports published and unarchived markups.``false``: (default) export the page without markups.You can manage a page&apos;s markups by opening the page in theDocument Management module.</summary>
+        /// <summary>`true`: export the page with markups (annotations). Note thatthe endpoint only exports published and unarchived markups.`false`: (default) export the page without markups.You can manage a page&apos;s markups by opening the page in theDocument Management module.</summary>
         public bool? IncludeMarkups { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

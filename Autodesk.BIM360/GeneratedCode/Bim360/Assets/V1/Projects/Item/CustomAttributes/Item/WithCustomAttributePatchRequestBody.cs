@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item
     public partial class WithCustomAttributePatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The data type that this custom attribute&apos;s value must take. Once set, the data type can&apos;t be changed.Possible values:- ``boolean``: ``true`` or ``false``- ``text``: a string- ``numeric``: a string that parses as a valid floating point number (not localized)- ``date``: an ISO8601 date string with no time, for example, ``2021-04-01``.- ``select``: a valid ID from the list of values defined by ``enumValues``.- ``multi_select``: an array of valid IDs from the list of values defined by ``enumValues``.</summary>
+        /// <summary>The data type that this custom attribute&apos;s value must take. Once set, the data type can&apos;t be changed.Possible values:- `boolean`: `true` or `false`- `text`: a string- `numeric`: a string that parses as a valid floating point number (not localized)- `date`: an ISO8601 date string with no time, for example, `2021-04-01`.- `select`: a valid ID from the list of values defined by `enumValues`.- `multi_select`: an array of valid IDs from the list of values defined by `enumValues`.</summary>
         public global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributePatchRequestBody_dataType? DataType { get; set; }
         /// <summary>The default value for this custom attribute if no value is specified on asset creation. If this field is notspecified, the custom attribute does not have a default value. The default value it takes can be any one ofthree possible value types, defined below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,7 +38,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>An array of string values that defines possible values that may be supplied when this custom attributes datatype (defined by ``dataType``) is set to ``select`` or ``multi_select``. This field is required when the datatype is set to ``select`` or ``multi_select``.</summary>
+        /// <summary>An array of string values that defines possible values that may be supplied when this custom attributes datatype (defined by `dataType`) is set to `select` or `multi_select`. This field is required when the datatype is set to `select` or `multi_select`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EnumValues { get; set; }
@@ -46,9 +46,9 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item
 #else
         public List<string> EnumValues { get; set; }
 #endif
-        /// <summary>The maximum length that a text value can be for this custom attribute when creating or editing an asset.Setting a value for this field does not guarantee that existing or imported assets with this customattribute will have this attribute&apos;s value limited to this length. This field only applies when datatypeis set to ``text``. Default is ``250``, which is the maximum value this field can be set to.</summary>
+        /// <summary>The maximum length that a text value can be for this custom attribute when creating or editing an asset.Setting a value for this field does not guarantee that existing or imported assets with this customattribute will have this attribute&apos;s value limited to this length. This field only applies when datatypeis set to `text`. Default is `250`, which is the maximum value this field can be set to.</summary>
         public int? MaxLengthOnIngress { get; set; }
-        /// <summary>Specifies whether or not this custom attribute is required when creating or editing an asset. If ``true``, thecustom attribute is required. If ``false``, it is not required. Setting this field to ``true`` does not guaranteethat existing or imported assets will have this custom attribute.</summary>
+        /// <summary>Specifies whether or not this custom attribute is required when creating or editing an asset. If `true`, thecustom attribute is required. If `false`, it is not required. Setting this field to `true` does not guaranteethat existing or imported assets will have this custom attribute.</summary>
         public bool? RequiredOnIngress { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

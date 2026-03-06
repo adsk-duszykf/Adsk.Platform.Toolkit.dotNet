@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
     public partial class ActionHistoriesGetResponse_results : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The specific action that occurred (e.g., ``review:proceed``, ``submitted``, ``rejected``).</summary>
+        /// <summary>The specific action that occurred (e.g., `review:proceed`, `submitted`, `rejected`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
 #else
         public string AssociationId { get; set; }
 #endif
-        /// <summary>The type of object associated with the action history (e.g., ``Contract``, ``SCO``)</summary>
+        /// <summary>The type of object associated with the action history (e.g., `Contract`, `SCO`)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociationType { get; set; }
@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
 #else
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse_results_operator Operator { get; set; }
 #endif
-        /// <summary>Additional context for the action. The fields present in this object depend on the action history type.For Approval workflows, the object includes:``stepName`` – the name of the workflow step.``taskDefinitionKey`` – the key that identifies the workflow task.``workflowInstanceId`` – the ID of the workflow instance.These fields provide task-level process information.For Normal workflows, the object may include fields such as to and from that indicate a change in status.</summary>
+        /// <summary>Additional context for the action. The fields present in this object depend on the action history type.For Approval workflows, the object includes:`stepName` – the name of the workflow step.`taskDefinitionKey` – the key that identifies the workflow task.`workflowInstanceId` – the ID of the workflow instance.These fields provide task-level process information.For Normal workflows, the object may include fields such as to and from that indicate a change in status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse_results_options? Options { get; set; }
@@ -54,7 +54,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
 #else
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse_results_options Options { get; set; }
 #endif
-        /// <summary>The category of the action history. Possible values: ``Approval``, ``Normal``.</summary>
+        /// <summary>The category of the action history. Possible values: `Approval`, `Normal`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

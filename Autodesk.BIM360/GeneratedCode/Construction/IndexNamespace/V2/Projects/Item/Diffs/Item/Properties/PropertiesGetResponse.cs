@@ -65,10 +65,10 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
         /// <summary>common properties index properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev>? Prev { get; set; }
+        public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev? Prev { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev> Prev { get; set; }
+        public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev Prev { get; set; }
 #endif
         /// <summary>property database property keyed values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
 #endif
         /// <summary>The stable SVF2 ID of the object.</summary>
         public int? Svf2Id { get; set; }
-        /// <summary>object change type.Possible values: ``OBJECT_ADDED``, ``OBJECT_REMOVED``, ``OBJECT_CHANGED``</summary>
+        /// <summary>object change type.Possible values: `OBJECT_ADDED`, `OBJECT_REMOVED`, `OBJECT_CHANGED`</summary>
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_type? Type { get; set; }
         /// <summary>List of corresponding view IDs in the index manifest that this object is visible in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +131,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
                 { "geomHash", n => { GeomHash = n.GetStringValue(); } },
                 { "lineageId", n => { LineageId = n.GetStringValue(); } },
                 { "lmvId", n => { LmvId = n.GetIntValue(); } },
-                { "prev", n => { Prev = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev>(global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "prev", n => { Prev = n.GetObjectValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev>(global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev.CreateFromDiscriminatorValue); } },
                 { "props", n => { Props = n.GetObjectValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_props>(global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_props.CreateFromDiscriminatorValue); } },
                 { "propsHash", n => { PropsHash = n.GetStringValue(); } },
                 { "propsIgnored", n => { PropsIgnored = n.GetObjectValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_propsIgnored>(global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_propsIgnored.CreateFromDiscriminatorValue); } },
@@ -154,7 +154,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
             writer.WriteStringValue("geomHash", GeomHash);
             writer.WriteStringValue("lineageId", LineageId);
             writer.WriteIntValue("lmvId", LmvId);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev>("prev", Prev);
+            writer.WriteObjectValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_prev>("prev", Prev);
             writer.WriteObjectValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_props>("props", Props);
             writer.WriteStringValue("propsHash", PropsHash);
             writer.WriteObjectValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse_propsIgnored>("propsIgnored", PropsIgnored);

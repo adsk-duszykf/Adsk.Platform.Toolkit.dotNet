@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
     public partial class QueriesPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>`SQL AST for describing columns/projections &lt;/en/docs/acc/v1/tutorials/model-properties/query-ref/&gt;`_</summary>
+        /// <summary>[SQL AST for describing columns/projections](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostRequestBody_columns? Columns { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
 #else
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostRequestBody_columns Columns { get; set; }
 #endif
-        /// <summary>`SQL AST for binary expression/filter &lt;/en/docs/acc/v1/tutorials/model-properties/query-ref/&gt;`_</summary>
+        /// <summary>[SQL AST for binary expression/filter](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostRequestBody_query? Query { get; set; }

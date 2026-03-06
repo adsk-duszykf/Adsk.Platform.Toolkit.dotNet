@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image
         {
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Create or update a specific partner company&apos;s image.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image.ImagePatchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image.ImagePatchResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image.ImagePatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Create or update a specific partner company&apos;s image.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image.ImageResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image.ImageResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image.ImageResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Create or update a specific partner company&apos;s image.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

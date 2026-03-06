@@ -36,9 +36,9 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>field data type.Possible values: ``Unknown``, ``Boolean``, ``Integer``, ``Double``, ``Blob``, ``DbKey``, ``String``, ``LocalizableString``, ``DateTime``, ``GeoLocation``, ``Position``</summary>
+        /// <summary>field data type.Possible values: `Unknown`, `Boolean`, `Integer`, `Double`, `Blob`, `DbKey`, `String`, `LocalizableString`, `DateTime`, `GeoLocation`, `Position`</summary>
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Fields.FieldsGetResponse_type? Type { get; set; }
-        /// <summary>The property database attribute data type context or unit of measurement, e.g., ``m``, ``ft``, ``m^2``, ``kip/inch^2``.</summary>
+        /// <summary>The property database attribute data type context or unit of measurement, e.g., `m`, `ft`, `m^2`, `kip/inch^2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uom { get; set; }

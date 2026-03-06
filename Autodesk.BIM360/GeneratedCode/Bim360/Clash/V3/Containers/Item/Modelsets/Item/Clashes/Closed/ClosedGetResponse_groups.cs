@@ -42,7 +42,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
 #endif
         /// <summary>The unique identifier of the closed clash group.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The reason for closing this clash group. Possible values: ``OTHER``, ``VALID_INTERFACE``, ``VALID_PENETRATION``, ``MINIMAL_OVERLAP``, ``ITEM_CAN_FLEX``, ``MODEL_INACCURACY``, ``FIELD_FIX``.</summary>
+        /// <summary>The reason for closing this clash group. Possible values: `OTHER`, `VALID_INTERFACE`, `VALID_PENETRATION`, `MINIMAL_OVERLAP`, `ITEM_CAN_FLEX`, `MODEL_INACCURACY`, `FIELD_FIX`.</summary>
         public global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedGetResponse_groups_reason? Reason { get; set; }
         /// <summary>The unique identifiers of screenshots associated with the closed clash group. Max items: 5.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

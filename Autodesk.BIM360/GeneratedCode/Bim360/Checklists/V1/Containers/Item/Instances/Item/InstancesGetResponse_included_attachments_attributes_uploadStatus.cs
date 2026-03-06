@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
-    /// <summary>The upload status of the attachment. Possible values: ``completed``, ``not-completed``.</summary>
+    /// <summary>The upload status of the attachment. Possible values: `completed`, `not-completed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum InstancesGetResponse_included_attachments_attributes_uploadStatus
     {

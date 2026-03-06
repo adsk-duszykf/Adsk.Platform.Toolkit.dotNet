@@ -2,10 +2,12 @@
 #pragma warning disable CS0618
 using Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
+using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Threading;
 using System;
 namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
 {
@@ -45,7 +47,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hq/v1/accounts/{account_id}/projects", pathParameters)
+        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hq/v1/accounts/{account_id}/projects{?field*,limit*,offset*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -53,7 +55,180 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hq/v1/accounts/{account_id}/projects", rawUrl)
+        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/hq/v1/accounts/{account_id}/projects{?field*,limit*,offset*,sort*}", rawUrl)
+        {
+        }
+        /// <summary>
+        /// Query all the projects in a specific BIM 360 account.
+        /// </summary>
+        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsGetResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsGetResponse?> GetAsProjectsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsGetResponse> GetAsProjectsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsGetResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Query all the projects in a specific BIM 360 account.
+        /// </summary>
+        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsProjectsGetResponseAsync instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Create a new BIM 360 project in a specific BIM 360 account.
+        /// </summary>
+        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostResponse?> PostAsProjectsPostResponseAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostResponse> PostAsProjectsPostResponseAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Create a new BIM 360 project in a specific BIM 360 account.
+        /// </summary>
+        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsProjectsPostResponseAsync instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse?> PostAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse> PostAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Query all the projects in a specific BIM 360 account.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Create a new BIM 360 project in a specific BIM 360 account.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder"/></returns>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder WithUrl(string rawUrl)
+        {
+            return new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Query all the projects in a specific BIM 360 account.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ProjectsRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("field")]
+            public string? Field { get; set; }
+#nullable restore
+#else
+            [QueryParameter("field")]
+            public string Field { get; set; }
+#endif
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            [QueryParameter("offset")]
+            public int? Offset { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sort")]
+            public string? Sort { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort")]
+            public string Sort { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ProjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>
+        {
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ProjectsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

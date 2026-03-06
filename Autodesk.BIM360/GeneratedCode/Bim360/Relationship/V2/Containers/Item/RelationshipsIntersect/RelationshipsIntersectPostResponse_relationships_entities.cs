@@ -14,7 +14,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
     {
         /// <summary>The date and time the entity was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
-        /// <summary>The domain to which the entity belongs.To learn more about domains and entities, see the `Relationship Service Field Guide &lt;/en/docs/bim360/v1/overview/field-guide/relationships&gt;`_.Max length: 128</summary>
+        /// <summary>The domain to which the entity belongs.To learn more about domains and entities, see the [Relationship Service Field Guide](https://aps.autodesk.com/en/docs/bim360/v1/overview/field-guide/relationships).Max length: 128</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }

@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
         {
         }
         /// <summary>
-        /// You can also use this endpoint to retrieve a list of project templates by setting the ``filter[classification]`` parameter to ``template`` or the ``filter[type]`` parameter to ``Template Project``.
+        /// Retrieves a list of the projects in the specified account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse>(requestInfo, global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can also use this endpoint to retrieve a list of project templates by setting the ``filter[classification]`` parameter to ``template`` or the ``filter[type]`` parameter to ``Template Project``.
+        /// Retrieves a list of the projects in the specified account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse>(requestInfo, global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can also use this endpoint to retrieve a list of project templates by setting the ``filter[classification]`` parameter to ``template`` or the ``filter[type]`` parameter to ``Template Project``.
+        /// Retrieves a list of the projects in the specified account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,12 +98,12 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             return new global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// You can also use this endpoint to retrieve a list of project templates by setting the ``filter[classification]`` parameter to ``template`` or the ``filter[type]`` parameter to ``Template Project``.
+        /// Retrieves a list of the projects in the specified account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProjectsRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma-separated list of the project fields to include in the response. Default value: all fields.Possible values: ``accountId``, ``addressLine1``, ``addressLine2``, ``businessUnitId``, ``city``, ``companyCount``, ``constructionType``, ``country``, ``createdAt``, ``deliveryMethod``, ``endDate``, ``imageUrl``, ``jobNumber``, ``lastSignIn``, ``latitude``, ``longitude``, ``memberCount``, ``name``, ``platform``, ``postalCode``, ``products``, ``projectValue``, ``sheetCount``, ``startDate``, ``stateOrProvince``, ``status``, ``thumbnailImageUrl``, ``timezone``, ``type`` and ``updatedAt``.</summary>
+            /// <summary>A comma-separated list of the project fields to include in the response. Default value: all fields.Possible values: `accountId`, `addressLine1`, `addressLine2`, `businessUnitId`, `city`, `companyCount`, `constructionType`, `country`, `createdAt`, `deliveryMethod`, `endDate`, `imageUrl`, `jobNumber`, `lastSignIn`, `latitude`, `longitude`, `memberCount`, `name`, `platform`, `postalCode`, `products`, `projectValue`, `sheetCount`, `startDate`, `stateOrProvince`, `status`, `thumbnailImageUrl`, `timezone`, `type` and `updatedAt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -113,10 +113,10 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
-            /// <summary>The ID of the business unit that returned projects must be associated with.Note that you can obtain this ID value by calling the `GET business_units_structure &lt;/en/docs/acc/v1/reference/http/business_units_structure-GET/&gt;`_ endpoint to retrieve a list of business units. Use the ``id`` field of the returned business unit that you want to filter by.Max length: 255</summary>
+            /// <summary>The ID of the business unit that returned projects must be associated with.Note that you can obtain this ID value by calling the [GET business_units_structure](https://aps.autodesk.com/en/docs/acc/v1/reference/http/business_units_structure-GET/) endpoint to retrieve a list of business units. Use the `id` field of the returned business unit that you want to filter by.Max length: 255</summary>
             [QueryParameter("filter%5BbusinessUnitId%5D")]
             public Guid? FilterbusinessUnitId { get; set; }
-            /// <summary>Filters projects by classification. Possible values:``production`` – Standard production projects.``template`` – Project templates that can be cloned to create production projects.``component`` – Placeholder projects that contain standardized components (e.g., forms) for use across projects. Only one component project is permitted per account. Known as a library in the ACC unified products UI.``sample`` – The single sample project automatically created upon ACC trial setup. Only one sample project is permitted per account.Max length: 255</summary>
+            /// <summary>Filters projects by classification. Possible values:`production` – Standard production projects.`template` – Project templates that can be cloned to create production projects.`component` – Placeholder projects that contain standardized components (e.g., forms) for use across projects. Only one component project is permitted per account. Known as a library in the ACC unified products UI.`sample` – The single sample project automatically created upon ACC trial setup. Only one sample project is permitted per account.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bclassification%5D")]
@@ -126,7 +126,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5Bclassification%5D")]
             public string[] Filterclassification { get; set; }
 #endif
-            /// <summary>Filters by a user-defined project identifier. Supports partial matches when used with ``filterTextMatch``. For example, ``filter[jobNumber]=HP-0002&amp;filterTextMatch=equals`` returns projects where the job number is exactly ``HP-0002``.Max length: 255</summary>
+            /// <summary>Filters by a user-defined project identifier. Supports partial matches when used with `filterTextMatch`. For example, `filter[jobNumber]=HP-0002&amp;filterTextMatch=equals` returns projects where the job number is exactly `HP-0002`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BjobNumber%5D")]
@@ -136,7 +136,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5BjobNumber%5D")]
             public string FilterjobNumber { get; set; }
 #endif
-            /// <summary>Filters projects by name. Supports partial matches when used with ``filterTextMatch``. For example ``filter[name]=ABCco&amp;filterTextMatch=startsWith`` returns projects whose names start with ``ABCco``.Max length: 255</summary>
+            /// <summary>Filters projects by name. Supports partial matches when used with `filterTextMatch`. For example `filter[name]=ABCco&amp;filterTextMatch=startsWith` returns projects whose names start with `ABCco`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bname%5D")]
@@ -146,7 +146,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5Bname%5D")]
             public string Filtername { get; set; }
 #endif
-            /// <summary>Filters by platform. Possible values: ``acc`` (Autodesk Construction Cloud) and ``bim360`` (BIM 360).Max length: 255</summary>
+            /// <summary>Filters by platform. Possible values: `acc` (Autodesk Construction Cloud) and `bim360` (BIM 360).Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bplatform%5D")]
@@ -156,7 +156,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5Bplatform%5D")]
             public string[] Filterplatform { get; set; }
 #endif
-            /// <summary>A comma-separated list of the products that the returned projects must use. Only projects that use one or more of the listed products are returned.Note that every product that can be used in a project on the same platform (ACC or BIM 360) is activated for the project. All products associated with the project are returned in the response.Some products are exclusive to ACC or to BIM 360, others are available on both platforms. Specify only the products on the appropriate platform for the projects you want to retrieve.Possible ACC values: ``accountAdministration``, ``autoSpecs``, ``build``, ``buildingConnected``, ``capitalPlanning``, ``cloudWorksharing``, ``cost``, ``designCollaboration``, ``docs``, ``financials``, ``insight``, ``modelCoordination``, ``projectAdministration``, ``takeoff``, and ``workshopxr``.Possible BIM 360 values: ``accountAdministration``, ``assets``, ``cloudWorksharing``, ``costManagement``, ``designCollaboration``, ``documentManagement``, ``field``, ``fieldManagement``, ``glue``, ``insight``, ``modelCoordination``, ``plan``, ``projectAdministration``, ``projectHome``, ``projectManagement``, and ``quantification``.</summary>
+            /// <summary>A comma-separated list of the products that the returned projects must use. Only projects that use one or more of the listed products are returned.Note that every product that can be used in a project on the same platform (ACC or BIM 360) is activated for the project. All products associated with the project are returned in the response.Some products are exclusive to ACC or to BIM 360, others are available on both platforms. Specify only the products on the appropriate platform for the projects you want to retrieve.Possible ACC values: `accountAdministration`, `autoSpecs`, `build`, `buildingConnected`, `capitalPlanning`, `cloudWorksharing`, `cost`, `designCollaboration`, `docs`, `financials`, `insight`, `modelCoordination`, `projectAdministration`, `takeoff`, and `workshopxr`.Possible BIM 360 values: `accountAdministration`, `assets`, `cloudWorksharing`, `costManagement`, `designCollaboration`, `documentManagement`, `field`, `fieldManagement`, `glue`, `insight`, `modelCoordination`, `plan`, `projectAdministration`, `projectHome`, `projectManagement`, and `quantification`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bproducts%5D")]
@@ -166,7 +166,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5Bproducts%5D")]
             public string[] Filterproducts { get; set; }
 #endif
-            /// <summary>Filters projects by status. Possible values: ``active``, ``pending``, ``archived``, ``suspended``.</summary>
+            /// <summary>Filters projects by status. Possible values: `active`, `pending`, `archived`, `suspended`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -176,7 +176,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,10 +187,10 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filterTextMatch")]
             public string FilterTextMatch { get; set; }
 #endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., ``filter[name]``, ``filter[jobNumber]``, ``filter[companyName]``, etc.).Possible values:``contains`` (default) – Matches if the field contains the specified text anywhere``startsWith`` – Matches if the field starts with the specified text``endsWith`` – Matches if the field ends with the specified text``equals`` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
+            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
             [QueryParameter("filterTextMatch")]
             public global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
-            /// <summary>Filters by project type. To exclude a type, prefix it with ``-`` (e.g., ``-Bridge`` excludes bridge projects).Possible values: ``Airport``, ``Assisted Living / Nursing Home``, ``Bridge``, ``Canal / Waterway``, ``Convention Center``, ``Court House``, ``Data Center``, ``Dams / Flood Control / Reservoirs``, ``Demonstration Project``, ``Dormitory``, ``Education Facility``, ``Government Building``, ``Harbor / River Development``, ``Hospital``, ``Hotel / Motel``, ``Library``, ``Manufacturing / Factory``, ``Medical Laboratory``, ``Medical Office``, ``Military Facility``, ``Mining Facility``, ``Multi-Family Housing``, ``Museum``, ``Oil &amp; Gas``,``Plant``, ``Office``, ``OutPatient Surgery Center``, ``Parking Structure / Garage``, ``Performing Arts``, ``Power Plant``, ``Prison / Correctional Facility``, ``Rail``, ``Recreation Building``, ``Religious Building``, ``Research Facility / Laboratory``, ``Restaurant``, ``Retail``, ``Seaport``, ``Single-Family Housing``, ``Solar Farm``, ``Stadium/Arena``, ``Streets / Roads / Highways``, ``Template Project``, ``Theme Park``, ``Training Project``, ``Transportation Building``, ``Tunnel``, ``Utilities``, ``Warehouse (non-manufacturing)``, ``Waste Water / Sewers``, ``Water Supply``, ``Wind Farm``.</summary>
+            /// <summary>Filters by project type. To exclude a type, prefix it with `-` (e.g., `-Bridge` excludes bridge projects).Possible values: `Airport`, `Assisted Living / Nursing Home`, `Bridge`, `Canal / Waterway`, `Convention Center`, `Court House`, `Data Center`, `Dams / Flood Control / Reservoirs`, `Demonstration Project`, `Dormitory`, `Education Facility`, `Government Building`, `Harbor / River Development`, `Hospital`, `Hotel / Motel`, `Library`, `Manufacturing / Factory`, `Medical Laboratory`, `Medical Office`, `Military Facility`, `Mining Facility`, `Multi-Family Housing`, `Museum`, `Oil &amp; Gas`,`Plant`, `Office`, `OutPatient Surgery Center`, `Parking Structure / Garage`, `Performing Arts`, `Power Plant`, `Prison / Correctional Facility`, `Rail`, `Recreation Building`, `Religious Building`, `Research Facility / Laboratory`, `Restaurant`, `Retail`, `Seaport`, `Single-Family Housing`, `Solar Farm`, `Stadium/Arena`, `Streets / Roads / Highways`, `Template Project`, `Theme Park`, `Training Project`, `Transportation Building`, `Tunnel`, `Utilities`, `Warehouse (non-manufacturing)`, `Waste Water / Sewers`, `Water Supply`, `Wind Farm`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Btype%5D")]
@@ -200,7 +200,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5Btype%5D")]
             public string[] Filtertype { get; set; }
 #endif
-            /// <summary>Filters projects updated within a specific date range in ISO 8601 format. For example:Date range: ``2023-03-02T00:00:00.000Z..2023-03-03T23:59:59 .999Z``Specific start date: ``2023-03-02T00:00:00.000Z..``Specific end date: ``..2023-03-02T23:59:59.999Z``For more details, see `JSON API Filtering &lt;https://jsonapi.org/format/#fetching-filtering&gt;`_.Max length: 100</summary>
+            /// <summary>Filters projects updated within a specific date range in ISO 8601 format. For example:Date range: `2023-03-02T00:00:00.000Z..2023-03-03T23:59:59 .999Z`Specific start date: `2023-03-02T00:00:00.000Z..`Specific end date: `..2023-03-02T23:59:59.999Z`For more details, see [JSON API Filtering](https://jsonapi.org/format/#fetching-filtering).Max length: 100</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -210,13 +210,13 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>The maximum number of records to return in the response.Default: ``20``Minimum: ``1``Maximum: ``200`` (If a larger value is provided, only 200 records are returned)</summary>
+            /// <summary>The maximum number of records to return in the response.Default: `20`Minimum: `1`Maximum: `200` (If a larger value is provided, only 200 records are returned)</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The index of the first record to return.Used for pagination in combination with the ``limit`` parameter.Example: ``limit=20`` and ``offset=40`` returns records 41–60.</summary>
+            /// <summary>The index of the first record to return.Used for pagination in combination with the `limit` parameter.Example: `limit=20` and `offset=40` returns records 41-60.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Sorts results by specified fields. Multiple fields can be used in order of priority. Each field can be followed by ``asc`` (ascending) or ``desc`` (descending). Default: ``asc``.For example, ``sort=name,createdAt desc`` sorts projects by name, then by creation date (newest first).Possible values: ``name`` (the default), ``startDate``, ``endDate``, ``type``, ``status``, ``jobNumber``, ``constructionType``, ``deliveryMethod``, ``contractType``, ``currentPhase``, ``companyCount``, ``memberCount``, ``createdAt`` and ``updatedAt``.</summary>
+            /// <summary>Sorts results by specified fields. Multiple fields can be used in order of priority. Each field can be followed by `asc` (ascending) or `desc` (descending). Default: `asc`.For example, `sort=name,createdAt desc` sorts projects by name, then by creation date (newest first).Possible values: `name` (the default), `startDate`, `endDate`, `type`, `status`, `jobNumber`, `constructionType`, `deliveryMethod`, `contractType`, `currentPhase`, `companyCount`, `memberCount`, `createdAt` and `updatedAt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item
         {
         }
         /// <summary>
-        /// Each data extract contains three types of files:
+        /// Returns a signed URL that you can contact to retrieve a single specified file from a specified job&apos;s data extract.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameGetResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Each data extract contains three types of files:
+        /// Returns a signed URL that you can contact to retrieve a single specified file from a specified job&apos;s data extract.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Each data extract contains three types of files:
+        /// Returns a signed URL that you can contact to retrieve a single specified file from a specified job&apos;s data extract.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

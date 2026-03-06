@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
         {
         }
         /// <summary>
-        /// POST categories/:categoryId/relationships
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST categories/:categoryId/relationships
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST categories/:categoryId/relationships
+        /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

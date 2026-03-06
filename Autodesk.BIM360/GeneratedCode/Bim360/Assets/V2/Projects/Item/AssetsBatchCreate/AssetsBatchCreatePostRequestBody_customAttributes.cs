@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchCreate
 {
+    /// <summary>
+    /// An optional JSON dictionary specifying one or more custom attributes and values to be assigned to theasset. The custom attributes must belong to the set of custom attributes specified by the asset&apos;s category.The dictionary is a set of key:value pairs that each starts with the unique custom attribute name (not tobe confused with the custom attribute&apos;s display name) followed by the attribute value. The value must usethe data type defined by the attribute:For `text`, the value is a string.For `date`, the value is an ISO8601 date string with no time, for example, `2020-04-10`.For `select`, the value is a valid ID from the list of values defined for this custom attribute.For `multi-select`, the value is an array of valid IDs from the list of values defined for this custom attribute.For `boolean`, the value is a boolean.For `numeric`, the value is a string that parses as a valid floating point number (not localized).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AssetsBatchCreatePostRequestBody_customAttributes : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The Asterisk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

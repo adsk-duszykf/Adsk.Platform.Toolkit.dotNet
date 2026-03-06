@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
         {
         }
         /// <summary>
-        /// GET containers/{containerId}/templates
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) templates in a project, including details about the items, sections, and attachments in the template.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/templates
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) templates in a project, including details about the items, sections, and attachments in the template.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/templates
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) templates in a project, including details about the items, sections, and attachments in the template.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,12 +111,12 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             return new global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET containers/{containerId}/templates
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) templates in a project, including details about the items, sections, and attachments in the template.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TemplatesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas. For example, ``fields[templates] = createdAt, templateType.`` For more details, see `JSON API Sparse Fieldsets &lt;http://jsonapi.org/format/#fetching-sparse-fieldsets&gt;`_.</summary>
+            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas. For example, `fields[templates] = createdAt, templateType.` For more details, see [JSON API Sparse Fieldsets](http://jsonapi.org/format/#fetching-sparse-fieldsets).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields%5Btemplates%5D")]
@@ -126,16 +126,16 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             [QueryParameter("fields%5Btemplates%5D")]
             public string Fieldstemplates { get; set; }
 #endif
-            /// <summary>Retrieves templates associated with the specified type. For example,  ``filter[templateTypeId]=1`` or ``queryFilter[templateTypeId]=1``. Possible values: ``1`` (quality), ``6`` (punch List), ``11`` (safety), ``15`` (commissioning). Separate multiple values with commas. For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves templates associated with the specified type. For example,  `filter[templateTypeId]=1` or `queryFilter[templateTypeId]=1`. Possible values: `1` (quality), `6` (punch List), `11` (safety), `15` (commissioning). Separate multiple values with commas. For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BtemplateTypeId%5D")]
             public double? FiltertemplateTypeId { get; set; }
-            /// <summary>The number of templates to return in the response payload. Default value: ``50``. For example, to limit the response to two templates per page, use ``page[limit]=2`` or ``limit=2``. For more details, see `JSON API Paging &lt;http://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of templates to return in the response payload. Default value: `50`. For example, to limit the response to two templates per page, use `page[limit]=2` or `limit=2`. For more details, see [JSON API Paging](http://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("limit")]
             public double? Limit { get; set; }
-            /// <summary>matchValue is the page number that you want to begin templates results from; for example, ``page[offset]=50`` or ``offset=50``. For more details, see `JSON API Paging &lt;http://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>matchValue is the page number that you want to begin templates results from; for example, `page[offset]=50` or `offset=50`. For more details, see [JSON API Paging](http://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("page%5Boffset%5D")]
             public double? Pageoffset { get; set; }
-            /// <summary>Sort the template by ``title`` or ``templateType.name`` or ``templateTypeName``. For example, ``sort=title``. Separate multiple values with commas. To sort in descending order add a ``-`` before the sort criteria. For example, ``sort=-title``. For more details, see `JSON API Sorting &lt;http://jsonapi.org/format/#fetching-sorting&gt;`_.Possible values: ``templateType.name``, ``title``</summary>
+            /// <summary>Sort the template by `title` or `templateType.name` or `templateTypeName`. For example, `sort=title`. Separate multiple values with commas. To sort in descending order add a `-` before the sort criteria. For example, `sort=-title`. For more details, see [JSON API Sorting](http://jsonapi.org/format/#fetching-sorting).Possible values: `templateType.name`, `title`</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,7 +146,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            /// <summary>Sort the template by ``title`` or ``templateType.name`` or ``templateTypeName``. For example, ``sort=title``. Separate multiple values with commas. To sort in descending order add a ``-`` before the sort criteria. For example, ``sort=-title``. For more details, see `JSON API Sorting &lt;http://jsonapi.org/format/#fetching-sorting&gt;`_.Possible values: ``templateType.name``, ``title``</summary>
+            /// <summary>Sort the template by `title` or `templateType.name` or `templateTypeName`. For example, `sort=title`. Separate multiple values with commas. To sort in descending order add a `-` before the sort criteria. For example, `sort=-title`. For more details, see [JSON API Sorting](http://jsonapi.org/format/#fetching-sorting).Possible values: `templateType.name`, `title`</summary>
             [QueryParameter("sort")]
             public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
         }

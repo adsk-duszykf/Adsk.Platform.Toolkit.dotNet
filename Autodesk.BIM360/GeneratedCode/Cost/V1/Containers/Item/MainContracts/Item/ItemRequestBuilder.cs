@@ -215,7 +215,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A list of the types of sub-main contract components to include in the response with the main contracts, separated by commas.For example, ``include=mainContractItems`` returns the items that comprise each of the returned main contracts; ``include=attributes`` returns custom attributes of the main contracts.Possible values ``mainContractItems``, ``attributes``.</summary>
+            /// <summary>A list of the types of sub-main contract components to include in the response with the main contracts, separated by commas.For example, `include=mainContractItems` returns the items that comprise each of the returned main contracts; `include=attributes` returns custom attributes of the main contracts.Possible values `mainContractItems`, `attributes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

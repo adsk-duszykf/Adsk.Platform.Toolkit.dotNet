@@ -27,12 +27,12 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
         /// <summary>The issues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues>? Issues { get; set; }
+        public global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues? Issues { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues> Issues { get; set; }
+        public global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues Issues { get; set; }
 #endif
-        /// <summary>The permission level of the user in the current project.You can also verify a user&apos;s assignment permissions by checking the ``permittedActions`` or ``permissionLevels`` attributes.Each permission level corresponds to a combination of values in the response.- View All: ``read`` - Can view the &apos;data:read&apos; only endpoints.- Create: ``create`` - Can create for my company.- View and Create: ``read``, ``create`` - Can create for other companies.- Full control: ``create``, ``read``, ``write`` - Can manage issues.Possible values: ``create``, ``read``, ``write``</summary>
+        /// <summary>The permission level of the user in the current project.You can also verify a user&apos;s assignment permissions by checking the `permittedActions` or `permissionLevels` attributes.Each permission level corresponds to a combination of values in the response.- View All: `read` - Can view the &apos;data:read&apos; only endpoints.- Create: `create` - Can create for my company.- View and Create: `read`, `create` - Can create for other companies.- Full control: `create`, `read`, `write` - Can manage issues.Possible values: `create`, `read`, `write`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermissionLevels { get; set; }
@@ -61,7 +61,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
                 { "canManageTemplates", n => { CanManageTemplates = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isProjectAdmin", n => { IsProjectAdmin = n.GetBoolValue(); } },
-                { "issues", n => { Issues = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues>(global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "issues", n => { Issues = n.GetObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues>(global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues.CreateFromDiscriminatorValue); } },
                 { "permissionLevels", n => { PermissionLevels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
             writer.WriteBoolValue("canManageTemplates", CanManageTemplates);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isProjectAdmin", IsProjectAdmin);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues>("issues", Issues);
+            writer.WriteObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues>("issues", Issues);
             writer.WriteCollectionOfPrimitiveValues<string>("permissionLevels", PermissionLevels);
         }
     }

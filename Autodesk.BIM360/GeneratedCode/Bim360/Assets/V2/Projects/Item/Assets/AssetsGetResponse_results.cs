@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
 #else
         public string CategoryId { get; set; }
 #endif
-        /// <summary>An identifying name for the asset such as ``laundry 220V outlet``. The name need not be unique, and shouldn&apos;t be confused with the asset &apos;id&apos; field, which is created and assigned when the asset is created. This value appears as ``Asset ID`` in the Assets UI, and may sometimes be called ``Name`` in asset exports.</summary>
+        /// <summary>An identifying name for the asset such as `laundry 220V outlet`. The name need not be unique, and shouldn&apos;t be confused with the asset &apos;id&apos; field, which is created and assigned when the asset is created. This value appears as `Asset ID` in the Assets UI, and may sometimes be called `Name` in asset exports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientAssetId { get; set; }
@@ -54,7 +54,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
 #else
         public string CreatedBy { get; set; }
 #endif
-        /// <summary>An optional JSON dictionary specifying one or more custom attributes and values to be assigned to theasset. The custom attributes must belong to the set of custom attributes specified by the asset&apos;s category.The dictionary is a set of key:value pairs that each starts with the unique custom attribute name (not tobe confused with the custom attribute&apos;s display name) followed by the attribute value. The value must usethe data type defined by the attribute:For ``text``, the value is a string.For ``date``, the value is an ISO8601 date string with no time, for example, ``2020-04-10``.For ``select``, the value is a valid ID from the list of values defined for this custom attribute.For ``multi-select``, the value is an array of valid IDs from the list of values defined for this custom attribute.For ``boolean``, the value is a boolean.For ``numeric``, the value is a string that parses as a valid floating point number (not localized).</summary>
+        /// <summary>An optional JSON dictionary specifying one or more custom attributes and values to be assigned to theasset. The custom attributes must belong to the set of custom attributes specified by the asset&apos;s category.The dictionary is a set of key:value pairs that each starts with the unique custom attribute name (not tobe confused with the custom attribute&apos;s display name) followed by the attribute value. The value must usethe data type defined by the attribute:For `text`, the value is a string.For `date`, the value is an ISO8601 date string with no time, for example, `2020-04-10`.For `select`, the value is a valid ID from the list of values defined for this custom attribute.For `multi-select`, the value is an array of valid IDs from the list of values defined for this custom attribute.For `boolean`, the value is a boolean.For `numeric`, the value is a string that parses as a valid floating point number (not localized).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse_results_customAttributes? CustomAttributes { get; set; }
@@ -78,7 +78,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
 #else
         public string DeletedBy { get; set; }
 #endif
-        /// <summary>A brief description of the asset. Currently limited to ``1000`` characters.</summary>
+        /// <summary>A brief description of the asset. Currently limited to `1000` characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -94,7 +94,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A flag indicating whether the component is active or inactive (``isActive`` is ``true`` if-and-only-if ``deletedAt`` is empty).</summary>
+        /// <summary>A flag indicating whether the component is active or inactive (`isActive` is `true` if-and-only-if `deletedAt` is empty).</summary>
         public bool? IsActive { get; set; }
         /// <summary>The ID of the location of the asset. This value is supplied through the Locations API.</summary>
         public Guid? LocationId { get; set; }

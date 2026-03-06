@@ -14,7 +14,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
     {
         /// <summary>The unique identifier of the export job.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The status of the export job.Possible values: ``committed``, ``completed``, ``failed``</summary>
+        /// <summary>The status of the export job.Possible values: `committed`, `completed`, `failed`</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

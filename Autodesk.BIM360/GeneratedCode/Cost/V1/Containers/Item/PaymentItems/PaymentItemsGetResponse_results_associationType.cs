@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
 {
-    /// <summary>The object type of the payment item is generated from.Possible values: ``SCO``, ``OCO``, ``SOV``, ``CostItem``, ``SubCostItem``, ``MaterialsOnSite``</summary>
+    /// <summary>The object type of the payment item is generated from.Possible values: `SCO`, `OCO`, `SOV`, `CostItem`, `SubCostItem`, `MaterialsOnSite`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentItemsGetResponse_results_associationType
     {

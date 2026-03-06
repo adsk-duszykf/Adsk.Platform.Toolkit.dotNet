@@ -37,7 +37,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
 #else
         public List<string> Permitted_statuses { get; set; }
 #endif
-        /// <summary>The list of actions permitted for the user for this issue in its current state.Possible Values: ``assign_all`` (can assign another user to the issue), ``add_comment``, ``add_attachment``.The following values are not relevant: ``add_attachment``.</summary>
+        /// <summary>The list of actions permitted for the user for this issue in its current state.Possible Values: `assign_all` (can assign another user to the issue), `add_comment`, `add_attachment`.The following values are not relevant: `add_attachment`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedActions { get; set; }
@@ -45,7 +45,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
 #else
         public List<string> PermittedActions { get; set; }
 #endif
-        /// <summary>A list of attributes you are allowed to open a new issue. ``issueTypeId``, ``linkedDocument``, ``owner``, ``answer``, ``rootCauseId``, ``snapshotUrn`` are not applicable.Possible Values: ``answer``, ``assignedTo``, ``assignedToType``, ``description``, ``dueDate``, ``locationDetails``, ``linkedDocuments``, ``owner``, ``issueType``, ``issueTypeId``, ``rootCause``, ``rootCauseId``, ``title``, ``status``, ``sheetMetadata``, ``locationId``, ``snapshotUrn``, ``closeVersion``, ``custom_attributes``.</summary>
+        /// <summary>A list of attributes you are allowed to open a new issue. `issueTypeId`, `linkedDocument`, `owner`, `answer`, `rootCauseId`, `snapshotUrn` are not applicable.Possible Values: `answer`, `assignedTo`, `assignedToType`, `description`, `dueDate`, `locationDetails`, `linkedDocuments`, `owner`, `issueType`, `issueTypeId`, `rootCause`, `rootCauseId`, `title`, `status`, `sheetMetadata`, `locationId`, `snapshotUrn`, `closeVersion`, `custom_attributes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedAttributes { get; set; }
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
-        /// <summary>A list of statuses you are allowed to open a new issue.Possible Values: ``open``, ``draft``.</summary>
+        /// <summary>A list of statuses you are allowed to open a new issue.Possible Values: `open`, `draft`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedStatuses { get; set; }

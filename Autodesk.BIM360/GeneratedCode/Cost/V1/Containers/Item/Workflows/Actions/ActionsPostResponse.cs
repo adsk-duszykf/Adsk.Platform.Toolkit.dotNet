@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions
 #else
         public string AssociationId { get; set; }
 #endif
-        /// <summary>The type of the item on which the action was performed. Possible values: ``FormInstance``, ``OCO``, ``PCO``, ``RCO``, ``RFQ``, ``SCO``, ``Expense``, ``Contract``, ``CostPayment``, ``BudgetPayment``, ``BudgetTransfer``, ``MainContract``.</summary>
+        /// <summary>The type of the item on which the action was performed. Possible values: `FormInstance`, `OCO`, `PCO`, `RCO`, `RFQ`, `SCO`, `Expense`, `Contract`, `CostPayment`, `BudgetPayment`, `BudgetTransfer`, `MainContract`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociationType { get; set; }

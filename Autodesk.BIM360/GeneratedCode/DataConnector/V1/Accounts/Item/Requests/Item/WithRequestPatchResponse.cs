@@ -14,7 +14,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
     {
         /// <summary>The account ID.</summary>
         public Guid? AccountId { get; set; }
-        /// <summary>The callback URL specified for the data request. If specified, the Data Connection service calls the URL each time a job executes for the request. The service sends a POST request that provides job execution information. The JSON payload in the POST request contains the following: ``{ ``accountId``: ``account_id``, ``requestId``: ``request_id``, ``jobId``: ``data_connector_job_id``, ``state``: ``complete``, ``success``: true or false }``.</summary>
+        /// <summary>The callback URL specified for the data request. If specified, the Data Connection service calls the URL each time a job executes for the request. The service sends a POST request that provides job execution information. The JSON payload in the POST request contains the following: `{ `accountId`: `account_id`, `requestId`: `request_id`, `jobId`: `data_connector_job_id`, `state`: `complete`, `success`: true or false }`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallbackUrl { get; set; }
@@ -40,7 +40,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
 #else
         public string CreatedByEmail { get; set; }
 #endif
-        /// <summary>The timeframe used for extracting data in the request. Currently, it is applicable only to the Activities service. This field contains the value specified in the request, indicating the range of data included in the response. Possible values:- ``TODAY``: Data for the current day (from 00:00 UTC to the time the request was made).- ``YESTERDAY``: Data for the previous calendar day (from 00:00 UTC to 23:59 UTC).- ``PAST_7_DAYS``: Data for the last 7 days, including the current day.- ``MONTH_TO_DATE``: Data from the start of the current calendar month (00:00 UTC on the 1st) to the time the request was made.- ``LAST_MONTH``: Data for the entire previous calendar month (00:00 UTC on the 1st to 23:59 UTC on the last day).</summary>
+        /// <summary>The timeframe used for extracting data in the request. Currently, it is applicable only to the Activities service. This field contains the value specified in the request, indicating the range of data included in the response. Possible values:- `TODAY`: Data for the current day (from 00:00 UTC to the time the request was made).- `YESTERDAY`: Data for the previous calendar day (from 00:00 UTC to 23:59 UTC).- `PAST_7_DAYS`: Data for the last 7 days, including the current day.- `MONTH_TO_DATE`: Data from the start of the current calendar month (00:00 UTC on the 1st) to the time the request was made.- `LAST_MONTH`: Data for the entire previous calendar month (00:00 UTC on the 1st to 23:59 UTC on the last day).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateRange { get; set; }
@@ -60,7 +60,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
         public DateTimeOffset? EffectiveFrom { get; set; }
         /// <summary>The date and time when the recurring interval schedule ends, presented in ISO 8601 format.</summary>
         public DateTimeOffset? EffectiveTo { get; set; }
-        /// <summary>The end date and time for the data extraction, in ISO 8601 format.This field applies only to schemas supporting date range extraction. The detailed schema documentation delivered with each data extract identifies the schemas and tables that support date range extraction.Additional notes on using ``startDate`` and ``endDate``:- If you provide only ``startDate`` or ``endDate`` (but not both), Data Connector uses that single date for both ``startDate`` and ``endDate``.- If you request more than the Maximum Date Range Allowed for an extraction, the default date range as documented in the schema documentation is returned.- For the ``activities`` service group, data replication can be delayed up to 20 minutes, so your requests should account for that delay.</summary>
+        /// <summary>The end date and time for the data extraction, in ISO 8601 format.This field applies only to schemas supporting date range extraction. The detailed schema documentation delivered with each data extract identifies the schemas and tables that support date range extraction.Additional notes on using `startDate` and `endDate`:- If you provide only `startDate` or `endDate` (but not both), Data Connector uses that single date for both `startDate` and `endDate`.- If you request more than the Maximum Date Range Allowed for an extraction, the default date range as documented in the schema documentation is returned.- For the `activities` service group, data replication can be delayed up to 20 minutes, so your requests should account for that delay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EndDate { get; set; }
@@ -70,13 +70,13 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
 #endif
         /// <summary>The ID of the data request.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The data request&apos;s active/inactive status. Possible values: ``true`` the request is active; ``false`` the request is inactive.</summary>
+        /// <summary>The data request&apos;s active/inactive status. Possible values: `true` the request is active; `false` the request is inactive.</summary>
         public bool? IsActive { get; set; }
         /// <summary>The date and time the last job for this data request was scheduled to execute, presented in ISO 8601 format.</summary>
         public DateTimeOffset? LastQueuedAt { get; set; }
-        /// <summary>(Legacy): A single project ID for the data request. Superseded by ``projectIdList``.</summary>
+        /// <summary>(Legacy): A single project ID for the data request. Superseded by `projectIdList`.</summary>
         public Guid? ProjectId { get; set; }
-        /// <summary>A list of up to 50 project IDs included in the data request. This field contains the project IDs for which data is being extracted. If both ``projectId`` and ``projectIdList`` were included in the request, this field contains the values from ``projectIdList``.</summary>
+        /// <summary>A list of up to 50 project IDs included in the data request. This field contains the project IDs for which data is being extracted. If both `projectId` and `projectIdList` were included in the request, this field contains the values from `projectIdList`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProjectIdList { get; set; }
@@ -84,7 +84,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
 #else
         public List<string> ProjectIdList { get; set; }
 #endif
-        /// <summary>The types of projects to be included in a request. The possible values are:- ``all``: - all projects (default)- ``archived``: archived projects only- ``active``: active project only</summary>
+        /// <summary>The types of projects to be included in a request. The possible values are:- `all`: - all projects (default)- `archived`: archived projects only- `active`: active project only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectStatus { get; set; }
@@ -92,9 +92,9 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
 #else
         public string ProjectStatus { get; set; }
 #endif
-        /// <summary>The number of ``scheduleInterval`` units to wait between job execution for the request. For example, a ``scheduleInterval`` value of ``WEEK`` and a ``reoccuringInterval`` value of ``2`` means the job will run every two weeks.</summary>
+        /// <summary>The number of `scheduleInterval` units to wait between job execution for the request. For example, a `scheduleInterval` value of `WEEK` and a `reoccuringInterval` value of `2` means the job will run every two weeks.</summary>
         public int? ReoccuringInterval { get; set; }
-        /// <summary>The scheduling interval unit for jobs spawned by this data request. This value is multiplied by the ``reoccurringInterval`` attribute to specify the length of the recurring interval at which jobs run. Possible values:- ``ONE_TIME``: Run the job only once- ``DAY``: Set the recurring job interval in days- ``WEEK``: Set the recurring job interval in weeks- ``MONTH``: Set the recurring job interval in months- ``YEAR``: Set the recurring job interval in years</summary>
+        /// <summary>The scheduling interval unit for jobs spawned by this data request. This value is multiplied by the `reoccurringInterval` attribute to specify the length of the recurring interval at which jobs run. Possible values:- `ONE_TIME`: Run the job only once- `DAY`: Set the recurring job interval in days- `WEEK`: Set the recurring job interval in weeks- `MONTH`: Set the recurring job interval in months- `YEAR`: Set the recurring job interval in years</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScheduleInterval { get; set; }
@@ -104,7 +104,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
 #endif
         /// <summary>Send a notification email to the user upon job completion. Values: true or false (default is true)</summary>
         public bool? SendEmail { get; set; }
-        /// <summary>The service groups from which data has been extracted, separated by commas.Possible values: ``all``, ``activities``, ``admin``, ``assets``, ``checklists``, ``cost``, ``dailylogs``, ``forms``, ``iq``, ``issues``, ``locations``, ``markups``, ``meetingminutes``, ``photos``, ``relationships``, ``reviews``, ``rfis``, ``schedule``, ``sheets``, ``submittals``, ``submittalsacc``, ``transmittals``.Note that the ``admin`` service includes both project and account admin, and ``all`` indicates that the extract contains all currently available service groups.</summary>
+        /// <summary>The service groups from which data has been extracted, separated by commas.Possible values: `all`, `activities`, `admin`, `assets`, `checklists`, `cost`, `dailylogs`, `forms`, `iq`, `issues`, `locations`, `markups`, `meetingminutes`, `photos`, `relationships`, `reviews`, `rfis`, `schedule`, `sheets`, `submittals`, `submittalsacc`, `transmittals`.Note that the `admin` service includes both project and account admin, and `all` indicates that the extract contains all currently available service groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ServiceGroups { get; set; }
@@ -112,7 +112,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
 #else
         public List<string> ServiceGroups { get; set; }
 #endif
-        /// <summary>The start date and time for the data extraction, in ISO 8601 format.This field applies only to schemas supporting date range extraction. The detailed schema documentation delivered with each data extract identifies the schemas and tables that support date range extraction.Additional notes on using ``startDate`` and ``endDate``:- If you provide only ``startDate`` or ``endDate`` (but not both), Data Connector uses that single date for both ``startDate`` and ``endDate``.- If you request more than the Maximum Date Range Allowed for an extraction, the default date range as documented in the schema documentation is returned.- For the ``activities`` service group, data replication can be delayed up to 20 minutes, so your requests should account for that delay.</summary>
+        /// <summary>The start date and time for the data extraction, in ISO 8601 format.This field applies only to schemas supporting date range extraction. The detailed schema documentation delivered with each data extract identifies the schemas and tables that support date range extraction.Additional notes on using `startDate` and `endDate`:- If you provide only `startDate` or `endDate` (but not both), Data Connector uses that single date for both `startDate` and `endDate`.- If you request more than the Maximum Date Range Allowed for an extraction, the default date range as documented in the schema documentation is returned.- For the `activities` service group, data replication can be delayed up to 20 minutes, so your requests should account for that delay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StartDate { get; set; }

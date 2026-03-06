@@ -8,14 +8,14 @@ using System;
 namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
     /// <summary>
-    /// Information about the type of template.Possible values:``1`` - Quality``6`` - Punch List``11`` - Safety``15`` - Commissioning
+    /// Information about the type of template.Possible values:`1` - Quality`6` - Punch List`11` - Safety`15` - Commissioning
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_data_attributes_templateType : IParsable
     {
-        /// <summary>The ID of the type of template. Possible values: ``1`` (Quality), ``6`` (Punch List), ``11`` (Safety), ``15`` (Commissioning).</summary>
+        /// <summary>The ID of the type of template. Possible values: `1` (Quality), `6` (Punch List), `11` (Safety), `15` (Commissioning).</summary>
         public double? Id { get; set; }
-        /// <summary>The name of the type of template. Possible values: ``Quality``, ``Punch List``, ``Safety``, ``Commissioning``.</summary>
+        /// <summary>The name of the type of template. Possible values: `Quality`, `Punch List`, `Safety`, `Commissioning`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

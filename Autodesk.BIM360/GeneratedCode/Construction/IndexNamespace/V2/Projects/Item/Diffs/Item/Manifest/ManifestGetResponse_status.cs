@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest
 {
-    /// <summary>manifest status.Possible values: ``Failed``, ``Running``, ``Succeeded``</summary>
+    /// <summary>manifest status.Possible values: `Failed`, `Running`, `Succeeded`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManifestGetResponse_status
     {

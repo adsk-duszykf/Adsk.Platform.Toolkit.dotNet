@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
         {
         }
         /// <summary>
-        /// Retrieves all the comments associated with a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves all the comments associated with a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all the comments associated with a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves all the comments associated with a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a comment to a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Adds a comment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a comment to a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Adds a comment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all the comments associated with a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves all the comments associated with a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             return requestInfo;
         }
         /// <summary>
-        /// Adds a comment to a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Adds a comment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +161,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             return new global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves all the comments associated with a `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves all the comments associated with a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommentsRequestBuilderGetQueryParameters 

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed
 {
-    /// <summary>The reason for closing this clash group. Possible values: ``OTHER``, ``VALID_INTERFACE``, ``VALID_PENETRATION``, ``MINIMAL_OVERLAP``, ``ITEM_CAN_FLEX``, ``MODEL_INACCURACY``, ``FIELD_FIX``.</summary>
+    /// <summary>The reason for closing this clash group. Possible values: `OTHER`, `VALID_INTERFACE`, `VALID_PENETRATION`, `MINIMAL_OVERLAP`, `ITEM_CAN_FLEX`, `MODEL_INACCURACY`, `FIELD_FIX`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ClosedGetResponse_groups_reason
     {

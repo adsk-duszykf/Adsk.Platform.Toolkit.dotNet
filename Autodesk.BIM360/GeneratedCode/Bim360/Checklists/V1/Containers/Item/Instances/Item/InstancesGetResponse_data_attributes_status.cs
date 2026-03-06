@@ -13,9 +13,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_data_attributes_status : IParsable
     {
-        /// <summary>The ID of the status. Possible values:``1`` - Not Scheduled``2`` - Scheduled``3`` - In Progress``4`` - Completed``5`` - Signed off``6`` - Pending Signature``7`` - Not Started</summary>
+        /// <summary>The ID of the status. Possible values:`1` - Not Scheduled`2` - Scheduled`3` - In Progress`4` - Completed`5` - Signed off`6` - Pending Signature`7` - Not Started</summary>
         public double? Id { get; set; }
-        /// <summary>The name of the status. Possible values: ``Not Scheduled``, ``Scheduled``, ``In Progress``, ``Completed``, ``Signed Off``, ``Pending Signature``, ``Not Started``.</summary>
+        /// <summary>The name of the status. Possible values: `Not Scheduled`, `Scheduled`, `In Progress`, `Completed`, `Signed Off`, `Pending Signature`, `Not Started`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
 {
-    /// <summary>The type of item to which it is associated.Possible values: ``Budget``, ``Contract``, ``ScheduleOfValue``, ``FormInstance``, ``CostItem``, ``Payment``, ``MainContract``, ``BudgetPayment``, ``Expense``, ``CostPayment``, ``ExpenseItem``, ``PaymentItem``, ``OCO``, ``RCO``, ``SCO``, ``PCO``, ``RFQ``, ``DistributionItem``, ``BudgetTransfer``, ``Fee``</summary>
+    /// <summary>The type of item to which it is associated.Possible values: `Budget`, `Contract`, `ScheduleOfValue`, `FormInstance`, `CostItem`, `Payment`, `MainContract`, `BudgetPayment`, `Expense`, `CostPayment`, `ExpenseItem`, `PaymentItem`, `OCO`, `RCO`, `SCO`, `PCO`, `RFQ`, `DistributionItem`, `BudgetTransfer`, `Fee`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttachmentsPostResponse_associationType
     {

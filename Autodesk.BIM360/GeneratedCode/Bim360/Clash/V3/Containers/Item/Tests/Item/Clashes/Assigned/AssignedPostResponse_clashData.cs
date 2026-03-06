@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned
 {
+    /// <summary>
+    /// The clash data associated with a clash group.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AssignedPostResponse_clashData : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The clashes associated with the clash groups supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
     public partial class AssetsBatchPatchPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The request payload for updating an asset V2. The payload is a set of key:value pairs. The key is theasset ID of the asset to revise. The value is a set of one or more asset attributes to revise.Each attribute revision is itself a key:value pair. The key is the attribute name (one of the assetfields supplied in a request to `POST assets:batch-create V2 &lt;/en/docs/bim360/v1/reference/http/assets-assets-batch-create-POST-v2/&gt;`_).The value is any permissible defined value for the field as described in `POST assets:batch-create V2 &lt;/en/docs/bim360/v1/reference/http/assets-assets-batch-create-POST-v2/&gt;`_.</summary>
+        /// <summary>The request payload for updating an asset V2. The payload is a set of key:value pairs. The key is theasset ID of the asset to revise. The value is a set of one or more asset attributes to revise.Each attribute revision is itself a key:value pair. The key is the attribute name (one of the assetfields supplied in a request to [POST assets:batch-create V2](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-assets-batch-create-POST-v2/)).The value is any permissible defined value for the field as described in [POST assets:batch-create V2](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-assets-batch-create-POST-v2/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchRequestBody_Asterisk? Asterisk { get; set; }

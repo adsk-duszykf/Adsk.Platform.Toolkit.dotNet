@@ -12,17 +12,17 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCop
     public partial class SubCostItemsCopyPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of the sub cost items being copied. Note that ``contract`` and ``budget`` can only be used as a source type, not a destination. Possible values: ``contract``, ``budget``, ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``.</summary>
+        /// <summary>The type of the sub cost items being copied. Note that `contract` and `budget` can only be used as a source type, not a destination. Possible values: `contract`, `budget`, `estimated`, `proposed`, `submitted`, `approved`, `committed`.</summary>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_from? From { get; set; }
-        /// <summary>The source object defining where sub-cost items are copied from. When copying from a ``budget`` or ``contract``, this must include one or more source IDs.</summary>
+        /// <summary>The source object defining where sub-cost items are copied from. When copying from a `budget` or `contract`, this must include one or more source IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>? Source { get; set; }
+        public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source? Source { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source> Source { get; set; }
+        public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source Source { get; set; }
 #endif
-        /// <summary>The type to which the sub cost items are copied. Note that ``contract`` and ``budget`` cannot be used as a destination. Possible values: ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``.</summary>
+        /// <summary>The type to which the sub cost items are copied. Note that `contract` and `budget` cannot be used as a destination. Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`.</summary>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to? To { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +43,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCop
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "from", n => { From = n.GetEnumValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_from>(); } },
-                { "source", n => { Source = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source.CreateFromDiscriminatorValue); } },
                 { "to", n => { To = n.GetEnumValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to>(); } },
             };
         }
@@ -55,7 +55,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCop
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_from>("from", From);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>("source", Source);
+            writer.WriteObjectValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>("source", Source);
             writer.WriteEnumValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to>("to", To);
         }
     }

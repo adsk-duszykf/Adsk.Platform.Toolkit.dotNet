@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
 {
     /// <summary>
-    /// The metadata object; only relevant for ``list`` custom attributes.
+    /// The metadata object; only relevant for `list` custom attributes.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IssueAttributeDefinitionsGetResponse_results_metadata : IParsable

@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
         {
         }
         /// <summary>
-        /// Assign permissions to multiple users, roles, and companies for a `BIM 360 Document Management &lt;https://docs.b360.autodesk.com/&gt;`_ folder.
+        /// Assign permissions to multiple users, roles, and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchCreate.PermissionsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchCreate.PermissionsBatchCreatePostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchCreate.PermissionsBatchCreatePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign permissions to multiple users, roles, and companies for a `BIM 360 Document Management &lt;https://docs.b360.autodesk.com/&gt;`_ folder.
+        /// Assign permissions to multiple users, roles, and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchCreate.PermissionsBatchCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchCreate.PermissionsBatchCreateResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchCreate.PermissionsBatchCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign permissions to multiple users, roles, and companies for a `BIM 360 Document Management &lt;https://docs.b360.autodesk.com/&gt;`_ folder.
+        /// Assign permissions to multiple users, roles, and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

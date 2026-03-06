@@ -13,7 +13,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomAttributesBatchGetPostResponse_results_defaultValue : IParsable
     {
-        /// <summary>An array of string values that are set for a ``multi_select`` custom attribute.</summary>
+        /// <summary>An array of string values that are set for a `multi_select` custom attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? One { get; set; }

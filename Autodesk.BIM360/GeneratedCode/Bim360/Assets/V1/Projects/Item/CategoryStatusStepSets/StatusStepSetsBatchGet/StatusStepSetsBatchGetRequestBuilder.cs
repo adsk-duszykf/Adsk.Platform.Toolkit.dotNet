@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.
         {
         }
         /// <summary>
-        /// POST category-status-step-sets/status-step-sets:batch-get
+        /// Returns status set assignments associated with a specified set of categories. It can return just explicit
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST category-status-step-sets/status-step-sets:batch-get
+        /// Returns status set assignments associated with a specified set of categories. It can return just explicit
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST category-status-step-sets/status-step-sets:batch-get
+        /// Returns status set assignments associated with a specified set of categories. It can return just explicit
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -105,12 +105,12 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.
             return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// POST category-status-step-sets/status-step-sets:batch-get
+        /// Returns status set assignments associated with a specified set of categories. It can return just explicit
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatusStepSetsBatchGetRequestBuilderPostQueryParameters 
         {
-            /// <summary>Specifies whether or not to return status sets for categories that inherit their status set. If ``true``, returns astatus set (inherited or not) for each specified category. If ``false``, returns only explicitly-defined status setsassociated with the specified categories. Default is ``false``.</summary>
+            /// <summary>Specifies whether or not to return status sets for categories that inherit their status set. If `true`, returns astatus set (inherited or not) for each specified category. If `false`, returns only explicitly-defined status setsassociated with the specified categories. Default is `false`.</summary>
             [QueryParameter("includeInherited")]
             public bool? IncludeInherited { get; set; }
         }

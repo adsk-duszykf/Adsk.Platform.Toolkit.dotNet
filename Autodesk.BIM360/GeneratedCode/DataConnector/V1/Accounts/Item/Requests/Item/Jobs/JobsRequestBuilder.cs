@@ -109,7 +109,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
             /// <summary>The number of data objects to skip before starting to starting to collect the result set. Default value: 0</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>The sort order of returned data connector objects. Possible values: ``asc`` ascending by date (earliest to latest date), ``desc`` descending by date (latest to earliest date).</summary>
+            /// <summary>The sort order of returned data connector objects. Possible values: `asc` ascending by date (earliest to latest date), `desc` descending by date (latest to earliest date).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

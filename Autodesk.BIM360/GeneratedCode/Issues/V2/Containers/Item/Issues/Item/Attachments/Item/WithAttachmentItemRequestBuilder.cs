@@ -103,7 +103,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithAttachmentItemRequestBuilderPostQueryParameters 
         {
-            /// <summary>Specify the task that should be performed Will always be: ``post-upload-process``</summary>
+            /// <summary>Specify the task that should be performed Will always be: `post-upload-process`</summary>
             [Obsolete("This property is deprecated, use TaskAsPostTaskQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,7 +114,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
             [QueryParameter("task")]
             public string Task { get; set; }
 #endif
-            /// <summary>Specify the task that should be performed Will always be: ``post-upload-process``</summary>
+            /// <summary>Specify the task that should be performed Will always be: `post-upload-process`</summary>
             [QueryParameter("task")]
             public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item.PostTaskQueryParameterType? TaskAsPostTaskQueryParameterType { get; set; }
         }

@@ -13,7 +13,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ErrorCodesGetResponse_pagination : IParsable
     {
-        /// <summary>Always equal to ``totalResults`` (Pagination is not used by this endpoint. This object is returned for backward compatibility.).</summary>
+        /// <summary>Always equal to `totalResults` (Pagination is not used by this endpoint. This object is returned for backward compatibility.).</summary>
         public int? Limit { get; set; }
         /// <summary>Always equal to 0 (Pagination is not used by this endpoint. This object is returned for backward compatibility.).</summary>
         public int? Offset { get; set; }

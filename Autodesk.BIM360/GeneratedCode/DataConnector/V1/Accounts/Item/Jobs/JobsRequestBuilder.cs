@@ -59,7 +59,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
         {
         }
         /// <summary>
-        /// To get request IDs for your requests, use `GET requests &lt;/en/docs/bim360/v1/reference/http/data-connector-requests-GET/&gt;`_.
+        /// Returns an array of Data Connector jobs spawned by requests from the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get request IDs for your requests, use `GET requests &lt;/en/docs/bim360/v1/reference/http/data-connector-requests-GET/&gt;`_.
+        /// Returns an array of Data Connector jobs spawned by requests from the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To get request IDs for your requests, use `GET requests &lt;/en/docs/bim360/v1/reference/http/data-connector-requests-GET/&gt;`_.
+        /// Returns an array of Data Connector jobs spawned by requests from the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,12 +124,12 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
             return new global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// To get request IDs for your requests, use `GET requests &lt;/en/docs/bim360/v1/reference/http/data-connector-requests-GET/&gt;`_.
+        /// Returns an array of Data Connector jobs spawned by requests from the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JobsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Return only the Data Connector jobs in which the specified field has the specified value. Use the following format in the endpoint URL: ``filter[field_to_filter]=_filter_value_``.Note that you can provide multiple job filters in the URL, but you may not filter on multiple values of the same field.Possible ``field_to_filter`` values: ``projectId``, ``createdAt``, ``status``, ``completionStatus``, ``startedAt``, ``completedAt``, ``startDate``, ``endDate``. You can also retrieve all Data Connector jobs in the current account by specifying ``filter[projectId]=null``.For the ``createdAt``, ``startedAt``, and ``completedAt`` fields (which accept a date range), specify the range in the form *firstdate..lastdate*, in ISO 8601 format with the time required. You can alternatively omit the first date (for example, to get everything on or before June 1, 2019 the range would be ``..2019-06-01T23:59:59.999Z``). You can also omit the last date (for example, to get everything after June 1, 2019 the range would be ``2019-06-01T00:00:00.000Z..``)Additional notes on using ``startDate`` and ``endDate``:- If you provide only ``startDate`` or ``endDate`` (but not both), Data Connector uses that single date for both ``startDate`` and ``endDate``.- If you request more than the Maximum Date Range Allowed for an extraction, the default date range as documented in the schema documentation is returned.- For the ``activities`` service group, data replication can be delayed up to 20 minutes, so your requests should account for that delay.</summary>
+            /// <summary>Return only the Data Connector jobs in which the specified field has the specified value. Use the following format in the endpoint URL: `filter[field_to_filter]=_filter_value_`.Note that you can provide multiple job filters in the URL, but you may not filter on multiple values of the same field.Possible `field_to_filter` values: `projectId`, `createdAt`, `status`, `completionStatus`, `startedAt`, `completedAt`, `startDate`, `endDate`. You can also retrieve all Data Connector jobs in the current account by specifying `filter[projectId]=null`.For the `createdAt`, `startedAt`, and `completedAt` fields (which accept a date range), specify the range in the form *firstdate..lastdate*, in ISO 8601 format with the time required. You can alternatively omit the first date (for example, to get everything on or before June 1, 2019 the range would be `..2019-06-01T23:59:59.999Z`). You can also omit the last date (for example, to get everything after June 1, 2019 the range would be `2019-06-01T00:00:00.000Z..`)Additional notes on using `startDate` and `endDate`:- If you provide only `startDate` or `endDate` (but not both), Data Connector uses that single date for both `startDate` and `endDate`.- If you request more than the Maximum Date Range Allowed for an extraction, the default date range as documented in the schema documentation is returned.- For the `activities` service group, data replication can be delayed up to 20 minutes, so your requests should account for that delay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bfield_to_filter%5D")]
@@ -155,7 +155,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
             [QueryParameter("projectId")]
             public string ProjectId { get; set; }
 #endif
-            /// <summary>The sort order of returned data connector objects. Possible values: ``asc`` ascending by date (earliest to latest date), ``desc`` descending by date (latest to earliest date).</summary>
+            /// <summary>The sort order of returned data connector objects. Possible values: `asc` ascending by date (earliest to latest date), `desc` descending by date (latest to earliest date).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -165,7 +165,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            /// <summary>A string of comma-separated names of the fields by which to sort the returned jobs. The results are sorted by the first field, then by the second field, and so on. Jobs are sorted by each field in ascending order by default; you can prepend any field name with a hyphen ( ``-`` ) to sort in descending order. Invalid fields and whitespaces are ignored.Possible values: ``projectId``, ``createdBy``, ``createdByEmail``, ``createdAt``, ``status``, ``completionStatus``, ``startedAt``, ``completedAt``, ``startDate``, ``endDate``.</summary>
+            /// <summary>A string of comma-separated names of the fields by which to sort the returned jobs. The results are sorted by the first field, then by the second field, and so on. Jobs are sorted by each field in ascending order by default; you can prepend any field name with a hyphen ( `-` ) to sort in descending order. Invalid fields and whitespaces are ignored.Possible values: `projectId`, `createdBy`, `createdByEmail`, `createdAt`, `status`, `completionStatus`, `startedAt`, `completedAt`, `startDate`, `endDate`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortFields")]

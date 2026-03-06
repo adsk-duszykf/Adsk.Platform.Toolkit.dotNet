@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
 {
-    /// <summary>The status of the export job.Possible values: ``committed``, ``completed``, ``failed``</summary>
+    /// <summary>The status of the export job.Possible values: `committed`, `completed`, `failed`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExportsPostResponse_status
     {

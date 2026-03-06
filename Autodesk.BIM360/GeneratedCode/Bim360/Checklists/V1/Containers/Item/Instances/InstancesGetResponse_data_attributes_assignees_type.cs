@@ -13,9 +13,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_data_attributes_assignees_type : IParsable
     {
-        /// <summary>The ID of the type of entity assigned to the checklist.Possible values:``1`` - User``2`` - Company``3`` - Role</summary>
+        /// <summary>The ID of the type of entity assigned to the checklist.Possible values:`1` - User`2` - Company`3` - Role</summary>
         public double? Id { get; set; }
-        /// <summary>The name of the entity assigned to the checklist. Possible values: ``User``, ``Company``, ``Role``.</summary>
+        /// <summary>The name of the entity assigned to the checklist. Possible values: `User`, `Company`, `Role`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

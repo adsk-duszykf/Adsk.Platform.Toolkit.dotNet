@@ -13,9 +13,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TemplatesGetResponse_data_attributes : IParsable
     {
-        /// <summary>``true`` if you can add a section assignee to the template.``false`` if you cannot add a section assignee to the template.</summary>
+        /// <summary>`true` if you can add a section assignee to the template.`false` if you cannot add a section assignee to the template.</summary>
         public bool? AllowSectionAssignee { get; set; }
-        /// <summary>The date and time that the resource was created, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_data_attributes_signatures> Signatures { get; set; }
 #endif
-        /// <summary>Information about the type of template.Possible values:``1`` - Quality``6`` - Punch List``11`` - Safety``15`` - Commissioning</summary>
+        /// <summary>Information about the type of template.Possible values:`1` - Quality`6` - Punch List`11` - Safety`15` - Commissioning</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_data_attributes_templateType? TemplateType { get; set; }
@@ -81,7 +81,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_data_attributes_trades> Trades { get; set; }
 #endif
-        /// <summary>The date and time that the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The version ID of the template. Every time you update a template it updates the version ID.</summary>
         public double? VersionId { get; set; }

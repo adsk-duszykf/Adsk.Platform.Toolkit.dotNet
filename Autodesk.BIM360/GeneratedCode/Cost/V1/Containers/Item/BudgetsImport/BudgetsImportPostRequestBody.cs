@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.BudgetsImport
     public partial class BudgetsImportPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>``true`` if you want to append the new budgets to the project.``false`` if you want to purge existing budgets before importing the new budgets.</summary>
+        /// <summary>`true` if you want to append the new budgets to the project.`false` if you want to purge existing budgets before importing the new budgets.</summary>
         public bool? Append { get; set; }
         /// <summary>A list of budget.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

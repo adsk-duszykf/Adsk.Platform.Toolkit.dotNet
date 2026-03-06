@@ -13,7 +13,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TemplatesGetResponse_data_attributes_sections_items_responseType : IParsable
     {
-        /// <summary>The ID of the item type. Possible values:``1`` - Yes / No``2`` - Plus / Minus``3`` - True / False``4`` - Pass / Fail``5`` - Text``6`` - Single List (One Choice)``7`` - Multiple List (Multiple Choice)``8`` - NumericFor more information about response types see the `Help documentation &lt;https://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2E722645-C437-4134-97F8-0CD86A13F5DA&gt;`_.</summary>
+        /// <summary>The ID of the item type. Possible values:`1` - Yes / No`2` - Plus / Minus`3` - True / False`4` - Pass / Fail`5` - Text`6` - Single List (One Choice)`7` - Multiple List (Multiple Choice)`8` - NumericFor more information about response types see the [Help documentation](https://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2E722645-C437-4134-97F8-0CD86A13F5DA).</summary>
         public double? Id { get; set; }
         /// <summary>Information about the responses.Note that this is only relevant for Multiple Choice and Checkboxes response types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,7 +23,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_responseType_metadata Metadata { get; set; }
 #endif
-        /// <summary>The name of the response type. Possible values:``yes/no``, ``plus/minus``, ``true/false``, ``pass/fail``, ``text``, ``list_single`` (One Choice), ``list_multiple`` (Multiple Choice), ``numeric``.</summary>
+        /// <summary>The name of the response type. Possible values:`yes/no`, `plus/minus`, `true/false`, `pass/fail`, `text`, `list_single` (One Choice), `list_multiple` (Multiple Choice), `numeric`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

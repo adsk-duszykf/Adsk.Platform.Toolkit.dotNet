@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item
         {
         }
         /// <summary>
-        /// Many POST calls to clash endpoints result in a job. This endpoint can be used to track the progress of these jobs.
+        /// Retrieves information about a given clash job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Many POST calls to clash endpoints result in a job. This endpoint can be used to track the progress of these jobs.
+        /// Retrieves information about a given clash job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Many POST calls to clash endpoints result in a job. This endpoint can be used to track the progress of these jobs.
+        /// Retrieves information about a given clash job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
         {
         }
         /// <summary>
-        /// GET containers/{containerId}/instances
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) checklists in a project, including details about their statuses, priorities, and assignees.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/instances
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) checklists in a project, including details about their statuses, priorities, and assignees.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/instances
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) checklists in a project, including details about their statuses, priorities, and assignees.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,12 +111,12 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             return new global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET containers/{containerId}/instances
+        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) checklists in a project, including details about their statuses, priorities, and assignees.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InstancesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas; for example, ``fields[instances]=createdAt,templateType.`` For more details, see `JSON API Sparse Fieldsets &lt;http://jsonapi.org/format/#fetching-sparse-fieldsets&gt;`_.</summary>
+            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas; for example, `fields[instances]=createdAt,templateType.` For more details, see [JSON API Sparse Fieldsets](http://jsonapi.org/format/#fetching-sparse-fieldsets).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields%5Binstances%5D")]
@@ -126,7 +126,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             [QueryParameter("fields%5Binstances%5D")]
             public string Fieldsinstances { get; set; }
 #endif
-            /// <summary>Retrieves checklists assigned to the specified user. For example, ``filter[assigneeIds]=PER8KQPK2JRT`` or ``queryFilter[assignees.assigneeId]=PER8KQPK2JRT`` or ``queryFilter[assigneeIds]=PER8KQPK2JRT``. Use the assignee&apos;s Autodesk ID. To check a user`s Autodesk ID, call `GET users &lt;https://dev.forge.autodesk.com/en/docs/bim360/v1/reference/http/rfis-rfis-GET/en/docs/bim360/v1/reference/http/users-GET/&gt;`_ and check the ``uid``. Note that you need to use a 2-legged token to call GET users. For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves checklists assigned to the specified user. For example, `filter[assigneeIds]=PER8KQPK2JRT` or `queryFilter[assignees.assigneeId]=PER8KQPK2JRT` or `queryFilter[assigneeIds]=PER8KQPK2JRT`. Use the assignee&apos;s Autodesk ID. To check a user&apos;s Autodesk ID, call [GET users](https://dev.forge.autodesk.com/en/docs/bim360/v1/reference/http/rfis-rfis-GET/en/docs/bim360/v1/reference/http/users-GET/) and check the `uid`. Note that you need to use a 2-legged token to call GET users. For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassigneeIds%5D")]
@@ -136,22 +136,22 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             [QueryParameter("filter%5BassigneeIds%5D")]
             public string FilterassigneeIds { get; set; }
 #endif
-            /// <summary>Retrieves checklists with the specified scheduled date. Value is the timestamp of the date in the following format: ``YYYY-MM-DDThh:mm:ss.sz``, or a date range in the following format: ``YYYY-MM-DDThh:mm:ss.sz...YYYY-MM-DDThh:mm:ss.sz``. For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves checklists with the specified scheduled date. Value is the timestamp of the date in the following format: `YYYY-MM-DDThh:mm:ss.sz`, or a date range in the following format: `YYYY-MM-DDThh:mm:ss.sz...YYYY-MM-DDThh:mm:ss.sz`. For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BscheduledDate%5D")]
             public DateTimeOffset? FilterscheduledDate { get; set; }
-            /// <summary>Retrieves checklists with the specified status. For example,  ``filter[statusId]=3`` or ``queryFilter[status.id]=3`` or ``queryFilter[statusId]=3``. Possible values: ``1`` (not scheduled), ``2`` (scheduled), ``3`` (in progress), ``4`` (completed), ``5`` (signed off), ``6`` (pending signature), ``7`` (not started). Separate multiple values with commas. For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves checklists with the specified status. For example,  `filter[statusId]=3` or `queryFilter[status.id]=3` or `queryFilter[statusId]=3`. Possible values: `1` (not scheduled), `2` (scheduled), `3` (in progress), `4` (completed), `5` (signed off), `6` (pending signature), `7` (not started). Separate multiple values with commas. For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BstatusId%5D")]
             public double? FilterstatusId { get; set; }
-            /// <summary>Retrieves checklists associated with the specified template type. For example, ``filter[templateTypeId]=1`` or ``queryFilter[templateType.id]=1`` or ``queryFilter[templateTypeId]=1``. Possible values: ``1`` (quality), ``6`` (punch List), ``11`` (safety), ``15`` (commissioning). Separate multiple values with commas. For more details, see `JSON API Filtering &lt;http://jsonapi.org/format/#fetching-filtering&gt;`_.</summary>
+            /// <summary>Retrieves checklists associated with the specified template type. For example, `filter[templateTypeId]=1` or `queryFilter[templateType.id]=1` or `queryFilter[templateTypeId]=1`. Possible values: `1` (quality), `6` (punch List), `11` (safety), `15` (commissioning). Separate multiple values with commas. For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BtemplateTypeId%5D")]
             public double? FiltertemplateTypeId { get; set; }
-            /// <summary>The number of checklists to return in the response payload. Default value: ``50``. For example, to limit the response to two checklists per page, use ``page[limit]=2`` or ``limit=2``. For more details, see `JSON API Paging &lt;http://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The number of checklists to return in the response payload. Default value: `50`. For example, to limit the response to two checklists per page, use `page[limit]=2` or `limit=2`. For more details, see [JSON API Paging](http://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("limit")]
             public double? Limit { get; set; }
-            /// <summary>The page number that you want to begin checklist results from; for example, ``page[offset]=20`` or ``offset=20``. For more details, see `JSON API Paging &lt;http://jsonapi.org/format/#fetching-pagination&gt;`_.</summary>
+            /// <summary>The page number that you want to begin checklist results from; for example, `page[offset]=20` or `offset=20`. For more details, see [JSON API Paging](http://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public double? Offset { get; set; }
-            /// <summary>Sort the checklists by ``title``, ``templateType.id``, or ``scheduledDate``. For example, ``sort=title``. Separate multiple values with commas. To sort in descending order add a ``-`` before the sort criteria; for example, ``sort=-title``. For more details, see `JSON API Sorting &lt;http://jsonapi.org/format/#fetching-sorting&gt;`_.Possible values: ``templateType.id``, ``title``, ``scheduledDate``</summary>
+            /// <summary>Sort the checklists by `title`, `templateType.id`, or `scheduledDate`. For example, `sort=title`. Separate multiple values with commas. To sort in descending order add a `-` before the sort criteria; for example, `sort=-title`. For more details, see [JSON API Sorting](http://jsonapi.org/format/#fetching-sorting).Possible values: `templateType.id`, `title`, `scheduledDate`</summary>
             [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -162,7 +162,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            /// <summary>Sort the checklists by ``title``, ``templateType.id``, or ``scheduledDate``. For example, ``sort=title``. Separate multiple values with commas. To sort in descending order add a ``-`` before the sort criteria; for example, ``sort=-title``. For more details, see `JSON API Sorting &lt;http://jsonapi.org/format/#fetching-sorting&gt;`_.Possible values: ``templateType.id``, ``title``, ``scheduledDate``</summary>
+            /// <summary>Sort the checklists by `title`, `templateType.id`, or `scheduledDate`. For example, `sort=title`. Separate multiple values with commas. To sort in descending order add a `-` before the sort criteria; for example, `sort=-title`. For more details, see [JSON API Sorting](http://jsonapi.org/format/#fetching-sorting).Possible values: `templateType.id`, `title`, `scheduledDate`</summary>
             [QueryParameter("sort")]
             public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
         }

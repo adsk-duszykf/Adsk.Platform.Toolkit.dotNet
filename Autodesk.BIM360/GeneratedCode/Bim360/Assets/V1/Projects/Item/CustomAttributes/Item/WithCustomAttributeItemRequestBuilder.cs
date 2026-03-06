@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item
         {
         }
         /// <summary>
-        /// PATCH custom-attributes/:customAttributeId
+        /// Updates an Asset custom attribute.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributePatchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributePatchResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributePatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PATCH custom-attributes/:customAttributeId
+        /// Updates an Asset custom attribute.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributeResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributeResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributeResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PATCH custom-attributes/:customAttributeId
+        /// Updates an Asset custom attribute.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

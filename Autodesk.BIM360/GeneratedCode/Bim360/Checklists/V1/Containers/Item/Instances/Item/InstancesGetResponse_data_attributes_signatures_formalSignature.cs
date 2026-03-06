@@ -37,7 +37,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
-        /// <summary>The date and time that the person or company signed the instance, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the person or company signed the instance, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? SignedAt { get; set; }
         /// <summary>The name of the company that signed the instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

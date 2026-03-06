@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string DeletedAt { get; set; }
 #endif
-        /// <summary>The unique ID of this section-level signature item. For information about checklist-level signatures, see the ``data`` object.</summary>
+        /// <summary>The unique ID of this section-level signature item. For information about checklist-level signatures, see the `data` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -48,9 +48,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string Instructions { get; set; }
 #endif
-        /// <summary>``true`` if this section signature is mandatory to complete the section.``false`` if this section signature is not mandatory to complete the section.</summary>
+        /// <summary>`true` if this section signature is mandatory to complete the section.`false` if this section signature is not mandatory to complete the section.</summary>
         public bool? IsRequired { get; set; }
-        /// <summary>The Object Storage Service (OSS) URN of a section signature image. This URN contains several substrings that can be used to obtain a signed S3 URL for downloading the image.The example value of ``urn:adsk.objects:os.object:checklists.stg.us/aa0a9e77-e36c-492e-ace9-bb396338bf30`` contains two key substrings:* ``checklists.prod.us`` (the bucket key)* ``aa0a9e77-e36c-492e-ace9-bb396338bf30`` (the signature object key)You can provide the bucket key and object key in a request with the Data Management API&apos;s `POST batchsigneds3download &lt;/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-batchsigneds3download-POST/&gt;`_ endpoint to generate a signed S3 download URL.For information about downloading a signature image, see the `Retrieve a Checklist Section Signature &lt;/en/docs/bim360/v1/tutorials/checklists/retrieve-checklists-section-signature&gt;`_ tutorial.</summary>
+        /// <summary>The Object Storage Service (OSS) URN of a section signature image. This URN contains several substrings that can be used to obtain a signed S3 URL for downloading the image.The example value of `urn:adsk.objects:os.object:checklists.stg.us/aa0a9e77-e36c-492e-ace9-bb396338bf30` contains two key substrings:* `checklists.prod.us` (the bucket key)* `aa0a9e77-e36c-492e-ace9-bb396338bf30` (the signature object key)You can provide the bucket key and object key in a request with the Data Management API&apos;s [POST batchsigneds3download](https://aps.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-batchsigneds3download-POST/) endpoint to generate a signed S3 download URL.For information about downloading a signature image, see the [Retrieve a Checklist Section Signature](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/checklists/retrieve-checklists-section-signature) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OssUrn { get; set; }
@@ -90,7 +90,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string SignedName { get; set; }
 #endif
-        /// <summary>The Autodesk ID of the section signatory. To check the name of the user, call `GET projects/users &lt;/en/docs/bim360/v1/reference/http/admin-v1-projects-projectId-users-GET/&gt;`_.</summary>
+        /// <summary>The Autodesk ID of the section signatory. To check the name of the user, call [GET projects/users](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-v1-projects-projectId-users-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmittedBy { get; set; }
@@ -114,7 +114,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string UploadStatus { get; set; }
 #endif
-        /// <summary>The URN of this section-level signature item. For information about checklist-level signatures, see the ``data`` object.</summary>
+        /// <summary>The URN of this section-level signature item. For information about checklist-level signatures, see the `data` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Urn { get; set; }

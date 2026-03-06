@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationshi
 #else
         public string RelationshipId { get; set; }
 #endif
-        /// <summary>The entity type of the related entity.Within BIM 360 projects, assets may only be linked to entities of entity types``checklist``, ``documentlineage``, and ``issue``.Specifying any other entity types will return a ``400`` status code.Possible values: ``checklist``, ``documentlineage``, ``form``, ``issue``, ``photo``, ``rfi``, ``sheetlineage``, ``submittalitem``</summary>
+        /// <summary>The entity type of the related entity.Within BIM 360 projects, assets may only be linked to entities of entity types`checklist`, `documentlineage`, and `issue`.Specifying any other entity types will return a `400` status code.Possible values: `checklist`, `documentlineage`, `form`, `issue`, `photo`, `rfi`, `sheetlineage`, `submittalitem`</summary>
         public global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationships.RelationshipsPostRequestBody_entities_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

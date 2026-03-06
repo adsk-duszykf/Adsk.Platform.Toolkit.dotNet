@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchUpdate
 {
-    /// <summary>The type of subject.Possible values: ``USER``, ``COMPANY``, ``ROLE``</summary>
+    /// <summary>The type of subject.Possible values: `USER`, `COMPANY`, `ROLE`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PermissionsBatchUpdatePostRequestBody_subjectType
     {

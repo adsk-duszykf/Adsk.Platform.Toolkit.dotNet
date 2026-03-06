@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet
         {
         }
         /// <summary>
-        /// POST assets:batch-get V2
+        /// Returns a specified set of assets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST assets:batch-get V2
+        /// Returns a specified set of assets.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST assets:batch-get V2
+        /// Returns a specified set of assets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -105,15 +105,15 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet
             return new global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// POST assets:batch-get V2
+        /// Returns a specified set of assets.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssetsBatchGetRequestBuilderPostQueryParameters 
         {
-            /// <summary>Specifies whether or not returned assets include custom attributes or not. If ``true``, they&apos;re included. If``false``, they&apos;re not. Default is ``false``.</summary>
+            /// <summary>Specifies whether or not returned assets include custom attributes or not. If `true`, they&apos;re included. If`false`, they&apos;re not. Default is `false`.</summary>
             [QueryParameter("includeCustomAttributes")]
             public bool? IncludeCustomAttributes { get; set; }
-            /// <summary>Whether or not soft-deleted object should be included in the response. If ``true``, soft-deleted objects are returned. If ``false``, they are not. The default is ``false``.</summary>
+            /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
         }

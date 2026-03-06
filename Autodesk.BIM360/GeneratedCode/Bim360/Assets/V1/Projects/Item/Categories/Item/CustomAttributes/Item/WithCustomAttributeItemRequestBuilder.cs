@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomA
         {
         }
         /// <summary>
-        /// PUT categories/:categoryId/custom-attributes/:customAttributeId
+        /// Assigns an Asset custom attribute to a category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomA
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT categories/:categoryId/custom-attributes/:customAttributeId
+        /// Assigns an Asset custom attribute to a category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomA
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// PUT categories/:categoryId/custom-attributes/:customAttributeId
+        /// Assigns an Asset custom attribute to a category.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,12 +98,12 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomA
             return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// PUT categories/:categoryId/custom-attributes/:customAttributeId
+        /// Assigns an Asset custom attribute to a category.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCustomAttributeItemRequestBuilderPutQueryParameters 
         {
-            /// <summary>Specifies whether or not to return custom attributes that were inherited from the specified category&apos;sparent category. If ``true``, then it returns inherited custom attributes. If ``false``, then it returns only customattributes explicitly assigned to the specified category. Default is ``false``.</summary>
+            /// <summary>Specifies whether or not to return custom attributes that were inherited from the specified category&apos;sparent category. If `true`, then it returns inherited custom attributes. If `false`, then it returns only customattributes explicitly assigned to the specified category. Default is `false`.</summary>
             [QueryParameter("includeInherited")]
             public bool? IncludeInherited { get; set; }
         }

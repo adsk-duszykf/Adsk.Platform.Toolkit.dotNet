@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
 {
-    /// <summary>The attachmentType attribute indicates the type of file that is being attached.The value of attachmentType is determined by the file suffix of the attached file.If the file has a suffix that corresponds to a lowercase photo format (such as .jpg, .png etc.), then attachmentType is set to photo.Otherwise, it is set to document.Possible Values: ``document`` or ``photo``.</summary>
+    /// <summary>The attachmentType attribute indicates the type of file that is being attached.The value of attachmentType is determined by the file suffix of the attached file.If the file has a suffix that corresponds to a lowercase photo format (such as .jpg, .png etc.), then attachmentType is set to photo.Otherwise, it is set to document.Possible Values: `document` or `photo`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithAttachmentPostResponse_attachmentType
     {

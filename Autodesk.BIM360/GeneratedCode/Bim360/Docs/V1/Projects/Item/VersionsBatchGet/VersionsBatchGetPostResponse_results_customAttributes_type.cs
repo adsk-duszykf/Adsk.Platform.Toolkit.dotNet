@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
-    /// <summary>The data type of the attribute. Possible values: ``string`` (text field), ``date``, ``array`` (drop-list).</summary>
+    /// <summary>The data type of the attribute. Possible values: `string` (text field), `date`, `array` (drop-list).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VersionsBatchGetPostResponse_results_customAttributes_type
     {

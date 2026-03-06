@@ -201,7 +201,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithBudgetItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>``true``: This request forces an override of locked budgeting so the request can succeed. The ability to create, update, or delete budgets can be locked at the project level, and ``force`` enables administrators to override the lock. A locked budget. Only a project administrator is allowed to update, create, or delete budgets when locked.``false``: This request does not override locked budgeting.</summary>
+            /// <summary>`true`: This request forces an override of locked budgeting so the request can succeed. The ability to create, update, or delete budgets can be locked at the project level, and `force` enables administrators to override the lock. A locked budget. Only a project administrator is allowed to update, create, or delete budgets when locked.`false`: This request does not override locked budgeting.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
         }
@@ -219,7 +219,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithBudgetItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Include related items in the response. For example, ``include=attributes`` returns custom attributes representing the response&apos;s ``properties``. Possible values include: ``segments``, ``contract``, ``attributes``, ``compounded``.</summary>
+            /// <summary>Include related items in the response. For example, `include=attributes` returns custom attributes representing the response&apos;s `properties`. Possible values include: `segments`, `contract`, `attributes`, `compounded`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -244,7 +244,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithBudgetItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>``true``: This request forces an override of locked budgeting so the request can succeed. The ability to create, update, or delete budgets can be locked at the project level, and ``force`` enables administrators to override the lock. A locked budget. Only a project administrator is allowed to update, create, or delete budgets when locked.``false``: This request does not override locked budgeting.</summary>
+            /// <summary>`true`: This request forces an override of locked budgeting so the request can succeed. The ability to create, update, or delete budgets can be locked at the project level, and `force` enables administrators to override the lock. A locked budget. Only a project administrator is allowed to update, create, or delete budgets when locked.`false`: This request does not override locked budgeting.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
         }

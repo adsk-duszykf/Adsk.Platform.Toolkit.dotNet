@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
 #endif
         /// <summary>The GUID that uniquely identifies the job.</summary>
         public Guid? JobId { get; set; }
-        /// <summary>The current job status. Possible values: ``Failed``, ``Running``, ``Succeeded``, ``Archived``.</summary>
+        /// <summary>The current job status. Possible values: `Failed`, `Running`, `Succeeded`, `Archived`.</summary>
         public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse_status? Status { get; set; }
         /// <summary>The GUID that uniquely identifies the view associated with the job.</summary>
         public Guid? ViewId { get; set; }

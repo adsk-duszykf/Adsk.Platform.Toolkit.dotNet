@@ -15,10 +15,10 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me
         /// <summary>The permittedActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions>? PermittedActions { get; set; }
+        public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions? PermittedActions { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions> PermittedActions { get; set; }
+        public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions PermittedActions { get; set; }
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,10 +31,10 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow>? Workflow { get; set; }
+        public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow? Workflow { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow> Workflow { get; set; }
+        public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow Workflow { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,9 +54,9 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "permittedActions", n => { PermittedActions = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permittedActions", n => { PermittedActions = n.GetObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_user>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_user.CreateFromDiscriminatorValue); } },
-                { "workflow", n => { Workflow = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow>(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,9 +66,9 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions>("permittedActions", PermittedActions);
+            writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions>("permittedActions", PermittedActions);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_user>("user", User);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow>("workflow", Workflow);
         }
     }
 }

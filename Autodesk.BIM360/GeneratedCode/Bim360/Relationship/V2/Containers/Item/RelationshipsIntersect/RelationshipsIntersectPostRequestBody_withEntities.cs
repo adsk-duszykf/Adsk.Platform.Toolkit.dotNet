@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
     public partial class RelationshipsIntersectPostRequestBody_withEntities : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The domain that the domain entity is a part of (must be supplied if ``type`` is supplied).Max length: 128</summary>
+        /// <summary>The domain that the domain entity is a part of (must be supplied if `type` is supplied).Max length: 128</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The type of the domain entity (must be supplied if ``id`` is supplied).Max length: 128</summary>
+        /// <summary>The type of the domain entity (must be supplied if `id` is supplied).Max length: 128</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

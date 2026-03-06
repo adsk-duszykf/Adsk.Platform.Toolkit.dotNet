@@ -60,9 +60,9 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusS
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A flag indicating whether the component is active or inactive (``isActive`` is ``true`` if-and-only-if ``deletedAt`` is empty).</summary>
+        /// <summary>A flag indicating whether the component is active or inactive (`isActive` is `true` if-and-only-if `deletedAt` is empty).</summary>
         public bool? IsActive { get; set; }
-        /// <summary>The BIM 360 project ID. Must be a UUID or a project ID of the form ``b.{UUID}``.</summary>
+        /// <summary>The BIM 360 project ID. Must be a UUID or a project ID of the form `b.{UUID}`.</summary>
         public Guid? ProjectId { get; set; }
         /// <summary>The ID of the status set assigned to the category.</summary>
         public Guid? StatusStepSetId { get; set; }

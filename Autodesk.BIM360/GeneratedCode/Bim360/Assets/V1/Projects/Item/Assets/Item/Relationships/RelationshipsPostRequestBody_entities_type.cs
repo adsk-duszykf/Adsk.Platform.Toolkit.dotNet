@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationships
 {
-    /// <summary>The entity type of the related entity.Within BIM 360 projects, assets may only be linked to entities of entity types``checklist``, ``documentlineage``, and ``issue``.Specifying any other entity types will return a ``400`` status code.Possible values: ``checklist``, ``documentlineage``, ``form``, ``issue``, ``photo``, ``rfi``, ``sheetlineage``, ``submittalitem``</summary>
+    /// <summary>The entity type of the related entity.Within BIM 360 projects, assets may only be linked to entities of entity types`checklist`, `documentlineage`, and `issue`.Specifying any other entity types will return a `400` status code.Possible values: `checklist`, `documentlineage`, `form`, `issue`, `photo`, `rfi`, `sheetlineage`, `submittalitem`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RelationshipsPostRequestBody_entities_type
     {

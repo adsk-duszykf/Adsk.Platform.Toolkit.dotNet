@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.admin.v1.projects.item.users.item collection</summary>
-        /// <param name="position">The ID of the user. You can use either the user ID (``id``) or the autodesk ID (``autodeskId``).</param>
+        /// <param name="position">The ID of the user. You can use either the user ID (`id`) or the autodesk ID (`autodeskId`).</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder this[string position]
         {
@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
         {
         }
         /// <summary>
-        /// Retrieves information about all the users in a project. To get information about all the users in an account, see `GET accounts/users &lt;/en/docs/bim360/v1/reference/http/users-GET/&gt;`_.
+        /// Retrieves information about all the users in a project. To get information about all the users in an account, see [GET accounts/users](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-GET/).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves information about all the users in a project. To get information about all the users in an account, see `GET accounts/users &lt;/en/docs/bim360/v1/reference/http/users-GET/&gt;`_.
+        /// Retrieves information about all the users in a project. To get information about all the users in an account, see [GET accounts/users](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-GET/).
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves information about all the users in a project. To get information about all the users in an account, see `GET accounts/users &lt;/en/docs/bim360/v1/reference/http/users-GET/&gt;`_.
+        /// Retrieves information about all the users in a project. To get information about all the users in an account, see [GET accounts/users](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-GET/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
             return new global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves information about all the users in a project. To get information about all the users in an account, see `GET accounts/users &lt;/en/docs/bim360/v1/reference/http/users-GET/&gt;`_.
+        /// Retrieves information about all the users in a project. To get information about all the users in an account, see [GET accounts/users](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-GET/).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 

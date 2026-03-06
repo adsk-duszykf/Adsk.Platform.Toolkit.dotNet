@@ -209,7 +209,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScheduleOfValuesItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Return the specified nested resources in the response. For example, ``include=subitems`` returns the project&apos;s SOV items, ``include=attributes`` will return custom attributes which represents the ``properties`` in the response. Note that for a value of ``idOnly``, the response includes only a list of SOV item IDs, and other ``include`` values are ignored.Possible values: ``subitems``, ``attributes``, ``idOnly``.</summary>
+            /// <summary>Return the specified nested resources in the response. For example, `include=subitems` returns the project&apos;s SOV items, `include=attributes` will return custom attributes which represents the `properties` in the response. Note that for a value of `idOnly`, the response includes only a list of SOV item IDs, and other `include` values are ignored.Possible values: `subitems`, `attributes`, `idOnly`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

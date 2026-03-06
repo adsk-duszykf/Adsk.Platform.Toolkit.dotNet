@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
         {
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Query all the business units in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Query all the business units in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Creates or redefines the business units of a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Creates or redefines the business units of a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Query all the business units in a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
             return requestInfo;
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Creates or redefines the business units of a specific BIM 360 account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

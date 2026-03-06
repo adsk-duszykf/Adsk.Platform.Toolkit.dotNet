@@ -12,9 +12,9 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
     public partial class WithUserGetResponse_services : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The user access to the service.Possible values: ``none``, ``member``, ``administrator``</summary>
+        /// <summary>The user access to the service.Possible values: `none`, `member`, `administrator`</summary>
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse_services_access? Access { get; set; }
-        /// <summary>The name of the service.Possible values: ``costManagement``, ``designCollaboration``, ``documentManagement``, ``field``, ``fieldManagement``, ``assets``, ``glue``, ``insight``, ``modelCoordination``, ``plan``, ``projectAdministration``, ``projectManagement``</summary>
+        /// <summary>The name of the service.Possible values: `costManagement`, `designCollaboration`, `documentManagement`, `field`, `fieldManagement`, `assets`, `glue`, `insight`, `modelCoordination`, `plan`, `projectAdministration`, `projectManagement`</summary>
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse_services_serviceName? ServiceName { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

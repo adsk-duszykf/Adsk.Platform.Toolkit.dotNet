@@ -15,10 +15,10 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         /// <summary>An array of filters on the initial request without a sync token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters>? Filters { get; set; }
+        public global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters> Filters { get; set; }
+        public global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters Filters { get; set; }
 #endif
         /// <summary>The token that can be used to obtain data via the synchronization endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters>(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters>(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters.CreateFromDiscriminatorValue); } },
                 { "syncToken", n => { SyncToken = n.GetStringValue(); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters>("filters", Filters);
+            writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters>("filters", Filters);
             writer.WriteStringValue("syncToken", SyncToken);
         }
     }

@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import
         {
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Bulk import partner companies to the company directory in a specific BIM 360 account. (50 companies maximum can be included in each call.)
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import.ImportPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import.ImportPostResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import.ImportPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Bulk import partner companies to the company directory in a specific BIM 360 account. (50 companies maximum can be included in each call.)
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import.ImportResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import.ImportResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Import.ImportResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// .. include:: ../../../_snippets/forward-compatible.rst
+        /// Bulk import partner companies to the company directory in a specific BIM 360 account. (50 companies maximum can be included in each call.)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

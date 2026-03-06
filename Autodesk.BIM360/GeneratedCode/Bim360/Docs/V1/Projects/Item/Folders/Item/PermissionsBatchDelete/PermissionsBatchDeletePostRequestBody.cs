@@ -20,9 +20,9 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
 #else
         public string AutodeskId { get; set; }
 #endif
-        /// <summary>The ID of the user, role, or company. To verify the subjectId of the user, role, or company, use `GET permissions &lt;/en/docs/bim360/v1/reference/http/document-management-projects-project_id-folders-folder_id-permissions-GET&gt;`_.</summary>
+        /// <summary>The ID of the user, role, or company. To verify the subjectId of the user, role, or company, use [GET permissions](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-projects-project_id-folders-folder_id-permissions-GET).</summary>
         public Guid? SubjectId { get; set; }
-        /// <summary>The type of subject.Possible values: ``USER``, ``COMPANY``, ``ROLE``</summary>
+        /// <summary>The type of subject.Possible values: `USER`, `COMPANY`, `ROLE`</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchDelete.PermissionsBatchDeletePostRequestBody_subjectType? SubjectType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

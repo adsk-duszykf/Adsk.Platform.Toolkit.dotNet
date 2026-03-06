@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
         {
         }
         /// <summary>
-        /// Retrieves information about all the attachments in a project associated with a specific `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves information about all the attachments in a project associated with a specific [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves information about all the attachments in a project associated with a specific `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves information about all the attachments in a project associated with a specific [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details about adding attachments, see the `Upload Attachment &lt;/en/docs/bim360/v1/reference/tutorials/attach-BIM-360-files-to-rfi/&gt;`_ tutorial.
+        /// Adds an attachment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For more details about adding attachments, see the `Upload Attachment &lt;/en/docs/bim360/v1/reference/tutorials/attach-BIM-360-files-to-rfi/&gt;`_ tutorial.
+        /// Adds an attachment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -124,7 +124,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves information about all the attachments in a project associated with a specific `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves information about all the attachments in a project associated with a specific [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             return requestInfo;
         }
         /// <summary>
-        /// For more details about adding attachments, see the `Upload Attachment &lt;/en/docs/bim360/v1/reference/tutorials/attach-BIM-360-files-to-rfi/&gt;`_ tutorial.
+        /// Adds an attachment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -174,7 +174,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             return new global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves information about all the attachments in a project associated with a specific `BIM 360 Project Management &lt;https://pm.b360.autodesk.com&gt;`_ RFI.
+        /// Retrieves information about all the attachments in a project associated with a specific [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 

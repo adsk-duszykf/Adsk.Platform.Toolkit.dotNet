@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
 {
-    /// <summary>The type of the sub cost items being copied. Note that ``contract`` and ``budget`` can only be used as a source type, not a destination. Possible values: ``contract``, ``budget``, ``estimated``, ``proposed``, ``submitted``, ``approved``, ``committed``.</summary>
+    /// <summary>The type of the sub cost items being copied. Note that `contract` and `budget` can only be used as a source type, not a destination. Possible values: `contract`, `budget`, `estimated`, `proposed`, `submitted`, `approved`, `committed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SubCostItemsCopyPostRequestBody_from
     {

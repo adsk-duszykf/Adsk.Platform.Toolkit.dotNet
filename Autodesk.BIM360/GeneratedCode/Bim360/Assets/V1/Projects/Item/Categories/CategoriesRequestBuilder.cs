@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
         {
         }
         /// <summary>
-        /// GET categories
+        /// Searches for and returns all specified categories.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET categories
+        /// Searches for and returns all specified categories.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST categories
+        /// Creates a new category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// POST categories
+        /// Creates a new category.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -124,7 +124,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET categories
+        /// Searches for and returns all specified categories.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             return requestInfo;
         }
         /// <summary>
-        /// POST categories
+        /// Creates a new category.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -174,15 +174,15 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET categories
+        /// Searches for and returns all specified categories.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CategoriesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies whether or not to return categories that are active. If ``true``, return only active categories. If``false``, return only inactive categories. Default is to return both active and inactive categories, to ensurefull tree structure is returned (conversely, full tree structure is not guaranteed when filtering active orinactive categories).Note that this behavior is different than that of the ``includeDeleted`` flag other endpoints use.</summary>
+            /// <summary>Specifies whether or not to return categories that are active. If `true`, return only active categories. If`false`, return only inactive categories. Default is to return both active and inactive categories, to ensurefull tree structure is returned (conversely, full tree structure is not guaranteed when filtering active orinactive categories).Note that this behavior is different than that of the `includeDeleted` flag other endpoints use.</summary>
             [QueryParameter("filter%5BisActive%5D")]
             public bool? FilterisActive { get; set; }
-            /// <summary>Specifies the depth of the category tree to return, starting with the root category. Depth ``0`` means to returnonly the root category. Depth ``4``, for example, means to return only the root category and categories that arefour levels of inheritance deep, but not to return categories that are five or more levels deep.Note that this can be used in conjunction with ``filter[parentId]``, but that the depth is still computed fromthe root category, not the parent category specified by the filter.</summary>
+            /// <summary>Specifies the depth of the category tree to return, starting with the root category. Depth `0` means to returnonly the root category. Depth `4`, for example, means to return only the root category and categories that arefour levels of inheritance deep, but not to return categories that are five or more levels deep.Note that this can be used in conjunction with `filter[parentId]`, but that the depth is still computed fromthe root category, not the parent category specified by the filter.</summary>
             [QueryParameter("filter%5BmaxDepth%5D")]
             public double? FiltermaxDepth { get; set; }
             /// <summary>Specifies the parent category ID of returned categories. The query returns only categories that are directchild categories of the specified category.</summary>
@@ -195,7 +195,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             [QueryParameter("filter%5BparentId%5D")]
             public string FilterparentId { get; set; }
 #endif
-            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: ``YYYY-MM-DDThh:mm:ss.SSSZ``, A date and time range takes thisformat: ``YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ``. Range queries can be closed or open in eitherdirection: ``YYYY-MM-DDThh:mm:ss.SSSZ..`` or ``..YYYY-MM-DDThh:mm:ss.SSSZ``.</summary>
+            /// <summary>A string that specifies a date and time or a date and time range at which all returned objects mast have beenupdated. A single date and time takes this format: `YYYY-MM-DDThh:mm:ss.SSSZ`, A date and time range takes thisformat: `YYYY-MM-DDThh:mm:ss.SSSZ..YYYY-MM-DDThh:mm:ss.SSSZ`. Range queries can be closed or open in eitherdirection: `YYYY-MM-DDThh:mm:ss.SSSZ..` or `..YYYY-MM-DDThh:mm:ss.SSSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BupdatedAt%5D")]
@@ -205,7 +205,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
             [QueryParameter("filter%5BupdatedAt%5D")]
             public string FilterupdatedAt { get; set; }
 #endif
-            /// <summary>If provided, and set to ``true``, the globally-unique category ``uid`` field will be present in the response.The globally unique category ID is used with the (upcoming) ``v3`` category APIs. The option to include theglobally-unique ID with the ``v1`` category APIs is to help consumers transition to the new IDs.</summary>
+            /// <summary>If provided, and set to `true`, the globally-unique category `uid` field will be present in the response.The globally unique category ID is used with the (upcoming) `v3` category APIs. The option to include theglobally-unique ID with the `v1` category APIs is to help consumers transition to the new IDs.</summary>
             [QueryParameter("includeUid")]
             public bool? IncludeUid { get; set; }
         }
@@ -218,12 +218,12 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
         {
         }
         /// <summary>
-        /// POST categories
+        /// Creates a new category.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CategoriesRequestBuilderPostQueryParameters 
         {
-            /// <summary>If provided, and set to ``true``, the globally-unique category ``uid`` field will be present in the response.The globally unique category ID is used with the (upcoming) ``v3`` category APIs. The option to include theglobally-unique ID with the ``v1`` category APIs is to help consumers transition to the new IDs.</summary>
+            /// <summary>If provided, and set to `true`, the globally-unique category `uid` field will be present in the response.The globally unique category ID is used with the (upcoming) `v3` category APIs. The option to include theglobally-unique ID with the `v1` category APIs is to help consumers transition to the new IDs.</summary>
             [QueryParameter("includeUid")]
             public bool? IncludeUid { get; set; }
         }

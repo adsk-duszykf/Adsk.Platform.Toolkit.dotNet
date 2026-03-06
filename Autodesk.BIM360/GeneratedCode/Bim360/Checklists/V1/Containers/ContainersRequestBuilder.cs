@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers
     public partial class ContainersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.checklists.v1.containers.item collection</summary>
-        /// <param name="position">Each project is assigned a container that stores all the checklists for the project. To find the ID, see the `Retrieve a Container ID &lt;/en/docs/bim360/v1/tutorials/retrieve-checklists-container-id/&gt;`_ tutorial.</param>
+        /// <param name="position">Each project is assigned a container that stores all the checklists for the project. To find the ID, see the [Retrieve a Container ID](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/retrieve-checklists-container-id/) tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.WithContainerItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.WithContainerItemRequestBuilder this[string position]
         {

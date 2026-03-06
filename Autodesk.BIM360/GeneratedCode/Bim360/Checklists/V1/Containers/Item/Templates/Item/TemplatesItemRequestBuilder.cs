@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
         {
         }
         /// <summary>
-        /// GET containers/{containerId}/templates/{id}
+        /// Retrieves information about a specific [BIM 360 Field Management](https://field.b360.autodesk.com/) template, including details about the items, sections, and attachments in the template.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/templates/{id}
+        /// Retrieves information about a specific [BIM 360 Field Management](https://field.b360.autodesk.com/) template, including details about the items, sections, and attachments in the template.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GET containers/{containerId}/templates/{id}
+        /// Retrieves information about a specific [BIM 360 Field Management](https://field.b360.autodesk.com/) template, including details about the items, sections, and attachments in the template.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,12 +98,12 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
             return new global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// GET containers/{containerId}/templates/{id}
+        /// Retrieves information about a specific [BIM 360 Field Management](https://field.b360.autodesk.com/) template, including details about the items, sections, and attachments in the template.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TemplatesItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas. For example, ``fields[templates] = createdAt, templateType.`` For more details, see `JSON API Sparse Fieldsets &lt;http://jsonapi.org/format/#fetching-sparse-fieldsets&gt;`_.</summary>
+            /// <summary>Specify which attributes you want to appear in the response. Separate multiple values with commas. For example, `fields[templates] = createdAt, templateType.` For more details, see [JSON API Sparse Fieldsets](http://jsonapi.org/format/#fetching-sparse-fieldsets).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields%5Btemplates%5D")]

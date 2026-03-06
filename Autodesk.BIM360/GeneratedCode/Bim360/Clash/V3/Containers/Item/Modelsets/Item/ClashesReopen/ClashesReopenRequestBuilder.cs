@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
         {
         }
         /// <summary>
-        /// This endpoint essentially deletes the specified closed clash groups. This operation cannot be undone, but the closed clash groups can be recreated identically, if necessary.
+        /// Re-opens a batch of existing closed clash groups.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint essentially deletes the specified closed clash groups. This operation cannot be undone, but the closed clash groups can be recreated identically, if necessary.
+        /// Re-opens a batch of existing closed clash groups.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint essentially deletes the specified closed clash groups. This operation cannot be undone, but the closed clash groups can be recreated identically, if necessary.
+        /// Re-opens a batch of existing closed clash groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

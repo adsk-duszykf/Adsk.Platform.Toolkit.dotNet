@@ -44,7 +44,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 #else
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse_linkedDocuments_details Details { get; set; }
 #endif
-        /// <summary>The type of the relationshipPossible values: ``TwoDVectorPushpin``, ``TwoDRasterPushpin``</summary>
+        /// <summary>The type of the relationshipPossible values: `TwoDVectorPushpin`, `TwoDRasterPushpin`</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse_linkedDocuments_type? Type { get; set; }
         /// <summary>The URN of the file/document that a pushpin was placed on for this issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

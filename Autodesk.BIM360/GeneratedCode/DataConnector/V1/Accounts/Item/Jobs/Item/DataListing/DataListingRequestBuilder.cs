@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing
         {
         }
         /// <summary>
-        /// If the job was cancelled or otherwise failed to create a data extract, this endpoint returns a 404 error ``The requested resource does not exist.``
+        /// Returns an array of information about the files contained within the data extract created by a specified job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingGetResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// If the job was cancelled or otherwise failed to create a data extract, this endpoint returns a 404 error ``The requested resource does not exist.``
+        /// Returns an array of information about the files contained within the data extract created by a specified job.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// If the job was cancelled or otherwise failed to create a data extract, this endpoint returns a 404 error ``The requested resource does not exist.``
+        /// Returns an array of information about the files contained within the data extract created by a specified job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

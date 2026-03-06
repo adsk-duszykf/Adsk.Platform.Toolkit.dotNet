@@ -113,7 +113,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>The maximum number of nodes per page. Acceptable values: ``1-10000``. Default value: ``10000``.</summary>
+            /// <summary>The maximum number of nodes per page. Acceptable values: `1-10000`. Default value: `10000`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The node index from which the pagination starts. This is zero-based.</summary>

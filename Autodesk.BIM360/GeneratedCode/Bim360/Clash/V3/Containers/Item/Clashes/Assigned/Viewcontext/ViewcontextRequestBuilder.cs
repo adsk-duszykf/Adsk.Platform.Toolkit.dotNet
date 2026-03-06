@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewc
         {
         }
         /// <summary>
-        /// You can use the BIM360 Issues API to obtain individual issues. See `GET issues/:issueId &lt;/en/docs/bim360/v1/reference/http/issues-v2-issues-issueId-GET/&gt;`_ for more information.
+        /// Retrieves the view context around a set of assigned clash groups, such as the model set, and documents with which they are associated.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can use the BIM360 Issues API to obtain individual issues. See `GET issues/:issueId &lt;/en/docs/bim360/v1/reference/http/issues-v2-issues-issueId-GET/&gt;`_ for more information.
+        /// Retrieves the view context around a set of assigned clash groups, such as the model set, and documents with which they are associated.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewc
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can use the BIM360 Issues API to obtain individual issues. See `GET issues/:issueId &lt;/en/docs/bim360/v1/reference/http/issues-v2-issues-issueId-GET/&gt;`_ for more information.
+        /// Retrieves the view context around a set of assigned clash groups, such as the model set, and documents with which they are associated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

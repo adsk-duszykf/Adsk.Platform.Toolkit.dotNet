@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
 {
-    /// <summary>The type of pushpin. Possible values: ``TwoDVectorPushpin``.</summary>
+    /// <summary>The type of pushpin. Possible values: `TwoDVectorPushpin`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ClashesAssignPostRequestBody_pushpin_type
     {

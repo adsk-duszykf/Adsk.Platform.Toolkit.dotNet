@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings
 {
-    /// <summary>The type of item the custom attribute is mapped to.Possible values:``issueType`` - this corresponds to ``Issue Category`` in the UI.``issueSubtype`` - this corresponds to ``Issue Type`` in the UI.Note that ``issueSubtype``&apos;s inherit ``issueType``&apos;s.</summary>
+    /// <summary>The type of item the custom attribute is mapped to.Possible values:`issueType` - this corresponds to `Issue Category` in the UI.`issueSubtype` - this corresponds to `Issue Type` in the UI.Note that `issueSubtype`&apos;s inherit `issueType`&apos;s.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IssueAttributeMappingsGetResponse_results_mappedItemType
     {

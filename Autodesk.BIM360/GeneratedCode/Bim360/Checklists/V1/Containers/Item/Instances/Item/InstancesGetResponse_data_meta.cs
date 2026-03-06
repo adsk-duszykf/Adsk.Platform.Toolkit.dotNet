@@ -15,13 +15,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     {
         /// <summary>The number of items in all the sections of the checklist.</summary>
         public double? TotalItems { get; set; }
-        /// <summary>The number of required checklist-level signatures. For information about section-level signatures, see ``included[].attributes.signatures``.</summary>
+        /// <summary>The number of required checklist-level signatures. For information about section-level signatures, see `included[].attributes.signatures`.</summary>
         public double? TotalRequiredSignatures { get; set; }
         /// <summary>The number of sections in the checklist.</summary>
         public double? TotalSections { get; set; }
-        /// <summary>The number of checklist-level signed signatures. For information about section-level signatures, see ``included[].attributes.signatures``.</summary>
+        /// <summary>The number of checklist-level signed signatures. For information about section-level signatures, see `included[].attributes.signatures`.</summary>
         public double? TotalSignedSignatures { get; set; }
-        /// <summary>The number of unsigned checklist-level signatures in the checklist. For information about section-level signatures, see ``included[].attributes.signatures``.</summary>
+        /// <summary>The number of unsigned checklist-level signatures in the checklist. For information about section-level signatures, see `included[].attributes.signatures`.</summary>
         public double? TotalUnsignedSignatures { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

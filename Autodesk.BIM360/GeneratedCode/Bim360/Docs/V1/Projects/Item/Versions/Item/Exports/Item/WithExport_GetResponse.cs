@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Ite
 #endif
         /// <summary>The ID of the export job.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The status of the export job. Possible values: ``committed``, ``completed``, ``failed``. When the job is complete, an object representing the result of the job is returned in the response.</summary>
+        /// <summary>The status of the export job. Possible values: `committed`, `completed`, `failed`. When the job is complete, an object representing the result of the job is returned in the response.</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_GetResponse_status? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

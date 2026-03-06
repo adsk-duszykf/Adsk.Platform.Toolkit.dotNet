@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Ite
     public partial class WithExport_GetResponse_data : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The URL-encoded ID (URN) of the exported PDF page. Note that this is equivalent to the ``derivativeurn`` parameter in `GET :urn/manifest/:derivativeurn &lt;/en/docs/model-derivative/v2/reference/http/urn-manifest-derivativeurn-GET&gt;`_.</summary>
+        /// <summary>The URL-encoded ID (URN) of the exported PDF page. Note that this is equivalent to the `derivativeurn` parameter in [GET :urn/manifest/:derivativeurn](https://aps.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-manifest-derivativeurn-GET).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceId { get; set; }
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Ite
 #else
         public string SignedUrl { get; set; }
 #endif
-        /// <summary>The Base64 (URL Safe) encoded ID (URN) assigned to the file when it was first uploaded to BIM 360 Document Management. This is used to download the page. Note that this is equal to the ``urn`` parameter in `GET :urn/manifest/:derivativeurn &lt;/en/docs/model-derivative/v2/reference/http/urn-manifest-derivativeurn-GET&gt;`_</summary>
+        /// <summary>The Base64 (URL Safe) encoded ID (URN) assigned to the file when it was first uploaded to BIM 360 Document Management. This is used to download the page. Note that this is equal to the `urn` parameter in [GET :urn/manifest/:derivativeurn](https://aps.autodesk.com/en/docs/model-derivative/v2/reference/http/urn-manifest-derivativeurn-GET)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VersionUrn { get; set; }

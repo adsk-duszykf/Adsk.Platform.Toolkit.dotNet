@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
         {
         }
         /// <summary>
-        /// Note that some entity types belong to a ``bim360`` domain, and others to a ``construction`` domain.
+        /// Retrieves a list of entity types that are compatible with each other, to establish whether you can create relationships between them or to delete those relationships.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that some entity types belong to a ``bim360`` domain, and others to a ``construction`` domain.
+        /// Retrieves a list of entity types that are compatible with each other, to establish whether you can create relationships between them or to delete those relationships.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that some entity types belong to a ``bim360`` domain, and others to a ``construction`` domain.
+        /// Retrieves a list of entity types that are compatible with each other, to establish whether you can create relationships between them or to delete those relationships.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

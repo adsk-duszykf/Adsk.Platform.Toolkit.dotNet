@@ -179,7 +179,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CostItemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Returns only tracking item instances that belong to the budgets identified by the provided list of budget IDs (separated with commas). For example, ``filter[budgetId]=id1,id2``. Note that you can return the instances that are not linked to any budget using ``filter[budgetId]=blank``. To find budget IDs, call `GET budgets &lt;/en/docs/bim360/v1/reference/http/cost-budgets-GET/&gt;`_ and inspect ``results.id`` in the response.</summary>
+            /// <summary>Returns only tracking item instances that belong to the budgets identified by the provided list of budget IDs (separated with commas). For example, `filter[budgetId]=id1,id2`. Note that you can return the instances that are not linked to any budget using `filter[budgetId]=blank`. To find budget IDs, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.id` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BbudgetId%5D")]
@@ -189,7 +189,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BbudgetId%5D")]
             public string[] FilterbudgetId { get; set; }
 #endif
-            /// <summary>Returns only the items that are linked to budgets that have the specified status codes. Separate multiple codes with commas. For example, ``filter[budgetStatus]=draft,open``.  Possible values ``draft``, ``open``, ``submitted``, ``accepted``, ``approved``, ``executed``, ``rejected``. For more information about cost item budget statuses, see `Cost Item Statuses &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Change_Order_Statuses#cost-item-statuses&gt;`_.</summary>
+            /// <summary>Returns only the items that are linked to budgets that have the specified status codes. Separate multiple codes with commas. For example, `filter[budgetStatus]=draft,open`.  Possible values `draft`, `open`, `submitted`, `accepted`, `approved`, `executed`, `rejected`. For more information about cost item budget statuses, see [Cost Item Statuses](https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Change_Order_Statuses#cost-item-statuses).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BbudgetStatus%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BbudgetStatus%5D")]
             public string[] FilterbudgetStatus { get; set; }
 #endif
-            /// <summary>The change order ID. Separate multiple IDs with commas. For example,``filter[changeOrderId]=id1,id2``.</summary>
+            /// <summary>The change order ID. Separate multiple IDs with commas. For example,`filter[changeOrderId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BchangeOrderId%5D")]
@@ -209,7 +209,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BchangeOrderId%5D")]
             public string[] FilterchangeOrderId { get; set; }
 #endif
-            /// <summary>Returns only items associated with the contracts identified on this list of IDs. Separate multiple IDs with commas; for example:``filter[contractId]=id1,id2``.You can also provide a value of ``blank`` to return items that are not linked to any contract; for example:``filter[contractId]=blank``.</summary>
+            /// <summary>Returns only items associated with the contracts identified on this list of IDs. Separate multiple IDs with commas; for example:`filter[contractId]=id1,id2`.You can also provide a value of `blank` to return items that are not linked to any contract; for example:`filter[contractId]=blank`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcontractId%5D")]
@@ -219,7 +219,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BcontractId%5D")]
             public string[] FiltercontractId { get; set; }
 #endif
-            /// <summary>Returns only the items that have the specified status codes. Separate multiple codes with commas. For example, ``filter[budgetStatus]=draft,open``.  Possible values ``draft``, ``open``, ``pricing``, ``proposed``, ``accepted``, ``approved``, ``executed``, ``rejected``. For more information about cost item cost statuses, see `Cost Item Statuses &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Change_Order_Statuses#cost-item-statuses&gt;`_.</summary>
+            /// <summary>Returns only the items that have the specified status codes. Separate multiple codes with commas. For example, `filter[budgetStatus]=draft,open`.  Possible values `draft`, `open`, `pricing`, `proposed`, `accepted`, `approved`, `executed`, `rejected`. For more information about cost item cost statuses, see [Cost Item Statuses](https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Change_Order_Statuses#cost-item-statuses).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcostStatus%5D")]
@@ -229,7 +229,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BcostStatus%5D")]
             public string[] FiltercostStatus { get; set; }
 #endif
-            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, ``filter[externalId]=id1,id2``.</summary>
+            /// <summary>The ID of the item in the external ERP system. Use this ID to track or look up data in an integrated ERP system. For example, `filter[externalId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalId%5D")]
@@ -239,7 +239,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BexternalId%5D")]
             public string[] FilterexternalId { get; set; }
 #endif
-            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, ``filter[externalSystem]=Sage300``.Max length: 255</summary>
+            /// <summary>The name of the external ERP system. Use this name to identify or search within the integrated system. For example, `filter[externalSystem]=Sage300`.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BexternalSystem%5D")]
@@ -249,7 +249,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BexternalSystem%5D")]
             public string FilterexternalSystem { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, ``filter[id]=id1,id2``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of item IDs. Separate multiple IDs with commas. For example, `filter[id]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -259,7 +259,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -269,7 +269,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5BlastModifiedSince%5D")]
             public string FilterlastModifiedSince { get; set; }
 #endif
-            /// <summary>Returns only the items that are identified by the provided list of auto-generated sequence numbers. Separate multiple numbers with commas; for example, ``filter[number]=0001,0002``.</summary>
+            /// <summary>Returns only the items that are identified by the provided list of auto-generated sequence numbers. Separate multiple numbers with commas; for example, `filter[number]=0001,0002`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bnumber%5D")]
@@ -279,7 +279,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("filter%5Bnumber%5D")]
             public string[] Filternumber { get; set; }
 #endif
-            /// <summary>A list of resources related to the returned cost items to include in the response. Resources can have a maximum length of 100. For example, ``include=changeOrders`` returns the change orders that contain each cost item. ``include=attributes`` returns custom attributes, which represent the ``properties`` in the response. Possible values: ``budget``, ``changeOrders``, ``subCostItems``, ``attributes``.</summary>
+            /// <summary>A list of resources related to the returned cost items to include in the response. Resources can have a maximum length of 100. For example, `include=changeOrders` returns the change orders that contain each cost item. `include=attributes` returns custom attributes, which represent the `properties` in the response. Possible values: `budget`, `changeOrders`, `subCostItems`, `attributes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -289,13 +289,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

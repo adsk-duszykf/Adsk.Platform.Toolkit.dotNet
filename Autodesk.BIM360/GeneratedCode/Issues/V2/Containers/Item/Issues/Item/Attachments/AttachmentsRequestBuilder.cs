@@ -189,10 +189,10 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
             [QueryParameter("filter%5Bstatus%5D")]
             public string Filterstatus { get; set; }
 #endif
-            /// <summary>Add ``limit=20`` to limit the results count, maximum limit - ``limit=200`` (together with the offset to support pagination).</summary>
+            /// <summary>Add `limit=20` to limit the results count, maximum limit - `limit=200` (together with the offset to support pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Add ``offset=20`` to get partial results (together with the limit to support pagination).</summary>
+            /// <summary>Add `offset=20` to get partial results (together with the limit to support pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

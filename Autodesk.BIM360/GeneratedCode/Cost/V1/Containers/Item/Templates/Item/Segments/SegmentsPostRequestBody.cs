@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
     public partial class SegmentsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The delimiter that follows the segment. Possible values are: ``none``, ``space``, ``point``, ``hyphen``, ``underscore``, ``tab``. Default to ``none``</summary>
+        /// <summary>The delimiter that follows the segment. Possible values are: `none`, `space`, `point`, `hyphen`, `underscore`, `tab`. Default to `none`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Delimiter { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
 #else
         public string Delimiter { get; set; }
 #endif
-        /// <summary>Whether the segment is flexible length. Default to ``false``</summary>
+        /// <summary>Whether the segment is flexible length. Default to `false`</summary>
         public bool? IsVariableLength { get; set; }
         /// <summary>The number of characters allowed in the segment. Minimum length is 1 and maximum is 100. Default to 100.</summary>
         public double? Length { get; set; }
@@ -42,7 +42,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
 #else
         public string SampleCode { get; set; }
 #endif
-        /// <summary>The segment type. Possible values: ``code``, ``column``, or ``info``. Code segments are displayed as part of the budget code. Column segments are displayed in a separate column. Info segments are not displayed. Default to ``code``</summary>
+        /// <summary>The segment type. Possible values: `code`, `column`, or `info`. Code segments are displayed as part of the budget code. Column segments are displayed in a separate column. Info segments are not displayed. Default to `code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

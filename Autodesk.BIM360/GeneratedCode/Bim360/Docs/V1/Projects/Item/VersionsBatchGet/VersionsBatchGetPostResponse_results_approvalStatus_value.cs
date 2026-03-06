@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
-    /// <summary>The value of the approval status.Possible values: ``approved``, ``rejected``</summary>
+    /// <summary>The value of the approval status.Possible values: `approved`, `rejected`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VersionsBatchGetPostResponse_results_approvalStatus_value
     {

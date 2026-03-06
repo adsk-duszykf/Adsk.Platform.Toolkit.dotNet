@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Comments
     public partial class CommentsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The comment content. A ``n`` indicates a new line, e.g.: ``HeynAharon`` will be a 2 lines comment.Max length: 10000</summary>
+        /// <summary>The comment content. A `n` indicates a new line, e.g.: `HeynAharon` will be a 2 lines comment.Max length: 10000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Body { get; set; }

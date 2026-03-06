@@ -209,7 +209,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChangeOrderItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Include nested resources in the response. For example, ``include=costItems`` will return the related cost items with the change order. ``include=attributes`` will return custom attributes which represents the ``properties`` in the response. Possible values: ``costItems``, ``costItems[changeOrders]``, ``attributes``, ``comments``.</summary>
+            /// <summary>Include nested resources in the response. For example, `include=costItems` will return the related cost items with the change order. `include=attributes` will return custom attributes which represents the `properties` in the response. Possible values: `costItems`, `costItems[changeOrders]`, `attributes`, `comments`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

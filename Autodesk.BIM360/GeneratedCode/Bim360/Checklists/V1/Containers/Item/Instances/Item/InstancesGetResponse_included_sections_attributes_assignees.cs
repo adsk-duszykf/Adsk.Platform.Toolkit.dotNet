@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #endif
         /// <summary>Not relevant</summary>
         public double? Id { get; set; }
-        /// <summary>``true`` if the section assignee was inherited from the checklist, otherwise ``false``</summary>
+        /// <summary>`true` if the section assignee was inherited from the checklist, otherwise `false`</summary>
         public bool? IsInherited { get; set; }
         /// <summary>The name of the assignee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

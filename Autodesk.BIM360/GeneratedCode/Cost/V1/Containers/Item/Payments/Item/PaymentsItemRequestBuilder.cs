@@ -103,7 +103,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Payments.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PaymentsItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Include nested resources in the response. For example, ``include=paymentReferences`` will return payment references to each payment. ``include=attributes`` will return custom attributes which represents the ``properties`` in the response. Possible values: ``paymentReferences``, ``attributes``, ``summaryCalculatedFields``, ``complianceExpiration``.</summary>
+            /// <summary>Include nested resources in the response. For example, `include=paymentReferences` will return payment references to each payment. `include=attributes` will return custom attributes which represents the `properties` in the response. Possible values: `paymentReferences`, `attributes`, `summaryCalculatedFields`, `complianceExpiration`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

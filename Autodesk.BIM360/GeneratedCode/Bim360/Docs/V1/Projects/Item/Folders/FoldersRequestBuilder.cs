@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders
     public partial class FoldersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.docs.v1.projects.item.folders.item collection</summary>
-        /// <param name="position">The URL-encoded ID (URN) of the folder.For details about how to find the URN, follow the initial steps (1-3) of the `Download Files &lt;/en/docs/bim360/v1/tutorials/document-management/download-document-s3/&gt;`_ tutorial.</param>
+        /// <param name="position">The URL-encoded ID (URN) of the folder.For details about how to find the URN, follow the initial steps (1-3) of the [Download Files](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/document-management/download-document-s3/) tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.WithFolder_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.WithFolder_ItemRequestBuilder this[string position]
         {

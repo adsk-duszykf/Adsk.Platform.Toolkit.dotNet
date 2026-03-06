@@ -32,7 +32,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item
 #else
         public string CreatorId { get; set; }
 #endif
-        /// <summary>The last date of the time period covered by the timesheet. This is also the date that the tracked ``inputQuantity`` and ``outputQuantity`` values are considered to have been reported.</summary>
+        /// <summary>The last date of the time period covered by the timesheet. This is also the date that the tracked `inputQuantity` and `outputQuantity` values are considered to have been reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EndDate { get; set; }
@@ -44,7 +44,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item
         public Guid? Id { get; set; }
         /// <summary>The hours worked during the time period covered by the timesheet.</summary>
         public double? InputQuantity { get; set; }
-        /// <summary>The input unit of measurement of the timesheet. Currently this value should always be ``hr``.</summary>
+        /// <summary>The input unit of measurement of the timesheet. Currently this value should always be `hr`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InputUnit { get; set; }

@@ -13,9 +13,9 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_included_items_attributes_instructions_type : IParsable
     {
-        /// <summary>The ID of the description; will always be ``1``.</summary>
+        /// <summary>The ID of the description; will always be `1`.</summary>
         public double? Id { get; set; }
-        /// <summary>The name of the description; will always be ``text``.</summary>
+        /// <summary>The name of the description; will always be `text`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

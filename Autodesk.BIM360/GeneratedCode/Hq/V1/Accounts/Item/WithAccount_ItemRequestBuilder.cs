@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure;
 using Autodesk.BIM360.Hq.V1.Accounts.Item.Companies;
+using Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs;
 using Autodesk.BIM360.Hq.V1.Accounts.Item.Projects;
 using Autodesk.BIM360.Hq.V1.Accounts.Item.Users;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -27,6 +28,11 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item
         public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder Companies
         {
             get => new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The jobs property</summary>
+        public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.JobsRequestBuilder Jobs
+        {
+            get => new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
         public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsRequestBuilder Projects

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item
 {
-    /// <summary>The status of the clash test. If the status is ``Success``, the results of the clash test are available for use. Possible values: ``Pending``, ``Processing``, ``Success``, ``Failed``.</summary>
+    /// <summary>The status of the clash test. If the status is `Success`, the results of the clash test are available for use. Possible values: `Pending`, `Processing`, `Success`, `Failed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithTestGetResponse_status
     {

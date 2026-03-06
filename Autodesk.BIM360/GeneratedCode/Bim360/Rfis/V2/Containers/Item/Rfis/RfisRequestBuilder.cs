@@ -46,7 +46,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         {
         }
         /// <summary>
-        /// You can retrieve both document-related (pusphin) RFIs and project-related RFIs.
+        /// Retrieves information about all the BIM 360 RFIs (requests for information) in a project, including details about their associated comments and attachments.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can retrieve both document-related (pusphin) RFIs and project-related RFIs.
+        /// Retrieves information about all the BIM 360 RFIs (requests for information) in a project, including details about their associated comments and attachments.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can retrieve both document-related (pusphin) RFIs and project-related RFIs.
+        /// Retrieves information about all the BIM 360 RFIs (requests for information) in a project, including details about their associated comments and attachments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,7 +174,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             return new global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// You can retrieve both document-related (pusphin) RFIs and project-related RFIs.
+        /// Retrieves information about all the BIM 360 RFIs (requests for information) in a project, including details about their associated comments and attachments.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RfisRequestBuilderGetQueryParameters 

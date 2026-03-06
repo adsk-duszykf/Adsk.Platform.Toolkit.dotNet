@@ -103,7 +103,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item.Users.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUserItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A list of the project user fields to include in the response. Separate multiple values with commas.Possible values: ``name``, ``email``, ``firstName``, ``lastName``, ``autodeskId``, ``addressLine1``, ``addressLine2``, ``city``, ``stateOrProvince``, ``postalCode``, ``country``, ``imageUrl``, ``lastSignIn``, ``phone``, ``jobTitle``, ``industry``, ``aboutMe``, ``createdAt``, ``updatedAt``, ``accessLevels``, ``companyId``, ``roleIds``, ``roles``, ``status``, ``addedOn``, and ``products``.</summary>
+            /// <summary>A list of the project user fields to include in the response. Separate multiple values with commas.Possible values: `name`, `email`, `firstName`, `lastName`, `autodeskId`, `addressLine1`, `addressLine2`, `city`, `stateOrProvince`, `postalCode`, `country`, `imageUrl`, `lastSignIn`, `phone`, `jobTitle`, `industry`, `aboutMe`, `createdAt`, `updatedAt`, `accessLevels`, `companyId`, `roleIds`, `roles`, `status`, `addedOn`, and `products`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]

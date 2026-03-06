@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.Documents
 {
-    /// <summary>Current status of the document. Possible values: ``Pending``, ``Started``, ``Completed``, ``Failed``, ``PendingSign``, ``Signed``.</summary>
+    /// <summary>Current status of the document. Possible values: `Pending`, `Started`, `Completed`, `Failed`, `PendingSign`, `Signed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DocumentsGetResponse_status
     {

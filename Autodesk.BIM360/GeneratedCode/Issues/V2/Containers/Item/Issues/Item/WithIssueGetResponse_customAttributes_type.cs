@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 {
-    /// <summary>Type of the attribute: value should of the corresponding formatPossible values: ``numeric``, ``paragraph``, ``list``, ``text``</summary>
+    /// <summary>Type of the attribute: value should of the corresponding formatPossible values: `numeric`, `paragraph`, `list`, `text`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIssueGetResponse_customAttributes_type
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.Payments
 {
-    /// <summary>The status of this payment. For details about the possible values of this field, see `Payment Application Statuses &lt;https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Payment_Application_Statuses&gt;`_.Possible values: ``draft``, ``pendingInput``, ``submitted``, ``revise``, ``accepted``, ``approved``, ``paid``.</summary>
+    /// <summary>The status of this payment. For details about the possible values of this field, see [Payment Application Statuses](https://help.autodesk.com/view/BUILD/ENU/?guid=Cost_Payment_Application_Statuses).Possible values: `draft`, `pendingInput`, `submitted`, `revise`, `accepted`, `approved`, `paid`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentsGetResponse_results_status
     {

@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
 #else
         public List<string> Ids { get; set; }
 #endif
-        /// <summary>Unique names of custom attributes to fetch. One or both of these body structure fields must be presentto specify at least one custom attribute. Note that the unique name of a custom attribute is not thedisplay name of the attribute, but the immutable name returned by the attribute&apos;s ``name`` field.</summary>
+        /// <summary>Unique names of custom attributes to fetch. One or both of these body structure fields must be presentto specify at least one custom attribute. Note that the unique name of a custom attribute is not thedisplay name of the attribute, but the immutable name returned by the attribute&apos;s `name` field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Names { get; set; }

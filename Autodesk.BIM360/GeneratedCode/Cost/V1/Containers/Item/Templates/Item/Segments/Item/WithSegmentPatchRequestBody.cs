@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item
     public partial class WithSegmentPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The delimiter that follows the segment. Possible values are: ``none``, ``space``, ``point``, ``hyphen``, ``underscore``, ``tab``.</summary>
+        /// <summary>The delimiter that follows the segment. Possible values are: `none`, `space`, `point`, `hyphen`, `underscore`, `tab`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Delimiter { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item
 #else
         public string Delimiter { get; set; }
 #endif
-        /// <summary>``true`` Lock the segment.``false`` Do not lock the segment.</summary>
+        /// <summary>`true` Lock the segment.`false` Do not lock the segment.</summary>
         public bool? IsLocked { get; set; }
         /// <summary>The number of characters allowed in the segment.</summary>
         public double? Length { get; set; }
@@ -40,7 +40,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item
 #else
         public string SampleCode { get; set; }
 #endif
-        /// <summary>The segment type. Possible values: ``code``, ``column``, or ``info``. Code segments are displayed as part of the budget code. Column segments are displayed in a separate column. Info segments are not displayed.</summary>
+        /// <summary>The segment type. Possible values: `code`, `column`, or `info`. Code segments are displayed as part of the budget code. Column segments are displayed in a separate column. Info segments are not displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

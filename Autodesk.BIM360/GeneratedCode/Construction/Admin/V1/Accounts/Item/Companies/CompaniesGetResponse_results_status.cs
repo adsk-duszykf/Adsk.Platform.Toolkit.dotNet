@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies
 {
-    /// <summary>The status of the company.Possible values: ``deleted``, ``active``</summary>
+    /// <summary>The status of the company.Possible values: `deleted`, `active`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CompaniesGetResponse_results_status
     {

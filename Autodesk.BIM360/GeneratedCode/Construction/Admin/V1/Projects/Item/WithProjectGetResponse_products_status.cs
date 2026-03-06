@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
 {
-    /// <summary>The current status of the product. Possible values:- ``activating``: Product activation is in progress.- ``activationFailed``: Product activation has failed.- ``active``: Product activation is completed.- ``deactivating``: Product deactivation is in progress. (Applicable to BIM 360 only)- ``deactivationFailed``: Product deactivation has failed. (Applicable to BIM 360 only)- ``inactive``: Product deactivation is completed. (Applicable to BIM 360 only)- ``available``: Product is available for activation. (Applicable to BIM 360 only)</summary>
+    /// <summary>The current status of the product. Possible values:- `activating`: Product activation is in progress.- `activationFailed`: Product activation has failed.- `active`: Product activation is completed.- `deactivating`: Product deactivation is in progress. (Applicable to BIM 360 only)- `deactivationFailed`: Product deactivation has failed. (Applicable to BIM 360 only)- `inactive`: Product deactivation is completed. (Applicable to BIM 360 only)- `available`: Product is available for activation. (Applicable to BIM 360 only)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithProjectGetResponse_products_status
     {

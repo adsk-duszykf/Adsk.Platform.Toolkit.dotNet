@@ -166,10 +166,10 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Comments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Add ``limit=20`` to limit the results count, maximum limit - ``limit=200`` (together with the offset to support pagination).</summary>
+            /// <summary>Add `limit=20` to limit the results count, maximum limit - `limit=200` (together with the offset to support pagination).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Add ``offset=20`` to get partial results (together with the limit to support pagination).</summary>
+            /// <summary>Add `offset=20` to get partial results (together with the limit to support pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
         }

@@ -14,7 +14,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     {
         /// <summary>The ID of the attachment.</summary>
         public Guid? Id { get; set; }
-        /// <summary>The type of object; will always be ``instance_item_attachments``.</summary>
+        /// <summary>The type of object; will always be `instance_item_attachments`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
     public partial class IssuesPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The unique Autodesk ID of the User/Company/Role of the current assignee for this issue. Note that if you select an assignee ID, you also need to select a type (``assignedToType``).</summary>
+        /// <summary>The unique Autodesk ID of the User/Company/Role of the current assignee for this issue. Note that if you select an assignee ID, you also need to select a type (`assignedToType`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>The type of the current assignee of this issue. Possible values: ``user``, ``company``, ``role``, ``null``.</summary>
+        /// <summary>The type of the current assignee of this issue. Possible values: `user`, `company`, `role`, `null`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody_assignedToType? AssignedToType { get; set; }
         /// <summary>The Asterisk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 #else
         public string OwnerId { get; set; }
 #endif
-        /// <summary>The list of actions permitted for the user for this issue in its current state.Possible Values: ``assign_all``, ``assign_same_company``, ``assign_creator_or_owner``, ``clear_assignee``, ``add_comment``, ``add_attachment``, ``remove_attachment``.The following values are not relevant: ``add_attachment``, ``remove_attachment``.</summary>
+        /// <summary>The list of actions permitted for the user for this issue in its current state.Possible Values: `assign_all`, `assign_same_company`, `assign_creator_or_owner`, `clear_assignee`, `add_comment`, `add_attachment`, `remove_attachment`.The following values are not relevant: `add_attachment`, `remove_attachment`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody_permittedActions? PermittedActions { get; set; }
@@ -114,7 +114,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 #else
         public string SnapshotUrn { get; set; }
 #endif
-        /// <summary>The unique identifier of the current status of the issuePossible values: ``draft``, ``open``, ``work_completed``, ``ready_to_inspect``, ``in_dispute``, ``not_approved``, ``answered``, ``void``, ``closed``</summary>
+        /// <summary>The unique identifier of the current status of the issuePossible values: `draft`, `open`, `work_completed`, `ready_to_inspect`, `in_dispute`, `not_approved`, `answered`, `void`, `closed`</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody_status? Status { get; set; }
         /// <summary>The title of the issue.Max length: 4200</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

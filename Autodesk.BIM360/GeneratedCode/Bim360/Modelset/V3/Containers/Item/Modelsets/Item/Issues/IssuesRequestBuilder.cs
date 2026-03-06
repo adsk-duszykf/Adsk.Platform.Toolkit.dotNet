@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issu
         {
         }
         /// <summary>
-        /// The data associated with ``pushpin`` is supported by the Viewer&apos;s Pushpin extension. See the `pushpin tutorial &lt;/en/docs/bim360/v1/tutorials/pushpins/&gt;`_ for more information.
+        /// Adds a model set visual inspection issue, represented as a BIM360 issue.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issu
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The data associated with ``pushpin`` is supported by the Viewer&apos;s Pushpin extension. See the `pushpin tutorial &lt;/en/docs/bim360/v1/tutorials/pushpins/&gt;`_ for more information.
+        /// Adds a model set visual inspection issue, represented as a BIM360 issue.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issu
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The data associated with ``pushpin`` is supported by the Viewer&apos;s Pushpin extension. See the `pushpin tutorial &lt;/en/docs/bim360/v1/tutorials/pushpins/&gt;`_ for more information.
+        /// Adds a model set visual inspection issue, represented as a BIM360 issue.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

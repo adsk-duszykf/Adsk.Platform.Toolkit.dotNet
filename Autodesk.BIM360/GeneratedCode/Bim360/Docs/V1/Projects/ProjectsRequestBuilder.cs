@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.docs.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.This corresponds to project ID in the `Data Management API &lt;/en/docs/data/v2/&gt;`_. To convert a project ID in the Data Management API into a project ID in the BIM 360 API you need to remove the ``**b.**`` prefix. For example, a project ID of **b.**a4be0c34a-4ab7 translates to a project ID of a4be0c34a-4ab7.To learn how to find the project ID, see the `Retrieve BIM 360 Account and Project ID &lt;/en/docs/bim360/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_ tutorial.</param>
+        /// <param name="position">The ID of the project.This corresponds to project ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). To convert a project ID in the Data Management API into a project ID in the BIM 360 API you need to remove the `b.` prefix. For example, a project ID of `b.a4be0c34a-4ab7` translates to a project ID of a4be0c34a-4ab7.To learn how to find the project ID, see the [Retrieve BIM 360 Account and Project ID](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder this[Guid position]
         {
@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects
             }
         }
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.docs.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.This corresponds to project ID in the `Data Management API &lt;/en/docs/data/v2/&gt;`_. To convert a project ID in the Data Management API into a project ID in the BIM 360 API you need to remove the ``**b.**`` prefix. For example, a project ID of **b.**a4be0c34a-4ab7 translates to a project ID of a4be0c34a-4ab7.To learn how to find the project ID, see the `Retrieve BIM 360 Account and Project ID &lt;/en/docs/bim360/v1/tutorials/getting-started/retrieve-account-and-project-id/&gt;`_ tutorial.</param>
+        /// <param name="position">The ID of the project.This corresponds to project ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). To convert a project ID in the Data Management API into a project ID in the BIM 360 API you need to remove the `b.` prefix. For example, a project ID of `b.a4be0c34a-4ab7` translates to a project ID of a4be0c34a-4ab7.To learn how to find the project ID, see the [Retrieve BIM 360 Account and Project ID](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder this[string position]

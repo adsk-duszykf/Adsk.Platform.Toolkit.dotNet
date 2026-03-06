@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets
     public partial class TimeSheetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.timeSheets.item collection</summary>
-        /// <param name="position">The timesheet ID. To find the timesheet ID, call `GET time-sheets &lt;/en/docs/bim360/v1/reference/http/cost-time-sheets-GET/&gt;`_ and inspect ``results.id`` in the response.</param>
+        /// <param name="position">The timesheet ID. To find the timesheet ID, call [GET time-sheets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-time-sheets-GET/) and inspect `results.id` in the response.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item.TimeSheetsItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item.TimeSheetsItemRequestBuilder this[string position]
         {
@@ -179,7 +179,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeSheetsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter data that belong to associated budget code. For example, ``filter[budgetCode]=code``.To find budget codes, call `GET budgets &lt;/en/docs/bim360/v1/reference/http/cost-budgets-GET/&gt;`_ and inspect ``results.code`` in the response.</summary>
+            /// <summary>Filter data that belong to associated budget code. For example, `filter[budgetCode]=code`.To find budget codes, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.code` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BbudgetCode%5D")]
@@ -199,7 +199,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets
             [QueryParameter("filter%5BendDate%5D")]
             public string FilterendDate { get; set; }
 #endif
-            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, ``filter[lastModifiedSince]=2020-03-01T13:00:00Z``.</summary>
+            /// <summary>Returns only items that were modified since the specified date and time, in ISO 8601 format. For example, `filter[lastModifiedSince]=2020-03-01T13:00:00Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlastModifiedSince%5D")]
@@ -219,10 +219,10 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets
             [QueryParameter("filter%5BstartDate%5D")]
             public string FilterstartDate { get; set; }
 #endif
-            /// <summary>Filter data that belong to associated tracking item instance id. For example, ``filter[trackingItemInstanceId]=id``.</summary>
+            /// <summary>Filter data that belong to associated tracking item instance id. For example, `filter[trackingItemInstanceId]=id`.</summary>
             [QueryParameter("filter%5BtrackingItemInstanceId%5D")]
             public Guid? FiltertrackingItemInstanceId { get; set; }
-            /// <summary>Include additional resources in the response. For example, ``include=meta`` will return the meta data. Possible values: ``meta``.</summary>
+            /// <summary>Include additional resources in the response. For example, `include=meta` will return the meta data. Possible values: `meta`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -232,13 +232,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

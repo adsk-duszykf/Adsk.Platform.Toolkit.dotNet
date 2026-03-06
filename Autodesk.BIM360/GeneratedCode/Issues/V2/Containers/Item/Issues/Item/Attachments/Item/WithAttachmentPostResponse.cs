@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
     public partial class WithAttachmentPostResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The attachmentType attribute indicates the type of file that is being attached.The value of attachmentType is determined by the file suffix of the attached file.If the file has a suffix that corresponds to a lowercase photo format (such as .jpg, .png etc.), then attachmentType is set to photo.Otherwise, it is set to document.Possible Values: ``document`` or ``photo``.</summary>
+        /// <summary>The attachmentType attribute indicates the type of file that is being attached.The value of attachmentType is determined by the file suffix of the attached file.If the file has a suffix that corresponds to a lowercase photo format (such as .jpg, .png etc.), then attachmentType is set to photo.Otherwise, it is set to document.Possible Values: `document` or `photo`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item.WithAttachmentPostResponse_attachmentType? AttachmentType { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The list of actions permitted for the user for attachment.Possible Values: ``remove_attachment``.</summary>
+        /// <summary>The list of actions permitted for the user for attachment.Possible Values: `remove_attachment`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedActions { get; set; }
@@ -72,7 +72,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
 #else
         public List<string> PermittedActions { get; set; }
 #endif
-        /// <summary>A list of attributes you are allowed to edit regard the attachment.Possible Values: ``name``.</summary>
+        /// <summary>A list of attributes you are allowed to edit regard the attachment.Possible Values: `name`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PermittedAttributes { get; set; }
@@ -80,7 +80,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
-        /// <summary>The status of an attachment file to an issue.``pre-upload``: The file has not yet been uploaded.``file-uploaded``: The file has been successfully uploaded, but the process of attaching it to an issue is not yet complete.``completed``: The process of attaching the file to issue is finished and the file is now fully accessible and ready for use.Possible Values: ``pre-upload``, ``file-uploaded``, ``completed``.</summary>
+        /// <summary>The status of an attachment file to an issue.`pre-upload`: The file has not yet been uploaded.`file-uploaded`: The file has been successfully uploaded, but the process of attaching it to an issue is not yet complete.`completed`: The process of attaching the file to issue is finished and the file is now fully accessible and ready for use.Possible Values: `pre-upload`, `file-uploaded`, `completed`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item.WithAttachmentPostResponse_status? Status { get; set; }
         /// <summary>The date and time the attachment was updated, in ISO8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -92,7 +92,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
 #else
         public string UpdatedBy { get; set; }
 #endif
-        /// <summary>Use this attribute if ``urnType=dm``.Note that response format can be either dm -``urn:adsk.objects:os.object:wip.dm.prod/...`` or oss - ``urn:adsk.wipprod:dm.lineage:...``</summary>
+        /// <summary>Use this attribute if `urnType=dm`.Note that response format can be either dm -`urn:adsk.objects:os.object:wip.dm.prod/...` or oss - `urn:adsk.wipprod:dm.lineage:...`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Urn { get; set; }
@@ -100,7 +100,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
 #else
         public string Urn { get; set; }
 #endif
-        /// <summary>urnType attribute indicates the type of storage where the attachment will be stored.If urnType is set to ``oss``, it indicates that the URN refers to a file stored in an Object Storage Service (OSS). see the `Attach local attachment to an Issue &lt;/en/docs/bim360/v1/tutorials/attach-local-attachment-issues-v2/&gt;`_ tutorialIf urnType is set to ``dm``, it indicates that the URN refers to a file stored in a BIM360 Document Management (DM).Possible Values: ``oss`` or ``dm``.</summary>
+        /// <summary>urnType attribute indicates the type of storage where the attachment will be stored.If urnType is set to `oss`, it indicates that the URN refers to a file stored in an Object Storage Service (OSS). see the [Attach local attachment to an Issue](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/attach-local-attachment-issues-v2/) tutorialIf urnType is set to `dm`, it indicates that the URN refers to a file stored in a BIM360 Document Management (DM).Possible Values: `oss` or `dm`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item.WithAttachmentPostResponse_urnType? UrnType { get; set; }
         /// <summary>The urnVersion property</summary>
         public int? UrnVersion { get; set; }

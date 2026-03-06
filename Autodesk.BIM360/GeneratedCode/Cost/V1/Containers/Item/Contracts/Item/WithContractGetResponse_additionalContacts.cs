@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts.Item
 {
+    /// <summary>
+    /// Not relevant
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class WithContractGetResponse_additionalContacts : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

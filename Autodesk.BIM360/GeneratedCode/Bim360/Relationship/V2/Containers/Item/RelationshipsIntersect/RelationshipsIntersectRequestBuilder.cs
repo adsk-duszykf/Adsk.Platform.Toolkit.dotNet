@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
         {
         }
         /// <summary>
-        /// Also accepts a set of WITH entities, that allow filtering down of the relationships results set to those that have matching entities in the WITH collection.
+        /// Retrieves a list of relationships that contain the specified relationship entities.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Also accepts a set of WITH entities, that allow filtering down of the relationships results set to those that have matching entities in the WITH collection.
+        /// Retrieves a list of relationships that contain the specified relationship entities.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Also accepts a set of WITH entities, that allow filtering down of the relationships results set to those that have matching entities in the WITH collection.
+        /// Retrieves a list of relationships that contain the specified relationship entities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

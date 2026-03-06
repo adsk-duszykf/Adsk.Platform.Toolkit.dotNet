@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 {
-    /// <summary>The unique identifier of the current status of the issuePossible values: ``draft``, ``open``, ``work_completed``, ``ready_to_inspect``, ``in_dispute``, ``not_approved``, ``answered``, ``void``, ``closed``</summary>
+    /// <summary>The unique identifier of the current status of the issuePossible values: `draft`, `open`, `work_completed`, `ready_to_inspect`, `in_dispute`, `not_approved`, `answered`, `void`, `closed`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIssuePatchRequestBody_status
     {

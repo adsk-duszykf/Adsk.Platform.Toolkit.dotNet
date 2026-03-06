@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
     public partial class StatusStepSetsGetResponse_pagination : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;sreturned in each paginated response so that it can be supplied in the next request to continue paginatedresults. If a paginated response contains no ``cursorState`` value, then there are no further pages toreturn.Omit this field to initiate a paginated request or to restart pagination.</summary>
+        /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;sreturned in each paginated response so that it can be supplied in the next request to continue paginatedresults. If a paginated response contains no `cursorState` value, then there are no further pages toreturn.Omit this field to initiate a paginated request or to restart pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CursorState { get; set; }
@@ -20,7 +20,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
 #else
         public string CursorState { get; set; }
 #endif
-        /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects thanthe limit if the Assets service runs out of specified objects to return - at the end of a set of pagedresults, for example. The maximum limit is ``200``; the default limit is ``25``.</summary>
+        /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects thanthe limit if the Assets service runs out of specified objects to return - at the end of a set of pagedresults, for example. The maximum limit is `200`; the default limit is `25`.</summary>
         public int? Limit { get; set; }
         /// <summary>A URL that requests the next page for this query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

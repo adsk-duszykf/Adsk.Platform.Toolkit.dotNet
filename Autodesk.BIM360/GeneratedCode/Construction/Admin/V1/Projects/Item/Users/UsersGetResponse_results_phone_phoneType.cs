@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item.Users
 {
-    /// <summary>The user&apos;s phone type.Possible values: ``home``, ``mobile``, or ``office``. Default value: ``mobile``.</summary>
+    /// <summary>The user&apos;s phone type.Possible values: `home`, `mobile`, or `office`. Default value: `mobile`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UsersGetResponse_results_phone_phoneType
     {

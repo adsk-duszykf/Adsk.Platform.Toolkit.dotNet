@@ -33,7 +33,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBa
         {
         }
         /// <summary>
-        /// Retrieves status for multiple indexes in a batch. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the job status for several jobs in a single request.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -53,7 +53,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBa
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusPostResponse>(requestInfo, global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves status for multiple indexes in a batch. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the job status for several jobs in a single request.
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBa
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusResponse>(requestInfo, global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves status for multiple indexes in a batch. This endpoint is compatible with both BIM 360 and Autodesk Construction Cloud (ACC) projects.
+        /// Retrieve the job status for several jobs in a single request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

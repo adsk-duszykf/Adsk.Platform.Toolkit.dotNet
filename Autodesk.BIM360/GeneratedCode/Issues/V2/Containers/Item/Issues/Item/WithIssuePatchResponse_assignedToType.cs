@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 {
-    /// <summary>The type of the current assignee of this issue. Possible values: ``user``, ``company``, ``role``, ``null``.</summary>
+    /// <summary>The type of the current assignee of this issue. Possible values: `user`, `company`, `role`, `null`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithIssuePatchResponse_assignedToType
     {

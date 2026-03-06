@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.CustomAttri
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The data type of the attribute. Possible values: ``string`` (text field), ``date``, ``array`` (drop-list).</summary>
+        /// <summary>The data type of the attribute. Possible values: `string` (text field), `date`, `array` (drop-list).</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.CustomAttributesBatchUpdate.CustomAttributesBatchUpdatePostResponse_results_type? Type { get; set; }
         /// <summary>The value of the attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

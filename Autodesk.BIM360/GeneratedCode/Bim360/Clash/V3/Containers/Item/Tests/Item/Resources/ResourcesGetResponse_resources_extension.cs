@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
 {
-    /// <summary>The file extension used by the clash test resource. Possible values: ``json.gz``, ``sqlite``.</summary>
+    /// <summary>The file extension used by the clash test resource. Possible values: `json.gz`, `sqlite`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ResourcesGetResponse_resources_extension
     {

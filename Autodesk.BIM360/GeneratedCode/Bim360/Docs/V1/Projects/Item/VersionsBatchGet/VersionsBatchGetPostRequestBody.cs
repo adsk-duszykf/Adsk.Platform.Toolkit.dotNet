@@ -12,7 +12,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
     public partial class VersionsBatchGetPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A list of version IDs or item IDs. If you use item IDs it retrieves the values for the latest (tip) versions. You can specify up to 50 documents. To find the version ID and item ID of a document follow the initial steps of the `Download Files &lt;/en/docs/bim360/v1/tutorials/document-management/download-document-s3/&gt;`_ tutorial.</summary>
+        /// <summary>A list of version IDs or item IDs. If you use item IDs it retrieves the values for the latest (tip) versions. You can specify up to 50 documents. To find the version ID and item ID of a document follow the initial steps of the [Download Files](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/document-management/download-document-s3/) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Urns { get; set; }

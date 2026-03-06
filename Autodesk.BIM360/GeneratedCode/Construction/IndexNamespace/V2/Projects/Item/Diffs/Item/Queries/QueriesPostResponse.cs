@@ -102,7 +102,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
 #else
         public string SelfUrl { get; set; }
 #endif
-        /// <summary>job status.Possible values: ``PROCESSING``, ``FINISHED``, ``FAILED``</summary>
+        /// <summary>job status.Possible values: `PROCESSING`, `FINISHED`, `FAILED`</summary>
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostResponse_state? State { get; set; }
         /// <summary>some higher level diff statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
 #else
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostResponse_stats Stats { get; set; }
 #endif
-        /// <summary>type.Possible values: ``DIFF``</summary>
+        /// <summary>type.Possible values: `DIFF`</summary>
         public global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostResponse_type? Type { get; set; }
         /// <summary>timestamp.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

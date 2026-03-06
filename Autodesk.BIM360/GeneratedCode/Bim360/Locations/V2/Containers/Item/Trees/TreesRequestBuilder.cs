@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees
     public partial class TreesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.locations.v2.containers.item.trees.item collection</summary>
-        /// <param name="position">Must be ``default``. Currently you can only add one tree (``default``) to a container.</param>
+        /// <param name="position">Must be `default`. Currently you can only add one tree (`default`) to a container.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.WithTreeItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.WithTreeItemRequestBuilder this[string position]
         {

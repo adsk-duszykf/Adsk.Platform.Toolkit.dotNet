@@ -113,7 +113,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Taxes
             [QueryParameter("associationId")]
             public string[] AssociationId { get; set; }
 #endif
-            /// <summary>Specifies the category of the object the tax is associated with.Possible values:- ``Contract``- ``MainContract``- ``BudgetPayment``- ``CostPayment``- ``OCO`` (Owner Change Order)- ``SCO`` (Subcontractor Change Order)- ``PCO`` (Potential Change Order)- ``RFQ`` (Request for Quote)- ``RCO`` (Request for Change Order)</summary>
+            /// <summary>Specifies the category of the object the tax is associated with.Possible values:- `Contract`- `MainContract`- `BudgetPayment`- `CostPayment`- `OCO` (Owner Change Order)- `SCO` (Subcontractor Change Order)- `PCO` (Potential Change Order)- `RFQ` (Request for Quote)- `RCO` (Request for Change Order)</summary>
             [Obsolete("This property is deprecated, use AssociationTypeAsGetAssociationTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,16 +124,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Taxes
             [QueryParameter("associationType")]
             public string AssociationType { get; set; }
 #endif
-            /// <summary>Specifies the category of the object the tax is associated with.Possible values:- ``Contract``- ``MainContract``- ``BudgetPayment``- ``CostPayment``- ``OCO`` (Owner Change Order)- ``SCO`` (Subcontractor Change Order)- ``PCO`` (Potential Change Order)- ``RFQ`` (Request for Quote)- ``RCO`` (Request for Change Order)</summary>
+            /// <summary>Specifies the category of the object the tax is associated with.Possible values:- `Contract`- `MainContract`- `BudgetPayment`- `CostPayment`- `OCO` (Owner Change Order)- `SCO` (Subcontractor Change Order)- `PCO` (Potential Change Order)- `RFQ` (Request for Quote)- `RCO` (Request for Change Order)</summary>
             [QueryParameter("associationType")]
             public global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.GetAssociationTypeQueryParameterType? AssociationTypeAsGetAssociationTypeQueryParameterType { get; set; }
-            /// <summary>The maximum number of records returned per page. Default: ``100``. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
+            /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The number of records to skip before returning results. Used together with ``limit`` to paginate through results, where ``offset`` specifies the starting point and ``limit`` specifies the number of records to return.</summary>
+            /// <summary>The number of records to skip before returning results. Used together with `limit` to paginate through results, where `offset` specifies the starting point and `limit` specifies the number of records to return.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Defines the sort order for the results. Each attribute can be sorted in ``asc`` (default) or ``desc`` order. For example, ``sort=name desc`` sorts the results by name in descending order.</summary>
+            /// <summary>Defines the sort order for the results. Each attribute can be sorted in `asc` (default) or `desc` order. For example, `sort=name desc` sorts the results by name in descending order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

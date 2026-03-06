@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
 {
-    /// <summary>The status of the new issue. Possible values: ``Open``, ``Draft``.</summary>
+    /// <summary>The status of the new issue. Possible values: `Open`, `Draft`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IssuesPostRequestBody_status
     {

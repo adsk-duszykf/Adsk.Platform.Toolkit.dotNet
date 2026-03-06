@@ -40,7 +40,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_itemsNumbering ItemsNumbering { get; set; }
 #endif
-        /// <summary>The section number according to the order the section was created in the template. The number is displayed in the format that is defined in ``included.sections.attributes.sectionNumbering.id``.To find the section number according to the order it appears in the UI, see ``included.sections.attributes.index``.</summary>
+        /// <summary>The section number according to the order the section was created in the template. The number is displayed in the format that is defined in `included.sections.attributes.sectionNumbering.id`.To find the section number according to the order it appears in the UI, see `included.sections.attributes.index`.</summary>
         public double? Number { get; set; }
         /// <summary>The list of properties that a user with edit permission is allowed to modify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

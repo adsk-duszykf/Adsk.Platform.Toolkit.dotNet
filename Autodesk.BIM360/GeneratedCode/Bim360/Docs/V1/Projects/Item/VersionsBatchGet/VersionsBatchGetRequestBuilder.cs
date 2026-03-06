@@ -32,6 +32,9 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
         public VersionsBatchGetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/bim360/docs/v1/projects/{project%2Did}/versions:batch-get", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieves a list of custom attribute values for multiple BIM 360 Document Management documents.
+        /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,6 +52,9 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieves a list of custom attribute values for multiple BIM 360 Document Management documents.
+        /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,6 +73,9 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieves a list of custom attribute values for multiple BIM 360 Document Management documents.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

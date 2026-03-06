@@ -13,7 +13,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesGetResponse_included_items_attributes : IParsable
     {
-        /// <summary>The answer selected by the user. Note the following:* For a checkbox, ``answer`` should be a string containing the ID of the answer.* For multiple choice, ``answer`` should be an array of strings containing the IDs of the answers.* For a numeric value, ``answer`` should be a number.* For a text value, ``answer`` should be a string.* For all other value types, ``answer`` should be a string containing one of the following values: ``true``, ``false``, ``na``.</summary>
+        /// <summary>The answer selected by the user. Note the following:* For a checkbox, `answer` should be a string containing the ID of the answer.* For multiple choice, `answer` should be an array of strings containing the IDs of the answers.* For a numeric value, `answer` should be a number.* For a text value, `answer` should be a string.* For all other value types, `answer` should be a string containing one of the following values: `true`, `false`, `na`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_answer? Answer { get; set; }
@@ -39,7 +39,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_instructions> Instructions { get; set; }
 #endif
-        /// <summary>``true`` if it is required to answer this question.``false`` if it is optional to answer this question.</summary>
+        /// <summary>`true` if it is required to answer this question.`false` if it is optional to answer this question.</summary>
         public bool? IsRequired { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_note Note { get; set; }
 #endif
-        /// <summary>The item number according to the order the item was created in the template. The number is displayed in the format that is defined in ``included.items.attributes.sectionNumbering.id``.</summary>
+        /// <summary>The item number according to the order the item was created in the template. The number is displayed in the format that is defined in `included.items.attributes.sectionNumbering.id`.</summary>
         public double? Number { get; set; }
         /// <summary>List of Actions that the user is permitted to do on the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +113,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The date and time that the resource was last updated, in the following format: ``YYYY-MM-DDThh:mm:ss.sz``.</summary>
+        /// <summary>The date and time that the resource was last updated, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

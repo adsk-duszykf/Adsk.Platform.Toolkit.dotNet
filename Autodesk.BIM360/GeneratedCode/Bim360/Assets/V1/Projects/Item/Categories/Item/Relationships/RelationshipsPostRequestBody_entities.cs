@@ -28,7 +28,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
 #else
         public string RelationshipId { get; set; }
 #endif
-        /// <summary>The entity type of the entity to link.Within BIM 360 projects, the only allowable type is ``checklisttemplate``.Specifying any other entity types will return a ``400`` status code.Possible values: ``checklisttemplate``, ``formtemplate``</summary>
+        /// <summary>The entity type of the entity to link.Within BIM 360 projects, the only allowable type is `checklisttemplate`.Specifying any other entity types will return a `400` status code.Possible values: `checklisttemplate`, `formtemplate`</summary>
         public global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsPostRequestBody_entities_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

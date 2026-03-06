@@ -217,7 +217,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSegmentItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>Force delete segment values when the segment length changes.``true``:  force delete,``false``:  not force delete.</summary>
+            /// <summary>Force delete segment values when the segment length changes.`true`:  force delete,`false`:  not force delete.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
         }

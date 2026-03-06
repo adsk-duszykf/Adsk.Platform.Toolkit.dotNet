@@ -14,7 +14,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
     {
         /// <summary>The date and time that the item was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The delimiter that follows the segment. Possible values are: ``none``, ``space``, ``point``, ``hyphen``, ``underscore``, ``tab``.</summary>
+        /// <summary>The delimiter that follows the segment. Possible values are: `none`, `space`, `point`, `hyphen`, `underscore`, `tab`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Delimiter { get; set; }
@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
 #else
         public string Delimiter { get; set; }
 #endif
-        /// <summary>The delimiter char after the segment. For example, ``.``, ``-``, ``_``.</summary>
+        /// <summary>The delimiter char after the segment. For example, `.`, `-`, `_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DelimiterChar { get; set; }
@@ -58,7 +58,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
 #endif
         /// <summary>The ID of the budget code template.</summary>
         public Guid? TemplateId { get; set; }
-        /// <summary>The segment type. Possible values: ``code``, ``column``, or ``info``. Code segments are displayed as part of the budget code. Column segments are displayed in a separate column. Info segments are not displayed.</summary>
+        /// <summary>The segment type. Possible values: `code`, `column`, or `info`. Code segments are displayed as part of the budget code. Column segments are displayed in a separate column. Info segments are not displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
