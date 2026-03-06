@@ -20,16 +20,6 @@ public class BIM360client
     public Hq.V1.Accounts.AccountsRequestBuilder Accounts => Api.Hq.V1.Accounts;
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/hq/v1/regions/eu/accounts/*
-    /// </summary>
-    public Hq.V1.Regions.Eu.Accounts.AccountsRequestBuilder AccountsEU_V1 => Api.Hq.V1.Regions.Eu.Accounts;
-
-    /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/hq/v2/regions/eu/accounts/*
-    /// </summary>
-    public Hq.V2.Regions.Eu.Accounts.AccountsRequestBuilder AccountsEU_V2 => Api.Hq.V2.Regions.Eu.Accounts;
-
-    /// <summary>
     /// Shortcut to endpoints https://developer.api.autodesk.com/construction/admin/v1/*
     /// </summary>
     public Construction.Admin.V1.V1RequestBuilder Admin => Api.Construction.Admin.V1;
