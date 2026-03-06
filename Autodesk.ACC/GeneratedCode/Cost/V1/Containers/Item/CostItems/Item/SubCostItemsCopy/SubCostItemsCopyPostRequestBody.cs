@@ -17,10 +17,10 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
         /// <summary>The source object defining where sub-cost items are copied from. When copying from a `budget` or `contract`, this must include one or more source IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>? Source { get; set; }
+        public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source? Source { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source> Source { get; set; }
+        public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source Source { get; set; }
 #endif
         /// <summary>The type to which the sub cost items are copied. Note that `contract` and `budget` cannot be used as a destination. Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`.</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to? To { get; set; }
@@ -43,7 +43,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "from", n => { From = n.GetEnumValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_from>(); } },
-                { "source", n => { Source = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source.CreateFromDiscriminatorValue); } },
                 { "to", n => { To = n.GetEnumValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to>(); } },
             };
         }
@@ -55,7 +55,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_from>("from", From);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>("source", Source);
+            writer.WriteObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>("source", Source);
             writer.WriteEnumValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to>("to", To);
         }
     }

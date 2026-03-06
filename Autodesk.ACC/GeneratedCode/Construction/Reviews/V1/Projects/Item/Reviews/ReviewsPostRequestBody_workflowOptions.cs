@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 {
+    /// <summary>
+    /// Optional parameters that override approval workflow settings for this review (for example, steps, copy settings, or additional options).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ReviewsPostRequestBody_workflowOptions : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>(`Copy approved files` in the UI) Option for copying approved files when the review is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

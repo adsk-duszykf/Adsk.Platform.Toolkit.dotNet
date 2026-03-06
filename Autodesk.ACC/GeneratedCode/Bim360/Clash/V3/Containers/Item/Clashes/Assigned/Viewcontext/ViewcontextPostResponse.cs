@@ -15,10 +15,10 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcont
         /// <summary>A Clash Group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup>? ClashGroup { get; set; }
+        public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup? ClashGroup { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup> ClashGroup { get; set; }
+        public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup ClashGroup { get; set; }
 #endif
         /// <summary>The list of documents visible when the issue was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +50,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcont
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "clashGroup", n => { ClashGroup = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup>(global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "clashGroup", n => { ClashGroup = n.GetObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup>(global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup.CreateFromDiscriminatorValue); } },
                 { "documents", n => { Documents = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_documents>(global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_documents.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "issueId", n => { IssueId = n.GetGuidValue(); } },
                 { "modelSetId", n => { ModelSetId = n.GetGuidValue(); } },
@@ -63,7 +63,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcont
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup>("clashGroup", ClashGroup);
+            writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup>("clashGroup", ClashGroup);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_documents>("documents", Documents);
             writer.WriteGuidValue("issueId", IssueId);
             writer.WriteGuidValue("modelSetId", ModelSetId);

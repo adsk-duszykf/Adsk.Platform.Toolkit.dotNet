@@ -15,9 +15,37 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
         #pragma warning disable CS1591
         NONNUMERIC_TEXT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "0")]
+        #pragma warning disable CS1591
+        Zero,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NUMERIC")]
         #pragma warning disable CS1591
         NUMERIC,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "','")]
+        #pragma warning disable CS1591
+        ApostropheCommaApostrophe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "'+'")]
+        #pragma warning disable CS1591
+        Plus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "'")]
+        #pragma warning disable CS1591
+        Apostrophe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "'%'")]
+        #pragma warning disable CS1591
+        ApostrophePercentApostrophe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "'.'")]
+        #pragma warning disable CS1591
+        ApostrophePeriodApostrophe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "'_'")]
+        #pragma warning disable CS1591
+        _,
         #pragma warning restore CS1591
         [EnumMember(Value = "ARRAY")]
         #pragma warning disable CS1591
@@ -26,6 +54,14 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
         [EnumMember(Value = "CLASSIFICATION")]
         #pragma warning disable CS1591
         CLASSIFICATION,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "minLength")]
+        #pragma warning disable CS1591
+        MinLength,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "maxLength")]
+        #pragma warning disable CS1591
+        MaxLength,
         #pragma warning restore CS1591
     }
 }

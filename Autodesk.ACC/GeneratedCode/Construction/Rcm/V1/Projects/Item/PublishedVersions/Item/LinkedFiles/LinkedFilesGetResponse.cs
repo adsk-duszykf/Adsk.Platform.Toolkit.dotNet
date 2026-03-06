@@ -23,10 +23,10 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
         /// <summary>A list of linked Revit (RVT) models associated with the requested published model version.This object contains a list of linked files and pagination details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles>? LinkedFiles { get; set; }
+        public global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles? LinkedFiles { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles> LinkedFiles { get; set; }
+        public global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles LinkedFiles { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "hostFile", n => { HostFile = n.GetObjectValue<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_hostFile>(global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_hostFile.CreateFromDiscriminatorValue); } },
-                { "linkedFiles", n => { LinkedFiles = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles>(global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "linkedFiles", n => { LinkedFiles = n.GetObjectValue<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles>(global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_hostFile>("hostFile", HostFile);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles>("linkedFiles", LinkedFiles);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles>("linkedFiles", LinkedFiles);
         }
     }
 }

@@ -23,10 +23,10 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
         /// <summary>The list of updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates>? Updates { get; set; }
+        public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates? Updates { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates> Updates { get; set; }
+        public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates Updates { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "updates", n => { Updates = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates>(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "updates", n => { Updates = n.GetObjectValue<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates>(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates>("updates", Updates);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates>("updates", Updates);
         }
     }
 }

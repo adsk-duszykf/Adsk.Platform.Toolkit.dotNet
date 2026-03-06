@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 {
+    /// <summary>
+    /// An object containing the default values for various settings and configurations in the project.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MetadataGetResponse_defaultValues : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The Autodesk ID of the user who is assigned as the manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 {
+    /// <summary>
+    /// A set of optional filters to narrow the results. You can combine multiple filters.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SearchRfisPostRequestBody_filter : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Filter RFIs assigned to specific users.To find the ID call [GET users/me](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-users-me-GET/) and check `user.id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

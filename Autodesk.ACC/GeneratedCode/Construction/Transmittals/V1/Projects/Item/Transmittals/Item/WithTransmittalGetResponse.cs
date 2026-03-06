@@ -41,10 +41,10 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         /// <summary>The list of recipients included in the transmittal, grouped by user, company, and role.For more information on how to add recipients to a transmittal, see the [Create Transmittals](https://help.autodesk.com/view/BUILD/ENU/?guid=Create_Transmittal&amp;p=DOCS) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients>? Recipients { get; set; }
+        public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients? Recipients { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients> Recipients { get; set; }
+        public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients Recipients { get; set; }
 #endif
         /// <summary>Information about the user who created and sent the transmittal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "packedStatus", n => { PackedStatus = n.GetEnumValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_packedStatus>(); } },
-                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients>(global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recipients", n => { Recipients = n.GetObjectValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients>(global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients.CreateFromDiscriminatorValue); } },
                 { "sentBy", n => { SentBy = n.GetObjectValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_sentBy>(global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_sentBy.CreateFromDiscriminatorValue); } },
                 { "sequenceId", n => { SequenceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_status>(); } },
@@ -118,7 +118,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_packedStatus>("packedStatus", PackedStatus);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients>("recipients", Recipients);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_recipients>("recipients", Recipients);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_sentBy>("sentBy", SentBy);
             writer.WriteStringValue("sequenceId", SequenceId);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse_status>("status", Status);

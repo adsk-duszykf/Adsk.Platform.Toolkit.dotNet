@@ -203,10 +203,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
         /// <summary>The list of actions that are permitted for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions>? PermittedActions { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions? PermittedActions { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions> PermittedActions { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions PermittedActions { get; set; }
 #endif
         /// <summary>The previous status of the RFI, if one exists.This field is omitted if the RFI has no prior status (e.g., when newly created).- For single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.- For multi-reviewer workflows (EMEA):Possible values:`draft`, `submitted`, `openRev1` (manager), `openRev2` (reviewers), `answeredRev1`, `answeredManager`, `closed`, `void`.To determine the workflow type, call [GET users/me](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET/) and check the `workflowType` value.For details on RFI workflows in the ACC UI, see [About RFI Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Workflow_Setup).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_previousStatus? PreviousStatus { get; set; }
@@ -375,7 +375,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
                 { "officialResponseActors", n => { OfficialResponseActors = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_officialResponseActors>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_officialResponseActors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "officialResponseEditByManagerState", n => { OfficialResponseEditByManagerState = n.GetBoolValue(); } },
                 { "officialResponseStatus", n => { OfficialResponseStatus = n.GetEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_officialResponseStatus>(); } },
-                { "permittedActions", n => { PermittedActions = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permittedActions", n => { PermittedActions = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions.CreateFromDiscriminatorValue); } },
                 { "previousStatus", n => { PreviousStatus = n.GetEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_previousStatus>(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -436,7 +436,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_officialResponseActors>("officialResponseActors", OfficialResponseActors);
             writer.WriteBoolValue("officialResponseEditByManagerState", OfficialResponseEditByManagerState);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_officialResponseStatus>("officialResponseStatus", OfficialResponseStatus);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions>("permittedActions", PermittedActions);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_permittedActions>("permittedActions", PermittedActions);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_previousStatus>("previousStatus", PreviousStatus);
             writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("projectId", ProjectId);

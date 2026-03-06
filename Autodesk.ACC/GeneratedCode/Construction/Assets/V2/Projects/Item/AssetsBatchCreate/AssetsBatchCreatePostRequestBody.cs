@@ -39,10 +39,10 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
         /// <summary>An optional JSON dictionary specifying one or more custom attributes and values to be assigned to theasset. The custom attributes must belong to the set of custom attributes specified by the asset&apos;s category.The dictionary is a set of key:value pairs that each starts with the unique custom attribute name (not tobe confused with the custom attribute&apos;s display name) followed by the attribute value. The value must usethe data type defined by the attribute:For `text`, the value is a string.For `date`, the value is an ISO8601 date string with no time, for example, `2020-04-10`.For `select`, the value is a valid ID from the list of values defined for this custom attribute.For `multi-select`, the value is an array of valid IDs from the list of values defined for this custom attribute.For `boolean`, the value is a boolean.For `numeric`, the value is a string that parses as a valid floating point number (not localized).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes>? CustomAttributes { get; set; }
+        public global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes? CustomAttributes { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes> CustomAttributes { get; set; }
+        public global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes CustomAttributes { get; set; }
 #endif
         /// <summary>A brief description of the asset. Currently limited to `1000` characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
                 { "barcode", n => { Barcode = n.GetStringValue(); } },
                 { "categoryId", n => { CategoryId = n.GetStringValue(); } },
                 { "clientAssetId", n => { ClientAssetId = n.GetStringValue(); } },
-                { "customAttributes", n => { CustomAttributes = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes>(global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "customAttributes", n => { CustomAttributes = n.GetObjectValue<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes>(global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "locationId", n => { LocationId = n.GetGuidValue(); } },
                 { "statusId", n => { StatusId = n.GetGuidValue(); } },
@@ -93,7 +93,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
             writer.WriteStringValue("barcode", Barcode);
             writer.WriteStringValue("categoryId", CategoryId);
             writer.WriteStringValue("clientAssetId", ClientAssetId);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes>("customAttributes", CustomAttributes);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody_customAttributes>("customAttributes", CustomAttributes);
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("locationId", LocationId);
             writer.WriteGuidValue("statusId", StatusId);

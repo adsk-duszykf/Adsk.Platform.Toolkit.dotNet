@@ -33,10 +33,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
         /// <summary>The list of actions that are permitted for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions>? PermittedActions { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions? PermittedActions { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions> PermittedActions { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions PermittedActions { get; set; }
 #endif
         /// <summary>The current user’s details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
         /// <summary>The user’s assigned workflow roles and workflow type for RFIs in the current project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow>? Workflow { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow? Workflow { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow> Workflow { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow Workflow { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -75,9 +75,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
                 { "defaultRfiType", n => { DefaultRfiType = n.GetGuidValue(); } },
                 { "externalUsers", n => { ExternalUsers = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_externalUsers>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_externalUsers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "maintenanceEndDate", n => { MaintenanceEndDate = n.GetStringValue(); } },
-                { "permittedActions", n => { PermittedActions = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permittedActions", n => { PermittedActions = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_user>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_user.CreateFromDiscriminatorValue); } },
-                { "workflow", n => { Workflow = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,9 +90,9 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
             writer.WriteGuidValue("defaultRfiType", DefaultRfiType);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_externalUsers>("externalUsers", ExternalUsers);
             writer.WriteStringValue("maintenanceEndDate", MaintenanceEndDate);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions>("permittedActions", PermittedActions);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions>("permittedActions", PermittedActions);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_user>("user", User);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow>("workflow", Workflow);
         }
     }
 }

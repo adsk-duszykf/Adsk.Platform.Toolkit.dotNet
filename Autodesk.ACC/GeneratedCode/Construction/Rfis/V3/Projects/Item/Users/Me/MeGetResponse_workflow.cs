@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 {
+    /// <summary>
+    /// The user’s assigned workflow roles and workflow type for RFIs in the current project.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MeGetResponse_workflow : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The list of RFI workflow roles assigned to the user. Possible values:`projectSC` — Creator`projectGC` — Manager`projectCoordinator` — Reviewer 1 (EMEA workflow only)`projectReviewer` — Reviewer 1 (US) or Reviewer 2 (EMEA)For information about workflow roles, see the [RFIs Permission](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Statuses) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

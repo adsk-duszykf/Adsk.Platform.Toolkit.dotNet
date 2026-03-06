@@ -15,10 +15,10 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors>? Errors { get; set; }
+        public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors> Errors { get; set; }
+        public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors Errors { get; set; }
 #endif
         /// <summary>url for downloading the index fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +138,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors>(global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors>(global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors.CreateFromDiscriminatorValue); } },
                 { "fieldsUrl", n => { FieldsUrl = n.GetStringValue(); } },
                 { "indexId", n => { IndexId = n.GetStringValue(); } },
                 { "manifestUrl", n => { ManifestUrl = n.GetStringValue(); } },
@@ -162,7 +162,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.WithIndexGetResponse_errors>("errors", Errors);
             writer.WriteStringValue("fieldsUrl", FieldsUrl);
             writer.WriteStringValue("indexId", IndexId);
             writer.WriteStringValue("manifestUrl", ManifestUrl);

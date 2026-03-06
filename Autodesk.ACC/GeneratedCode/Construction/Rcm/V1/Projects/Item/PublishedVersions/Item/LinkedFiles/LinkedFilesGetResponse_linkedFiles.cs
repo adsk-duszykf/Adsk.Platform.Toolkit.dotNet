@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles
 {
+    /// <summary>
+    /// A list of linked Revit (RVT) models associated with the requested published model version.This object contains a list of linked files and pagination details.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LinkedFilesGetResponse_linkedFiles : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Contains pagination details, including the number of results, starting offset, and total available results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

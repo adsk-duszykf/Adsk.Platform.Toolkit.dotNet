@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate
 {
+    /// <summary>
+    /// Weather forecast captured on the form.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ValuesBatchUpdatePutResponse_weather : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Weather information for specific hours (07:00:00, 12:00:00, 16:00:00).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

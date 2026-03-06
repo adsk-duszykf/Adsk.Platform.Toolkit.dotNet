@@ -15,10 +15,10 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
         /// <summary>The clash data associated with a clash group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData>? ClashData { get; set; }
+        public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData? ClashData { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData> ClashData { get; set; }
+        public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData ClashData { get; set; }
 #endif
         /// <summary>The unique identifier of the clash test associated with the closed clash group.</summary>
         public Guid? ClashTestId { get; set; }
@@ -78,7 +78,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "clashData", n => { ClashData = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData>(global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "clashData", n => { ClashData = n.GetObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData>(global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData.CreateFromDiscriminatorValue); } },
                 { "clashTestId", n => { ClashTestId = n.GetGuidValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "createdOn", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
@@ -96,7 +96,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData>("clashData", ClashData);
+            writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData>("clashData", ClashData);
             writer.WriteGuidValue("clashTestId", ClashTestId);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdOn", CreatedOn);

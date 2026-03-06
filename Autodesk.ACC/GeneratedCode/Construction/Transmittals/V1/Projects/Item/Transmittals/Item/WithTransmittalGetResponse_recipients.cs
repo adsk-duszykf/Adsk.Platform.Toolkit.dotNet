@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item
 {
+    /// <summary>
+    /// The list of recipients included in the transmittal, grouped by user, company, and role.For more information on how to add recipients to a transmittal, see the [Create Transmittals](https://help.autodesk.com/view/BUILD/ENU/?guid=Create_Transmittal&amp;p=DOCS) documentation.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class WithTransmittalGetResponse_recipients : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The list of companies that were added as recipients.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

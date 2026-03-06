@@ -59,10 +59,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         /// <summary>Information about the claimers and candidates responsible for the current step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy>? NextActionBy { get; set; }
+        public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy? NextActionBy { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy> NextActionBy { get; set; }
+        public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy NextActionBy { get; set; }
 #endif
         /// <summary>A unique, auto-incrementing number assigned to the review when it is first submitted.This ID does not change, even if the review is sent back to the initiator and goes through multiple rounds.It identifies the review within the project and reflects the order in which reviews were created.</summary>
         public int? SequenceId { get; set; }
@@ -100,7 +100,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
                 { "finishedAt", n => { FinishedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "nextActionBy", n => { NextActionBy = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy>(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "nextActionBy", n => { NextActionBy = n.GetObjectValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy>(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy.CreateFromDiscriminatorValue); } },
                 { "sequenceId", n => { SequenceId = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_status>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -124,7 +124,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             writer.WriteDateTimeOffsetValue("finishedAt", FinishedAt);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy>("nextActionBy", NextActionBy);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy>("nextActionBy", NextActionBy);
             writer.WriteIntValue("sequenceId", SequenceId);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_status>("status", Status);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

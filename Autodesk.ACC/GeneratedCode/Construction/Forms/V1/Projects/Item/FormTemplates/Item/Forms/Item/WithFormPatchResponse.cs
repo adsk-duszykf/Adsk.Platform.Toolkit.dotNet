@@ -143,10 +143,10 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         /// <summary>For non-PDF forms, data stored in the tables on the form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues>? TabularValues { get; set; }
+        public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues? TabularValues { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues> TabularValues { get; set; }
+        public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues TabularValues { get; set; }
 #endif
         /// <summary>When form was last updated, UTC date and time in ISO-8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -155,10 +155,10 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         /// <summary>Weather forecast captured on the form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather>? Weather { get; set; }
+        public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather? Weather { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather> Weather { get; set; }
+        public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather Weather { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -197,10 +197,10 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
                 { "pdfValues", n => { PdfValues = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_pdfValues>(global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_pdfValues.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_status>(); } },
-                { "tabularValues", n => { TabularValues = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues>(global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tabularValues", n => { TabularValues = n.GetObjectValue<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues>(global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "userCreatedAt", n => { UserCreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "weather", n => { Weather = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather>(global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "weather", n => { Weather = n.GetObjectValue<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather>(global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -229,10 +229,10 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_pdfValues>("pdfValues", PdfValues);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_status>("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues>("tabularValues", TabularValues);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_tabularValues>("tabularValues", TabularValues);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteDateTimeOffsetValue("userCreatedAt", UserCreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather>("weather", Weather);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather>("weather", Weather);
         }
     }
 }

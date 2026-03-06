@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
 {
+    /// <summary>
+    /// The list of updates.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SheetsBatchUpdatePostRequestBody_updates : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The tags to be attached to the sheets.- The max length is 100.- The tags should not be space only.- After applying addTags and removeTags, the number of remain tags of the sheets should not exceed 100.The API will format the tags in the following ways before applying them to the sheets:- Remove spaces at the end and beginning of the tags.- Reduce multiple continuous spaces to a single space.- The tags are case insensitive. Upper case letters will be transformed to lower case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

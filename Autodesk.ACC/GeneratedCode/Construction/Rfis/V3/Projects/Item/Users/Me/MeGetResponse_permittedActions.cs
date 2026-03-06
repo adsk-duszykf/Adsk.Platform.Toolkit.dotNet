@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 {
+    /// <summary>
+    /// The list of actions that are permitted for the user.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MeGetResponse_permittedActions : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The user’s permissions for creating RFIs.Note that if this field is present, the user is permitted to create RFIs in the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

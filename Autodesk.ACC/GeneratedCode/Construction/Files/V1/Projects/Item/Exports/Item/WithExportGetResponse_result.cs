@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 {
+    /// <summary>
+    /// The result of a completed export job:- If the exporting job&apos;s `status` value is `successful`, the downloadable signed url will be included in the `result.output` object- If the exporting job&apos;s `status` value is `failed` (e.g. the files have been deleted), the `result.error` object will be present with details.- If the exporting job&apos;s `status` value is `partialSuccess` (e.g. when some dwg/rvt files do not contain any exportable views or sheets), the `result.output.failedFiles` object will be present with file urn and reason.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class WithExportGetResponse_result : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The error codes could be&lt;br&gt;1. ERR_WORKFLOW_TIMEOUT, when the export job runs more than 30 minutes.&lt;br&gt;2. ERR_INTERNAL_SERVER_ERROR, when other internal server error happens.&lt;br&gt;3. ERR_NO_PROCESSABLE_FILES, when all dwg/rvt files do not contain any 2d pdf files.&lt;br&gt;4. ERR_FILE_TOO_LARGE, when the total size of exported files exceeds the upper limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

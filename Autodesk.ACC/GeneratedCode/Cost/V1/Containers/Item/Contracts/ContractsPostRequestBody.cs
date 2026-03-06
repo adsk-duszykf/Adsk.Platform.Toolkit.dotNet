@@ -15,10 +15,10 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts>? AdditionalContacts { get; set; }
+        public global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts? AdditionalContacts { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts> AdditionalContacts { get; set; }
+        public global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts AdditionalContacts { get; set; }
 #endif
         /// <summary>The date and time of contract approval, in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -300,7 +300,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalContacts", n => { AdditionalContacts = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts>(global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "additionalContacts", n => { AdditionalContacts = n.GetObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts>(global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts.CreateFromDiscriminatorValue); } },
                 { "approvedAt", n => { ApprovedAt = n.GetStringValue(); } },
                 { "awardedAt", n => { AwardedAt = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
@@ -348,7 +348,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts>("additionalContacts", AdditionalContacts);
+            writer.WriteObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsPostRequestBody_additionalContacts>("additionalContacts", AdditionalContacts);
             writer.WriteStringValue("approvedAt", ApprovedAt);
             writer.WriteStringValue("awardedAt", AwardedAt);
             writer.WriteStringValue("code", Code);

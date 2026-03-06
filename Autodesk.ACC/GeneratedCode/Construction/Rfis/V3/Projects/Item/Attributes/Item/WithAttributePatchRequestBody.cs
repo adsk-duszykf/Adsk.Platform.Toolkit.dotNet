@@ -33,10 +33,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
         /// <summary>Updates the list of possible values for the attribute.To overwrite an existing possible value, specify both `newAttributes` (the new value name) and `deletedAttributes` (the ID of the value to remove).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues>? PossibleValues { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues? PossibleValues { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues> PossibleValues { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues PossibleValues { get; set; }
 #endif
         /// <summary>The display status of the attribute in the UI. Possible values: `active`, `inactive`, `hidden`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_status? Status { get; set; }
@@ -61,7 +61,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "multipleChoice", n => { MultipleChoice = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "possibleValues", n => { PossibleValues = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "possibleValues", n => { PossibleValues = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_status>(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("multipleChoice", MultipleChoice);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues>("possibleValues", PossibleValues);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues>("possibleValues", PossibleValues);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_status>("status", Status);
         }
     }

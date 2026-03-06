@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 {
+    /// <summary>
+    /// The list of attachment groups created as part of the response.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ResponsesPostResponse_responseAttachments : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The list of attachments included in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

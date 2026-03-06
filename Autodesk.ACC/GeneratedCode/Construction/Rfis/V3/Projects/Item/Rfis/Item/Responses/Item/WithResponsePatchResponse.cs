@@ -23,18 +23,18 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
         /// <summary>The list of attachment groups created as part of the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments>? ResponseAttachments { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments? ResponseAttachments { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments> ResponseAttachments { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments ResponseAttachments { get; set; }
 #endif
         /// <summary>The details of the RFI to which the response was added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi>? Rfi { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi? Rfi { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi> Rfi { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi Rfi { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,8 +55,8 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "response", n => { Response = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_response>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_response.CreateFromDiscriminatorValue); } },
-                { "responseAttachments", n => { ResponseAttachments = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rfi", n => { Rfi = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "responseAttachments", n => { ResponseAttachments = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments.CreateFromDiscriminatorValue); } },
+                { "rfi", n => { Rfi = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_response>("response", Response);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments>("responseAttachments", ResponseAttachments);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi>("rfi", Rfi);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_responseAttachments>("responseAttachments", ResponseAttachments);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi>("rfi", Rfi);
         }
     }
 }

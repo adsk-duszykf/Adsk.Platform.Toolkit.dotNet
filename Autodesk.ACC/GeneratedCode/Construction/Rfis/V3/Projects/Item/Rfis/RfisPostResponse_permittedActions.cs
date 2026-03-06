@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
 {
+    /// <summary>
+    /// The list of actions that are permitted for the user.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class RfisPostResponse_permittedActions : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>`true`: The user can create a comment for the RFI.`false` (default): The user cannot create a comment for the RFI.</summary>
         public bool? CreateComment { get; set; }

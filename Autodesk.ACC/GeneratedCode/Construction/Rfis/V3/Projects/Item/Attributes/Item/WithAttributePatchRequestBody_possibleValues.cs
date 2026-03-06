@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
 {
+    /// <summary>
+    /// Updates the list of possible values for the attribute.To overwrite an existing possible value, specify both `newAttributes` (the new value name) and `deletedAttributes` (the ID of the value to remove).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class WithAttributePatchRequestBody_possibleValues : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Deletes possible values from the attribute. Each item is the ID of a possible value to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

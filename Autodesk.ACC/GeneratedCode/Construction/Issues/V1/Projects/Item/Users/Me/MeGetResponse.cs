@@ -27,10 +27,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me
         /// <summary>The issues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues>? Issues { get; set; }
+        public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues? Issues { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues> Issues { get; set; }
+        public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues Issues { get; set; }
 #endif
         /// <summary>The permission level of the user. Each permission level corresponds to a combination of values in the response. For example, a combination of `read` and `create` in the response, corresponds to a *Full visibility* permission level.Note that if a user with *View and assign issues for their company* permissions attempts to assign a user from a another company to the issue, it will return an error. In addition, the user can both create and view issues for their own company. You can also verify a user&apos;s assignment permissions by checking the `permittedActions` or `permissionLevels` attributes.- *Edit, view, and assign* This permission level is split into two sub-levels:- *View and assign to their company* (previously known as  *Create for my company*) : `create` and the `permittedActions` array must include `assign-same-company`- *View issues for their company. Assign issues to anyone.* : `create` and the `permittedActions` array must include `assign-all`- *Full visibility* (previously known as *Create for other companies*): `create`, `read`- *Manage issues*: `create`, `read`, `write`Possible values: `create`, `read`, `write`.For more details about the permission levels, see [Issues Permissions](https://help.autodesk.com/view/BUILD/ENU/?guid=Issues_Permissions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me
                 { "canManageTemplates", n => { CanManageTemplates = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isProjectAdmin", n => { IsProjectAdmin = n.GetBoolValue(); } },
-                { "issues", n => { Issues = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues>(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "issues", n => { Issues = n.GetObjectValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues>(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues.CreateFromDiscriminatorValue); } },
                 { "permissionLevels", n => { PermissionLevels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me
             writer.WriteBoolValue("canManageTemplates", CanManageTemplates);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isProjectAdmin", IsProjectAdmin);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues>("issues", Issues);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues>("issues", Issues);
             writer.WriteCollectionOfPrimitiveValues<string>("permissionLevels", PermissionLevels);
         }
     }

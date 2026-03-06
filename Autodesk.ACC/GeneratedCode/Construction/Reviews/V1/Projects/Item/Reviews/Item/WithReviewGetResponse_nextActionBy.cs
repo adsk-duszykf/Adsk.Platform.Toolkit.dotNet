@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item
 {
+    /// <summary>
+    /// Information about the claimers and candidates responsible for the current step.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class WithReviewGetResponse_nextActionBy : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Information about the users, roles, and companies who are eligible to take the next action in this step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

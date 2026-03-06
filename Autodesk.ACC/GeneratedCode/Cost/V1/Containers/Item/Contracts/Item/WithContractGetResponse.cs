@@ -17,10 +17,10 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts>? AdditionalContacts { get; set; }
+        public global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts? AdditionalContacts { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts> AdditionalContacts { get; set; }
+        public global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts AdditionalContacts { get; set; }
 #endif
         /// <summary>The date and time of contract approval, in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -479,7 +479,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actualCost", n => { ActualCost = n.GetDoubleValue(); } },
-                { "additionalContacts", n => { AdditionalContacts = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts>(global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "additionalContacts", n => { AdditionalContacts = n.GetObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts>(global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts.CreateFromDiscriminatorValue); } },
                 { "approvedAt", n => { ApprovedAt = n.GetStringValue(); } },
                 { "approvedChangeOrders", n => { ApprovedChangeOrders = n.GetDoubleValue(); } },
                 { "approvedInScopeChangeOrders", n => { ApprovedInScopeChangeOrders = n.GetDoubleValue(); } },
@@ -568,7 +568,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("actualCost", ActualCost);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts>("additionalContacts", AdditionalContacts);
+            writer.WriteObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts>("additionalContacts", AdditionalContacts);
             writer.WriteStringValue("approvedAt", ApprovedAt);
             writer.WriteDoubleValue("approvedChangeOrders", ApprovedChangeOrders);
             writer.WriteDoubleValue("approvedInScopeChangeOrders", ApprovedInScopeChangeOrders);

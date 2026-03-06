@@ -15,18 +15,18 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
         /// <summary>A set of current data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current>? Current { get; set; }
+        public global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current? Current { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current> Current { get; set; }
+        public global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current Current { get; set; }
 #endif
         /// <summary>A set of deleted data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted>? Deleted { get; set; }
+        public global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted? Deleted { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted> Deleted { get; set; }
+        public global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted Deleted { get; set; }
 #endif
         /// <summary>If set to true, data is available for synchronization using the supplied synchronization token.</summary>
         public bool? MoreData { get; set; }
@@ -58,8 +58,8 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "current", n => { Current = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current>(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "deleted", n => { Deleted = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted>(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "current", n => { Current = n.GetObjectValue<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current>(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted>(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted.CreateFromDiscriminatorValue); } },
                 { "moreData", n => { MoreData = n.GetBoolValue(); } },
                 { "nextSyncToken", n => { NextSyncToken = n.GetStringValue(); } },
                 { "overwrite", n => { Overwrite = n.GetBoolValue(); } },
@@ -72,8 +72,8 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current>("current", Current);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted>("deleted", Deleted);
+            writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_current>("current", Current);
+            writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse_deleted>("deleted", Deleted);
             writer.WriteBoolValue("moreData", MoreData);
             writer.WriteStringValue("nextSyncToken", NextSyncToken);
             writer.WriteBoolValue("overwrite", Overwrite);

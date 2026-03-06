@@ -15,10 +15,10 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
         /// <summary>The file naming standard format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition>? Definition { get; set; }
+        public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition? Definition { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition> Definition { get; set; }
+        public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition Definition { get; set; }
 #endif
         /// <summary>The ID of file naming standard.</summary>
         public Guid? Id { get; set; }
@@ -48,7 +48,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "definition", n => { Definition = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition>(global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "definition", n => { Definition = n.GetObjectValue<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition>(global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -60,7 +60,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition>("definition", Definition);
+            writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition>("definition", Definition);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
         }

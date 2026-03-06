@@ -41,10 +41,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         /// <summary>Optional parameters that override approval workflow settings for this review (for example, steps, copy settings, or additional options).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions>? WorkflowOptions { get; set; }
+        public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions? WorkflowOptions { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions> WorkflowOptions { get; set; }
+        public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions WorkflowOptions { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,7 +68,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "workflowId", n => { WorkflowId = n.GetGuidValue(); } },
-                { "workflowOptions", n => { WorkflowOptions = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions>(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workflowOptions", n => { WorkflowOptions = n.GetObjectValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions>(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notes", Notes);
             writer.WriteGuidValue("workflowId", WorkflowId);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions>("workflowOptions", WorkflowOptions);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions>("workflowOptions", WorkflowOptions);
         }
     }
 }

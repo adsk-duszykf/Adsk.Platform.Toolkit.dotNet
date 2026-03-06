@@ -49,10 +49,10 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
         /// <summary>An object containing the default values for various settings and configurations in the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues>? DefaultValues { get; set; }
+        public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues? DefaultValues { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues> DefaultValues { get; set; }
+        public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues DefaultValues { get; set; }
 #endif
         /// <summary>The unique identifier (UUID) for the metadata object.</summary>
         public Guid? Id { get; set; }
@@ -133,7 +133,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
                 { "attachmentTypes", n => { AttachmentTypes = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_attachmentTypes>(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_attachmentTypes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "attachmentUrnTypes", n => { AttachmentUrnTypes = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_attachmentUrnTypes>(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_attachmentUrnTypes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customIdentifierSequenceType", n => { CustomIdentifierSequenceType = n.GetEnumValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_customIdentifierSequenceType>(); } },
-                { "defaultValues", n => { DefaultValues = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues>(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "defaultValues", n => { DefaultValues = n.GetObjectValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues>(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "isManagerMappingDefined", n => { IsManagerMappingDefined = n.GetBoolValue(); } },
                 { "itemTypes", n => { ItemTypes = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_itemTypes>(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_itemTypes.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -158,7 +158,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_attachmentTypes>("attachmentTypes", AttachmentTypes);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_attachmentUrnTypes>("attachmentUrnTypes", AttachmentUrnTypes);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_customIdentifierSequenceType>("customIdentifierSequenceType", CustomIdentifierSequenceType);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues>("defaultValues", DefaultValues);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues>("defaultValues", DefaultValues);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("isManagerMappingDefined", IsManagerMappingDefined);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_itemTypes>("itemTypes", ItemTypes);

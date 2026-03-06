@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 {
+    /// <summary>
+    /// The file naming standard format.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class NamingStandardsGetResponse_definition : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>A specified character, separating between multiple fields of a file name.Possible values:- `-`: Hyphen.- `_`: Underscore.- `.`: Point.Note that you cannot use the delimiter within a field name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

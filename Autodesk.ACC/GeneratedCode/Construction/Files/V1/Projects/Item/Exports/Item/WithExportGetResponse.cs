@@ -17,10 +17,10 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
         /// <summary>The result of a completed export job:- If the exporting job&apos;s `status` value is `successful`, the downloadable signed url will be included in the `result.output` object- If the exporting job&apos;s `status` value is `failed` (e.g. the files have been deleted), the `result.error` object will be present with details.- If the exporting job&apos;s `status` value is `partialSuccess` (e.g. when some dwg/rvt files do not contain any exportable views or sheets), the `result.output.failedFiles` object will be present with file urn and reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>? Result { get; set; }
+        public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result> Result { get; set; }
+        public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result Result { get; set; }
 #endif
         /// <summary>The status of the PDF export job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>(global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>(global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>("result", Result);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>("result", Result);
             writer.WriteStringValue("status", Status);
         }
     }

@@ -23,10 +23,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
         /// <summary>A set of optional filters to narrow the results. You can combine multiple filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter>? Filter { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter? Filter { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter> Filter { get; set; }
+        public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter Filter { get; set; }
 #endif
         /// <summary>The number of RFIs to return. Default: `10`. Maximum: `200`.</summary>
         public int? Limit { get; set; }
@@ -67,7 +67,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "filter", n => { Filter = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter>(global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
@@ -82,7 +82,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter>("filter", Filter);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter>("filter", Filter);
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteStringValue("search", Search);

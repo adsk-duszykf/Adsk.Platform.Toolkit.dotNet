@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
 {
+    /// <summary>
+    /// A set of current data.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class RelationshipsSyncPostResponse_current : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>A set of current relationships relative to the sync token passed by the caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

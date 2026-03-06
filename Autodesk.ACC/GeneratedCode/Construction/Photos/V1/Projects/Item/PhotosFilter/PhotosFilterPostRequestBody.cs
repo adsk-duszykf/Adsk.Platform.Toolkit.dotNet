@@ -23,10 +23,10 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter>? Filter { get; set; }
+        public global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter? Filter { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter> Filter { get; set; }
+        public global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter Filter { get; set; }
 #endif
         /// <summary>The include property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cursorState", n => { CursorState = n.GetStringValue(); } },
-                { "filter", n => { Filter = n.GetCollectionOfObjectValues<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter>(global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter>(global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter.CreateFromDiscriminatorValue); } },
                 { "include", n => { Include = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "sort", n => { Sort = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -79,7 +79,7 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursorState", CursorState);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter>("filter", Filter);
+            writer.WriteObjectValue<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostRequestBody_filter>("filter", Filter);
             writer.WriteCollectionOfPrimitiveValues<string>("include", Include);
             writer.WriteIntValue("limit", Limit);
             writer.WriteCollectionOfPrimitiveValues<string>("sort", Sort);

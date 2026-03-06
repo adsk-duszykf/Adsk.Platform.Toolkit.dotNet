@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate
 {
+    /// <summary>
+    /// For non-PDF forms, data stored in the tables on the form.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ValuesBatchUpdatePutResponse_tabularValues : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Entries associated with equipment table in a Form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

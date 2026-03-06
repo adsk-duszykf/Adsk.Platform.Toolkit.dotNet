@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 {
+    /// <summary>
+    /// The details of the RFI to which the response was added.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ResponsesPostResponse_rfi : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The date and time when the official response to the RFI was submitted, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).Empty when creating an RFI.</summary>
         public DateTimeOffset? AnsweredAt { get; set; }
