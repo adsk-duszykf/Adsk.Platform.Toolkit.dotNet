@@ -15,10 +15,10 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         /// <summary>The Asterisk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk>? Asterisk { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk? Asterisk { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk> Asterisk { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk Asterisk { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "*", n => { Asterisk = n.GetCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk>(global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "*", n => { Asterisk = n.GetObjectValue<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk>(global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk>("*", Asterisk);
+            writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk>("*", Asterisk);
         }
     }
 }

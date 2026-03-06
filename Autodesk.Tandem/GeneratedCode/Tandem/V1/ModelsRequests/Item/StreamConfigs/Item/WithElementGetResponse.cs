@@ -23,10 +23,10 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
         /// <summary>The streamSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings>? StreamSettings { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings? StreamSettings { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings> StreamSettings { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings StreamSettings { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "elementId", n => { ElementId = n.GetStringValue(); } },
-                { "streamSettings", n => { StreamSettings = n.GetCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings>(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "streamSettings", n => { StreamSettings = n.GetObjectValue<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings>(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("elementId", ElementId);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings>("streamSettings", StreamSettings);
+            writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse_streamSettings>("streamSettings", StreamSettings);
         }
     }
 }

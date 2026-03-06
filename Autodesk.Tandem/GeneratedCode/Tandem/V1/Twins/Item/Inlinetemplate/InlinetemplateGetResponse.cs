@@ -15,10 +15,10 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate
         /// <summary>The classification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification>? Classification { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification? Classification { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification> Classification { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification Classification { get; set; }
 #endif
         /// <summary>Unique identifier of classification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "classification", n => { Classification = n.GetCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification>(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "classification", n => { Classification = n.GetObjectValue<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification>(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification.CreateFromDiscriminatorValue); } },
                 { "classificationId", n => { ClassificationId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -93,7 +93,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification>("classification", Classification);
+            writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_classification>("classification", Classification);
             writer.WriteStringValue("classificationId", ClassificationId);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);

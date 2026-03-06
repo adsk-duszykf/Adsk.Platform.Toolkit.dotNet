@@ -97,10 +97,10 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
         /// <summary>The template property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template>? Template { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template? Template { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template> Template { get; set; }
+        public global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template Template { get; set; }
 #endif
         /// <summary>Timestamp of the last thumbnail update in Unix milliseconds.</summary>
         public int? ThumbnailLastUpdate { get; set; }
@@ -136,7 +136,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
                 { "schemaVersion", n => { SchemaVersion = n.GetIntValue(); } },
                 { "schemaVersionUpgradeTriggered", n => { SchemaVersionUpgradeTriggered = n.GetIntValue(); } },
                 { "skipRoomBounders", n => { SkipRoomBounders = n.GetBoolValue(); } },
-                { "template", n => { Template = n.GetCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template>(global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "template", n => { Template = n.GetObjectValue<global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template>(global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template.CreateFromDiscriminatorValue); } },
                 { "thumbnailLastUpdate", n => { ThumbnailLastUpdate = n.GetIntValue(); } },
             };
         }
@@ -161,7 +161,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
             writer.WriteIntValue("schemaVersion", SchemaVersion);
             writer.WriteIntValue("schemaVersionUpgradeTriggered", SchemaVersionUpgradeTriggered);
             writer.WriteBoolValue("skipRoomBounders", SkipRoomBounders);
-            writer.WriteCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template>("template", Template);
+            writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template>("template", Template);
             writer.WriteIntValue("thumbnailLastUpdate", ThumbnailLastUpdate);
         }
     }
