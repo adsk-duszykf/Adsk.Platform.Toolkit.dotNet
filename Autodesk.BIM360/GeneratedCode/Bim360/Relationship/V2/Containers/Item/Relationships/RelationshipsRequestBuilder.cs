@@ -67,11 +67,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse?> PutAsRelationshipsPutResponseAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse?> PutAsRelationshipsPutResponseAsync(List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse> PutAsRelationshipsPutResponseAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse> PutAsRelationshipsPutResponseAsync(List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -88,11 +88,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
         [Obsolete("This method is obsolete. Use PutAsRelationshipsPutResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse?> PutAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse?> PutAsync(List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse> PutAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse> PutAsync(List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -107,11 +107,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

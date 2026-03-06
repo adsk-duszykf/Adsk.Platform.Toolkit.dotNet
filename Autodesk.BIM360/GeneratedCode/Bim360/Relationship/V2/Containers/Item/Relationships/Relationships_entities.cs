@@ -9,10 +9,10 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsPutRequestBody_entities : IParsable
+    public partial class Relationships_entities : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The domain to which the entity belongs.To learn more about domains and entities, see the [Relationship Service Field Guide](https://aps.autodesk.com/en/docs/bim360/v1/overview/field-guide/relationships).Max length: 128</summary>
+        /// <summary>The domain to which the entity belongs.Max length: 128</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }
@@ -39,12 +39,12 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities"/></returns>
+        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities();
+            return new global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities();
         }
         /// <summary>
         /// The deserialization information for the current model

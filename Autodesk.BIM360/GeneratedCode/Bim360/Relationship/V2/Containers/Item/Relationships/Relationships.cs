@@ -9,28 +9,26 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsPutRequestBody : IParsable
+    public partial class Relationships : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The entities to be contained in the relationship.Min items: 2 Max items: 2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities>? Entities { get; set; }
+        public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities>? Entities { get; set; }
 #nullable restore
 #else
-        public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities> Entities { get; set; }
+        public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities> Entities { get; set; }
 #endif
-        /// <summary>The UUID that uniquely identifies the relationship. If no `id` is supplied, the system automatically allocates one.</summary>
-        public Guid? Id { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody"/></returns>
+        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody();
+            return new global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,8 +38,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entities", n => { Entities = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities>(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
+                { "entities", n => { Entities = n.GetCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities>(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -51,8 +48,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities>("entities", Entities);
-            writer.WriteGuidValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Relationships_entities>("entities", Entities);
         }
     }
 }
