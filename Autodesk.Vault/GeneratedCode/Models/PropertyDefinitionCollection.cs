@@ -45,7 +45,7 @@ namespace Autodesk.Vault.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Vault.Models.PropertyDefinitionCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Vault.Models.PropertyDefinitionCollection();
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Autodesk.Vault.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.Vault.Models.CursorBasedPagination>("pagination", Pagination);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Vault.Models.PropertyDefinitionCollection.PropertyDefinitionCollection_results>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
@@ -100,7 +100,7 @@ namespace Autodesk.Vault.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Autodesk.Vault.Models.PropertyDefinitionCollection.PropertyDefinitionCollection_results CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Autodesk.Vault.Models.PropertyDefinitionCollection.PropertyDefinitionCollection_results();
                 if("PropertyDefinition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -135,7 +135,7 @@ namespace Autodesk.Vault.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(PropertyDefinition != null)
                 {
                     writer.WriteObjectValue<global::Autodesk.Vault.Models.PropertyDefinition>(null, PropertyDefinition);

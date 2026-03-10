@@ -31,13 +31,13 @@ namespace Autodesk.Vault.Models
 #else
         public global::Autodesk.Vault.Models.CursorBasedPagination Pagination { get; set; }
 #endif
-        /// <summary>Item object.</summary>
+        /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Autodesk.Vault.Models.Item? Results { get; set; }
+        public List<global::Autodesk.Vault.Models.Item>? Results { get; set; }
 #nullable restore
 #else
-        public global::Autodesk.Vault.Models.Item Results { get; set; }
+        public List<global::Autodesk.Vault.Models.Item> Results { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.Vault.Models.ItemCollection"/> and sets the default values.
@@ -53,7 +53,7 @@ namespace Autodesk.Vault.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Vault.Models.ItemCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Vault.Models.ItemCollection();
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Autodesk.Vault.Models
             {
                 { "included", n => { Included = n.GetObjectValue<global::Autodesk.Vault.Models.ItemCollection_included>(global::Autodesk.Vault.Models.ItemCollection_included.CreateFromDiscriminatorValue); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Autodesk.Vault.Models.CursorBasedPagination>(global::Autodesk.Vault.Models.CursorBasedPagination.CreateFromDiscriminatorValue); } },
-                { "results", n => { Results = n.GetObjectValue<global::Autodesk.Vault.Models.Item>(global::Autodesk.Vault.Models.Item.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Autodesk.Vault.Models.Item>(global::Autodesk.Vault.Models.Item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -75,10 +75,10 @@ namespace Autodesk.Vault.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.Vault.Models.ItemCollection_included>("included", Included);
             writer.WriteObjectValue<global::Autodesk.Vault.Models.CursorBasedPagination>("pagination", Pagination);
-            writer.WriteObjectValue<global::Autodesk.Vault.Models.Item>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Autodesk.Vault.Models.Item>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

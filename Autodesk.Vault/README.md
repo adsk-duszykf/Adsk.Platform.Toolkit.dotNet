@@ -63,9 +63,10 @@ var getAccessToken = authClient.Helper.CreateTwoLeggedAutoRefreshToken(
 
 // Initialize the Vault client with 2-legged auth
 // The userId parameter specifies the Vault user to impersonate
+// vaultServerUrl must be a valid absolute HTTP or HTTPS URL
 var vaultClient = new VaultClient(
     getAccessToken, 
-    vaultServer: "your-vault-server.autodesk.com", 
+    vaultServerUrl: "https://your-vault-server.autodesk.com", 
     userId: "user@company.com");
 ```
 
@@ -80,9 +81,10 @@ using Autodesk.Vault;
 Func<Task<string>> getAccessToken = () => Task.FromResult("YOUR_3LEGGED_ACCESS_TOKEN");
 
 // Initialize the Vault client with 3-legged auth
+// vaultServerUrl must be a valid absolute HTTP or HTTPS URL
 var vaultClient = new VaultClient(
     getAccessToken, 
-    vaultServer: "your-vault-server.autodesk.com");
+    vaultServerUrl: "https://your-vault-server.autodesk.com");
 ```
 
 ## Usage Examples
@@ -241,8 +243,12 @@ You can provide your own `HttpClient` instance for advanced scenarios:
 var httpClient = new HttpClient();
 // Configure your HttpClient (timeouts, handlers, etc.)
 
-var vaultClient = new VaultClient(getAccessToken, vaultServer, userId, httpClient);
+var vaultClient = new VaultClient(getAccessToken, "https://your-vault-server", userId, httpClient);
 ```
+
+## URL Validation
+
+The `vaultServerUrl` parameter must be a valid absolute HTTP or HTTPS URL (e.g. `"https://vaultserver.example.com"` or `"http://10.148.0.1"`). An `ArgumentException` is thrown for invalid, relative, or non-HTTP URLs.
 
 ## Rate Limiting
 

@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.13.1" />
+    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.21.2" />
   </ItemGroup>
 
   <ItemGroup>

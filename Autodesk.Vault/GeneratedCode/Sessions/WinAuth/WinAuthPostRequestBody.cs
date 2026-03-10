@@ -36,7 +36,7 @@ namespace Autodesk.Vault.Sessions.WinAuth
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Vault.Sessions.WinAuth.WinAuthPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Vault.Sessions.WinAuth.WinAuthPostRequestBody();
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Autodesk.Vault.Sessions.WinAuth
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.Vault.Sessions.WinAuth.WinAuthPostRequestBody_input>("input", Input);
             writer.WriteAdditionalData(AdditionalData);
         }

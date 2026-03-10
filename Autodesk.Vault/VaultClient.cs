@@ -3,12 +3,15 @@ using Microsoft.Kiota.Abstractions.Authentication;
 
 namespace Autodesk.Vault;
 
+/// <summary>
+/// Main entry point for interacting with the Vault API. It initializes the API client and provides high-level managers for different API areas (Authentication, Accounts, Options, Informational, Properties, Files and Folders, Items, Change Orders, Links, Search and Jobs).
+/// </summary>
 public class VaultClient
 {
     /// <summary>
-    /// Vault server name
+    /// Vault server URL
     /// </summary>
-    public string VaultServer { get; private set; } = string.Empty;
+    public string VaultServerUrl { get; private set; } = string.Empty;
 
     /// <summary>
     /// Data Management API client
@@ -75,12 +78,12 @@ public class VaultClient
     /// </summary>
     /// <param name="get2LeggedAccessToken">Function for getting the APS 2 legged access token used for the following calls</param>
     /// <param name="userId">A valid, active user email address. This user is going to be impersonated in all calls using the access token</param>
-    /// <param name="vaultServer">Vault server name</param>
+    /// <param name="vaultServerUrl">Vault server URL. Like "http://10.148.0.1", "https://windowsmachine1"</param>
     /// <param name="httpClient">Optional: Override the default HttpClient used for performing API calls</param>
-    public VaultClient(Func<Task<string>> get2LeggedAccessToken, string vaultServer, string userId, HttpClient? httpClient = null)
+    public VaultClient(Func<Task<string>> get2LeggedAccessToken, string vaultServerUrl, string userId, HttpClient? httpClient = null)
     {
-        Api = CreateClient(get2LeggedAccessToken, vaultServer, httpClient);
-        VaultServer = vaultServer;
+        Api = CreateClient(get2LeggedAccessToken, vaultServerUrl, httpClient);
+        VaultServerUrl = vaultServerUrl;
 
         // Initialize managers
         Auth = new AuthManager(Api);
@@ -100,12 +103,12 @@ public class VaultClient
     /// Create a new instance for the Vault API http client.
     /// </summary>
     /// <param name="get3LeggedAccessToken">Function for getting the APS 3 legged access token used for the following calls</param>
-    /// <param name="vaultServer">Vault server name</param>
+    /// <param name="vaultServerUrl">Vault server URL. Like "http://10.148.0.1", "https://windowsmachine1"</param>
     /// <param name="httpClient">Optional: Override the default HttpClient used for performing API calls</param>
-    public VaultClient(Func<Task<string>> get3LeggedAccessToken, string vaultServer, HttpClient? httpClient = null)
+    public VaultClient(Func<Task<string>> get3LeggedAccessToken, string vaultServerUrl, HttpClient? httpClient = null)
     {
-        Api = CreateClient(get3LeggedAccessToken, vaultServer, httpClient);
-        VaultServer = vaultServer;
+        Api = CreateClient(get3LeggedAccessToken, vaultServerUrl, httpClient);
+        VaultServerUrl = vaultServerUrl;
 
         // Initialize managers
         Auth = new AuthManager(Api);
@@ -121,16 +124,26 @@ public class VaultClient
         Jobs = new JobsManager(Api);
     }
 
-    private static BaseVaultClient CreateClient(Func<Task<string>> getAccessToken, string vaultServer, HttpClient? httpClient = null)
+    /// <summary>
+    /// Initializes the Vault API client with the provided access token function, vault server and optional HttpClient. The access token function can be for either 2 legged or 3 legged authentication as both are supported by the same authentication provider. This method is used internally by the constructors to create the API client instance used for all calls to the Vault API.
+    /// </summary>
+    /// <param name="getAccessToken">Function for getting the APS access token used for the following calls</param>
+    /// <param name="vaultServerUrl">Vault server URL. Like "http://10.148.0.1", "https://windowsmachine1"</param>
+    /// <param name="httpClient">Optional: Override the default HttpClient used for performing API calls</param>
+    /// <returns>Instance of BaseVaultClient</returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    private static BaseVaultClient CreateClient(Func<Task<string>> getAccessToken, string vaultServerUrl, HttpClient? httpClient = null)
     {
-        if (string.IsNullOrEmpty(vaultServer))
-            throw new ArgumentNullException(nameof(vaultServer), "Cannot be null or empty.");
+        if (!Uri.TryCreate(vaultServerUrl, UriKind.Absolute, out var uri) ||
+            (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
+            throw new ArgumentException("Must be a valid absolute HTTP or HTTPS URL.", nameof(vaultServerUrl));
 
+        var baseUrl = new Uri(uri, "/AutodeskDM/Services/api/vault/v2").ToString();
 
         var auth = new BaseBearerTokenAuthenticationProvider(new Common.HttpClientLibrary.AccessTokenProvider(getAccessToken));
         var adapter = new Microsoft.Kiota.Bundle.DefaultRequestAdapter(auth, null, null, httpClient)
         {
-            BaseUrl = $"https://{vaultServer}/AutodeskDM/Services/api/vault/v2"
+            BaseUrl = baseUrl
         };
 
         return new BaseVaultClient(adapter);
