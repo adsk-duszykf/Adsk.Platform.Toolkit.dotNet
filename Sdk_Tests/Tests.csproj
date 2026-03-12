@@ -29,6 +29,7 @@
     <ProjectReference Include="..\Autodesk.Common.HttpClient\Autodesk.Common.HttpClientLibrary.csproj" />
     <ProjectReference Include="..\Autodesk.DataManagement\Autodesk.DataManagement.csproj" />
     <ProjectReference Include="..\Autodesk.ModelDerivative\Autodesk.ModelDerivative.csproj" />
+    <ProjectReference Include="..\Autodesk.Vault\Autodesk.Vault.csproj" />
   </ItemGroup>
 
   <ItemGroup>
