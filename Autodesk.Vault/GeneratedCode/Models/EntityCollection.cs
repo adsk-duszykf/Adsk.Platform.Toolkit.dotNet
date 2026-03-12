@@ -159,15 +159,40 @@ namespace Autodesk.Vault.Models
             public static global::Autodesk.Vault.Models.EntityCollection.EntityCollection_results CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("entityType")?.GetStringValue();
                 var result = new global::Autodesk.Vault.Models.EntityCollection.EntityCollection_results();
-                result.ChangeOrder = new global::Autodesk.Vault.Models.ChangeOrder();
-                result.ChangeOrderExtended = new global::Autodesk.Vault.Models.ChangeOrderExtended();
-                result.FileVersion = new global::Autodesk.Vault.Models.FileVersion();
-                result.FileVersionExtended = new global::Autodesk.Vault.Models.FileVersionExtended();
-                result.Folder = new global::Autodesk.Vault.Models.Folder();
-                result.FolderExtended = new global::Autodesk.Vault.Models.FolderExtended();
-                result.ItemVersion = new global::Autodesk.Vault.Models.ItemVersion();
-                result.LinkEntity = new global::Autodesk.Vault.Models.LinkEntity();
+                if("ChangeOrder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ChangeOrder = new global::Autodesk.Vault.Models.ChangeOrder();
+                }
+                else if("ChangeOrderExtended".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ChangeOrderExtended = new global::Autodesk.Vault.Models.ChangeOrderExtended();
+                }
+                else if("FileVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FileVersion = new global::Autodesk.Vault.Models.FileVersion();
+                }
+                else if("FileVersionExtended".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FileVersionExtended = new global::Autodesk.Vault.Models.FileVersionExtended();
+                }
+                else if("Folder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.Folder = new global::Autodesk.Vault.Models.Folder();
+                }
+                else if("FolderExtended".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FolderExtended = new global::Autodesk.Vault.Models.FolderExtended();
+                }
+                else if("ItemVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ItemVersion = new global::Autodesk.Vault.Models.ItemVersion();
+                }
+                else if("LinkEntity".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.LinkEntity = new global::Autodesk.Vault.Models.LinkEntity();
+                }
                 return result;
             }
             /// <summary>
@@ -176,9 +201,37 @@ namespace Autodesk.Vault.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(ChangeOrder != null || ChangeOrderExtended != null || FileVersion != null || FileVersionExtended != null || Folder != null || FolderExtended != null || ItemVersion != null || LinkEntity != null)
+                if(ChangeOrder != null)
                 {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ChangeOrder, ChangeOrderExtended, FileVersion, FileVersionExtended, Folder, FolderExtended, ItemVersion, LinkEntity);
+                    return ChangeOrder.GetFieldDeserializers();
+                }
+                else if(ChangeOrderExtended != null)
+                {
+                    return ChangeOrderExtended.GetFieldDeserializers();
+                }
+                else if(FileVersion != null)
+                {
+                    return FileVersion.GetFieldDeserializers();
+                }
+                else if(FileVersionExtended != null)
+                {
+                    return FileVersionExtended.GetFieldDeserializers();
+                }
+                else if(Folder != null)
+                {
+                    return Folder.GetFieldDeserializers();
+                }
+                else if(FolderExtended != null)
+                {
+                    return FolderExtended.GetFieldDeserializers();
+                }
+                else if(ItemVersion != null)
+                {
+                    return ItemVersion.GetFieldDeserializers();
+                }
+                else if(LinkEntity != null)
+                {
+                    return LinkEntity.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -189,7 +242,38 @@ namespace Autodesk.Vault.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Autodesk.Vault.Models.ChangeOrder>(null, ChangeOrder, ChangeOrderExtended, FileVersion, FileVersionExtended, Folder, FolderExtended, ItemVersion, LinkEntity);
+                if(ChangeOrder != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.ChangeOrder>(null, ChangeOrder);
+                }
+                else if(ChangeOrderExtended != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.ChangeOrderExtended>(null, ChangeOrderExtended);
+                }
+                else if(FileVersion != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.FileVersion>(null, FileVersion);
+                }
+                else if(FileVersionExtended != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.FileVersionExtended>(null, FileVersionExtended);
+                }
+                else if(Folder != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.Folder>(null, Folder);
+                }
+                else if(FolderExtended != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.FolderExtended>(null, FolderExtended);
+                }
+                else if(ItemVersion != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.ItemVersion>(null, ItemVersion);
+                }
+                else if(LinkEntity != null)
+                {
+                    writer.WriteObjectValue<global::Autodesk.Vault.Models.LinkEntity>(null, LinkEntity);
+                }
             }
         }
     }
