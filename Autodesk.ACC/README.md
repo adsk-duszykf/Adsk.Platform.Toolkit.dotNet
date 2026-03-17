@@ -1,4 +1,4 @@
-# Autodesk.ACC - Autodesk Construction Cloud SDK
+# Autodesk Construction Cloud SDK for .NET
 
 > **⚠️ UNOFFICIAL PACKAGE ⚠️**
 

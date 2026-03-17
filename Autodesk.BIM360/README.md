@@ -1,4 +1,4 @@
-# Autodesk.BIM360 - BIM 360 SDK
+# Autodesk BIM 360 SDK for .NET
 
 > **⚠️ UNOFFICIAL PACKAGE ⚠️**
 

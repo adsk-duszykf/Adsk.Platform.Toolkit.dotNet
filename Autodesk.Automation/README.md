@@ -1,4 +1,4 @@
-# Autodesk.Automation - Design Automation SDK
+# Autodesk Automation SDK for .NET
 
 > **⚠️ UNOFFICIAL PACKAGE ⚠️**
 

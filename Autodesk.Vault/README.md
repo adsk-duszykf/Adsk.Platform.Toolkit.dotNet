@@ -1,4 +1,4 @@
-# Autodesk.Vault - Vault Data SDK
+# Autodesk Vault Data SDK for .NET
 
 > **⚠️ UNOFFICIAL PACKAGE ⚠️**
 

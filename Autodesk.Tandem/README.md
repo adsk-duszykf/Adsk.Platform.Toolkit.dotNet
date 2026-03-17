@@ -1,4 +1,4 @@
-# Adsk.Platform.Tandem
+# Autodesk Tandem SDK for .NET
 
 > **⚠️ UNOFFICIAL PACKAGE ⚠️**
 

@@ -1,4 +1,4 @@
-# Adsk.Platform.DataManagement
+# Autodesk Data Management SDK for .NET
 
 > **⚠️ UNOFFICIAL PACKAGE ⚠️**
 
