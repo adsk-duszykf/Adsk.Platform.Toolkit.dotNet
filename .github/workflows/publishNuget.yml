@@ -45,6 +45,7 @@ jobs:
           dotnet nuget push Adsk.Platform.VaultData.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
           dotnet nuget push Adsk.Platform.Automation.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
           dotnet nuget push Adsk.Platform.Tandem.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push Adsk.Platform.BuildingConnected.${{ steps.get_version.outputs.version }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
         working-directory: ./nupkg
         continue-on-error: true
       
