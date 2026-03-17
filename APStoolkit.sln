@@ -78,6 +78,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autodesk.Common.HttpClient"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.Automation", "Autodesk.Automation\Autodesk.Automation.csproj", "{BDA2B6C2-950F-4AF7-991B-99AACD68AB37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.BuildingConnected", "Autodesk.BuildingConnected\Autodesk.BuildingConnected.csproj", "{58002B47-BB94-4C9E-97F9-FB98E328C7A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -326,6 +328,18 @@ Global
 		{BDA2B6C2-950F-4AF7-991B-99AACD68AB37}.Release|x64.Build.0 = Release|Any CPU
 		{BDA2B6C2-950F-4AF7-991B-99AACD68AB37}.Release|x86.ActiveCfg = Release|Any CPU
 		{BDA2B6C2-950F-4AF7-991B-99AACD68AB37}.Release|x86.Build.0 = Release|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Debug|x64.Build.0 = Debug|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Debug|x86.Build.0 = Debug|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|x64.ActiveCfg = Release|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|x64.Build.0 = Release|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|x86.ActiveCfg = Release|Any CPU
+		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
