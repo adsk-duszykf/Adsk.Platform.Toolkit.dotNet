@@ -8,7 +8,11 @@
   href: DataManagement/README.md
 - name: Model Derivative
   href: ModelDerivative/index.md
+- name: HttpClient
+  href: HttpClient/README.md
 - name: ACC
+- name: ACC (All Services)
+  href: ACC/index.md
 - name: File Management
   href: ACC/FileManagement/index.md
 - name: Data Connector
@@ -19,6 +23,18 @@
   href: ACC/RFIs/index.md
 - name: Issues
   href: ACC/Issues/index.md
+- name: BIM360
+- name: BIM360 (All Services)
+  href: BIM360/index.md
+- name: Other Services
+- name: Vault Data
+  href: VaultData/index.md
+- name: Tandem
+  href: Tandem/index.md
+- name: Automation
+  href: Automation/index.md
+- name: BuildingConnected
+  href: BuildingConnected/index.md
 - name: How To
 - name: Rate limit handling
   href: HowTo/rateLimitHandling.md

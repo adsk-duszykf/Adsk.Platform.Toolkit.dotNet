@@ -59,13 +59,13 @@ Console.WriteLine($"Hubs: {string.Join(';', hubIds)}");
 | Authentication | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.Authentication.Helpers.AuthenticationClientHelper.html) | [Adsk.Platform.Authentication](https://www.nuget.org/packages/Adsk.Platform.Authentication) |
 | Data Management | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.DataManagement.Helpers.DataManagementClientHelper.html) | [Adsk.Platform.DataManagement](https://www.nuget.org/packages/Adsk.Platform.DataManagement) |
 | Model Derivative | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.ModelDerivative.Helpers.ModelDerivativeClientHelper.html) | [Adsk.Platform.ModelDerivative](https://www.nuget.org/packages/Adsk.Platform.ModelDerivative) |
-| ACC Model Properties | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.ACC.ModelProperties.Helpers.ModelPropertiesClientHelper.html) | [Adsk.Platform.ACC.ModelProperties](https://www.nuget.org/packages/Adsk.Platform.ACC.ModelProperties) |
-| ACC File Management *(Custom Attributes only)* | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.ACC.FileManagement.Helpers.FileManagementClientHelper.html) | [Adsk.Platform.ACC.FileManagement](https://www.nuget.org/packages/Adsk.Platform.ACC.ModelProperties) |
-| ACC RFIs | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.ACC.RFIs.Helpers.RFIsClientHelper.html) | [Adsk.Platform.ACC.RFIs](https://www.nuget.org/packages/Adsk.Platform.ACC.RFIs) |
-| ACC Data Connector | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.ACC.DataConnector.Helpers.DataConnectorClientHelper.html) | [Adsk.Platform.ACC.DataConnector](https://www.nuget.org/packages/Adsk.Platform.ACC.DataConnector) |
-| ACC/BIM360 Account Admin | In development | No | [Adsk.Platform.ACC.AccountAdmin](https://www.nuget.org/packages/Adsk.Platform.ACC.AccountAdmin) |
-| ACC Cost Management | In development | No | [Adsk.Platform.ACC.CostManagement](https://www.nuget.org/packages/Adsk.Platform.ACC.CostManagement) |
-| ACC Assets | In development | No | - |
+| ACC | Stable | No | [Adsk.Platform.ACC](https://www.nuget.org/packages/Adsk.Platform.ACC) |
+| BIM360 | Stable | No | [Adsk.Platform.BIM360](https://www.nuget.org/packages/Adsk.Platform.BIM360) |
+| Vault Data | Stable | No | [Adsk.Platform.VaultData](https://www.nuget.org/packages/Adsk.Platform.VaultData) |
+| Tandem | Stable | No | [Adsk.Platform.Tandem](https://www.nuget.org/packages/Adsk.Platform.Tandem) |
+| Automation | Stable | No | [Adsk.Platform.Automation](https://www.nuget.org/packages/Adsk.Platform.Automation) |
+| BuildingConnected | Stable | No | [Adsk.Platform.BuildingConnected](https://www.nuget.org/packages/Adsk.Platform.BuildingConnected) |
+
 
 ## Get started
 

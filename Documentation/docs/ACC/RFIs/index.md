@@ -1,4 +1,8 @@
-# Autodesk Construction Cloud - RFIs
+# Adsk.Platform.ACC.RFIs [Deprecated]
+
+> **⚠️UNOFFICIAL PACKAGE⚠️**
+>
+> **Note:** This package is deprecated. Use [Adsk.Platform.ACC](https://www.nuget.org/packages/Adsk.Platform.ACC) instead.
 
 The package `Adsk.Platform.ACC.RFIs` provides a set of APIs to interact with the [Autodesk Construction Cloud - RFIs Service](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/rfis/retrieve-rfis-container-id/).
 

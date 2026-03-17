@@ -1,6 +1,10 @@
-# Autodesk Construction Cloud - Data Connector
+# Adsk.Platform.ACC.DataConnector [Deprecated]
 
-The package `Adsk.Platform.ACC.DataConnector` provides a set of APIs to interact with the [Autodesk Construction Cloud - Data Connector Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/v1-files-export-pdf-files-POST/).
+> **⚠️UNOFFICIAL PACKAGE⚠️**
+>
+> **Note:** This package is deprecated. Use [Adsk.Platform.ACC](https://www.nuget.org/packages/Adsk.Platform.ACC) instead.
+
+The package `Adsk.Platform.ACC.DataConnector` provides a set of APIs to interact with the [Autodesk Construction Cloud - Data Connector Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/data-connector-api/).
 
 ## Documentation
 

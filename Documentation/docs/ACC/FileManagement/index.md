@@ -1,4 +1,8 @@
-# Autodesk Construction Cloud - File Management
+# Adsk.Platform.ACC.FileManagement [Deprecated]
+
+> **⚠️UNOFFICIAL PACKAGE⚠️**
+>
+> **Note:** This package is deprecated. Use [Adsk.Platform.ACC](https://www.nuget.org/packages/Adsk.Platform.ACC) instead.
 
 The package `Adsk.Platform.ACC.FileManagement` provides a set of APIs to interact with the [Autodesk Construction Cloud - File Management Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/v1-files-export-pdf-files-POST/).
 

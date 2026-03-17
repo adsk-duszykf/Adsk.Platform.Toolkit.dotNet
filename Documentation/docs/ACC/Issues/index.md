@@ -1,6 +1,10 @@
-# Autodesk Construction Cloud (ACC) - Issues
+# Adsk.Platform.ACC.Issues [Deprecated]
 
-The package `Adsk.Platform.ACC.Issues` provides a set of APIs to interact with the [Autodesk Construction Cloud (ACC) - Issues Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-users-me-GET/).
+> **⚠️UNOFFICIAL PACKAGE⚠️**
+>
+> **Note:** This package is deprecated. Use [Adsk.Platform.ACC](https://www.nuget.org/packages/Adsk.Platform.ACC) instead.
+
+The package `Adsk.Platform.ACC.Issues` provides a set of APIs to interact with the [Autodesk Construction Cloud - Issues Service](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-users-me-GET/).
 
 ## Documentation
 

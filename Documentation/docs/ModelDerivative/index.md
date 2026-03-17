@@ -1,4 +1,6 @@
-# Autodesk Model Derivative Service
+# Adsk.Platform.ModelDerivative
+
+> **⚠️UNOFFICIAL PACKAGE⚠️**
 
 The package `Adsk.Platform.ModelDerivative` provides a set of APIs to interact with the [Autodesk Model Derivative Service](https://aps.autodesk.com/en/docs/model-derivative/v2/developers_guide/overview/).
 
