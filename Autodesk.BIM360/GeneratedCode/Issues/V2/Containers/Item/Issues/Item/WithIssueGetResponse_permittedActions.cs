@@ -11,8 +11,17 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
     /// The list of actions permitted for the user for this issue in its current state.Possible Values: `assign_all`, `assign_same_company`, `assign_creator_or_owner`, `clear_assignee`, `add_comment`, `add_attachment`, `remove_attachment`.The following values are not relevant: `add_attachment`, `remove_attachment`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithIssueGetResponse_permittedActions : IParsable
+    public partial class WithIssueGetResponse_permittedActions : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_permittedActions"/> and sets the default values.
+        /// </summary>
+        public WithIssueGetResponse_permittedActions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

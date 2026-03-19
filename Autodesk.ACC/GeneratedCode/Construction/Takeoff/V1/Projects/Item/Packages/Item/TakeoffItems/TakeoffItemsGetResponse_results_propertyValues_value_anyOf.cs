@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
     /// The value of a takeoff instance.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TakeoffItemsGetResponse_results_propertyValues_value_anyOf : IParsable
+    public partial class TakeoffItemsGetResponse_results_propertyValues_value_anyOf : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A string representation of the property value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #endif
         /// <summary>A number representation of the property value.</summary>
         public double? Zero { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.TakeoffItemsGetResponse_results_propertyValues_value_anyOf"/> and sets the default values.
+        /// </summary>
+        public TakeoffItemsGetResponse_results_propertyValues_value_anyOf()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("1", One);
             writer.WriteDoubleValue("0", Zero);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

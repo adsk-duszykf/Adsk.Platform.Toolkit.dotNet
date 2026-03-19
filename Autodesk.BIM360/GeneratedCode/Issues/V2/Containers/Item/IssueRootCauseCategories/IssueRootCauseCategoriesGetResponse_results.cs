@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssueRootCauseCategoriesGetResponse_results : IParsable
+    public partial class IssueRootCauseCategoriesGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the issue root cause category was created, in the following format: YYYY-MM-DDThh:mm:ss.sz.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the issue root cause category.</summary>
@@ -79,6 +81,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories
         public string UpdatedBy { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public IssueRootCauseCategoriesGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse_results"/></returns>
@@ -129,6 +138,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

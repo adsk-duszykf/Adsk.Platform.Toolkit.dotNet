@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FormsPostResponse_tabularValues_equipmentEntries : IParsable
+    public partial class FormsPostResponse_tabularValues_equipmentEntries : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the equipment log row has been deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>Text describing the equipment utilized.</summary>
@@ -42,6 +44,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         public double? Quantity { get; set; }
         /// <summary>The total time all equipment was utilized (in milliseconds).</summary>
         public int? Timespan { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse_tabularValues_equipmentEntries"/> and sets the default values.
+        /// </summary>
+        public FormsPostResponse_tabularValues_equipmentEntries()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +90,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
             writer.WriteStringValue("item", Item);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteIntValue("timespan", Timespan);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

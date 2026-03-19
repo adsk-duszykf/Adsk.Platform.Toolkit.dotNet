@@ -9,7 +9,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TwinsGetResponse_Asterisk : IParsable
+    public partial class TwinsGetResponse_Asterisk : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Level of access to the corresponding resource.</summary>
@@ -30,6 +30,8 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 #else
         public string AccountType { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Use overhead floor slab as upper bounds for room assignment</summary>
         public bool? BoundByUpperFloor { get; set; }
         /// <summary>Date of creation of the facility.</summary>
@@ -105,6 +107,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         /// <summary>Timestamp of the last thumbnail update in Unix milliseconds.</summary>
         public int? ThumbnailLastUpdate { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk"/> and sets the default values.
+        /// </summary>
+        public TwinsGetResponse_Asterisk()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk"/></returns>
@@ -163,6 +172,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
             writer.WriteBoolValue("skipRoomBounders", SkipRoomBounders);
             writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk_template>("template", Template);
             writer.WriteIntValue("thumbnailLastUpdate", ThumbnailLastUpdate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

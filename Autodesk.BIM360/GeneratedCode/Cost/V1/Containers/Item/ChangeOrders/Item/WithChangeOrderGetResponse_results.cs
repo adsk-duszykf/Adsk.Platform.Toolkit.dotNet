@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithChangeOrderGetResponse_results : IParsable
+    public partial class WithChangeOrderGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The additional collaborator company and contacts.</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
 #else
         public List<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse_results_additionalCollaborators> AdditionalCollaborators { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -333,6 +335,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
         public List<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse_results_variableMarkupFormulaItems> VariableMarkupFormulaItems { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public WithChangeOrderGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse_results"/></returns>
@@ -457,6 +466,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
             writer.WriteStringValue("unit", Unit);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse_results_variableMarkupFormulaItems>("variableMarkupFormulaItems", VariableMarkupFormulaItems);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

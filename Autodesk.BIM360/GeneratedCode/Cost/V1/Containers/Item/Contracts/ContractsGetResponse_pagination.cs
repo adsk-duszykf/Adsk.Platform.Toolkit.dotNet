@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
     /// Contains pagination information when data is returned page by page.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ContractsGetResponse_pagination : IParsable
+    public partial class ContractsGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of records returned in the response.</summary>
         public int? Limit { get; set; }
         /// <summary>The URL for the next request to retrieve the next page of results. Max length: 2000.Max length: 2000</summary>
@@ -27,6 +29,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
         public int? Offset { get; set; }
         /// <summary>The total number of records that matched the request criteria.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Contracts.ContractsGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public ContractsGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts
             writer.WriteStringValue("nextUrl", NextUrl);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

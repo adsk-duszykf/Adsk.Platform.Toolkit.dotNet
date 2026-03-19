@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreatePostRequestBody : IParsable
+    public partial class CreatePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Description, provides more details about the context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create
 #else
         public List<global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create.CreatePostRequestBody_muts> Muts { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create.CreatePostRequestBody"/> and sets the default values.
+        /// </summary>
+        public CreatePostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create
             writer.WriteStringValue("desc", Desc);
             writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create.CreatePostRequestBody_muts>("muts", Muts);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

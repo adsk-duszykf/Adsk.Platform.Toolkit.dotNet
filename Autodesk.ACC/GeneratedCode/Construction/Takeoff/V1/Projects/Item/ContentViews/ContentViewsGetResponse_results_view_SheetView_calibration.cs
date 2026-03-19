@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
     /// The sheet view calibration details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ContentViewsGetResponse_results_view_SheetView_calibration : IParsable
+    public partial class ContentViewsGetResponse_results_view_SheetView_calibration : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The scale used in the sheet view calibration.</summary>
         public double? ScaleFactor { get; set; }
         /// <summary>The units used in the sheet view calibration.Possible values: `FT_AND_DECIMAL_IN`, `FT_AND_FRACTIONAL_IN`, `M`, `CM`, `MM`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_view_SheetView_calibration_units? Units { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_view_SheetView_calibration"/> and sets the default values.
+        /// </summary>
+        public ContentViewsGetResponse_results_view_SheetView_calibration()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("scaleFactor", ScaleFactor);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_view_SheetView_calibration_units>("units", Units);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

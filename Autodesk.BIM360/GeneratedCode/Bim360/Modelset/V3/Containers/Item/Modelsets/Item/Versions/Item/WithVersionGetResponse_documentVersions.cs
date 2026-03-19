@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithVersionGetResponse_documentVersions : IParsable
+    public partial class WithVersionGetResponse_documentVersions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the Model Derivative bubble for the document version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +109,13 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
         public string ViewableName { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionGetResponse_documentVersions"/> and sets the default values.
+        /// </summary>
+        public WithVersionGetResponse_documentVersions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionGetResponse_documentVersions"/></returns>
@@ -161,6 +170,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
             writer.WriteStringValue("viewableId", ViewableId);
             writer.WriteStringValue("viewableMime", ViewableMime);
             writer.WriteStringValue("viewableName", ViewableName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,14 +11,23 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
     /// The pagination object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ErrorCodesGetResponse_pagination : IParsable
+    public partial class ErrorCodesGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Always equal to `totalResults` (Pagination is not used by this endpoint. This object is returned for backward compatibility.).</summary>
         public int? Limit { get; set; }
         /// <summary>Always equal to 0 (Pagination is not used by this endpoint. This object is returned for backward compatibility.).</summary>
         public int? Offset { get; set; }
         /// <summary>The total number of results returned.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public ErrorCodesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

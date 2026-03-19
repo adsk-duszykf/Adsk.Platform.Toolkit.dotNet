@@ -11,14 +11,23 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
     /// The position of the pushpin in the viewable
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssuesGetResponse_results_linkedDocuments_details_position : IParsable
+    public partial class IssuesGetResponse_results_linkedDocuments_details_position : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The x-value of the position in the viewable</summary>
         public double? X { get; set; }
         /// <summary>The y-value of the position in the viewable</summary>
         public double? Y { get; set; }
         /// <summary>The z-value of the position in the viewable. For a 2D view this value is not set</summary>
         public double? Z { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse_results_linkedDocuments_details_position"/> and sets the default values.
+        /// </summary>
+        public IssuesGetResponse_results_linkedDocuments_details_position()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
             writer.WriteDoubleValue("x", X);
             writer.WriteDoubleValue("y", Y);
             writer.WriteDoubleValue("z", Z);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

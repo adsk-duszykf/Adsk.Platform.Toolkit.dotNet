@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VersionsBatchGetPostResponse : IParsable
+    public partial class VersionsBatchGetPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #else
         public List<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results> Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse"/> and sets the default values.
+        /// </summary>
+        public VersionsBatchGetPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_errors>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CostItemsPostRequestBody : IParsable
+    public partial class CostItemsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value approved by the owner and recorded in the Owner Change Order (`OCO`).</summary>
         public double? Approved { get; set; }
         /// <summary>The ID of the budget to which the cost item will be linked. Call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) to retrieve the budget ID.</summary>
@@ -121,6 +123,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
         public string Unit { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.CostItemsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public CostItemsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.CostItemsPostRequestBody"/></returns>
@@ -189,6 +198,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteDoubleValue("submitted", Submitted);
             writer.WriteStringValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

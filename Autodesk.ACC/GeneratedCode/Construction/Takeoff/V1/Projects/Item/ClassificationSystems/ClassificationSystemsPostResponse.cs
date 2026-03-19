@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ClassificationSystemsPostResponse : IParsable
+    public partial class ClassificationSystemsPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The classification system ID.</summary>
         public Guid? Id { get; set; }
         /// <summary>The classification system name.Max length: 200</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
 #endif
         /// <summary>The type of classification system.Possible values: `CLASSIFICATION_SYSTEM_1`, `CLASSIFICATION_SYSTEM_2`.See the [Help documentation](https://help.autodesk.com/view/TAKEOFF/ENU/?guid=Configure_Takeoff_Settings) for more details about the classification systems.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.ClassificationSystemsPostResponse_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.ClassificationSystemsPostResponse"/> and sets the default values.
+        /// </summary>
+        public ClassificationSystemsPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.ClassificationSystemsPostResponse_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

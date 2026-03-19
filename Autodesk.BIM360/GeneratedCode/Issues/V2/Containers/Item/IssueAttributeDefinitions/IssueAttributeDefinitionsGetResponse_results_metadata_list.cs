@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
     /// The list object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssueAttributeDefinitionsGetResponse_results_metadata_list : IParsable
+    public partial class IssueAttributeDefinitionsGetResponse_results_metadata_list : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The options object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
 #else
         public List<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata_list_options> Options { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata_list"/> and sets the default values.
+        /// </summary>
+        public IssueAttributeDefinitionsGetResponse_results_metadata_list()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata_list_options>("options", Options);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

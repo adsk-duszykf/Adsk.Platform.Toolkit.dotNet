@@ -53,34 +53,15 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsGetResponse?> GetAsTimeSheetsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsGetResponse> GetAsTimeSheetsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsGetResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves one or more timesheets in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsTimeSheetsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a timesheet for the specified tracking item instance in the given project.
@@ -91,37 +72,16 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostResponse?> PostAsTimeSheetsPostResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostResponse?> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostResponse> PostAsTimeSheetsPostResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostResponse> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a timesheet for the specified tracking item instance in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsTimeSheetsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse?> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves one or more timesheets in the given project.
@@ -248,22 +208,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TimeSheetsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TimeSheetsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

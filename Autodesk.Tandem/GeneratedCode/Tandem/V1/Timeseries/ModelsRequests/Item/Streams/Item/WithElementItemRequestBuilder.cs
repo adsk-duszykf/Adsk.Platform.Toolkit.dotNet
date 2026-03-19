@@ -40,34 +40,15 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementGetResponse?> GetAsWithElementGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementItemRequestBuilder.WithElementItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementItemRequestBuilder.WithElementItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementGetResponse> GetAsWithElementGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementItemRequestBuilder.WithElementItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementItemRequestBuilder.WithElementItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementGetResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves time series data.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithElementGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementItemRequestBuilder.WithElementItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementItemRequestBuilder.WithElementItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Stores time series data.
@@ -150,38 +131,11 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>Sort order of resulting dataPossible values: `asc`, `desc`</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sort order of resulting dataPossible values: `asc`, `desc`</summary>
-            [QueryParameter("sort")]
-            public global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
+            public global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.GetSortQueryParameterType? Sort { get; set; }
             /// <summary>Upper time boundary (in unix epoch)</summary>
             [QueryParameter("to")]
             public int? To { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithElementItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementItemRequestBuilder.WithElementItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithElementItemRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

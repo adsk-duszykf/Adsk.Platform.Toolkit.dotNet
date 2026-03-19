@@ -11,10 +11,19 @@ namespace Autodesk.Tandem.Tandem.V1.Groups
     /// List of facility IDs and related level of access.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GroupsGetResponse_twins : IParsable
+    public partial class GroupsGetResponse_twins : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Level of access to the corresponding resource.</summary>
         public int? Asterisk { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.GroupsGetResponse_twins"/> and sets the default values.
+        /// </summary>
+        public GroupsGetResponse_twins()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("*", Asterisk);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

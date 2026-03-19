@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
     /// The list of actions that are permitted for the user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchRfisPostResponse_results_permittedActions : IParsable
+    public partial class SearchRfisPostResponse_results_permittedActions : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Not relevant</summary>
         public bool? Nudge { get; set; }
         /// <summary>Not relevant</summary>
         public bool? Share { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_results_permittedActions"/> and sets the default values.
+        /// </summary>
+        public SearchRfisPostResponse_results_permittedActions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("nudge", Nudge);
             writer.WriteBoolValue("share", Share);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

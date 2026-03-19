@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TemplatesGetResponse_results_steps_tasks : IParsable
+    public partial class TemplatesGetResponse_results_steps_tasks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Autodesk ID or member group ID of the `user`, `company`, or `role` assigned to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,6 +28,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
         public Guid? Id { get; set; }
         /// <summary>- `true`: the task is required to complete the step.- `false`: (default) the task is not required to complete the step.</summary>
         public bool? IsRequired { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse_results_steps_tasks"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_results_steps_tasks()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse_results_steps_tasks_assignedToType>("assignedToType", AssignedToType);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("isRequired", IsRequired);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

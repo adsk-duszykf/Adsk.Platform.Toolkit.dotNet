@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ValuesBatchUpdatePutResponse_weather_hourlyWeather : IParsable
+    public partial class ValuesBatchUpdatePutResponse_weather_hourlyWeather : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date when weather was first fetched.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Date when weather was fetched from weather API.</summary>
@@ -36,6 +38,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
         public int? WindBearing { get; set; }
         /// <summary>Average wind speed.</summary>
         public double? WindSpeed { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutResponse_weather_hourlyWeather"/> and sets the default values.
+        /// </summary>
+        public ValuesBatchUpdatePutResponse_weather_hourlyWeather()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +90,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteIntValue("windBearing", WindBearing);
             writer.WriteDoubleValue("windSpeed", WindSpeed);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

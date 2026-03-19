@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ScheduleOfValuesPostRequestBody : IParsable
+    public partial class ScheduleOfValuesPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total price of the SOV item.</summary>
         public double? Amount { get; set; }
         /// <summary>The ID of the budget to which the SOV item belongs.</summary>
@@ -105,6 +107,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
         /// <summary>The unit price of the SOV item.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.ScheduleOfValuesPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ScheduleOfValuesPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.ScheduleOfValuesPostRequestBody"/></returns>
@@ -169,6 +178,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             writer.WriteDoubleValue("quantityPerBulk", QuantityPerBulk);
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

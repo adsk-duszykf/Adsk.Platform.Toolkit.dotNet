@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GroupedGetResponse : IParsable
+    public partial class GroupedGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The set of clashes that have been assigned or closed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
 #else
         public List<int?> Clashes { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Grouped.GroupedGetResponse"/> and sets the default values.
+        /// </summary>
+        public GroupedGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("clashes", Clashes);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

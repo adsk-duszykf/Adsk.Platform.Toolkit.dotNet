@@ -11,8 +11,17 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchPatch
     /// The response is a set of key:value pairs. The key is the asset ID of the asset that was revised. Thevalue is the fully revised asset.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AssetsBatchPatchPatchResponse_Asterisk : IParsable
+    public partial class AssetsBatchPatchPatchResponse_Asterisk : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchResponse_Asterisk"/> and sets the default values.
+        /// </summary>
+        public AssetsBatchPatchPatchResponse_Asterisk()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchPatch
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

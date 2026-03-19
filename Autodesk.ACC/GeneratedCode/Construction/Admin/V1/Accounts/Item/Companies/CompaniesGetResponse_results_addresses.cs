@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CompaniesGetResponse_results_addresses : IParsable
+    public partial class CompaniesGetResponse_results_addresses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The street address line 1.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,13 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
         /// <summary>The address type. Will always be: `Main`</summary>
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse_results_addresses_type? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse_results_addresses"/> and sets the default values.
+        /// </summary>
+        public CompaniesGetResponse_results_addresses()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse_results_addresses"/></returns>
@@ -113,6 +122,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("stateOrProvince", StateOrProvince);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse_results_addresses_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

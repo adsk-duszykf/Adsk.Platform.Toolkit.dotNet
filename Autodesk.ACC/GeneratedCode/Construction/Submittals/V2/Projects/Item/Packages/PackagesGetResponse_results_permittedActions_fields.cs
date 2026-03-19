@@ -11,8 +11,17 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
     /// A list of field names for which values must be provided when performing the action. An empty array indicates no specific set of values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PackagesGetResponse_results_permittedActions_fields : IParsable
+    public partial class PackagesGetResponse_results_permittedActions_fields : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesGetResponse_results_permittedActions_fields"/> and sets the default values.
+        /// </summary>
+        public PackagesGetResponse_results_permittedActions_fields()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

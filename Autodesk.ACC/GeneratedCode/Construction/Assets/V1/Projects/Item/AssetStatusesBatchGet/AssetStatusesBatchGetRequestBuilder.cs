@@ -41,37 +41,16 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse?> PostAsAssetStatusesBatchGetPostResponseAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse> PostAsAssetStatusesBatchGetPostResponseAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns a specified set of statuses.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsAssetStatusesBatchGetPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse?> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a specified set of statuses.
@@ -113,14 +92,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGe
             /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AssetStatusesBatchGetRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

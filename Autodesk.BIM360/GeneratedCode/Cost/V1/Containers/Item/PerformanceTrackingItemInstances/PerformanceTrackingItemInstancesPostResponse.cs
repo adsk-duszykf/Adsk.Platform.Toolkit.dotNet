@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PerformanceTrackingItemInstancesPostResponse : IParsable
+    public partial class PerformanceTrackingItemInstancesPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The overriding output quantity that you specified to reflect a change (if any) in the scope of the tracking item instance. This value will be used instead of the value of `outputQuantity` in future performance tracking and forecasting for this tracking item instance.</summary>
         public double? AdjustedOutputQuantity { get; set; }
         /// <summary>The code of the budget to which the tracking item instance belongs.</summary>
@@ -111,6 +113,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesPostResponse"/> and sets the default values.
+        /// </summary>
+        public PerformanceTrackingItemInstancesPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesPostResponse"/></returns>
@@ -181,6 +190,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
             writer.WriteDoubleValue("trackedInputQuantity", TrackedInputQuantity);
             writer.WriteDoubleValue("trackedOutputQuantity", TrackedOutputQuantity);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

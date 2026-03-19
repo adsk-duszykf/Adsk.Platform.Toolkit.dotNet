@@ -53,34 +53,15 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsGetResponse?> GetAsLineItemsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsRequestBuilder.LineItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsRequestBuilder.LineItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsGetResponse> GetAsLineItemsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsRequestBuilder.LineItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsRequestBuilder.LineItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsGetResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of the specified scope-specific bid form&apos;s line items.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsLineItemsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsRequestBuilder.LineItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsRequestBuilder.LineItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a scope-specific bid form line item.
@@ -91,37 +72,16 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostResponse?> PostAsLineItemsPostResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostResponse?> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostResponse> PostAsLineItemsPostResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostResponse> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a scope-specific bid form line item.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsLineItemsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse?> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of the specified scope-specific bid form&apos;s line items.
@@ -192,22 +152,6 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
             /// <summary>The maximum number of records that the endpoint may return per page.Note that a returned page may contain fewer records than the limit under either of these conditions:- There are fewer records found than the limit value.- The last page of a set is returned.Default value: `100`</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class LineItemsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsRequestBuilder.LineItemsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class LineItemsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

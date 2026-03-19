@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NamingStandardsGetResponse_definition_fields : IParsable
+    public partial class NamingStandardsGetResponse_definition_fields : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the field.</summary>
         public double? AttributeId { get; set; }
         /// <summary>The default value of the field.For example, `PROJ`.</summary>
@@ -54,6 +56,13 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 #endif
         /// <summary>The field type.Possible values:- `ALPHANUMERIC`: Accepts all characters.- `NONNUMERIC_TEXT`: Accepts all characters, excluding `0-9`.- `NUMERIC`: Accepts `0-9`, comma `&apos;,&apos;`, plus `&apos;+&apos;`, minus `&apos;-&apos;`, percent `&apos;%&apos;`, period `&apos;.&apos;`, underscore `&apos;_&apos;`.- `ARRAY`: A drop-down list.Note that the `minLength` and `maxLength` properties are not included in the response for the `ARRAY` type.</summary>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields"/> and sets the default values.
+        /// </summary>
+        public NamingStandardsGetResponse_definition_fields()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -99,6 +108,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
             writer.WriteBoolValue("optional", Optional);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields_options>("options", Options);
             writer.WriteEnumValue<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

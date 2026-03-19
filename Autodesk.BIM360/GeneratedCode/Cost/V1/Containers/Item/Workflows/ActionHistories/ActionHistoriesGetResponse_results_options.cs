@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
     /// Additional context for the action. The fields present in this object depend on the action history type.For Approval workflows, the object includes:`stepName` – the name of the workflow step.`taskDefinitionKey` – the key that identifies the workflow task.`workflowInstanceId` – the ID of the workflow instance.These fields provide task-level process information.For Normal workflows, the object may include fields such as to and from that indicate a change in status.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ActionHistoriesGetResponse_results_options : IParsable
+    public partial class ActionHistoriesGetResponse_results_options : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the workflow step where the action occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
 #else
         public string WorkflowInstanceId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse_results_options"/> and sets the default values.
+        /// </summary>
+        public ActionHistoriesGetResponse_results_options()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
             writer.WriteStringValue("stepName", StepName);
             writer.WriteStringValue("taskDefinitionKey", TaskDefinitionKey);
             writer.WriteStringValue("workflowInstanceId", WorkflowInstanceId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithTakeoffTypeGetResponse : IParsable
+    public partial class WithTakeoffTypeGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The color of the takeoff type as it appears on the sheet or model.A color is represented by a value consisting of 6 or 8 hexadecimal digits, prefixed with a hash (#) symbol. In the 6-digit notation, the first pair of digits represent the red channel, the middle pair of digits represent the green channel and the last pair of digits represent the blue channel. The color is completely opaque.The 8-digit notation follows the structure of the 6-digit notation, where the additional last 2-digits represent the alpha channel (`00` is transparent and `ff` is fully opaque).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +99,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
         public string UpdatedByName { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithTakeoffTypeGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse"/></returns>
@@ -153,6 +162,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_tool>("tool", Tool);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedByName", UpdatedByName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

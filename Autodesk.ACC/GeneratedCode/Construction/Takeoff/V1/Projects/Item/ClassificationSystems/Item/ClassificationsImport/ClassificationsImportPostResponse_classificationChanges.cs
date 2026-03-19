@@ -9,15 +9,24 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ClassificationsImportPostResponse_classificationChanges : IParsable
+    public partial class ClassificationsImportPostResponse_classificationChanges : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of classifications added by the import.</summary>
         public int? Added { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of classifications deleted by the import.</summary>
         public int? Deleted { get; set; }
         /// <summary>The number of classifications modified by the import.</summary>
         public int? Modified { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.ClassificationsImport.ClassificationsImportPostResponse_classificationChanges"/> and sets the default values.
+        /// </summary>
+        public ClassificationsImportPostResponse_classificationChanges()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,6 +60,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
             writer.WriteIntValue("added", Added);
             writer.WriteIntValue("deleted", Deleted);
             writer.WriteIntValue("modified", Modified);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

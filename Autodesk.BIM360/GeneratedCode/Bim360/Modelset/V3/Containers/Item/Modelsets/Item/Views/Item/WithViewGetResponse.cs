@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithViewGetResponse : IParsable
+    public partial class WithViewGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the user or service that created the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,13 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         /// <summary>The GUID that uniquely identifies the view.</summary>
         public Guid? ViewId { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithViewGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse"/></returns>
@@ -105,6 +114,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
             writer.WriteDateTimeOffsetValue("modifiedTime", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("viewId", ViewId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

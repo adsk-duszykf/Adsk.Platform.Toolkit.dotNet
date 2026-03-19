@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ClosedGetResponse : IParsable
+    public partial class ClosedGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of clash groups intersected with the specified clash test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +34,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
 #else
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse_page Page { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse"/> and sets the default values.
+        /// </summary>
+        public ClosedGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
             writer.WriteGuidValue("modelSetId", ModelSetId);
             writer.WriteIntValue("modelSetVersion", ModelSetVersion);
             writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse_page>("page", Page);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

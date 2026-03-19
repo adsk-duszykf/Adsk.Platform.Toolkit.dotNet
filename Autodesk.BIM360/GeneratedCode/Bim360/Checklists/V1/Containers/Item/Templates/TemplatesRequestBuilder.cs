@@ -53,34 +53,15 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse?> GetAsTemplatesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse> GetAsTemplatesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) templates in a project, including details about the items, sections, and attachments in the template.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsTemplatesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) templates in a project, including details about the items, sections, and attachments in the template.
@@ -136,27 +117,8 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             [QueryParameter("page%5Boffset%5D")]
             public double? Pageoffset { get; set; }
             /// <summary>Sort the template by `title` or `templateType.name` or `templateTypeName`. For example, `sort=title`. Separate multiple values with commas. To sort in descending order add a `-` before the sort criteria. For example, `sort=-title`. For more details, see [JSON API Sorting](http://jsonapi.org/format/#fetching-sorting).Possible values: `templateType.name`, `title`</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sort the template by `title` or `templateType.name` or `templateTypeName`. For example, `sort=title`. Separate multiple values with commas. To sort in descending order add a `-` before the sort criteria. For example, `sort=-title`. For more details, see [JSON API Sorting](http://jsonapi.org/format/#fetching-sorting).Possible values: `templateType.name`, `title`</summary>
-            [QueryParameter("sort")]
-            public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>
-        {
+            public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

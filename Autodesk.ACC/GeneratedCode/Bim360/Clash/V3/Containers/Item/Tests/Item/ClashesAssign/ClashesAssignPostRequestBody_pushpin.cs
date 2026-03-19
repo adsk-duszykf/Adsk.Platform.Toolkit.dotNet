@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
     /// An issue push pin object, which describes a visual marker to place an issue on the 3D model.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ClashesAssignPostRequestBody_pushpin : IParsable
+    public partial class ClashesAssignPostRequestBody_pushpin : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of the data described in the viewer state property.</summary>
         public int? AttributesVersion { get; set; }
         /// <summary>The external ID (for example, derived from the Revit ID) of the object in the viewer to link with this issue.</summary>
@@ -43,6 +45,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
 #else
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_pushpin_viewerState ViewerState { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_pushpin"/> and sets the default values.
+        /// </summary>
+        public ClashesAssignPostRequestBody_pushpin()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,6 +91,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign
             writer.WriteIntValue("objectId", ObjectId);
             writer.WriteEnumValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_pushpin_type>("type", Type);
             writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_pushpin_viewerState>("viewerState", ViewerState);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class StreamConfigsGetResponse_streamSettings_calculationSettings_Asterisk_vars_Asterisk : IParsable
+    public partial class StreamConfigsGetResponse_streamSettings_calculationSettings_Asterisk_vars_Asterisk : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>in milliseconds</summary>
         public int? MaxLookback { get; set; }
         /// <summary>The sourceIdentifiers property</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs
 #else
         public List<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.StreamConfigsGetResponse_streamSettings_calculationSettings_Asterisk_vars_Asterisk_sourceIdentifiers> SourceIdentifiers { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.StreamConfigsGetResponse_streamSettings_calculationSettings_Asterisk_vars_Asterisk"/> and sets the default values.
+        /// </summary>
+        public StreamConfigsGetResponse_streamSettings_calculationSettings_Asterisk_vars_Asterisk()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maxLookback", MaxLookback);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.StreamConfigsGetResponse_streamSettings_calculationSettings_Asterisk_vars_Asterisk_sourceIdentifiers>("sourceIdentifiers", SourceIdentifiers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

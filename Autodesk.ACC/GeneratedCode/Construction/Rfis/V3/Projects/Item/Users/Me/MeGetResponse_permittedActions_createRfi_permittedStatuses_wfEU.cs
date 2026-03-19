@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU : IParsable
+    public partial class MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of users that can be assigned to this RFI.</summary>
         public int? MaxAssignees { get; set; }
         /// <summary>The list of attributes that the user is optionally allowed to include when updating or creating the RFI in the specified status.</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #endif
         /// <summary>The current response status of the RFI for a multi-reviewer workflow (EMEA):Possible values:`draft`, `submitted`, `openRev1` (manager), `openRev2` (reviewer), `answeredRev1`, `answeredManager`, `closed`, `void`.For more information about workflows, see [About RFI Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU_permittedAttributes>("permittedAttributes", PermittedAttributes);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU_requiredAttributes>("requiredAttributes", RequiredAttributes);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

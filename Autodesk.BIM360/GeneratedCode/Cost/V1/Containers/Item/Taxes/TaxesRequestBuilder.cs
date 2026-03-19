@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Taxes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesGetResponse?> GetAsTaxesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesGetResponse> GetAsTaxesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of tax formulas associated with specific cost objects in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsTaxesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of tax formulas associated with specific cost objects in the given project.
@@ -114,19 +95,8 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Taxes
             public string[] AssociationId { get; set; }
 #endif
             /// <summary>Specifies the category of the object the tax is associated with.Possible values:- `Contract`- `MainContract`- `BudgetPayment`- `CostPayment`- `OCO` (Owner Change Order)- `SCO` (Subcontractor Change Order)- `PCO` (Potential Change Order)- `RFQ` (Request for Quote)- `RCO` (Request for Change Order)</summary>
-            [Obsolete("This property is deprecated, use AssociationTypeAsGetAssociationTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("associationType")]
-            public string? AssociationType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("associationType")]
-            public string AssociationType { get; set; }
-#endif
-            /// <summary>Specifies the category of the object the tax is associated with.Possible values:- `Contract`- `MainContract`- `BudgetPayment`- `CostPayment`- `OCO` (Owner Change Order)- `SCO` (Subcontractor Change Order)- `PCO` (Potential Change Order)- `RFQ` (Request for Quote)- `RCO` (Request for Change Order)</summary>
-            [QueryParameter("associationType")]
-            public global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.GetAssociationTypeQueryParameterType? AssociationTypeAsGetAssociationTypeQueryParameterType { get; set; }
+            public global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.GetAssociationTypeQueryParameterType? AssociationType { get; set; }
             /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -143,14 +113,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Taxes
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TaxesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Taxes.TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRfiPatchResponse : IParsable
+    public partial class WithRfiPatchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time when the official response to the RFI was submitted, in ISO 8601 format (`YYYY-MM-DDThh:mm:ss.sZ`).Empty when creating an RFI.</summary>
         public DateTimeOffset? AnsweredAt { get; set; }
         /// <summary>The Autodesk ID of the user who submitted the official response to the RFI.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).Empty when creating an RFI.</summary>
@@ -359,6 +361,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
         /// <summary>The workflow type assigned to the RFI, which determines the allowed status transitions and the review path.Possible values:- `US`: Single-reviewer workflow- `EU`: Multi-reviewer workflowThis value affects how statuses like `submitted`, `openRev1`, or `answeredManager` behave.For status definitions, see the `status` and `previousStatus` fields.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_workflowType? WorkflowType { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse"/> and sets the default values.
+        /// </summary>
+        public WithRfiPatchResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse"/></returns>
@@ -497,6 +506,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
             writer.WriteStringValue("virtualFolderUrn", VirtualFolderUrn);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_watchers>("watchers", Watchers);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_workflowType>("workflowType", WorkflowType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

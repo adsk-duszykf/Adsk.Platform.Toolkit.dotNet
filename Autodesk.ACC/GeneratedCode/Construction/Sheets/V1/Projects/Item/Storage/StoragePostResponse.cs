@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class StoragePostResponse : IParsable
+    public partial class StoragePostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the storage.Note that in Sheets each project has its own OSS bucket,it is recommended to extract bucket key from storage URN every time before you call OSS APIs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StoragePostResponse"/> and sets the default values.
+        /// </summary>
+        public StoragePostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

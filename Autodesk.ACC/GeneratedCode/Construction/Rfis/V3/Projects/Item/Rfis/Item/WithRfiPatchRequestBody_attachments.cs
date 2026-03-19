@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRfiPatchRequestBody_attachments : IParsable
+    public partial class WithRfiPatchRequestBody_attachments : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that this attachment is part of the final official response. Will always be `rfiOfficialResponse`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_attachments_attachmentType? AttachmentType { get; set; }
         /// <summary>The name shown for the attachment in the UI. If omitted, the UI displays the `fileName`.</summary>
@@ -38,6 +40,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public string StorageUrn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchRequestBody_attachments"/> and sets the default values.
+        /// </summary>
+        public WithRfiPatchRequestBody_attachments()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteStringValue("storageUrn", StorageUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

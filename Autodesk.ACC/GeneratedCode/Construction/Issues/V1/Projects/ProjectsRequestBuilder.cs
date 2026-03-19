@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects
                 return new global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.Use the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/) to retrieve the project ID. For more information, see the [Retrieve a Project ID](https://forge.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial. You need to convert the project ID into a project ID for the ACC API by removing the `b.` prefix. For example, a project ID of `b.a4be0c34a-4ab7` translates to a project ID of a4be0c34a-4ab7.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("projectId", position);
-                return new global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.ProjectsRequestBuilder"/> and sets the default values.
         /// </summary>

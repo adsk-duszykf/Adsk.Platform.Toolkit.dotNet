@@ -9,9 +9,11 @@ namespace Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsIn
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WorkitemsStartAfterTimeEpochSecondsInUTCGetResponse_data : IParsable
+    public partial class WorkitemsStartAfterTimeEpochSecondsInUTCGetResponse_data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The WorkItem id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsIn
 #endif
         /// <summary>The last modified time stamp of the WorkItem id in the epoch seconds of UTC.</summary>
         public int? LastModifiedInUTCEpochSecond { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsInUTC.WorkitemsStartAfterTimeEpochSecondsInUTCGetResponse_data"/> and sets the default values.
+        /// </summary>
+        public WorkitemsStartAfterTimeEpochSecondsInUTCGetResponse_data()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsIn
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("lastModifiedInUTCEpochSecond", LastModifiedInUTCEpochSecond);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

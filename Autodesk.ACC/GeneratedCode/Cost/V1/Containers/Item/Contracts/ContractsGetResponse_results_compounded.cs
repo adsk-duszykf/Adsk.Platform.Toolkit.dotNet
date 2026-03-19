@@ -11,8 +11,17 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts
     /// The calculated values based on the contract&apos;s customized columns.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ContractsGetResponse_results_compounded : IParsable
+    public partial class ContractsGetResponse_results_compounded : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.ContractsGetResponse_results_compounded"/> and sets the default values.
+        /// </summary>
+        public ContractsGetResponse_results_compounded()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

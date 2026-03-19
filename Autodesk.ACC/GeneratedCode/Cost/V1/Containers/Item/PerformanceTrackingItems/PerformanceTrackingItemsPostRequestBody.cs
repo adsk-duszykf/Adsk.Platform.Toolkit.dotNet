@@ -9,11 +9,20 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PerformanceTrackingItemsPostRequestBody : IParsable
+    public partial class PerformanceTrackingItemsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique ID of the budget from which to create the performance tracking item. To find the budget ID, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.id` in the response.</summary>
         public Guid? BudgetId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.PerformanceTrackingItemsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public PerformanceTrackingItemsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +52,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("budgetId", BudgetId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

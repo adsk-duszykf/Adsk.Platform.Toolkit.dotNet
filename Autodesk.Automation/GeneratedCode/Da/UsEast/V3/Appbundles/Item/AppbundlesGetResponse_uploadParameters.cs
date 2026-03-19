@@ -11,8 +11,10 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item
     /// The parameters needed to POST an AppBundle.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AppbundlesGetResponse_uploadParameters : IParsable
+    public partial class AppbundlesGetResponse_uploadParameters : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URL to upload the AppBundle package to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item
 #else
         public global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse_uploadParameters_formData FormData { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse_uploadParameters"/> and sets the default values.
+        /// </summary>
+        public AppbundlesGetResponse_uploadParameters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpointURL", EndpointURL);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse_uploadParameters_formData>("formData", FormData);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

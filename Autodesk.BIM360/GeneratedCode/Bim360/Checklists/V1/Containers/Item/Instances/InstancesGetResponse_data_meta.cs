@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
     /// The meta object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_data_meta : IParsable
+    public partial class InstancesGetResponse_data_meta : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of items in all the sections of the checklist.</summary>
         public double? TotalItems { get; set; }
         /// <summary>The number of required checklist-level signatures. For information about section-level signatures, see `included[].attributes.signatures`.</summary>
@@ -23,6 +25,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
         public double? TotalSignedSignatures { get; set; }
         /// <summary>The number of unsigned checklist-level signatures in the checklist. For information about section-level signatures, see `included[].attributes.signatures`.</summary>
         public double? TotalUnsignedSignatures { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_meta"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_data_meta()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             writer.WriteDoubleValue("totalSections", TotalSections);
             writer.WriteDoubleValue("totalSignedSignatures", TotalSignedSignatures);
             writer.WriteDoubleValue("totalUnsignedSignatures", TotalUnsignedSignatures);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

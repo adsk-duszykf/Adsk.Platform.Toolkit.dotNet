@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SmartregisterGetResponse : IParsable
+    public partial class SmartregisterGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The division code associated with the submittal. This is the equivalent to the *Division* column in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +107,13 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
         public string VersionName { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse"/> and sets the default values.
+        /// </summary>
+        public SmartregisterGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse"/></returns>
@@ -157,6 +166,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse_targetGroup>("targetGroup", TargetGroup);
             writer.WriteStringValue("userNotes", UserNotes);
             writer.WriteStringValue("versionName", VersionName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

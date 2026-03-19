@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ScheduleOfValuesPostResponse : IParsable
+    public partial class ScheduleOfValuesPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total price of the SOV item.</summary>
         public double? Amount { get; set; }
         /// <summary>The ID of a change order or cost item that this SOV item was originally created from.</summary>
@@ -125,6 +127,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.ScheduleOfValuesPostResponse"/> and sets the default values.
+        /// </summary>
+        public ScheduleOfValuesPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.ScheduleOfValuesPostResponse"/></returns>
@@ -197,6 +206,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

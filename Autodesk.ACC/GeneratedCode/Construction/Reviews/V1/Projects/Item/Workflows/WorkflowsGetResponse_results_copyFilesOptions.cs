@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
     /// (`Copy approved files` in the UI) The configuration for copying approved files to a target folder when the review is complete.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowsGetResponse_results_copyFilesOptions : IParsable
+    public partial class WorkflowsGetResponse_results_copyFilesOptions : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(`Allow the initiator to change the target folder` in the UI)  Allows the initiator to change the target folder when creating a review.`true`: the initiator can choose a different target folder.`false`: the folder defined in the workflow is used.</summary>
         public bool? AllowOverride { get; set; }
         /// <summary>(`All/Any files in the review have been approved` in the UI)Specifies the condition under which approved files will be copied.Possible values:`ANY`: copy files if at least one file in the review is approved.`ALL`: copy files only if all files in the review are approved.</summary>
@@ -37,6 +39,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #endif
         /// <summary>(`Include all published markups on approved files` in the UI)Indicates whether published markups should be included when copying files.`true`: include all published (unarchived) markups from the source version.`false`: (default) do not include markups.</summary>
         public bool? IncludeMarkups { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results_copyFilesOptions"/> and sets the default values.
+        /// </summary>
+        public WorkflowsGetResponse_results_copyFilesOptions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,6 +85,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("folderUrn", FolderUrn);
             writer.WriteBoolValue("includeMarkups", IncludeMarkups);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

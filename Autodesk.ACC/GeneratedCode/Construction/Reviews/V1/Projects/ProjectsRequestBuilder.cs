@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects
                 return new global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.reviews.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.Use the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/) to retrieve the project ID. For more information, see the [Retrieve a Project ID](https://forge.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial. You can provide the project ID with or without the `b.` prefix.- Example with prefix: **b.563a4c30-e30d-4869-ac02-2a18b6447abe**- Example without prefix: **563a4c30-e30d-4869-ac02-2a18b6447abe**</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("projectId", position);
-                return new global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.ProjectsRequestBuilder"/> and sets the default values.
         /// </summary>

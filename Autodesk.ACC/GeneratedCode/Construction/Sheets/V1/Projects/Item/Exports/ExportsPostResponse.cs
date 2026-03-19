@@ -9,13 +9,22 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ExportsPostResponse : IParsable
+    public partial class ExportsPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the export job. Use the ID to poll [GET exports/:exportId](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-exports-exportId-GET/) to check the job&apos;s status. When the job is complete, you can retrieve the data you need to download the exported sheets.</summary>
         public Guid? Id { get; set; }
         /// <summary>The status of the export job; will always be: `processing`</summary>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse"/> and sets the default values.
+        /// </summary>
+        public ExportsPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

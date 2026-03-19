@@ -27,19 +27,6 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards
                 return new global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.bim360.docs.v1.projects.item.namingStandards.item collection</summary>
-        /// <param name="position">The ID of the file naming standard.The file naming standard is applied to the project files folder or its subfolders. To find the ID:- For the project files folder, call [GET hubs/:hub_id/projects/:project_id/topFolders](https://aps.autodesk.com/en/docs/data/v2/reference/http/hubs-hub_id-projects-project_id-topFolders-GET/).- For subfolders, call [GET projects/:project_id/folders/:folder_id/contents](https://aps.autodesk.com/en/docs/data/v2/reference/http/projects-project_id-folders-folder_id-contents-GET/).- For a specific folder, call [GET projects/:project_id/folders/:folder_id](https://aps.autodesk.com/en/docs/data/v2/reference/http/projects-project_id-folders-folder_id-GET/).The ID is under `data.attributes.extension.data.namingStandardIds`.</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("id", position);
-                return new global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.NamingStandardsRequestBuilder"/> and sets the default values.
         /// </summary>

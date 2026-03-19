@@ -9,15 +9,24 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsGetResponse_pagination : IParsable
+    public partial class AttachmentsGetResponse_pagination : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The limit property</summary>
         public int? Limit { get; set; }
         /// <summary>The offset property</summary>
         public int? Offset { get; set; }
         /// <summary>The totalResults property</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public AttachmentsGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,6 +60,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

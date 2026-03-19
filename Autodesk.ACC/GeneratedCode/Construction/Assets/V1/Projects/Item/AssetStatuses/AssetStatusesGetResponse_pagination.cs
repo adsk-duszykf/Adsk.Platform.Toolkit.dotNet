@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatuses
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssetStatusesGetResponse_pagination : IParsable
+    public partial class AssetStatusesGetResponse_pagination : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An opaque cursor token that identifies where the next page of paginated results should start. It&apos;sreturned in each paginated response so that it can be supplied in the next request to continue paginatedresults. If a paginated response contains no `cursorState` value, then there are no further pages toreturn.Omit this field to initiate a paginated request or to restart pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatuses
 #else
         public string NextUrl { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public AssetStatusesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.AssetStatuses
             writer.WriteStringValue("cursorState", CursorState);
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("nextUrl", NextUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects
                 return new global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.index.v2.projects.item collection</summary>
-        /// <param name="position">The project ID.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.WithProjectItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.WithProjectItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("projectId", position);
-                return new global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.ProjectsRequestBuilder"/> and sets the default values.
         /// </summary>

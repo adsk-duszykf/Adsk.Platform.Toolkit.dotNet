@@ -11,8 +11,17 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
     /// The viewer state at the time the pushpin was created max length of 2,500,000 charecters. You can get the viewer state object by calling the ViewerState.getState() API. To restore the viewer instance use ViewerState.restoreState(). See Viewer API documentation here https://developer.autodesk.com/en/docs/viewer/v2/reference/javascript/viewerstate/
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssuesPostRequestBody_linkedDocuments_details_viewerState : IParsable
+    public partial class IssuesPostRequestBody_linkedDocuments_details_viewerState : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody_linkedDocuments_details_viewerState"/> and sets the default values.
+        /// </summary>
+        public IssuesPostRequestBody_linkedDocuments_details_viewerState()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

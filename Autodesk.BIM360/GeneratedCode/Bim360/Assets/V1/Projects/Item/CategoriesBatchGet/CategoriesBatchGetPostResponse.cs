@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoriesBatchGet
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CategoriesBatchGetPostResponse : IParsable
+    public partial class CategoriesBatchGetPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Returned categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoriesBatchGet
 #else
         public List<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetPostResponse_results> Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetPostResponse"/> and sets the default values.
+        /// </summary>
+        public CategoriesBatchGetPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoriesBatchGet
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetPostResponse_results>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

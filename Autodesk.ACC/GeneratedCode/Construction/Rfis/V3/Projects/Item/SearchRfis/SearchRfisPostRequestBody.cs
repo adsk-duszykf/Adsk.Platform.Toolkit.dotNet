@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchRfisPostRequestBody : IParsable
+    public partial class SearchRfisPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify which attributes to include in the response.Use this to limit the response to only the fields you need.For example, `fields=id, title`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_sort> Sort { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public SearchRfisPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,6 +96,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
             writer.WriteIntValue("offset", Offset);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_sort>("sort", Sort);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

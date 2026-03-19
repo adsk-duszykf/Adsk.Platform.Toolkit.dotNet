@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithExportGetResponse : IParsable
+    public partial class WithExportGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the PDF export job.</summary>
         public Guid? Id { get; set; }
         /// <summary>The result of a completed export job:- If the exporting job&apos;s `status` value is `successful`, the downloadable signed url will be included in the `result.output` object- If the exporting job&apos;s `status` value is `failed` (e.g. the files have been deleted), the `result.error` object will be present with details.- If the exporting job&apos;s `status` value is `partialSuccess` (e.g. when some dwg/rvt files do not contain any exportable views or sheets), the `result.output.failedFiles` object will be present with file urn and reason.</summary>
@@ -30,6 +32,13 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithExportGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>("result", Result);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

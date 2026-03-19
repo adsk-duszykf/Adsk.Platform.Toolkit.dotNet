@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssuesPostRequestBody : IParsable
+    public partial class IssuesPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Autodesk ID of the member, role or company you want to assign to the issue. Note that if you select an assignee ID, you also need to select a type (`assignedToType`).We do not currently provide endpoints to programmatically find the member, role, or company IDs that you are permitted to assign to the issue. We recommend using the Data Connector API to extract the permitted IDs. See the [Retrieve Available Members Roles and Companies](https://aps.autodesk.com/en/docs/acc/v1/tutorials/issues/retrieve-available-members-roles-companies) tutorial for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +125,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
         public List<string> Watchers { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public IssuesPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody"/></returns>
@@ -187,6 +196,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody_status>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfPrimitiveValues<string>("watchers", Watchers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

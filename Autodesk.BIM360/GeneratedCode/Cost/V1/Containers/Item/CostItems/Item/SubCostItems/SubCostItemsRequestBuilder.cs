@@ -29,19 +29,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
                 return new global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.costItems.item.subCostItems.item collection</summary>
-        /// <param name="position">The ID of the sub cost item to be updated. To find the sub cost item ID, call [GET sub-cost-items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("subCostItemsId", position);
-                return new global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsGetResponse?> GetAsSubCostItemsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder.SubCostItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder.SubCostItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsGetResponse> GetAsSubCostItemsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder.SubCostItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder.SubCostItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves sub cost items associated with a specific cost item in a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsSubCostItemsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder.SubCostItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder.SubCostItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a sub cost item within a specific cost item in a project. Sub cost items store detailed cost breakdowns and can be used for tracking and categorization.
@@ -104,37 +72,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse?> PostAsSubCostItemsPostResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse?> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse> PostAsSubCostItemsPostResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a sub cost item within a specific cost item in a project. Sub cost items store detailed cost breakdowns and can be used for tracking and categorization.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsSubCostItemsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse?> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves sub cost items associated with a specific cost item in a project.
@@ -193,19 +140,8 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         public partial class SubCostItemsRequestBuilderGetQueryParameters 
         {
             /// <summary>The type of the value to break down.Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`</summary>
-            [Obsolete("This property is deprecated, use FiltertypeAsGetFilterTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filter%5Btype%5D")]
-            public string? Filtertype { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filter%5Btype%5D")]
-            public string Filtertype { get; set; }
-#endif
-            /// <summary>The type of the value to break down.Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`</summary>
-            [QueryParameter("filter%5Btype%5D")]
-            public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.GetFilterTypeQueryParameterType? FiltertypeAsGetFilterTypeQueryParameterType { get; set; }
+            public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.GetFilterTypeQueryParameterType? Filtertype { get; set; }
             /// <summary>The maximum number of records returned per page. Default: `100`. A page may contain fewer records than the limit if there are fewer matching items or if it is the last page of results.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -222,22 +158,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SubCostItemsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsRequestBuilder.SubCostItemsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SubCostItemsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

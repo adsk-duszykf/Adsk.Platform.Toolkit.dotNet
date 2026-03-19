@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class StatusStepSetsPostRequestBody_values : IParsable
+    public partial class StatusStepSetsPostRequestBody_values : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The color of the status as the status appears in the Assets UI.This field is not restricted as it is primarily a tool for the Assets UI to use.However, there are only certain colors that the Autodesk Construction Cloud Assets UI knows how tooperate with. Understood color values are: `adsk-black`, `adsk-white`, `adsk-charcoal-900`,`adsk-charcoal-800`, `adsk-charcoal-700`, `adsk-charcoal-600`, `adsk-charcoal-500`,`adsk-charcoal-400`, `adsk-charcoal-300`, `adsk-charcoal-200`, `adsk-charcoal-100`,`adsk-charcoal-050`, `adsk-blue-700`, `adsk-blue-500`, `adsk-blue-300`, `adsk-blue-100`,`adsk-red-700`, `adsk-red-500`, `adsk-red-300`, `adsk-green-700`, `adsk-green-500`,`adsk-green-300`, `adsk-yellow-orange-700`, `adsk-yellow-orange-500`, `adsk-yellow-orange-300`,`adsk-dark-blue-700`, `adsk-dark-blue-500`, `adsk-dark-blue-300`, `adsk-pink-700`,`adsk-pink-500`, `adsk-pink-300`, `adsk-turquoise-700`, `adsk-turquoise-500`,`adsk-turquoise-300`, `adsk-purple-700`, `adsk-purple-500`, `adsk-purple-300`,`adsk-salmon-700`, `adsk-salmon-500`, `adsk-salmon-300`, `adsk-brown-700`, `adsk-brown-500`,`adsk-brown-300`.Using colors other than those specified here is not disallowed, but may result in unexpected behavior inthe Assets UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostRequestBody_values"/> and sets the default values.
+        /// </summary>
+        public StatusStepSetsPostRequestBody_values()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("label", Label);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

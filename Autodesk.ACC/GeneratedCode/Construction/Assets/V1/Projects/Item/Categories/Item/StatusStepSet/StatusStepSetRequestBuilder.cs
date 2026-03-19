@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Stat
                 return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.assets.v1.projects.item.categories.item.statusStepSet.item collection</summary>
-        /// <param name="position">The status set ID</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("statusStepSetId", position);
-                return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.StatusStepSetRequestBuilder"/> and sets the default values.
         /// </summary>

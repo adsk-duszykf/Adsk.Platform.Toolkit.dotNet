@@ -9,11 +9,20 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithAttachmentPatchRequestBody : IParsable
+    public partial class WithAttachmentPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the attachment upload is complete.Set this field to `true` once the file upload is finished.`true`: the attachment upload is complete.`false`: (default) the attachment upload is still in progress or pending completion.</summary>
         public bool? IsFileUploaded { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithAttachmentPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +52,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isFileUploaded", IsFileUploaded);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

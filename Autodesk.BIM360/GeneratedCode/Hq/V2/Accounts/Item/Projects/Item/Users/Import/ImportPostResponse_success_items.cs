@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ImportPostResponse_success_items : IParsable
+    public partial class ImportPostResponse_success_items : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account_id property</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
 #else
         public string AccountId { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The company_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +71,13 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
         public string UserId { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_success_items"/> and sets the default values.
+        /// </summary>
+        public ImportPostResponse_success_items()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_success_items"/></returns>
@@ -109,6 +118,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteObjectValue<global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_success_items_services>("services", Services);
             writer.WriteStringValue("user_id", UserId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

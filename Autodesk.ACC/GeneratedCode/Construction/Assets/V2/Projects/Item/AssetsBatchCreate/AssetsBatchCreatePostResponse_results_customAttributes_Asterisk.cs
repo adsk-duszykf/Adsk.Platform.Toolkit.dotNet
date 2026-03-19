@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssetsBatchCreatePostResponse_results_customAttributes_Asterisk : IParsable
+    public partial class AssetsBatchCreatePostResponse_results_customAttributes_Asterisk : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of String values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
 #else
         public string Zero { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostResponse_results_customAttributes_Asterisk"/> and sets the default values.
+        /// </summary>
+        public AssetsBatchCreatePostResponse_results_customAttributes_Asterisk()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
             writer.WriteCollectionOfPrimitiveValues<string>("1", One);
             writer.WriteBoolValue("2", Two);
             writer.WriteStringValue("0", Zero);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

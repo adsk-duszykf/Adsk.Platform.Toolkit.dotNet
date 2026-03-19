@@ -9,15 +9,24 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VersionsGetResponse_modelSetVersions : IParsable
+    public partial class VersionsGetResponse_modelSetVersions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time that the model set version was created.</summary>
         public DateTimeOffset? CreateTime { get; set; }
         /// <summary>The creation status of the model set version. Possible values: `Pending`, `Processing`, `Successful`, `Partial`, `Failed`.</summary>
         public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse_modelSetVersions_status? Status { get; set; }
         /// <summary>The model set version number.</summary>
         public int? Version { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse_modelSetVersions"/> and sets the default values.
+        /// </summary>
+        public VersionsGetResponse_modelSetVersions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,6 +60,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
             writer.WriteDateTimeOffsetValue("createTime", CreateTime);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse_modelSetVersions_status>("status", Status);
             writer.WriteIntValue("version", Version);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects
                 return new global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.transmittals.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.You can retrieve the project ID using the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). For more details, see the [Retrieve a Project ID](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial.You may provide the project ID with or without the `b.` prefix:- With prefix: `b.657a5565-09b7-48e0-bd03-acacfe42efaf`- Without prefix: `657a5565-09b7-48e0-bd03-acacfe42efaf`</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("projectId", position);
-                return new global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.ProjectsRequestBuilder"/> and sets the default values.
         /// </summary>

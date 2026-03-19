@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithContractGetResponse : IParsable
+    public partial class WithContractGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The total amount of actual cost of the contract.</summary>
@@ -22,6 +22,8 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
 #else
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse_additionalContacts AdditionalContacts { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time of contract approval, in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -461,6 +463,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
         /// <summary>The total amount of the variance of a budget, equals to `projectedBudget` - `projectedCost`.</summary>
         public double? VarianceTotal { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithContractGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse"/></returns>
@@ -647,6 +656,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
             writer.WriteDoubleValue("uncommitted", Uncommitted);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteDoubleValue("varianceTotal", VarianceTotal);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

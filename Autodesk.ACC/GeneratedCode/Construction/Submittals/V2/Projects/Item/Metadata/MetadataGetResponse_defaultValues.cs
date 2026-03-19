@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
     /// An object containing the default values for various settings and configurations in the project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MetadataGetResponse_defaultValues : IParsable
+    public partial class MetadataGetResponse_defaultValues : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Autodesk ID of the user who is assigned as the manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,6 +43,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues_watchers> Watchers { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues"/> and sets the default values.
+        /// </summary>
+        public MetadataGetResponse_defaultValues()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,6 +87,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse_defaultValues_watchers>("watchers", Watchers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

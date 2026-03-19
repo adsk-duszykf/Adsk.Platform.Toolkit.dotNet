@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ResourcesGetResponse_resources : IParsable
+    public partial class ResourcesGetResponse_resources : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The file extension used by the clash test resource. Possible values: `json.gz`, `sqlite`.</summary>
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesGetResponse_resources_extension? Extension { get; set; }
         /// <summary>The headers used to retrieve the clash test resource.</summary>
@@ -40,6 +42,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
 #endif
         /// <summary>The time in UTC that the request will stop working.</summary>
         public DateTimeOffset? ValidUntil { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesGetResponse_resources"/> and sets the default values.
+        /// </summary>
+        public ResourcesGetResponse_resources()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,6 +86,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteDateTimeOffsetValue("validUntil", ValidUntil);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

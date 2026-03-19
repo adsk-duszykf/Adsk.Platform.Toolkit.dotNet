@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
     /// some higher level diff statistics.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DiffsBatchStatusPostResponse_diffs_stats : IParsable
+    public partial class DiffsBatchStatusPostResponse_diffs_stats : IAdditionalDataHolder, IParsable
     {
         /// <summary>number of objects added.</summary>
         public int? Added { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>number of objects modified.</summary>
         public int? Modified { get; set; }
         /// <summary>number of objects removed.</summary>
         public int? Removed { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse_diffs_stats"/> and sets the default values.
+        /// </summary>
+        public DiffsBatchStatusPostResponse_diffs_stats()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
             writer.WriteIntValue("added", Added);
             writer.WriteIntValue("modified", Modified);
             writer.WriteIntValue("removed", Removed);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

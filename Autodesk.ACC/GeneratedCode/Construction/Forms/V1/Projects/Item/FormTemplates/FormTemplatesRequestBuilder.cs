@@ -53,34 +53,15 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse?> GetAsFormTemplatesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesRequestBuilder.FormTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesRequestBuilder.FormTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse> GetAsFormTemplatesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesRequestBuilder.FormTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesRequestBuilder.FormTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns all project&apos;s form templates the user has access to.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsFormTemplatesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesRequestBuilder.FormTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesRequestBuilder.FormTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesResponse>(requestInfo, global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all project&apos;s form templates the user has access to.
@@ -123,33 +104,14 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>Return Templates in specified sorted order.Possible values: `desc`, `asc`</summary>
-            [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sortOrder")]
-            public string? SortOrder { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sortOrder")]
-            public string SortOrder { get; set; }
-#endif
-            /// <summary>Return Templates in specified sorted order.Possible values: `desc`, `asc`</summary>
-            [QueryParameter("sortOrder")]
-            public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.GetSortOrderQueryParameterType? SortOrder { get; set; }
             /// <summary>Return Templates updated after specified time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
             /// <summary>Return Templates updated before specified time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FormTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesRequestBuilder.FormTemplatesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

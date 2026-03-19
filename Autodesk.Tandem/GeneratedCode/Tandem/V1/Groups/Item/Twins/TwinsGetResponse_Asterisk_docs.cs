@@ -9,7 +9,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TwinsGetResponse_Asterisk_docs : IParsable
+    public partial class TwinsGetResponse_Asterisk_docs : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Optional account ID of Autodesk Docs where original document is stored</summary>
@@ -44,6 +44,8 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 #else
         public string AccVersion { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>content type (i.e. application/pdf)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +105,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         /// <summary>Optional readability of a document</summary>
         public bool? UploadPending { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk_docs"/> and sets the default values.
+        /// </summary>
+        public TwinsGetResponse_Asterisk_docs()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse_Asterisk_docs"/></returns>
@@ -153,6 +162,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
             writer.WriteStringValue("s3Path", S3Path);
             writer.WriteStringValue("signedLink", SignedLink);
             writer.WriteBoolValue("uploadPending", UploadPending);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

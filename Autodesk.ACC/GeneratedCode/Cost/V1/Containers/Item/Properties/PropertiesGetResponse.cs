@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Properties
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PropertiesGetResponse : IParsable
+    public partial class PropertiesGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A true/false flag to indicate whether this is a pre-defined attribute or not.</summary>
         public bool? BuiltIn { get; set; }
         /// <summary>Not relevant</summary>
@@ -63,6 +65,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Properties
         /// <summary>Type of the attribute definition.Possible values: `text`, `multiline`, `richtext`, `options`, `boolean`, `integer`, `percent`, `currency`, `number`, `datetime`</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Properties.PropertiesGetResponse_type? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Properties.PropertiesGetResponse"/> and sets the default values.
+        /// </summary>
+        public PropertiesGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Properties.PropertiesGetResponse"/></returns>
@@ -109,6 +118,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Properties
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
             writer.WriteDoubleValue("position", Position);
             writer.WriteEnumValue<global::Autodesk.ACC.Cost.V1.Containers.Item.Properties.PropertiesGetResponse_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

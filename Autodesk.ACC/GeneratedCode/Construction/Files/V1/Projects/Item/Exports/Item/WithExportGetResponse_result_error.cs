@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
     /// The error codes could be&lt;br&gt;1. ERR_WORKFLOW_TIMEOUT, when the export job runs more than 30 minutes.&lt;br&gt;2. ERR_INTERNAL_SERVER_ERROR, when other internal server error happens.&lt;br&gt;3. ERR_NO_PROCESSABLE_FILES, when all dwg/rvt files do not contain any 2d pdf files.&lt;br&gt;4. ERR_FILE_TOO_LARGE, when the total size of exported files exceeds the upper limit.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithExportGetResponse_result_error : IParsable
+    public partial class WithExportGetResponse_result_error : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The HTTP code of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 #else
         public string Title { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result_error"/> and sets the default values.
+        /// </summary>
+        public WithExportGetResponse_result_error()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("title", Title);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DiffsBatchStatusPostResponse_diffs_errors_errors : IParsable
+    public partial class DiffsBatchStatusPostResponse_diffs_errors_errors : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A more detailed, human readable description of the error, assuming that this message is not localized and is therefore EN-US. UI consumers can use the error.type value to provide a localized version of this error for presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse_diffs_errors_errors"/> and sets the default values.
+        /// </summary>
+        public DiffsBatchStatusPostResponse_diffs_errors_errors()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
             writer.WriteStringValue("field", Field);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -41,19 +41,6 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies
                 return new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.hq.v1.accounts.item.companies.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("company_id", position);
-                return new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -78,34 +65,15 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse?> GetAsCompaniesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse> GetAsCompaniesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Query all the partner companies in a specific BIM 360 account.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCompaniesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new partner company.
@@ -116,37 +84,16 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse?> PostAsCompaniesPostResponseAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse?> PostAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse> PostAsCompaniesPostResponseAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse> PostAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Create a new partner company.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsCompaniesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse?> PostAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse> PostAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Query all the partner companies in a specific BIM 360 account.
@@ -226,22 +173,6 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CompaniesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CompaniesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

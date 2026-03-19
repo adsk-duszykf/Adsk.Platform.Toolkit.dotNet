@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssueAttributeDefinitionsGetResponse_results : IParsable
+    public partial class IssueAttributeDefinitionsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the container.</summary>
         public Guid? ContainerId { get; set; }
         /// <summary>The date and time the custom attribute was created, in the following format: YYYY-MM-DDThh:mm:ss.sz.</summary>
@@ -91,6 +93,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
         public string UpdatedBy { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public IssueAttributeDefinitionsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results"/></returns>
@@ -147,6 +156,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

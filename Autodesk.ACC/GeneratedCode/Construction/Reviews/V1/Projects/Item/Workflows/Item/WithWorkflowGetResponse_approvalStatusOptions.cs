@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithWorkflowGetResponse_approvalStatusOptions : IParsable
+    public partial class WithWorkflowGetResponse_approvalStatusOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the approval status is a built-in option.`true`: the status is built in (e.g., `APPROVED`, `REJECTED`).`false`: the status is a custom option created by a user.</summary>
         public bool? BuiltIn { get; set; }
         /// <summary>The unique identifier of this approval status entry in the workflow.</summary>
@@ -26,6 +28,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
 #endif
         /// <summary>The value representing the approval outcome. Possible values: `APPROVED`, `REJECTED`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowGetResponse_approvalStatusOptions_value? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowGetResponse_approvalStatusOptions"/> and sets the default values.
+        /// </summary>
+        public WithWorkflowGetResponse_approvalStatusOptions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowGetResponse_approvalStatusOptions_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

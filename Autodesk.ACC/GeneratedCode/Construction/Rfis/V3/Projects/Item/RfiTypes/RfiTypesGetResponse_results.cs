@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfiTypesGetResponse_results : IParsable
+    public partial class RfiTypesGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +129,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
         /// <summary>The workflow type used for this RFI type.Possible values:- `US`: The US-style workflow, with a Reviewer and optional Manager.- `EU`: The EU-style workflow, with a Project Coordinator and Project Reviewer.The workflow type determines the available statuses and workflow roles for RFIs of this type.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_wfType? WfType { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public RfiTypesGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results"/></returns>
@@ -189,6 +198,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_status>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_watchers>("watchers", Watchers);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_wfType>("wfType", WfType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

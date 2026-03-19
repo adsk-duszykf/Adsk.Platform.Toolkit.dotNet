@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithIssueGetResponse_links : IParsable
+    public partial class WithIssueGetResponse_links : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A custom object describing the entity link data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #endif
         /// <summary>The type of the entity link Will always be: `checklist`</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_links_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_links"/> and sets the default values.
+        /// </summary>
+        public WithIssueGetResponse_links()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_links_data>("data", Data);
             writer.WriteEnumValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_links_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

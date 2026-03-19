@@ -9,9 +9,11 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VersionsPostRequestBody : IParsable
+    public partial class VersionsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A module referenced by an Activity in order to perform specific functions. Typically this is a DLL or some other form of custom code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions
 #else
         public global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.VersionsPostRequestBody_settings Settings { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.VersionsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public VersionsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions
             writer.WriteCollectionOfPrimitiveValues<string>("commandLine", CommandLine);
             writer.WriteStringValue("engine", Engine);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.VersionsPostRequestBody_settings>("settings", Settings);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

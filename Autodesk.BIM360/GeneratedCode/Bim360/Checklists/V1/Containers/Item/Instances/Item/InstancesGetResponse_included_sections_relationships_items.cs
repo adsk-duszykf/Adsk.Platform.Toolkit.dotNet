@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     /// The items object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_included_sections_relationships_items : IParsable
+    public partial class InstancesGetResponse_included_sections_relationships_items : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_relationships_items_meta Meta { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_relationships_items"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_included_sections_relationships_items()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_relationships_items_data>("data", Data);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_relationships_items_links>("links", Links);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_relationships_items_meta>("meta", Meta);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

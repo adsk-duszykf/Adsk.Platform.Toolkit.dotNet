@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     /// The answer selected by the user. Note the following:* For a checkbox, `answer` should be a string containing the ID of the answer.* For multiple choice, `answer` should be an array of strings containing the IDs of the answers.* For a numeric value, `answer` should be a number.* For a text value, `answer` should be a string.* For all other value types, `answer` should be a string containing one of the following values: `true`, `false`, `na`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_included_items_attributes_answer : IParsable
+    public partial class InstancesGetResponse_included_items_attributes_answer : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The One property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_answer_Zero Zero { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_answer"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_included_items_attributes_answer()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_answer_One>("1", One);
             writer.WriteDoubleValue("2", Two);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_answer_Zero>("0", Zero);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

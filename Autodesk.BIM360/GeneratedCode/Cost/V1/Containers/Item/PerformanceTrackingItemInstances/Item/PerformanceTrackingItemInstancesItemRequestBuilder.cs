@@ -57,34 +57,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse?> GetAsPerformanceTrackingItemInstancesGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse> GetAsPerformanceTrackingItemInstancesGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a performance tracking item instance by ID in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsPerformanceTrackingItemInstancesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a performance tracking item instance by ID in the given project.
@@ -95,37 +76,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse?> PatchAsPerformanceTrackingItemInstancesPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse> PatchAsPerformanceTrackingItemInstancesPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a performance tracking item instance by ID in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsPerformanceTrackingItemInstancesPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a performance tracking item instance with the specified ID in the given project.
@@ -194,30 +154,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PerformanceTrackingItemInstancesItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PerformanceTrackingItemInstancesItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PerformanceTrackingItemInstancesItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

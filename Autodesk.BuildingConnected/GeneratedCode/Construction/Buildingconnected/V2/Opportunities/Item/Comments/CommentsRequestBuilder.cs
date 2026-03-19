@@ -53,34 +53,15 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportuni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsGetResponse?> GetAsCommentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsGetResponse> GetAsCommentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsGetResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of comments associated with the specified opportunity.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCommentsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of comments associated with the specified opportunity.
@@ -139,14 +120,6 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportuni
             /// <summary>The maximum number of records that the endpoint may return per page.Note that a returned page may contain fewer records than the limit under either of these conditions:- There are fewer records found than the limit value.- The last page of a set is returned.Default value: `100`</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CommentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportunities.Item.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

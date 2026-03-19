@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
     /// Flags that identify a returned user&apos;s access levels in the account or project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersPostResponse_accessLevels : IParsable
+    public partial class UsersPostResponse_accessLevels : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates whether the user is an account administrator for the account. Possible values:- `true`: The user is an account administrator.- `false`: The user is not an account administrator.</summary>
         public bool? AccountAdmin { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the user is an executive in the account. Possible values:- `true`: The user is an executive.- `false`: The user is not an executive.</summary>
         public bool? Executive { get; set; }
         /// <summary>Indicates whether the user is a project administrator for the project. Possible values:- `true`: The user is a project administrator.- `false`: The user is not a project administrator.</summary>
         public bool? ProjectAdmin { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.UsersPostResponse_accessLevels"/> and sets the default values.
+        /// </summary>
+        public UsersPostResponse_accessLevels()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
             writer.WriteBoolValue("accountAdmin", AccountAdmin);
             writer.WriteBoolValue("executive", Executive);
             writer.WriteBoolValue("projectAdmin", ProjectAdmin);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

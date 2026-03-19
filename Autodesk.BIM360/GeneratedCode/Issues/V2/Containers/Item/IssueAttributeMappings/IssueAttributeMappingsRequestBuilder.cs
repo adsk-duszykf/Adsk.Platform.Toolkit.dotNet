@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse?> GetAsIssueAttributeMappingsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsRequestBuilder.IssueAttributeMappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsRequestBuilder.IssueAttributeMappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse> GetAsIssueAttributeMappingsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsRequestBuilder.IssueAttributeMappingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsRequestBuilder.IssueAttributeMappingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about the issue custom attributes that are assigned to issue categories and issue types.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsIssueAttributeMappingsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsRequestBuilder.IssueAttributeMappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsRequestBuilder.IssueAttributeMappingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about the issue custom attributes that are assigned to issue categories and issue types.
@@ -148,14 +129,6 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings
             /// <summary>The number of custom attribute mappings you want to begin retrieving results from.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssueAttributeMappingsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsRequestBuilder.IssueAttributeMappingsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

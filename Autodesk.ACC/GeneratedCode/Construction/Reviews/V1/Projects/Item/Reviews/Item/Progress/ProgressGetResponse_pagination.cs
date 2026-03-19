@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
     /// Metadata about the paginated results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProgressGetResponse_pagination : IParsable
+    public partial class ProgressGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of results returned per page.</summary>
         public int? Limit { get; set; }
         /// <summary>The URL for the next page of results. If omitted, there are no more pages.</summary>
@@ -27,6 +29,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
         public int? Offset { get; set; }
         /// <summary>The total number of results that match the query, regardless of pagination.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public ProgressGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
             writer.WriteStringValue("nextUrl", NextUrl);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

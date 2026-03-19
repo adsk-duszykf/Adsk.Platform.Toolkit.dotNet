@@ -9,11 +9,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GroupsGetResponse_accountSettings : IParsable
+    public partial class GroupsGetResponse_accountSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Optional account StatusPossible values: `0`, `1`</summary>
         public int? AccountStatus { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional limit of assets (free tier = 1000, standard tier = 10000)</summary>
         public int? AssetLimit { get; set; }
         /// <summary>Optional contract number = Pelican Agreement Id</summary>
@@ -85,6 +87,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.GroupsGetResponse_accountSettings"/> and sets the default values.
+        /// </summary>
+        public GroupsGetResponse_accountSettings()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.GroupsGetResponse_accountSettings"/></returns>
@@ -135,6 +144,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups
             writer.WriteStringValue("subscriberContextId", SubscriberContextId);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

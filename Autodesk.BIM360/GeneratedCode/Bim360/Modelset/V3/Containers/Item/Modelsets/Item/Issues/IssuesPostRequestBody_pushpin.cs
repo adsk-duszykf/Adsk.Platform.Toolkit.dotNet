@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issu
     /// An issue push pin object that describes a visual marker to place an issue on the 3D model.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssuesPostRequestBody_pushpin : IParsable
+    public partial class IssuesPostRequestBody_pushpin : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of the data described in the viewer state property.</summary>
         public int? AttributesVersion { get; set; }
         /// <summary>The external ID (for example, derived from the Revit ID) of the object in the viewer with which to link this issue.</summary>
@@ -43,6 +45,13 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issu
 #else
         public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_pushpin_viewerState ViewerState { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_pushpin"/> and sets the default values.
+        /// </summary>
+        public IssuesPostRequestBody_pushpin()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,6 +91,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issu
             writer.WriteIntValue("objectId", ObjectId);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_pushpin_type>("type", Type);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_pushpin_viewerState>("viewerState", ViewerState);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

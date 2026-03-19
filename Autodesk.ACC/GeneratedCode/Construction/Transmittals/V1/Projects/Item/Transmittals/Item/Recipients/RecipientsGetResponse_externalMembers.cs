@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RecipientsGetResponse_externalMembers : IParsable
+    public partial class RecipientsGetResponse_externalMembers : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The company name of the external recipient. This value may change if the external user later updates their company information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +52,13 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #endif
         /// <summary>The date and time when the external recipient first viewed the transmittal, in ISO 8601 format.</summary>
         public DateTimeOffset? ViewedAt { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Recipients.RecipientsGetResponse_externalMembers"/> and sets the default values.
+        /// </summary>
+        public RecipientsGetResponse_externalMembers()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -91,6 +100,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
             writer.WriteDateTimeOffsetValue("receivedAt", ReceivedAt);
             writer.WriteStringValue("role", Role);
             writer.WriteDateTimeOffsetValue("viewedAt", ViewedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

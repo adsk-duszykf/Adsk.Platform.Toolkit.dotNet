@@ -9,13 +9,22 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithUserPatchResponse_products : IParsable
+    public partial class WithUserPatchResponse_products : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user&apos;s type of access to the product identified by `key`. Possible values:- `administrator`- `member`- `none`Note that when you&apos;re using a POST or PATCH endpoint to set this value, you must adhere to the following guidelines:- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `none`, all other products should be set to `member` access for the user.- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `administrator`, all other products should be set to `administrator` access for the user.- You cannot set a product&apos;s `key` to `projectAdministration` and set `access` to `member`.</summary>
         public global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse_products_access? Access { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A machine-readable identifier for the product (e.g., docs, build).Each product has a unique key used throughout the API for identification, filtering, and integration logic (e.g., in query parameters like `filter[key]`).Possible values:ACC - `autoSpecs`, `build`, `cost`, `designCollaboration`, `docs`, `insight`, `modelCoordination`, `projectAdministration`, and `takeoff`.BIM 360 - `assets`, `costManagement`, `designCollaboration`, `documentManagement`, `field`, `fieldManagement`, `glue`, `insight`, `modelCoordination`, `plan`, `projectAdministration`, `projectHome`, `projectManagement`, and `quantification`.Note that this endpoint returns only ACC products. Other endpoints, such as [GET projects](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-accountsaccountidprojects-GET/) and [GET projects/:projectId](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-projectId-GET/), may return both ACC and BIM 360 projects. In those responses, product keys may include BIM 360 values.</summary>
         public global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse_products_key? Key { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse_products"/> and sets the default values.
+        /// </summary>
+        public WithUserPatchResponse_products()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse_products_access>("access", Access);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse_products_key>("key", Key);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CommentsPostRequestBody : IParsable
+    public partial class CommentsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comment content. A `n` indicates a new line, e.g.: `HeynAharon` will be a 2 lines comment.Max length: 10000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments
 #else
         public string CreatedBy { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments.CommentsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public CommentsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("createdBy", CreatedBy);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

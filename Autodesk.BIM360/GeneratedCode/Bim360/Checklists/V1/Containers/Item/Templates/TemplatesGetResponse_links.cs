@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
     /// link for navigation when pagination is possible
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TemplatesGetResponse_links : IParsable
+    public partial class TemplatesGetResponse_links : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A link to the first page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +56,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
         public string Self { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_links"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_links()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_links"/></returns>
@@ -90,6 +99,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             writer.WriteStringValue("next", Next);
             writer.WriteStringValue("prev", Prev);
             writer.WriteStringValue("self", Self);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

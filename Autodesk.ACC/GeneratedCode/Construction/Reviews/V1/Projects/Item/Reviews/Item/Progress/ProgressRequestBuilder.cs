@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse?> GetAsProgressGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse> GetAsProgressGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the progress of a specific review in the specified project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsProgressGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the progress of a specific review in the specified project.
@@ -109,14 +90,6 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
             /// <summary>The zero-based index of the first record to return. Use with `limit` for pagination. Default: `0`. For example: `offset=10`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProgressRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SubmittalsSummaryGetResponse : IParsable
+    public partial class SubmittalsSummaryGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of submittal groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 #else
         public List<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.SubmittalsSummary.SubmittalsSummaryGetResponse_submittalGroups> SubmittalGroups { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.SubmittalsSummary.SubmittalsSummaryGetResponse"/> and sets the default values.
+        /// </summary>
+        public SubmittalsSummaryGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.SubmittalsSummary.SubmittalsSummaryGetResponse_submittalGroups>("submittalGroups", SubmittalGroups);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

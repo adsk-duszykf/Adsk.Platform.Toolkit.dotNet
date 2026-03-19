@@ -9,13 +9,22 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UsersGetResponse_results_services : IParsable
+    public partial class UsersGetResponse_results_services : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user access to the service.Possible values: `none`, `member`, `administrator`</summary>
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_results_services_access? Access { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the service.Possible values: `costManagement`, `designCollaboration`, `documentManagement`, `field`, `fieldManagement`, `assets`, `glue`, `insight`, `modelCoordination`, `plan`, `projectAdministration`, `projectManagement`</summary>
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_results_services_serviceName? ServiceName { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_results_services"/> and sets the default values.
+        /// </summary>
+        public UsersGetResponse_results_services()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_results_services_access>("access", Access);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_results_services_serviceName>("serviceName", ServiceName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

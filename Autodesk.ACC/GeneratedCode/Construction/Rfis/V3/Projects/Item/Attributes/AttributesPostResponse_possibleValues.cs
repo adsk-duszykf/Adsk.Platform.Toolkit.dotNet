@@ -9,13 +9,22 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttributesPostResponse_possibleValues : IParsable
+    public partial class AttributesPostResponse_possibleValues : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique ID of the attribute value.</summary>
         public Guid? Id { get; set; }
         /// <summary>The name of the attribute value as shown in the UI.Max length: 100</summary>
         public int? Name { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse_possibleValues"/> and sets the default values.
+        /// </summary>
+        public AttributesPostResponse_possibleValues()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteIntValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

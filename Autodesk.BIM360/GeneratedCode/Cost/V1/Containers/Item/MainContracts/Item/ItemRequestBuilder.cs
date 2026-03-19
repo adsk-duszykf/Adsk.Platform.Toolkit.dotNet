@@ -63,34 +63,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse?> GetAsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse> GetAsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a main contract by ID in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a main contract in the given project.
@@ -101,37 +82,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchResponse?> PatchAsPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchResponse?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchResponse> PatchAsPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchResponse> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a main contract in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a main contract by ID in the given project.
@@ -202,14 +162,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
             return new global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// Retrieves a main contract by ID in the given project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -225,22 +177,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

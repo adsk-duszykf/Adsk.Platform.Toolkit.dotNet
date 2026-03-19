@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssi
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ClashesAssignPostRequestBody : IParsable
+    public partial class ClashesAssignPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user, role or company that the new clash group is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +127,13 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssi
         public List<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_viewContext> ViewContext { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ClashesAssignPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody"/></returns>
@@ -191,6 +200,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssi
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("viewableName", ViewableName);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody_viewContext>("viewContext", ViewContext);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

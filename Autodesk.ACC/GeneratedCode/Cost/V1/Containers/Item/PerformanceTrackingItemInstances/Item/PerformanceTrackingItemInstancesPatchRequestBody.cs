@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PerformanceTrackingItemInstancesPatchRequestBody : IParsable
+    public partial class PerformanceTrackingItemInstancesPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The overriding output quantity that you specified to reflect a change (if any) in the scope of the tracking item instance. This value will be used instead of the value of `outputQuantity` in future performance tracking and forecasting for this tracking item instance.</summary>
         public double? AdjustedOutputQuantity { get; set; }
         /// <summary>The input quantity of the tracking item instance. You can multiply this by the value of `inputUnitPrice` to determine the planned total for this instance.</summary>
@@ -75,6 +77,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
         /// <summary>The reported quantity of material used so far on the tracking item instance</summary>
         public double? TrackedOutputQuantity { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public PerformanceTrackingItemInstancesPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchRequestBody"/></returns>
@@ -127,6 +136,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.
             writer.WriteDoubleValue("outputUnitPrice", OutputUnitPrice);
             writer.WriteDoubleValue("trackedInputQuantity", TrackedInputQuantity);
             writer.WriteDoubleValue("trackedOutputQuantity", TrackedOutputQuantity);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

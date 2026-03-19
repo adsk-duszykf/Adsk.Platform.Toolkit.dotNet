@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     /// Optional parameters that override approval workflow settings for this review (for example, steps, copy settings, or additional options).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReviewsPostRequestBody_workflowOptions : IParsable
+    public partial class ReviewsPostRequestBody_workflowOptions : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(`Copy approved files` in the UI) Option for copying approved files when the review is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_steps> Steps { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions"/> and sets the default values.
+        /// </summary>
+        public ReviewsPostRequestBody_workflowOptions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_copyFilesOptions>("copyFilesOptions", CopyFilesOptions);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_steps>("steps", Steps);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

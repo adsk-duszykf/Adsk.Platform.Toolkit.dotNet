@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentItemsGetResponse : IParsable
+    public partial class PaymentItemsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains pagination information when data is returned page by page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
 #else
         public List<global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsGetResponse_results> Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsGetResponse"/> and sets the default values.
+        /// </summary>
+        public PaymentItemsGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsGetResponse_pagination>("pagination", Pagination);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Cost.V1.Containers.Item.PaymentItems.PaymentItemsGetResponse_results>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

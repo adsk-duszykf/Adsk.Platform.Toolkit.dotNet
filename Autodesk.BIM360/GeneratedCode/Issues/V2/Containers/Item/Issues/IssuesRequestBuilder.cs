@@ -53,34 +53,15 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse?> GetAsIssuesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse> GetAsIssuesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about all the issues in a project, including count of the associated comments and attachments.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsIssuesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds an issue to a project.
@@ -91,37 +72,16 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse?> PostAsIssuesPostResponseAsync(global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse?> PostAsync(global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse> PostAsIssuesPostResponseAsync(global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse> PostAsync(global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Adds an issue to a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsIssuesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse?> PostAsync(global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse> PostAsync(global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about all the issues in a project, including count of the associated comments and attachments.
@@ -416,22 +376,6 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssuesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssuesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

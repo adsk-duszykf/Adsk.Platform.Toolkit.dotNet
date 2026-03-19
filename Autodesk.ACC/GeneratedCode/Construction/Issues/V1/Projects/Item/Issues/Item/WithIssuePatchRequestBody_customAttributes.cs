@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithIssuePatchRequestBody_customAttributes : IParsable
+    public partial class WithIssuePatchRequestBody_customAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the custom attribute.</summary>
         public Guid? AttributeDefinitionId { get; set; }
         /// <summary>Custom attribute value. Possible value types: `string`, `number`, `null`.</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 #else
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchRequestBody_customAttributes_value Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchRequestBody_customAttributes"/> and sets the default values.
+        /// </summary>
+        public WithIssuePatchRequestBody_customAttributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("attributeDefinitionId", AttributeDefinitionId);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchRequestBody_customAttributes_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

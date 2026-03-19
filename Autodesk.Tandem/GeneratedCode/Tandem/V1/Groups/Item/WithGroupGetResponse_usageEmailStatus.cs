@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithGroupGetResponse_usageEmailStatus : IParsable
+    public partial class WithGroupGetResponse_usageEmailStatus : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>need to know the date they exceeded to enforce 30 days countdown until locked</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item
 #else
         public string WarningEmailSentDate { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.WithGroupGetResponse_usageEmailStatus"/> and sets the default values.
+        /// </summary>
+        public WithGroupGetResponse_usageEmailStatus()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("exceededEmailSentDate", ExceededEmailSentDate);
             writer.WriteStringValue("warningEmailSentDate", WarningEmailSentDate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

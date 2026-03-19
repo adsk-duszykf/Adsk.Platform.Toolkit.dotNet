@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
     /// Information about the user who most recently updated the RFI.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithResponsePatchResponse_rfi_permittedActions_updateRfi : IParsable
+    public partial class WithResponsePatchResponse_rfi_permittedActions_updateRfi : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of attributes that are required when creating an RFI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
 #endif
         /// <summary>`true`: The user is allowed to fill in custom attributes when creating the RFI.`false` (default): The user is not allowed to fill in custom attributes when creating the RFI.</summary>
         public bool? UseCustomAttributes { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi_permittedActions_updateRfi"/> and sets the default values.
+        /// </summary>
+        public WithResponsePatchResponse_rfi_permittedActions_updateRfi()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.It
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi_permittedActions_updateRfi_permittedAttributes>("permittedAttributes", PermittedAttributes);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.Item.WithResponsePatchResponse_rfi_permittedActions_updateRfi_permittedStatuses>("permittedStatuses", PermittedStatuses);
             writer.WriteBoolValue("useCustomAttributes", UseCustomAttributes);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

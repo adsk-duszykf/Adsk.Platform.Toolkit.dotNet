@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VersionsBatchGetPostResponse_errors : IParsable
+    public partial class VersionsBatchGetPostResponse_errors : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The error code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_errors"/> and sets the default values.
+        /// </summary>
+        public VersionsBatchGetPostResponse_errors()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
             writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

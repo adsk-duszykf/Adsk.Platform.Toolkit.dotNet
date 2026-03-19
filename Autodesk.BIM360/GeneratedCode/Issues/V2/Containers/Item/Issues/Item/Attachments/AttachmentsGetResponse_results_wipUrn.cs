@@ -11,8 +11,17 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
     /// Not relevant
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AttachmentsGetResponse_results_wipUrn : IParsable
+    public partial class AttachmentsGetResponse_results_wipUrn : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse_results_wipUrn"/> and sets the default values.
+        /// </summary>
+        public AttachmentsGetResponse_results_wipUrn()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

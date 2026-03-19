@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FormsPostRequestBody : IParsable
+    public partial class FormsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identifier of the company, role, or user assigned to the form. Note: the assignee must be a contributor of the template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         /// <summary>Date and time indicating when form was created on the client or external system (optional).</summary>
         public DateTimeOffset? UserCreatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public FormsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostRequestBody"/></returns>
@@ -105,6 +114,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notes", Notes);
             writer.WriteDateTimeOffsetValue("userCreatedAt", UserCreatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,17 +9,26 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.M
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManifestGetResponse_stats : IParsable
+    public partial class ManifestGetResponse_stats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of design elements added between the compared model versions.</summary>
         public int? AddedObjects { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of design elements which have update property values or altered geometry.</summary>
         public int? ChangedObjects { get; set; }
         /// <summary>The compressed file size in bytes of the index. This file can be downloaded via the diff properties endpoint.</summary>
         public int? ContentLength { get; set; }
         /// <summary>The number of design elements removed between the compared model versions.</summary>
         public int? RemovedObjects { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse_stats"/> and sets the default values.
+        /// </summary>
+        public ManifestGetResponse_stats()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,6 +64,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.M
             writer.WriteIntValue("changedObjects", ChangedObjects);
             writer.WriteIntValue("contentLength", ContentLength);
             writer.WriteIntValue("removedObjects", RemovedObjects);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

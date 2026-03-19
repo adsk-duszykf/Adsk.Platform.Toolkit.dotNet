@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
     /// Information about the user’s access roles in the project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProjectsGetResponse_results_accessLevels : IParsable
+    public partial class ProjectsGetResponse_results_accessLevels : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the user is a project administrator for the project. Possible values:- `true`: The user is a project administrator.- `false`: The user is not a project administrator.</summary>
         public bool? ProjectAdmin { get; set; }
         /// <summary>Indicates whether the user is a project member but not a project administrator. Possible values:- `true`: The user is a project member but not an administrator.- `false`: The user is not a project member.</summary>
         public bool? ProjectMember { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsGetResponse_results_accessLevels"/> and sets the default values.
+        /// </summary>
+        public ProjectsGetResponse_results_accessLevels()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("projectAdmin", ProjectAdmin);
             writer.WriteBoolValue("projectMember", ProjectMember);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

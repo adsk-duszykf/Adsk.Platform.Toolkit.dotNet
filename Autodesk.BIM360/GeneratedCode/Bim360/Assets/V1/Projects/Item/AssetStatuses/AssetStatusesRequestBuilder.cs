@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse?> GetAsAssetStatusesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse> GetAsAssetStatusesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Searches for and returns all specified asset statuses.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsAssetStatusesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new asset status.
@@ -78,37 +59,16 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostResponse?> PostAsAssetStatusesPostResponseAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostResponse> PostAsAssetStatusesPostResponseAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new asset status.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsAssetStatusesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Searches for and returns all specified asset statuses.
@@ -192,22 +152,6 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses
             /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects than the limit if the Assets service runs out of specified objects to return - at the end of a set of paged results, for example. The maximum limit is `200`; the default limit is `25`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AssetStatusesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AssetStatusesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.M
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManifestGetResponse : IParsable
+    public partial class ManifestGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>creation timestampe.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>errors if the index processing has failed.</summary>
@@ -52,6 +54,13 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.M
 #endif
         /// <summary>manifest status.Possible values: `Failed`, `Running`, `Succeeded`</summary>
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse"/> and sets the default values.
+        /// </summary>
+        public ManifestGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -95,6 +104,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.M
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse_seedFiles>("seedFiles", SeedFiles);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse_stats>("stats", Stats);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

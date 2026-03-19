@@ -11,8 +11,17 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
     /// [SQL AST for describing columns/projections](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QueriesPostRequestBody_columns : IParsable
+    public partial class QueriesPostRequestBody_columns : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostRequestBody_columns"/> and sets the default values.
+        /// </summary>
+        public QueriesPostRequestBody_columns()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

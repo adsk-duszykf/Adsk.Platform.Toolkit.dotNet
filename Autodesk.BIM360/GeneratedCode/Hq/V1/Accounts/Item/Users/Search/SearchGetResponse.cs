@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchGetResponse : IParsable
+    public partial class SearchGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The about_me property</summary>
@@ -22,6 +22,8 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
 #endif
         /// <summary>The account_id property</summary>
         public Guid? AccountId { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address_line_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,6 +211,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse"/> and sets the default values.
+        /// </summary>
+        public SearchGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse"/></returns>
@@ -293,6 +302,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("uid", Uid);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
     /// The information on the current page of a response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersGetResponse_pagination : IParsable
+    public partial class UsersGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of results to include in the response.</summary>
         public int? Limit { get; set; }
         /// <summary>Url for the next page of records.Max length: 2000</summary>
@@ -35,6 +37,13 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
 #endif
         /// <summary>The total number of records.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public UsersGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,6 +81,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
             writer.WriteIntValue("offset", Offset);
             writer.WriteStringValue("previousUrl", PreviousUrl);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

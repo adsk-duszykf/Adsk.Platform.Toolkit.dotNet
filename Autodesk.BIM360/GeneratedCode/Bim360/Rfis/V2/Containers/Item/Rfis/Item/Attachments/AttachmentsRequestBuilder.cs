@@ -53,34 +53,15 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse?> GetAsAttachmentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse> GetAsAttachmentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about all the attachments in a project associated with a specific [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsAttachmentsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds an attachment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
@@ -91,37 +72,16 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse?> PostAsAttachmentsPostResponseAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse> PostAsAttachmentsPostResponseAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Adds an attachment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsAttachmentsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about all the attachments in a project associated with a specific [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
@@ -203,22 +163,6 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AttachmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AttachmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

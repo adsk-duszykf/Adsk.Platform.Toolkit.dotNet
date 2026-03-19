@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse?> PutAsWithCustomAttributePutResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse?> PutAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse> PutAsWithCustomAttributePutResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse> PutAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Assigns an Asset custom attribute to a category.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsWithCustomAttributePutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse?> PutAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse> PutAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Assigns an Asset custom attribute to a category.
@@ -106,14 +87,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
             /// <summary>Specifies whether or not to return custom attributes that were inherited from the specified category&apos;sparent category. If `true`, then it returns inherited custom attributes. If `false`, then it returns only customattributes explicitly assigned to the specified category. Default is `false`.</summary>
             [QueryParameter("includeInherited")]
             public bool? IncludeInherited { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCustomAttributeItemRequestBuilderPutRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>
-        {
         }
     }
 }

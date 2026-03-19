@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributesBatc
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CustomAttributesBatchGetPostRequestBody : IParsable
+    public partial class CustomAttributesBatchGetPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique IDs of Custom Attributes to fetch. One or both of these body structure fields must be present tospecify at least one custom attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributesBatc
 #else
         public List<string> Names { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public CustomAttributesBatchGetPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributesBatc
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteCollectionOfPrimitiveValues<string>("names", Names);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

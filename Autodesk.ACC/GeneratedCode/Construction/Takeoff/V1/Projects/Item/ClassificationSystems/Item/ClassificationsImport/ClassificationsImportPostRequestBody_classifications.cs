@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ClassificationsImportPostRequestBody_classifications : IParsable
+    public partial class ClassificationsImportPostRequestBody_classifications : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The classification code.Max length: 256</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +40,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
 #else
         public string ParentCode { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.ClassificationsImport.ClassificationsImportPostRequestBody_classifications"/> and sets the default values.
+        /// </summary>
+        public ClassificationsImportPostRequestBody_classifications()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.ClassificationsImport.ClassificationsImportPostRequestBody_classifications_measurementType>("measurementType", MeasurementType);
             writer.WriteStringValue("parentCode", ParentCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

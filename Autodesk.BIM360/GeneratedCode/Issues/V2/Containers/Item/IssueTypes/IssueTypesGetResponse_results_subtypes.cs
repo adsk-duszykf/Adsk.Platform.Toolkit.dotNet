@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssueTypesGetResponse_results_subtypes : IParsable
+    public partial class IssueTypesGetResponse_results_subtypes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the issue was created, in ISO8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The unique identifier of the user who created the issue type.</summary>
@@ -77,6 +79,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
         public string UpdatedBy { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes.IssueTypesGetResponse_results_subtypes"/> and sets the default values.
+        /// </summary>
+        public IssueTypesGetResponse_results_subtypes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes.IssueTypesGetResponse_results_subtypes"/></returns>
@@ -131,6 +140,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

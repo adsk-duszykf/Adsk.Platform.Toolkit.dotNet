@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsSyncStatusPostResponse_results : IParsable
+    public partial class RelationshipsSyncStatusPostResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If set to true, data is available for synchronization using the supplied synchronization token.</summary>
         public bool? MoreData { get; set; }
         /// <summary>If set to true, the data returned by the synchronization endpoint can be used to overwrite local copies.</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
 #else
         public string SyncToken { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse_results"/> and sets the default values.
+        /// </summary>
+        public RelationshipsSyncStatusPostResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
             writer.WriteBoolValue("overwrite", Overwrite);
             writer.WriteStringValue("referenceId", ReferenceId);
             writer.WriteStringValue("syncToken", SyncToken);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

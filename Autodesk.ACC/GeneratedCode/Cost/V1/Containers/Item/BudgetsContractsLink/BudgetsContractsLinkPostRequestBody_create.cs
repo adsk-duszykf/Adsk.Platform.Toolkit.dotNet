@@ -9,13 +9,22 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.BudgetsContractsLink
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BudgetsContractsLinkPostRequestBody_create : IParsable
+    public partial class BudgetsContractsLinkPostRequestBody_create : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the Budget to which the contract should be linked.</summary>
         public Guid? BudgetId { get; set; }
         /// <summary>ID of the Contract to which the budget to link.</summary>
         public Guid? ContractId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.BudgetsContractsLink.BudgetsContractsLinkPostRequestBody_create"/> and sets the default values.
+        /// </summary>
+        public BudgetsContractsLinkPostRequestBody_create()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.BudgetsContractsLink
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("budgetId", BudgetId);
             writer.WriteGuidValue("contractId", ContractId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

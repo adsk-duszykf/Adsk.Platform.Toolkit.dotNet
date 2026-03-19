@@ -35,19 +35,6 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
                 return new global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.bim360.modelset.v3.containers.item.modelsets.item.versions.item collection</summary>
-        /// <param name="position">The model set version number.</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("version", position);
-                return new global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -72,34 +59,15 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse?> GetAsVersionsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse> GetAsVersionsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of versions of a given model set.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsVersionsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new version of a given model set.
@@ -109,34 +77,15 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsPostResponse?> PostAsVersionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsPostResponse> PostAsVersionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsPostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new version of a given model set.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsVersionsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of versions of a given model set.
@@ -184,22 +133,6 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
         public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VersionsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VersionsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

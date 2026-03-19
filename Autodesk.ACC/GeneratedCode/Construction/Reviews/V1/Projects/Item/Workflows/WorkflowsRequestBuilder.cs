@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
                 return new global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.reviews.v1.projects.item.workflows.item collection</summary>
-        /// <param name="position">The ID of the approval workflow.To find available workflow IDs, call [GET Workflows](https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-workflows-GET).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("workflowId", position);
-                return new global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse?> GetAsWorkflowsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder.WorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder.WorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse> GetAsWorkflowsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder.WorkflowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder.WorkflowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves all approval workflows used for file reviews in a given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWorkflowsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder.WorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder.WorkflowsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new approval workflow in the specified project.
@@ -104,37 +72,16 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse?> PostAsWorkflowsPostResponseAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse> PostAsWorkflowsPostResponseAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new approval workflow in the specified project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsWorkflowsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse?> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all approval workflows used for file reviews in a given project.
@@ -196,19 +143,8 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             [QueryParameter("filter%5Binitiator%5D")]
             public bool? Filterinitiator { get; set; }
             /// <summary>Filters the results by workflow status. For example: `filter[status]=INACTIVE`. Possible values:`ACTIVE`: return only active workflows.`INACTIVE`: return only inactive (disabled) workflows.Default: `ACTIVE`.Note that this filter cannot be used together with `filter[initiator]`.</summary>
-            [Obsolete("This property is deprecated, use FilterstatusAsGetFilterStatusQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
-            public string? Filterstatus { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filter%5Bstatus%5D")]
-            public string Filterstatus { get; set; }
-#endif
-            /// <summary>Filters the results by workflow status. For example: `filter[status]=INACTIVE`. Possible values:`ACTIVE`: return only active workflows.`INACTIVE`: return only inactive (disabled) workflows.Default: `ACTIVE`.Note that this filter cannot be used together with `filter[initiator]`.</summary>
-            [QueryParameter("filter%5Bstatus%5D")]
-            public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.GetFilterStatusQueryParameterType? FilterstatusAsGetFilterStatusQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.GetFilterStatusQueryParameterType? Filterstatus { get; set; }
             /// <summary>The maximum number of approval workflows to return in a single request. Possible values: `1-50`. Maximum: `50`. Default: `50`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -225,22 +161,6 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsRequestBuilder.WorkflowsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

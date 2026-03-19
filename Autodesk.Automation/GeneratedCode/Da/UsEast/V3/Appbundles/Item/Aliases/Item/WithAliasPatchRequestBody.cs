@@ -9,9 +9,11 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithAliasPatchRequestBody : IParsable
+    public partial class WithAliasPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user(s) to share the alias with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item
 #endif
         /// <summary>The version that this alias refers to.</summary>
         public int? Version { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithAliasPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("receiver", Receiver);
             writer.WriteIntValue("version", Version);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

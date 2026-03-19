@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
     /// Information about the sheet relevant for loading the sheet to the Viewer. See [Add Viewer to an HTML Page](https://forge.autodesk.com/en/docs/viewer/v7/developers_guide/viewer_basics/) for more information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SheetsBatchGetPostResponse_results_viewable : IParsable
+    public partial class SheetsBatchGetPostResponse_results_viewable : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The GUID of the viewable resources.When loading the sheet to the viewer, this GUID should be used to find the related geometry node of the sheet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse_results_viewable"/> and sets the default values.
+        /// </summary>
+        public SheetsBatchGetPostResponse_results_viewable()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("guid", Guid);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

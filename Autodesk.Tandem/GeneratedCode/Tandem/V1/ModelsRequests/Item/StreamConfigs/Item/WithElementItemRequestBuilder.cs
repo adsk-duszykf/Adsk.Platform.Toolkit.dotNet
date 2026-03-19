@@ -40,34 +40,15 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse?> GetAsWithElementGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse> GetAsWithElementGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieve a specific stream configuration.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithElementGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Save a stream configuration.
@@ -78,37 +59,16 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutResponse?> PutAsWithElementPutResponseAsync(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutResponse?> PutAsync(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutResponse> PutAsWithElementPutResponseAsync(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutResponse> PutAsync(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Save a stream configuration.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsWithElementPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse?> PutAsync(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse> PutAsync(global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a specific stream configuration.
@@ -159,22 +119,6 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
         public global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithElementItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithElementItemRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

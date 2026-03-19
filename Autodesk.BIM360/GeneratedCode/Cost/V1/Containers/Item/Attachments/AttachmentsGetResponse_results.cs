@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsGetResponse_results : IParsable
+    public partial class AttachmentsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The object ID of the item associated with the actions, such as a budget, contract, or cost item.</summary>
         public Guid? AssociationId { get; set; }
         /// <summary>The type of item to which it is associated.Possible values: `Budget`, `Contract`, `ScheduleOfValue`, `FormInstance`, `CostItem`, `Payment`, `MainContract`, `BudgetPayment`, `Expense`, `CostPayment`, `ExpenseItem`, `PaymentItem`, `OCO`, `RCO`, `SCO`, `PCO`, `RFQ`, `DistributionItem`, `BudgetTransfer`, `Fee`</summary>
@@ -69,6 +71,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
         public string Urn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.AttachmentsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public AttachmentsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.AttachmentsGetResponse_results"/></returns>
@@ -121,6 +130,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
             writer.WriteEnumValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.AttachmentsGetResponse_results_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

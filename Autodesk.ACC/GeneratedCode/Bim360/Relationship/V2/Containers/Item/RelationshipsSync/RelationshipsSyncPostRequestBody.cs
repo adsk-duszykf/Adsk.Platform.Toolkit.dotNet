@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsSyncPostRequestBody : IParsable
+    public partial class RelationshipsSyncPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of filters on the initial request without a sync token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
 #else
         public string SyncToken { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public RelationshipsSyncPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters>("filters", Filters);
             writer.WriteStringValue("syncToken", SyncToken);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

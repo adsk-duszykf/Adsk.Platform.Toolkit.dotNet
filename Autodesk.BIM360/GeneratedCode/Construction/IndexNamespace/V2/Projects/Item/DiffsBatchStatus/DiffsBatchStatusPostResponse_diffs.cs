@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.DiffsBatc
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DiffsBatchStatusPostResponse_diffs : IParsable
+    public partial class DiffsBatchStatusPostResponse_diffs : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The current file versions used in this index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +119,13 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.DiffsBatc
         /// <summary>timestamp.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse_diffs"/> and sets the default values.
+        /// </summary>
+        public DiffsBatchStatusPostResponse_diffs()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse_diffs"/></returns>
@@ -175,6 +184,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.DiffsBatc
             writer.WriteObjectValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse_diffs_stats>("stats", Stats);
             writer.WriteEnumValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse_diffs_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

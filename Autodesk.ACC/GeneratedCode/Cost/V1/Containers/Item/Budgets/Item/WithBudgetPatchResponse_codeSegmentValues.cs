@@ -11,8 +11,17 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item
     /// Not relevant
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithBudgetPatchResponse_codeSegmentValues : IParsable
+    public partial class WithBudgetPatchResponse_codeSegmentValues : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchResponse_codeSegmentValues"/> and sets the default values.
+        /// </summary>
+        public WithBudgetPatchResponse_codeSegmentValues()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

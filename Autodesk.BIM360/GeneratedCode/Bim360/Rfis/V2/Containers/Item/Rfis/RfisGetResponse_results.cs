@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfisGetResponse_results : IParsable
+    public partial class RfisGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The answeredAt property</summary>
         public DateTimeOffset? AnsweredAt { get; set; }
         /// <summary>The answeredBy property</summary>
@@ -303,6 +305,13 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         public string VirtualFolderUrn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public RfisGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse_results"/></returns>
@@ -415,6 +424,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteStringValue("virtualFolderUrn", VirtualFolderUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

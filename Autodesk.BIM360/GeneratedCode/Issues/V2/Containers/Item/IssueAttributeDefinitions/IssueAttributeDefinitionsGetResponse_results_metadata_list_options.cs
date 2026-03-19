@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssueAttributeDefinitionsGetResponse_results_metadata_list_options : IParsable
+    public partial class IssueAttributeDefinitionsGetResponse_results_metadata_list_options : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id of the list option.</summary>
         public Guid? Id { get; set; }
         /// <summary>The value of the list item.</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata_list_options"/> and sets the default values.
+        /// </summary>
+        public IssueAttributeDefinitionsGetResponse_results_metadata_list_options()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -41,37 +41,16 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostResponse?> PostAsCostItemsBatchCreatePostResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostResponse?> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostResponse> PostAsCostItemsBatchCreatePostResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostResponse> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Adds multiple cost items to a project. You can include up to 200 cost items per request.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreateResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsCostItemsBatchCreatePostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreateResponse?> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreateResponse> PostAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreateResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds multiple cost items to a project. You can include up to 200 cost items per request.
@@ -103,14 +82,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreateRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreateRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CostItemsBatchCreateRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

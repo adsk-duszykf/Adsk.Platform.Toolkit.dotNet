@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
     /// The position of the pushpin in the viewable.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithIssuePatchResponse_linkedDocuments_details_position : IParsable
+    public partial class WithIssuePatchResponse_linkedDocuments_details_position : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The x-value of the position in the viewable.</summary>
         public double? X { get; set; }
         /// <summary>The y-value of the position in the viewable.</summary>
         public double? Y { get; set; }
         /// <summary>The z-value of the position in the viewable. This value is only relevant for 3D views.</summary>
         public double? Z { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchResponse_linkedDocuments_details_position"/> and sets the default values.
+        /// </summary>
+        public WithIssuePatchResponse_linkedDocuments_details_position()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
             writer.WriteDoubleValue("x", X);
             writer.WriteDoubleValue("y", Y);
             writer.WriteDoubleValue("z", Z);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

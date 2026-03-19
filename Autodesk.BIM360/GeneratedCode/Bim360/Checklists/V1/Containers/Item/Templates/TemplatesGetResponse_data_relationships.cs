@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
     /// The relationships object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TemplatesGetResponse_data_relationships : IParsable
+    public partial class TemplatesGetResponse_data_relationships : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The related container object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_data_relationships_container Container { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_data_relationships"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_data_relationships()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_data_relationships_container>("container", Container);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

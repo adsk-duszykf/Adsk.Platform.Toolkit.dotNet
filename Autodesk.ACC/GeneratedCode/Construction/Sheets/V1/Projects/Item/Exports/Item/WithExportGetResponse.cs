@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithExportGetResponse : IParsable
+    public partial class WithExportGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the sheets export job.</summary>
         public Guid? Id { get; set; }
         /// <summary>The result of a completed export job.- If the `status` is `successful`, a downloadable signed URL will be included in the `result.output` object.- If the `status` value is `failed` (e.g., because some files were deleted), the `result.error` object will include details of the error.</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
 #endif
         /// <summary>The status of the sheets export job.Possible values: `successful`, `processing`, `failed`</summary>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithExportGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse_result>("result", Result);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

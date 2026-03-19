@@ -57,34 +57,15 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesGetResponse?> GetAsScheduleOfValuesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder.ScheduleOfValuesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder.ScheduleOfValuesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesGetResponse> GetAsScheduleOfValuesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder.ScheduleOfValuesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder.ScheduleOfValuesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesGetResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves one schedule of values (SOV) item in the given project by ID..
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsScheduleOfValuesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder.ScheduleOfValuesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder.ScheduleOfValuesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the specified schedule of values (SOV) item in the given project.
@@ -95,37 +76,16 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchResponse?> PatchAsScheduleOfValuesPatchResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchResponse?> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchResponse> PatchAsScheduleOfValuesPatchResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchResponse> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates the specified schedule of values (SOV) item in the given project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsScheduleOfValuesPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse?> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a specified schedule of values (SOV) item in the given project.
@@ -196,14 +156,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item
             return new global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleOfValuesItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// Retrieves one schedule of values (SOV) item in the given project by ID..
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -219,22 +171,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleOfValuesItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesItemRequestBuilder.ScheduleOfValuesItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleOfValuesItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

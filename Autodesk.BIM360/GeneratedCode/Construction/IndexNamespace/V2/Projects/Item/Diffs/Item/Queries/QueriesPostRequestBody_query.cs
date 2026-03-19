@@ -11,8 +11,17 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
     /// [SQL AST for binary expression/filter](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QueriesPostRequestBody_query : IParsable
+    public partial class QueriesPostRequestBody_query : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostRequestBody_query"/> and sets the default values.
+        /// </summary>
+        public QueriesPostRequestBody_query()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

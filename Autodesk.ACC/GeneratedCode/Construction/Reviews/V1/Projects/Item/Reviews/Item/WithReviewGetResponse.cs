@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithReviewGetResponse : IParsable
+    public partial class WithReviewGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the review has been archived.`true`: the review is archived.`false`: (default) the review is active.</summary>
         public bool? Archived { get; set; }
         /// <summary>The date and time when the review was archived. If the review has not been archived, this value is `null`.</summary>
@@ -73,6 +75,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item
         /// <summary>The unique identifier (UUID) of the approval workflow used to create this review.</summary>
         public Guid? WorkflowId { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.WithReviewGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithReviewGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.WithReviewGetResponse"/></returns>
@@ -129,6 +138,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.WithReviewGetResponse_status>("status", Status);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteGuidValue("workflowId", WorkflowId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

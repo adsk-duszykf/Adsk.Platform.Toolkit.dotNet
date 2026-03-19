@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ViewcontextPostRequestBody : IParsable
+    public partial class ViewcontextPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The set of issue IDs to find the view context objects for. Min items: 1 Max items: 1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext
 #else
         public List<string> ArrayStringUUID { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext.ViewcontextPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ViewcontextPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("array: string: UUID", ArrayStringUUID);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

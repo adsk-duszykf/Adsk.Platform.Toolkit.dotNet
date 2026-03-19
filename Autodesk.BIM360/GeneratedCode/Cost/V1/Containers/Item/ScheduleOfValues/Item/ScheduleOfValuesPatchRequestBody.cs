@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ScheduleOfValuesPatchRequestBody : IParsable
+    public partial class ScheduleOfValuesPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total price of the SOV item.</summary>
         public double? Amount { get; set; }
         /// <summary>The code of the SOV item.Max length: 255</summary>
@@ -83,6 +85,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item
         /// <summary>The unit price of the SOV item.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public ScheduleOfValuesPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchRequestBody"/></returns>
@@ -137,6 +146,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item
             writer.WriteDoubleValue("quantityPerBulk", QuantityPerBulk);
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

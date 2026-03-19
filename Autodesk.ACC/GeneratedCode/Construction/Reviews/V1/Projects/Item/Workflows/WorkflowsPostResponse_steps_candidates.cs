@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
     /// (Displayed in the UI when selecting reviewers for a step)Lists the users, roles, or companies that were configured as reviewers for this step.These candidates are defined during workflow setup and determine who will be invited to participate in the step during a review.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkflowsPostResponse_steps_candidates : IParsable
+    public partial class WorkflowsPostResponse_steps_candidates : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of companies assigned as candidates for this step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_steps_candidates_users> Users { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_steps_candidates"/> and sets the default values.
+        /// </summary>
+        public WorkflowsPostResponse_steps_candidates()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_steps_candidates_companies>("companies", Companies);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_steps_candidates_roles>("roles", Roles);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse_steps_candidates_users>("users", Users);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

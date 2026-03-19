@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
     /// The user’s permissions for creating RFIs.Note that if this field is present, the user is permitted to create RFIs in the project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MeGetResponse_permittedActions_createRfi : IParsable
+    public partial class MeGetResponse_permittedActions_createRfi : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of statuses the user is permitted to transition an RFI to, without differentiating between workflow types (e.g., `us` and `emea`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #else
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses PermittedStatuses { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_permittedActions_createRfi()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses>("permittedStatuses", PermittedStatuses);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

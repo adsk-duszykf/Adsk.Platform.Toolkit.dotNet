@@ -40,34 +40,15 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsGetResponse?> GetAsPlugsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsRequestBuilder.PlugsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsRequestBuilder.PlugsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsGetResponse> GetAsPlugsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsRequestBuilder.PlugsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsRequestBuilder.PlugsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsGetResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of all of the specified bid&apos;s plugs. A plug is the adjusted value of a bid line item, created using the bid leveling form.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsPlugsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsRequestBuilder.PlugsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsRequestBuilder.PlugsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of all of the specified bid&apos;s plugs. A plug is the adjusted value of a bid line item, created using the bid leveling form.
@@ -116,14 +97,6 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item
             /// <summary>The maximum number of records that the endpoint may return per page.Note that a returned page may contain fewer records than the limit under either of these conditions:- There are fewer records found than the limit value.- The last page of a set is returned.Default value: `100`</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PlugsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.Plugs.PlugsRequestBuilder.PlugsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

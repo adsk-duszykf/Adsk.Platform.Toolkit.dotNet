@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ActionsPostResponse : IParsable
+    public partial class ActionsPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the action performed on the specified item. For example, budgetOpen on a PCO.Max length: 255</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions
 #else
         public string Action { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The object ID of the item on which the action was performed - a change order (PCO, RCO, OCO, RFQ or SCO) for example.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions
 #else
         public List<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostResponse_errors> Errors { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostResponse"/> and sets the default values.
+        /// </summary>
+        public ActionsPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions
             writer.WriteStringValue("associationId", AssociationId);
             writer.WriteStringValue("associationType", AssociationType);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostResponse_errors>("errors", Errors);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

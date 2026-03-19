@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReviewsPostRequestBody_fileVersions : IParsable
+    public partial class ReviewsPostRequestBody_fileVersions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the file version.You can find this value by following the first four steps of the [Download a File](https://aps.autodesk.com/en/docs/acc/v1/tutorials/files/download-document-s3/) tutorial and noting the `included.id` field in the response. Note that the Step 4 request in the tutorial returns only the latest version of each file in the folder.Use the `included.attributes.name` or `included.attributes.displayName` fields in the response to confirm you have the correct file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_fileVersions"/> and sets the default values.
+        /// </summary>
+        public ReviewsPostRequestBody_fileVersions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

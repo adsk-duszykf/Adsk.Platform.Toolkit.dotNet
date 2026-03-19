@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets
                 return new global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.WithModelSetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.bim360.clash.v3.containers.item.modelsets.item collection</summary>
-        /// <param name="position">The GUID that uniquely identifies the model set.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.WithModelSetItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.WithModelSetItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("modelSetId", position);
-                return new global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.WithModelSetItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.ModelsetsRequestBuilder"/> and sets the default values.
         /// </summary>

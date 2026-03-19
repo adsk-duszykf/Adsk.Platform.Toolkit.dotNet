@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
     /// Request pagination information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FormTemplatesGetResponse_pagination : IParsable
+    public partial class FormTemplatesGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of items returned.</summary>
         public int? Limit { get; set; }
         /// <summary>URL for the next page of items. Next page url is null on the last page.</summary>
@@ -27,6 +29,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
         public int? Offset { get; set; }
         /// <summary>Total number of items that can be returned.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public FormTemplatesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
             writer.WriteStringValue("nextUrl", NextUrl);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

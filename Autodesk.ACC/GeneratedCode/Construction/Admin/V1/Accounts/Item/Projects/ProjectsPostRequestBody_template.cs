@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
     /// Information about a project in the current user&apos;s account that is configured as a template from which to copy products and settings when creating a new project:- If you *include* this object in a [POST accounts/:accountId/projects](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-accountsaccountidprojects-POST/) request, the cloned project&apos;s products and settings will match those of the template project.- If you *omit* this object from a [POST accounts/:accountId/projects](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-accountsaccountidprojects-POST/) request, all of the current ACC account&apos;s products are added to the cloned project and activated.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProjectsPostRequestBody_template : IParsable
+    public partial class ProjectsPostRequestBody_template : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about what to include when cloning a project template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #endif
         /// <summary>The ID of a project template in the current ACC account from which to clone the new project and copy products and settings.Note that you cannot create a project template from another project template, but you can base it on a production project. Set this field to the project `id` of the production project. The new project template is not completely configured for use, but it will get you started.For more information about project templates, see [Project Templates](https://help.autodesk.com/view/BUILD/ENU/?guid=Account_Admin_Project_Templates) in the Build help.</summary>
         public Guid? ProjectId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template"/> and sets the default values.
+        /// </summary>
+        public ProjectsPostRequestBody_template()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template_options>("options", Options);
             writer.WriteGuidValue("projectId", ProjectId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

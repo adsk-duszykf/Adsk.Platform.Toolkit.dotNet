@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsPostResponse_entities : IParsable
+    public partial class RelationshipsPostResponse_entities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time that the domain entity was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>The domain that the domain entity is a part of.Max length: 128</summary>
@@ -38,6 +40,13 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relationships.RelationshipsPostResponse_entities"/> and sets the default values.
+        /// </summary>
+        public RelationshipsPostResponse_entities()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

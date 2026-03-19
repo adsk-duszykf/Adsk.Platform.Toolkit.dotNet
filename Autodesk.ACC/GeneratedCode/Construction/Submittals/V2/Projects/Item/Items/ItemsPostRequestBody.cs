@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ItemsPostRequestBody : IParsable
+    public partial class ItemsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A custom number to assign to the submittal item. Before creating an item, check what the custom numbering type is for the current project by calling [GET metadata](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET/) to get the custom identifier sequence type.Submittals support two custom numbering types:- Global Numbering: The custom identifier only contains the sequential number.- Spec Section Numbering: When the project uses spec section numbering for custom numbering, ensure that only the sequential number part of the custom identifier is sent in the request, excluding the spec ID.To find the next available custom number in the sequence, call [GET items:next-custom-identifier](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-itemsnext-custom-identifier-GET/).To verify whether the custom number has not been used and is in a supported format, call [POST items:validate-custom-identifier](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-itemsvalidate-custom-identifier-POST/).For more information on custom numbering, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Custom_Numbering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +135,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostRequestBody_watchers> Watchers { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ItemsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostRequestBody"/></returns>
@@ -201,6 +210,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("typeId", TypeId);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostRequestBody_watchers>("watchers", Watchers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

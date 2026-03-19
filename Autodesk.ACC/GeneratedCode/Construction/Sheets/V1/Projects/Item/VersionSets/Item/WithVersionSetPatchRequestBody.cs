@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithVersionSetPatchRequestBody : IParsable
+    public partial class WithVersionSetPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The issuance date of the version set, in ISO-8601 date format (YYYY-MM-DD).</summary>
         public DateTimeOffset? IssuanceDate { get; set; }
         /// <summary>The name of the version set.- The max length is 255.- Should not be space only.These handlings will be applied to the name before using it to create version set:- Spaces at the end or beginning will be removed.- Continuous spaces inside will be reduced to one.Max length: 255</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item.WithVersionSetPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithVersionSetPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("issuanceDate", IssuanceDate);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

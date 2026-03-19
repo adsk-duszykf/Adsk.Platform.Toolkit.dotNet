@@ -11,12 +11,21 @@ namespace Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item
     /// Type: dictionary&lt;string, *&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithOwnerPutResponse_backendLimits_Asterisk : IParsable
+    public partial class WithOwnerPutResponse_backendLimits_Asterisk : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Max duration of processing in seconds per workitem (includes download and upload time).</summary>
         public int? LimitProcessingTimeSec { get; set; }
         /// <summary>Max permitted size of all Apps referenced by an activity. It is enforced when you post a workitem. Default is 500.</summary>
         public int? LimitTotalUncompressedAppsSizeInMB { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item.WithOwnerPutResponse_backendLimits_Asterisk"/> and sets the default values.
+        /// </summary>
+        public WithOwnerPutResponse_backendLimits_Asterisk()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("limitProcessingTimeSec", LimitProcessingTimeSec);
             writer.WriteIntValue("limitTotalUncompressedAppsSizeInMB", LimitTotalUncompressedAppsSizeInMB);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

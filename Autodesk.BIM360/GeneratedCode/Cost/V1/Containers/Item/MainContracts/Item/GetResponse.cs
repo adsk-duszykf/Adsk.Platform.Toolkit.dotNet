@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetResponse : IParsable
+    public partial class GetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actual completion date of the main contract.</summary>
@@ -28,6 +28,8 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
 #else
         public List<global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse_additionalCollaborators> AdditionalCollaborators { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total value of the subitems of the main contract.</summary>
         public double? Amount { get; set; }
         /// <summary>The unique ID (UUID) of the company in this account. Detailed company information can be retrieved using this UUID by calling [GET companies/:company_id](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/companies-:company_id-GET/) in the response.</summary>
@@ -309,6 +311,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse"/> and sets the default values.
+        /// </summary>
+        public GetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.GetResponse"/></returns>
@@ -427,6 +436,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item
             writer.WriteStringValue("type", Type);
             writer.WriteIntValue("unReceived", UnReceived);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

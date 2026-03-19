@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VersionsBatchGetPostResponse_results : IParsable
+    public partial class VersionsBatchGetPostResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The approval status of the version. Only available when the review has been approved or rejected. For more information about the approval workflow, see the [Approval Workflows and Document Review](http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2CC9A86E-2F4F-48EB-8EFA-FAA5FBECC20E) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +135,13 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
         public string Urn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results"/> and sets the default values.
+        /// </summary>
+        public VersionsBatchGetPostResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results"/></returns>
@@ -195,6 +204,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
             writer.WriteStringValue("storageUrn", StorageUrn);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

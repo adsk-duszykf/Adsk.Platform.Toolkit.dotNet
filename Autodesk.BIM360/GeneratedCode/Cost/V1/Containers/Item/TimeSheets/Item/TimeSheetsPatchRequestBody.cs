@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TimeSheetsPatchRequestBody : IParsable
+    public partial class TimeSheetsPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code that identifies the budget to which the timesheet belongs. Required if both `trackingItemInstanceId` and `trackingItemInstanceNumber` are omitted from this request. To find the budget code, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) and inspect `results.code` in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item
         public string TrackingItemInstanceNumber { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item.TimeSheetsPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public TimeSheetsPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item.TimeSheetsPatchRequestBody"/></returns>
@@ -97,6 +106,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.Item
             writer.WriteStringValue("startDate", StartDate);
             writer.WriteStringValue("trackingItemInstanceId", TrackingItemInstanceId);
             writer.WriteStringValue("trackingItemInstanceNumber", TrackingItemInstanceNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

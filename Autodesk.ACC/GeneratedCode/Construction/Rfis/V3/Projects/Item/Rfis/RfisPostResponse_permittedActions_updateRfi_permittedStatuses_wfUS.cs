@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS : IParsable
+    public partial class RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of users that can be assigned to this RFI.</summary>
         public int? MaxAssignees { get; set; }
         /// <summary>The list of attributes that the user is optionally allowed to include when updating or creating the RFI in the specified status.</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
 #endif
         /// <summary>The current response status of the RFI for single-reviewer workflows (US):Possible values:`draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, `void`.For more information about workflows, see [About RFI Workflows – Autodesk Help](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Types).</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS"/> and sets the default values.
+        /// </summary>
+        public RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS_permittedAttributes>("permittedAttributes", PermittedAttributes);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS_requiredAttributes>("requiredAttributes", RequiredAttributes);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostResponse_permittedActions_updateRfi_permittedStatuses_wfUS_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

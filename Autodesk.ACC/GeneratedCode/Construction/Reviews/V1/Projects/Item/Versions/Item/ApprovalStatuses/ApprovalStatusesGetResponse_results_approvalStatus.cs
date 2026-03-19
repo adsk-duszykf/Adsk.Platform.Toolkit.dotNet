@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
     /// The file’s approval status within a specific review.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ApprovalStatusesGetResponse_results_approvalStatus : IParsable
+    public partial class ApprovalStatusesGetResponse_results_approvalStatus : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the approval status option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
 #endif
         /// <summary>The value of the approval status. Possible values: `APPROVED`, `REJECTED`, `IN_REVIEW`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_approvalStatus_value? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_approvalStatus"/> and sets the default values.
+        /// </summary>
+        public ApprovalStatusesGetResponse_results_approvalStatus()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_approvalStatus_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

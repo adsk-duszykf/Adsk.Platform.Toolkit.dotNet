@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersGetResponse?> GetAsFoldersGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersGetResponse> GetAsFoldersGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves all folders associated with the documents included in a specific transmittal.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsFoldersGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersResponse>(requestInfo, global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all folders associated with the documents included in a specific transmittal.
@@ -110,27 +91,8 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>Sorts the folders by a supported field and order.By default, folders are sorted in ascending order by `name` (`name asc`).To sort in descending order, add `desc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Supported fields: `name`, `lastUpdatedAt`, `updatedByName`.Examples:- `sort=name asc` – sorts folders alphabetically by name.- `sort=lastUpdatedAt desc` – sorts folders by last updated time in descending order.Possible values: `name`, `lastUpdatedAt`, `updatedByName`, `name asc`, `lastUpdatedAt asc`, `updatedByName asc`, `name desc`, `lastUpdatedAt desc`, `updatedByName desc`</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sorts the folders by a supported field and order.By default, folders are sorted in ascending order by `name` (`name asc`).To sort in descending order, add `desc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Supported fields: `name`, `lastUpdatedAt`, `updatedByName`.Examples:- `sort=name asc` – sorts folders alphabetically by name.- `sort=lastUpdatedAt desc` – sorts folders by last updated time in descending order.Possible values: `name`, `lastUpdatedAt`, `updatedByName`, `name asc`, `lastUpdatedAt asc`, `updatedByName asc`, `name desc`, `lastUpdatedAt desc`, `updatedByName desc`</summary>
-            [QueryParameter("sort")]
-            public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FoldersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>
-        {
+            public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

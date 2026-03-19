@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithItemIdTransitionPostResponse : IParsable
+    public partial class WithItemIdTransitionPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The member group IDs of the companies currently assigned to the submittal item at this stage of the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -325,6 +327,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse_watchers> Watchers { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse"/> and sets the default values.
+        /// </summary>
+        public WithItemIdTransitionPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse"/></returns>
@@ -459,6 +468,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse_watchers>("watchers", Watchers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

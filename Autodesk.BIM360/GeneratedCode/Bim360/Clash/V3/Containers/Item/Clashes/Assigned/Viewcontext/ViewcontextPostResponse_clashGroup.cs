@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewc
     /// A Clash Group.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ViewcontextPostResponse_clashGroup : IParsable
+    public partial class ViewcontextPostResponse_clashGroup : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clashes included in the assigned clash group. Min items: 1 Max items: 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,6 +45,13 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewc
 #else
         public string IssueId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse_clashGroup"/> and sets the default values.
+        /// </summary>
+        public ViewcontextPostResponse_clashGroup()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,6 +91,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewc
             writer.WriteDateTimeOffsetValue("createdOn", CreatedOn);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("issueId", IssueId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

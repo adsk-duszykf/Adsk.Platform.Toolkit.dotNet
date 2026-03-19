@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
     /// Metadata about the host model (the main Revit model that contains linked files). This object is only returned in the response when `includeHost` is set to `true`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LinkedFilesGetResponse_hostFile : IParsable
+    public partial class LinkedFilesGetResponse_hostFile : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the host model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,13 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
 #else
         public string VersionId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_hostFile"/> and sets the default values.
+        /// </summary>
+        public LinkedFilesGetResponse_hostFile()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,6 +97,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
             writer.WriteStringValue("signedUrl", SignedUrl);
             writer.WriteIntValue("size", Size);
             writer.WriteStringValue("versionId", VersionId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,18 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InlinetemplateGetResponse_psets_applicationFilters : IParsable
+    public partial class InlinetemplateGetResponse_psets_applicationFilters : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_psets_applicationFilters"/> and sets the default values.
+        /// </summary>
+        public InlinetemplateGetResponse_psets_applicationFilters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,6 +48,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NodesGetResponse_results : IParsable
+    public partial class NodesGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A flag that indicates if a linked document contains marked areas. A marked area is a highlighted section of a document.`true` if a linked document contains marked areas.`false` if a linked document does not contain marked areas.</summary>
         public bool? AreaDefined { get; set; }
         /// <summary>Not relevant</summary>
@@ -63,6 +65,13 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public NodesGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse_results"/></returns>
@@ -109,6 +118,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
             writer.WriteGuidValue("parentId", ParentId);
             writer.WriteCollectionOfPrimitiveValues<string>("path", Path);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

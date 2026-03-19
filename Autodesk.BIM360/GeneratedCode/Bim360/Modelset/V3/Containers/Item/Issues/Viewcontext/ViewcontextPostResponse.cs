@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ViewcontextPostResponse : IParsable
+    public partial class ViewcontextPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of documents visible when the issue was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,6 +26,13 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext
         public Guid? IssueId { get; set; }
         /// <summary>The ID of the model set with which inspection issue is associated.</summary>
         public Guid? ModelSetId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext.ViewcontextPostResponse"/> and sets the default values.
+        /// </summary>
+        public ViewcontextPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext.ViewcontextPostResponse_documents>("documents", Documents);
             writer.WriteGuidValue("issueId", IssueId);
             writer.WriteGuidValue("modelSetId", ModelSetId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

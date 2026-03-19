@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.ValuesImport
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ValuesImportPostRequestBody : IParsable
+    public partial class ValuesImportPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true` append the imported segment values to the existing values.`false` purge the existing segment values and replace them with the imported values.</summary>
         public bool? Append { get; set; }
         /// <summary>A list of segment values.</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.ValuesImport
 #else
         public List<global::Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.ValuesImport.ValuesImportPostRequestBody_data> Data { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.ValuesImport.ValuesImportPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ValuesImportPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.ValuesImport
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("append", Append);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.ValuesImport.ValuesImportPostRequestBody_data>("data", Data);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

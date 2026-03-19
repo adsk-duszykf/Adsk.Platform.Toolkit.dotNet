@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse?> GetAsNodesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse> GetAsNodesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the locations (nodes) for a project using the location breakdown structure (tree). To retrieve the path of a location, use the filter.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsNodesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the locations (nodes) for a project using the location breakdown structure (tree). To retrieve the path of a location, use the filter.
@@ -119,14 +100,6 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
             /// <summary>The node index from which the pagination starts. This is zero-based.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class NodesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

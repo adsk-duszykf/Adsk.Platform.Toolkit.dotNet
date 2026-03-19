@@ -9,11 +9,20 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithElementPostRequestBody : IParsable
+    public partial class WithElementPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Asterisk property</summary>
         public double? Asterisk { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item.WithElementPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithElementPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +52,7 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("*", Asterisk);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

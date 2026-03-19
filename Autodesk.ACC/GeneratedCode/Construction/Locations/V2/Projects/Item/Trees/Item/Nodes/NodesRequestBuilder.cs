@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
                 return new global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.locations.v2.projects.item.trees.item.nodes.item collection</summary>
-        /// <param name="position">The unique identifier of an LBS node.To find node IDs, call the [GET nodes](https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET/) endpoint and check the value of `results.id` in the returned nodes.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("nodeId", position);
-                return new global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodeItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse?> GetAsNodesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse> GetAsNodesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves an array of nodes (locations) from the specified locations tree (LBS). Returns all nodes in the tree by default.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsNodesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse>(requestInfo, global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a node in the specified locations tree. Note that creating the root node is not allowed because the root node is created automatically when the project is created.
@@ -104,37 +72,16 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostResponse?> PostAsNodesPostResponseAsync(global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostResponse> PostAsNodesPostResponseAsync(global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostResponse> PostAsync(global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a node in the specified locations tree. Note that creating the root node is not allowed because the root node is created automatically when the project is created.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsNodesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse?> PostAsync(global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse> PostAsync(global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse>(requestInfo, global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves an array of nodes (locations) from the specified locations tree (LBS). Returns all nodes in the tree by default.
@@ -210,44 +157,17 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
             public int? Offset { get; set; }
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class NodesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Creates a node in the specified locations tree. Note that creating the root node is not allowed because the root node is created automatically when the project is created.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NodesRequestBuilderPostQueryParameters 
         {
             /// <summary>Where to insert the new node relative to the target node that you specified with `targetNodeId`. The nodes in a given tier of the tree have a defined sequence order, and `insertOption` specifies whether the new node comes before or after the target node.Required only when `targetNodeId` is also included in the request.Possible values: `After`, `Before`</summary>
-            [Obsolete("This property is deprecated, use InsertOptionAsPostInsertOptionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("insertOption")]
-            public string? InsertOption { get; set; }
-#nullable restore
-#else
-            [QueryParameter("insertOption")]
-            public string InsertOption { get; set; }
-#endif
-            /// <summary>Where to insert the new node relative to the target node that you specified with `targetNodeId`. The nodes in a given tier of the tree have a defined sequence order, and `insertOption` specifies whether the new node comes before or after the target node.Required only when `targetNodeId` is also included in the request.Possible values: `After`, `Before`</summary>
-            [QueryParameter("insertOption")]
-            public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.PostInsertOptionQueryParameterType? InsertOptionAsPostInsertOptionQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.PostInsertOptionQueryParameterType? InsertOption { get; set; }
             /// <summary>Unique identifier of a node that will be the new node&apos;s immediate sibling in the locations tree. The target node&apos;s `parentId` must match the `body.parentId` field in the request.Note that nodes in a given tier of the tree have a defined sequence order. The new node will be created in the same tier, either before or after the target node. You specify the sequence position of the new node using the  `insertOption` parameter.Note that this parameter is unavailable if this request is creating an existing node&apos;s first child node.Required only when `insertOption` is also included in the request.</summary>
             [QueryParameter("targetNodeId")]
             public Guid? TargetNodeId { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class NodesRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesRequestBuilder.NodesRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

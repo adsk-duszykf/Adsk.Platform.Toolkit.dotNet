@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
     /// Project template options specific to classic field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProjectsPostRequestBody_template_options_field : IParsable
+    public partial class ProjectsPostRequestBody_template_options_field : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether to include company data when copying from the project template.- `true`: Include company data.- `false`: Exclude company data.</summary>
         public bool? IncludeCompanies { get; set; }
         /// <summary>Indicates whether to include location data when copying from the project template.- `true`: Include location data.- `false`: Exclude location data.</summary>
         public bool? IncludeLocations { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template_options_field"/> and sets the default values.
+        /// </summary>
+        public ProjectsPostRequestBody_template_options_field()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("includeCompanies", IncludeCompanies);
             writer.WriteBoolValue("includeLocations", IncludeLocations);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

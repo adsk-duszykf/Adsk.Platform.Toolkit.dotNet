@@ -53,34 +53,15 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse?> GetAsRfisGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder.RfisRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder.RfisRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse> GetAsRfisGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder.RfisRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder.RfisRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about all the BIM 360 RFIs (requests for information) in a project, including details about their associated comments and attachments.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRfisGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder.RfisRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder.RfisRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds a BIM 360 RFI (request for information) to a project. You can create both document-related (pushpin) RFIs, and project-related RFIs.
@@ -91,37 +72,16 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse?> PostAsRfisPostResponseAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse> PostAsRfisPostResponseAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Adds a BIM 360 RFI (request for information) to a project. You can create both document-related (pushpin) RFIs, and project-related RFIs.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsRfisPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse> PostAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about all the BIM 360 RFIs (requests for information) in a project, including details about their associated comments and attachments.
@@ -322,22 +282,6 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RfisRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisRequestBuilder.RfisRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RfisRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

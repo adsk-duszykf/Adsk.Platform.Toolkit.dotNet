@@ -29,19 +29,6 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
                 return new global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.WithJobItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.dataConnector.v1.accounts.item.jobs.item collection</summary>
-        /// <param name="position">The job ID</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.WithJobItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.WithJobItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("jobId", position);
-                return new global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.WithJobItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse?> GetAsJobsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse> GetAsJobsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns an array of Data Connector jobs spawned by requests from the authenticated user.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsJobsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse>(requestInfo, global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns an array of Data Connector jobs spawned by requests from the authenticated user.
@@ -175,14 +143,6 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
             [QueryParameter("sortFields")]
             public string SortFields { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class JobsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

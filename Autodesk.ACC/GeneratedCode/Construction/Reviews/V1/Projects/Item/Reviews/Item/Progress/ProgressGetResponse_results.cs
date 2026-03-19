@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ProgressGetResponse_results : IParsable
+    public partial class ProgressGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Information about the user recorded when the step status is `SUBMITTED` or `VOID`. In the Reviews UI, these statuses occur when a participant submits their decision or when a step is voided.</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
 #else
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse_results_actionBy ActionBy { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the users, roles, and companies who are eligible to take the next action in this step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +67,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
         public string StepName { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public ProgressGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse_results"/></returns>
@@ -107,6 +116,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse_results_status>("status", Status);
             writer.WriteStringValue("stepId", StepId);
             writer.WriteStringValue("stepName", StepName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

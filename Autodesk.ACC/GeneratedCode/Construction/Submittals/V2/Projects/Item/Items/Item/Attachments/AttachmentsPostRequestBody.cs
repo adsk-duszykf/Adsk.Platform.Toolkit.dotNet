@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsPostRequestBody : IParsable
+    public partial class AttachmentsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the workflow state of the submittal item associated with the attachment. If omitted, the system assigns one based on the current state.Note that you can only set category IDs `1`-`4` when adding an attachment. Category IDs `5`-`8` are system-generated and appear in responses for historical records.In some cases, you must manually set `categoryId`:1. Subcontractor Submissions:When a subcontractor creates an item in the `Open (Submitted) - (mgr-1)` state,  set `categoryId` to `1` (**Submission**) instead of `2` (**For Review**).2. Final Response in Non-Standard Closures:When closing an item from a state other than `Open (Reviewed) - (mgr-2)`, set `categoryId` to `4` (**Final Response**) if uploading a final response.Possible values:- `1`: **Submission** – Initial submission.- `2`: **For Review** – Submitted and awaiting review.- `3`: **Review Response** – A response provided during review.- `4`: **Final Response** – The final response in the submittal workflow.To retrieve the list of available category ID values, call [GET metadata](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET/) and refer to the attachment categories list in the response.</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsPostRequestBody_categoryId? CategoryId { get; set; }
         /// <summary>Specifies whether the attachment upload has been completed. This value controls how the system processes the attachment.- `true`: if the attachment is complete.- `false`: if the attachment is still in progress.Behavior:- For local file uploads: The system initially considers the file as not uploaded (`false`). After completing the upload, you must set `isFileUploaded: true` using [PATCH attachments/:id](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-attachments-attachmentId-PATCH/) to allow the system to process the attachment.- For Files tool attachments: Always set to `true` since the file was uploaded earlier.This field cannot be explicitly set to `false` in the request. If omitted, it defaults to `false`.</summary>
@@ -36,6 +38,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
 #endif
         /// <summary>Specifies the type of URN associated with the attachment.Possible values: `2`</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsPostRequestBody_urnTypeId? UrnTypeId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public AttachmentsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,6 +84,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             writer.WriteGuidValue("taskId", TaskId);
             writer.WriteStringValue("urn", Urn);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.AttachmentsPostRequestBody_urnTypeId>("urnTypeId", UrnTypeId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

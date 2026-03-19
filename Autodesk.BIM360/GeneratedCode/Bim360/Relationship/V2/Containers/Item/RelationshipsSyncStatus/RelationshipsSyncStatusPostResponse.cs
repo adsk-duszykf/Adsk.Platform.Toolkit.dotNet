@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsSyncStatusPostResponse : IParsable
+    public partial class RelationshipsSyncStatusPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The array of errors associated with the request for sync tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
 #else
         public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse_results> Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse"/> and sets the default values.
+        /// </summary>
+        public RelationshipsSyncStatusPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse_errors>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse_results>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

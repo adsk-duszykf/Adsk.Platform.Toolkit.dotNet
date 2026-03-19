@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Schema
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SchemaGetResponse_attributes : IParsable
+    public partial class SchemaGetResponse_attributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional list of allowed values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,6 +117,13 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Schema
         /// <summary>Optional numeric precision</summary>
         public int? Precision { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Schema.SchemaGetResponse_attributes"/> and sets the default values.
+        /// </summary>
+        public SchemaGetResponse_attributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Schema.SchemaGetResponse_attributes"/></returns>
@@ -171,6 +180,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Schema
             writer.WriteStringValue("forgeUnit", ForgeUnit);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("precision", Precision);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

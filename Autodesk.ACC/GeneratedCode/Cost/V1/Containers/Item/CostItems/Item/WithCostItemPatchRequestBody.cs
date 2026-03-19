@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithCostItemPatchRequestBody : IParsable
+    public partial class WithCostItemPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount approved by the owner.</summary>
         public double? Approved { get; set; }
         /// <summary>The ID of the budget that the cost item is linked to.</summary>
@@ -129,6 +131,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item
         public string Unit { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.WithCostItemPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithCostItemPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.WithCostItemPatchRequestBody"/></returns>
@@ -199,6 +208,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item
             writer.WriteDoubleValue("submitted", Submitted);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithContractPatchRequestBody : IParsable
+    public partial class WithContractPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Not relevant</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
 #else
         public global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractPatchRequestBody_additionalContacts AdditionalContacts { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time of contract approval, in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,6 +285,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithContractPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item.WithContractPatchRequestBody"/></returns>
@@ -387,6 +396,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Contracts.Item
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("subStatus", SubStatus);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

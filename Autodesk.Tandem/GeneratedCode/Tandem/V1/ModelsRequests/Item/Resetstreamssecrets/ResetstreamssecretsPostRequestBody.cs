@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.Resetstreamssecrets
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ResetstreamssecretsPostRequestBody : IParsable
+    public partial class ResetstreamssecretsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Only relevant in the reset secret context.</summary>
         public bool? HardReset { get; set; }
         /// <summary>Only relevant in the query context (if false, missing secret results in a 404).</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.Resetstreamssecrets
 #else
         public List<string> Keys { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.Resetstreamssecrets.ResetstreamssecretsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ResetstreamssecretsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.Resetstreamssecrets
             writer.WriteBoolValue("hardReset", HardReset);
             writer.WriteBoolValue("includeEmpty", IncludeEmpty);
             writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

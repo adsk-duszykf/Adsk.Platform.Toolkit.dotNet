@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
     /// The list of statuses the user is permitted to transition an RFI to, without differentiating between workflow types (e.g., `us` and `emea`).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MeGetResponse_permittedActions_createRfi_permittedStatuses : IParsable
+    public partial class MeGetResponse_permittedActions_createRfi_permittedStatuses : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of statuses the user is permitted to transition an RFI to in workflows of type `emea`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfUS> WfUS { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_permittedActions_createRfi_permittedStatuses()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfEU>("wfEU", WfEU);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_permittedActions_createRfi_permittedStatuses_wfUS>("wfUS", WfUS);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

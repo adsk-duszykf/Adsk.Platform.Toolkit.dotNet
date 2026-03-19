@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsWritableGetResponse_entityTypes : IParsable
+    public partial class RelationshipsWritableGetResponse_entityTypes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow list for the entity type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
 #else
         public string EntityType { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse_entityTypes"/> and sets the default values.
+        /// </summary>
+        public RelationshipsWritableGetResponse_entityTypes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse_entityTypes_allow>("allow", Allow);
             writer.WriteStringValue("entityType", EntityType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

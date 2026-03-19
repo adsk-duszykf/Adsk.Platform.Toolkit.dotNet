@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
     /// Updates the list of possible values for the attribute.To overwrite an existing possible value, specify both `newAttributes` (the new value name) and `deletedAttributes` (the ID of the value to remove).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithAttributePatchRequestBody_possibleValues : IParsable
+    public partial class WithAttributePatchRequestBody_possibleValues : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deletes possible values from the attribute. Each item is the ID of a possible value to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues_updatedAttributes> UpdatedAttributes { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues"/> and sets the default values.
+        /// </summary>
+        public WithAttributePatchRequestBody_possibleValues()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
             writer.WriteCollectionOfPrimitiveValues<string>("deletedAttributes", DeletedAttributes);
             writer.WriteCollectionOfPrimitiveValues<string>("newAttributes", NewAttributes);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchRequestBody_possibleValues_updatedAttributes>("updatedAttributes", UpdatedAttributes);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

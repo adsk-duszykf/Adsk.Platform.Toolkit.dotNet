@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
     /// An array of filters on the initial request without a sync token.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RelationshipsSyncPostRequestBody_filters : IParsable
+    public partial class RelationshipsSyncPostRequestBody_filters : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of domains on which to filter.Min items: 1 Max items: 20</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
 #else
         public List<string> Domains { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostRequestBody_filters"/> and sets the default values.
+        /// </summary>
+        public RelationshipsSyncPostRequestBody_filters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

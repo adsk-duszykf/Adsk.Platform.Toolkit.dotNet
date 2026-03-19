@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithCostItemPatchResponse : IParsable
+    public partial class WithCostItemPatchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount approved by the owner.</summary>
         public double? Approved { get; set; }
         /// <summary>The ID of the budget to which the cost item is linked.</summary>
@@ -219,6 +221,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.WithCostItemPatchResponse"/> and sets the default values.
+        /// </summary>
+        public WithCostItemPatchResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.WithCostItemPatchResponse"/></returns>
@@ -319,6 +328,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("unit", Unit);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

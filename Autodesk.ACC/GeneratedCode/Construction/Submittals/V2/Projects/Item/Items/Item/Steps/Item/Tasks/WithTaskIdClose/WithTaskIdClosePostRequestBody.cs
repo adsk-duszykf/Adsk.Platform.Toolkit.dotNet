@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithTaskIdClosePostRequestBody : IParsable
+    public partial class WithTaskIdClosePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of attachment IDs to duplicate from a submittal item&apos;s previous stage in the workflow. To retrieve available attachments, call [GET items/:itemId/attachments](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemId-attachments-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public List<string> SaveAttachmentDrafts { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdClosePostRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithTaskIdClosePostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
             writer.WriteStringValue("responseComment", ResponseComment);
             writer.WriteStringValue("responseId", ResponseId);
             writer.WriteCollectionOfPrimitiveValues<string>("saveAttachmentDrafts", SaveAttachmentDrafts);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

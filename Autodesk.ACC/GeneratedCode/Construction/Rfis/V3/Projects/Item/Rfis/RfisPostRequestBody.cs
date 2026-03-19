@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfisPostRequestBody : IParsable
+    public partial class RfisPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of users assigned to the RFI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,6 +147,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostRequestBody_watchers> Watchers { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public RfisPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostRequestBody"/></returns>
@@ -207,6 +216,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
             writer.WriteStringValue("suggestedAnswer", SuggestedAnswer);
             writer.WriteStringValue("title", Title);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostRequestBody_watchers>("watchers", Watchers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

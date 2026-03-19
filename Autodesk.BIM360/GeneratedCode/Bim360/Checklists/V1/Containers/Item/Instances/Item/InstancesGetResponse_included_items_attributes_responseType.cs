@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     /// Information about the type of response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_included_items_attributes_responseType : IParsable
+    public partial class InstancesGetResponse_included_items_attributes_responseType : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the item type. Possible values:`1` - Yes / No`2` - Plus / Minus`3` - True / False`4` - Pass / Fail`5` - Text`6` - Single List (One Choice)`7` - Multiple List (Multiple Choice)`8` - NumericFor more information about response types see the [Help documentation](https://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2E722645-C437-4134-97F8-0CD86A13F5DA).</summary>
         public double? Id { get; set; }
         /// <summary>Information about the responses.Note that this is only relevant for Multiple Choice and Checkboxes response types.</summary>
@@ -39,6 +41,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_responseType"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_included_items_attributes_responseType()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_items_attributes_responseType_metadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("permittedAttributes", PermittedAttributes);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

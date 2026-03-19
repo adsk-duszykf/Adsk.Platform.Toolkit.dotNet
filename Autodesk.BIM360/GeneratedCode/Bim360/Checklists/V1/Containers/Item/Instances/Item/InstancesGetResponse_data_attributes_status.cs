@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
     /// Information about the status of the checklist.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_data_attributes_status : IParsable
+    public partial class InstancesGetResponse_data_attributes_status : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the status. Possible values:`1` - Not Scheduled`2` - Scheduled`3` - In Progress`4` - Completed`5` - Signed off`6` - Pending Signature`7` - Not Started</summary>
         public double? Id { get; set; }
         /// <summary>The name of the status. Possible values: `Not Scheduled`, `Scheduled`, `In Progress`, `Completed`, `Signed Off`, `Pending Signature`, `Not Started`.</summary>
@@ -33,6 +35,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #endif
         /// <summary>Not relevant</summary>
         public double? Urgency { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_data_attributes_status"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_data_attributes_status()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("permittedAttributes", PermittedAttributes);
             writer.WriteDoubleValue("urgency", Urgency);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -41,37 +41,16 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostResponse?> PostAsDefaultmodelPostResponseAsync(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostResponse?> PostAsync(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostResponse> PostAsDefaultmodelPostResponseAsync(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostResponse> PostAsync(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a default model for the facility. The default model hosts streams, user-initiated elements, and custom geometry creation.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsDefaultmodelPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelResponse?> PostAsync(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelResponse> PostAsync(global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelResponse>(requestInfo, global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a default model for the facility. The default model hosts streams, user-initiated elements, and custom geometry creation.
@@ -103,14 +82,6 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel
         public global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DefaultmodelRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

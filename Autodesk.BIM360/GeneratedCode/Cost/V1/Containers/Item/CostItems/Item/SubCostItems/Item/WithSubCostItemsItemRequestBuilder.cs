@@ -58,37 +58,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchResponse?> PatchAsWithSubCostItemsPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchResponse?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchResponse> PatchAsWithSubCostItemsPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchResponse> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a sub cost item within a specific cost item.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithSubCostItemsPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsResponse?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsResponse> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a sub cost item within a specific cost item.
@@ -138,22 +117,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.It
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithSubCostItemsItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithSubCostItemsItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

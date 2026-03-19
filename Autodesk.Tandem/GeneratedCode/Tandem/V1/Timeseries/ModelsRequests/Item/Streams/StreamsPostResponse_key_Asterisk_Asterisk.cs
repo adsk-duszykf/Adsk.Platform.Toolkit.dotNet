@@ -11,10 +11,19 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams
     /// Timestamp (Unix EPOCH time).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class StreamsPostResponse_key_Asterisk_Asterisk : IParsable
+    public partial class StreamsPostResponse_key_Asterisk_Asterisk : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Stream value.</summary>
         public double? Asterisk { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.StreamsPostResponse_key_Asterisk_Asterisk"/> and sets the default values.
+        /// </summary>
+        public StreamsPostResponse_key_Asterisk_Asterisk()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("*", Asterisk);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

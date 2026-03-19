@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithProject_PatchRequestBody : IParsable
+    public partial class WithProject_PatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address_line_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +163,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item
         /// <summary>The value property</summary>
         public double? Value { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.WithProject_PatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithProject_PatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.WithProject_PatchRequestBody"/></returns>
@@ -227,6 +236,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteDoubleValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

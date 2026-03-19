@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ContentViewsGetResponse_results : IParsable
+    public partial class ContentViewsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The content view ID.</summary>
         public Guid? Id { get; set; }
         /// <summary>The content view type.Possible values: `SHEET` (2D Sheet), `FILE_MODEL` (3D Model).</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
 #else
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_view View { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public ContentViewsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
             writer.WriteGuidValue("id", Id);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_type>("type", Type);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_view>("view", View);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

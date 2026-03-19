@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
     /// The pagination object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchRfisPostResponse_pagination : IParsable
+    public partial class SearchRfisPostResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of items returned per page.</summary>
         public int? Limit { get; set; }
         /// <summary>The number of items skipped before this page of results.</summary>
         public int? Offset { get; set; }
         /// <summary>The total number of items matching the request.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public SearchRfisPostResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithUserGetResponse : IParsable
+    public partial class WithUserGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A short bio about the user.  This data will sync from the user&apos;s Autodesk profile.Max length: 255</summary>
@@ -28,6 +28,8 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
 #else
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse_accessLevels AccessLevels { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address line 1 of the user.  This data will sync from the user&apos;s Autodesk profile.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,6 +185,13 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
         public string StateOrProvince { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithUserGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse"/></returns>
@@ -253,6 +262,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
             writer.WriteCollectionOfPrimitiveValues<string>("roleIds", RoleIds);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse_services>("services", Services);
             writer.WriteStringValue("stateOrProvince", StateOrProvince);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

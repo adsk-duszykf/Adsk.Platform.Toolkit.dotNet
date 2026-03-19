@@ -11,8 +11,17 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
     /// Free text description of the attribute
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssuesPostResponse_customAttributes_title : IParsable
+    public partial class IssuesPostResponse_customAttributes_title : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse_customAttributes_title"/> and sets the default values.
+        /// </summary>
+        public IssuesPostResponse_customAttributes_title()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

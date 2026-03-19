@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BudgetsGetResponse_results : IParsable
+    public partial class BudgetsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The total amount of actual cost of the budget.</summary>
@@ -34,6 +34,8 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets
 #endif
         /// <summary>Average unit price for the actual cost of the budget.</summary>
         public double? ActualUnitPrice { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total amount of changes committed to the supplier.</summary>
         public double? ApprovedChangeOrders { get; set; }
         /// <summary>The total amount of in-scope changes committed to the supplier.</summary>
@@ -263,6 +265,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets
         /// <summary>The total amount of the variance of a budget, equals to `projectedBudget` - `projectedCost`.</summary>
         public double? VarianceTotal { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.BudgetsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public BudgetsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.BudgetsGetResponse_results"/></returns>
@@ -401,6 +410,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets
             writer.WriteDoubleValue("unitPrice", UnitPrice);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteDoubleValue("varianceTotal", VarianceTotal);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

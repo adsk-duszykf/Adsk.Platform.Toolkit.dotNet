@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
     /// Weather forecast captured on the form.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithFormPatchResponse_weather : IParsable
+    public partial class WithFormPatchResponse_weather : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Weather information for specific hours (07:00:00, 12:00:00, 16:00:00).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +72,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         /// <summary>Average wind speed observed throughout the day.</summary>
         public double? WindSpeed { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather"/> and sets the default values.
+        /// </summary>
+        public WithFormPatchResponse_weather()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.Item.WithFormPatchResponse_weather"/></returns>
@@ -122,6 +131,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
             writer.WriteDoubleValue("windBearing", WindBearing);
             writer.WriteDoubleValue("windGust", WindGust);
             writer.WriteDoubleValue("windSpeed", WindSpeed);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

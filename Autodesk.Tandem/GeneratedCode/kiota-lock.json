@@ -8,8 +8,8 @@
   "clientNamespaceName": "Autodesk.Tandem",
   "language": "CSharp",
   "usesBackingStore": false,
-  "excludeBackwardCompatible": false,
-  "includeAdditionalData": false,
+  "excludeBackwardCompatible": true,
+  "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",

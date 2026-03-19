@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ChangeOrderPatchRequestBody_additionalCollaborators : IParsable
+    public partial class ChangeOrderPatchRequestBody_additionalCollaborators : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The BIM360/ACC ID of the firm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item
 #else
         public List<string> ContactIds { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderPatchRequestBody_additionalCollaborators"/> and sets the default values.
+        /// </summary>
+        public ChangeOrderPatchRequestBody_additionalCollaborators()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item
             writer.WriteStringValue("companyId", CompanyId);
             writer.WriteStringValue("companyUid", CompanyUid);
             writer.WriteCollectionOfPrimitiveValues<string>("contactIds", ContactIds);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

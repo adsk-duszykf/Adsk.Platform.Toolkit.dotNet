@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
     /// The phone number of the user. This data will sync from the user&apos;s Autodesk profile.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithUserGetResponse_phone : IParsable
+    public partial class WithUserGetResponse_phone : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>User&apos;s phone extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
 #endif
         /// <summary>User&apos;s phone type. Can be `home`, `mobile` or `office`.  Defaults to `mobile`.Possible values: `mobile`, `home`, `office`</summary>
         public global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse_phone_phoneType? PhoneType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse_phone"/> and sets the default values.
+        /// </summary>
+        public WithUserGetResponse_phone()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item
             writer.WriteStringValue("extension", Extension);
             writer.WriteStringValue("number", Number);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse_phone_phoneType>("phoneType", PhoneType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

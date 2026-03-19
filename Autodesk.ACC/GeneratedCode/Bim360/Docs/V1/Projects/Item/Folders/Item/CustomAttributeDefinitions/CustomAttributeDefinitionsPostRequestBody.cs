@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttribute
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CustomAttributeDefinitionsPostRequestBody : IParsable
+    public partial class CustomAttributeDefinitionsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of possible values for the attribute. Only relevant for drop-list attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttribute
 #endif
         /// <summary>The type of attribute. Possible values: `string` (text field), `date`, `array` (drop-list).</summary>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsPostRequestBody_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public CustomAttributeDefinitionsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttribute
             writer.WriteCollectionOfPrimitiveValues<string>("arrayValues", ArrayValues);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsPostRequestBody_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

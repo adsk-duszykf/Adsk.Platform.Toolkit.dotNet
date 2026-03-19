@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
     /// The pagination object defining the limit, offset, total number of issues, next and previous URL
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssuesGetResponse_pagination : IParsable
+    public partial class IssuesGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of issues to be returned in each page</summary>
         public int? Limit { get; set; }
         /// <summary>The offset defining the start position from where the issues are returned</summary>
         public int? Offset { get; set; }
         /// <summary>The total number of issues including the ones of the current page</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public IssuesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

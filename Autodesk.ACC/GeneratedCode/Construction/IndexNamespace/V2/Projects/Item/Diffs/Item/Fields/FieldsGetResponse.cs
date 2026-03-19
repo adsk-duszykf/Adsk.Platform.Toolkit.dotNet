@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.F
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FieldsGetResponse : IParsable
+    public partial class FieldsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The property database attribute category, can be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +48,13 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.F
 #else
         public string Uom { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Fields.FieldsGetResponse"/> and sets the default values.
+        /// </summary>
+        public FieldsGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,6 +92,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.F
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Fields.FieldsGetResponse_type>("type", Type);
             writer.WriteStringValue("uom", Uom);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

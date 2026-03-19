@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
     /// The starting state of the transition, representing the current position of the submittal item in the workflow.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PackagesGetResponse_permittedActions_transitions_stateFrom : IParsable
+    public partial class PackagesGetResponse_permittedActions_transitions_stateFrom : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique ID of the starting state. For example, `create`, `mgr-1`, `rev`. The `rev` state indicates that the submittal item is currently under review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item.PackagesGetResponse_permittedActions_transitions_stateFrom"/> and sets the default values.
+        /// </summary>
+        public PackagesGetResponse_permittedActions_transitions_stateFrom()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

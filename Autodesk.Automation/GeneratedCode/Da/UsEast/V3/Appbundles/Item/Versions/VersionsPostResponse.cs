@@ -9,9 +9,11 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VersionsPostResponse : IParsable
+    public partial class VersionsPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A module referenced by an Activity in order to perform specific functions. Typically this is a DLL or some other form of custom code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions
         public global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.VersionsPostResponse_uploadParameters UploadParameters { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.VersionsPostResponse"/> and sets the default values.
+        /// </summary>
+        public VersionsPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.VersionsPostResponse"/></returns>
@@ -89,6 +98,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.VersionsPostResponse_settings>("settings", Settings);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.VersionsPostResponse_uploadParameters>("uploadParameters", UploadParameters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

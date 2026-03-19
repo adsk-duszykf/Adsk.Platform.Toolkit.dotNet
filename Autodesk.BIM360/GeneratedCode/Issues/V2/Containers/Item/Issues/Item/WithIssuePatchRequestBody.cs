@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithIssuePatchRequestBody : IParsable
+    public partial class WithIssuePatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique Autodesk ID of the User/Company/Role of the current assignee for this issue. Note that if you select an assignee ID, you also need to select a type (`assignedToType`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +101,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
         public string Title { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssuePatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithIssuePatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssuePatchRequestBody"/></returns>
@@ -157,6 +166,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
             writer.WriteStringValue("snapshotUrn", SnapshotUrn);
             writer.WriteEnumValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssuePatchRequestBody_status>("status", Status);
             writer.WriteStringValue("title", Title);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

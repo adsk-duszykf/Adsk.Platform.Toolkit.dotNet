@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
     /// The official response of the user for the issue
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithIssueGetResponse_officialResponse : IParsable
+    public partial class WithIssueGetResponse_officialResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the issue was responded, in ISO8601 format</summary>
         public DateTimeOffset? RespondedAt { get; set; }
         /// <summary>The unique identifier of the user that suggested a response for the issue</summary>
@@ -31,6 +33,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public string Response { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_officialResponse"/> and sets the default values.
+        /// </summary>
+        public WithIssueGetResponse_officialResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
             writer.WriteDateTimeOffsetValue("respondedAt", RespondedAt);
             writer.WriteStringValue("respondedBy", RespondedBy);
             writer.WriteStringValue("response", Response);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

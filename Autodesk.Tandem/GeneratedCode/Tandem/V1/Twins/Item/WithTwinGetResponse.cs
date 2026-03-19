@@ -9,7 +9,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithTwinGetResponse : IParsable
+    public partial class WithTwinGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Level of access to the corresponding resource.</summary>
@@ -30,6 +30,8 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
 #else
         public string AccountType { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Use overhead floor slab as upper bounds for room assignment</summary>
         public bool? BoundByUpperFloor { get; set; }
         /// <summary>Date of creation of the facility.</summary>
@@ -105,6 +107,13 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
         /// <summary>Timestamp of the last thumbnail update in Unix milliseconds.</summary>
         public int? ThumbnailLastUpdate { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithTwinGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse"/></returns>
@@ -163,6 +172,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
             writer.WriteBoolValue("skipRoomBounders", SkipRoomBounders);
             writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse_template>("template", Template);
             writer.WriteIntValue("thumbnailLastUpdate", ThumbnailLastUpdate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

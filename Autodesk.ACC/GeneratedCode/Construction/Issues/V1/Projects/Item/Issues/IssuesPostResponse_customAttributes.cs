@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssuesPostResponse_customAttributes : IParsable
+    public partial class IssuesPostResponse_customAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the custom attribute.</summary>
         public Guid? AttributeDefinitionId { get; set; }
         /// <summary>Free text description of the attribute.</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
 #else
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse_customAttributes_value Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse_customAttributes"/> and sets the default values.
+        /// </summary>
+        public IssuesPostResponse_customAttributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse_customAttributes_type>("type", Type);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse_customAttributes_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

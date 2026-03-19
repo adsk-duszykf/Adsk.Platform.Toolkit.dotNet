@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Industry_rolesGetResponse : IParsable
+    public partial class Industry_rolesGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles
         public global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles.Industry_rolesGetResponse_services Services { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles.Industry_rolesGetResponse"/> and sets the default values.
+        /// </summary>
+        public Industry_rolesGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles.Industry_rolesGetResponse"/></returns>
@@ -89,6 +98,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteObjectValue<global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles.Industry_rolesGetResponse_services>("services", Services);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

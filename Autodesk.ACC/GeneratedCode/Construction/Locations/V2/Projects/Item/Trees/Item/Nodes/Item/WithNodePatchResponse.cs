@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithNodePatchResponse : IParsable
+    public partial class WithNodePatchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The barcode that represents this LBS node. This value must be unique per project.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
         public Guid? ParentId { get; set; }
         /// <summary>The type of this LBS node. Note that only `Area` is a currently supported request value.Possible values: `Area`, `Level`, `Root`</summary>
         public global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodePatchResponse_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodePatchResponse"/> and sets the default values.
+        /// </summary>
+        public WithNodePatchResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,6 +94,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
             writer.WriteIntValue("order", Order);
             writer.WriteGuidValue("parentId", ParentId);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodePatchResponse_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

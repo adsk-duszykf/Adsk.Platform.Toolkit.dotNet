@@ -53,34 +53,15 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse?> GetAsItemTypesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse> GetAsItemTypesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves all submittal itme types for the specified project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsItemTypesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all submittal itme types for the specified project.
@@ -122,14 +103,6 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
             /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemTypesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

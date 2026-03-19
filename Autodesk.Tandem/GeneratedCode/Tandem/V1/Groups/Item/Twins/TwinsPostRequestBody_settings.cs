@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TwinsPostRequestBody_settings : IParsable
+    public partial class TwinsPostRequestBody_settings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Use overhead floor slab as upper bounds for room assignment</summary>
         public bool? BoundByUpperFloor { get; set; }
         /// <summary>Date of creation of the facility.</summary>
@@ -52,6 +54,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         public bool? SkipRoomBounders { get; set; }
         /// <summary>Timestamp of the last thumbnail update in Unix milliseconds.</summary>
         public int? ThumbnailLastUpdate { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostRequestBody_settings"/> and sets the default values.
+        /// </summary>
+        public TwinsPostRequestBody_settings()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -95,6 +104,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
             writer.WriteIntValue("schemaVersion", SchemaVersion);
             writer.WriteBoolValue("skipRoomBounders", SkipRoomBounders);
             writer.WriteIntValue("thumbnailLastUpdate", ThumbnailLastUpdate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

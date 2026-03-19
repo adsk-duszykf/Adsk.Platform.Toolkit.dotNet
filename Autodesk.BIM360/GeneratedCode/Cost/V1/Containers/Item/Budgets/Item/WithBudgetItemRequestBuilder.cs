@@ -57,34 +57,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetGetResponse?> GetAsWithBudgetGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetGetResponse> GetAsWithBudgetGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a budget specified by ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithBudgetGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a budget.
@@ -95,37 +76,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchResponse?> PatchAsWithBudgetPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchResponse?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchResponse> PatchAsWithBudgetPatchResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchResponse> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a budget.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithBudgetPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse?> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse> PatchAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a budget.
@@ -206,14 +166,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
             public bool? Force { get; set; }
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithBudgetItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Retrieves a budget specified by ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -231,14 +183,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithBudgetItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Updates a budget.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -247,14 +191,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item
             /// <summary>`true`: This request forces an override of locked budgeting so the request can succeed. The ability to create, update, or delete budgets can be locked at the project level, and `force` enables administrators to override the lock. A locked budget. Only a project administrator is allowed to update, create, or delete budgets when locked.`false`: This request does not override locked budgeting.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithBudgetItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Budgets.Item.WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>
-        {
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ImportPostResponse_failure_items_services : IParsable
+    public partial class ImportPostResponse_failure_items_services : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The document_management property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
 #else
         public global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_failure_items_services_project_administration ProjectAdministration { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_failure_items_services"/> and sets the default values.
+        /// </summary>
+        public ImportPostResponse_failure_items_services()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_failure_items_services_document_management>("document_management", DocumentManagement);
             writer.WriteObjectValue<global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_failure_items_services_project_administration>("project_administration", ProjectAdministration);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

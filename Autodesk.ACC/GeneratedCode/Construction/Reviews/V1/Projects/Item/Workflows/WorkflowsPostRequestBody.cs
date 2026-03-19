@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WorkflowsPostRequestBody : IParsable
+    public partial class WorkflowsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Custom approval statuses to add in addition to the built-in statuses (`APPROVED`, `REJECTED`). You can define up to 50.</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody_additionalApprovalStatusOptions> AdditionalApprovalStatusOptions { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Workflow-level settings that control whether the initiator can modify certain fields when starting a review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +71,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody_steps> Steps { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public WorkflowsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody"/></returns>
@@ -109,6 +118,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notes", Notes);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostRequestBody_steps>("steps", Steps);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

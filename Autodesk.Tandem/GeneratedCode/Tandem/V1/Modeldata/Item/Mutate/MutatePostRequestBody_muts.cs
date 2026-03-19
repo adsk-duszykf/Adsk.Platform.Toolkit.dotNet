@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MutatePostRequestBody_muts : IParsable
+    public partial class MutatePostRequestBody_muts : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The column property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate
 #else
         public global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate.MutatePostRequestBody_muts_value Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate.MutatePostRequestBody_muts"/> and sets the default values.
+        /// </summary>
+        public MutatePostRequestBody_muts()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate
             writer.WriteStringValue("family", Family);
             writer.WriteStringValue("op", Op);
             writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate.MutatePostRequestBody_muts_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

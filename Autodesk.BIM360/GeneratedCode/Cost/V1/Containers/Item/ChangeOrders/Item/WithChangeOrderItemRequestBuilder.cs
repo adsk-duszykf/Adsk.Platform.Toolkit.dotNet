@@ -29,19 +29,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
                 return new global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.changeOrders.item.item collection</summary>
-        /// <param name="position">The change order&apos;s ID.</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("id", position);
-                return new global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse?> GetAsWithChangeOrderGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse> GetAsWithChangeOrderGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of change orders of a specified change order type, including PCO (potential change orders), RFQ (requests for quote), SCO (supplier change orders), RCO (requests for change order), and OCO (owner change orders).
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithChangeOrderGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new change order (typically a PCO) to initiate a change.
@@ -104,37 +72,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse?> PostAsWithChangeOrderPostResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse?> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse> PostAsWithChangeOrderPostResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Create a new change order (typically a PCO) to initiate a change.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsWithChangeOrderPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse?> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of change orders of a specified change order type, including PCO (potential change orders), RFQ (requests for quote), SCO (supplier change orders), RCO (requests for change order), and OCO (owner change orders).
@@ -311,22 +258,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithChangeOrderItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithChangeOrderItemRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

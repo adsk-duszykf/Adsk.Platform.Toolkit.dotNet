@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
     /// Information about what to include when cloning a project template.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ProjectsPostRequestBody_template_options : IParsable
+    public partial class ProjectsPostRequestBody_template_options : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Project template options specific to classic field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
 #else
         public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template_options_field Field { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template_options"/> and sets the default values.
+        /// </summary>
+        public ProjectsPostRequestBody_template_options()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody_template_options_field>("field", Field);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

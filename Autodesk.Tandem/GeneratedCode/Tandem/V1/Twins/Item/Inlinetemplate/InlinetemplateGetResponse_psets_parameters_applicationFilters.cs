@@ -11,8 +11,17 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate
     /// When creating a `flattened` pset out of a list of psets in a template,this gets combined from several application filters on psets that may haveduplicates of this parameter
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InlinetemplateGetResponse_psets_parameters_applicationFilters : IParsable
+    public partial class InlinetemplateGetResponse_psets_parameters_applicationFilters : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate.InlinetemplateGetResponse_psets_parameters_applicationFilters"/> and sets the default values.
+        /// </summary>
+        public InlinetemplateGetResponse_psets_parameters_applicationFilters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Inlinetemplate
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

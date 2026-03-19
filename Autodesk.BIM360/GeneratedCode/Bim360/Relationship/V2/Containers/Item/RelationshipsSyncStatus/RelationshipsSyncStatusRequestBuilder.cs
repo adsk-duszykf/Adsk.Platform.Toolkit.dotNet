@@ -41,37 +41,16 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse?> PostAsRelationshipsSyncStatusPostResponseAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse> PostAsRelationshipsSyncStatusPostResponseAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the relationship synchronization status for the caller as one or more synchronization tokens. This can be based on an optional array of input tokens.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsRelationshipsSyncStatusPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusResponse> PostAsync(global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the relationship synchronization status for the caller as one or more synchronization tokens. This can be based on an optional array of input tokens.
@@ -103,14 +82,6 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         public global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RelationshipsSyncStatusRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

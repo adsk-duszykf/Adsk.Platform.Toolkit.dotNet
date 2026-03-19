@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
     /// The clash data associated with a clash group.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ClosedPostResponse_clashData : IParsable
+    public partial class ClosedPostResponse_clashData : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clashes associated with the clash groups supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
 #else
         public List<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData_documents> Documents { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData"/> and sets the default values.
+        /// </summary>
+        public ClosedPostResponse_clashData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData_clashes>("clashes", Clashes);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData_clashInstances>("clashInstances", ClashInstances);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse_clashData_documents>("documents", Documents);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

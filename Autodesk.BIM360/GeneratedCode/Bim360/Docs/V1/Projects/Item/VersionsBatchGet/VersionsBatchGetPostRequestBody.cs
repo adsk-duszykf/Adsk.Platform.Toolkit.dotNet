@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VersionsBatchGetPostRequestBody : IParsable
+    public partial class VersionsBatchGetPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of version IDs or item IDs. If you use item IDs it retrieves the values for the latest (tip) versions. You can specify up to 50 documents. To find the version ID and item ID of a document follow the initial steps of the [Download Files](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/document-management/download-document-s3/) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #else
         public List<string> Urns { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public VersionsBatchGetPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("urns", Urns);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

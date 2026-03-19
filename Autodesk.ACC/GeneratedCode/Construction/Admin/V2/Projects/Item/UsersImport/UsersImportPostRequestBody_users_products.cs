@@ -9,11 +9,13 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UsersImportPostRequestBody_users_products : IParsable
+    public partial class UsersImportPostRequestBody_users_products : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user&apos;s type of access to the product identified by `key`. Possible values:- `administrator`- `member`- `none`Note that when you&apos;re using a POST or PATCH endpoint to set this value, you must adhere to the following guidelines:- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `none`, all other products should be set to `member` access for the user.- If you set a product&apos;s `key` to `projectAdministration` and you set `access` to `administrator`, all other products should be set to `administrator` access for the user.- You cannot set a product&apos;s `key` to `projectAdministration` and set `access` to `member`.</summary>
         public global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users_products_access? Access { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A keyword that identifies the product.Possible values: `autoSpecs`, `build`, `cost`, `designCollaboration`, `docs`, `insight`, `modelCoordination`, `projectAdministration`, and `takeoff`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
 #else
         public string Key { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users_products"/> and sets the default values.
+        /// </summary>
+        public UsersImportPostRequestBody_users_products()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users_products_access>("access", Access);
             writer.WriteStringValue("key", Key);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

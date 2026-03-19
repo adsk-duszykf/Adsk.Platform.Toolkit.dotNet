@@ -53,34 +53,15 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsGetResponse?> GetAsPaymentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsGetResponse> GetAsPaymentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsGetResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves payments in the given project based on the specified query criteria.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsPaymentsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves payments in the given project based on the specified query criteria.
@@ -127,19 +108,8 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             public string[] FilterassociationId { get; set; }
 #endif
             /// <summary>Returns only the payments that are associated with the type of contract specified. Possible values:`Contract` for cost payments; `MainContract` for budget payments. For example, `filter[associationType]=Contract`.</summary>
-            [Obsolete("This property is deprecated, use FilterassociationTypeAsGetFilterAssociationTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filter%5BassociationType%5D")]
-            public string? FilterassociationType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filter%5BassociationType%5D")]
-            public string FilterassociationType { get; set; }
-#endif
-            /// <summary>Returns only the payments that are associated with the type of contract specified. Possible values:`Contract` for cost payments; `MainContract` for budget payments. For example, `filter[associationType]=Contract`.</summary>
-            [QueryParameter("filter%5BassociationType%5D")]
-            public global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.GetFilterAssociationTypeQueryParameterType? FilterassociationTypeAsGetFilterAssociationTypeQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.GetFilterAssociationTypeQueryParameterType? FilterassociationType { get; set; }
             /// <summary>Returns only the payments associated with the budget payments (used to query the related cost payments or expenses) that are identified on this list of IDs. Separate multiple IDs with commas; for example, `filter[budgetPaymentId]=id1,id2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -236,14 +206,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Payments
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PaymentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Payments.PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

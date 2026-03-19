@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item
     /// The collection object, if assigned. If no collection is assigned, this value is `null`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithVersionSetPatchResponse_collection : IParsable
+    public partial class WithVersionSetPatchResponse_collection : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the collection.</summary>
         public Guid? Id { get; set; }
         /// <summary>The name of the collection. This corresponds to the Name column in the ACC Sheets Collections Settings UI.Max length: 255</summary>
@@ -23,6 +25,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item.WithVersionSetPatchResponse_collection"/> and sets the default values.
+        /// </summary>
+        public WithVersionSetPatchResponse_collection()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

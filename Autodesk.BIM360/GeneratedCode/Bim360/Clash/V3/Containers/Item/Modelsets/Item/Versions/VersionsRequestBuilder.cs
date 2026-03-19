@@ -27,19 +27,6 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Version
                 return new global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.bim360.clash.v3.containers.item.modelsets.item.versions.item collection</summary>
-        /// <param name="position">The model set version number.</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("version", position);
-                return new global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.VersionsRequestBuilder"/> and sets the default values.
         /// </summary>

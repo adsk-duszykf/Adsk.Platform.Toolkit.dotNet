@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationshi
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsPostRequestBody_entities : IParsable
+    public partial class RelationshipsPostRequestBody_entities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the related entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationshi
 #endif
         /// <summary>The entity type of the related entity.Within BIM 360 projects, assets may only be linked to entities of entity types`checklist`, `documentlineage`, and `issue`.Specifying any other entity types will return a `400` status code.Possible values: `checklist`, `documentlineage`, `form`, `issue`, `photo`, `rfi`, `sheetlineage`, `submittalitem`</summary>
         public global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationships.RelationshipsPostRequestBody_entities_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationships.RelationshipsPostRequestBody_entities"/> and sets the default values.
+        /// </summary>
+        public RelationshipsPostRequestBody_entities()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationshi
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("relationshipId", RelationshipId);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationships.RelationshipsPostRequestBody_entities_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

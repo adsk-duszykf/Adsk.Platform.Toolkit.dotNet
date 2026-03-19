@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomI
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierGetResponse?> GetAsItemsNextCustomIdentifierGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierGetResponse> GetAsItemsNextCustomIdentifierGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the next available custom identifier for a submittal item in a project. The identifier is generated based on specific rules:
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsItemsNextCustomIdentifierGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the next available custom identifier for a submittal item in a project. The identifier is generated based on specific rules:
@@ -106,14 +87,6 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomI
             /// <summary>The item spec ID. This parameter is only required when the project is in spec sequence type (as opposed to global sequence).To verify the sequence type, call [GET metadata](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET/), and check `customIdentifierSequenceType`.To get the spec ID, call [GET specs](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-GET/), and select the relevant ID (`id`).</summary>
             [QueryParameter("specId")]
             public Guid? SpecId { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemsNextCustomIdentifierRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

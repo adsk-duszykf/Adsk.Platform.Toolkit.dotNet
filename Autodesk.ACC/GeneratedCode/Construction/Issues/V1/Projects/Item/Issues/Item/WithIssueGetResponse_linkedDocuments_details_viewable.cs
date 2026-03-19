@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
     /// The individual viewable associated with the issue (pushpin). This is relevant for both individual 2D sheets and views within a 3D model, and individual PDF sheets within a multi-sheet PDF file. It is only relevant if the issue is associated with a file.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithIssueGetResponse_linkedDocuments_details_viewable : IParsable
+    public partial class WithIssueGetResponse_linkedDocuments_details_viewable : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the viewable (guid).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
 #else
         public string ViewableId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueGetResponse_linkedDocuments_details_viewable"/> and sets the default values.
+        /// </summary>
+        public WithIssueGetResponse_linkedDocuments_details_viewable()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
             writer.WriteBoolValue("is3D", Is3D);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("viewableId", ViewableId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

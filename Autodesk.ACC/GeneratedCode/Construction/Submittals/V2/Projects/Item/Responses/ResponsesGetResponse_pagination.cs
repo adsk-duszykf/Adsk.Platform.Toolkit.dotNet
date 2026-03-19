@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses
     /// Describes pagination details for the response, including information about the current page and navigation to other pages.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ResponsesGetResponse_pagination : IParsable
+    public partial class ResponsesGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of results to be displayed on each page.</summary>
         public int? Limit { get; set; }
         /// <summary>The URL to retrieve the subsequent page of results, if available. If not included, this is the last page of data.</summary>
@@ -35,6 +37,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses
 #endif
         /// <summary>The overall count of results available across all pages.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.ResponsesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public ResponsesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,6 +81,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses
             writer.WriteIntValue("offset", Offset);
             writer.WriteStringValue("previousUrl", PreviousUrl);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

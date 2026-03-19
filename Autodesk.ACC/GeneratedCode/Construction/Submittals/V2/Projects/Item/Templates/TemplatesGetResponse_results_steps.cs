@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TemplatesGetResponse_results_steps : IParsable
+    public partial class TemplatesGetResponse_results_steps : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies a dynamic due date. When the step starts, the due date is calculated based on this field.</summary>
         public double? DaysToRespond { get; set; }
         /// <summary>The internal, globally unique identifier (UUID) for the step. Each step in the workflow has a unique ID.</summary>
@@ -26,6 +28,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse_results_steps_tasks> Tasks { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse_results_steps"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_results_steps()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
             writer.WriteGuidValue("id", Id);
             writer.WriteDoubleValue("stepNumber", StepNumber);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse_results_steps_tasks>("tasks", Tasks);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

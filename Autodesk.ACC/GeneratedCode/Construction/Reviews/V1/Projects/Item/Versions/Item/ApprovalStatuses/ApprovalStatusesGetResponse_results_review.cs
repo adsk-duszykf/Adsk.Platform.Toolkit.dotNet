@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
     /// Metadata about the review in which this file version was included.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ApprovalStatusesGetResponse_results_review : IParsable
+    public partial class ApprovalStatusesGetResponse_results_review : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the review.</summary>
         public Guid? Id { get; set; }
         /// <summary>A unique, auto-incrementing number assigned to the review when it is first submitted.This ID does not change, even if the review is sent back to the initiator and goes through multiple rounds.It identifies the review within the project and reflects the order in which reviews were created.</summary>
         public int? SequenceId { get; set; }
         /// <summary>The current status of the review.Possible values: `OPEN`, `CLOSED`, `VOID`, `FAILED`.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_review_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_review"/> and sets the default values.
+        /// </summary>
+        public ApprovalStatusesGetResponse_results_review()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
             writer.WriteGuidValue("id", Id);
             writer.WriteIntValue("sequenceId", SequenceId);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse_results_review_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

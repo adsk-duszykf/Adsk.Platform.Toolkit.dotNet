@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse?> GetAsProjectsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse> GetAsProjectsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of the projects in the specified account.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsProjectsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new project in the specified account. You can create the project directly, or clone it from a project template.
@@ -78,37 +59,16 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostResponse?> PostAsProjectsPostResponseAsync(global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostResponse> PostAsProjectsPostResponseAsync(global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostResponse> PostAsync(global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new project in the specified account. You can create the project directly, or clone it from a project template.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsProjectsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse?> PostAsync(global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse> PostAsync(global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of the projects in the specified account.
@@ -240,19 +200,8 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
             public string[] Filterstatus { get; set; }
 #endif
             /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
-            [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filterTextMatch")]
-            public string? FilterTextMatch { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filterTextMatch")]
-            public string FilterTextMatch { get; set; }
-#endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
-            [QueryParameter("filterTextMatch")]
-            public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.GetFilterTextMatchQueryParameterType? FilterTextMatch { get; set; }
             /// <summary>Filters by project type. To exclude a type, prefix it with `-` (e.g., `-Bridge` excludes bridge projects).Possible values: `Airport`, `Assisted Living / Nursing Home`, `Bridge`, `Canal / Waterway`, `Convention Center`, `Court House`, `Data Center`, `Dams / Flood Control / Reservoirs`, `Demonstration Project`, `Dormitory`, `Education Facility`, `Government Building`, `Harbor / River Development`, `Hospital`, `Hotel / Motel`, `Library`, `Manufacturing / Factory`, `Medical Laboratory`, `Medical Office`, `Military Facility`, `Mining Facility`, `Multi-Family Housing`, `Museum`, `Oil &amp; Gas`,`Plant`, `Office`, `OutPatient Surgery Center`, `Parking Structure / Garage`, `Performing Arts`, `Power Plant`, `Prison / Correctional Facility`, `Rail`, `Recreation Building`, `Religious Building`, `Research Facility / Laboratory`, `Restaurant`, `Retail`, `Seaport`, `Single-Family Housing`, `Solar Farm`, `Stadium/Arena`, `Streets / Roads / Highways`, `Template Project`, `Theme Park`, `Training Project`, `Transportation Building`, `Tunnel`, `Utilities`, `Warehouse (non-manufacturing)`, `Waste Water / Sewers`, `Water Supply`, `Wind Farm`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -289,22 +238,6 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

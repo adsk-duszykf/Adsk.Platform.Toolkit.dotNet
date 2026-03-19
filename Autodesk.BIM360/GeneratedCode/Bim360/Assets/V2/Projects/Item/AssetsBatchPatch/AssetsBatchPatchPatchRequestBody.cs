@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssetsBatchPatchPatchRequestBody : IParsable
+    public partial class AssetsBatchPatchPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The request payload for updating an asset V2. The payload is a set of key:value pairs. The key is theasset ID of the asset to revise. The value is a set of one or more asset attributes to revise.Each attribute revision is itself a key:value pair. The key is the attribute name (one of the assetfields supplied in a request to [POST assets:batch-create V2](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-assets-batch-create-POST-v2/)).The value is any permissible defined value for the field as described in [POST assets:batch-create V2](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-assets-batch-create-POST-v2/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
 #else
         public global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchRequestBody_Asterisk Asterisk { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public AssetsBatchPatchPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchRequestBody_Asterisk>("*", Asterisk);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -57,34 +57,15 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageGetResponse?> GetAsWithBidPackageGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageGetResponse> GetAsWithBidPackageGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageGetResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a specific bid package.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithBidPackageGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates fields in a bid package. The requesting user must be a member of the project team.
@@ -95,37 +76,16 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchResponse?> PatchAsWithBidPackagePatchResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchResponse?> PatchAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchResponse> PatchAsWithBidPackagePatchResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchResponse> PatchAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates fields in a bid package. The requesting user must be a member of the project team.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithBidPackagePatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse?> PatchAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse> PatchAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a bid package. The requesting user must be a member of the project team, and the bid package&apos;s `state` field must be set to `DRAFT`.
@@ -194,30 +154,6 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         public global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithBidPackageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithBidPackageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithBidPackageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

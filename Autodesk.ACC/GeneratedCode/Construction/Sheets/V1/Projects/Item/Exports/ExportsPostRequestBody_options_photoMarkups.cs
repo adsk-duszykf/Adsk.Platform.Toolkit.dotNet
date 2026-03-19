@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
     /// The list of types of photo markups to export.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExportsPostRequestBody_options_photoMarkups : IParsable
+    public partial class ExportsPostRequestBody_options_photoMarkups : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true`: published photo markups will be included in the exported sheets.`false`: (default) published photo markups will not be included in the exported sheets.</summary>
         public bool? IncludePublishedMarkups { get; set; }
         /// <summary>`true`: include photo markups in the exported sheets that are visible only to their creators or assignees.`false`: (default) export sheets without including unpublished photo markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody_options_photoMarkups"/> and sets the default values.
+        /// </summary>
+        public ExportsPostRequestBody_options_photoMarkups()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("includePublishedMarkups", IncludePublishedMarkups);
             writer.WriteBoolValue("includeUnpublishedMarkups", IncludeUnpublishedMarkups);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

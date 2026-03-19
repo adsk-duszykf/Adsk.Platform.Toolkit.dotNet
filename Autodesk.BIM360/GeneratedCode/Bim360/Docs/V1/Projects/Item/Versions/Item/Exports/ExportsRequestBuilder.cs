@@ -29,19 +29,6 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
                 return new global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.bim360.docs.v1.projects.item.versions.item.exports.item collection</summary>
-        /// <param name="position">The ID of the export job; returned when initiating [POST projects/:project_id/versions/:version_id/exports](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-projects-project_id-versions-version_id-exports-POST).</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("export_id", position);
-                return new global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -67,37 +54,16 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse?> PostAsExportsPostResponseAsync(global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse> PostAsExportsPostResponseAsync(global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Exports a single page from an uploaded PDF file into a new PDF file. You can also export the page&apos;s markups (annotations) and hyperlinks.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsExportsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsResponse> PostAsync(global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Exports a single page from an uploaded PDF file into a new PDF file. You can also export the page&apos;s markups (annotations) and hyperlinks.
@@ -129,14 +95,6 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ExportsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

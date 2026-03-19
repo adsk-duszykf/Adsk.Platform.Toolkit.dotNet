@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.AttachmentFolders
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentFoldersPostResponse : IParsable
+    public partial class AttachmentFoldersPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time that the item was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The user who created the folder. This is the ID of a user managed by BIM 360 Admin.</summary>
@@ -42,6 +44,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.AttachmentFolders
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.AttachmentFolders.AttachmentFoldersPostResponse"/> and sets the default values.
+        /// </summary>
+        public AttachmentFoldersPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +90,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.AttachmentFolders
             writer.WriteStringValue("scope", Scope);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

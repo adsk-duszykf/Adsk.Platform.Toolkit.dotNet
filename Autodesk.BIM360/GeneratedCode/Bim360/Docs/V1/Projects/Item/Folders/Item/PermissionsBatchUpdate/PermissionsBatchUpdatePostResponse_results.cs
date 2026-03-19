@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PermissionsBatchUpdatePostResponse_results : IParsable
+    public partial class PermissionsBatchUpdatePostResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Permitted actions for the user, role, or company.The permission action group is different in BIM 360 Document Management and ACC Build Files.- The six permission levels in BIM 360 Document Management correspond to one or more actions:- View Only: `VIEW`, `COLLABORATE`- View/Download: `VIEW`, `DOWNLOAD`, `COLLABORATE`- Upload Only: `PUBLISH`- View/Download+Upload: `PUBLISH`, `VIEW`, `DOWNLOAD`, `COLLABORATE`- View/Download+Upload+Edit: `PUBLISH`, `VIEW`, `DOWNLOAD`, `COLLABORATE`, `EDIT`- Full controller: `PUBLISH`, `VIEW`, `DOWNLOAD`, `COLLABORATE`, `EDIT`, `CONTROL`- The six permission levels in Autodesk Construction Cloud correspond to one or more actions:- View Only: `VIEW`, `COLLABORATE`- View/Download: `VIEW`, `DOWNLOAD`, `COLLABORATE`- View/Download+PublishMarkups: `VIEW`, `DOWNLOAD`, `COLLABORATE`, `PUBLISH_MARKUP`- View/Download+PublishMarkups+Upload: `PUBLISH`, `VIEW`, `DOWNLOAD`, `COLLABORATE`, `PUBLISH_MARKUP`- View/Download+PublishMarkups+Upload+Edit: `PUBLISH`, `VIEW`, `DOWNLOAD`, `COLLABORATE`, `PUBLISH_MARKUP`, `EDIT`- Full controller: `PUBLISH`, `VIEW`, `DOWNLOAD`, `COLLABORATE`, `PUBLISH_MARKUP`, `EDIT`, `CONTROL`See the [BIM 360 Help documentation](http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2643FEEF-B48A-45A1-B354-797DAD628C37) or the [ACC Files Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Folder_Permissions) for more details about each permission level.Note that the full set of permissions assigned to the user, role, or company is a combination of `actions` and `inheritActions`.</summary>
@@ -20,10 +20,19 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
 #else
         public List<string> Actions { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the user, role, or company. For example, this corresponds to the `id`, `roleId`, or `companyId` in the response for [GET /users/user_id](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-v1-projects-projectId-users-userId-GET/).</summary>
         public Guid? SubjectId { get; set; }
         /// <summary>The type of subject.Possible values: `USER`, `COMPANY`, `ROLE`</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchUpdate.PermissionsBatchUpdatePostResponse_results_subjectType? SubjectType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchUpdate.PermissionsBatchUpdatePostResponse_results"/> and sets the default values.
+        /// </summary>
+        public PermissionsBatchUpdatePostResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
             writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
             writer.WriteGuidValue("subjectId", SubjectId);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchUpdate.PermissionsBatchUpdatePostResponse_results_subjectType>("subjectType", SubjectType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

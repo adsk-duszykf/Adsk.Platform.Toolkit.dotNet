@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class JobsGetResponse : IParsable
+    public partial class JobsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the pagination used to return the results array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
 #else
         public List<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs.JobsGetResponse_results> Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs.JobsGetResponse"/> and sets the default values.
+        /// </summary>
+        public JobsGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs.JobsGetResponse_pagination>("pagination", Pagination);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.Jobs.JobsGetResponse_results>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

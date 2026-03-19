@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
     /// The approval status of the file version.For more information, see [File Status](https://help.autodesk.com/view/DOCS/ENU/?guid=Reviews_Files) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ResourcesGetResponse_results_approvalStatus : IParsable
+    public partial class ResourcesGetResponse_results_approvalStatus : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the approval status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse_results_approvalStatus"/> and sets the default values.
+        /// </summary>
+        public ResourcesGetResponse_results_approvalStatus()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

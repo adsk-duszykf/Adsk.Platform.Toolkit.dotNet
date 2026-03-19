@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttributesPostResponse : IParsable
+    public partial class AttributesPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description of the attribute as shown in the UI.Max length: 1000</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse_status? Status { get; set; }
         /// <summary>The type of the attribute.Possible values: `text`, `numeric`</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse"/> and sets the default values.
+        /// </summary>
+        public AttributesPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,6 +94,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse_possibleValues>("possibleValues", PossibleValues);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse_status>("status", Status);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRfiGetResponse_permittedActions : IParsable
+    public partial class WithRfiGetResponse_permittedActions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createAttachment property</summary>
         public bool? CreateAttachment { get; set; }
         /// <summary>The createComment property</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
 #else
         public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions_updateRfi UpdateRfi { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions"/> and sets the default values.
+        /// </summary>
+        public WithRfiGetResponse_permittedActions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
             writer.WriteBoolValue("removeDocumentReference", RemoveDocumentReference);
             writer.WriteBoolValue("togglePushpinVisibility", TogglePushpinVisibility);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse_permittedActions_updateRfi>("updateRfi", UpdateRfi);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

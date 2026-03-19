@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PackagesGetResponse_results : IParsable
+    public partial class PackagesGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time the package was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the package. For details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET/).</summary>
@@ -75,6 +77,13 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
         public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse_results_versionType VersionType { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public PackagesGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse_results"/></returns>
@@ -127,6 +136,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse_results_versionType>("versionType", VersionType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

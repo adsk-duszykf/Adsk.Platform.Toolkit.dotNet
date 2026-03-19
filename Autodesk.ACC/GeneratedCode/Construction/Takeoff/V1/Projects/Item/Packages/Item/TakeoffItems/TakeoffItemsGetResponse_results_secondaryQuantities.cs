@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TakeoffItemsGetResponse_results_secondaryQuantities : IParsable
+    public partial class TakeoffItemsGetResponse_results_secondaryQuantities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The classification code selected from the first classification system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +42,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
         public double? Quantity { get; set; }
         /// <summary>The unit of measurement.Possible values: `EA`, `IN`, `LF`, `YD`, `SI`, `SF`, `SY`, `CI`, `CF`, `CY`, `LBS`, `TON`, `MM`, `M`, `M2`, `M3`, `KG`, `T`.</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.TakeoffItemsGetResponse_results_secondaryQuantities_unitOfMeasure? UnitOfMeasure { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.TakeoffItemsGetResponse_results_secondaryQuantities"/> and sets the default values.
+        /// </summary>
+        public TakeoffItemsGetResponse_results_secondaryQuantities()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,6 +86,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
             writer.WriteStringValue("outputName", OutputName);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffItems.TakeoffItemsGetResponse_results_secondaryQuantities_unitOfMeasure>("unitOfMeasure", UnitOfMeasure);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithUser_PatchRequestBody : IParsable
+    public partial class WithUser_PatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The company_id property</summary>
         public Guid? CompanyId { get; set; }
         /// <summary>The default_role property</summary>
@@ -30,6 +32,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_PatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithUser_PatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item
             writer.WriteGuidValue("company_id", CompanyId);
             writer.WriteStringValue("default_role", DefaultRole);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,11 +9,20 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UsersImportPostResponse : IParsable
+    public partial class UsersImportPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>We don&apos;t currently support this field, but expect to in a future release.If the response returns `jobId` with a valid UUID value, the user import operation was successful.</summary>
         public Guid? JobId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostResponse"/> and sets the default values.
+        /// </summary>
+        public UsersImportPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +52,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("jobId", JobId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

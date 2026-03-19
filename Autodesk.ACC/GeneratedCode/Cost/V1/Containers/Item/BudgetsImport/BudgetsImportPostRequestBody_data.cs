@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.BudgetsImport
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BudgetsImportPostRequestBody_data : IParsable
+    public partial class BudgetsImportPostRequestBody_data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Not relevant</summary>
@@ -28,6 +28,8 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.BudgetsImport
 #else
         public string ActualStartDate { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique code compliant with the budget code template defined by the project admin. Ignored if `segmentCodeMap` is defined.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +159,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.BudgetsImport
         /// <summary>Unit price of a budget.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.BudgetsImport.BudgetsImportPostRequestBody_data"/> and sets the default values.
+        /// </summary>
+        public BudgetsImportPostRequestBody_data()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.BudgetsImport.BudgetsImportPostRequestBody_data"/></returns>
@@ -231,6 +240,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.BudgetsImport
             writer.WriteObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.BudgetsImport.BudgetsImportPostRequestBody_data_segmentCodeMap>("segmentCodeMap", SegmentCodeMap);
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

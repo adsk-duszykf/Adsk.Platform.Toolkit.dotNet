@@ -11,10 +11,19 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.IndexesBatch
     /// some higher level index statistics.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IndexesBatchStatusPostResponse_indexes_stats : IParsable
+    public partial class IndexesBatchStatusPostResponse_indexes_stats : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>number of objects contained in the properties index.</summary>
         public int? Objects { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusPostResponse_indexes_stats"/> and sets the default values.
+        /// </summary>
+        public IndexesBatchStatusPostResponse_indexes_stats()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.IndexesBatch
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("objects", Objects);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

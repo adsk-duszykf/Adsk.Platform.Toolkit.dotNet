@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.Thumbna
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ThumbnailsBatchGetPostRequestBody : IParsable
+    public partial class ThumbnailsBatchGetPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The IDs of the review sheets you want to get the thumbnails from.To find the review sheet IDs, call [GET review-sheets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-review-sheets-GET/).- The max number of items is 100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.Thumbna
 #endif
         /// <summary>The size type of the thumbnails. Possible values:- `big`: the max size will be 512 pixels.- `small`: the max size will be 256 pixels.- `tiny`: the max size will be 64 pixels.</summary>
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ThumbnailsBatchGet.ThumbnailsBatchGetPostRequestBody_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ThumbnailsBatchGet.ThumbnailsBatchGetPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ThumbnailsBatchGetPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.Thumbna
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("reviewSheetIds", ReviewSheetIds);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ThumbnailsBatchGet.ThumbnailsBatchGetPostRequestBody_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

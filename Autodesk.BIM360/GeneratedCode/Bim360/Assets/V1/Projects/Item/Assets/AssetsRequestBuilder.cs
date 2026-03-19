@@ -27,19 +27,6 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets
                 return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.WithAssetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.bim360.assets.v1.projects.item.assets.item collection</summary>
-        /// <param name="position">The system generated Asset ID (B3F ID)</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.WithAssetItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.WithAssetItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("assetId", position);
-                return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.WithAssetItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.AssetsRequestBuilder"/> and sets the default values.
         /// </summary>

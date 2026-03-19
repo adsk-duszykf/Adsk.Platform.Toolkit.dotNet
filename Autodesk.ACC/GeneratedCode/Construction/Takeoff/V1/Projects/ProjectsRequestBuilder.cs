@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects
                 return new global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.This corresponds to project ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/), and can be specified in the form of `UUID` or b.`UUID`.To learn how to find the project ID, see the [Retrieve ACC Account and project ID](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("projectId", position);
-                return new global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.ProjectsRequestBuilder"/> and sets the default values.
         /// </summary>

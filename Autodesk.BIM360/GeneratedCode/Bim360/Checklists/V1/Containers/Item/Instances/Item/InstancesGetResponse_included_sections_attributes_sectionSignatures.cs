@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InstancesGetResponse_included_sections_attributes_sectionSignatures : IParsable
+    public partial class InstancesGetResponse_included_sections_attributes_sectionSignatures : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp when the section signature item was created, in the following format: YYYY-MM-DDThh:mm:ss.sz.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +125,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
         public string Urn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_attributes_sectionSignatures"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_included_sections_attributes_sectionSignatures()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_sections_attributes_sectionSignatures"/></returns>
@@ -181,6 +190,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("uploadStatus", UploadStatus);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

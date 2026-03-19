@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
     /// The user’s assigned workflow roles and workflow type for RFIs in the current project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MeGetResponse_workflow : IParsable
+    public partial class MeGetResponse_workflow : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of RFI workflow roles assigned to the user. Possible values:`projectSC` — Creator`projectGC` — Manager`projectCoordinator` — Reviewer 1 (EMEA workflow only)`projectReviewer` — Reviewer 1 (US) or Reviewer 2 (EMEA)For information about workflow roles, see the [RFIs Permission](https://help.autodesk.com/view/BUILD/ENU/?guid=RFI_Statuses) documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
 #endif
         /// <summary>The RFI workflow type assigned to the project.Possible values:`US` Single-reviewer workflow`EU` Two-reviewer workflowNote that you cannot set the workflow type via the API. To change it, use the Project Admin UI.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_workflow()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse_workflow_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

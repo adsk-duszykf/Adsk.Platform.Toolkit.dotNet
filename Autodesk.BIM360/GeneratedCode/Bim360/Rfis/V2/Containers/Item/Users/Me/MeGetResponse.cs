@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MeGetResponse : IParsable
+    public partial class MeGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The permittedActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me
 #else
         public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow Workflow { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_permittedActions>("permittedActions", PermittedActions);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_user>("user", User);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Users.Me.MeGetResponse_workflow>("workflow", Workflow);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

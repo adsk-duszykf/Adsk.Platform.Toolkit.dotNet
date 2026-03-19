@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssetsBatchCreatePostRequestBody : IParsable
+    public partial class AssetsBatchCreatePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A string that lists a barcode value that may be assigned to the asset. The string uses whatever format your barcode system supports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,13 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
         /// <summary>The ID of the status assigned to the asset. The status must belong to the status set specified by the asset&apos;s category.</summary>
         public Guid? StatusId { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody"/> and sets the default values.
+        /// </summary>
+        public AssetsBatchCreatePostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostRequestBody"/></returns>
@@ -97,6 +106,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("locationId", LocationId);
             writer.WriteGuidValue("statusId", StatusId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

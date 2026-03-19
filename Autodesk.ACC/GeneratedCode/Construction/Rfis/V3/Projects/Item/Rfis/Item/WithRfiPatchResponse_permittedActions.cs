@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
     /// The list of actions that are permitted for the user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithRfiPatchResponse_permittedActions : IParsable
+    public partial class WithRfiPatchResponse_permittedActions : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true`: The user can create a comment for the RFI.`false` (default): The user cannot create a comment for the RFI.</summary>
         public bool? CreateComment { get; set; }
         /// <summary>`true` if the user can add a document reference to the RFI.`false` if the user cannot add a document reference to the RFI.</summary>
@@ -43,6 +45,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions_updateRfi UpdateRfi { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions"/> and sets the default values.
+        /// </summary>
+        public WithRfiPatchResponse_permittedActions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,6 +97,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
             writer.WriteBoolValue("removeDocumentReference", RemoveDocumentReference);
             writer.WriteBoolValue("share", Share);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiPatchResponse_permittedActions_updateRfi>("updateRfi", UpdateRfi);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

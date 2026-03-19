@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Items
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ItemsPostRequestBody : IParsable
+    public partial class ItemsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of a budget to link to the main contract item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +111,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Items
         /// <summary>The unit price of the main contract item.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Items.ItemsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ItemsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Items.ItemsPostRequestBody"/></returns>
@@ -165,6 +174,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.MainContracts.Item.Items
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

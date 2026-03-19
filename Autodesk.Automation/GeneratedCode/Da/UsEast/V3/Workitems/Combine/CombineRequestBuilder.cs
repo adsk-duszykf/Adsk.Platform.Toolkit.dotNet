@@ -41,37 +41,16 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Combine
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostResponse?> PostAsCombinePostResponseAsync(global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostResponse?> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostResponse> PostAsCombinePostResponseAsync(global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostResponse> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// The allows users to create a simple fan-in workflow where 1-N workitems (parts) must complete before the final workitem (combinator) is processed.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombineResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsCombinePostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombineResponse?> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombineResponse> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombineResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombineResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The allows users to create a simple fan-in workflow where 1-N workitems (parts) must complete before the final workitem (combinator) is processed.
@@ -103,14 +82,6 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Combine
         public global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombineRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombineRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CombineRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

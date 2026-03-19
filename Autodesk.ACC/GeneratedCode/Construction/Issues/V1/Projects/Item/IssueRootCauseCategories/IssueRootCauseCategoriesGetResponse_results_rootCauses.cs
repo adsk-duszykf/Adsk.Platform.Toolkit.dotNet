@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueRootCauseCatego
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssueRootCauseCategoriesGetResponse_results_rootCauses : IParsable
+    public partial class IssueRootCauseCategoriesGetResponse_results_rootCauses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the issue root cause was created, in the following format: YYYY-MM-DDThh:mm:ss.sz.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the issue root cause.</summary>
@@ -73,6 +75,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueRootCauseCatego
         public string UpdatedBy { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse_results_rootCauses"/> and sets the default values.
+        /// </summary>
+        public IssueRootCauseCategoriesGetResponse_results_rootCauses()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse_results_rootCauses"/></returns>
@@ -123,6 +132,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueRootCauseCatego
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

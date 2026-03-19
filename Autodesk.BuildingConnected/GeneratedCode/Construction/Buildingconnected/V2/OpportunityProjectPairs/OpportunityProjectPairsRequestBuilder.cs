@@ -53,34 +53,15 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportuni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsGetResponse?> GetAsOpportunityProjectPairsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsRequestBuilder.OpportunityProjectPairsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsRequestBuilder.OpportunityProjectPairsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsGetResponse> GetAsOpportunityProjectPairsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsRequestBuilder.OpportunityProjectPairsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsRequestBuilder.OpportunityProjectPairsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsGetResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of opportunity-project pairs that match the provided criteria within the context of the requesting user&apos;s company.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsOpportunityProjectPairsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsRequestBuilder.OpportunityProjectPairsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsRequestBuilder.OpportunityProjectPairsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new opportunity-project pair to relink a project from a group child opportunity to its group parent.
@@ -91,37 +72,16 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportuni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostResponse?> PostAsOpportunityProjectPairsPostResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostResponse?> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostResponse> PostAsOpportunityProjectPairsPostResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostResponse> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new opportunity-project pair to relink a project from a group child opportunity to its group parent.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsOpportunityProjectPairsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse?> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of opportunity-project pairs that match the provided criteria within the context of the requesting user&apos;s company.
@@ -212,22 +172,6 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportuni
             /// <summary>The maximum number of records that the endpoint may return per page.Note that a returned page may contain fewer records than the limit under either of these conditions:- There are fewer records found than the limit value.- The last page of a set is returned.Default value: `100`</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OpportunityProjectPairsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsRequestBuilder.OpportunityProjectPairsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OpportunityProjectPairsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

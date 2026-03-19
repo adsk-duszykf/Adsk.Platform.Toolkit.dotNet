@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
     /// The list response object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse : IParsable
+    public partial class TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the type of answer.</summary>
         public Guid? Id { get; set; }
         /// <summary>A list of possible answers.</summary>
@@ -23,6 +25,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
 #else
         public List<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse_possibleAnswers> PossibleAnswers { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse_possibleAnswers>("possibleAnswers", PossibleAnswers);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

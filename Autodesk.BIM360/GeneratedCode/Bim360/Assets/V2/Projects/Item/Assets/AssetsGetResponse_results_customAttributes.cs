@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
     /// An optional JSON dictionary specifying one or more custom attributes and values to be assigned to theasset. The custom attributes must belong to the set of custom attributes specified by the asset&apos;s category.The dictionary is a set of key:value pairs that each starts with the unique custom attribute name (not tobe confused with the custom attribute&apos;s display name) followed by the attribute value. The value must usethe data type defined by the attribute:For `text`, the value is a string.For `date`, the value is an ISO8601 date string with no time, for example, `2020-04-10`.For `select`, the value is a valid ID from the list of values defined for this custom attribute.For `multi-select`, the value is an array of valid IDs from the list of values defined for this custom attribute.For `boolean`, the value is a boolean.For `numeric`, the value is a string that parses as a valid floating point number (not localized).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AssetsGetResponse_results_customAttributes : IParsable
+    public partial class AssetsGetResponse_results_customAttributes : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Asterisk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
 #else
         public global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse_results_customAttributes_Asterisk Asterisk { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse_results_customAttributes"/> and sets the default values.
+        /// </summary>
+        public AssetsGetResponse_results_customAttributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse_results_customAttributes_Asterisk>("*", Asterisk);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

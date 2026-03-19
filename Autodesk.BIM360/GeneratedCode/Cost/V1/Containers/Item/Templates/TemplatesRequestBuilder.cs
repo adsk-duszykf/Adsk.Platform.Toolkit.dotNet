@@ -29,19 +29,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates
                 return new global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.templates.item collection</summary>
-        /// <param name="position">The budget code template ID. To obtain a template ID, use [GET templates](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-templates-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("templateId", position);
-                return new global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.WithTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesGetResponse?> GetAsTemplatesGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesGetResponse> GetAsTemplatesGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves ID, name, and timestamp information for all budget code templates in a specific project. Currently, a project can have only one template.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsTemplatesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves ID, name, and timestamp information for all budget code templates in a specific project. Currently, a project can have only one template.
@@ -122,14 +90,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.TemplatesRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -41,37 +41,16 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse?> PostAsSheetsBatchGetPostResponseAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse> PostAsSheetsBatchGetPostResponseAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of sheets by IDs.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsSheetsBatchGetPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetResponse?> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetResponse> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of sheets by IDs.
@@ -103,14 +82,6 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SheetsBatchGetRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

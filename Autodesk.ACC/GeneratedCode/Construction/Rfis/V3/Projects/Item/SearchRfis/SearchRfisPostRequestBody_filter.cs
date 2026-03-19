@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
     /// A set of optional filters to narrow the results. You can combine multiple filters.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchRfisPostRequestBody_filter : IParsable
+    public partial class SearchRfisPostRequestBody_filter : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Filter RFIs assigned to specific users.To find the ID call [GET users/me](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-users-me-GET/) and check `user.id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,6 +162,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter"/> and sets the default values.
+        /// </summary>
+        public SearchRfisPostRequestBody_filter()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostRequestBody_filter"/></returns>
@@ -224,6 +233,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
             writer.WriteCollectionOfPrimitiveValues<string>("scheduleImpact", ScheduleImpact);
             writer.WriteCollectionOfPrimitiveValues<string>("status", Status);
             writer.WriteStringValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

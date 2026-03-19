@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ExportsPostRequestBody : IParsable
+    public partial class ExportsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of file version URNs. A maximum of 200 files may be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
 #else
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody_options Options { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ExportsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("fileVersions", FileVersions);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody_options>("options", Options);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

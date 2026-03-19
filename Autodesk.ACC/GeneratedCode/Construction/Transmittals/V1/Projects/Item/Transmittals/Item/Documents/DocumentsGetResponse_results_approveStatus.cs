@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
     /// The approval status of the file version.For more information, see [File Review Statuses](https://help.autodesk.com/view/DOCS/ENU/?guid=BIM360D_Document_Management_About_Reviews_Reviews_FAQs_Reference_html#file-review-statuses) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DocumentsGetResponse_results_approveStatus : IParsable
+    public partial class DocumentsGetResponse_results_approveStatus : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customized label of the approval status.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
 #endif
         /// <summary>The value of the approval status.Possible values: `APPROVED`, `REJECTED`</summary>
         public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse_results_approveStatus_value? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse_results_approveStatus"/> and sets the default values.
+        /// </summary>
+        public DocumentsGetResponse_results_approveStatus()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse_results_approveStatus_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

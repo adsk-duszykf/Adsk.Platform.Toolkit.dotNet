@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse?> GetAsActionHistoriesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder.ActionHistoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder.ActionHistoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse> GetAsActionHistoriesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder.ActionHistoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder.ActionHistoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the action history records associated with specified cost items, such as contracts, budget payments, or RFQs.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsActionHistoriesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder.ActionHistoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder.ActionHistoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the action history records associated with specified cost items, such as contracts, budget payments, or RFQs.
@@ -114,19 +95,8 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             public string[] AssociationId { get; set; }
 #endif
             /// <summary>The type of the item is associated to. Possible values `Contract`, `Payment`, `BudgetPayment`, `CostPayment`, `Expense`, `PCO`, `OCO`, `SCO`, `RCO`, `RFQ`, `DistributionItem`.</summary>
-            [Obsolete("This property is deprecated, use AssociationTypeAsGetAssociationTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("associationType")]
-            public string? AssociationType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("associationType")]
-            public string AssociationType { get; set; }
-#endif
-            /// <summary>The type of the item is associated to. Possible values `Contract`, `Payment`, `BudgetPayment`, `CostPayment`, `Expense`, `PCO`, `OCO`, `SCO`, `RCO`, `RFQ`, `DistributionItem`.</summary>
-            [QueryParameter("associationType")]
-            public global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.GetAssociationTypeQueryParameterType? AssociationTypeAsGetAssociationTypeQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.GetAssociationTypeQueryParameterType? AssociationType { get; set; }
             /// <summary>A cursor token used for paginating results.This value is returned in the response when additional pages of data are available. Pass the returned `cursorState` into a subsequent request to retrieve the next page of results.The cursor token is an opaque string. Do not modify or parse its contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,14 +130,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ActionHistoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesRequestBuilder.ActionHistoriesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

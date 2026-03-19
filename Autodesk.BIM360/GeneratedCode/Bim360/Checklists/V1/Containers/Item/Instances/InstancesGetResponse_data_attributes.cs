@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
     /// The attributes object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_data_attributes : IParsable
+    public partial class InstancesGetResponse_data_attributes : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>* If `true`, the user can be assigned to the checklist sections.* If `false`, the user cannot be assigned to the checklist sections.</summary>
         public bool? AllowSectionAssignee { get; set; }
         /// <summary>A list of users who have been assigned to the checklist.</summary>
@@ -138,6 +140,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
         public string Urn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_data_attributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes"/></returns>
@@ -210,6 +219,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes_trades>("trades", Trades);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

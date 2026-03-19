@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mapping
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MappingsGetResponse_results : IParsable
+    public partial class MappingsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Autodesk ID of the user (`autodeskId`), role (`memberGroupId`), or company (`memberGroupId`).To find details about users, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET), to find details about companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_. Note that we do not currently support finding details about roles for a project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +56,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mapping
 #endif
         /// <summary>The ID for the type of user in the record. Possible values: `1` (user), `2` (company), `3` (role).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse_results_userType? UserType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public MappingsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -99,6 +108,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mapping
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse_results_userType>("userType", UserType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

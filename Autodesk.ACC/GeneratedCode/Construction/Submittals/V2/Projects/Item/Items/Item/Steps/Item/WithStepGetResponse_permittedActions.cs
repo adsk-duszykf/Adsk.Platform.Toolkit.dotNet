@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithStepGetResponse_permittedActions : IParsable
+    public partial class WithStepGetResponse_permittedActions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A mapping of field names to lists of possible values for each field. If a field does not require a specific value, it will be returned as an empty array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
 #else
         public List<string> Transitions { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.WithStepGetResponse_permittedActions"/> and sets the default values.
+        /// </summary>
+        public WithStepGetResponse_permittedActions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("mandatoryFields", MandatoryFields);
             writer.WriteCollectionOfPrimitiveValues<string>("transitions", Transitions);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

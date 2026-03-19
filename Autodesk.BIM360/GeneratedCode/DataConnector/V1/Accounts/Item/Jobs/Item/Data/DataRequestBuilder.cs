@@ -27,19 +27,6 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data
                 return new global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.dataConnector.v1.accounts.item.jobs.item.data.item collection</summary>
-        /// <param name="position">Name of the file to retrieve</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("name", position);
-                return new global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.Data.DataRequestBuilder"/> and sets the default values.
         /// </summary>

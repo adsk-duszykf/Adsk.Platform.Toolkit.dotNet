@@ -9,11 +9,20 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchRestore
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SheetsBatchRestorePostResponse_results : IParsable
+    public partial class SheetsBatchRestorePostResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the sheet.</summary>
         public Guid? Id { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchRestore.SheetsBatchRestorePostResponse_results"/> and sets the default values.
+        /// </summary>
+        public SheetsBatchRestorePostResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +52,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchRestore
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

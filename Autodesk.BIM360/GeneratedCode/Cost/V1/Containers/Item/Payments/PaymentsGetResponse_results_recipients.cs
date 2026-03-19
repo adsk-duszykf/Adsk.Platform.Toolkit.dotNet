@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Payments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentsGetResponse_results_recipients : IParsable
+    public partial class PaymentsGetResponse_results_recipients : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This is the ID of a user managed by BIM 360 Admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Payments
 #endif
         /// <summary>True if this is the default recipient of a Contract or Change Order.</summary>
         public bool? IsDefault { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Payments.PaymentsGetResponse_results_recipients"/> and sets the default values.
+        /// </summary>
+        public PaymentsGetResponse_results_recipients()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Payments
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDefault", IsDefault);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

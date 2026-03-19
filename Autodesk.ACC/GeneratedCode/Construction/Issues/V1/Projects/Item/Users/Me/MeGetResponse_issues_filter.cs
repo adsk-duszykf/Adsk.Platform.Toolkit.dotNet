@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me
     /// Not relevant
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MeGetResponse_issues_filter : IParsable
+    public partial class MeGetResponse_issues_filter : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me
 #else
         public List<string> PermittedStatuses { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse_issues_filter"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_issues_filter()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("permittedStatuses", PermittedStatuses);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

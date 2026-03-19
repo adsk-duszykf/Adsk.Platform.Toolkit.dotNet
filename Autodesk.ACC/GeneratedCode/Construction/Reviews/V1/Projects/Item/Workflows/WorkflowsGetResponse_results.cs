@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WorkflowsGetResponse_results : IParsable
+    public partial class WorkflowsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Workflow-level settings that control whether the initiator can modify certain fields when starting a review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +95,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
         /// <summary>The date and time when the workflow was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public WorkflowsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results"/></returns>
@@ -145,6 +154,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results_steps>("steps", Steps);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results_updateAttributesOptions>("updateAttributesOptions", UpdateAttributesOptions);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

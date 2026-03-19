@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
     /// The attributes object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TemplatesGetResponse_data_attributes : IParsable
+    public partial class TemplatesGetResponse_data_attributes : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true` if you can add a section assignee to the template.`false` if you cannot add a section assignee to the template.</summary>
         public bool? AllowSectionAssignee { get; set; }
         /// <summary>The date and time that the resource was created, in the following format: `YYYY-MM-DDThh:mm:ss.sz`.</summary>
@@ -94,6 +96,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
         /// <summary>The version ID of the template. Every time you update a template it updates the version ID.</summary>
         public double? VersionId { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_data_attributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes"/></returns>
@@ -146,6 +155,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_trades>("trades", Trades);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteDoubleValue("versionId", VersionId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

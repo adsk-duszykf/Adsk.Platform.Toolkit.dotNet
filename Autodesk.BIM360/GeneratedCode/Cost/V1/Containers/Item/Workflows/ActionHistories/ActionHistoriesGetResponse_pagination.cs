@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
     /// Pagination metadata for the current response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ActionHistoriesGetResponse_pagination : IParsable
+    public partial class ActionHistoriesGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cursor value used to retrieve this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +35,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
 #endif
         /// <summary>The total number of matching records.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public ActionHistoriesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.ActionHistories
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("nextUrl", NextUrl);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

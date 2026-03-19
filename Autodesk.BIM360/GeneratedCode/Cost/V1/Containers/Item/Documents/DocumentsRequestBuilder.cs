@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Documents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsGetResponse?> GetAsDocumentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsGetResponse> GetAsDocumentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Gets generated documents.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsDocumentsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets generated documents.
@@ -114,33 +95,14 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Documents
             public string[] AssociationId { get; set; }
 #endif
             /// <summary>The type of the item is associated to. Possible values `Budget`, `Contract`, `CostItem`, `FormInstance`, `Payment`, `BudgetPayment`, `Expense`, `OCO`, `SCO`.</summary>
-            [Obsolete("This property is deprecated, use AssociationTypeAsGetAssociationTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("associationType")]
-            public string? AssociationType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("associationType")]
-            public string AssociationType { get; set; }
-#endif
-            /// <summary>The type of the item is associated to. Possible values `Budget`, `Contract`, `CostItem`, `FormInstance`, `Payment`, `BudgetPayment`, `Expense`, `OCO`, `SCO`.</summary>
-            [QueryParameter("associationType")]
-            public global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.GetAssociationTypeQueryParameterType? AssociationTypeAsGetAssociationTypeQueryParameterType { get; set; }
+            public global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.GetAssociationTypeQueryParameterType? AssociationType { get; set; }
             /// <summary>Filter to get only the latest version of a document if it has been generated multiple times. For example, filter[latest]=true. This is deprecated as we&apos;ll always response the latest document.</summary>
             [QueryParameter("filter%5Blatest%5D")]
             public bool? Filterlatest { get; set; }
             /// <summary>Filter to get only documents that have been signed. For example, filter[signed]=true. This is deprecated.</summary>
             [QueryParameter("filter%5Bsigned%5D")]
             public bool? Filtersigned { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DocumentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssignedPostResponse_clashData_clashInstances : IParsable
+    public partial class AssignedPostResponse_clashData_clashInstances : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clash ID in the model set version.</summary>
         public int? Cid { get; set; }
         /// <summary>The left-hand-side document ID.</summary>
@@ -26,6 +28,13 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
         public int? Roid { get; set; }
         /// <summary>The left-hand-side viewable ID.</summary>
         public int? Rvid { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse_clashData_clashInstances"/> and sets the default values.
+        /// </summary>
+        public AssignedPostResponse_clashData_clashInstances()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
             writer.WriteIntValue("rdid", Rdid);
             writer.WriteIntValue("roid", Roid);
             writer.WriteIntValue("rvid", Rvid);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

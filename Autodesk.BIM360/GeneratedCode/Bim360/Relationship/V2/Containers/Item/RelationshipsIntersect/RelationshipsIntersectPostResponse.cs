@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsIntersectPostResponse : IParsable
+    public partial class RelationshipsIntersectPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Paging information associated with a paging response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
 #else
         public List<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse_relationships> Relationships { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse"/> and sets the default values.
+        /// </summary>
+        public RelationshipsIntersectPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse_page>("page", Page);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse_relationships>("relationships", Relationships);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

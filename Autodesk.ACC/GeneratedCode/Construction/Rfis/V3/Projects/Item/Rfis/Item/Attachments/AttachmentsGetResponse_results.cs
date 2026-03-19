@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsGetResponse_results : IParsable
+    public partial class AttachmentsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique ID of the attachment.</summary>
         public Guid? AttachmentId { get; set; }
         /// <summary>The type of the attachment.Possible values: `rfiResponse`, `rfiOfficialResponse`, `bridgeFiles`, `rfiWebHiddenFiles`.</summary>
@@ -145,6 +147,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
         public string VersionUrn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public AttachmentsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse_results"/></returns>
@@ -219,6 +228,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
             writer.WriteStringValue("tipVersionUrn", TipVersionUrn);
             writer.WriteIntValue("version", Version);
             writer.WriteStringValue("versionUrn", VersionUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

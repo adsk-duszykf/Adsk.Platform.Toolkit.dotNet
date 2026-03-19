@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfisPostRequestBody_watchers : IParsable
+    public partial class RfisPostRequestBody_watchers : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Autodesk ID of the assigned user.To find details about the user, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET).To retrieve the list of available assignees, call [GET rfi-types](https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-types-GET) and check the `manager` and `projectReviewer` fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
 #endif
         /// <summary>The type of watcher.Possible values: `user`, `role`, `company`</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostRequestBody_watchers_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostRequestBody_watchers"/> and sets the default values.
+        /// </summary>
+        public RfisPostRequestBody_watchers()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostRequestBody_watchers_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

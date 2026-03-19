@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
     /// Not relevant
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithChangeOrderPostResponse_splitNumber : IParsable
+    public partial class WithChangeOrderPostResponse_splitNumber : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Not relevant</summary>
         public bool? IsFreeModify { get; set; }
         /// <summary>Not relevant</summary>
@@ -39,6 +41,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
 #else
         public string Prefix { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse_splitNumber"/> and sets the default values.
+        /// </summary>
+        public WithChangeOrderPostResponse_splitNumber()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("postfix", Postfix);
             writer.WriteStringValue("prefix", Prefix);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

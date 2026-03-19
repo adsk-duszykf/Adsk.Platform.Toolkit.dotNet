@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsIntersectPostResponse_relationships : IParsable
+    public partial class RelationshipsIntersectPostResponse_relationships : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the relationship was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>The date and time the relationship was deleted.</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
         public bool? IsReadOnly { get; set; }
         /// <summary>`true` if this relationship was created by a service.`false` if this relationship was not created by a service.</summary>
         public bool? IsService { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse_relationships"/> and sets the default values.
+        /// </summary>
+        public RelationshipsIntersectPostResponse_relationships()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsIn
             writer.WriteBoolValue("isDeleted", IsDeleted);
             writer.WriteBoolValue("isReadOnly", IsReadOnly);
             writer.WriteBoolValue("isService", IsService);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

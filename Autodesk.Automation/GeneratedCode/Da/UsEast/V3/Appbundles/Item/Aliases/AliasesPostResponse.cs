@@ -9,9 +9,11 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AliasesPostResponse : IParsable
+    public partial class AliasesPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases
 #endif
         /// <summary>The version property</summary>
         public int? Version { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.AliasesPostResponse"/> and sets the default values.
+        /// </summary>
+        public AliasesPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("receiver", Receiver);
             writer.WriteIntValue("version", Version);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

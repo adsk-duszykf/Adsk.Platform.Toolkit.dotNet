@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assign
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssignedPostResponse_clashData_documents : IParsable
+    public partial class AssignedPostResponse_clashData_documents : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The document index ID.</summary>
         public int? Id { get; set; }
         /// <summary>The document URN.</summary>
@@ -30,6 +32,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assign
 #else
         public string ViewableName { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse_clashData_documents"/> and sets the default values.
+        /// </summary>
+        public AssignedPostResponse_clashData_documents()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assign
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("urn", Urn);
             writer.WriteStringValue("viewableName", ViewableName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

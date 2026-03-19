@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse?> GetAsDocumentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse> GetAsDocumentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the documents that were included in a specific transmittal.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsDocumentsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsResponse>(requestInfo, global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the documents that were included in a specific transmittal.
@@ -110,27 +91,8 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>Sorts the document results by a supported field and order.By default, results are sorted in ascending order by `name` (`name asc`).To sort in descending order, add `desc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Possible values: `name`, `title`, `version`, `lastUpdatedAt`, `updatedByName`.Examples:- `sort=name asc` – sorts documents alphabetically by name.- `sort=lastUpdatedAt desc` – sorts documents by last update time (newest first).</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sorts the document results by a supported field and order.By default, results are sorted in ascending order by `name` (`name asc`).To sort in descending order, add `desc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Possible values: `name`, `title`, `version`, `lastUpdatedAt`, `updatedByName`.Examples:- `sort=name asc` – sorts documents alphabetically by name.- `sort=lastUpdatedAt desc` – sorts documents by last update time (newest first).</summary>
-            [QueryParameter("sort")]
-            public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DocumentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>
-        {
+            public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

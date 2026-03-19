@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
                 return new global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.bim360.relationship.v2.containers.item.relationships.item collection</summary>
-        /// <param name="position">The GUID that uniquely identifies the relationship.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("relationshipId", position);
-                return new global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -67,37 +54,16 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse?> PutAsRelationshipsPutResponseAsync(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse?> PutAsync(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse> PutAsRelationshipsPutResponseAsync(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse> PutAsync(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a relationship between two entities (for example, asset and document). Relationships are stored in the project container, and are retrievable via the relationships search endpoints.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsRelationshipsPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse?> PutAsync(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse> PutAsync(global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse>(requestInfo, global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a relationship between two entities (for example, asset and document). Relationships are stored in the project container, and are retrievable via the relationships search endpoints.
@@ -129,14 +95,6 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
         public global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RelationshipsRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

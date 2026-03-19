@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssignedPostResponse_clashData_clashes : IParsable
+    public partial class AssignedPostResponse_clashData_clashes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clash instance index ID. Min items: 2 Max items: 2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +34,13 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse_clashData_clashes"/> and sets the default values.
+        /// </summary>
+        public AssignedPostResponse_clashData_clashes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
             writer.WriteIntValue("dist", Dist);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

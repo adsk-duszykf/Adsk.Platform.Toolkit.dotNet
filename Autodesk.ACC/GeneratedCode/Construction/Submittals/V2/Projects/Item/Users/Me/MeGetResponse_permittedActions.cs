@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MeGetResponse_permittedActions : IParsable
+    public partial class MeGetResponse_permittedActions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A mapping of field names to lists of possible values for each field, specific to the associated action. An empty array indicates that there is no specific set of values for those fields.For example, in the action `Spec::create`, fields might contain mapping for title (`title`) and identifier (`identifier`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
 #else
         public List<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me.MeGetResponse_permittedActions_transitions> Transitions { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me.MeGetResponse_permittedActions"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_permittedActions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("mandatoryFields", MandatoryFields);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me.MeGetResponse_permittedActions_transitions>("transitions", Transitions);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

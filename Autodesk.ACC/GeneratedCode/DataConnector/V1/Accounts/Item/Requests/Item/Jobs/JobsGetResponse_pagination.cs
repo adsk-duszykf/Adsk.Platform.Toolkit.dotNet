@@ -11,14 +11,23 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
     /// Information about the pagination used to return the results array.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class JobsGetResponse_pagination : IParsable
+    public partial class JobsGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The specified upper limit of results to return.</summary>
         public int? Limit { get; set; }
         /// <summary>The specified number of results skipped before the results in this array were collected.</summary>
         public int? Offset { get; set; }
         /// <summary>The total number of results returned here.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs.JobsGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public JobsGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

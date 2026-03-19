@@ -27,19 +27,6 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusS
                 return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.bim360.assets.v1.projects.item.categories.item.statusStepSet.item collection</summary>
-        /// <param name="position">The status set ID</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("statusStepSetId", position);
-                return new global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.StatusStepSetRequestBuilder"/> and sets the default values.
         /// </summary>

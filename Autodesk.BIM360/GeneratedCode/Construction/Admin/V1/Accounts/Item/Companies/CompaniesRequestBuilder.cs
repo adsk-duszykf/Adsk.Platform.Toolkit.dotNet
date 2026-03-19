@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse?> GetAsCompaniesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse> GetAsCompaniesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse>(requestInfo, global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns a list of companies in an account.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCompaniesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesResponse>(requestInfo, global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of companies in an account.
@@ -144,19 +125,8 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies
             public string FiltertaxId { get; set; }
 #endif
             /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
-            [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filterTextMatch")]
-            public string? FilterTextMatch { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filterTextMatch")]
-            public string FilterTextMatch { get; set; }
-#endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
-            [QueryParameter("filterTextMatch")]
-            public global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
+            public global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.GetFilterTextMatchQueryParameterType? FilterTextMatch { get; set; }
             /// <summary>Filter companies by trade.  Can be a partial match based on the value of `filterTextMatch` provided.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,14 +173,6 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CompaniesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CustomAttributesPostResponse : IParsable
+    public partial class CustomAttributesPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time when the component was created (ISO8601 Date time format in UTC).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +131,13 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
         /// <summary>A global sequence number that is incremented any time a component of this type is created, updated, or deleted. If you cache components, you can use the version value to compare the cached component to the same component online to see if the component has been updated. If the online component has a higher version value, it has been updated.</summary>
         public int? Version { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse"/> and sets the default values.
+        /// </summary>
+        public CustomAttributesPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse"/></returns>
@@ -193,6 +202,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse_values>("values", Values);
             writer.WriteIntValue("version", Version);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

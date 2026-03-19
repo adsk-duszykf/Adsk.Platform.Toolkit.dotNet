@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
     /// The list of updates.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SheetsBatchUpdatePostRequestBody_updates : IParsable
+    public partial class SheetsBatchUpdatePostRequestBody_updates : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tags to be attached to the sheets.- The max length is 100.- The tags should not be space only.- After applying addTags and removeTags, the number of remain tags of the sheets should not exceed 100.The API will format the tags in the following ways before applying them to the sheets:- Remove spaces at the end and beginning of the tags.- Reduce multiple continuous spaces to a single space.- The tags are case insensitive. Upper case letters will be transformed to lower case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +56,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
         public string VersionSetId { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates"/> and sets the default values.
+        /// </summary>
+        public SheetsBatchUpdatePostRequestBody_updates()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostRequestBody_updates"/></returns>
@@ -90,6 +99,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
             writer.WriteCollectionOfPrimitiveValues<string>("removeTags", RemoveTags);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("versionSetId", VersionSetId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

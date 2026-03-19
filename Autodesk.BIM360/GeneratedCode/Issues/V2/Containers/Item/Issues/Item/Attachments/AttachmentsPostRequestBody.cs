@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsPostRequestBody : IParsable
+    public partial class AttachmentsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 #endif
         /// <summary>urnType attribute indicates the type of storage where the attachment will be stored.If urnType is set to `oss`, it indicates that the URN refers to a file stored in an Object Storage Service (OSS). see the [Attach local attachment to an Issue](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/attach-local-attachment-issues-v2/) tutorialIf urnType is set to `dm`, it indicates that the URN refers to a file stored in a BIM360 Document Management (DM).Possible Values: `oss` or `dm`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsPostRequestBody_urnType? UrnType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public AttachmentsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("urn", Urn);
             writer.WriteEnumValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsPostRequestBody_urnType>("urnType", UrnType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

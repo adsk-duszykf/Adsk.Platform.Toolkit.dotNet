@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
                 return new global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.issues.item collection</summary>
-        /// <param name="position">The unique identifier of the issue. To find the ID, call [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("issueId", position);
-                return new global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse?> GetAsIssuesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse> GetAsIssuesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about all the issues in a project, including details about their associated comments and attachments.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsIssuesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds an issue to a project.
@@ -104,37 +72,16 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse?> PostAsIssuesPostResponseAsync(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse> PostAsIssuesPostResponseAsync(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse> PostAsync(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Adds an issue to a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsIssuesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse?> PostAsync(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse> PostAsync(global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about all the issues in a project, including details about their associated comments and attachments.
@@ -406,22 +353,6 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
             [QueryParameter("sortBy")]
             public string[] SortBy { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssuesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssuesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

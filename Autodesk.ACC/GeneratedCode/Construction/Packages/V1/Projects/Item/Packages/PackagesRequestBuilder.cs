@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
                 return new global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.packages.v1.projects.item.packages.item collection</summary>
-        /// <param name="position">The ID of the package.To find the package ID, call [GET packages](https://aps.autodesk.com/en/docs/acc/v1/reference/http/packages-list-packages-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("packageId", position);
-                return new global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse?> GetAsPackagesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse> GetAsPackagesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of all packages within a specified ACC project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsPackagesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesResponse>(requestInfo, global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of all packages within a specified ACC project.
@@ -170,19 +138,8 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
             public string FilterupdatedBy { get; set; }
 #endif
             /// <summary>Filters results by the version type of the packages.Possible values:- `FIXED` – Files in the package remain fixed at selected versions.- `CURRENT` – Files in the package automatically update to the latest current versions.For more details, see the [Flexible Package Types](https://help.autodesk.com/view/BUILD/ENU/?guid=File_Packages_Docs) documentation.</summary>
-            [Obsolete("This property is deprecated, use FilterversionTypeAsGetFilterVersionTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filter%5BversionType%5D")]
-            public string? FilterversionType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filter%5BversionType%5D")]
-            public string FilterversionType { get; set; }
-#endif
-            /// <summary>Filters results by the version type of the packages.Possible values:- `FIXED` – Files in the package remain fixed at selected versions.- `CURRENT` – Files in the package automatically update to the latest current versions.For more details, see the [Flexible Package Types](https://help.autodesk.com/view/BUILD/ENU/?guid=File_Packages_Docs) documentation.</summary>
-            [QueryParameter("filter%5BversionType%5D")]
-            public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.GetFilterVersionTypeQueryParameterType? FilterversionTypeAsGetFilterVersionTypeQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.GetFilterVersionTypeQueryParameterType? FilterversionType { get; set; }
             /// <summary>The number of packages to return in the response payload.Possible values: `1-200`. Default: `200`. For example: `limit=2`.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -190,27 +147,8 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>Sorts the results by a supported field.By default, results are sorted in ascending (`asc`) order. To sort in descending order, add `desc` after the field name.Format: `sort=fieldName [desc]`Possible values: `name`, `createdAt`, `updatedAt`, `displayId`,Examples:- Sort by name (ascending): `sort=name`- Sort by creation time (descending): `sort=createdAt desc`</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sorts the results by a supported field.By default, results are sorted in ascending (`asc`) order. To sort in descending order, add `desc` after the field name.Format: `sort=fieldName [desc]`Possible values: `name`, `createdAt`, `updatedAt`, `displayId`,Examples:- Sort by name (ascending): `sort=name`- Sort by creation time (descending): `sort=createdAt desc`</summary>
-            [QueryParameter("sort")]
-            public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>
-        {
+            public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WorkitemsPostRequestBody : IParsable
+    public partial class WorkitemsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reference to the Activity that this WorkItem will invoke.  Examples: `MyPlot+Prod` (an Activity created by the caller) or  `Autodesk.PlotToPdf` (an Activity created by someone else and shared with this caller).</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
 #else
         public string ActivityId { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Arguments of the WorkItem. Named parameters of an Activity have corresponding named arguments of a WorkItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.WorkitemsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public WorkitemsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
             writer.WriteStringValue("activityId", ActivityId);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Workitems.WorkitemsPostRequestBody_arguments>("arguments", Arguments);
             writer.WriteStringValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

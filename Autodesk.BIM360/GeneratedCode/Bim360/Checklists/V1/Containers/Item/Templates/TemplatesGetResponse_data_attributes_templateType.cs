@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
     /// Information about the type of template.Possible values:`1` - Quality`6` - Punch List`11` - Safety`15` - Commissioning
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TemplatesGetResponse_data_attributes_templateType : IParsable
+    public partial class TemplatesGetResponse_data_attributes_templateType : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the type of template. Possible values: `1` (Quality), `6` (Punch List), `11` (Safety), `15` (Commissioning).</summary>
         public double? Id { get; set; }
         /// <summary>The name of the type of template. Possible values: `Quality`, `Punch List`, `Safety`, `Commissioning`.</summary>
@@ -31,6 +33,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
 #else
         public List<string> PermittedAttributes { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse_data_attributes_templateType"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_data_attributes_templateType()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
             writer.WriteDoubleValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("permittedAttributes", PermittedAttributes);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

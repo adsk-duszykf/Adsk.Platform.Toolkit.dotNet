@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfiTypesGetResponse_results_projectCoordinator : IParsable
+    public partial class RfiTypesGetResponse_results_projectCoordinator : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Autodesk ID of the user, company, or role.To find details about users, call [GET users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET), to find details about companies, call `GET companies &lt;en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/&gt;`_.Note that we do not currently support finding details about roles for a project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
 #endif
         /// <summary>The type of assignee. Possible values: `user`, `company`, `role`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_projectCoordinator_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_projectCoordinator"/> and sets the default values.
+        /// </summary>
+        public RfiTypesGetResponse_results_projectCoordinator()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse_results_projectCoordinator_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

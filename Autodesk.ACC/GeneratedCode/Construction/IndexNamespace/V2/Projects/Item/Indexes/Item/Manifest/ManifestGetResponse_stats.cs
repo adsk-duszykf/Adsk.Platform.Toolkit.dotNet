@@ -9,13 +9,22 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManifestGetResponse_stats : IParsable
+    public partial class ManifestGetResponse_stats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The compressed file size in bytes of the index. This file can be downloaded via the index properties endpoint</summary>
         public int? ContentLength { get; set; }
         /// <summary>The number of design elements (rows) in this index</summary>
         public int? Objects { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse_stats"/> and sets the default values.
+        /// </summary>
+        public ManifestGetResponse_stats()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("contentLength", ContentLength);
             writer.WriteIntValue("objects", Objects);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

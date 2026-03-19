@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SegmentsPostRequestBody : IParsable
+    public partial class SegmentsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The delimiter that follows the segment. Possible values are: `none`, `space`, `point`, `hyphen`, `underscore`, `tab`. Default to `none`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +52,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public SegmentsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -91,6 +100,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments
             writer.WriteDoubleValue("position", Position);
             writer.WriteStringValue("sampleCode", SampleCode);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

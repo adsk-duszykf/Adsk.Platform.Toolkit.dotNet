@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Item
                 return new global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Item.Item.WithAssociationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.workflows.item.item collection</summary>
-        /// <param name="position">The object ID of the item is associated to. For example, the ID of a budget, contract or cost item.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Item.Item.WithAssociationItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Item.Item.WithAssociationItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("associationId", position);
-                return new global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Item.Item.WithAssociationItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.Item.WithAssociationTypeItemRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
     /// For non-PDF forms, data stored in the tables on the form.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FormsPostResponse_tabularValues : IParsable
+    public partial class FormsPostResponse_tabularValues : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Entries associated with equipment table in a Form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
 #else
         public List<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse_tabularValues_worklogEntries> WorklogEntries { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse_tabularValues"/> and sets the default values.
+        /// </summary>
+        public FormsPostResponse_tabularValues()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse_tabularValues_equipmentEntries>("equipmentEntries", EquipmentEntries);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse_tabularValues_materialsEntries>("materialsEntries", MaterialsEntries);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse_tabularValues_worklogEntries>("worklogEntries", WorklogEntries);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

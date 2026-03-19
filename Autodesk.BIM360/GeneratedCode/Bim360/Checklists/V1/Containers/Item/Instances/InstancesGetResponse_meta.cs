@@ -11,14 +11,23 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
     /// The meta object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_meta : IParsable
+    public partial class InstancesGetResponse_meta : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of checklists per page.</summary>
         public double? Limit { get; set; }
         /// <summary>The page number that the checklist results begin from.</summary>
         public double? Offset { get; set; }
         /// <summary>The total number of checklists.</summary>
         public double? Total { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_meta"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_meta()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteDoubleValue("offset", Offset);
             writer.WriteDoubleValue("total", Total);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

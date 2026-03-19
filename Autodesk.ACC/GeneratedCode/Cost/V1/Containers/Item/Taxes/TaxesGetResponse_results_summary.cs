@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Taxes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TaxesGetResponse_results_summary : IParsable
+    public partial class TaxesGetResponse_results_summary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total amount of the applied tax.</summary>
         public double? Amount { get; set; }
         /// <summary>The name of the applied tax (e.g., Sales Tax, VAT, State Tax, City Tax, Local Tax).</summary>
@@ -38,6 +40,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Taxes
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Taxes.TaxesGetResponse_results_summary"/> and sets the default values.
+        /// </summary>
+        public TaxesGetResponse_results_summary()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Taxes
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("rate", Rate);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

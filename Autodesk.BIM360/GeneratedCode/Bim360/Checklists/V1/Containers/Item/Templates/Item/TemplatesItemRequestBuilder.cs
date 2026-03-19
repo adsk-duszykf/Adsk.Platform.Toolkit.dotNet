@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse?> GetAsTemplatesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder.TemplatesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder.TemplatesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse> GetAsTemplatesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder.TemplatesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder.TemplatesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about a specific [BIM 360 Field Management](https://field.b360.autodesk.com/) template, including details about the items, sections, and attachments in the template.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsTemplatesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder.TemplatesItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder.TemplatesItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about a specific [BIM 360 Field Management](https://field.b360.autodesk.com/) template, including details about the items, sections, and attachments in the template.
@@ -113,14 +94,6 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
             [QueryParameter("fields%5Btemplates%5D")]
             public string Fieldstemplates { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TemplatesItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesItemRequestBuilder.TemplatesItemRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

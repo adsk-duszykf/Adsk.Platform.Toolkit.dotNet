@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithJobGetResponse : IParsable
+    public partial class WithJobGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If this job tracks the creation of assigned clashes, the IDs of the created issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +42,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item
         public Guid? JobId { get; set; }
         /// <summary>The current job status. Possible values: `Failed`, `Running`, `Succeeded`, `Archived`.</summary>
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithJobGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,6 +86,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item
             writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse_job>("job", Job);
             writer.WriteGuidValue("jobId", JobId);
             writer.WriteEnumValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

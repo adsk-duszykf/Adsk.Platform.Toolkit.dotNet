@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MeGetResponse_issues : IParsable
+    public partial class MeGetResponse_issues : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If this property is attached - you are allowed to create a new issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
 #else
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues_new New { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_issues()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Users.Me.MeGetResponse_issues_new>("new", New);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

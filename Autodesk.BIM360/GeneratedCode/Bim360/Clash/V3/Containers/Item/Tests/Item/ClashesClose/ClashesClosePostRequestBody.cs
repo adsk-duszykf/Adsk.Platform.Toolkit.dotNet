@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClos
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ClashesClosePostRequestBody : IParsable
+    public partial class ClashesClosePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The clashes to be included in the new closed clash group. Min items: 1 Max items: 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,13 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClos
 #else
         public string Title { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesClosePostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ClashesClosePostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,6 +96,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClos
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesClosePostRequestBody_reason>("reason", Reason);
             writer.WriteCollectionOfPrimitiveValues<string>("screenShots", ScreenShots);
             writer.WriteStringValue("title", Title);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

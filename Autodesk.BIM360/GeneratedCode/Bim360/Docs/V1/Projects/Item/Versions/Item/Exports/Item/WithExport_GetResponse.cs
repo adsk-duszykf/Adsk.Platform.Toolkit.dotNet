@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Ite
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithExport_GetResponse : IParsable
+    public partial class WithExport_GetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,6 +26,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Ite
         public Guid? Id { get; set; }
         /// <summary>The status of the export job. Possible values: `committed`, `completed`, `failed`. When the job is complete, an object representing the result of the job is returned in the response.</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_GetResponse_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_GetResponse"/> and sets the default values.
+        /// </summary>
+        public WithExport_GetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Ite
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_GetResponse_data>("data", Data);
             writer.WriteGuidValue("id", Id);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_GetResponse_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

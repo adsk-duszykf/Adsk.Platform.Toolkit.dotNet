@@ -11,14 +11,23 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomA
     /// The pagination object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomAttributesGetResponse_pagination : IParsable
+    public partial class CustomAttributesGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of objects that can be returned in a page. A request might return fewer objects thanthe limit if the Assets service runs out of specified objects to return - at the end of a set of pagedresults, for example. The maximum limit is `200`; the default limit is `25`.</summary>
         public int? Limit { get; set; }
         /// <summary>The offset of the first entry in the pagination results.</summary>
         public int? Offset { get; set; }
         /// <summary>Total number of results available.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public CustomAttributesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomA
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

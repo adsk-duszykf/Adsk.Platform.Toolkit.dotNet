@@ -9,13 +9,22 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ExportsPostRequestBody : IParsable
+    public partial class ExportsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true`: export the page with hyperlinks.`false`: (default) export the page without hyperlinks.Note that all hyperlinks in the page are exported, including external links and internal links to other BIM 360 documents, whether the links were imported when the PDF was originally uploaded or whether they were added within BIM 360 Document Management.</summary>
         public bool? IncludeHyperlinks { get; set; }
         /// <summary>`true`: export the page with markups (annotations). Note thatthe endpoint only exports published and unarchived markups.`false`: (default) export the page without markups.You can manage a page&apos;s markups by opening the page in theDocument Management module.</summary>
         public bool? IncludeMarkups { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ExportsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("includeHyperlinks", IncludeHyperlinks);
             writer.WriteBoolValue("includeMarkups", IncludeMarkups);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

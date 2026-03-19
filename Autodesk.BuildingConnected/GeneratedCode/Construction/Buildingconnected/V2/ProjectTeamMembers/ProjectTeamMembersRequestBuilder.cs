@@ -53,34 +53,15 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersGetResponse?> GetAsProjectTeamMembersGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersRequestBuilder.ProjectTeamMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersRequestBuilder.ProjectTeamMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersGetResponse> GetAsProjectTeamMembersGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersRequestBuilder.ProjectTeamMembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersRequestBuilder.ProjectTeamMembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersGetResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of members on all projects within the requesting user&apos;s company.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsProjectTeamMembersGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersRequestBuilder.ProjectTeamMembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersRequestBuilder.ProjectTeamMembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new project team member.
@@ -91,37 +72,16 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostResponse?> PostAsProjectTeamMembersPostResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostResponse?> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostResponse> PostAsProjectTeamMembersPostResponseAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostResponse> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new project team member.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsProjectTeamMembersPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse?> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse> PostAsync(global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse>(requestInfo, global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of members on all projects within the requesting user&apos;s company.
@@ -222,22 +182,6 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTe
             /// <summary>The maximum number of records that the endpoint may return per page.Note that a returned page may contain fewer records than the limit under either of these conditions:- There are fewer records found than the limit value.- The last page of a set is returned.Default value: `100`</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectTeamMembersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.ProjectTeamMembersRequestBuilder.ProjectTeamMembersRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ProjectTeamMembersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

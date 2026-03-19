@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBa
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IndexesBatchStatusPostResponse_indexes : IParsable
+    public partial class IndexesBatchStatusPostResponse_indexes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +111,13 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBa
         public List<string> VersionUrns { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusPostResponse_indexes"/> and sets the default values.
+        /// </summary>
+        public IndexesBatchStatusPostResponse_indexes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusPostResponse_indexes"/></returns>
@@ -165,6 +174,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBa
             writer.WriteEnumValue<global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.IndexesBatchStatus.IndexesBatchStatusPostResponse_indexes_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("versionUrns", VersionUrns);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

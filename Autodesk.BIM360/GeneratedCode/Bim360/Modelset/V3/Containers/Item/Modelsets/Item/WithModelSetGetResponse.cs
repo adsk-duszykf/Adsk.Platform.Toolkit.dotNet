@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithModelSetGetResponse : IParsable
+    public partial class WithModelSetGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The GUID that uniquely identifies the container.</summary>
         public Guid? ContainerId { get; set; }
         /// <summary>The unique identifier of the user who created the model set.</summary>
@@ -56,6 +58,13 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item
 #endif
         /// <summary>The version number of the most recent version of the model set.</summary>
         public int? TipVersion { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.WithModelSetGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithModelSetGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -103,6 +112,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.WithModelSetGetResponse_modelSetType>("modelSetType", ModelSetType);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("tipVersion", TipVersion);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

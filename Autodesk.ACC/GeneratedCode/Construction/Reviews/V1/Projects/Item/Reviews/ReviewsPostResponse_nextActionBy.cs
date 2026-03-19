@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     /// Information about the claimers and candidates responsible for the current step.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReviewsPostResponse_nextActionBy : IParsable
+    public partial class ReviewsPostResponse_nextActionBy : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the users, roles, and companies who are eligible to take the next action in this step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public List<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy_claimedBy> ClaimedBy { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy"/> and sets the default values.
+        /// </summary>
+        public ReviewsPostResponse_nextActionBy()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy_candidates>("candidates", Candidates);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse_nextActionBy_claimedBy>("claimedBy", ClaimedBy);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

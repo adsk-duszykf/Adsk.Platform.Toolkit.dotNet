@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse?> GetAsIssueAttributeDefinitionsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsRequestBuilder.IssueAttributeDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsRequestBuilder.IssueAttributeDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse> GetAsIssueAttributeDefinitionsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsRequestBuilder.IssueAttributeDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsRequestBuilder.IssueAttributeDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about issue custom attributes (custom fields) for a project, including the custom attribute title, description and type.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsIssueAttributeDefinitionsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsRequestBuilder.IssueAttributeDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsRequestBuilder.IssueAttributeDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about issue custom attributes (custom fields) for a project, including the custom attribute title, description and type.
@@ -107,19 +88,8 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
             [QueryParameter("filter%5BcreatedAt%5D")]
             public DateTimeOffset? FiltercreatedAt { get; set; }
             /// <summary>Retrieves issue custom attribute definitions with the specified data type. Possible values: `list` (this corresponds to `dropdown` in the UI), `text`, `paragraph`, `numeric`. For example, `filter[dataType]=text,numeric`.</summary>
-            [Obsolete("This property is deprecated, use FilterdataTypeAsGetFilterDataTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filter%5BdataType%5D")]
-            public string? FilterdataType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filter%5BdataType%5D")]
-            public string FilterdataType { get; set; }
-#endif
-            /// <summary>Retrieves issue custom attribute definitions with the specified data type. Possible values: `list` (this corresponds to `dropdown` in the UI), `text`, `paragraph`, `numeric`. For example, `filter[dataType]=text,numeric`.</summary>
-            [QueryParameter("filter%5BdataType%5D")]
-            public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.GetFilterDataTypeQueryParameterType? FilterdataTypeAsGetFilterDataTypeQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.GetFilterDataTypeQueryParameterType? FilterdataType { get; set; }
             /// <summary>Retrieves types that were deleted at the specified date and time, in one of the following URL-encoded formats: YYYY-MM-DDThh:mm:ss.sz or YYYY-MM-DD. Separate multiple values with commas. We support the following filtering options:- Date range: e.g., `2022-03-02..2022-03-03` or `2022-02-28T22:00:00.000Z..2022-03-28T22:00:00.000Z`- Specific day: e.g., `2022-03-02` or `2022-02-28T22:00:00.000Z`- Specific start date: e.g.,  `2022-03-02..` or `2022-02-28T22:00:00.000Z..`- Specific end date: e.g., `..2022-03-02` or `..2022-02-28T22:00:00.000Z`To include non-deleted items in the response, add `null` to the filter: `filter[deletedAt]=null,YYYY-MM-DDThh:mm:ss.sz...YYYY-MM-DDThh:mm:ss.sz`.For more details, see [JSON API Filtering](http://jsonapi.org/format/#fetching-filtering).</summary>
             [QueryParameter("filter%5BdeletedAt%5D")]
             public DateTimeOffset? FilterdeletedAt { get; set; }
@@ -132,14 +102,6 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
             /// <summary>The number of custom attribute definitions you want to begin retrieving results from.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssueAttributeDefinitionsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsRequestBuilder.IssueAttributeDefinitionsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

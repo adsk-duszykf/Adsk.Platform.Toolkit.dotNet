@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UsersPostRequestBody : IParsable
+    public partial class UsersPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The about_me property</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users
 #else
         public string AboutMe { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address_line_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,6 +185,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users
         public string Uid { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users.UsersPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public UsersPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users.UsersPostRequestBody"/></returns>
@@ -253,6 +262,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users
             writer.WriteStringValue("service_type", ServiceType);
             writer.WriteStringValue("state_or_province", StateOrProvince);
             writer.WriteStringValue("uid", Uid);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

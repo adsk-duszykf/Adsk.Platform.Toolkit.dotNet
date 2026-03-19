@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
     /// A vector describing where in 3D space the pushpin is located.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssuesPostRequestBody_pushpin_location : IParsable
+    public partial class IssuesPostRequestBody_pushpin_location : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The X component of the 3D vector.</summary>
         public int? X { get; set; }
         /// <summary>The Y component of the 3D vector.</summary>
         public int? Y { get; set; }
         /// <summary>The Z component of the 3D vector.</summary>
         public int? Z { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody_pushpin_location"/> and sets the default values.
+        /// </summary>
+        public IssuesPostRequestBody_pushpin_location()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
             writer.WriteIntValue("x", X);
             writer.WriteIntValue("y", Y);
             writer.WriteIntValue("z", Z);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

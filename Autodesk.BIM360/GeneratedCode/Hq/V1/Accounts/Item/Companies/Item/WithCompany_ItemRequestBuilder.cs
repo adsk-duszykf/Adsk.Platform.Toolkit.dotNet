@@ -46,34 +46,15 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse?> GetAsWithCompany_GetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse> GetAsWithCompany_GetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Query the details of a specific partner company.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithCompany_GetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of only the specified attributes of a specific partner company.
@@ -84,37 +65,16 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse?> PatchAsWithCompany_PatchResponseAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse?> PatchAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse> PatchAsWithCompany_PatchResponseAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse> PatchAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Update the properties of only the specified attributes of a specific partner company.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithCompany_PatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response?> PatchAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response> PatchAsync(global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response>(requestInfo, global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Query the details of a specific partner company.
@@ -165,22 +125,6 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
         public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_ItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCompany_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCompany_ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class HistoryPostResponse : IParsable
+    public partial class HistoryPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Added keys</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
 #else
         public List<string> Added { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +75,13 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
         /// <summary>Timestamp in milliseconds since the Unix Epoch</summary>
         public int? T { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.History.HistoryPostResponse"/> and sets the default values.
+        /// </summary>
+        public HistoryPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.History.HistoryPostResponse"/></returns>
@@ -117,6 +126,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
             writer.WriteStringValue("n", N);
             writer.WriteEnumValue<global::Autodesk.Tandem.Tandem.V1.Twins.Item.History.HistoryPostResponse_O>("O", O);
             writer.WriteIntValue("t", T);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ImportPostResponse_success_items_services_document_management : IParsable
+    public partial class ImportPostResponse_success_items_services_document_management : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access_level property</summary>
@@ -20,6 +20,15 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
 #else
         public string AccessLevel { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse_success_items_services_document_management"/> and sets the default values.
+        /// </summary>
+        public ImportPostResponse_success_items_services_document_management()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("access_level", AccessLevel);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse?> GetAsResourcesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse> GetAsResourcesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of file versions (“resources”) within a specified package.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsResourcesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesResponse>(requestInfo, global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of file versions (“resources”) within a specified package.
@@ -130,27 +111,8 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>Provide options to sort on single field, in ascending (`asc`) by default or descending (`desc`) order.Possible values of sorting field: `name`, `description`, `updatedAt`, `approvalStatus`, `version`. For example: `sort=name desc`.</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Provide options to sort on single field, in ascending (`asc`) by default or descending (`desc`) order.Possible values of sorting field: `name`, `description`, `updatedAt`, `approvalStatus`, `version`. For example: `sort=name desc`.</summary>
-            [QueryParameter("sort")]
-            public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>
-        {
+            public global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

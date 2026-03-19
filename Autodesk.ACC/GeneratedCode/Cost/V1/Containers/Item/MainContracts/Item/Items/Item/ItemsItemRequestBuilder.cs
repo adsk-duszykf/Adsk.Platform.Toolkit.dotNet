@@ -57,34 +57,15 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsGetResponse?> GetAsItemsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsGetResponse> GetAsItemsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsGetResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a main contract item by ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsItemsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a main contract item by ID.
@@ -95,37 +76,16 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchResponse?> PatchAsItemsPatchResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchResponse?> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchResponse> PatchAsItemsPatchResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchResponse> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a main contract item by ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsItemsPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse?> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a main contract item by ID.
@@ -196,14 +156,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item
             return new global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemsItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// Retrieves a main contract item by ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -219,22 +171,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item
             [QueryParameter("include")]
             public string[] Include { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemsItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemsItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

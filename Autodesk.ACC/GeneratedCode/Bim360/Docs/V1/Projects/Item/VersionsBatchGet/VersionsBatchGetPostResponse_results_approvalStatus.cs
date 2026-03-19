@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
     /// The approval status of the version. Only available when the review has been approved or rejected. For more information about the approval workflow, see the [Approval Workflows and Document Review](http://help.autodesk.com/view/BIM360D/ENU/?guid=GUID-2CC9A86E-2F4F-48EB-8EFA-FAA5FBECC20E) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VersionsBatchGetPostResponse_results_approvalStatus : IParsable
+    public partial class VersionsBatchGetPostResponse_results_approvalStatus : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customized label of the approval status.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
 #endif
         /// <summary>The value of the approval status.Possible values: `approved`, `rejected`</summary>
         public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_approvalStatus_value? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_approvalStatus"/> and sets the default values.
+        /// </summary>
+        public VersionsBatchGetPostResponse_results_approvalStatus()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse_results_approvalStatus_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

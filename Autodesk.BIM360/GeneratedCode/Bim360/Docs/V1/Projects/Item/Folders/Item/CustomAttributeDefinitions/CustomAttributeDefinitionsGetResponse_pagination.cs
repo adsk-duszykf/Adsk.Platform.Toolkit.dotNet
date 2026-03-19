@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttrib
     /// Pagination information when data must be returned page by page.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomAttributeDefinitionsGetResponse_pagination : IParsable
+    public partial class CustomAttributeDefinitionsGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of results to return in the response.</summary>
         public int? Limit { get; set; }
         /// <summary>The URL for the next page of results.</summary>
@@ -35,6 +37,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttrib
 #endif
         /// <summary>Total number of results.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttributeDefinitions.CustomAttributeDefinitionsGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public CustomAttributeDefinitionsGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,6 +81,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.CustomAttrib
             writer.WriteIntValue("offset", Offset);
             writer.WriteStringValue("previousUrl", PreviousUrl);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

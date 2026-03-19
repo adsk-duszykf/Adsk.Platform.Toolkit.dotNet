@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
     /// A GPS Coordinate which represents the geo location of the issue.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithIssuePatchRequestBody_gpsCoordinates : IParsable
+    public partial class WithIssuePatchRequestBody_gpsCoordinates : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The latitude property</summary>
         public double? Latitude { get; set; }
         /// <summary>The longitude property</summary>
         public double? Longitude { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchRequestBody_gpsCoordinates"/> and sets the default values.
+        /// </summary>
+        public WithIssuePatchRequestBody_gpsCoordinates()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteDoubleValue("longitude", Longitude);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

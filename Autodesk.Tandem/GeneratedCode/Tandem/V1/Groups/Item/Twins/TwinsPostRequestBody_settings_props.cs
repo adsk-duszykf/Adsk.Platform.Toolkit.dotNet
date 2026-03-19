@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TwinsPostRequestBody_settings_props : IParsable
+    public partial class TwinsPostRequestBody_settings_props : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The handover property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 #else
         public global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostRequestBody_settings_props_Other Other { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostRequestBody_settings_props"/> and sets the default values.
+        /// </summary>
+        public TwinsPostRequestBody_settings_props()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
             writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostRequestBody_settings_props_handover>("handover", Handover);
             writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostRequestBody_settings_props_IdentityData>("Identity Data", IdentityData);
             writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostRequestBody_settings_props_Other>("Other", Other);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

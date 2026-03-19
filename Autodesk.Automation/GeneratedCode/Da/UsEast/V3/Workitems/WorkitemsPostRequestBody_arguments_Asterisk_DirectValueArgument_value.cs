@@ -11,8 +11,17 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
     /// Simple json argument. This class represents json argument both in the workitem and job. Example: {``value``: {``key1``: ``value1``, ``key2``: ``value2``}}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument_value : IParsable
+    public partial class WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument_value : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument_value"/> and sets the default values.
+        /// </summary>
+        public WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument_value()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

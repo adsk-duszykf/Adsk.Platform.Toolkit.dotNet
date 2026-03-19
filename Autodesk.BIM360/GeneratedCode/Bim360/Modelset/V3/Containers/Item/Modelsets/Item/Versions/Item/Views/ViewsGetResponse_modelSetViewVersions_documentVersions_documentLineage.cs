@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
     /// A document from a model set.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ViewsGetResponse_modelSetViewVersions_documentVersions_documentLineage : IParsable
+    public partial class ViewsGetResponse_modelSetViewVersions_documentVersions_documentLineage : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the document lineage is aligned.</summary>
         public bool? IsAligned { get; set; }
         /// <summary>The URN of the document lineage.</summary>
@@ -39,6 +41,13 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
 #else
         public string TipVersionUrn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsGetResponse_modelSetViewVersions_documentVersions_documentLineage"/> and sets the default values.
+        /// </summary>
+        public ViewsGetResponse_modelSetViewVersions_documentVersions_documentLineage()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
             writer.WriteStringValue("lineageUrn", LineageUrn);
             writer.WriteStringValue("parentFolderUrn", ParentFolderUrn);
             writer.WriteStringValue("tipVersionUrn", TipVersionUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

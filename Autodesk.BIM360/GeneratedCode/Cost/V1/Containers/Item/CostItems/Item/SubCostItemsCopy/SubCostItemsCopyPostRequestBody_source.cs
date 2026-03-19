@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCop
     /// The source object defining where sub-cost items are copied from. When copying from a `budget` or `contract`, this must include one or more source IDs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SubCostItemsCopyPostRequestBody_source : IParsable
+    public partial class SubCostItemsCopyPostRequestBody_source : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of budget IDs or Schedule of Value (SOV) IDs from a contract, used as the source for copying sub cost items. To retrieve the relevant IDs, call [GET budgets](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-GET/) or [GET contracts](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-contracts-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCop
 #else
         public List<string> Ids { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source"/> and sets the default values.
+        /// </summary>
+        public SubCostItemsCopyPostRequestBody_source()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCop
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

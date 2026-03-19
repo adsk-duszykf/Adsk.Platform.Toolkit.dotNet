@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
     /// The file naming standard format.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class NamingStandardsGetResponse_definition : IParsable
+    public partial class NamingStandardsGetResponse_definition : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A specified character, separating between multiple fields of a file name.Possible values:- `-`: Hyphen.- `_`: Underscore.- `.`: Point.Note that you cannot use the delimiter within a field name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 #else
         public List<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata> Metadata { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition"/> and sets the default values.
+        /// </summary>
+        public NamingStandardsGetResponse_definition()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
             writer.WriteStringValue("delimiter", Delimiter);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_fields>("fields", Fields);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata>("metadata", Metadata);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

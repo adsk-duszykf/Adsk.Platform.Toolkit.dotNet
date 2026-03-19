@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse?> GetAsAttachmentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse> GetAsAttachmentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of attachments for a specific RFI.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsAttachmentsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsResponse>(requestInfo, global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of attachments for a specific RFI.
@@ -119,14 +100,6 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
             /// <summary>The number of items to skip before starting to return results.For example, to begin the results from the fourth item, use `offset=3`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AttachmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsRequestBuilder.AttachmentsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

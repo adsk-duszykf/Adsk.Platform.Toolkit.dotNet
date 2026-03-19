@@ -53,34 +53,15 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesGetResponse?> GetAsActivitiesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesRequestBuilder.ActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesRequestBuilder.ActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesGetResponse> GetAsActivitiesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesRequestBuilder.ActivitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesRequestBuilder.ActivitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesGetResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Lists all available Activities, including Activities shared with this app.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsActivitiesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesRequestBuilder.ActivitiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesRequestBuilder.ActivitiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new Activity.
@@ -91,37 +72,16 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostResponse?> PostAsActivitiesPostResponseAsync(global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostResponse?> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostResponse> PostAsActivitiesPostResponseAsync(global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostResponse> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new Activity.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsActivitiesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse?> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse> PostAsync(global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all available Activities, including Activities shared with this app.
@@ -189,22 +149,6 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities
             [QueryParameter("page")]
             public string Page { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ActivitiesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesRequestBuilder.ActivitiesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ActivitiesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

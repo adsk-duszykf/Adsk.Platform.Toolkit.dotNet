@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UsersImportPostRequestBody_users : IParsable
+    public partial class UsersImportPostRequestBody_users : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the company that the user is representing in the project. To obtain a list of all company IDs associated with a project, call [GET projects/:projectId/companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +71,13 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
         public string UserId { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users"/> and sets the default values.
+        /// </summary>
+        public UsersImportPostRequestBody_users()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users"/></returns>
@@ -109,6 +118,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody_users_products>("products", Products);
             writer.WriteCollectionOfPrimitiveValues<string>("roleIds", RoleIds);
             writer.WriteStringValue("userId", UserId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

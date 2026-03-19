@@ -27,19 +27,6 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts
                 return new global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.dataConnector.v1.accounts.item collection</summary>
-        /// <param name="position">The account ID. You can derive it from your hub ID if necessary: Use [GET hubs](https://aps.autodesk.com/en/docs/data/v2/reference/http/hubs-GET/) in the Data Management API to retrieve your hub ID. Remove the initial `b.` from the hub ID to get your account ID.</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("accountId", position);
-                return new global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.WithAccountItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.AccountsRequestBuilder"/> and sets the default values.
         /// </summary>

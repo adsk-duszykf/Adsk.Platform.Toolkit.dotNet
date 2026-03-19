@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssueAttributeDefinitionsGetResponse : IParsable
+    public partial class IssueAttributeDefinitionsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The pagination object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
 #else
         public List<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results> Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse"/> and sets the default values.
+        /// </summary>
+        public IssueAttributeDefinitionsGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_pagination>("pagination", Pagination);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

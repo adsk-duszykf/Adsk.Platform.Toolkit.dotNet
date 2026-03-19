@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithTakeoffTypeGetResponse_propertyDefinitions : IParsable
+    public partial class WithTakeoffTypeGetResponse_propertyDefinitions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the property.Max length: 256</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,6 +28,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
         public double? Value { get; set; }
         /// <summary>The location of the value.For properties Length, Width, Height, Depth and Thickness: `valueLocation` is `INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT`.For properties WeightByLength, WeightByArea and WeightByVolume: `valueLocation` is `TAKEOFF_TYPE`.Possible values: `TAKEOFF_TYPE`, `INSTANCE_WITH_TAKEOFF_TYPE_DEFAULT`</summary>
         public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_propertyDefinitions_valueLocation? ValueLocation { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_propertyDefinitions"/> and sets the default values.
+        /// </summary>
+        public WithTakeoffTypeGetResponse_propertyDefinitions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_propertyDefinitions_unitOfMeasure>("unitOfMeasure", UnitOfMeasure);
             writer.WriteDoubleValue("value", Value);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.Item.WithTakeoffTypeGetResponse_propertyDefinitions_valueLocation>("valueLocation", ValueLocation);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

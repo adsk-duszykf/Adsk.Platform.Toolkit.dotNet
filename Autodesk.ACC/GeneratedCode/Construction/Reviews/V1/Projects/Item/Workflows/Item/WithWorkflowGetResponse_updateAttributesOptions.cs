@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
     /// The configuration for applying attribute updates when a review is completed.This applies only if the workflow includes a file copy action and the `Update Attributes` action is enabled.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithWorkflowGetResponse_updateAttributesOptions : IParsable
+    public partial class WithWorkflowGetResponse_updateAttributesOptions : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(`Update attributes` in the UI)Indicates whether the `Update Attributes` action is enabled.`true`: attributes will be applied after the review.`false`: (default) attributes will not be updated.</summary>
         public bool? EnableAttachedAttributes { get; set; }
         /// <summary>(`Update attributes both for target folder and source folder` or `Update attributes only for target folder` in the UI)Determines whether attributes are updated only for files in the target folder, or for both the target and source folders.`true`: update attributes in both folders.`false`: (default) update only the target folder.Only available when the approval workflow includes a copy post-action.</summary>
         public bool? UpdateSourceAndCopiedFiles { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item.WithWorkflowGetResponse_updateAttributesOptions"/> and sets the default values.
+        /// </summary>
+        public WithWorkflowGetResponse_updateAttributesOptions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enableAttachedAttributes", EnableAttachedAttributes);
             writer.WriteBoolValue("updateSourceAndCopiedFiles", UpdateSourceAndCopiedFiles);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

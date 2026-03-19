@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections
                 return new global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.Item.WithCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.sheets.v1.projects.item.collections.item collection</summary>
-        /// <param name="position">The ID of the collection, To find the collection ID, call [GET collections](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-collections-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.Item.WithCollectionItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.Item.WithCollectionItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("collectionId", position);
-                return new global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.Item.WithCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse?> GetAsCollectionsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse> GetAsCollectionsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves information about all the collections in a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCollectionsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves information about all the collections in a project.
@@ -135,14 +103,6 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections
             /// <summary>The starting point for the results, specified by item number. The default value is `0`. For example, use `offset=3` to start the results from the third item.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CollectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsRequestBuilder.CollectionsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

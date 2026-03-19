@@ -9,7 +9,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ActionsPostRequestBody : IParsable
+    public partial class ActionsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Name of the action to perform. The possible actions are from `GET /actions`.Max length: 255</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions
 #else
         public string Action { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the item on which to perform the action. For example, change order ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +40,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions
 #else
         public global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostRequestBody_options Options { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ActionsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions
             writer.WriteStringValue("associationId", AssociationId);
             writer.WriteEnumValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostRequestBody_associationType>("associationType", AssociationType);
             writer.WriteObjectValue<global::Autodesk.BIM360.Cost.V1.Containers.Item.Workflows.Actions.ActionsPostRequestBody_options>("options", Options);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -41,37 +41,16 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse?> PostAsStatusStepSetsBatchGetPostResponseAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse> PostAsStatusStepSetsBatchGetPostResponseAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns status set assignments associated with a specified set of categories. It can return just explicit
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsStatusStepSetsBatchGetPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns status set assignments associated with a specified set of categories. It can return just explicit
@@ -113,14 +92,6 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.
             /// <summary>Specifies whether or not to return status sets for categories that inherit their status set. If `true`, returns astatus set (inherited or not) for each specified category. If `false`, returns only explicitly-defined status setsassociated with the specified categories. Default is `false`.</summary>
             [QueryParameter("includeInherited")]
             public bool? IncludeInherited { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class StatusStepSetsBatchGetRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

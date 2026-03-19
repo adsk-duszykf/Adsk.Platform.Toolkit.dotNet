@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
     /// Contains details about the estimated cost of the project, including the amount (`value`) and the currency (`currency`).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithProjectGetResponse_projectValue : IParsable
+    public partial class WithProjectGetResponse_projectValue : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The currency of the project value. Default: `USD`.Possible values: `AED`, `AFN`, `ALL`, `AMD`, `ANG`, `AOA`, `ARS`, `AUD`, `AWG`, `AZN`, `BAM`, `BBD`, `BDT`, `BGN`, `BHD`, `BIF`, `BMD`, `BND`, `BOB`, `BOV`, `BRL`, `BSD`, `BTN`, `BWP`, `BYN`, `BYR`, `BZD`, `CAD`, `CDF`, `CHE`, `CHF`, `CHW`, `CLF`, `CLP`, `CNY`, `COP`, `COU`, `CRC`, `CUC`, `CUP`, `CVE`, `CZK`, `DJF`, `DKK`, `DOP`, `DZD`, `EEK`, `EGP`, `ERN`, `ETB`, `EUR`, `FJD`, `FKP`, `GBP`, `GEL`, `GHS`, `GIP`, `GMD`, `GNF`, `GTQ`, `GYD`, `HKD`, `HNL`, `HRK`, `HTG`, `HUF`, `IDR`, `ILS`, `INR`, `IQD`, `IRR`, `ISK`, `JMD`, `JOD`, `JPY`, `KES`, `KGS`, `KHR`, `KMF`, `KPW`, `KRW`, `KWD`, `KYD`, `KZT`, `LAK`, `LBP`, `LKR`, `LRD`, `LSL`, `LTL`, `LVL`, `LYD`, `MAD`, `MDL`, `MGA`, `MKD`, `MMK`, `MNT`, `MOP`, `MRU`, `MUR`, `MVR`, `MWK`, `MXN`, `MXV`, `MYR`, `MZN`, `NAD`, `NGN`, `NIO`, `NOK`, `NPR`, `NZD`, `OMR`, `PAB`, `PEN`, `PGK`, `PHP`, `PKR`, `PLN`, `PYG`, `QAR`, `RON`, `RSD`, `RUB`, `RWF`, `SAR`, `SBD`, `SCR`, `SDG`, `SEK`, `SGD`, `SHP`, `SLE`, `SLL`, `SOS`, `SRD`, `SSP`, `STN`, `SVC`, `SYP`, `SZL`, `THB`, `TJS`, `TMT`, `TND`, `TOP`, `TRL`, `TRY`, `TTD`, `TWD`, `TZS`, `UAH`, `UGX`, `USD`, `USN`, `UYI`, `UYU`, `UYW`, `UZS`, `VED`, `VES`, `VND`, `VUV`, `WST`, `XAF`, `XAG`, `XAU`, `XBA`, `XBB`, `XBC`, `XBD`, `XCD`, `XDR`, `XOF`, `XPD`, `XPF`, `XPT`, `XSU`, `XTS`, `XUA`, `XXX`, `YER`, `ZAR`, `ZMW`, `ZWL`</summary>
         public global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse_projectValue_currency? Currency { get; set; }
         /// <summary>The estimated cost of the project, based on the `currency` specified in the currency field. Default: `0`.</summary>
@@ -22,6 +24,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
         /// </summary>
         public WithProjectGetResponse_projectValue()
         {
+            AdditionalData = new Dictionary<string, object>();
             Currency = global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse_projectValue_currency.USD;
         }
         /// <summary>
@@ -55,6 +58,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse_projectValue_currency>("currency", Currency);
             writer.WriteDoubleValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

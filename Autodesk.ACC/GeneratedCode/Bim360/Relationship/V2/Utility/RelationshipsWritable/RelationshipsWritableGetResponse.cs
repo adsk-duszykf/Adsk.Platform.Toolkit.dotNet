@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsWritableGetResponse : IParsable
+    public partial class RelationshipsWritableGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The domain to which the entity types belong.For example: `autodesk-bim360-asset`To learn more about domains and entities, see the [Relationship Service Field Guide](https://aps.autodesk.com/en/docs/bim360/v1/overview/field-guide/relationships).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable
 #else
         public List<global::Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse_entityTypes> EntityTypes { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse"/> and sets the default values.
+        /// </summary>
+        public RelationshipsWritableGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse_entityTypes>("entityTypes", EntityTypes);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

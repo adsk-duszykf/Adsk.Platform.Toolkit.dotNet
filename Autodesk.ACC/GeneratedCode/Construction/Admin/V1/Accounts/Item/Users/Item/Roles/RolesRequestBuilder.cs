@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse?> GetAsRolesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse> GetAsRolesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns the roles assigned to a specific user across the projects they belong to.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRolesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the roles assigned to a specific user across the projects they belong to.
@@ -144,19 +125,8 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
             public string[] Filterstatus { get; set; }
 #endif
             /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
-            [Obsolete("This property is deprecated, use FilterTextMatchAsGetFilterTextMatchQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filterTextMatch")]
-            public string? FilterTextMatch { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filterTextMatch")]
-            public string FilterTextMatch { get; set; }
-#endif
-            /// <summary>Specifies how text-based filters should match values in supported fields.This parameter can be used in any endpoint that supports text-based filtering (e.g., `filter[name]`, `filter[jobNumber]`, `filter[companyName]`, etc.).Possible values:`contains` (default) – Matches if the field contains the specified text anywhere`startsWith` – Matches if the field starts with the specified text`endsWith` – Matches if the field ends with the specified text`equals` – Matches only if the field exactly matches the specified textMatching is case-insensitive.Wildcards and regular expressions are not supported.</summary>
-            [QueryParameter("filterTextMatch")]
-            public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.GetFilterTextMatchQueryParameterType? FilterTextMatchAsGetFilterTextMatchQueryParameterType { get; set; }
+            public global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.GetFilterTextMatchQueryParameterType? FilterTextMatch { get; set; }
             /// <summary>The maximum number of records to return in the response.Default: `20`Minimum: `1`Maximum: `200` (If a larger value is provided, only 200 records are returned)</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -173,14 +143,6 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RolesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

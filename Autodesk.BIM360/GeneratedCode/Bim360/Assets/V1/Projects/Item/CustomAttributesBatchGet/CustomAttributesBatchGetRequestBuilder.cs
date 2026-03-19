@@ -41,37 +41,16 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse?> PostAsCustomAttributesBatchGetPostResponseAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse> PostAsCustomAttributesBatchGetPostResponseAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns a specified set of custom attributes.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsCustomAttributesBatchGetPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse> PostAsync(global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostRequestBody body, Action<RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a specified set of custom attributes.
@@ -113,14 +92,6 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
             /// <summary>Whether or not soft-deleted object should be included in the response. If `true`, soft-deleted objects are returned. If `false`, they are not. The default is `false`.</summary>
             [QueryParameter("includeDeleted")]
             public bool? IncludeDeleted { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CustomAttributesBatchGetRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

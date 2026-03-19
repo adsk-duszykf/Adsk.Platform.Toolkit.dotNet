@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCus
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ItemsValidateCustomIdentifierPostRequestBody : IParsable
+    public partial class ItemsValidateCustomIdentifierPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The `customIdentifier` is used to ensure that the chosen identifier adheres to format rules and is unique within the project. Submittal managers can assign custom numbers manually or automatically.When validating a custom identifier, consider the following rules:- Ensure the identifier is unique within the project.- For global sequences, ensure it is unique within the entire project.- For spec sequences, ensure it is unique within the specific spec section.- Spec sequence is in the format `&lt;spec_identifier&gt;-&lt;sequential_number&gt;`. You only need to specify the sequential number. The full number - `&lt;spec_identifier&gt;-&lt;sequential_number&gt;` - appears in the response payload in the `customIdentifierHumanReadable` attribute.Regardless of whether the project uses a global or spec sequence, you should always provide only the sequential number portion without the spec ID when sending the `customIdentifier`.For more information on custom numbering, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Custom_Numbering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCus
 #else
         public string CustomIdentifier { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCustomIdentifier.ItemsValidateCustomIdentifierPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public ItemsValidateCustomIdentifierPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsValidateCus
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customIdentifier", CustomIdentifier);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

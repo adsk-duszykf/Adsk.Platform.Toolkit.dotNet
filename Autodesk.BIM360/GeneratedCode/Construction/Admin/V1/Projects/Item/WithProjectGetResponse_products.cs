@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithProjectGetResponse_products : IParsable
+    public partial class WithProjectGetResponse_products : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URL of the icon associated with the product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,6 +36,13 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
 #endif
         /// <summary>The current status of the product. Possible values:- `activating`: Product activation is in progress.- `activationFailed`: Product activation has failed.- `active`: Product activation is completed.- `deactivating`: Product deactivation is in progress. (Applicable to BIM 360 only)- `deactivationFailed`: Product deactivation has failed. (Applicable to BIM 360 only)- `inactive`: Product deactivation is completed. (Applicable to BIM 360 only)- `available`: Product is available for activation. (Applicable to BIM 360 only)</summary>
         public global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse_products_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse_products"/> and sets the default values.
+        /// </summary>
+        public WithProjectGetResponse_products()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
             writer.WriteEnumValue<global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse_products_language>("language", Language);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse_products_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

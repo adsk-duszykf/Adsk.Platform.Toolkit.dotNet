@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
                 return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.assets.v1.projects.item.categories.item.customAttributes.item collection</summary>
-        /// <param name="position">Asset custom attribute ID</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("customAttributeId", position);
-                return new global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributeItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse?> GetAsCustomAttributesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse> GetAsCustomAttributesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns the custom attribute assignments for a specified category.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCustomAttributesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the custom attribute assignments for a specified category.
@@ -132,14 +100,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
             /// <summary>Specifies whether or not to return custom attributes that were inherited from the specified category&apos;sparent category. If `true`, then it returns inherited custom attributes. If `false`, then it returns only customattributes explicitly assigned to the specified category. Default is `false`.</summary>
             [QueryParameter("includeInherited")]
             public bool? IncludeInherited { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CustomAttributesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

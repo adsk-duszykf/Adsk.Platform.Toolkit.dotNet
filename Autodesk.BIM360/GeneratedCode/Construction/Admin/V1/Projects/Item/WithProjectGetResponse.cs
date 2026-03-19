@@ -9,11 +9,13 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithProjectGetResponse : IParsable
+    public partial class WithProjectGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account ID associated with the project.</summary>
         public Guid? AccountId { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The first line of the project’s address.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -231,6 +233,13 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
         /// <summary>The timestamp when the project was last updated, in ISO 8601 format. This reflects changes to project fields but not updates to resources within the project.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithProjectGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse"/></returns>
@@ -331,6 +340,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

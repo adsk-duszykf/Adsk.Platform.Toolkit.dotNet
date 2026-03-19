@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mapping
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse?> GetAsMappingsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse> GetAsMappingsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves users, roles, and companies assigned the manager role in the current project. Only users, roles, or companies retrieved from this endpoint can be set as a manager in a submittal item.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsMappingsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves users, roles, and companies assigned the manager role in the current project. Only users, roles, or companies retrieved from this endpoint can be set as a manager in a submittal item.
@@ -119,14 +100,6 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mapping
             /// <summary>The number of results to skip before starting to return data. For example, to skip the first 20 results, include `offset=20` in the query string. For more details, see the [JSON API Paging Help documentation](https://jsonapi.org/format/#fetching-pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MappingsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

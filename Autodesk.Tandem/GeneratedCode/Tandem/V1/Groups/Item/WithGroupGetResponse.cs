@@ -9,7 +9,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithGroupGetResponse : IParsable
+    public partial class WithGroupGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Level of access to the corresponding resource.</summary>
@@ -22,6 +22,8 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item
 #else
         public global::Autodesk.Tandem.Tandem.V1.Groups.Item.WithGroupGetResponse_accountSettings AccountSettings { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Using a pointer here is intentional, I want to crash if it&apos;s not initialized properly</summary>
         public bool? IsEmployeeOwned { get; set; }
         /// <summary>Name of the account (group).</summary>
@@ -83,6 +85,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item
         public List<global::Autodesk.Tandem.Tandem.V1.Groups.Item.WithGroupGetResponse_users> Users { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.WithGroupGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithGroupGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.WithGroupGetResponse"/></returns>
@@ -131,6 +140,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item
             writer.WriteStringValue("urn", Urn);
             writer.WriteObjectValue<global::Autodesk.Tandem.Tandem.V1.Groups.Item.WithGroupGetResponse_usageEmailStatus>("usageEmailStatus", UsageEmailStatus);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Tandem.Tandem.V1.Groups.Item.WithGroupGetResponse_users>("users", Users);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,12 +11,21 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
     /// The options for which Issues markups to export.No Issues markups will be exported if both options are set to `false`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExportsPostRequestBody_options_issueMarkups : IParsable
+    public partial class ExportsPostRequestBody_options_issueMarkups : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true`: Include all published Issues markups in the exported files.`false`: (Default) Export files without including any published Issues markups.</summary>
         public bool? IncludePublishedMarkups { get; set; }
         /// <summary>`true`: Include in the exported files all Issues markups that are only visible to their creators or assignees.`false`: (default) Export files without including any unpublished Issues markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostRequestBody_options_issueMarkups"/> and sets the default values.
+        /// </summary>
+        public ExportsPostRequestBody_options_issueMarkups()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +57,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("includePublishedMarkups", IncludePublishedMarkups);
             writer.WriteBoolValue("includeUnpublishedMarkups", IncludeUnpublishedMarkups);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

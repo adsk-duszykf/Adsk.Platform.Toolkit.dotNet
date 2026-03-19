@@ -54,37 +54,16 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse?> PostAsExportsPostResponseAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse> PostAsExportsPostResponseAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Exports up to 1000 sheets from the from the Sheets tool in ACC Build into a new downloadble PDF file.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsExportsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsResponse?> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsResponse> PostAsync(global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsResponse>(requestInfo, global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Exports up to 1000 sheets from the from the Sheets tool in ACC Build into a new downloadble PDF file.
@@ -116,14 +95,6 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
         public global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ExportsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

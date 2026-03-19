@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TemplatesGetResponse_data_attributes_sections : IParsable
+    public partial class TemplatesGetResponse_data_attributes_sections : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the section.</summary>
         public double? Id { get; set; }
         /// <summary>The number of the section according to the order that it appears in the UI.</summary>
@@ -67,6 +69,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
         public string Title { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_data_attributes_sections()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections"/></returns>
@@ -111,6 +120,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
             writer.WriteCollectionOfPrimitiveValues<string>("permittedAttributes", PermittedAttributes);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_sectionNumbering>("sectionNumbering", SectionNumbering);
             writer.WriteStringValue("title", Title);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

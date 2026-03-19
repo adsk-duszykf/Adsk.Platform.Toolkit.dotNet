@@ -9,11 +9,20 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Users.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithUserPutRequestBody : IParsable
+    public partial class WithUserPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Level of access to the corresponding resource.</summary>
         public int? AccessLevel { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Users.Item.WithUserPutRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithUserPutRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +52,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Users.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("accessLevel", AccessLevel);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

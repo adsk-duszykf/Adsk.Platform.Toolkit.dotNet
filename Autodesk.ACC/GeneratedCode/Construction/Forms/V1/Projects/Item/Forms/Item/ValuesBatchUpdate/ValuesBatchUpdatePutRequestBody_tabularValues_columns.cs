@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ValuesBatchUpdatePutRequestBody_tabularValues_columns : IParsable
+    public partial class ValuesBatchUpdatePutRequestBody_tabularValues_columns : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the column to update. Possible values:For the Work Log table:`trade` (Crew) - use `textVal`, `timespan` (Total hours) - use `timespanVal`, `headcount` (workers) - use `numberVal`, `description` (work performed) - use `textVal`For the Equipment table:`item` (equipment) - use `textVal`, `timespan` (Hours used) -  use `timespanVal`, `quantity` (Quantity) - use `numberVal`, `description` (comment) - use `textVal`For the Materials table:`item` (Material) - use `textVal`, `quantity` (Quantity) - use `numberVal`, `unit` (Unit) - use `textVal`, `description` (Comment) - use `textVal`.</summary>
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutRequestBody_tabularValues_columns_columnName? ColumnName { get; set; }
         /// <summary>The attribute used for updating number columns. For example, `numberVal`: `42``.Each tabular field is assigned a specific value type, which you need to specify when updating the field. `numberVal` is relevant for updating the following columns: `headcount` (Workers) and `quantity` (Quantity).</summary>
@@ -26,6 +28,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #endif
         /// <summary>The attribute used for updating time-related columns.Each tabular field is assigned a specific value type, which you need to specify when updating the field. `timespanVal` is relevant for updating the following columns: `timespan` (Total hours), `timespan` (Hours used).</summary>
         public double? TimespanVal { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutRequestBody_tabularValues_columns"/> and sets the default values.
+        /// </summary>
+        public ValuesBatchUpdatePutRequestBody_tabularValues_columns()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
             writer.WriteDoubleValue("numberVal", NumberVal);
             writer.WriteStringValue("textVal", TextVal);
             writer.WriteDoubleValue("timespanVal", TimespanVal);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

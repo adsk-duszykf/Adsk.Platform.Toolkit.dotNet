@@ -57,34 +57,15 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse?> GetAsWithSegmentGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse> GetAsWithSegmentGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a segment by ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithSegmentGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a segment by ID.
@@ -95,37 +76,16 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchResponse?> PatchAsWithSegmentPatchResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchResponse?> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchResponse> PatchAsWithSegmentPatchResponseAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchResponse> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a segment by ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithSegmentPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse?> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse> PatchAsync(global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse>(requestInfo, global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a segment by ID.
@@ -196,22 +156,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
             return new global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithSegmentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithSegmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// Updates a segment by ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -220,14 +164,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
             /// <summary>Force delete segment values when the segment length changes.`true`:  force delete,`false`:  not force delete.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithSegmentItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder.WithSegmentItemRequestBuilderPatchQueryParameters>
-        {
         }
     }
 }

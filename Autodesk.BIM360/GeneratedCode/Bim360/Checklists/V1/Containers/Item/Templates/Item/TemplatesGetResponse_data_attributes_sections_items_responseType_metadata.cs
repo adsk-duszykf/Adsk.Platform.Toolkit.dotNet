@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
     /// Information about the responses.Note that this is only relevant for Multiple Choice and Checkboxes response types.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TemplatesGetResponse_data_attributes_sections_items_responseType_metadata : IParsable
+    public partial class TemplatesGetResponse_data_attributes_sections_items_responseType_metadata : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list response object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
 #else
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse ListResponse { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_responseType_metadata"/> and sets the default values.
+        /// </summary>
+        public TemplatesGetResponse_data_attributes_sections_items_responseType_metadata()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.Item.TemplatesGetResponse_data_attributes_sections_items_responseType_metadata_listResponse>("listResponse", ListResponse);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

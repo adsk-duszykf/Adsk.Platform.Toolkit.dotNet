@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
                 return new global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.WithReviewItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.reviews.v1.projects.item.reviews.item collection</summary>
-        /// <param name="position">The unique ID of the review.It must be in UUID format — not the numeric sequence ID shown in the Reviews UI. To find the review ID, call `GET reviews &lt;en/docs/acc/v1/reference/http/reviews-reviews-GET/&gt;`_.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.WithReviewItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.WithReviewItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("reviewId", position);
-                return new global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.WithReviewItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsGetResponse?> GetAsReviewsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder.ReviewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder.ReviewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsGetResponse> GetAsReviewsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder.ReviewsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder.ReviewsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the list of reviews created in the specified project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsReviewsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder.ReviewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder.ReviewsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new review in the specified project using an existing approval workflow.
@@ -104,37 +72,16 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse?> PostAsReviewsPostResponseAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse> PostAsReviewsPostResponseAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new review in the specified project using an existing approval workflow.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsReviewsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse?> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse> PostAsync(global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse>(requestInfo, global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the list of reviews created in the specified project.
@@ -327,22 +274,6 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ReviewsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsRequestBuilder.ReviewsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ReviewsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
     /// The list of types of standard markups and their associated links that you want to include in the export.By default markups will be exported and hyperlinks will not be exported.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExportsPostRequestBody_options_standardMarkups : IParsable
+    public partial class ExportsPostRequestBody_options_standardMarkups : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>`true`: include links in the markups. Supported links are links to Sheets, Files, RFIs, Forms, Submittals, and Assets.`false`: (default) do not include links in markups.Note that if both `includePublishedMarkups` and `includeUnpublishedMarkups` are set to `false`, this parameter will be treated as `false`.</summary>
         public bool? IncludeMarkupLinks { get; set; }
         /// <summary>`true`: (default) include all published standard markups in the exported sheets. Note that published markups are visible to all project members.`false`: export sheets without including published standard markups.</summary>
         public bool? IncludePublishedMarkups { get; set; }
         /// <summary>`true`: (default) standard markups that are visible only to their creators will be included in the exported sheets.`false`: exported sheets will exclude unpublished markups.</summary>
         public bool? IncludeUnpublishedMarkups { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostRequestBody_options_standardMarkups"/> and sets the default values.
+        /// </summary>
+        public ExportsPostRequestBody_options_standardMarkups()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
             writer.WriteBoolValue("includeMarkupLinks", IncludeMarkupLinks);
             writer.WriteBoolValue("includePublishedMarkups", IncludePublishedMarkups);
             writer.WriteBoolValue("includeUnpublishedMarkups", IncludeUnpublishedMarkups);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
     /// Basic version set data. For a complete collection of version set data, call [GET version-sets](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-GET/).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SheetsBatchGetPostResponse_results_versionSet : IParsable
+    public partial class SheetsBatchGetPostResponse_results_versionSet : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>- `true` if the version set has been deleted.- `false` if the version set has not been deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>The ID of the version set.</summary>
@@ -27,6 +29,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse_results_versionSet"/> and sets the default values.
+        /// </summary>
+        public SheetsBatchGetPostResponse_results_versionSet()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,6 +71,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("issuanceDate", IssuanceDate);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

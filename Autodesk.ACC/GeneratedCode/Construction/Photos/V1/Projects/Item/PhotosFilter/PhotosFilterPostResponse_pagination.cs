@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PhotosFilterPostResponse_pagination : IParsable
+    public partial class PhotosFilterPostResponse_pagination : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The limit property</summary>
         public int? Limit { get; set; }
         /// <summary>The nextPost property</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter
 #else
         public global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostResponse_pagination_nextPost NextPost { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public PhotosFilterPostResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("limit", Limit);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostResponse_pagination_nextPost>("nextPost", NextPost);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

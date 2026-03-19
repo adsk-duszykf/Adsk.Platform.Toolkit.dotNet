@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TwinsPostResponse : IParsable
+    public partial class TwinsPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>URN of the created twin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
 #endif
         /// <summary>timestamp of actual creation</summary>
         public int? T { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostResponse"/> and sets the default values.
+        /// </summary>
+        public TwinsPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("k", K);
             writer.WriteIntValue("t", T);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

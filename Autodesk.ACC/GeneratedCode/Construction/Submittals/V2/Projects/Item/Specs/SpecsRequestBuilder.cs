@@ -53,34 +53,15 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse?> GetAsSpecsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder.SpecsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder.SpecsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse> GetAsSpecsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder.SpecsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder.SpecsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieve all the spec sections for the specified project. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsSpecsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder.SpecsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder.SpecsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a spec section to organize and categorize submittals.
@@ -91,37 +72,16 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostResponse?> PostAsSpecsPostResponseAsync(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostResponse> PostAsSpecsPostResponseAsync(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostResponse> PostAsync(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a spec section to organize and categorize submittals.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsSpecsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse?> PostAsync(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse> PostAsync(global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse>(requestInfo, global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve all the spec sections for the specified project. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
@@ -215,22 +175,6 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SpecsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsRequestBuilder.SpecsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SpecsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item
     /// Limits enforced by the frontend.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithOwnerPutResponse_frontendLimits : IParsable
+    public partial class WithOwnerPutResponse_frontendLimits : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Max permitted number of aliases that a client can have at any one time. Default is 100.</summary>
         public int? LimitAliases { get; set; }
         /// <summary>Max permitted size of an App upload in megabytes.</summary>
@@ -25,6 +27,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item
         public int? LimitPublicAliases { get; set; }
         /// <summary>Max permitted number of App/Activity versions a client can have at any one time. Default is 100.</summary>
         public int? LimitVersions { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item.WithOwnerPutResponse_frontendLimits"/> and sets the default values.
+        /// </summary>
+        public WithOwnerPutResponse_frontendLimits()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item
             writer.WriteIntValue("limitPayloadSizeInKB", LimitPayloadSizeInKB);
             writer.WriteIntValue("limitPublicAliases", LimitPublicAliases);
             writer.WriteIntValue("limitVersions", LimitVersions);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

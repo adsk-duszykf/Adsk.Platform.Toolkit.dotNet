@@ -29,19 +29,6 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
                 return new global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.bim360.modelset.v3.containers.item.modelsets.item.versions.item.views.item collection</summary>
-        /// <param name="position">The GUID that uniquely identifies the view.</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("viewId", position);
-                return new global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsGetResponse?> GetAsViewsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsGetResponse> GetAsViewsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of all model set views in a given model set as they exist in a specific model set version.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsViewsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of all model set views in a given model set as they exist in a specific model set version.
@@ -122,14 +90,6 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
         public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.ViewsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ViewsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

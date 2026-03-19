@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WorkflowGetResponse : IParsable
+    public partial class WorkflowGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A description of the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow
 #endif
         /// <summary>The region type of the workflow. Possible values: `US`, `EU`.</summary>
         public global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow.WorkflowGetResponse_workflowType? WorkflowType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow.WorkflowGetResponse"/> and sets the default values.
+        /// </summary>
+        public WorkflowGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow.WorkflowGetResponse_projectRolesMapping>("projectRolesMapping", ProjectRolesMapping);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow.WorkflowGetResponse_workflowType>("workflowType", WorkflowType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

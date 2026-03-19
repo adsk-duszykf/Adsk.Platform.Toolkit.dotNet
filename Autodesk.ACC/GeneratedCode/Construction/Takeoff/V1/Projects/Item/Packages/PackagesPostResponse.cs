@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PackagesPostResponse : IParsable
+    public partial class PackagesPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time when the resource was created, in the following format: `YYYY-MM-DDThh:mm:ssZ`.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The package ID.</summary>
@@ -34,6 +36,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
 #else
         public string UpdatedByName { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse"/> and sets the default values.
+        /// </summary>
+        public PackagesPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedByName", UpdatedByName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

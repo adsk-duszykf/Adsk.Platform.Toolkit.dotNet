@@ -763,7 +763,7 @@ public class DataManagementClientHelper
             var folderContents = await _dataMgtClient.Projects[projectId].Folders[folderId].Contents
                                     .GetAsync(r =>
                                     {
-                                        r.QueryParameters.FiltertypeAsGetFilterTypeQueryParameterType = [GetFilterTypeQueryParameterType.Items];
+                                        r.QueryParameters.Filtertype=[GetFilterTypeQueryParameterType.Items];
                                         r.QueryParameters.FilterextensionType = ["items:autodesk.bim360:File"];
                                         r.QueryParameters.Pagenumber = pageNumber;
                                     });

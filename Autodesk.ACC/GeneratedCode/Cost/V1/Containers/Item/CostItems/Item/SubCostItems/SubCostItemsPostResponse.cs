@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SubCostItemsPostResponse : IParsable
+    public partial class SubCostItemsPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The identifier for the sub cost item. If copied from another model, for example, a `Contract SOV`, it inherits the code. Otherwise, it is manually assigned.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         /// <summary>The total value of the sub cost item, calculated as `quantity` * `unitPrice`.</summary>
         public double? Value { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse"/> and sets the default values.
+        /// </summary>
+        public SubCostItemsPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse"/></returns>
@@ -125,6 +134,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
             writer.WriteDoubleValue("unitPrice", UnitPrice);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteDoubleValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

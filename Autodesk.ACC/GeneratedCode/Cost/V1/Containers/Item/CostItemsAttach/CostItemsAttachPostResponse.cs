@@ -9,13 +9,22 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsAttach
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CostItemsAttachPostResponse : IParsable
+    public partial class CostItemsAttachPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the change order to which the cost item will be attached.</summary>
         public Guid? ChangeOrderId { get; set; }
         /// <summary>The ID of the cost item to attach.</summary>
         public Guid? CostItemId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsAttach.CostItemsAttachPostResponse"/> and sets the default values.
+        /// </summary>
+        public CostItemsAttachPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsAttach
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("changeOrderId", ChangeOrderId);
             writer.WriteGuidValue("costItemId", CostItemId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

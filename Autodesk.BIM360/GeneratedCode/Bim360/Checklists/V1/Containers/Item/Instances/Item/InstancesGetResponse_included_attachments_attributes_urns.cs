@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InstancesGetResponse_included_attachments_attributes_urns : IParsable
+    public partial class InstancesGetResponse_included_attachments_attributes_urns : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of URN. Possible values:`WIP` - Use this URN to find details about the attachment. For example, the name of the attachment. See [GET projects/:project_id/versions/:version_id](https://aps.autodesk.com/en/docs/data/v1/projects/:project_id/versions/:version_id-GET) for more details.`OSS` - Use the last section of this URN to download the attachment. See [GET buckets/:bucket_key/objects/:object_name](https://aps.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectName-GET) for more details. Note that you need a 2-legged token to download the attachment.`CHECKLIST` - Not relevant</summary>
         public global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_attachments_attributes_urns_type? Type { get; set; }
         /// <summary>The URN of the attachment.</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_attachments_attributes_urns"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_included_attachments_attributes_urns()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse_included_attachments_attributes_urns_type>("type", Type);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

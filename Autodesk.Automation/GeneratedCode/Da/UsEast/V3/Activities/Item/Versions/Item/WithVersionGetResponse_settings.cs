@@ -11,8 +11,17 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.Item
     /// The url/string Settings for a given set of AppBundles.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithVersionGetResponse_settings : IParsable
+    public partial class WithVersionGetResponse_settings : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.Item.WithVersionGetResponse_settings"/> and sets the default values.
+        /// </summary>
+        public WithVersionGetResponse_settings()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

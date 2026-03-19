@@ -9,13 +9,22 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithElementPutRequestBody_streamConfig_streamSettings_thresholds_Asterisk_lower : IParsable
+    public partial class WithElementPutRequestBody_streamConfig_streamSettings_thresholds_Asterisk_lower : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alert property</summary>
         public double? Alert { get; set; }
         /// <summary>The warn property</summary>
         public double? Warn { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutRequestBody_streamConfig_streamSettings_thresholds_Asterisk_lower"/> and sets the default values.
+        /// </summary>
+        public WithElementPutRequestBody_streamConfig_streamSettings_thresholds_Asterisk_lower()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("alert", Alert);
             writer.WriteDoubleValue("warn", Warn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

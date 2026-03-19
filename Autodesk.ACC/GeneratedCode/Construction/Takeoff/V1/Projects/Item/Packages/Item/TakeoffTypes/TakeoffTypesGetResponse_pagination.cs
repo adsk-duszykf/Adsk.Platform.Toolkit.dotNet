@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
     /// The pagination object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TakeoffTypesGetResponse_pagination : IParsable
+    public partial class TakeoffTypesGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of objects per page.</summary>
         public int? Limit { get; set; }
         /// <summary>The URL path that returns the next page of data.</summary>
@@ -25,6 +27,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
 #endif
         /// <summary>The object number from which the pagination starts. This is zero-based.</summary>
         public int? Offset { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.TakeoffTypes.TakeoffTypesGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public TakeoffTypesGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.Takeo
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("nextUrl", NextUrl);
             writer.WriteIntValue("offset", Offset);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

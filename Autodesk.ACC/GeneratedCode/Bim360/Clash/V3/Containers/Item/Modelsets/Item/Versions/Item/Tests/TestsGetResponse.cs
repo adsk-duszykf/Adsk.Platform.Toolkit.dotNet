@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.I
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TestsGetResponse : IParsable
+    public partial class TestsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Paging information associated with a paging response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +30,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.I
 #else
         public List<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse_tests> Tests { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse"/> and sets the default values.
+        /// </summary>
+        public TestsGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.I
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse_page>("page", Page);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse_tests>("tests", Tests);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

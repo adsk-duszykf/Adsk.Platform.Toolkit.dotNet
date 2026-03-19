@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse?> GetAsIssueRootCauseCategoriesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesRequestBuilder.IssueRootCauseCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesRequestBuilder.IssueRootCauseCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse> GetAsIssueRootCauseCategoriesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesRequestBuilder.IssueRootCauseCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesRequestBuilder.IssueRootCauseCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a list of supported root cause categories and root causes that you can allocate to an issue. For example, Coordination, Design, Quality and Safety.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsIssueRootCauseCategoriesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesRequestBuilder.IssueRootCauseCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesRequestBuilder.IssueRootCauseCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesResponse>(requestInfo, global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of supported root cause categories and root causes that you can allocate to an issue. For example, Coordination, Design, Quality and Safety.
@@ -129,14 +110,6 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories
             /// <summary>Add `offset=20` to get partial results (together with the limit to support pagination).</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssueRootCauseCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesRequestBuilder.IssueRootCauseCategoriesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

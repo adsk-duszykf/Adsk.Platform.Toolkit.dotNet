@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
     /// The output containing the downloadable signed URL.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithExportGetResponse_result_output : IParsable
+    public partial class WithExportGetResponse_result_output : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Only for dwg/rvt files.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 #else
         public string SignedUrl { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result_output"/> and sets the default values.
+        /// </summary>
+        public WithExportGetResponse_result_output()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result_output_failedFiles>("failedFiles", FailedFiles);
             writer.WriteStringValue("signedUrl", SignedUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

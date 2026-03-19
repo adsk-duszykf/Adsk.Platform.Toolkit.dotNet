@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
     /// A list of statuses the user is permitted to transition an RFI to.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses : IParsable
+    public partial class ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of statuses the user is permitted to transition an RFI to in workflows of type `EMEA`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
 #else
         public List<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses_wfUS> WfUS { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses"/> and sets the default values.
+        /// </summary>
+        public ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses_wfEU>("wfEU", WfEU);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse_rfi_permittedActions_updateRfi_permittedStatuses_wfUS>("wfUS", WfUS);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CustomAttributesPostRequestBody : IParsable
+    public partial class CustomAttributesPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data type that this custom attribute&apos;s value must take. Once set, the data type can&apos;t be changed.Possible values:- `boolean`: `true` or `false`- `text`: a string- `numeric`: a string that parses as a valid floating point number (not localized)- `date`: an ISO8601 date string with no time, for example, `2021-04-01`.- `select`: a valid ID from the list of values defined by `enumValues`.- `multi_select`: an array of valid IDs from the list of values defined by `enumValues`.</summary>
         public global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostRequestBody_dataType? DataType { get; set; }
         /// <summary>The default value for this custom attribute if no value is specified on asset creation. If this field is notspecified, the custom attribute does not have a default value. The default value it takes can be any one ofthree possible value types, defined below.</summary>
@@ -50,6 +52,13 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes
         public int? MaxLengthOnIngress { get; set; }
         /// <summary>Specifies whether or not this custom attribute is required when creating or editing an asset. If `true`, thecustom attribute is required. If `false`, it is not required. Setting this field to `true` does not guaranteethat existing or imported assets will have this custom attribute.</summary>
         public bool? RequiredOnIngress { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public CustomAttributesPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -91,6 +100,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes
             writer.WriteCollectionOfPrimitiveValues<string>("enumValues", EnumValues);
             writer.WriteIntValue("maxLengthOnIngress", MaxLengthOnIngress);
             writer.WriteBoolValue("requiredOnIngress", RequiredOnIngress);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

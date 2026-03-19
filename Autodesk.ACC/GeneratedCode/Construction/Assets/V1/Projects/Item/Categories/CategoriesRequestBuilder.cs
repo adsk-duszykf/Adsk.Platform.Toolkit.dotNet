@@ -53,34 +53,15 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesGetResponse?> GetAsCategoriesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesGetResponse> GetAsCategoriesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Searches for and returns all specified categories.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCategoriesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new category.
@@ -91,37 +72,16 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostResponse?> PostAsCategoriesPostResponseAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostResponse> PostAsCategoriesPostResponseAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostResponse> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new category.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsCategoriesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse?> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Searches for and returns all specified categories.
@@ -210,14 +170,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories
             public bool? IncludeUid { get; set; }
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Creates a new category.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -226,14 +178,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories
             /// <summary>If provided, and set to `true`, the globally-unique category `uid` field will be present in the response.The globally unique category ID is used with the (upcoming) `v3` category APIs. The option to include theglobally-unique ID with the `v1` category APIs is to help consumers transition to the new IDs.</summary>
             [QueryParameter("includeUid")]
             public bool? IncludeUid { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CategoriesRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

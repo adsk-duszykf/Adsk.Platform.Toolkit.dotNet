@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Business_units_structureGetResponse : IParsable
+    public partial class Business_units_structureGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The business_units property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
 #else
         public List<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse_business_units> BusinessUnits { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse"/> and sets the default values.
+        /// </summary>
+        public Business_units_structureGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse_business_units>("business_units", BusinessUnits);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

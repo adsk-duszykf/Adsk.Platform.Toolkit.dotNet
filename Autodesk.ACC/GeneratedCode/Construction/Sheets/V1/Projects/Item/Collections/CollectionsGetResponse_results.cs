@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CollectionsGetResponse_results : IParsable
+    public partial class CollectionsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the collection was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Autodesk ID of the user who created the collection.</summary>
@@ -59,6 +61,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections
         public string UpdatedByName { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public CollectionsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse_results"/></returns>
@@ -101,6 +110,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteStringValue("updatedByName", UpdatedByName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SubCostItemsPostRequestBody : IParsable
+    public partial class SubCostItemsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A user-defined identifier for the sub cost item, used for categorization or identification.If the sub cost item is created by copying from another model, for example, `Contract SOV`, it will inherit the code from the source model. Otherwise, it must be manually assigned.To verify the code is unique, call [GET sub-cost-items](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET/).Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         public double? UnitPrice { get; set; }
         /// <summary>The total value of the sub cost item, calculated as `quantity` * `unitPrice`.</summary>
         public double? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public SubCostItemsPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -103,6 +112,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
             writer.WriteDoubleValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PermissionsBatchDeletePostRequestBody : IParsable
+    public partial class PermissionsBatchDeletePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Autodesk ID of the user, role or company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,6 +26,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
         public Guid? SubjectId { get; set; }
         /// <summary>The type of subject.Possible values: `USER`, `COMPANY`, `ROLE`</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchDelete.PermissionsBatchDeletePostRequestBody_subjectType? SubjectType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchDelete.PermissionsBatchDeletePostRequestBody"/> and sets the default values.
+        /// </summary>
+        public PermissionsBatchDeletePostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsB
             writer.WriteStringValue("autodeskId", AutodeskId);
             writer.WriteGuidValue("subjectId", SubjectId);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchDelete.PermissionsBatchDeletePostRequestBody_subjectType>("subjectType", SubjectType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

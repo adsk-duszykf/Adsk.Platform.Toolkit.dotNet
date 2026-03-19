@@ -11,8 +11,10 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
     /// Basic statistics about workitem processing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkitemsPostResponse_stats : IParsable
+    public partial class WorkitemsPostResponse_stats : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The file size of bytes the job downloads for input.</summary>
         public int? BytesDownloaded { get; set; }
         /// <summary>The file size of bytes the job uploads for output.</summary>
@@ -29,6 +31,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
         public DateTimeOffset? TimeQueued { get; set; }
         /// <summary>The time in UTC when the system finished uploading outputs.</summary>
         public DateTimeOffset? TimeUploadEnded { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.WorkitemsPostResponse_stats"/> and sets the default values.
+        /// </summary>
+        public WorkitemsPostResponse_stats()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,6 +81,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
             writer.WriteDateTimeOffsetValue("timeInstructionsStarted", TimeInstructionsStarted);
             writer.WriteDateTimeOffsetValue("timeQueued", TimeQueued);
             writer.WriteDateTimeOffsetValue("timeUploadEnded", TimeUploadEnded);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

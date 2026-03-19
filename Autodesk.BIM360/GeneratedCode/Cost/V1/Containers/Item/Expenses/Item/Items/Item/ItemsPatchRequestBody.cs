@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ItemsPatchRequestBody : IParsable
+    public partial class ItemsPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aggregate type of the expense item.Possible values: `workCompleted`, `workCompletedQty`, `materialsOnSite`, `materialsBilled`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +137,13 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items.Item
         /// <summary>The price per unit of the expense item.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items.Item.ItemsPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public ItemsPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items.Item.ItemsPatchRequestBody"/></returns>
@@ -199,6 +208,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.Item.Items.Item
             writer.WriteStringValue("scope", Scope);
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

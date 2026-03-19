@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse?> GetAsBusiness_units_structureGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse> GetAsBusiness_units_structureGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Query all the business units in a specific BIM 360 account.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsBusiness_units_structureGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates or redefines the business units of a specific BIM 360 account.
@@ -78,37 +59,16 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse?> PutAsBusiness_units_structurePutResponseAsync(global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse?> PutAsync(global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse> PutAsBusiness_units_structurePutResponseAsync(global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse> PutAsync(global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates or redefines the business units of a specific BIM 360 account.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsBusiness_units_structurePutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse?> PutAsync(global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse> PutAsync(global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse>(requestInfo, global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Query all the business units in a specific BIM 360 account.
@@ -159,22 +119,6 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
         public global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Business_units_structureRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Business_units_structureRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

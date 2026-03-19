@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
     /// The result of a completed export job:- If the exporting job&apos;s `status` value is `successful`, the downloadable signed url will be included in the `result.output` object- If the exporting job&apos;s `status` value is `failed` (e.g. the files have been deleted), the `result.error` object will be present with details.- If the exporting job&apos;s `status` value is `partialSuccess` (e.g. when some dwg/rvt files do not contain any exportable views or sheets), the `result.output.failedFiles` object will be present with file urn and reason.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithExportGetResponse_result : IParsable
+    public partial class WithExportGetResponse_result : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The error codes could be&lt;br&gt;1. ERR_WORKFLOW_TIMEOUT, when the export job runs more than 30 minutes.&lt;br&gt;2. ERR_INTERNAL_SERVER_ERROR, when other internal server error happens.&lt;br&gt;3. ERR_NO_PROCESSABLE_FILES, when all dwg/rvt files do not contain any 2d pdf files.&lt;br&gt;4. ERR_FILE_TOO_LARGE, when the total size of exported files exceeds the upper limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 #else
         public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result_output Output { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result"/> and sets the default values.
+        /// </summary>
+        public WithExportGetResponse_result()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result_error>("error", Error);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result_output>("output", Output);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

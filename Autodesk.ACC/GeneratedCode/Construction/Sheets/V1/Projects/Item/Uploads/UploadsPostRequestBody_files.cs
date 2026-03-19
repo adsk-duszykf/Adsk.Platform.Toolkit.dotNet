@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UploadsPostRequestBody_files : IParsable
+    public partial class UploadsPostRequestBody_files : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the file.Currently the Sheets tool only supports PDF files.To create a storage URN, call [POST storage](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-storage-POST/).Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
 #else
         public string StorageUrn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.UploadsPostRequestBody_files"/> and sets the default values.
+        /// </summary>
+        public UploadsPostRequestBody_files()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.UploadsPostRequestBody_files_storageType>("storageType", StorageType);
             writer.WriteStringValue("storageUrn", StorageUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

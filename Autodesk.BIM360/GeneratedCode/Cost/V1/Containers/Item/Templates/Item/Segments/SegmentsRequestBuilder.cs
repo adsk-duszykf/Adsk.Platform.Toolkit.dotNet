@@ -29,19 +29,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
                 return new global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.cost.v1.containers.item.templates.item.segments.item collection</summary>
-        /// <param name="position">The segment ID. To obtain a segment ID, use [GET templates/:templateId/segments](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-segments-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("segmentId", position);
-                return new global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsGetResponse?> GetAsSegmentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsGetResponse> GetAsSegmentsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsGetResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves all of the segments in a budget code template.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsSegmentsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new segment in the budget code template.
@@ -104,37 +72,16 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostResponse?> PostAsSegmentsPostResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostResponse?> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostResponse> PostAsSegmentsPostResponseAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostResponse> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new segment in the budget code template.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsSegmentsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse?> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse> PostAsync(global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse>(requestInfo, global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all of the segments in a budget code template.
@@ -228,22 +175,6 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SegmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.BIM360.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SegmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

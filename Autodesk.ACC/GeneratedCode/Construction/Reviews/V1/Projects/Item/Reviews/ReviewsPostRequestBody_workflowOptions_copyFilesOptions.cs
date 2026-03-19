@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
     /// (`Copy approved files` in the UI) Option for copying approved files when the review is complete.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReviewsPostRequestBody_workflowOptions_copyFilesOptions : IParsable
+    public partial class ReviewsPostRequestBody_workflowOptions_copyFilesOptions : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(`Then copy approved files to` in the UI) The URN of the target folder where approved files will be copied.To find the folder URN, follow the first four steps of the [Upload Files to the ACC Files tool](https://aps.autodesk.com/en/docs/acc/v1/tutorials/files/upload-document-s3/) tutorial and note the `data.id` field in the response. Use `data.attributes.name` or `data.attributes.displayName` to confirm you have the correct folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
 #else
         public string FolderUrn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostRequestBody_workflowOptions_copyFilesOptions"/> and sets the default values.
+        /// </summary>
+        public ReviewsPostRequestBody_workflowOptions_copyFilesOptions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("folderUrn", FolderUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

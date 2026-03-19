@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DiffsBatchStatusPostRequestBody_diffs : IParsable
+    public partial class DiffsBatchStatusPostRequestBody_diffs : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>[SQL AST for describing columns/projections](https://aps.autodesk.com/en/docs/acc/v1/tutorials/model-properties/query-ref/)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,13 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
 #else
         public global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostRequestBody_diffs_query Query { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostRequestBody_diffs"/> and sets the default values.
+        /// </summary>
+        public DiffsBatchStatusPostRequestBody_diffs()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
             writer.WriteStringValue("curVersionUrn", CurVersionUrn);
             writer.WriteStringValue("prevVersionUrn", PrevVersionUrn);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostRequestBody_diffs_query>("query", Query);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

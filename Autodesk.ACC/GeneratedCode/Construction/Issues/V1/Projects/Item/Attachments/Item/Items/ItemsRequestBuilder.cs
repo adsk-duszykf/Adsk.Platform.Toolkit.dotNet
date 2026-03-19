@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
                 return new global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.issues.v1.projects.item.attachments.item.items.item collection</summary>
-        /// <param name="position">The unique identifier of the attachment. To find the ID, call [GET attachments](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-attachments-issueId-items-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("attachmentId", position);
-                return new global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.Item.WithAttachmentItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse?> GetAsItemsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse> GetAsItemsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves all attachments for a specific issue in a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsItemsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsResponse>(requestInfo, global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all attachments for a specific issue in a project.
@@ -122,14 +90,6 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes
     /// The default value for this custom attribute if no value is specified on asset creation. If this field is notspecified, the custom attribute does not have a default value. The default value it takes can be any one ofthree possible value types, defined below.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomAttributesPostResponse_defaultValue : IParsable
+    public partial class CustomAttributesPostResponse_defaultValue : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of string values that are set for a `multi_select` custom attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,13 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes
 #else
         public string Zero { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse_defaultValue"/> and sets the default values.
+        /// </summary>
+        public CustomAttributesPostResponse_defaultValue()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes
             writer.WriteCollectionOfPrimitiveValues<string>("1", One);
             writer.WriteBoolValue("2", Two);
             writer.WriteStringValue("0", Zero);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

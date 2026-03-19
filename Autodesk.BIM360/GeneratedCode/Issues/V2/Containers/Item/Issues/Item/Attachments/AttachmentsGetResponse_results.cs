@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsGetResponse_results : IParsable
+    public partial class AttachmentsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attachmentType attribute indicates the type of file that is being attached.The value of attachmentType is determined by the file suffix of the attached file.If the file has a suffix that corresponds to a lowercase photo format (such as .jpg, .png etc.), then attachmentType is set to photo.Otherwise, it is set to document.Possible Values: `document` or `photo`.</summary>
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse_results_attachmentType? AttachmentType { get; set; }
         /// <summary>Not relevant</summary>
@@ -113,6 +115,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse_results_wipUrn WipUrn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public AttachmentsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse_results"/></returns>
@@ -179,6 +188,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
             writer.WriteEnumValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse_results_urnType>("urnType", UrnType);
             writer.WriteIntValue("urnVersion", UrnVersion);
             writer.WriteObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse_results_wipUrn>("wipUrn", WipUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

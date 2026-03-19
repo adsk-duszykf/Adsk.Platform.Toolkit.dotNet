@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ValuesBatchUpdatePutResponse_tabularValues_worklogEntries : IParsable
+    public partial class ValuesBatchUpdatePutResponse_tabularValues_worklogEntries : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the work log row has been deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>A text description of the work performed.</summary>
@@ -42,6 +44,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
 #else
         public string Trade { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatchUpdate.ValuesBatchUpdatePutResponse_tabularValues_worklogEntries"/> and sets the default values.
+        /// </summary>
+        public ValuesBatchUpdatePutResponse_tabularValues_worklogEntries()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +90,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.Item.ValuesBatc
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("timespan", Timespan);
             writer.WriteStringValue("trade", Trade);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

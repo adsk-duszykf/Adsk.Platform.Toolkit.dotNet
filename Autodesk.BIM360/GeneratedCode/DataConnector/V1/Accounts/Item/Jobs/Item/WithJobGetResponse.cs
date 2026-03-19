@@ -9,11 +9,13 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithJobGetResponse : IParsable
+    public partial class WithJobGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account ID.</summary>
         public Guid? AccountId { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the job was completed, presented in ISO 8601 format. If the job has not yet completed, the value is null.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The completion status for completed jobs. Possible values: `success`, `failed`, `cancelled`.</summary>
@@ -97,6 +99,13 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item
         public string Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.WithJobGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithJobGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.WithJobGetResponse"/></returns>
@@ -159,6 +168,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item
             writer.WriteStringValue("startDate", StartDate);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -46,34 +46,15 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse?> DeleteAsWithViewDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse> DeleteAsWithViewDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Deletes a specific model set view based on the view ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsWithViewDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a specific model set view based on the view ID.
@@ -83,34 +64,15 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse?> GetAsWithViewGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse> GetAsWithViewGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves a specific model set view based on the view ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithViewGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a specific model set view.
@@ -121,37 +83,16 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse?> PatchAsWithViewPatchResponseAsync(global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse?> PatchAsync(global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse> PatchAsWithViewPatchResponseAsync(global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse> PatchAsync(global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a specific model set view.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithViewPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse?> PatchAsync(global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse> PatchAsync(global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a specific model set view based on the view ID.
@@ -221,30 +162,6 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         public global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithViewItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithViewItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithViewItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

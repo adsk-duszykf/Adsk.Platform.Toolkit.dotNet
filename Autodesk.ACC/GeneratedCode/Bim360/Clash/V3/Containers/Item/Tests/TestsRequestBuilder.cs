@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests
                 return new global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.WithTestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.bim360.clash.v3.containers.item.tests.item collection</summary>
-        /// <param name="position">The GUID that uniquely identifies the clash test.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.WithTestItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.WithTestItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("testId", position);
-                return new global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.WithTestItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.TestsRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfisPostRequestBody_pushpinAttributes : IParsable
+    public partial class RfisPostRequestBody_pushpinAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attributesVersion property</summary>
         public int? AttributesVersion { get; set; }
         /// <summary>The externalId property</summary>
@@ -55,6 +57,13 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody_pushpinAttributes_viewerState ViewerState { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody_pushpinAttributes"/> and sets the default values.
+        /// </summary>
+        public RfisPostRequestBody_pushpinAttributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody_pushpinAttributes"/></returns>
@@ -93,6 +102,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostRequestBody_pushpinAttributes_viewerState>("viewerState", ViewerState);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

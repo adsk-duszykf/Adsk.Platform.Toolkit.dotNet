@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FormsGetResponse_data_tabularValues_materialsEntries : IParsable
+    public partial class FormsGetResponse_data_tabularValues_materialsEntries : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the material log row has been deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>Additional description of the materials.</summary>
@@ -48,6 +50,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
 #else
         public string Unit { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse_data_tabularValues_materialsEntries"/> and sets the default values.
+        /// </summary>
+        public FormsGetResponse_data_tabularValues_materialsEntries()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,6 +96,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
             writer.WriteStringValue("item", Item);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteStringValue("unit", Unit);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

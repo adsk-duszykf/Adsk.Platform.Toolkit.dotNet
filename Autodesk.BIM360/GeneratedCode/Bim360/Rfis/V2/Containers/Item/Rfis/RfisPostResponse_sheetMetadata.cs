@@ -9,9 +9,18 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RfisPostResponse_sheetMetadata : IParsable
+    public partial class RfisPostResponse_sheetMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse_sheetMetadata"/> and sets the default values.
+        /// </summary>
+        public RfisPostResponse_sheetMetadata()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,6 +48,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

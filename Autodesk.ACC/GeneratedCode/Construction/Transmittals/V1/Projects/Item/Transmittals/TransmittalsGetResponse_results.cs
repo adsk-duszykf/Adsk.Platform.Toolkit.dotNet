@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransmittalsGetResponse_results : IParsable
+    public partial class TransmittalsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time when the transmittal was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Specifies how much recipient information each recipient can see.- `ALL` – All recipients can view the full recipient list.- `LIMITED` – Each recipient can view only their own recipient information.Project Admins and the sender always see the full list.Possible values: `ALL`, `LIMITED`</summary>
@@ -73,6 +75,13 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
         public string Title { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public TransmittalsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse_results"/></returns>
@@ -123,6 +132,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
             writer.WriteStringValue("sequenceId", SequenceId);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse_results_status>("status", Status);
             writer.WriteStringValue("title", Title);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

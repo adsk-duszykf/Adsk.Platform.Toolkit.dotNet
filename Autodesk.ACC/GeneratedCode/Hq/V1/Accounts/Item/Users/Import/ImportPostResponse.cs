@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Import
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ImportPostResponse : IParsable
+    public partial class ImportPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The failure property</summary>
         public int? Failure { get; set; }
         /// <summary>The failure_items property</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Import
 #else
         public List<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse_success_items> SuccessItems { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse"/> and sets the default values.
+        /// </summary>
+        public ImportPostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Import
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse_failure_items>("failure_items", FailureItems);
             writer.WriteIntValue("success", Success);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse_success_items>("success_items", SuccessItems);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

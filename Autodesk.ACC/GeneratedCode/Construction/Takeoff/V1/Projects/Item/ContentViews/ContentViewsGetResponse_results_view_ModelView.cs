@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
     /// The 3D model view.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ContentViewsGetResponse_results_view_ModelView : IParsable
+    public partial class ContentViewsGetResponse_results_view_ModelView : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URN of the 3D model view.To learn how to use this attribute to retrieve details of the 3D model, see the [Takeoff Extract Inventory](https://aps.autodesk.com/en/docs/acc/v1/tutorials/takeoff/takeoff-extract-inventory) tutorial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
 #else
         public string ViewName { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews.ContentViewsGetResponse_results_view_ModelView"/> and sets the default values.
+        /// </summary>
+        public ContentViewsGetResponse_results_view_ModelView()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ContentViews
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lineageUrn", LineageUrn);
             writer.WriteStringValue("viewName", ViewName);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

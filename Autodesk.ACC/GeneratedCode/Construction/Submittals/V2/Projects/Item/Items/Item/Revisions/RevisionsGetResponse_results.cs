@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RevisionsGetResponse_results : IParsable
+    public partial class RevisionsGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the submittal item whose revision history is being retrieved. It remains the same across all revisions of the item. Use this ID to track changes and access previous versions. To get the most recent version of a submittal item, call [GET items/:itemId](https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemId-GET/).</summary>
         public Guid? ItemId { get; set; }
         /// <summary>The Autodesk ID of the user, company, or role assigned as the manager of the submittal item.In order to get more info about the manager, use:- [GET projects/users](https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET) to verify the actual name of the user in case the typs is a `user` (1).- [GET companies](https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET/) to determine the name of the company in case the typs is a `company` (2).Note that we do not currently support verifying names of roles.</summary>
@@ -117,6 +119,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
         public string SubmitterDueDate { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public RevisionsGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results"/></returns>
@@ -187,6 +196,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse_results_subcontractorType>("subcontractorType", SubcontractorType);
             writer.WriteStringValue("submittedBy", SubmittedBy);
             writer.WriteStringValue("submitterDueDate", SubmitterDueDate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

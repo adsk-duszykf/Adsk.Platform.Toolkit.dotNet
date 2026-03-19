@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CostItemsBatchCreatePostRequestBody : IParsable
+    public partial class CostItemsBatchCreatePostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of cost items to be created in the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +22,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate
 #else
         public List<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody_data> Data { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody"/> and sets the default values.
+        /// </summary>
+        public CostItemsBatchCreatePostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +58,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostRequestBody_data>("data", Data);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

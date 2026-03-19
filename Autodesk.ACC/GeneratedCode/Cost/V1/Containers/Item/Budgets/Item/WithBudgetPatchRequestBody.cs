@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithBudgetPatchRequestBody : IParsable
+    public partial class WithBudgetPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The total amount of actual cost of the budget.</summary>
@@ -34,6 +34,8 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item
 #endif
         /// <summary>Actual unit price of a budget.</summary>
         public double? ActualUnitPrice { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique code compliant with the budget code template defined by the project admin. Ignored if `segmentCodeMap` is defined.Max length: 255</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +163,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item
         /// <summary>Unit price of a budget.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithBudgetPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody"/></returns>
@@ -239,6 +248,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item
             writer.WriteObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.Budgets.Item.WithBudgetPatchRequestBody_segmentCodeMap>("segmentCodeMap", SegmentCodeMap);
             writer.WriteStringValue("unit", Unit);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

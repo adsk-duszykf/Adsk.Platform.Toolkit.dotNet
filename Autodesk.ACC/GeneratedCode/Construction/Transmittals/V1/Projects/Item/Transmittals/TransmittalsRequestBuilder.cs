@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
                 return new global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.transmittals.v1.projects.item.transmittals.item collection</summary>
-        /// <param name="position">The ID of the transmittal. To find the ID, call [GET transmittals](https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-listtransmittals-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("transmittalId", position);
-                return new global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse?> GetAsTransmittalsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder.TransmittalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder.TransmittalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse> GetAsTransmittalsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder.TransmittalsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder.TransmittalsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves all transmittals created in the specified project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsTransmittalsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder.TransmittalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder.TransmittalsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsResponse>(requestInfo, global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all transmittals created in the specified project.
@@ -136,27 +104,8 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>Sorts the transmittals by a supported field and order.By default, results are sorted by `sequenceId desc` (descending order).To sort in ascending order, add `asc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Possible values: `status`, `sequenceId`, `title`, `sentByName`, `createdAt`, `documentsCount`.Examples:- `sort=status asc` – sorts transmittals by status in ascending order.- `sort=createdAt desc` – sorts transmittals by creation date in descending order.</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sorts the transmittals by a supported field and order.By default, results are sorted by `sequenceId desc` (descending order).To sort in ascending order, add `asc` after the field name.Format: `sort=&lt;field&gt; [asc or desc]`Possible values: `status`, `sequenceId`, `title`, `sentByName`, `createdAt`, `documentsCount`.Examples:- `sort=status asc` – sorts transmittals by status in ascending order.- `sort=createdAt desc` – sorts transmittals by creation date in descending order.</summary>
-            [QueryParameter("sort")]
-            public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransmittalsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsRequestBuilder.TransmittalsRequestBuilderGetQueryParameters>
-        {
+            public global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

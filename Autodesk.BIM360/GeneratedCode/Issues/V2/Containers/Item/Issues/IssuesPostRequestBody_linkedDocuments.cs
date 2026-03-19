@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class IssuesPostRequestBody_linkedDocuments : IParsable
+    public partial class IssuesPostRequestBody_linkedDocuments : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the pushpin was closed, in ISO8601 format</summary>
         public DateTimeOffset? ClosedAt { get; set; }
         /// <summary>The version URN of the file/document when the issue was closed</summary>
@@ -54,6 +56,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 #else
         public string Urn { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody_linkedDocuments"/> and sets the default values.
+        /// </summary>
+        public IssuesPostRequestBody_linkedDocuments()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -99,6 +108,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
             writer.WriteObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody_linkedDocuments_details>("details", Details);
             writer.WriteEnumValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostRequestBody_linkedDocuments_type>("type", Type);
             writer.WriteStringValue("urn", Urn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects
                 return new global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.bim360.docs.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project.This corresponds to project ID in the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/). To convert a project ID in the Data Management API into a project ID in the BIM 360 API you need to remove the `b.` prefix. For example, a project ID of `b.a4be0c34a-4ab7` translates to a project ID of a4be0c34a-4ab7.To learn how to find the project ID, see the [Retrieve BIM 360 Account and Project ID](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/retrieve-account-and-project-id/) tutorial.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("project%2Did", position);
-                return new global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.ProjectItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.ProjectsRequestBuilder"/> and sets the default values.
         /// </summary>

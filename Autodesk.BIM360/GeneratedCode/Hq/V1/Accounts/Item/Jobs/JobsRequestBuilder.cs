@@ -27,19 +27,6 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs
                 return new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item.WithJob_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.BIM360.hq.v1.accounts.item.jobs.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item.WithJob_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item.WithJob_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("job_id", position);
-                return new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item.WithJob_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.JobsRequestBuilder"/> and sets the default values.
         /// </summary>

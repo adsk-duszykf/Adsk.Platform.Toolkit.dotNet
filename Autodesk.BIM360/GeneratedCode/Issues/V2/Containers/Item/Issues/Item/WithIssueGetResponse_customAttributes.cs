@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithIssueGetResponse_customAttributes : IParsable
+    public partial class WithIssueGetResponse_customAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attributeDefinitionId property</summary>
         public Guid? AttributeDefinitionId { get; set; }
         /// <summary>Free text description of the attribute</summary>
@@ -32,6 +34,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
 #else
         public global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_customAttributes_value Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_customAttributes"/> and sets the default values.
+        /// </summary>
+        public WithIssueGetResponse_customAttributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item
             writer.WriteObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_customAttributes_title>("title", Title);
             writer.WriteEnumValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_customAttributes_type>("type", Type);
             writer.WriteObjectValue<global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.WithIssueGetResponse_customAttributes_value>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
     /// The details of the signature graphic.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InstancesGetResponse_data_attributes_signatures_formalSignature_graphic : IParsable
+    public partial class InstancesGetResponse_data_attributes_signatures_formalSignature_graphic : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The raw signature image data, or a link to the signature image file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse_data_attributes_signatures_formalSignature_graphic"/> and sets the default values.
+        /// </summary>
+        public InstancesGetResponse_data_attributes_signatures_formalSignature_graphic()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
             writer.WriteStringValue("content", Content);
             writer.WriteCollectionOfPrimitiveValues<string>("permittedAttributes", PermittedAttributes);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

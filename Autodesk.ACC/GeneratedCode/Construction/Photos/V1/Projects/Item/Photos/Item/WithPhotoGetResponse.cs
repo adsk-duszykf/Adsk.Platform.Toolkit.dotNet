@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithPhotoGetResponse : IParsable
+    public partial class WithPhotoGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The createdBy property</summary>
@@ -109,6 +111,13 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item
         /// <summary>The userCreatedAt property</summary>
         public DateTimeOffset? UserCreatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item.WithPhotoGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithPhotoGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item.WithPhotoGetResponse"/></returns>
@@ -177,6 +186,7 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item.WithPhotoGetResponse_urls>("urls", Urls);
             writer.WriteDateTimeOffsetValue("userCreatedAt", UserCreatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

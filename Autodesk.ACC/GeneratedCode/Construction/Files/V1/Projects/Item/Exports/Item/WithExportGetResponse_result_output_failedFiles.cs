@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithExportGetResponse_result_output_failedFiles : IParsable
+    public partial class WithExportGetResponse_result_output_failedFiles : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The detail message for failure</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
 #else
         public string Reason { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse_result_output_failedFiles"/> and sets the default values.
+        /// </summary>
+        public WithExportGetResponse_result_output_failedFiles()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
             writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("reason", Reason);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

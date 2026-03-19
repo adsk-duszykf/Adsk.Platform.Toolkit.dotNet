@@ -52,34 +52,15 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse?> GetAsWithRfiGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse> GetAsWithRfiGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves detailed information about a single BIM 360 RFI (request for information), including the type of workflow roles assigned to the user, whether the user is permitted to create RFIs, which states the user can create the RFIs in, and the attributes that are required when creating the RFIs in the different states.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithRfiGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
@@ -90,37 +71,16 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse?> PatchAsWithRfiPatchResponseAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse?> PatchAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse> PatchAsWithRfiPatchResponseAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse> PatchAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithRfiPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse?> PatchAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse> PatchAsync(global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves detailed information about a single BIM 360 RFI (request for information), including the type of workflow roles assigned to the user, whether the user is permitted to create RFIs, which states the user can create the RFIs in, and the attributes that are required when creating the RFIs in the different states.
@@ -171,22 +131,6 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
         public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithRfiItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithRfiItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

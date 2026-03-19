@@ -9,9 +9,11 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AppbundlesGetResponse : IParsable
+    public partial class AppbundlesGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A module referenced by an Activity in order to perform specific functions. Typically this is a DLL or some other form of custom code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item
         public global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse_uploadParameters UploadParameters { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse"/> and sets the default values.
+        /// </summary>
+        public AppbundlesGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse"/></returns>
@@ -99,6 +108,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item
             writer.WriteStringValue("package", Package);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse_settings>("settings", Settings);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.AppbundlesGetResponse_uploadParameters>("uploadParameters", UploadParameters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

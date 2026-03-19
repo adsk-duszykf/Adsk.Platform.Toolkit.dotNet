@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
     /// The metadata object; only relevant for `list` custom attributes.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssueAttributeDefinitionsGetResponse_results_metadata : IParsable
+    public partial class IssueAttributeDefinitionsGetResponse_results_metadata : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
 #else
         public global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata_list List { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata"/> and sets the default values.
+        /// </summary>
+        public IssueAttributeDefinitionsGetResponse_results_metadata()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,6 +59,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse_results_metadata_list>("list", List);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

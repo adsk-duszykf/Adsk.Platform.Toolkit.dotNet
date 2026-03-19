@@ -9,13 +9,22 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RequirementsGetResponse_specSections_submittalGroups_submittalGroupTypes : IParsable
+    public partial class RequirementsGetResponse_specSections_submittalGroups_submittalGroupTypes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of submittal. This corresponds to the *Submittal type* column in the UI.Possible values: `Test Reports`, `Shop Drawings`, `Schedules`, `Samples`, `Sample Warranty`, `Reports`, `Qualification Data`, `QUALITY ASSURANCE`, `Product Data`, `Performance Data`, `Mfg. Instructions`, `Meeting/Conferences`, `Drawings`, `Delegated-Design`, `Certifications`, `Certificates`, `Calculations`, `Attic Stock`, `Demonstrations`, `General Warranties`, `O&amp;M Manuals`, `Special Warranties`, `LEED`, `As-Builts`, `TESTS AND INSPECTIONS`, `General`, `Manufacturers Instructions`, `Substitutions`, `Mix Design`, `Others`</summary>
         public global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse_specSections_submittalGroups_submittalGroupTypes_submittalType? SubmittalType { get; set; }
         /// <summary>The number of submittals for the submittal type.</summary>
         public int? Total { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse_specSections_submittalGroups_submittalGroupTypes"/> and sets the default values.
+        /// </summary>
+        public RequirementsGetResponse_specSections_submittalGroups_submittalGroupTypes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse_specSections_submittalGroups_submittalGroupTypes_submittalType>("submittalType", SubmittalType);
             writer.WriteIntValue("total", Total);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -40,34 +40,15 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse?> GetAsStatusStepSetsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse> GetAsStatusStepSetsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Searches for and returns all specified status sets.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsStatusStepSetsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new status set.
@@ -78,37 +59,16 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse?> PostAsStatusStepSetsPostResponseAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse> PostAsStatusStepSetsPostResponseAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new status set.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsStatusStepSetsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse?> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse> PostAsync(global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostRequestBody body, Action<RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse>(requestInfo, global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Searches for and returns all specified status sets.
@@ -194,14 +154,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
             public int? Limit { get; set; }
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class StatusStepSetsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// Creates a new status set.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -210,14 +162,6 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets
             /// <summary>Specifies that any inactive (deleted) entity with a conflicting name should be automatically renamedto avoid a conflict. Only supported by specific APIs.</summary>
             [QueryParameter("renameConflicting")]
             public bool? RenameConflicting { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class StatusStepSetsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

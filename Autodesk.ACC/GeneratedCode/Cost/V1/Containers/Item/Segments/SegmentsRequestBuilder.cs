@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments
                 return new global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.cost.v1.containers.item.segments.item collection</summary>
-        /// <param name="position">The segment ID. To obtain a segment ID, use [GET templates/:templateId/segments](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-segments-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("segmentId", position);
-                return new global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.SegmentsRequestBuilder"/> and sets the default values.
         /// </summary>

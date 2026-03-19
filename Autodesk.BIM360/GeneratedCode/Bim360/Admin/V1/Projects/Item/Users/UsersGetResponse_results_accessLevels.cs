@@ -11,14 +11,23 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
     /// Flags indicating the users access levels in the account.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UsersGetResponse_results_accessLevels : IParsable
+    public partial class UsersGetResponse_results_accessLevels : IAdditionalDataHolder, IParsable
     {
         /// <summary>Indicates the user is an account admin in the account.</summary>
         public bool? AccountAdmin { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the user is an executive in the account.</summary>
         public bool? Executive { get; set; }
         /// <summary>Indicates the user is a project admin for the project.</summary>
         public bool? ProjectAdmin { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse_results_accessLevels"/> and sets the default values.
+        /// </summary>
+        public UsersGetResponse_results_accessLevels()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
             writer.WriteBoolValue("accountAdmin", AccountAdmin);
             writer.WriteBoolValue("executive", Executive);
             writer.WriteBoolValue("projectAdmin", ProjectAdmin);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

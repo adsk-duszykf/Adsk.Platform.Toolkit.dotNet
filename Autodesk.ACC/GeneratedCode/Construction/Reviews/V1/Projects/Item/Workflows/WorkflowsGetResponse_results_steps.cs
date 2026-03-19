@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WorkflowsGetResponse_results_steps : IParsable
+    public partial class WorkflowsGetResponse_results_steps : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>(Displayed in the UI when selecting reviewers for a step)Lists the users, roles, or companies that were configured as reviewers for this step.These candidates are defined during workflow setup and determine who will be invited to participate in the step during a review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +52,13 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
 #endif
         /// <summary>Indicates the step type in the workflow. Possible values:- `INITIATOR`: the first step. It typically represents the person who launches the review.- `REVIEWER`: an intermediate step. It allows one or more reviewers to evaluate the files.- `APPROVER`: the final step. It represents the decision maker who approves or rejects the files.</summary>
         public global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results_steps_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results_steps"/> and sets the default values.
+        /// </summary>
+        public WorkflowsGetResponse_results_steps()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -91,6 +100,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse_results_steps_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

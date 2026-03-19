@@ -11,8 +11,17 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
     /// The version type of the package.Possible values:- `FIXED` – The files in the package remain fixed at the selected versions.- `CURRENT` – The files in the package automatically update to the latest current versions.- `CHANGING` – The package is temporarily changing from one version type to another. This state usually lasts only a few seconds and cannot be used as a filter.For more details, see the [Change Package Version Type](https://help.autodesk.com/view/BUILD/ENU/?guid=View_Manage_Packages#change-package-version-type) documentation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PackagesGetResponse_results_versionType : IParsable
+    public partial class PackagesGetResponse_results_versionType : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse_results_versionType"/> and sets the default values.
+        /// </summary>
+        public PackagesGetResponse_results_versionType()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

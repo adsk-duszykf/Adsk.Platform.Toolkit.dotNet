@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelationshipsPutRequestBody : IParsable
+    public partial class RelationshipsPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The entities to be contained in the relationship.Min items: 2 Max items: 2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
 #endif
         /// <summary>The UUID that uniquely identifies the relationship. If no `id` is supplied, the system automatically allocates one.</summary>
         public Guid? Id { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody"/> and sets the default values.
+        /// </summary>
+        public RelationshipsPutRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutRequestBody_entities>("entities", Entities);
             writer.WriteGuidValue("id", Id);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DataListingGetResponse : IParsable
+    public partial class DataListingGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the file was created, presented in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The name of the file.</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing
 #endif
         /// <summary>The size of the file in bytes.</summary>
         public int? Size { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingGetResponse"/> and sets the default values.
+        /// </summary>
+        public DataListingGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("size", Size);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

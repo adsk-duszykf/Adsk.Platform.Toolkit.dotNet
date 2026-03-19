@@ -11,8 +11,10 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
     /// The individual viewable (sheet / 3D view) a pushpin was placed on. Applicable only if URN points to a file (as opposed to a document)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssuesGetResponse_results_linkedDocuments_details_viewable : IParsable
+    public partial class IssuesGetResponse_results_linkedDocuments_details_viewable : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the viewable (UUID)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
 #else
         public string ViewableId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse_results_linkedDocuments_details_viewable"/> and sets the default values.
+        /// </summary>
+        public IssuesGetResponse_results_linkedDocuments_details_viewable()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
             writer.WriteBoolValue("is3D", Is3D);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("viewableId", ViewableId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

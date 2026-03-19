@@ -29,19 +29,6 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
                 return new global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.takeoff.v1.projects.item.packages.item collection</summary>
-        /// <param name="position">The takeoff package ID.To find the ID, call [GET packages](https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-GET/).</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("packageId", position);
-                return new global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.Item.WithPackageItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesGetResponse?> GetAsPackagesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesGetResponse> GetAsPackagesGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the takeoff packages for a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsPackagesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse>(requestInfo, global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a takeoff package for a project.
@@ -104,37 +72,16 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse?> PostAsPackagesPostResponseAsync(global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse?> PostAsync(global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse> PostAsPackagesPostResponseAsync(global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse> PostAsync(global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse>(requestInfo, global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a takeoff package for a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsPackagesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse?> PostAsync(global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse> PostAsync(global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse>(requestInfo, global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the takeoff packages for a project.
@@ -198,22 +145,6 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
             /// <summary>The package index from which the pagination starts. This is zero-based.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PackagesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

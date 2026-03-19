@@ -57,34 +57,15 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse?> GetAsWithUserGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse> GetAsWithUserGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves detailed information about the specified user in a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithUserGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates information about the specified user in a project.
@@ -95,37 +76,16 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse?> PatchAsWithUserPatchResponseAsync(global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse?> PatchAsync(global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse> PatchAsWithUserPatchResponseAsync(global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse> PatchAsync(global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates information about the specified user in a project.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithUserPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse?> PatchAsync(global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse> PatchAsync(global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse>(requestInfo, global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes the specified user from a project.
@@ -196,14 +156,6 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
             return new global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithUserItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// Retrieves detailed information about the specified user in a project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -219,22 +171,6 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithUserItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithUserItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

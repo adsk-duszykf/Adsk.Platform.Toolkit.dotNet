@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RequirementsGetResponse_specSections_submittalGroups : IParsable
+    public partial class RequirementsGetResponse_specSections_submittalGroups : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The submittal group associcated with the submittal. This is equivalent to the *Submittal group* column in the UI.Possible values: `ACTION AND INFORMATIONAL`, `CLOSEOUT SUBMITTALS`, `DIVISION 01 REQUIREMENTS`, `FIELD QUALITY CONTROL`, `Mockups`, `QUALITY ASSURANCE`, `Tests And Inspections`</summary>
         public global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse_specSections_submittalGroups_submittalGroup? SubmittalGroup { get; set; }
         /// <summary>The submittalGroupTypes property</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
 #endif
         /// <summary>The number of submittals for the submittal group.</summary>
         public int? Total { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse_specSections_submittalGroups"/> and sets the default values.
+        /// </summary>
+        public RequirementsGetResponse_specSections_submittalGroups()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse_specSections_submittalGroups_submittalGroup>("submittalGroup", SubmittalGroup);
             writer.WriteCollectionOfObjectValues<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Requirements.RequirementsGetResponse_specSections_submittalGroups_submittalGroupTypes>("submittalGroupTypes", SubmittalGroupTypes);
             writer.WriteIntValue("total", Total);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

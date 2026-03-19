@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithAttachmentPatchResponse : IParsable
+    public partial class WithAttachmentPatchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Represents the state of the asynchronous process triggered after marking the file upload as complete (`isFileUploaded=true`). The backend initiates this process to generate the `URN` for the attachment.Possible values:- `1` - Pending (the request is queued and awaiting processing).- `2` - Started (the backend process to generate the `URN` has begun).- `3` - Success (the `URN` was successfully created).- `4` - Failure (the process failed, and the `URN` was not created).</summary>
         public global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse_asyncState? AsyncState { get; set; }
         /// <summary>The workflow state of the submittal item associated with the attachment.- `Category IDs 1-4`: These represent active workflow states and can be set when creating an attachment.- `Category IDs 5-8`: These represent historical records of attachments from earlier revisions of the submittal process and are automatically assigned by the system.Possible values:- `1` (Submission)- `2` (For Review)- `3` (Review Response)- `4` (Final Response)- `5` (Previous Submission)- `6` (Previous For Review)- `7` (Previous Review Response)- `8` (Previous Final Response)</summary>
@@ -117,6 +119,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
         /// <summary>The version number of the file in Autodesk Docs.</summary>
         public int? UrnVersion { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse"/> and sets the default values.
+        /// </summary>
+        public WithAttachmentPatchResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse"/></returns>
@@ -187,6 +196,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
             writer.WriteStringValue("urnPage", UrnPage);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse_urnTypeId>("urnTypeId", UrnTypeId);
             writer.WriteIntValue("urnVersion", UrnVersion);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

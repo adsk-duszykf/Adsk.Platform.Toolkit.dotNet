@@ -40,34 +40,15 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedGetResponse?> GetAsAssignedGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedGetResponse> GetAsAssignedGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedGetResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the state of all assigned clash groups in a particular model set, relative to a specified clash test.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsAssignedGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the state of the specified assigned clash groups, relative to a specified clash test.
@@ -78,37 +59,16 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse?> PostAsAssignedPostResponseAsync(global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse> PostAsAssignedPostResponseAsync(global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse> PostAsync(global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the state of the specified assigned clash groups, relative to a specified clash test.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsAssignedPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse?> PostAsync(global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse> PostAsync(global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse>(requestInfo, global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the state of all assigned clash groups in a particular model set, relative to a specified clash test.
@@ -159,22 +119,6 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Ass
         public global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AssignedRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AssignedRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -29,19 +29,6 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests
                 return new global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.dataConnector.v1.accounts.item.requests.item collection</summary>
-        /// <param name="position">The ID of the specified request</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("requestId", position);
-                return new global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -66,34 +53,15 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsGetResponse?> GetAsRequestsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsGetResponse> GetAsRequestsGetResponseAsync(Action<RequestConfiguration<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsGetResponse>(requestInfo, global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Returns an array of data requests that the authenticated user has created in the specified account. The user must have executive overview or project administrator permissions.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRequestsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse>(requestInfo, global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a data request for an authenticated user. The user can optionally limit the request to one project. The user must have executive overview or project administrator permissions.
@@ -104,37 +72,16 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostResponse?> PostAsRequestsPostResponseAsync(global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostResponse?> PostAsync(global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostResponse> PostAsRequestsPostResponseAsync(global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostResponse> PostAsync(global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostResponse>(requestInfo, global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a data request for an authenticated user. The user can optionally limit the request to one project. The user must have executive overview or project administrator permissions.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsRequestsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse?> PostAsync(global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse> PostAsync(global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse>(requestInfo, global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns an array of data requests that the authenticated user has created in the specified account. The user must have executive overview or project administrator permissions.
@@ -228,22 +175,6 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests
             [QueryParameter("sortFields")]
             public string SortFields { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsRequestBuilder.RequestsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RequestsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

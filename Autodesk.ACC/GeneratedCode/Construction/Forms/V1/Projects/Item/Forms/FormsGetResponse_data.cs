@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FormsGetResponse_data : IParsable
+    public partial class FormsGetResponse_data : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the user, role, or company the form is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +163,13 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
         public global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse_data_weather Weather { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse_data"/> and sets the default values.
+        /// </summary>
+        public FormsGetResponse_data()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse_data"/></returns>
@@ -233,6 +242,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteDateTimeOffsetValue("userCreatedAt", UserCreatedAt);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse_data_weather>("weather", Weather);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MetadataGetResponse_versions : IParsable
+    public partial class MetadataGetResponse_versions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the version was created in ISO8601 format. For example, `2023-01-17T09:54:27.000Z`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,13 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
 #else
         public string UpdatedAt { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataGetResponse_versions"/> and sets the default values.
+        /// </summary>
+        public MetadataGetResponse_versions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,6 +96,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataGetResponse_versions_status>("status", Status);
             writer.WriteStringValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

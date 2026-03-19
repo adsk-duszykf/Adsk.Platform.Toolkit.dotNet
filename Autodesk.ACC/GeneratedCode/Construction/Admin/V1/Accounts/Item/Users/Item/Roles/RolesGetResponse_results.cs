@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RolesGetResponse_results : IParsable
+    public partial class RolesGetResponse_results : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp when the role was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The unique ID of the role.</summary>
@@ -50,6 +52,13 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
 #endif
         /// <summary>The timestamp when the role was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse_results"/> and sets the default values.
+        /// </summary>
+        public RolesGetResponse_results()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -91,6 +100,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
             writer.WriteCollectionOfPrimitiveValues<string>("projectIds", ProjectIds);
             writer.WriteStringValue("status", Status);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithSegmentGetResponse : IParsable
+    public partial class WithSegmentGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time that the item was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The delimiter that follows the segment. Possible values are: `none`, `space`, `point`, `hyphen`, `underscore`, `tab`.</summary>
@@ -69,6 +71,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
         /// <summary>The date and time that the item was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithSegmentGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse"/></returns>
@@ -121,6 +130,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
             writer.WriteGuidValue("templateId", TemplateId);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

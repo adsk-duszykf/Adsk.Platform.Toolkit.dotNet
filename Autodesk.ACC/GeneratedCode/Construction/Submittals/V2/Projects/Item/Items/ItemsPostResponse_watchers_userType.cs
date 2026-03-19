@@ -11,8 +11,17 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
     /// The type of watcher assigned to the submittal item.Possible values:- `1` (user)- `2` (company)- `3` (role)
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ItemsPostResponse_watchers_userType : IParsable
+    public partial class ItemsPostResponse_watchers_userType : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostResponse_watchers_userType"/> and sets the default values.
+        /// </summary>
+        public ItemsPostResponse_watchers_userType()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

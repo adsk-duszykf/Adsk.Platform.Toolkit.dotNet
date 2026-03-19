@@ -27,19 +27,6 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects
                 return new global::Autodesk.ACC.Construction.Files.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Autodesk.ACC.construction.files.v1.projects.item collection</summary>
-        /// <param name="position">The ID of the project. Use the [Data Management API](https://aps.autodesk.com/en/docs/data/v2/developers_guide/overview/) to retrieve the project ID. For more information, see the [Retrieve a Project ID tutorial](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/). You can use a project ID either with a “b.” prefix or without a “b.” prefix. For instance, a project ID of `b.a4be0c34a-4ab7` can also be referred to as `a4be0c34a-4ab7`.</param>
-        /// <returns>A <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.WithProjectItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Autodesk.ACC.Construction.Files.V1.Projects.Item.WithProjectItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("projectId", position);
-                return new global::Autodesk.ACC.Construction.Files.V1.Projects.Item.WithProjectItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.ProjectsRequestBuilder"/> and sets the default values.
         /// </summary>

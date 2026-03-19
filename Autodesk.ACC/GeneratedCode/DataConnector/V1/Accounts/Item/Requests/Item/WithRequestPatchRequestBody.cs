@@ -9,9 +9,11 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRequestPatchRequestBody : IParsable
+    public partial class WithRequestPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The callback URL specified for the data request. If specified, the Data Connection service calls the URL each time a job executes for the request. The service sends a POST request that provides job execution information. The JSON payload in the POST request contains the following: `{ `accountId`: `account_id`, `requestId`: `request_id`, `jobId`: `data_connector_job_id`, `state`: `complete`, `success`: true or false }`.If not specified, the Data Connection service does not provide a callback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +89,13 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item
         public string StartDate { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestPatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithRequestPatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestPatchRequestBody"/></returns>
@@ -139,6 +148,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item
             writer.WriteBoolValue("sendEmail", SendEmail);
             writer.WriteCollectionOfPrimitiveValues<string>("serviceGroups", ServiceGroups);
             writer.WriteStringValue("startDate", StartDate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

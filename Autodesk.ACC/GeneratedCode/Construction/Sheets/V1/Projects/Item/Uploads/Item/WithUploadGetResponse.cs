@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithUploadGetResponse : IParsable
+    public partial class WithUploadGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time when the upload was created, in ISO-8601 format (YYYY-MM-DDTHH:mm:ss.SSSZ).</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The ID of the user who created the upload.</summary>
@@ -75,6 +77,13 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item
         /// <summary>The ID of the version set where the upload creates sheets to.</summary>
         public Guid? VersionSetId { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.WithUploadGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithUploadGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.WithUploadGetResponse"/></returns>
@@ -127,6 +136,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteStringValue("updatedByName", UpdatedByName);
             writer.WriteGuidValue("versionSetId", VersionSetId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

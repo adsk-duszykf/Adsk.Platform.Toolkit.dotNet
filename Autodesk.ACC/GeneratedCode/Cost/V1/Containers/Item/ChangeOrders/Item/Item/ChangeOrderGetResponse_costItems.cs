@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ChangeOrderGetResponse_costItems : IParsable
+    public partial class ChangeOrderGetResponse_costItems : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The system ID of the cost item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item
 #endif
         /// <summary>Used to indicate whether the cost items amounts estimated, proposed, submitted, approved, include the markups.</summary>
         public bool? IncludeMarkup { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderGetResponse_costItems"/> and sets the default values.
+        /// </summary>
+        public ChangeOrderGetResponse_costItems()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("includeMarkup", IncludeMarkup);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

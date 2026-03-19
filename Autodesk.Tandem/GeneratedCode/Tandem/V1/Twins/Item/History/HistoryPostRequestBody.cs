@@ -9,9 +9,11 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class HistoryPostRequestBody : IParsable
+    public partial class HistoryPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, change details are included in the response.</summary>
         public bool? IncludeChanges { get; set; }
         /// <summary>Maximum number of records to return.</summary>
@@ -38,6 +40,13 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
 #endif
         /// <summary>If true, use full keys in the response.</summary>
         public bool? UseFullKeys { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.History.HistoryPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public HistoryPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
             writer.WriteCollectionOfPrimitiveValues<int?>("timestamps", Timestamps);
             writer.WriteStringValue("typeFilter", TypeFilter);
             writer.WriteBoolValue("useFullKeys", UseFullKeys);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

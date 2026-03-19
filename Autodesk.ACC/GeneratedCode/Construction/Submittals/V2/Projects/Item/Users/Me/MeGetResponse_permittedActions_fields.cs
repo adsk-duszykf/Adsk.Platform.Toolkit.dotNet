@@ -11,8 +11,17 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
     /// A mapping of field names to lists of possible values for each field, specific to the associated action. An empty array indicates that there is no specific set of values for those fields.For example, in the action `Spec::create`, fields might contain mapping for title (`title`) and identifier (`identifier`).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MeGetResponse_permittedActions_fields : IParsable
+    public partial class MeGetResponse_permittedActions_fields : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me.MeGetResponse_permittedActions_fields"/> and sets the default values.
+        /// </summary>
+        public MeGetResponse_permittedActions_fields()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +49,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Users.Me
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

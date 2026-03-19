@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsPostResponse_clientVersion : IParsable
+    public partial class AttachmentsPostResponse_clientVersion : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Not relevant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +75,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
         public string UserAgent { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsPostResponse_clientVersion"/> and sets the default values.
+        /// </summary>
+        public AttachmentsPostResponse_clientVersion()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsPostResponse_clientVersion"/></returns>
@@ -117,6 +126,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("serviceId", ServiceId);
             writer.WriteStringValue("user_agent", UserAgent);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

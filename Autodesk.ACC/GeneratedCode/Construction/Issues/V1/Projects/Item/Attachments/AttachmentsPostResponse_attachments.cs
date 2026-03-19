@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AttachmentsPostResponse_attachments : IParsable
+    public partial class AttachmentsPostResponse_attachments : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier for the attachment, set by the client when creating the attachment reference. This can be any unique GUID, but it is recommended to use the OSS storage GUID.</summary>
         public Guid? AttachmentId { get; set; }
         /// <summary>The type of attachment. For issue attachments, this value is always `issue-attachment`. Will always be: `issue-attachment`</summary>
@@ -119,6 +121,13 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
         public string VersionUrn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.AttachmentsPostResponse_attachments"/> and sets the default values.
+        /// </summary>
+        public AttachmentsPostResponse_attachments()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.AttachmentsPostResponse_attachments"/></returns>
@@ -185,6 +194,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
             writer.WriteStringValue("tipVersionUrn", TipVersionUrn);
             writer.WriteIntValue("version", Version);
             writer.WriteStringValue("versionUrn", VersionUrn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

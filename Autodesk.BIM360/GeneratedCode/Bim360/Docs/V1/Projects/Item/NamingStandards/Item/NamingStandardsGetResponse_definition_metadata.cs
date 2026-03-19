@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NamingStandardsGetResponse_definition_metadata : IParsable
+    public partial class NamingStandardsGetResponse_definition_metadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the related attribute.</summary>
         public double? AttributeId { get; set; }
         /// <summary>The default value of the related attribute.</summary>
@@ -54,6 +56,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
 #endif
         /// <summary>The related attribute type.Possible values:- `ALPHANUMERIC`: Accepts all characters.- `NONNUMERIC_TEXT`: Accepts all characters, excluding `0-9`.- `NUMERIC`: Includes `0-9`, comma `&apos;,&apos;`, plus `&apos;+&apos;`, minus `&apos;-&apos;`, percent `&apos;%&apos;`, period `&apos;.&apos;`, underscore `&apos;_&apos;`.- `ARRAY`: A drop-down list.- `CLASSIFICATION`: Only relevant for a classification attribute.Note that the `minLength` and `maxLength` properties are not included in the response for the `ARRAY` type.</summary>
         public global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata_type? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata"/> and sets the default values.
+        /// </summary>
+        public NamingStandardsGetResponse_definition_metadata()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -99,6 +108,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
             writer.WriteBoolValue("optional", Optional);
             writer.WriteCollectionOfObjectValues<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata_options>("options", Options);
             writer.WriteEnumValue<global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse_definition_metadata_type>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

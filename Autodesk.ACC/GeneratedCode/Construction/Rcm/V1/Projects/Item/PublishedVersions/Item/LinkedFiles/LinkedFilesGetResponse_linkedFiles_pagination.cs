@@ -11,8 +11,10 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
     /// Contains pagination details, including the number of results, starting offset, and total available results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LinkedFilesGetResponse_linkedFiles_pagination : IParsable
+    public partial class LinkedFilesGetResponse_linkedFiles_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of results returned in this response. This may be lower than the requested limit if fewer results are available.</summary>
         public int? Limit { get; set; }
         /// <summary>The offset value to use when requesting the next page. This field is useful for clients that build the request URL manually instead of using the `nextUrl` link.</summary>
@@ -29,6 +31,13 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
         public int? Offset { get; set; }
         /// <summary>The total number of linked files available for the requested published version.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse_linkedFiles_pagination"/> and sets the default values.
+        /// </summary>
+        public LinkedFilesGetResponse_linkedFiles_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,6 +75,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
             writer.WriteStringValue("nextUrl", NextUrl);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

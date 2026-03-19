@@ -57,34 +57,15 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasGetResponse?> GetAsWithAliasGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasGetResponse> GetAsWithAliasGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasGetResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get alias details.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithAliasGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Modify alias details.
@@ -95,37 +76,16 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchResponse?> PatchAsWithAliasPatchResponseAsync(global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchResponse?> PatchAsync(global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchResponse> PatchAsWithAliasPatchResponseAsync(global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchResponse> PatchAsync(global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Modify alias details.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithAliasPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse?> PatchAsync(global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse> PatchAsync(global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse>(requestInfo, global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the alias.
@@ -194,30 +154,6 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item
         public global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Aliases.Item.WithAliasItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithAliasItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithAliasItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithAliasItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

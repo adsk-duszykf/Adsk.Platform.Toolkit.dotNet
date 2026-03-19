@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.I
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRelationshipGetResponse_entities : IParsable
+    public partial class WithRelationshipGetResponse_entities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the entity was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>The domain to which the entity belongs.To learn more about domains and entities, see the [Relationship Service Field Guide](https://aps.autodesk.com/en/docs/bim360/v1/overview/field-guide/relationships).Max length: 128</summary>
@@ -38,6 +40,13 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.I
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipGetResponse_entities"/> and sets the default values.
+        /// </summary>
+        public WithRelationshipGetResponse_entities()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.I
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

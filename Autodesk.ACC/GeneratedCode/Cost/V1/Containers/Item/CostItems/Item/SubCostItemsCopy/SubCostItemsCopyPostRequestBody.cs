@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SubCostItemsCopyPostRequestBody : IParsable
+    public partial class SubCostItemsCopyPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of the sub cost items being copied. Note that `contract` and `budget` can only be used as a source type, not a destination. Possible values: `contract`, `budget`, `estimated`, `proposed`, `submitted`, `approved`, `committed`.</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_from? From { get; set; }
         /// <summary>The source object defining where sub-cost items are copied from. When copying from a `budget` or `contract`, this must include one or more source IDs.</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
 #endif
         /// <summary>The type to which the sub cost items are copied. Note that `contract` and `budget` cannot be used as a destination. Possible values: `estimated`, `proposed`, `submitted`, `approved`, `committed`.</summary>
         public global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to? To { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public SubCostItemsCopyPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
             writer.WriteEnumValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_from>("from", From);
             writer.WriteObjectValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_source>("source", Source);
             writer.WriteEnumValue<global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostRequestBody_to>("to", To);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

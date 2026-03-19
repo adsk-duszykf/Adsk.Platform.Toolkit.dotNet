@@ -9,7 +9,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ItemsPostResponse_permittedActions_transitions : IParsable
+    public partial class ItemsPostResponse_permittedActions_transitions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Not relevant</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
 #else
         public string ActionId { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the transition in the format `from-state::to-state`. For example, `create::mgr-1`, `mgr-1::mgr-2`, `rev::void`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +71,13 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
         public List<string> TransitionFields { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostResponse_permittedActions_transitions"/> and sets the default values.
+        /// </summary>
+        public ItemsPostResponse_permittedActions_transitions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostResponse_permittedActions_transitions"/></returns>
@@ -109,6 +118,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostResponse_permittedActions_transitions_stateFrom>("stateFrom", StateFrom);
             writer.WriteObjectValue<global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostResponse_permittedActions_transitions_stateTo>("stateTo", StateTo);
             writer.WriteCollectionOfPrimitiveValues<string>("transitionFields", TransitionFields);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

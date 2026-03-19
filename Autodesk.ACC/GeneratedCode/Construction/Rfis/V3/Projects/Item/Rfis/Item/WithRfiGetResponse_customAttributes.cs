@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRfiGetResponse_customAttributes : IParsable
+    public partial class WithRfiGetResponse_customAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the custom attribute definition.</summary>
         public Guid? Id { get; set; }
         /// <summary>Not relevant</summary>
@@ -24,6 +26,13 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
 #else
         public List<string> Values { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.WithRfiGetResponse_customAttributes"/> and sets the default values.
+        /// </summary>
+        public WithRfiGetResponse_customAttributes()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("isSelectable", IsSelectable);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

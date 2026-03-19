@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Clo
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ClosedGetResponse_groups : IParsable
+    public partial class ClosedGetResponse_groups : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The model set version number associated with the original clash test.</summary>
         public int? CreatedAtVersion { get; set; }
         /// <summary>Clashes contained with the clash group that still exist within the specified clash test.</summary>
@@ -34,6 +36,13 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Clo
 #else
         public List<int?> Resolved { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse_groups"/> and sets the default values.
+        /// </summary>
+        public ClosedGetResponse_groups()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +80,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Clo
             writer.WriteGuidValue("id", Id);
             writer.WriteGuidValue("originalClashTestId", OriginalClashTestId);
             writer.WriteCollectionOfPrimitiveValues<int?>("resolved", Resolved);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithJobGetResponse : IParsable
+    public partial class WithJobGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The GUID that uniquely identifies the container associated with the job.</summary>
         public Guid? ContainerId { get; set; }
         /// <summary>A job.</summary>
@@ -26,6 +28,13 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item
         public Guid? JobId { get; set; }
         /// <summary>The current job status. Possible values: `Failed`, `Running`, `Succeeded`, `Archived`.</summary>
         public global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item.WithJobGetResponse_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item.WithJobGetResponse"/> and sets the default values.
+        /// </summary>
+        public WithJobGetResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item
             writer.WriteObjectValue<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item.WithJobGetResponse_job>("job", Job);
             writer.WriteGuidValue("jobId", JobId);
             writer.WriteEnumValue<global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item.WithJobGetResponse_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

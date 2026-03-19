@@ -9,9 +9,11 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.I
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TestsGetResponse_tests : IParsable
+    public partial class TestsGetResponse_tests : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time that the clash test was completed.</summary>
         public DateTimeOffset? CompletedOn { get; set; }
         /// <summary>The GUID that uniquely identifies the clash test.</summary>
@@ -22,6 +24,13 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.I
         public int? ModelSetVersion { get; set; }
         /// <summary>The status of the clash test. If the status is `Success`, the results of the clash test are available for use. Possible values: `Pending`, `Processing`, `Success`, `Failed`.</summary>
         public global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse_tests_status? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse_tests"/> and sets the default values.
+        /// </summary>
+        public TestsGetResponse_tests()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,6 +68,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.I
             writer.WriteGuidValue("modelSetId", ModelSetId);
             writer.WriteIntValue("modelSetVersion", ModelSetVersion);
             writer.WriteEnumValue<global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse_tests_status>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithCompany_PatchRequestBody : IParsable
+    public partial class WithCompany_PatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The address_line_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +119,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
         public string WebsiteUrl { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithCompany_PatchRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchRequestBody"/></returns>
@@ -169,6 +178,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
             writer.WriteStringValue("tax_id", TaxId);
             writer.WriteStringValue("trade", Trade);
             writer.WriteStringValue("website_url", WebsiteUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

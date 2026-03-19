@@ -11,8 +11,10 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Batch
     /// Type: dictionary&lt;string, *&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BatchPostRequestBody_arguments_Asterisk : IParsable
+    public partial class BatchPostRequestBody_arguments_Asterisk : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Simple string argument. This class represents string argument both in the workitem and job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +31,13 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Batch
 #else
         public global::Autodesk.Automation.Da.UsEast.V3.Workitems.Batch.BatchPostRequestBody_arguments_Asterisk_XrefTreeArgument XrefTreeArgument { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.Batch.BatchPostRequestBody_arguments_Asterisk"/> and sets the default values.
+        /// </summary>
+        public BatchPostRequestBody_arguments_Asterisk()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +69,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Batch
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Batch.BatchPostRequestBody_arguments_Asterisk_StringArgument>("StringArgument", StringArgument);
             writer.WriteObjectValue<global::Autodesk.Automation.Da.UsEast.V3.Workitems.Batch.BatchPostRequestBody_arguments_Asterisk_XrefTreeArgument>("XrefTreeArgument", XrefTreeArgument);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

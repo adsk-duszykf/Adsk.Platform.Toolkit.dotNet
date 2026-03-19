@@ -11,14 +11,23 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappin
     /// The pagination object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IssueAttributeMappingsGetResponse_pagination : IParsable
+    public partial class IssueAttributeMappingsGetResponse_pagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of items per page.</summary>
         public int? Limit { get; set; }
         /// <summary>The page number that the results begin from.</summary>
         public int? Offset { get; set; }
         /// <summary>The number of items in the response.</summary>
         public int? TotalResults { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse_pagination"/> and sets the default values.
+        /// </summary>
+        public IssueAttributeMappingsGetResponse_pagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappin
             writer.WriteIntValue("limit", Limit);
             writer.WriteIntValue("offset", Offset);
             writer.WriteIntValue("totalResults", TotalResults);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
