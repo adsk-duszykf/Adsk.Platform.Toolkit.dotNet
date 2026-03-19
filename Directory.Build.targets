@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup Condition="'$(PackageId)' != ''">
+    <PackageProjectUrl>https://www.nuget.org/packages/$(PackageId)</PackageProjectUrl>
+  </PropertyGroup>
+</Project>
