@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments
         }
         /// <summary>
         /// Adds attachments to an existing issue.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-attachments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.AttachmentsPostResponse"/></returns>
         /// <param name="body">The request body</param>

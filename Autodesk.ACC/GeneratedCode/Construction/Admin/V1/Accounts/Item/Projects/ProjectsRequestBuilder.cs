@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
         }
         /// <summary>
         /// Retrieves a list of the projects in the specified account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-accounts-accountidprojects-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects
         }
         /// <summary>
         /// Creates a new project in the specified account. You can create the project directly, or clone it from a project template.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-accounts-accountidprojects-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Projects.ProjectsPostResponse"/></returns>
         /// <param name="body">The request body</param>

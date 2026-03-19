@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Products
         }
         /// <summary>
         /// Returns a list of ACC products the user is associated with in their assigned projects.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-usersuseridproducts-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Products.ProductsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

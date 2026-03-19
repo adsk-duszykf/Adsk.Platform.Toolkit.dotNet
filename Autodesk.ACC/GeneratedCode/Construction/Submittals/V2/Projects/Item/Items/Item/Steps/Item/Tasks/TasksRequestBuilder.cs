@@ -48,6 +48,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
         }
         /// <summary>
         /// Retrieves a list of tasks associated with a specific review step of a submittal item in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-tasks-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.TasksGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

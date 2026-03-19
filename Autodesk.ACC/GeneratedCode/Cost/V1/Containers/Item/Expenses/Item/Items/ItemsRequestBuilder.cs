@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items
         }
         /// <summary>
         /// Retrieves the expense items and subitems of the specified expenses for a given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-expenses-expenseId-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items.ItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items
         }
         /// <summary>
         /// Creates an expense item in the specified expense of a given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-expenses-expenseId-items-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items.ItemsPostResponse"/></returns>
         /// <param name="body">The request body</param>

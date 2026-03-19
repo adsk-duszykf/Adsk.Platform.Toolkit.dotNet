@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.It
         }
         /// <summary>
         /// Retrieves information about a given model set job.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-modelset-service-v3-get-model-set-job-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Jobs.Item.WithJobGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

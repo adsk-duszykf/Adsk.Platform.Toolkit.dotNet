@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet
         }
         /// <summary>
         /// Returns a specified set of categories.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-categories-batch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoriesBatchGet.CategoriesBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

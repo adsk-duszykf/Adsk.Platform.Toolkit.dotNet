@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progre
         }
         /// <summary>
         /// Retrieves the progress of a specific review in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-getreviewprogress-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Progress.ProgressGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

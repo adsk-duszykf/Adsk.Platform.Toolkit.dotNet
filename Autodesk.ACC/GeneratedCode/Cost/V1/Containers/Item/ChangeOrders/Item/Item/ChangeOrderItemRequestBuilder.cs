@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item
         }
         /// <summary>
         /// Delete an existing change order
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-change-orders-changeOrder-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item
         }
         /// <summary>
         /// Retrieves the details of a change order specified by ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-change-orders-changeOrder-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item
         }
         /// <summary>
         /// Updates the specified change order.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-change-orders-changeOrder-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.Item.Item.ChangeOrderPatchResponse"/></returns>
         /// <param name="body">The request body</param>

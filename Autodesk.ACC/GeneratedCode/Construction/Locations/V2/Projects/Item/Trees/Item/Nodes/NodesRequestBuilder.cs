@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
         }
         /// <summary>
         /// Retrieves an array of nodes (locations) from the specified locations tree (LBS). Returns all nodes in the tree by default.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes
         }
         /// <summary>
         /// Creates a node in the specified locations tree. Note that creating the root node is not allowed because the root node is created automatically when the project is created.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodes-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.NodesPostResponse"/></returns>
         /// <param name="body">The request body</param>

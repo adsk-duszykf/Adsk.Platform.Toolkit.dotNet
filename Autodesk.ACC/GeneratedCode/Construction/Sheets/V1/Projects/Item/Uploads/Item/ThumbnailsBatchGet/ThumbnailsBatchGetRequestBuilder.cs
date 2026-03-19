@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.Thumbna
         }
         /// <summary>
         /// Retrieves a list of thumbnails for the specified review sheets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-thumbnailsbatch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ThumbnailsBatchGet.ThumbnailsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

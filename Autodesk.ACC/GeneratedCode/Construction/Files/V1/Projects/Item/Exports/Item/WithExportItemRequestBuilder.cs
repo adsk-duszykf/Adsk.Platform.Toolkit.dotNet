@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item
         }
         /// <summary>
         /// Retrieves the status of an export job. The S3 signed URL (in `result.output.signedUrl`) will be available for downloading the exported file.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/v1-files-export-status-and-result-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.Item.WithExportGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

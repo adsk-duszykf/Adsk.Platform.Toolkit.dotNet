@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems
         }
         /// <summary>
         /// Retrieves a list of all cost items in the specified cost container for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-cost-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.CostItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems
         }
         /// <summary>
         /// Creates a new cost item in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-cost-items-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.CostItemsPostResponse"/></returns>
         /// <param name="body">The request body</param>

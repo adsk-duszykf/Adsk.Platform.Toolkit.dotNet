@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me
         }
         /// <summary>
         /// Retrieves information about the current user in the context of the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-users-me-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Users.Me.MeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet
         }
         /// <summary>
         /// Retrieves a list of sheets by IDs.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheetsbatch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchGet.SheetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

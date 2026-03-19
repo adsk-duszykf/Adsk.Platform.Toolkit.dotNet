@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.AttachmentFolders
         }
         /// <summary>
         /// Find or create an attachment folder in BIM 360 Docs for a given item. That folder will save local files as attachments to the item. Files are saved using the Storage service.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-attachment-folders-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.AttachmentFolders.AttachmentFoldersPostResponse"/></returns>
         /// <param name="body">The request body</param>

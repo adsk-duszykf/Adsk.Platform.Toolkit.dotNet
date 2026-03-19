@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me
         }
         /// <summary>
         /// Returns the current user permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-users-me-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Users.Me.MeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

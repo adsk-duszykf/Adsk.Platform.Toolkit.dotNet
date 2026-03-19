@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item
         }
         /// <summary>
         /// Retrieve details about a single package. For information about packages, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-packages-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item.PackagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

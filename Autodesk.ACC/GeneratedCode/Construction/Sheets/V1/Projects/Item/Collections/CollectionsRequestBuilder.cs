@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections
         }
         /// <summary>
         /// Retrieves information about all the collections in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-collections-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Collections.CollectionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

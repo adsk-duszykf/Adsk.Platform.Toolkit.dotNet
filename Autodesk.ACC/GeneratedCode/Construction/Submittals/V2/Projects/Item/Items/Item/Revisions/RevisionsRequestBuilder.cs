@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revis
         }
         /// <summary>
         /// Retrieves the revision history of a specified submittal item, returning previous versions of its fields and associated workflow details.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-revisions-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

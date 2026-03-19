@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates
         }
         /// <summary>
         /// Returns all project&apos;s form templates the user has access to.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/forms-form-templates-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.FormTemplatesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

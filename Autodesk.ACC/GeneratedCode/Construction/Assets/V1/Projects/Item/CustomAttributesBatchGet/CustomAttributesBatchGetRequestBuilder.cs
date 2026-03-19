@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributesBatc
         }
         /// <summary>
         /// Returns a specified set of custom attributes.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-custom-attributes-batch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

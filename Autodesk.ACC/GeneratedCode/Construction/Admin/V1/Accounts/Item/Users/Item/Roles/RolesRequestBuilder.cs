@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles
         }
         /// <summary>
         /// Returns the roles assigned to a specific user across the projects they belong to.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-usersuseridroles-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Roles.RolesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

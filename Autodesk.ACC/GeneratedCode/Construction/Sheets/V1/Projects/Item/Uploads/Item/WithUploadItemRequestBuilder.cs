@@ -52,6 +52,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item
         }
         /// <summary>
         /// Checks the processing status of a specific uploaded file.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-uploads-uploadId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.WithUploadGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -40,6 +40,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Version
         }
         /// <summary>
         /// Retrieves a specific version of a given model set based on the model set ID and version number.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-modelset-service-v3-get-model-set-version-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.WithVersionGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

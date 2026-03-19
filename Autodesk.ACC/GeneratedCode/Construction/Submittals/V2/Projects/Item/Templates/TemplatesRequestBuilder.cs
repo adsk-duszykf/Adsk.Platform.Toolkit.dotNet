@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates
         }
         /// <summary>
         /// Retrieves a list of review templates available for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-templates-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Templates.TemplatesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

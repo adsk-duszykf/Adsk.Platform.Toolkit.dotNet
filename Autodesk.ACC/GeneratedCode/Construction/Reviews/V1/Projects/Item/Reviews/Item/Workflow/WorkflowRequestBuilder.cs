@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workfl
         }
         /// <summary>
         /// Retrieves the approval workflow associated with a specific review.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-getreviewworkflow-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Workflow.WorkflowGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

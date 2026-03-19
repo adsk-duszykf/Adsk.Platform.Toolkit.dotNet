@@ -34,6 +34,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item
         }
         /// <summary>
         /// Returns a signed URL that you can contact to retrieve a single specified file from a specified job&apos;s data extract.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/data-connector-jobs-jobId-data-name-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Jobs.Item.Data.Item.WithNameGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

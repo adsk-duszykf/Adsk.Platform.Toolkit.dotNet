@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch
         }
         /// <summary>
         /// Retrieves a list of one or more relationships by passing an array of relationship IDs.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/relationship-service-v2-get-relationships-batch-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsBatch.RelationshipsBatchPostResponse"/></returns>
         /// <param name="body">The request body</param>

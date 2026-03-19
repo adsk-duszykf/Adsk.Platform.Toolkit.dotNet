@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories
         }
         /// <summary>
         /// Retrieves the action history records associated with specified cost items, such as contracts, budget payments, or RFQs.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-action-histories-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Workflows.ActionHistories.ActionHistoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

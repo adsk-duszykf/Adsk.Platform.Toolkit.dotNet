@@ -58,6 +58,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item
         }
         /// <summary>
         /// Retrieves a requested clash test based on the clash test ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-clash-service-v3-get-clash-test-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.WithTestGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

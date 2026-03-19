@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item
         }
         /// <summary>
         /// Retrieve the details about a single spec section. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

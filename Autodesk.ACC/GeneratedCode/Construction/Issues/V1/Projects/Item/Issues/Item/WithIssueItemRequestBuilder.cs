@@ -40,6 +40,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
         }
         /// <summary>
         /// Retrieves detailed information about a single issue. For general information about all the issues in a project, see [GET issues](https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-issueId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssueGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,6 +59,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item
         }
         /// <summary>
         /// Updates an issue.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-issueId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.WithIssuePatchResponse"/></returns>
         /// <param name="body">The request body</param>

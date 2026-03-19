@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Documents
         }
         /// <summary>
         /// Gets generated documents.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-documents-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Documents.DocumentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.Item
         }
         /// <summary>
         /// Deletes a performance tracking item that&apos;s based on the specified budget in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-performance-tracking-items-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.Item
         }
         /// <summary>
         /// Retrieves a performance tracking item by ID in the given project. Note that a tracking item&apos;s attributes are a subset of those of the budget from which it was created.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-performance-tracking-items-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.Item.PerformanceTrackingItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

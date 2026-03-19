@@ -47,6 +47,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests
         }
         /// <summary>
         /// Returns an array of data requests that the authenticated user has created in the specified account. The user must have executive overview or project administrator permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/data-connector-requests-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests
         }
         /// <summary>
         /// Creates a data request for an authenticated user. The user can optionally limit the request to one project. The user must have executive overview or project administrator permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/data-connector-requests-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.RequestsPostResponse"/></returns>
         /// <param name="body">The request body</param>

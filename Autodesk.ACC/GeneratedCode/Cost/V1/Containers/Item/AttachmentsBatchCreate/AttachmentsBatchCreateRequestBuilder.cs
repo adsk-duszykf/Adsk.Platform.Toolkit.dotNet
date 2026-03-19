@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.AttachmentsBatchCreate
         }
         /// <summary>
         /// Creates an attachment in a specific project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-attachmentsbatch-create-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.AttachmentsBatchCreate.AttachmentsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

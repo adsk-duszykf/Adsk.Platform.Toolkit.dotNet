@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.I
         }
         /// <summary>
         /// Retrieves a list of summaries for all clash tests that have been executed for a given model set version.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-clash-service-v3-get-model-set-version-clash-tests-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Versions.Item.Tests.TestsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
         }
         /// <summary>
         /// Deletes a segment by ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-segments-segmentId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
         }
         /// <summary>
         /// Retrieves a segment by ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-segments-segmentId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item
         }
         /// <summary>
         /// Updates a segment by ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-segments-segmentId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.Item.WithSegmentPatchResponse"/></returns>
         /// <param name="body">The request body</param>

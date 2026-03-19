@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Taxes
         }
         /// <summary>
         /// Retrieves a list of tax formulas associated with specific cost objects in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-taxes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Taxes.TaxesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

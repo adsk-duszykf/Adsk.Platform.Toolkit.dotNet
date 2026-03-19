@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.P
         }
         /// <summary>
         /// Retrieve the specific properties of the given diff.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/index-v2-diff-properties-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
         }
         /// <summary>
         /// Retrieves a list of review sheets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-review-sheets-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewS
         }
         /// <summary>
         /// Updates review sheets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-review-sheets-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.Item.ReviewSheets.ReviewSheetsPatchResponse"/></returns>
         /// <param name="body">The request body</param>

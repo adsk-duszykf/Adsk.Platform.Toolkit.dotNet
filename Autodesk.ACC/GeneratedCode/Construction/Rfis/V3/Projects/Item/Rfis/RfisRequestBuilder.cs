@@ -53,6 +53,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis
         }
         /// <summary>
         /// Adds an RFI (request for information) to a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfis-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.RfisPostResponse"/></returns>
         /// <param name="body">The request body</param>

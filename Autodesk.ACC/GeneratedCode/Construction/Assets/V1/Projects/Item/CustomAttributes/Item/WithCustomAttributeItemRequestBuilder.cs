@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.Ite
         }
         /// <summary>
         /// Updates an Asset custom attribute.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-custom-attributes-custom-attribute-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributePatchResponse"/></returns>
         /// <param name="body">The request body</param>

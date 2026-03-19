@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item
         }
         /// <summary>
         /// Retrieves the status of a PDF sheet export job, as well as the signed URL required to download the exported file once the export process is complete.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-exports-exportId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.Item.WithExportGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

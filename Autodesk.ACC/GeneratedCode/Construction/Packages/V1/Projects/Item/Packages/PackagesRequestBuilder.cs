@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages
         }
         /// <summary>
         /// Retrieves a list of all packages within a specified ACC project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/packages-list-packages-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.PackagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

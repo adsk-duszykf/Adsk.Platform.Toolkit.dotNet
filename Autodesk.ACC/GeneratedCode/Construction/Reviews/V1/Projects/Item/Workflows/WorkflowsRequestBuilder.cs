@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
         }
         /// <summary>
         /// Retrieves all approval workflows used for file reviews in a given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-workflows-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows
         }
         /// <summary>
         /// Creates a new approval workflow in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-createworkflow-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Workflows.WorkflowsPostResponse"/></returns>
         /// <param name="body">The request body</param>

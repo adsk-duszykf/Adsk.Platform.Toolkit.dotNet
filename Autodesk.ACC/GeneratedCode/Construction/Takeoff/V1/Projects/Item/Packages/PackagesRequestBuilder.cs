@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
         }
         /// <summary>
         /// Retrieves the takeoff packages for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages
         }
         /// <summary>
         /// Creates a takeoff package for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-packages-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Packages.PackagesPostResponse"/></returns>
         /// <param name="body">The request body</param>

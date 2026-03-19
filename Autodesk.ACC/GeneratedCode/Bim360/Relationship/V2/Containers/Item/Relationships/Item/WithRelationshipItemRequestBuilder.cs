@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item
         }
         /// <summary>
         /// Retrieves a requested relationship based on the relationship&apos;s ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/relationship-service-v2-get-relationship-by-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.Relationships.Item.WithRelationshipGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

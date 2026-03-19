@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata
         }
         /// <summary>
         /// Retrieves project metadata and static values needed for creating submittal items and translating retrieved data.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-metadata-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Metadata.MetadataGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

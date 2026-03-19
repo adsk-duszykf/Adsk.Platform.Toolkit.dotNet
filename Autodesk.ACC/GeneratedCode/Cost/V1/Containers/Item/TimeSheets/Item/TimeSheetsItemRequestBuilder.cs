@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.Item
         }
         /// <summary>
         /// Deletes the specified timesheet in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-time-sheets-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.Item
         }
         /// <summary>
         /// Retrieves the specified timesheet in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-time-sheets-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.Item.TimeSheetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.Item
         }
         /// <summary>
         /// Updates the specified timesheet in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-time-sheets-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.TimeSheets.Item.TimeSheetsPatchResponse"/></returns>
         /// <param name="body">The request body</param>

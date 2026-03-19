@@ -59,6 +59,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
         }
         /// <summary>
         /// Query all the users in a specific BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/users-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,6 +78,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users
         }
         /// <summary>
         /// Create a new user in the BIM 360 member directory.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/users-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.UsersPostResponse"/></returns>
         /// <param name="body">The request body</param>

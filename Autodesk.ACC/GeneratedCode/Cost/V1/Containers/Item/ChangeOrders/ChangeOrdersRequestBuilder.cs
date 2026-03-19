@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders
         }
         /// <summary>
         /// Retrieves a list of all change orders in a specified project, including PCO (potential change orders), RFQ (requests for quote), SCO (supplier change orders), RCO (requests for change order), and OCO (owner change orders).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-change-orders-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.ChangeOrders.ChangeOrdersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Gr
         }
         /// <summary>
         /// Retrieves a list of clashes associated with assigned or closed clash groups in a given model set.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-clash-service-v3-get-grouped-clashes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Grouped.GroupedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

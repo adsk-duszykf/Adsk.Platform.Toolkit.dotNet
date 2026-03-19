@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items.Item
         }
         /// <summary>
         /// Deletes an expense item from the specified expense of a given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-expenses-expenseId-items-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items.Item
         }
         /// <summary>
         /// Retrieves an expense item in the specified expense of a given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-expenses-expenseId-items-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items.Item.ItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items.Item
         }
         /// <summary>
         /// Updates an expense item in the specified expense of a given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-expenses-expenseId-items-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Expenses.Item.Items.Item.ItemsPatchResponse"/></returns>
         /// <param name="body">The request body</param>

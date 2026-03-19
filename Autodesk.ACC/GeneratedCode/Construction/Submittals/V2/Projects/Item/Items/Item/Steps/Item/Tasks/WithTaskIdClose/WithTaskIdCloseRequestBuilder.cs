@@ -36,6 +36,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps
         }
         /// <summary>
         /// Closes a task by adding a required review response, marking it as complete within the submittal review workflow.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-tasks-taskIdclose-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Steps.Item.Tasks.WithTaskIdClose.WithTaskIdClosePostResponse"/></returns>
         /// <param name="body">The request body</param>

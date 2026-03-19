@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport
         }
         /// <summary>
         /// Adds multiple users to a project at once. Can add up to 200 users per request.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-v2-projects-project-Id-users-import-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostResponse"/></returns>
         /// <param name="body">The request body</param>

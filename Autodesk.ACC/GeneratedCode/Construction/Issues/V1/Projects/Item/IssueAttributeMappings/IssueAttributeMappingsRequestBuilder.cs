@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappin
         }
         /// <summary>
         /// Retrieves information about the issue custom attributes (custom fields) that are assigned to issue categories and issue types.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issue-attribute-mappings-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

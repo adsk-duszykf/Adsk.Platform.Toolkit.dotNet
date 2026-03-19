@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsInter
         }
         /// <summary>
         /// Retrieves a list of relationships that contain the specified relationship entities.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/relationship-service-v2-intersect-relationships-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Relationship.V2.Containers.Item.RelationshipsIntersect.RelationshipsIntersectPostResponse"/></returns>
         /// <param name="body">The request body</param>

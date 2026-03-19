@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis
         }
         /// <summary>
         /// Retrieves information about all the RFIs (Requests for Information) in a project, including details about their associated comments and attachments.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfi-search-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.SearchRfis.SearchRfisPostResponse"/></returns>
         /// <param name="body">The request body</param>

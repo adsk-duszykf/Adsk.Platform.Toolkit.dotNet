@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item
         }
         /// <summary>
         /// Return a single media (photo or video)
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/photos-getphoto-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.Photos.Item.WithPhotoGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueTypes
         }
         /// <summary>
         /// Retrieves a project&apos;s categories and types. Note the following differences in terminology between the product and the API:
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issue-types-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueTypes.IssueTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -58,6 +58,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item
         }
         /// <summary>
         /// Retrieve the diff status for the given diff ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/index-v2-diff-status-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.WithDiffGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

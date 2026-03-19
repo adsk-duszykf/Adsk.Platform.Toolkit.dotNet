@@ -52,6 +52,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         }
         /// <summary>
         /// Retrieves a transmittal by ID within the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-gettransmittal-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.WithTransmittalGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

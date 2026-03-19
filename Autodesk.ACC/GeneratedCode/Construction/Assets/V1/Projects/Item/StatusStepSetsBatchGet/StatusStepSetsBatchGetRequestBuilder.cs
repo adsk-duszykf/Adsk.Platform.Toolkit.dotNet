@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchG
         }
         /// <summary>
         /// Returns a specified set of status sets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-status-step-sets-batch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

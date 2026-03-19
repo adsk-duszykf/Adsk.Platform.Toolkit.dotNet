@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments
         }
         /// <summary>
         /// Get all the comments for a specific issue.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-comments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments.CommentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments
         }
         /// <summary>
         /// Creates a new comment under a specific issue.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-comments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.Item.Comments.CommentsPostResponse"/></returns>
         /// <param name="body">The request body</param>

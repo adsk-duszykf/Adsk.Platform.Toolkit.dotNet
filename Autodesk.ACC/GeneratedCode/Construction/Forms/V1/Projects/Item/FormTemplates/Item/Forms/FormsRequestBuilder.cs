@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Fo
         }
         /// <summary>
         /// Adds a new form to a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/forms-forms-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.FormTemplates.Item.Forms.FormsPostResponse"/></returns>
         /// <param name="body">The request body</param>

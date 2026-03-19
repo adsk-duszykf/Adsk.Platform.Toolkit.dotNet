@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchSt
         }
         /// <summary>
         /// Retrieve the job status for several jobs in a single request.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/index-v2-diff-jobs-batch-status-post" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.DiffsBatchStatus.DiffsBatchStatusPostResponse"/></returns>
         /// <param name="body">The request body</param>

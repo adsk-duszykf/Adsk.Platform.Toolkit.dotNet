@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
         }
         /// <summary>
         /// Updates a classification system.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-classification-systems-system_id-classificationsimport-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.ClassificationsImport.ClassificationsImportPostResponse"/></returns>
         /// <param name="body">The request body</param>

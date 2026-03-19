@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages
         }
         /// <summary>
         /// Retrieve all the packages for the specified project. For information about packages, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Packages).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-packages-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.PackagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

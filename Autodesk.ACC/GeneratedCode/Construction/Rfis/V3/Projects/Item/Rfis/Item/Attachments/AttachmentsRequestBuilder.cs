@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments
         }
         /// <summary>
         /// Retrieves a list of attachments for a specific RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfis-id-attachments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Attachments.AttachmentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

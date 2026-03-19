@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow
         }
         /// <summary>
         /// Retrieves the workflow configuration for a given project, including the workflow type, description, and the mapping between project roles and their permitted assignees.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-workflow-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Workflow.WorkflowGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

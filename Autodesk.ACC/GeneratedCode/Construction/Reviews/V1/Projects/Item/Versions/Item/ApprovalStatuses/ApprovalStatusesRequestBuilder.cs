@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.Appro
         }
         /// <summary>
         /// Retrieves the full approval records and review references of a specific file version.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-getversionapprovalstatuses-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Versions.Item.ApprovalStatuses.ApprovalStatusesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

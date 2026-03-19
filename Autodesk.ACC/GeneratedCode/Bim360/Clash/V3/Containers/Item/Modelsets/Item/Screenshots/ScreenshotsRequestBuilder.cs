@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Screenshot
         }
         /// <summary>
         /// Uploads a screenshot, associating it with a given model set.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-clash-service-v3-add-screen-shot-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsPostResponse"/></returns>
         /// <param name="body">The request body</param>

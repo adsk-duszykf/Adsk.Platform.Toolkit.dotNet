@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
         }
         /// <summary>
         /// Checks the processing status of all the uploaded files in the project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-uploads-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.UploadsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads
         }
         /// <summary>
         /// Creates an ACC upload object. This endpoint splits the files into separate sheets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-uploads-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Uploads.UploadsPostResponse"/></returns>
         /// <param name="body">The request body</param>

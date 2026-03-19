@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage
         }
         /// <summary>
         /// Creates a storage location in the Object Storage Service (OSS) for you to upload the file to.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-storage-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Storage.StoragePostResponse"/></returns>
         /// <param name="body">The request body</param>

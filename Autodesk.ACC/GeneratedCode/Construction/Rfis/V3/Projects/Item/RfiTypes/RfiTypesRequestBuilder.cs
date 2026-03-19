@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes
         }
         /// <summary>
         /// Retrieves the list of RFI types configured for the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-RFI-types-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.RfiTypes.RfiTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

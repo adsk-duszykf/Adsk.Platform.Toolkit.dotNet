@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versio
         }
         /// <summary>
         /// Retrieves the file versions included in the latest round of the specified review.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-getreviewversions-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.Item.Versions.VersionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -40,6 +40,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item
         }
         /// <summary>
         /// Deletes a main contract by ID in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-main-contracts-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,6 +58,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item
         }
         /// <summary>
         /// Retrieves a main contract by ID in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-main-contracts-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,6 +77,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item
         }
         /// <summary>
         /// Updates a main contract in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-main-contracts-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.Item.PatchResponse"/></returns>
         /// <param name="body">The request body</param>

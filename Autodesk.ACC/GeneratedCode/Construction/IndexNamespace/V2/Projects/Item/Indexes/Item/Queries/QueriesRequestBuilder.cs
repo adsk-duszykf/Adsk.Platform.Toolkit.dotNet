@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         }
         /// <summary>
         /// Applies the given query on the given properties index.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/index-v2-index-query-post" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Import
         }
         /// <summary>
         /// Bulk import partner companies to the company directory in a specific BIM 360 account. (50 companies maximum can be included in each call.)
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/companies-import-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Import.ImportPostResponse"/></returns>
         /// <param name="body">The request body</param>

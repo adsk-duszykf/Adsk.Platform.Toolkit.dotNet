@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
         }
         /// <summary>
         /// Assigns an Asset custom attribute to a category.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-categories-category-id-custom-attributes-custom-attribute-id-PUT" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.Item.WithCustomAttributePutResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

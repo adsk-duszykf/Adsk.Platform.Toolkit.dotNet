@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSyste
         }
         /// <summary>
         /// Retrieves the classification hierarchy for a classification system.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-classification-systems-system_id-classifications-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.ClassificationSystems.Item.Classifications.ClassificationsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
         }
         /// <summary>
         /// Retrieve all the spec sections for the specified project. For information about spec sections, see the [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Spec_Sections).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs
         }
         /// <summary>
         /// Creates a spec section to organize and categorize submittals.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-specs-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.SpecsPostResponse"/></returns>
         /// <param name="body">The request body</param>

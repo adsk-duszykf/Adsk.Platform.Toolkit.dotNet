@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
         }
         /// <summary>
         /// Removes the specified user from a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-project-Id-users-userId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
         }
         /// <summary>
         /// Retrieves detailed information about the specified user in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-userId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item
         }
         /// <summary>
         /// Updates information about the specified user in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-project-Id-users-userId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.Item.WithUserPatchResponse"/></returns>
         /// <param name="body">The request body</param>

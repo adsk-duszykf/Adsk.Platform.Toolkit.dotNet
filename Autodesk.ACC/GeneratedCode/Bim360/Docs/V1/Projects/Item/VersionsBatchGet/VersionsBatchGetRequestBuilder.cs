@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet
         }
         /// <summary>
         /// Retrieves a list of custom attribute values for multiple BIM 360 Document Management documents.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/document-management-versionsbatch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.VersionsBatchGet.VersionsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
         }
         /// <summary>
         /// Retrieves information about a filtered subset of users in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projectsprojectId-users-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users
         }
         /// <summary>
         /// Assigns a user to the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-projects-project-Id-users-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Projects.Item.Users.UsersPostResponse"/></returns>
         /// <param name="body">The request body</param>

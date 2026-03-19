@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies
         }
         /// <summary>
         /// Query all the partner companies in a specific BIM 360 project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-companies-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

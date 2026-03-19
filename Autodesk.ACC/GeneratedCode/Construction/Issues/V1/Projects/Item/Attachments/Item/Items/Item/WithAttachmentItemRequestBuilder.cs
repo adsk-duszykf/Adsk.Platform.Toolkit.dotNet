@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
         }
         /// <summary>
         /// Deletes a specific attachment from an issue in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-items-attachmentId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

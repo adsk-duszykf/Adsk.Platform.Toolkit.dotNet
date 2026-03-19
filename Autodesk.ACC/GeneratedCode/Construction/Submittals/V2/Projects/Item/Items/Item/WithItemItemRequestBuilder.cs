@@ -52,6 +52,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
         }
         /// <summary>
         /// Retrieve information about a single submittal item that the user has permission to view.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,6 +71,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item
         }
         /// <summary>
         /// Updates specific attributes of an existing submittal item. Only fields listed in the `permittedActions` object can be modified.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.WithItemPatchResponse"/></returns>
         /// <param name="body">The request body</param>

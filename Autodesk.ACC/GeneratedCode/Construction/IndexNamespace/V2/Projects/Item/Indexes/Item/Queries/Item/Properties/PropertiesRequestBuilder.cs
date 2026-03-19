@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item
         }
         /// <summary>
         /// Retrieve the query specific properties index. Since the properties index, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/index-v2-index-query-properties-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.Item.Properties.PropertiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

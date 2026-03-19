@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         }
         /// <summary>
         /// Retrieves all recipients of a specific transmittal, including project members and external members.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-listtransmittalrecipients-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Recipients.RecipientsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

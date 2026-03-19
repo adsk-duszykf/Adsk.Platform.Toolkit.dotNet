@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Stat
         }
         /// <summary>
         /// Assigns a status set to a category.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-categories-category-id-status-step-set-status-step-set-id-PUT" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetPutResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

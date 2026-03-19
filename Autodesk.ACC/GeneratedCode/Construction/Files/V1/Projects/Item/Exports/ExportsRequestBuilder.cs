@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports
         }
         /// <summary>
         /// Exports one or more individual PDFs, or 2D views and sheets (from DWG or RVT files) as PDFs from the ACC files module. All PDFs are packaged into a single ZIP file.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/v1-files-export-pdf-files-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Files.V1.Projects.Item.Exports.ExportsPostResponse"/></returns>
         /// <param name="body">The request body</param>

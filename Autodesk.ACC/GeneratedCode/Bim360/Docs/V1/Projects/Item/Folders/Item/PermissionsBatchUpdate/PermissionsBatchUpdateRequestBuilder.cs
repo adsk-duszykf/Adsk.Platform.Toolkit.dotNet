@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatc
         }
         /// <summary>
         /// Updates the permissions assigned to multiple users, roles, and companies for a folder. This endpoint replaces the permissions that were previously assigned to the user for this folder.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/document-management-projects-project_id-folders-folder_id-permissionsbatch-update-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchUpdate.PermissionsBatchUpdatePostResponse"/></returns>
         /// <param name="body">The request body</param>

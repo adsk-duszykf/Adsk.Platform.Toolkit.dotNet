@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals
         }
         /// <summary>
         /// Retrieves all transmittals created in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-listtransmittals-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.TransmittalsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

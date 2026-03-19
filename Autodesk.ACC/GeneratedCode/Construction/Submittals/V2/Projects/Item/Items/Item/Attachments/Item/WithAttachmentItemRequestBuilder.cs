@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attac
         }
         /// <summary>
         /// Updates the upload status of an attachment associated with a submittal item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-attachments-attachmentId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Attachments.Item.WithAttachmentPatchResponse"/></returns>
         /// <param name="body">The request body</param>

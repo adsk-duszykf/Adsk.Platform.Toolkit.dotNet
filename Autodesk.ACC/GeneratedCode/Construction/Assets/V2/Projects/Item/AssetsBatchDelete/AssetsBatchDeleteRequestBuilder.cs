@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchDelete
         }
         /// <summary>
         /// Deletes one or more assets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-assets-batch-delete-v2-POST" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

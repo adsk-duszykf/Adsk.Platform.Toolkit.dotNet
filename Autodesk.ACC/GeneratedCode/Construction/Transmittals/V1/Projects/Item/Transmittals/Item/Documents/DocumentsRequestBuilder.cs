@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         }
         /// <summary>
         /// Retrieves the documents that were included in a specific transmittal.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-listtransmittaldocuments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Documents.DocumentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

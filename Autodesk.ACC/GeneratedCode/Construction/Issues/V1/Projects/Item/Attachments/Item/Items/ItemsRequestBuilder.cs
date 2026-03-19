@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Ite
         }
         /// <summary>
         /// Retrieves all attachments for a specific issue in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-attachments-issueId-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Attachments.Item.Items.ItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

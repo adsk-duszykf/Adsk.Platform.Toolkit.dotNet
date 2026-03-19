@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets
         }
         /// <summary>
         /// Retrieves a list of version sets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.VersionSetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets
         }
         /// <summary>
         /// Creates a version set.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.VersionSetsPostResponse"/></returns>
         /// <param name="body">The request body</param>

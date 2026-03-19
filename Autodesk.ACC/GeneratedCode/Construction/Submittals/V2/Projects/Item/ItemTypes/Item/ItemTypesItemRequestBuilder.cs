@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item
         }
         /// <summary>
         /// Retrieve the information about a single submittal type. For more information about submittal types, see the [Help documnentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittal_Types).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-item-types-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate
         }
         /// <summary>
         /// Updates a list of sheets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheetsbatch-update-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchUpdate.SheetsBatchUpdatePostResponse"/></returns>
         /// <param name="body">The request body</param>

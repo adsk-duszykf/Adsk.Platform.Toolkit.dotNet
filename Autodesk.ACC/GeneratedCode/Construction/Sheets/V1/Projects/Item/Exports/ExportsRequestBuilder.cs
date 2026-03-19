@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports
         }
         /// <summary>
         /// Exports up to 1000 sheets from the from the Sheets tool in ACC Build into a new downloadble PDF file.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-exports-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.Exports.ExportsPostResponse"/></returns>
         /// <param name="body">The request body</param>

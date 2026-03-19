@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
         }
         /// <summary>
         /// Retrieves all custom attribute definitions for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-attributes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes
         }
         /// <summary>
         /// Creates a custom attribute definition for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-attributes-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.AttributesPostResponse"/></returns>
         /// <param name="body">The request body</param>

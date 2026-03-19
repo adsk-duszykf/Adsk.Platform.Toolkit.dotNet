@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Image
         }
         /// <summary>
         /// Create or update a project&apos;s image.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/projects-:project_id-image-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Projects.Item.Image.ImagePatchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

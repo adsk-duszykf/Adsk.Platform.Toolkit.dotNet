@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Item
         }
         /// <summary>
         /// Query the details of a specific user.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/users-:user_id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Item.WithUser_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Item
         }
         /// <summary>
         /// Update a specific user&apos;s status or default company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/users-:user_id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Item.WithUser_PatchResponse"/></returns>
         /// <param name="body">The request body</param>

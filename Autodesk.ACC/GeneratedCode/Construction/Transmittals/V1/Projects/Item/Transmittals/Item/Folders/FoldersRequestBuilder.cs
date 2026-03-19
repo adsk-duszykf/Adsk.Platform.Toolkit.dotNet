@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.I
         }
         /// <summary>
         /// Retrieves all folders associated with the documents included in a specific transmittal.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/transmittals-listtransmittalfolders-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Transmittals.V1.Projects.Item.Transmittals.Item.Folders.FoldersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

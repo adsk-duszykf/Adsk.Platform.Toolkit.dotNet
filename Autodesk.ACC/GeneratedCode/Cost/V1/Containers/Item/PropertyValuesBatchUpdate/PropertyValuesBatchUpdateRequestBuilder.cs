@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PropertyValuesBatchUpdate
         }
         /// <summary>
         /// Updates the existing values of multiple custom attributes associated with an item such as a Budget, Contract, Cost Item, PCO, and so on.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-property-valuesbatch-update-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.PropertyValuesBatchUpdate.PropertyValuesBatchUpdatePostResponse"/></returns>
         /// <param name="body">The request body</param>

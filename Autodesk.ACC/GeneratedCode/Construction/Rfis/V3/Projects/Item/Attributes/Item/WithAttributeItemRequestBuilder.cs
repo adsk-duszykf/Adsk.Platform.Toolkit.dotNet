@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item
         }
         /// <summary>
         /// Updates an existing custom attribute definition for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-custom-attributes-attributeId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Attributes.Item.WithAttributePatchResponse"/></returns>
         /// <param name="body">The request body</param>

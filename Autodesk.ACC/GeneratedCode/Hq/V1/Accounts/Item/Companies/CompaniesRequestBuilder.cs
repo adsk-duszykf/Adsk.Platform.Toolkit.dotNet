@@ -59,6 +59,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
         }
         /// <summary>
         /// Query all the partner companies in a specific BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/companies-GET-legacy" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,6 +78,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies
         }
         /// <summary>
         /// Create a new partner company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/companies-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.CompaniesPostResponse"/></returns>
         /// <param name="body">The request body</param>

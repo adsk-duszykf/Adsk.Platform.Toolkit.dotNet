@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchRestore
         }
         /// <summary>
         /// Restores deleted sheets. The sheet is restored to the version set it was associated with when it was deleted.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheetsbatch-restore-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.SheetsBatchRestore.SheetsBatchRestorePostResponse"/></returns>
         /// <param name="body">The request body</param>

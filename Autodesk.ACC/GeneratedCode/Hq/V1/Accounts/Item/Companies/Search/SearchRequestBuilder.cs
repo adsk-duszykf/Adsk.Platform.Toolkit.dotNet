@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Search
         }
         /// <summary>
         /// Search partner companies in a specific BIM 360 account by name.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/companies-search-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Companies.Search.SearchGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

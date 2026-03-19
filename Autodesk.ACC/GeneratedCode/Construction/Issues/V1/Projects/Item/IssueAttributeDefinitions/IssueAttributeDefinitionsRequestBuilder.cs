@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefini
         }
         /// <summary>
         /// Retrieves information about issue custom attributes (custom fields) for a project, including the custom attribute title, description and type.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issue-attribute-definitions-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

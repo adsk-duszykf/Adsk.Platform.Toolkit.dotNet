@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter
         }
         /// <summary>
         /// Searches for and returns all specified media (photo or video) within a project visible to
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/photos-getfilteredphotos-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Photos.V1.Projects.Item.PhotosFilter.PhotosFilterPostResponse"/></returns>
         /// <param name="body">The request body</param>

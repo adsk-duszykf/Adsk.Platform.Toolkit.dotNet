@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         }
         /// <summary>
         /// Retrieves the list of reviews created in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-reviews-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews
         }
         /// <summary>
         /// Creates a new review in the specified project using an existing approval workflow.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/reviews-createreview-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Reviews.V1.Projects.Item.Reviews.ReviewsPostResponse"/></returns>
         /// <param name="body">The request body</param>

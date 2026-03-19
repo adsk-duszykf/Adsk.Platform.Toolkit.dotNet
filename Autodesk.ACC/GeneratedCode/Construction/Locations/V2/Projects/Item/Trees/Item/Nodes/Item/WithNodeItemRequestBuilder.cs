@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
         }
         /// <summary>
         /// Deletes the specified node from the specified locations tree.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodesnodeid-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.
         }
         /// <summary>
         /// Updates the `name` or `barcode` of the specified node of the specified locations tree.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/locations-nodesnodeid-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Locations.V2.Projects.Item.Trees.Item.Nodes.Item.WithNodePatchResponse"/></returns>
         /// <param name="body">The request body</param>

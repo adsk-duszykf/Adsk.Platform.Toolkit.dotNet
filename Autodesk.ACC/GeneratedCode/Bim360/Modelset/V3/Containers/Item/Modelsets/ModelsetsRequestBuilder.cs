@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets
         }
         /// <summary>
         /// Retrieves a list of model sets in a given container that match the provided search parameters.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-modelset-service-v3-get-model-sets-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.ModelsetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets
         }
         /// <summary>
         /// Creates a model set within a given container specifying the folder used to determine the set of model document lineages comprising the model set.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-modelset-service-v3-create-model-set-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.ModelsetsPostResponse"/></returns>
         /// <param name="body">The request body</param>

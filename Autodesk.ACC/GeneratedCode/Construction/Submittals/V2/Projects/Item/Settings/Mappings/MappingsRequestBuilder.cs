@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mapping
         }
         /// <summary>
         /// Retrieves users, roles, and companies assigned the manager role in the current project. Only users, roles, or companies retrieved from this endpoint can be set as a manager in a submittal item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-mappings-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Settings.Mappings.MappingsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

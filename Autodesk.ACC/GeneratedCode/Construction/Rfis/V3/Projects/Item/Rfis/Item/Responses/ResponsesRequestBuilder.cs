@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses
         }
         /// <summary>
         /// Creates a response to the specified RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rfis-rfis-id-responses-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rfis.V3.Projects.Item.Rfis.Item.Responses.ResponsesPostResponse"/></returns>
         /// <param name="body">The request body</param>

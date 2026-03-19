@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueRootCauseCatego
         }
         /// <summary>
         /// Retrieves a list of supported root cause categories and root causes that you can allocate to an issue. For example, communication and coordination.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issue-root-cause-categories-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -48,6 +48,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
         }
         /// <summary>
         /// Retrieves information about all the submittal items in a project that the user has permission to view.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,6 +67,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items
         }
         /// <summary>
         /// Creates a new submittal item in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.ItemsPostResponse"/></returns>
         /// <param name="body">The request body</param>

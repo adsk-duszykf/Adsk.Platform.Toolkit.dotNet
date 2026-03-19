@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
         }
         /// <summary>
         /// Retrieves the number of submittals for each submittal group and each submittal type.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/autospecs-getversionsummary-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.SubmittalsSummary.SubmittalsSummaryGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

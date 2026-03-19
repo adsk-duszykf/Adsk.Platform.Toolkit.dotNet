@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatc
         }
         /// <summary>
         /// Assign permissions to multiple users, roles, and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/document-management-projects-project_id-folders-folder_id-permissionsbatch-create-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatchCreate.PermissionsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues
         }
         /// <summary>
         /// Adds a model set visual inspection issue, represented as a BIM360 issue.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/mc-modelset-service-v3-add-model-set-issue-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostResponse"/></returns>
         /// <param name="body">The request body</param>

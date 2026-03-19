@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomI
         }
         /// <summary>
         /// Retrieves the next available custom identifier for a submittal item in a project. The identifier is generated based on specific rules:
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-itemsnext-custom-identifier-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemsNextCustomIdentifier.ItemsNextCustomIdentifierGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

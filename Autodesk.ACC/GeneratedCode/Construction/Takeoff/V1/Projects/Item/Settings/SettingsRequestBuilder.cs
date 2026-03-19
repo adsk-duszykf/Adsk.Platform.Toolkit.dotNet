@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Settings
         }
         /// <summary>
         /// Retrieves the measurement system settings for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-settings-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Settings.SettingsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Settings
         }
         /// <summary>
         /// Updates the measurement system settings for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/takeoff-projects-project_id-settings-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Takeoff.V1.Projects.Item.Settings.SettingsPatchResponse"/></returns>
         /// <param name="body">The request body</param>

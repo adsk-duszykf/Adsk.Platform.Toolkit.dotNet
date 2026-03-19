@@ -34,6 +34,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing
         }
         /// <summary>
         /// Returns an array of information about the files contained within the data extract created by a specified job.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/data-connector-jobs-jobId-data-listing-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Jobs.Item.DataListing.DataListingGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

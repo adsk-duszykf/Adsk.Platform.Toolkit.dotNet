@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances
         }
         /// <summary>
         /// Retrieves one or more performance tracking item instances in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-performance-tracking-item-instances-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances
         }
         /// <summary>
         /// Creates a performance tracking item instance based on the specified tracking item in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-performance-tracking-item-instances-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.PerformanceTrackingItemInstancesPostResponse"/></returns>
         /// <param name="body">The request body</param>

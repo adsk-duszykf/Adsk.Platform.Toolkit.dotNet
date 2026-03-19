@@ -34,6 +34,7 @@ namespace Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs
         }
         /// <summary>
         /// Returns an array of data connector jobs associated with a request that was created by the authenticated user. The user must have project administrator or executive overview permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/data-connector-requests-requestId-jobs-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs.JobsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

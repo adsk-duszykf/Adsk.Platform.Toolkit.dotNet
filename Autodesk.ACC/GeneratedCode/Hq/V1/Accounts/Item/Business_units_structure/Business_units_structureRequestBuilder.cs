@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
         }
         /// <summary>
         /// Query all the business units in a specific BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/business_units_structure-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structureGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure
         }
         /// <summary>
         /// Creates or redefines the business units of a specific BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/business_units_structure-PUT" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Business_units_structure.Business_units_structurePutResponse"/></returns>
         /// <param name="body">The request body</param>

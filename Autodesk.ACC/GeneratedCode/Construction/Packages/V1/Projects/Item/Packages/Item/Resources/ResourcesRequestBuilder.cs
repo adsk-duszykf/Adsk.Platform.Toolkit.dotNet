@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Reso
         }
         /// <summary>
         /// Retrieves a list of file versions (“resources”) within a specified package.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/packages-list-package-resources-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Packages.V1.Projects.Item.Packages.Item.Resources.ResourcesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

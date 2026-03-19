@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.M
         }
         /// <summary>
         /// Retrieve a specific manifest associated with a diff index. Since the manifest, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/index-v2-diff-manifest-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

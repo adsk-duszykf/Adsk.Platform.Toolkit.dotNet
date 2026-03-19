@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.Cust
         }
         /// <summary>
         /// Returns the custom attribute assignments for a specified category.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-categories-category-id-custom-attributes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

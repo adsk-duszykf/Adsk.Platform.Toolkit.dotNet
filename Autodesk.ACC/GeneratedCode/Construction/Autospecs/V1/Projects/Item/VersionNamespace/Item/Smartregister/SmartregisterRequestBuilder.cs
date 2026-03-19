@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.
         }
         /// <summary>
         /// Retrieves the submittal logs (Smart Register) that are part of the specification PDFs that were imported into AutoSpecs.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/autospecs-getversionsmartregister-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.VersionNamespace.Item.Smartregister.SmartregisterGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

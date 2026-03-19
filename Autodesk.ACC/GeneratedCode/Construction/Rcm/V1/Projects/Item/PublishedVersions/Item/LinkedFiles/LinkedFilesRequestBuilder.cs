@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.
         }
         /// <summary>
         /// Retrieves metadata and signed download URLs for a published version of a Revit (RVT) cloud model, whether workshared or non-workshared, and any Revit files linked to it.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/rcm-linked-files-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Rcm.V1.Projects.Item.PublishedVersions.Item.LinkedFiles.LinkedFilesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

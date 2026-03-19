@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Q
         }
         /// <summary>
         /// Applies the given query to the given properties index.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/index-v2-diff-query-post" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchPatch
         }
         /// <summary>
         /// Updates a set of one or more assets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-assets-batch-patch-PATCH-v2" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchResponse"/></returns>
         /// <param name="body">The request body</param>

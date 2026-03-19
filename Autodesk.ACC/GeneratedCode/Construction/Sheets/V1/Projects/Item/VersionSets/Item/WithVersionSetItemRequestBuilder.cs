@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item
         }
         /// <summary>
         /// Updates a version set.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-version-sets-versionSetId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Sheets.V1.Projects.Item.VersionSets.Item.WithVersionSetPatchResponse"/></returns>
         /// <param name="body">The request body</param>

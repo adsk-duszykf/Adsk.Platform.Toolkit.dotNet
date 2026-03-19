@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms
         }
         /// <summary>
         /// Returns a paginated list of forms in a project. Forms are sorted by updatedAt, most recent first.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/forms-forms-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Forms.V1.Projects.Item.Forms.FormsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments
         }
         /// <summary>
         /// Retrieves all of the segments in a budget code template.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-templates-templateId-segments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments
         }
         /// <summary>
         /// Creates a new segment in the budget code template.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-segments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.Item.Segments.SegmentsPostResponse"/></returns>
         /// <param name="body">The request body</param>

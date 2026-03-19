@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects
         }
         /// <summary>
         /// Returns a list of projects for a specified user within an Autodesk Construction Cloud (ACC) or BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/admin-usersuseridprojects-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

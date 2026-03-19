@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Folders.Item.PermissionsBatc
         }
         /// <summary>
         /// Deletes all the permissions assigned to specified users, roles, and companies.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/document-management-projects-project_id-folders-folder_id-permissionsbatch-delete-POST" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

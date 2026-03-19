@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate
         }
         /// <summary>
         /// Creates a set of new assets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-assets-batch-create-POST-v2" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

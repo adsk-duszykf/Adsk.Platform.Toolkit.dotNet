@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Templates
         }
         /// <summary>
         /// Retrieves ID, name, and timestamp information for all budget code templates in a specific project. Currently, a project can have only one template.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-templates-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Templates.TemplatesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

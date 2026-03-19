@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy
         }
         /// <summary>
         /// Copies sub cost items from a source type to a target type within a cost item, replacing any existing sub cost items of the target type.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-sub-cost-itemscopy-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.CostItems.Item.SubCostItemsCopy.SubCostItemsCopyPostResponse"/></returns>
         /// <param name="body">The request body</param>

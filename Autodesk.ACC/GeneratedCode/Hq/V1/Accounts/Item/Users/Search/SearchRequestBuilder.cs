@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
         }
         /// <summary>
         /// Search users in the master member directory of a specific BIM 360 account by specified fields.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/users-search-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search.SearchGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

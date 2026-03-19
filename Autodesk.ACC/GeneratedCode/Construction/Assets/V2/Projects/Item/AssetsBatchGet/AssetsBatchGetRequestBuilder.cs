@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchGet
         }
         /// <summary>
         /// Returns a specified set of assets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-assets-batch-get-v2-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V2.Projects.Item.AssetsBatchGet.AssetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

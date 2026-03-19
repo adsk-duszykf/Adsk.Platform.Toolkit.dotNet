@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Versions.Item.CustomAttribut
         }
         /// <summary>
         /// Assigns values to custom attributes for multiple documents. This endpoint also clears custom attribute values.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/document-management-custom-attributesbatch-update-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Bim360.Docs.V1.Projects.Item.Versions.Item.CustomAttributesBatchUpdate.CustomAttributesBatchUpdatePostResponse"/></returns>
         /// <param name="body">The request body</param>

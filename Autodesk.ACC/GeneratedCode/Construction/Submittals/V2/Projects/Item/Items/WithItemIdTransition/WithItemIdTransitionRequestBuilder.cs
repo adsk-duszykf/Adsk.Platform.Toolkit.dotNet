@@ -36,6 +36,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemId
         }
         /// <summary>
         /// Transitions a submittal item to a specified state in the submittal workflow, allowing it to progress according to the defined process.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-items-itemIdtransition-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.WithItemIdTransition.WithItemIdTransitionPostResponse"/></returns>
         /// <param name="body">The request body</param>

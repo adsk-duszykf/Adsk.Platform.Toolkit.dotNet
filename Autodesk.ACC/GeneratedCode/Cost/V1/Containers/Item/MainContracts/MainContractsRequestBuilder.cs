@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
         }
         /// <summary>
         /// Retrieves one or more of the main contracts in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-main-contracts-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.MainContractsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.MainContracts
         }
         /// <summary>
         /// Creates a main contract in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-main-contracts-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.MainContracts.MainContractsPostResponse"/></returns>
         /// <param name="body">The request body</param>

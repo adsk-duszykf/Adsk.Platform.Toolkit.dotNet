@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item
         }
         /// <summary>
         /// Retrieve details about a single submittal response for the specified project, see the  [Help documentation](https://help.autodesk.com/view/BUILD/ENU/?guid=Submittals_Responses).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-responses-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

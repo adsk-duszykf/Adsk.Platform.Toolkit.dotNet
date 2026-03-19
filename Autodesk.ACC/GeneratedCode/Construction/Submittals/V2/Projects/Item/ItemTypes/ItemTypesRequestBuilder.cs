@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes
         }
         /// <summary>
         /// Retrieves all submittal itme types for the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/submittals-item-types-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoryStatusStepSe
         }
         /// <summary>
         /// Returns status set assignments associated with a specified set of categories. It can return just explicit
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/assets-category-status-step-sets-status-step-sets-batch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

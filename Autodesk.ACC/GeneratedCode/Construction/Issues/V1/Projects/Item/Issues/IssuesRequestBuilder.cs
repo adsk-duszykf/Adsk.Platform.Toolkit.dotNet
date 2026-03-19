@@ -47,6 +47,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
         }
         /// <summary>
         /// Retrieves information about all the issues in a project, including details about their associated comments and attachments.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues
         }
         /// <summary>
         /// Adds an issue to a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-issues-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Issues.V1.Projects.Item.Issues.IssuesPostResponse"/></returns>
         /// <param name="body">The request body</param>

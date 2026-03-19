@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata
         }
         /// <summary>
         /// Retrieves Autospecs-related information about the specified ACC project, including details about the project versions and the region.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/autospecs-getprojectmetadata-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Construction.Autospecs.V1.Projects.Item.Metadata.MetadataGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

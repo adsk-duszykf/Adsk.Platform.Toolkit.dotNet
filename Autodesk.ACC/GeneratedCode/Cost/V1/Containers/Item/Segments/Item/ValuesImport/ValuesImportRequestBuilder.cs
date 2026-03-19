@@ -34,6 +34,7 @@ namespace Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.ValuesImport
         }
         /// <summary>
         /// Imports segment value definitions for use in a specific segment of a budget code template.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/acc/v1/reference/http/cost-valuesimport-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.ACC.Cost.V1.Containers.Item.Segments.Item.ValuesImport.ValuesImportPostResponse"/></returns>
         /// <param name="body">The request body</param>
