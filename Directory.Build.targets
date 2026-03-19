@@ -1,5 +1,5 @@
 <Project>
   <PropertyGroup Condition="'$(PackageId)' != ''">
-    <PackageProjectUrl>https://www.nuget.org/packages/$(PackageId)</PackageProjectUrl>
+    <PackageProjectUrl>https://adsk-duszykf.github.io/Adsk.Platform.Toolkit.dotNet/</PackageProjectUrl>
   </PropertyGroup>
 </Project>
