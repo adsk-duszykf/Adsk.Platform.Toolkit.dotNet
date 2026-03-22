@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Vers
         }
         /// <summary>
         /// Retrieves a model set view as it exists in a specific model set version.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-get-model-set-view-version-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Item.Views.Item.WithViewGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

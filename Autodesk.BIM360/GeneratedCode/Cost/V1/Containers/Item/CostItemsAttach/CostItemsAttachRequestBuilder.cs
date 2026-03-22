@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItemsAttach
         }
         /// <summary>
         /// Add existing cost items to a change order
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-cost-itemsattach-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItemsAttach.CostItemsAttachPostResponse"/></returns>
         /// <param name="body">The request body</param>

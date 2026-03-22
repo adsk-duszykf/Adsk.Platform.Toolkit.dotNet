@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Payments
         }
         /// <summary>
         /// Retrieves payments in the given project based on the specified query criteria.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-payments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Payments.PaymentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

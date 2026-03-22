@@ -47,6 +47,7 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams
         }
         /// <summary>
         /// Retrieves the latest time series data for each provided element.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-streams-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Streams.StreamsPostResponse"/></returns>
         /// <param name="body">The request body</param>

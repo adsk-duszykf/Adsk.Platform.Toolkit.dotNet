@@ -47,6 +47,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Retrieves a list of the bid packages that are associated with BuildingConnected projects owned by the requesting user&apos;s company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.BidPackagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Creates a bid package associated with a BuildingConnected project that is owned by the requesting user&apos;s company. The requesting user must be a member of the project team.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.BidPackagesPostResponse"/></returns>
         /// <param name="body">The request body</param>

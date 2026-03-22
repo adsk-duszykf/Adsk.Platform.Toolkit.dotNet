@@ -53,12 +53,16 @@ public class FileManagementManager
     public async Task<ExportsPostResponse?> ExportPdfsAsync(
         Guid projectId,
         ExportsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Files.V1.Projects[projectId]
             .Exports
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -81,12 +85,16 @@ public class FileManagementManager
     public async Task<WithExportGetResponse?> GetExportStatusAsync(
         Guid projectId,
         string exportId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Files.V1.Projects[projectId]
             .Exports[exportId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -109,13 +117,17 @@ public class FileManagementManager
     public async Task<PermissionsGetResponse?> GetFolderPermissionsAsync(
         Guid projectId,
         string folderId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .Folders[folderId]
             .Permissions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -140,13 +152,17 @@ public class FileManagementManager
         Guid projectId,
         string folderId,
         PermissionsBatchCreatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .Folders[folderId]
             .PermissionsBatchCreate
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -171,13 +187,17 @@ public class FileManagementManager
         Guid projectId,
         string folderId,
         PermissionsBatchUpdatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .Folders[folderId]
             .PermissionsBatchUpdate
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -202,13 +222,17 @@ public class FileManagementManager
         Guid projectId,
         string folderId,
         PermissionsBatchDeletePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .Folders[folderId]
             .PermissionsBatchDelete
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -234,21 +258,22 @@ public class FileManagementManager
     public async IAsyncEnumerable<CustomAttributeDefinitionsGetResponse_results> ListCustomAttributeDefinitionsAsync(
         Guid projectId,
         string folderId,
-        Action<RequestConfiguration<CustomAttributeDefinitionsRequestBuilder.CustomAttributeDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CustomAttributeDefinitionsRequestBuilder.CustomAttributeDefinitionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Bim360.Docs.V1.Projects[projectId]
                 .Folders[folderId]
                 .CustomAttributeDefinitions
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -288,13 +313,17 @@ public class FileManagementManager
         Guid projectId,
         string folderId,
         CustomAttributeDefinitionsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .Folders[folderId]
             .CustomAttributeDefinitions
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -317,12 +346,16 @@ public class FileManagementManager
     public async Task<VersionsBatchGetPostResponse?> BatchGetVersionCustomAttributesAsync(
         Guid projectId,
         VersionsBatchGetPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .VersionsBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -347,13 +380,17 @@ public class FileManagementManager
         Guid projectId,
         string versionId,
         CustomAttributesBatchUpdatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .Versions[versionId]
             .CustomAttributesBatchUpdate
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -376,12 +413,16 @@ public class FileManagementManager
     public async Task<NamingStandardsGetResponse?> GetNamingStandardAsync(
         Guid projectId,
         Guid id,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Docs.V1.Projects[projectId]
             .NamingStandards[id]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -404,13 +445,18 @@ public class FileManagementManager
     public async Task<LinkedFilesGetResponse?> GetLinkedFilesAsync(
         string projectId,
         string versionId,
-        Action<RequestConfiguration<LinkedFilesRequestBuilder.LinkedFilesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<LinkedFilesRequestBuilder.LinkedFilesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rcm.V1.Projects[projectId]
             .PublishedVersions[versionId]
             .LinkedFiles
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -431,12 +477,17 @@ public class FileManagementManager
     /// </example>
     public async Task<PackagesGetResponse?> GetPackagesAsync(
         Guid projectId,
-        Action<RequestConfiguration<PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Packages.V1.Projects[projectId]
             .Packages
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -459,12 +510,17 @@ public class FileManagementManager
     public async Task<ResourcesGetResponse?> GetPackageResourcesAsync(
         Guid projectId,
         Guid packageId,
-        Action<RequestConfiguration<ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Packages.V1.Projects[projectId]
             .Packages[packageId]
             .Resources
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

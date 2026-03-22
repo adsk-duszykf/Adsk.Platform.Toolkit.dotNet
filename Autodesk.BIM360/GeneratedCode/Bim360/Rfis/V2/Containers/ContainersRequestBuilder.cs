@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers
     public partial class ContainersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.rfis.v2.containers.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the container. Each project is assigned a container that stores all the RFIs for the project. To find the ID, see the Retrieve a Container ID tutorial.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.WithContainerItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.WithContainerItemRequestBuilder this[string position]
         {

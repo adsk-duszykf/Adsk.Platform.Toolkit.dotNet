@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Scre
         }
         /// <summary>
         /// Retrieves a specific screenshot based on the screenshot ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-get-screen-shot-GET" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

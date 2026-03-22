@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSe
         }
         /// <summary>
         /// Retrieves a list of relationships that match the provided search parameters.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/relationship-service-v2-search-relationships-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSearch.RelationshipsSearchGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

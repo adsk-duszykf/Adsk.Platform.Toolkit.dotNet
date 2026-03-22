@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch
         }
         /// <summary>
         /// Updates a set of one or more assets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-assets-batch-patch-PATCH-v2" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchPatch.AssetsBatchPatchPatchResponse"/></returns>
         /// <param name="body">The request body</param>

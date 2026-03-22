@@ -70,6 +70,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item
         }
         /// <summary>
         /// Returns the twin definition.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-twins-twinID-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.WithTwinGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

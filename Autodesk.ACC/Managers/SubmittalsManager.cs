@@ -63,19 +63,20 @@ public class SubmittalsManager
     /// </example>
     public async IAsyncEnumerable<ItemsGetResponse_results> ListItemsAsync(
         Guid projectId,
-        Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ItemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Submittals.V2.Projects[projectId]
                 .Items
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -113,12 +114,16 @@ public class SubmittalsManager
     public async Task<WithItemGetResponse?> GetItemAsync(
         Guid projectId,
         string itemId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -141,12 +146,16 @@ public class SubmittalsManager
     public async Task<ItemsPostResponse?> CreateItemAsync(
         Guid projectId,
         ItemsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -171,12 +180,16 @@ public class SubmittalsManager
         Guid projectId,
         string itemId,
         WithItemPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -201,13 +214,17 @@ public class SubmittalsManager
         Guid projectId,
         string itemId,
         WithItemIdTransitionPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items
             .WithItemIdTransition(itemId)
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -230,13 +247,18 @@ public class SubmittalsManager
     public async Task<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsGetResponse?> GetRevisionsAsync(
         Guid projectId,
         string itemId,
-        Action<RequestConfiguration<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Items.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
             .Revisions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -259,12 +281,17 @@ public class SubmittalsManager
     public async Task ValidateCustomIdentifierAsync(
         Guid projectId,
         ItemsValidateCustomIdentifierPostRequestBody body,
-        Action<RequestConfiguration<ItemsValidateCustomIdentifierRequestBuilder.ItemsValidateCustomIdentifierRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ItemsValidateCustomIdentifierRequestBuilder.ItemsValidateCustomIdentifierRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Submittals.V2.Projects[projectId]
             .ItemsValidateCustomIdentifier
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -285,12 +312,17 @@ public class SubmittalsManager
     /// </example>
     public async Task<ItemsNextCustomIdentifierGetResponse?> GetNextCustomIdentifierAsync(
         Guid projectId,
-        Action<RequestConfiguration<ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ItemsNextCustomIdentifierRequestBuilder.ItemsNextCustomIdentifierRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .ItemsNextCustomIdentifier
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -311,12 +343,17 @@ public class SubmittalsManager
     /// </example>
     public async Task<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.ItemTypesGetResponse?> GetItemTypesAsync(
         Guid projectId,
-        Action<RequestConfiguration<ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ItemTypesRequestBuilder.ItemTypesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .ItemTypes
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -339,12 +376,16 @@ public class SubmittalsManager
     public async Task<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.ItemTypes.Item.ItemTypesGetResponse?> GetItemTypeAsync(
         Guid projectId,
         string itemTypeId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .ItemTypes[itemTypeId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -365,12 +406,16 @@ public class SubmittalsManager
     /// </example>
     public async Task<MetadataGetResponse?> GetMetadataAsync(
         Guid projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Metadata
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -394,19 +439,20 @@ public class SubmittalsManager
     /// </example>
     public async IAsyncEnumerable<PackagesGetResponse_results> ListPackagesAsync(
         Guid projectId,
-        Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<PackagesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Submittals.V2.Projects[projectId]
                 .Packages
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -444,12 +490,16 @@ public class SubmittalsManager
     public async Task<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Packages.Item.PackagesGetResponse?> GetPackageAsync(
         Guid projectId,
         string packageId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Packages[packageId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -473,19 +523,20 @@ public class SubmittalsManager
     /// </example>
     public async IAsyncEnumerable<ResponsesGetResponse_results> ListResponsesAsync(
         Guid projectId,
-        Action<RequestConfiguration<ResponsesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ResponsesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Submittals.V2.Projects[projectId]
                 .Responses
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -523,12 +574,16 @@ public class SubmittalsManager
     public async Task<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Responses.Item.ResponsesGetResponse?> GetResponseAsync(
         Guid projectId,
         string responseId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Responses[responseId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -549,13 +604,18 @@ public class SubmittalsManager
     /// </example>
     public async Task<MappingsGetResponse?> GetMappingsAsync(
         Guid projectId,
-        Action<RequestConfiguration<MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<MappingsRequestBuilder.MappingsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Settings
             .Mappings
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -579,19 +639,20 @@ public class SubmittalsManager
     /// </example>
     public async IAsyncEnumerable<SpecsGetResponse_results> ListSpecsAsync(
         Guid projectId,
-        Action<RequestConfiguration<SpecsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<SpecsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Submittals.V2.Projects[projectId]
                 .Specs
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -629,12 +690,16 @@ public class SubmittalsManager
     public async Task<SpecsPostResponse?> CreateSpecAsync(
         Guid projectId,
         SpecsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Specs
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -657,12 +722,16 @@ public class SubmittalsManager
     public async Task<Autodesk.ACC.Construction.Submittals.V2.Projects.Item.Specs.Item.SpecsGetResponse?> GetSpecAsync(
         Guid projectId,
         string specId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Specs[specId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -685,13 +754,18 @@ public class SubmittalsManager
     public async Task<StepsGetResponse?> GetStepsAsync(
         Guid projectId,
         string itemId,
-        Action<RequestConfiguration<StepsRequestBuilder.StepsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<StepsRequestBuilder.StepsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
             .Steps
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -716,13 +790,17 @@ public class SubmittalsManager
         Guid projectId,
         string itemId,
         string stepId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
             .Steps[stepId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -747,14 +825,19 @@ public class SubmittalsManager
         Guid projectId,
         string itemId,
         string stepId,
-        Action<RequestConfiguration<TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
             .Steps[stepId]
             .Tasks
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -781,14 +864,18 @@ public class SubmittalsManager
         string itemId,
         string stepId,
         string taskId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
             .Steps[stepId]
             .Tasks[taskId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -817,7 +904,7 @@ public class SubmittalsManager
         string stepId,
         string taskId,
         WithTaskIdClosePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
@@ -825,7 +912,11 @@ public class SubmittalsManager
             .Steps[stepId]
             .Tasks
             .WithTaskIdClose(taskId)
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -846,13 +937,17 @@ public class SubmittalsManager
     /// </example>
     public async Task<MeGetResponse?> GetCurrentUserAsync(
         Guid projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Users
             .Me
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -873,12 +968,17 @@ public class SubmittalsManager
     /// </example>
     public async Task<TemplatesGetResponse?> GetTemplatesAsync(
         Guid projectId,
-        Action<RequestConfiguration<TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Templates
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -904,20 +1004,21 @@ public class SubmittalsManager
     public async IAsyncEnumerable<AttachmentsGetResponse_results> ListAttachmentsAsync(
         Guid projectId,
         string itemId,
-        Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Submittals.V2.Projects[projectId]
                 .Items[itemId]
                 .Attachments
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -957,13 +1058,17 @@ public class SubmittalsManager
         Guid projectId,
         string itemId,
         AttachmentsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
             .Attachments
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -990,12 +1095,16 @@ public class SubmittalsManager
         string itemId,
         string attachmentId,
         WithAttachmentPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Submittals.V2.Projects[projectId]
             .Items[itemId]
             .Attachments[attachmentId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

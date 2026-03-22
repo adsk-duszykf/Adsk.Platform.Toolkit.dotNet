@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDe
         }
         /// <summary>
         /// Deletes one or more relationships by passing an array of relationship UUIDs.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/relationship-service-v2-delete-relationships-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsDelete.RelationshipsDeletePostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         }
         /// <summary>
         /// Deletes a performance tracking item instance with the specified ID in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         }
         /// <summary>
         /// Retrieves a performance tracking item instance by ID in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstanc
         }
         /// <summary>
         /// Updates a performance tracking item instance by ID in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-performance-tracking-item-instances-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.PerformanceTrackingItemInstances.Item.PerformanceTrackingItemInstancesPatchResponse"/></returns>
         /// <param name="body">The request body</param>

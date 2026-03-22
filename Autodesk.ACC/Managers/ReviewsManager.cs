@@ -47,12 +47,17 @@ public class ReviewsManager
     /// </example>
     public async Task<WorkflowsGetResponse?> GetWorkflowsAsync(
         Guid projectId,
-        Action<RequestConfiguration<WorkflowsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WorkflowsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Workflows
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -75,12 +80,16 @@ public class ReviewsManager
     public async Task<WorkflowsPostResponse?> CreateWorkflowAsync(
         Guid projectId,
         WorkflowsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Workflows
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -103,12 +112,16 @@ public class ReviewsManager
     public async Task<WithWorkflowGetResponse?> GetWorkflowAsync(
         Guid projectId,
         Guid workflowId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Workflows[workflowId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -129,12 +142,17 @@ public class ReviewsManager
     /// </example>
     public async Task<ReviewsGetResponse?> GetReviewsAsync(
         Guid projectId,
-        Action<RequestConfiguration<ReviewsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ReviewsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Reviews
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -157,12 +175,16 @@ public class ReviewsManager
     public async Task<ReviewsPostResponse?> CreateReviewAsync(
         Guid projectId,
         ReviewsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Reviews
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -185,12 +207,16 @@ public class ReviewsManager
     public async Task<WithReviewGetResponse?> GetReviewAsync(
         Guid projectId,
         Guid reviewId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Reviews[reviewId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -213,13 +239,17 @@ public class ReviewsManager
     public async Task<WorkflowGetResponse?> GetReviewWorkflowAsync(
         Guid projectId,
         Guid reviewId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Reviews[reviewId]
             .Workflow
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -242,13 +272,18 @@ public class ReviewsManager
     public async Task<ProgressGetResponse?> GetReviewProgressAsync(
         Guid projectId,
         Guid reviewId,
-        Action<RequestConfiguration<ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ProgressRequestBuilder.ProgressRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Reviews[reviewId]
             .Progress
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -271,13 +306,18 @@ public class ReviewsManager
     public async Task<Construction.Reviews.V1.Projects.Item.Reviews.Item.Versions.VersionsGetResponse?> GetReviewVersionsAsync(
         Guid projectId,
         Guid reviewId,
-        Action<RequestConfiguration<ReviewVersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ReviewVersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Reviews[reviewId]
             .Versions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -300,12 +340,17 @@ public class ReviewsManager
     public async Task<ApprovalStatusesGetResponse?> GetApprovalStatusesAsync(
         Guid projectId,
         string versionId,
-        Action<RequestConfiguration<ApprovalStatusesRequestBuilder.ApprovalStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ApprovalStatusesRequestBuilder.ApprovalStatusesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Reviews.V1.Projects[projectId]
             .Versions[versionId]
             .ApprovalStatuses
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

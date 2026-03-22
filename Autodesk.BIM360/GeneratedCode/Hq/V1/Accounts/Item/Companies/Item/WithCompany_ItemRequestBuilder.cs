@@ -40,6 +40,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
         }
         /// <summary>
         /// Query the details of a specific partner company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/companies-:company_id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,6 +59,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item
         }
         /// <summary>
         /// Update the properties of only the specified attributes of a specific partner company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/companies-:company_id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.WithCompany_PatchResponse"/></returns>
         /// <param name="body">The request body</param>

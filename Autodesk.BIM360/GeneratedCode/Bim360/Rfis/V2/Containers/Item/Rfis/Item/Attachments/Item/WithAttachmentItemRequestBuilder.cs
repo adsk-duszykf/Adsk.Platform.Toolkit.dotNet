@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.I
         }
         /// <summary>
         /// Deletes an attachment from an RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-attachments-attachmentId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

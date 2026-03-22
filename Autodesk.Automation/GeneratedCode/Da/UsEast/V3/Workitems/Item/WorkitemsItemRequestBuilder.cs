@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Item
         }
         /// <summary>
         /// Cancels a specific WorkItem.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/workitems-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Item
         }
         /// <summary>
         /// Gets the status of a specific WorkItem.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/workitems-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.Item.WorkitemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

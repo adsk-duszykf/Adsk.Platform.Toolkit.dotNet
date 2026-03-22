@@ -40,6 +40,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         }
         /// <summary>
         /// Deletes a specific model set view based on the view ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-delete-model-set-view-DELETE" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,6 +59,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         }
         /// <summary>
         /// Retrieves a specific model set view based on the view ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-get-model-set-view-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,6 +78,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         }
         /// <summary>
         /// Updates a specific model set view.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-update-model-set-view-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchResponse"/></returns>
         /// <param name="body">The request body</param>

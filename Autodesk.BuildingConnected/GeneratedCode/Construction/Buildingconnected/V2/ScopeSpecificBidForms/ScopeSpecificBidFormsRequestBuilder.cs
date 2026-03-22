@@ -47,6 +47,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         }
         /// <summary>
         /// Retrieves a list of the scope-specific bid forms created by the user&apos;s company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-scope-specific-bid-forms-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.ScopeSpecificBidFormsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         }
         /// <summary>
         /// Creates a new scope-specific bid form for a bid package.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-scope-specific-bid-forms-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.ScopeSpecificBidFormsPostResponse"/></returns>
         /// <param name="body">The request body</param>

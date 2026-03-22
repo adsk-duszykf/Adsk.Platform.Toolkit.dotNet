@@ -1,3 +1,5 @@
+using Autodesk.Automation.Managers;
+
 namespace Autodesk.Automation;
 
 /// <summary>
@@ -15,6 +17,15 @@ public class AutomationClient
         var adapter = Common.HttpClientLibrary.HttpClientFactory.CreateAdapter(getAccessToken, httpClient);
 
         Api = new BaseAutomationClient(adapter);
+
+        ActivitiesManager = new ActivitiesManager(Api);
+        AppBundlesManager = new AppBundlesManager(Api);
+        EnginesManager = new EnginesManager(Api);
+        ForgeAppsManager = new ForgeAppsManager(Api);
+        HealthManager = new HealthManager(Api);
+        ServiceLimitsManager = new ServiceLimitsManager(Api);
+        SharesManager = new SharesManager(Api);
+        WorkItemsManager = new WorkItemsManager(Api);
     }
 
     /// <summary>
@@ -23,42 +34,42 @@ public class AutomationClient
     public BaseAutomationClient Api { get; protected set; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/activities/*
+    /// Manager for Activity operations — manages activities, aliases, and versions.
     /// </summary>
-    public Da.UsEast.V3.Activities.ActivitiesRequestBuilder Activities => Api.Da.UsEast.V3.Activities;
+    public ActivitiesManager ActivitiesManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/appbundles/*
+    /// Manager for AppBundle operations — manages app bundles, aliases, and versions.
     /// </summary>
-    public Da.UsEast.V3.Appbundles.AppbundlesRequestBuilder AppBundles => Api.Da.UsEast.V3.Appbundles;
+    public AppBundlesManager AppBundlesManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/engines/*
+    /// Manager for Engine operations — lists and retrieves engine details.
     /// </summary>
-    public Da.UsEast.V3.Engines.EnginesRequestBuilder Engines => Api.Da.UsEast.V3.Engines;
+    public EnginesManager EnginesManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/forgeapps/*
+    /// Manager for ForgeApps (nickname) operations — manages app nicknames.
     /// </summary>
-    public Da.UsEast.V3.Forgeapps.ForgeappsRequestBuilder ForgeApps => Api.Da.UsEast.V3.Forgeapps;
+    public ForgeAppsManager ForgeAppsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/health/*
+    /// Manager for Health operations — checks engine health status.
     /// </summary>
-    public Da.UsEast.V3.Health.HealthRequestBuilder Health => Api.Da.UsEast.V3.Health;
+    public HealthManager HealthManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/servicelimits/*
+    /// Manager for Service Limits operations — manages service limit configurations.
     /// </summary>
-    public Da.UsEast.V3.Servicelimits.ServicelimitsRequestBuilder ServiceLimits => Api.Da.UsEast.V3.Servicelimits;
+    public ServiceLimitsManager ServiceLimitsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/shares/*
+    /// Manager for Shares operations — lists shared AppBundles and Activities.
     /// </summary>
-    public Da.UsEast.V3.Shares.SharesRequestBuilder Shares => Api.Da.UsEast.V3.Shares;
+    public SharesManager SharesManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/da/us-east/v3/workitems/*
+    /// Manager for WorkItem operations — creates and monitors work items.
     /// </summary>
-    public Da.UsEast.V3.Workitems.WorkitemsRequestBuilder WorkItems => Api.Da.UsEast.V3.Workitems;
+    public WorkItemsManager WorkItemsManager { get; }
 }

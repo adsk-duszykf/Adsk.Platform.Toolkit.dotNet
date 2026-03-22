@@ -46,6 +46,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item
         }
         /// <summary>
         /// Cancels the specified running job spawned by a data request created by the authenticated user. The user must have project administrator or executive overview permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/data-connector-jobs-jobId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,6 +64,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item
         }
         /// <summary>
         /// Returns information about a specified job that was spawned by a data request created by the authenticated user. The user must have project administrator or executive overview permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/data-connector-jobs-jobId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.Item.WithJobGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

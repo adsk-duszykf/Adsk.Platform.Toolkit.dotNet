@@ -7,13 +7,13 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AttachmentsGetResponse_results_status
     {
-        [EnumMember(Value = "pre")]
+        [EnumMember(Value = "pre-upload")]
         #pragma warning disable CS1591
-        Pre,
+        PreUpload,
         #pragma warning restore CS1591
-        [EnumMember(Value = "file")]
+        [EnumMember(Value = "file-uploaded")]
         #pragma warning disable CS1591
-        File,
+        FileUploaded,
         #pragma warning restore CS1591
         [EnumMember(Value = "completed")]
         #pragma warning disable CS1591

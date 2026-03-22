@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
         }
         /// <summary>
         /// Retrieve a specific manifest associated with a properties index. Since the manifest, once created, is immutable, the response will set a long expiration HTTP header for efficient client side caching.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/index-v2-index-manifest-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

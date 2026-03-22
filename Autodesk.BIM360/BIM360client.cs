@@ -1,5 +1,10 @@
+using Autodesk.BIM360.Managers;
+
 namespace Autodesk.BIM360;
 
+/// <summary>
+/// Main entry point for the creation and management of the BIM360 API client
+/// </summary>
 public class BIM360client
 {
     /// <summary>
@@ -12,82 +17,86 @@ public class BIM360client
         var adapter = Common.HttpClientLibrary.HttpClientFactory.CreateAdapter(getAccessToken, httpClient);
 
         Api = new BaseBIM360client(adapter);
+
+        AccountAdminManager = new AccountAdminManager(Api);
+        DataConnectorManager = new DataConnectorManager(Api);
+        DocumentManagementManager = new DocumentManagementManager(Api);
+        IssuesManager = new IssuesManager(Api);
+        RFIsManager = new RFIsManager(Api);
+        RelationshipsManager = new RelationshipsManager(Api);
+        AssetsManager = new AssetsManager(Api);
+        ChecklistsManager = new ChecklistsManager(Api);
+        CostManager = new CostManager(Api);
+        LocationsManager = new LocationsManager(Api);
+        ModelCoordinationManager = new ModelCoordinationManager(Api);
+        ModelPropertiesManager = new ModelPropertiesManager(Api);
     }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/hq/v1/accounts/*
-    /// </summary>
-    public Hq.V1.Accounts.AccountsRequestBuilder Accounts => Api.Hq.V1.Accounts;
-
-    /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/construction/admin/v1/*
-    /// </summary>
-    public Construction.Admin.V1.V1RequestBuilder Admin => Api.Construction.Admin.V1;
-
-    /// <summary>
-    /// BIM360 API client base path 'https://aps.autodesk.com/en/docs/acc/v1/reference/http/issues-users-me-GET/'
+    /// BIM 360 API root client (base URL <c>https://developer.api.autodesk.com</c>). See also
+    /// <see href="https://aps.autodesk.com/en/docs/bim360/v1/overview/">BIM 360 API overview</see>.
     /// </summary>
     public BaseBIM360client Api { get; protected set; }
 
-    /// <summary>
-
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/assets/v1/*
-    /// </summary>
-    public Bim360.Assets.V1.V1RequestBuilder Assets => Api.Bim360.Assets.V1;
+    // ── Managers ─────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/checklists/v1/*
+    /// Manager for Account Admin operations (accounts, projects, users, companies, business units)
     /// </summary>
-    public Bim360.Checklists.V1.V1RequestBuilder Checklists => Api.Bim360.Checklists.V1;
+    public AccountAdminManager AccountAdminManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/clash/v3/*
+    /// Manager for BIM 360 Assets v1/v2 (categories, statuses, custom attributes, asset records).
     /// </summary>
-    public Bim360.Clash.V3.V3RequestBuilder Clash => Api.Bim360.Clash.V3;
+    public AssetsManager AssetsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/cost/v1/*
+    /// Manager for BIM 360 Checklists (templates and instances).
     /// </summary>
-    public Cost.V1.V1RequestBuilder Cost => Api.Cost.V1;
+    public ChecklistsManager ChecklistsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/dataconnector/v1/*
+    /// Manager for Data Connector operations (data requests, jobs, data downloads)
     /// </summary>
-    public DataConnector.V1.V1RequestBuilder DataConnector => Api.DataConnector.V1;
+    public DataConnectorManager DataConnectorManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/docs/v1/*
+    /// Manager for Cost Management operations (budgets, contracts, change orders, expenses, payments, main contracts, and related settings).
     /// </summary>
-    public Bim360.Docs.V1.V1RequestBuilder Docs => Api.Bim360.Docs.V1;
+    public CostManager CostManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/construction/index/v2/*
+    /// Manager for BIM 360 Document Management (permissions, custom attributes, versions batch, naming standards, exports)
     /// </summary>
-    public Construction.IndexNamespace.V2.V2RequestBuilder Index => Api.Construction.Index.V2;
+    public DocumentManagementManager DocumentManagementManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/issues/v2/*
+    /// Manager for Issues v2 (containers, issues, comments, attachments, types, attributes).
     /// </summary>
-    public Issues.V2.V2RequestBuilder Issues => Api.Issues.V2;
+    public IssuesManager IssuesManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/modelset/v3/*
+    /// Manager for Locations operations (location nodes and trees)
     /// </summary>
-    public Bim360.Modelset.V3.V3RequestBuilder ModelSet => Api.Bim360.Modelset.V3;
+    public LocationsManager LocationsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/relationship/v2/*
+    /// Manager for Model Coordination (model sets, views, clash tests, clashes, screenshots).
     /// </summary>
-    public Bim360.Relationship.V2.V2RequestBuilder Projects => Api.Bim360.Relationship.V2;
+    public ModelCoordinationManager ModelCoordinationManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/relationship/v2/*
+    /// Manager for Model Properties / Construction Index (indexes, diffs, queries, fields, manifests).
     /// </summary>
-    public Bim360.Relationship.V2.V2RequestBuilder Relationships => Api.Bim360.Relationship.V2;
+    public ModelPropertiesManager ModelPropertiesManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/bim360/rfis/v2/*
+    /// Manager for BIM 360 RFIs v2 (RFIs, comments, attachments, current user).
     /// </summary>
-    public Bim360.Rfis.V2.V2RequestBuilder RFIs => Api.Bim360.Rfis.V2;
+    public RFIsManager RFIsManager { get; }
 
+    /// <summary>
+    /// Manager for Relationship service v2 (create, search, batch, sync, delete).
+    /// </summary>
+    public RelationshipsManager RelationshipsManager { get; }
 }

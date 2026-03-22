@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Scan
         }
         /// <summary>
         /// Returns an array of elements (including attribute values) matching your query. First element of the returned array is schema version (e.g. `v1`).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-scan-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Scan.ScanPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTe
         }
         /// <summary>
         /// Removes the specified team member from their current project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-project-team-members-memberId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTe
         }
         /// <summary>
         /// Retrieves a record of a specific project team member.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-project-team-members-memberId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.Item.WithMemberGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTe
         }
         /// <summary>
         /// Updates a project team member.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-project-team-members-memberId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectTeamMembers.Item.WithMemberPatchResponse"/></returns>
         /// <param name="body">The request body</param>

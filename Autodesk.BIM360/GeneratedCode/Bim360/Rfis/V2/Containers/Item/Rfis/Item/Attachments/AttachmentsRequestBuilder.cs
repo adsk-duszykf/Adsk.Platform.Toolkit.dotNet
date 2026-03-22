@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
     public partial class AttachmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.rfis.v2.containers.item.rfis.item.attachments.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the attachment to delete.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.Item.WithAttachmentItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.Item.WithAttachmentItemRequestBuilder this[string position]
         {
@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
         }
         /// <summary>
         /// Retrieves information about all the attachments in a project associated with a specific [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-attachments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
         }
         /// <summary>
         /// Adds an attachment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-attachments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments.AttachmentsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -139,6 +141,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Specify which attributes you want to appear in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -148,12 +151,16 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Attachments
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
+            /// <summary>Include deleted attachments in results.</summary>
             [QueryParameter("filter%5BincludeDeleted%5D")]
             public bool? FilterincludeDeleted { get; set; }
+            /// <summary>The number of attachments to return in the response payload. Acceptable value range: 1-100. Default value: 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The page number that you want to begin attachment results from.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Sort the attachments by the specified field. Separate multiple values with commas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

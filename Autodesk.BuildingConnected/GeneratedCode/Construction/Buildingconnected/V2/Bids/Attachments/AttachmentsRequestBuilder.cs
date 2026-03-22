@@ -47,6 +47,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Atta
         }
         /// <summary>
         /// Creates a bid attachment that can be included in a bid&apos;s attachments array. The maximum file size for an attachment is 25MB.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bids-attachments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Attachments.AttachmentsPostResponse"/></returns>
         /// <param name="body">The request body</param>

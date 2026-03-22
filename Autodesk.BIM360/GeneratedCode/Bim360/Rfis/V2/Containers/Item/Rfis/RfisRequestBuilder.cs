@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
     public partial class RfisRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.bim360.rfis.v2.containers.item.rfis.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the RFI.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiItemRequestBuilder this[string position]
         {
@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         }
         /// <summary>
         /// Retrieves information about all the BIM 360 RFIs (requests for information) in a project, including details about their associated comments and attachments.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-rfis-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         }
         /// <summary>
         /// Adds a BIM 360 RFI (request for information) to a project. You can create both document-related (pushpin) RFIs, and project-related RFIs.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-rfis-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.RfisPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -139,6 +141,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RfisRequestBuilderGetQueryParameters 
         {
+            /// <summary>Specify which attributes you want to appear in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -148,6 +151,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
+            /// <summary>Retrieves RFIs in the project that were assigned to the specified user. To find the ID call GET users/me.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BassignedTo%5D")]
@@ -157,6 +161,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5BassignedTo%5D")]
             public string[] FilterassignedTo { get; set; }
 #endif
+            /// <summary>Retrieves RFIs with the specified category type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bcategory%5D")]
@@ -166,6 +171,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5Bcategory%5D")]
             public string[] Filtercategory { get; set; }
 #endif
+            /// <summary>Retrieves RFIs with the specified cost impact value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcostImpact%5D")]
@@ -175,6 +181,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5BcostImpact%5D")]
             public string[] FiltercostImpact { get; set; }
 #endif
+            /// <summary>Retrieves RFIs created after the specified date, in the following format: YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedAt%5D")]
@@ -184,6 +191,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5BcreatedAt%5D")]
             public string FiltercreatedAt { get; set; }
 #endif
+            /// <summary>Retrieves RFIs in the project that were created by the specified user. To find the ID call GET users/me.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedBy%5D")]
@@ -193,6 +201,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5BcreatedBy%5D")]
             public string[] FiltercreatedBy { get; set; }
 #endif
+            /// <summary>Retrieves RFIs with the specified discipline type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bdiscipline%5D")]
@@ -202,6 +211,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5Bdiscipline%5D")]
             public string[] Filterdiscipline { get; set; }
 #endif
+            /// <summary>Retrieves RFIs with the specified due date, in the following format: YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BdueDate%5D")]
@@ -211,6 +221,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5BdueDate%5D")]
             public string FilterdueDate { get; set; }
 #endif
+            /// <summary>Retrieves a list of specified RFIs. To find the RFI IDs call GET rfis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bid%5D")]
@@ -220,8 +231,10 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5Bid%5D")]
             public string[] Filterid { get; set; }
 #endif
+            /// <summary>Include hidden RFIs in results.</summary>
             [QueryParameter("filter%5BincludeHidden%5D")]
             public bool? FilterincludeHidden { get; set; }
+            /// <summary>Retrieves pushpin RFIs that are associated with the specified document lineage URN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BlinkedDocument%5D")]
@@ -231,8 +244,10 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5BlinkedDocument%5D")]
             public string[] FilterlinkedDocument { get; set; }
 #endif
+            /// <summary>Retrieves pushpin RFIs that are associated with the specified document version URN.</summary>
             [QueryParameter("filter%5BlinkedDocumentVersion%5D")]
             public int? FilterlinkedDocumentVersion { get; set; }
+            /// <summary>Retrieves RFIs with the specified priority level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bpriority%5D")]
@@ -242,6 +257,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5Bpriority%5D")]
             public string[] Filterpriority { get; set; }
 #endif
+            /// <summary>Retrieves RFIs with the specified schedule impact value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BscheduleImpact%5D")]
@@ -251,6 +267,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5BscheduleImpact%5D")]
             public string[] FilterscheduleImpact { get; set; }
 #endif
+            /// <summary>Searches for a specified string in the following fields: `title`. This includes RFIs where the string matches exactly or partially.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bsearch%5D")]
@@ -260,6 +277,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5Bsearch%5D")]
             public string Filtersearch { get; set; }
 #endif
+            /// <summary>Retrieves RFIs with the specified status. Possible values: `draft`, `submitted`, `open`, `answered`, `rejected`, `closed`, and `void`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstatus%5D")]
@@ -269,10 +287,13 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis
             [QueryParameter("filter%5Bstatus%5D")]
             public string[] Filterstatus { get; set; }
 #endif
+            /// <summary>The number of RFIs to return in the response payload. Acceptable value range: 1-100. Default value: 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The page number that you want to begin RFI results from.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Sort the RFIs by `createdAt`, `status`, `dueDate`, `title`, `scheduleImpact`, `priority`, `discipline`, `category`. Default sort order is descending by `createdAt`. Separate multiple values with commas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

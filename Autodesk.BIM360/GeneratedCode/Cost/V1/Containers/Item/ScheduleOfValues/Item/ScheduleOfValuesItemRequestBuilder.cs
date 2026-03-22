@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item
         }
         /// <summary>
         /// Deletes a specified schedule of values (SOV) item in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-schedule-of-values-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item
         }
         /// <summary>
         /// Retrieves one schedule of values (SOV) item in the given project by ID..
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-schedule-of-values-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item
         }
         /// <summary>
         /// Updates the specified schedule of values (SOV) item in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-schedule-of-values-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.Item.ScheduleOfValuesPatchResponse"/></returns>
         /// <param name="body">The request body</param>

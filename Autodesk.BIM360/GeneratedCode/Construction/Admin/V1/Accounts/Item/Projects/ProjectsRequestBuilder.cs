@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
         }
         /// <summary>
         /// Retrieves a list of the projects in the specified account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-accounts-accountidprojects-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

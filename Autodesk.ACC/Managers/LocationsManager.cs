@@ -42,13 +42,18 @@ public class LocationsManager
     public async Task<NodesGetResponse?> GetNodesAsync(
         Guid projectId,
         string treeId,
-        Action<RequestConfiguration<NodesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<NodesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Locations.V2.Projects[projectId]
             .Trees[treeId]
             .Nodes
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -77,13 +82,18 @@ public class LocationsManager
         Guid projectId,
         string treeId,
         NodesPostRequestBody body,
-        Action<RequestConfiguration<NodesRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<NodesRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Locations.V2.Projects[projectId]
             .Trees[treeId]
             .Nodes
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -113,13 +123,17 @@ public class LocationsManager
         string treeId,
         Guid nodeId,
         WithNodePatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Locations.V2.Projects[projectId]
             .Trees[treeId]
             .Nodes[nodeId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -144,12 +158,16 @@ public class LocationsManager
         Guid projectId,
         string treeId,
         Guid nodeId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Locations.V2.Projects[projectId]
             .Trees[treeId]
             .Nodes[nodeId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

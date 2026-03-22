@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes
         }
         /// <summary>
         /// Retrieves the locations (nodes) for a project using the location breakdown structure (tree). To retrieve the path of a location, use the filter.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/locations-nodes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Locations.V2.Containers.Item.Trees.Item.Nodes.NodesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

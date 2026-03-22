@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies
         }
         /// <summary>
         /// Returns a list of companies in an account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/companies-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Companies.CompaniesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

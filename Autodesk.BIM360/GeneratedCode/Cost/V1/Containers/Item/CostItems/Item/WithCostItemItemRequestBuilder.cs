@@ -46,6 +46,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item
         }
         /// <summary>
         /// Deletes an existing cost item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-cost-items-costItemId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,6 +64,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item
         }
         /// <summary>
         /// Gets a cost item specified by ID. The returned item includes details.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-cost-items-costItemId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.WithCostItemGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,6 +83,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item
         }
         /// <summary>
         /// Updates an existing cost item
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-cost-items-costItemId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.WithCostItemPatchResponse"/></returns>
         /// <param name="body">The request body</param>

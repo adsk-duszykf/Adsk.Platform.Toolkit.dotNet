@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
         }
         /// <summary>
         /// Retrieve a specific stream configuration.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-stream-configs-elementID-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item
         }
         /// <summary>
         /// Save a stream configuration.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-stream-configs-elementID-PUT" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.Item.WithElementPutResponse"/></returns>
         /// <param name="body">The request body</param>

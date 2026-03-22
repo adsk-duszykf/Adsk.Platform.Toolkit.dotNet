@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
         }
         /// <summary>
         /// Deletes multiple indirect cost items on the project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-projectId-costs-batch-delete-POST" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

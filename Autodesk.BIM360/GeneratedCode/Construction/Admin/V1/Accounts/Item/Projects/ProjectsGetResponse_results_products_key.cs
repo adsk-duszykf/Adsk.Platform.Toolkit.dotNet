@@ -7,10 +7,6 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Accounts.Item.Projects
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ProjectsGetResponse_results_products_key
     {
-        [EnumMember(Value = "filter[key]")]
-        #pragma warning disable CS1591
-        FilterKey,
-        #pragma warning restore CS1591
         [EnumMember(Value = "autoSpecs")]
         #pragma warning disable CS1591
         AutoSpecs,

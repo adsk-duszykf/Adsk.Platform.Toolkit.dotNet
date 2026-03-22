@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import
         }
         /// <summary>
         /// Bulk import users to the master member directory in a BIM 360 account. (50 users maximum can be included in each call.)
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-import-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Import.ImportPostResponse"/></returns>
         /// <param name="body">The request body</param>

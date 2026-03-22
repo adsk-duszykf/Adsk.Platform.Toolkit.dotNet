@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Deletestreams
         }
         /// <summary>
         /// Delete datapoints of multiple streams.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-deletestreamsdata-POST" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

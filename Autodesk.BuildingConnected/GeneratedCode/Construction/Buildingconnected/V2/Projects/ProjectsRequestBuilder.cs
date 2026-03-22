@@ -47,6 +47,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects
         }
         /// <summary>
         /// Retrieves a list of the BuildingConnected Pro projects that the current user&apos;s company is participating in.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.ProjectsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects
         }
         /// <summary>
         /// Creates a new BuildingConnected project in `DRAFT` state. The project can be created directly, or by cloning an existing project or copying information from an existing opportunity.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.ProjectsPostResponse"/></returns>
         /// <param name="body">The request body</param>

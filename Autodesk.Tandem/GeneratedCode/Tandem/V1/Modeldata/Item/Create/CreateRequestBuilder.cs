@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create
         }
         /// <summary>
         /// Creates elements based on the input payload. The scope of creation is one model.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-create-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Create.CreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

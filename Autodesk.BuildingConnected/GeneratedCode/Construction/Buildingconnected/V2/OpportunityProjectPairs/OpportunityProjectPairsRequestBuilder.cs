@@ -47,6 +47,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportuni
         }
         /// <summary>
         /// Retrieves a list of opportunity-project pairs that match the provided criteria within the context of the requesting user&apos;s company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-opportunity-project-pairs-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Opportuni
         }
         /// <summary>
         /// Creates a new opportunity-project pair to relink a project from a group child opportunity to its group parent.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-opportunity-project-pairs-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.OpportunityProjectPairs.OpportunityProjectPairsPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
         }
         /// <summary>
         /// Retrieves information about all the issues in a project, including count of the associated comments and attachments.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-issues-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues
         }
         /// <summary>
         /// Adds an issue to a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-issues-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.IssuesPostResponse"/></returns>
         /// <param name="body">The request body</param>

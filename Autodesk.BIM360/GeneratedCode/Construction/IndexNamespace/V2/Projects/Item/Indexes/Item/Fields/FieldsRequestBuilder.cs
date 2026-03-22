@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.I
         }
         /// <summary>
         /// Retrieve a specific fields dictionary associated with a properties index.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/index-v2-index-fields-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Fields.FieldsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.hq.v2.accounts.item.projects.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the project. This corresponds to project ID in the Data Management API. To convert a project ID in the Data Management API into a project ID in the BIM 360 API you need to remove the &quot;b.&quot; prefix. For example, a project ID of b.a4be0c34a-4ab7 translates to a project ID of a4be0c34a-4ab7.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.WithProject_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.WithProject_ItemRequestBuilder this[string position]
         {

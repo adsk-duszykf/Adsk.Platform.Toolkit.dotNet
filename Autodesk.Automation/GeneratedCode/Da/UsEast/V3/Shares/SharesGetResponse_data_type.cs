@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.Automation.Da.UsEast.V3.Shares
 {
-    /// <summary>Possible values: ``activity``, ``app``</summary>
+    /// <summary>Possible values: `activity`, `app`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SharesGetResponse_data_type
     {

@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances
         }
         /// <summary>
         /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) checklists in a project, including details about their statuses, priorities, and assignees.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/checklists-instances-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.InstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

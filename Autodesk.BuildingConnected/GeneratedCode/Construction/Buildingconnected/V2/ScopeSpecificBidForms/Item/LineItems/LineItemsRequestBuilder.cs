@@ -47,6 +47,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         }
         /// <summary>
         /// Retrieves a list of the specified scope-specific bid form&apos;s line items.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-scope-specific-bid-forms-formId-line-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         }
         /// <summary>
         /// Creates a scope-specific bid form line item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-scope-specific-bid-forms-formId-line-items-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItems.LineItemsPostResponse"/></returns>
         /// <param name="body">The request body</param>

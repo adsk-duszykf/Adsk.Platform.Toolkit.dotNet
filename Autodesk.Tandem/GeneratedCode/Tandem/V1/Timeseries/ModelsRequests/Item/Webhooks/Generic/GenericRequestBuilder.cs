@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Timeseries.ModelsRequests.Item.Webhooks.Gene
         }
         /// <summary>
         /// Generic endpoint for posting stream data. It expects either a single JSON object or an array of objects. every such objects is treated as an individual event.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-generic-POST" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Array of objects with stream data. Each object is treated as an individual event.</param>

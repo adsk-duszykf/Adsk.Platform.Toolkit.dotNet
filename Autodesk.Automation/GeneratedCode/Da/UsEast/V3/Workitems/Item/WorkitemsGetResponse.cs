@@ -54,7 +54,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Item
 #else
         public global::Autodesk.Automation.Da.UsEast.V3.Workitems.Item.WorkitemsGetResponse_stats Stats { get; set; }
 #endif
-        /// <summary>Status value of a WorkItem.Possible values: ``pending``, ``inprogress``, ``cancelled``, ``failedLimitProcessingTime``, ``failedDownload``, ``failedInstructions``, ``failedUpload``, ``failedUploadOptional``, ``success``</summary>
+        /// <summary>Status value of a WorkItem.Possible values: `pending`, `inprogress`, `cancelled`, `failedLimitProcessingTime`, `failedDownload`, `failedInstructions`, `failedUpload`, `failedUploadOptional`, `success`</summary>
         public global::Autodesk.Automation.Da.UsEast.V3.Workitems.Item.WorkitemsGetResponse_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.Item.WorkitemsGetResponse"/> and sets the default values.

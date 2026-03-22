@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewc
         }
         /// <summary>
         /// Retrieves the view context around a set of assigned clash groups, such as the model set, and documents with which they are associated.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-get-assigned-clash-group-view-context-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse"/></returns>
         /// <param name="body">The request body</param>

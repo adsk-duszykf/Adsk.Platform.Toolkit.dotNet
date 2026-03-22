@@ -47,20 +47,21 @@ public class TransmittalsManager
     /// </example>
     public async IAsyncEnumerable<TransmittalsGetResponse_results> ListTransmittalsAsync(
         Guid projectId,
-        Action<RequestConfiguration<TransmittalsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<TransmittalsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Transmittals.V1.Projects[projectId]
                 .Transmittals
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -98,12 +99,16 @@ public class TransmittalsManager
     public async Task<WithTransmittalGetResponse?> GetTransmittalAsync(
         Guid projectId,
         Guid transmittalId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Transmittals.V1.Projects[projectId]
             .Transmittals[transmittalId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -126,13 +131,17 @@ public class TransmittalsManager
     public async Task<RecipientsGetResponse?> GetRecipientsAsync(
         Guid projectId,
         Guid transmittalId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Transmittals.V1.Projects[projectId]
             .Transmittals[transmittalId]
             .Recipients
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -155,13 +164,18 @@ public class TransmittalsManager
     public async Task<FoldersGetResponse?> GetFoldersAsync(
         Guid projectId,
         Guid transmittalId,
-        Action<RequestConfiguration<FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Transmittals.V1.Projects[projectId]
             .Transmittals[transmittalId]
             .Folders
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -184,12 +198,17 @@ public class TransmittalsManager
     public async Task<DocumentsGetResponse?> GetDocumentsAsync(
         Guid projectId,
         Guid transmittalId,
-        Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Transmittals.V1.Projects[projectId]
             .Transmittals[transmittalId]
             .Documents
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

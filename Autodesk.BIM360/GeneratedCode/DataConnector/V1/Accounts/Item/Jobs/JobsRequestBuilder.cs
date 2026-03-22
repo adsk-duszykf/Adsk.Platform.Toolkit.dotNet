@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs
         }
         /// <summary>
         /// Returns an array of Data Connector jobs spawned by requests from the authenticated user.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/data-connector-jobs-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

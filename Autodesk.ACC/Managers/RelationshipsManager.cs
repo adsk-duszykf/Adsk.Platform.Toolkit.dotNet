@@ -45,11 +45,15 @@ public class RelationshipsManager
     /// </code>
     /// </example>
     public async Task<RelationshipsWritableGetResponse?> GetWritableRelationshipTypesAsync(
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Utility.RelationshipsWritable
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -72,12 +76,16 @@ public class RelationshipsManager
     public async Task<RelationshipsPutResponse?> CreateRelationshipAsync(
         Guid containerId,
         RelationshipsPutRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .Relationships
-            .PutAsync(body, requestConfiguration, cancellationToken);
+            .PutAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -100,12 +108,16 @@ public class RelationshipsManager
     public async Task<WithRelationshipGetResponse?> GetRelationshipAsync(
         Guid containerId,
         Guid relationshipId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .Relationships[relationshipId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -128,12 +140,16 @@ public class RelationshipsManager
     public async Task<RelationshipsDeletePostResponse?> DeleteRelationshipsAsync(
         Guid containerId,
         RelationshipsDeletePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .RelationshipsDelete
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -154,12 +170,16 @@ public class RelationshipsManager
     /// </example>
     public async Task<RelationshipsSearchGetResponse?> SearchRelationshipsAsync(
         Guid containerId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .RelationshipsSearch
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -182,12 +202,16 @@ public class RelationshipsManager
     public async Task<RelationshipsBatchPostResponse?> BatchGetRelationshipsAsync(
         Guid containerId,
         RelationshipsBatchPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .RelationshipsBatch
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -210,12 +234,16 @@ public class RelationshipsManager
     public async Task<RelationshipsIntersectPostResponse?> IntersectRelationshipsAsync(
         Guid containerId,
         RelationshipsIntersectPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .RelationshipsIntersect
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -238,12 +266,16 @@ public class RelationshipsManager
     public async Task<RelationshipsSyncStatusPostResponse?> GetSyncStatusAsync(
         Guid containerId,
         RelationshipsSyncStatusPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .RelationshipsSyncStatus
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -266,11 +298,15 @@ public class RelationshipsManager
     public async Task<RelationshipsSyncPostResponse?> SyncRelationshipsAsync(
         Guid containerId,
         RelationshipsSyncPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Relationship.V2.Containers[containerId]
             .RelationshipsSync
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

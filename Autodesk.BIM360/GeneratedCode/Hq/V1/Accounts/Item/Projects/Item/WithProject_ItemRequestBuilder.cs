@@ -52,6 +52,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item
         }
         /// <summary>
         /// Query the details of a specific BIM 360 project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-:project_id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.WithProject_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,6 +71,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item
         }
         /// <summary>
         /// Update the properties of only the specified attributes of a specific BIM 360 project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-:project_id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.WithProject_PatchResponse"/></returns>
         /// <param name="body">The request body</param>

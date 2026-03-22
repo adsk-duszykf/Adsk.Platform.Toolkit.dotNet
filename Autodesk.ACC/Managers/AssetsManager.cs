@@ -59,20 +59,21 @@ public class AssetsManager
     /// </example>
     public async IAsyncEnumerable<AssetsGetResponse_results> ListAssetsAsync(
         string projectId,
-        Action<RequestConfiguration<AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        string? cursorState = null;
+        string? cursorState = requestConfiguration?.QueryParameters?.CursorState;
 
         while (true)
         {
-            var capturedCursor = cursorState;
             var response = await _api.Construction.Assets.V2.Projects[projectId]
                 .Assets
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.CursorState = capturedCursor;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursorState;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -109,12 +110,16 @@ public class AssetsManager
     public async Task<AssetsBatchCreatePostResponse?> BatchCreateAssetsAsync(
         string projectId,
         AssetsBatchCreatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V2.Projects[projectId]
             .AssetsBatchCreate
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -137,12 +142,17 @@ public class AssetsManager
     public async Task<AssetsBatchGetPostResponse?> BatchGetAssetsAsync(
         string projectId,
         AssetsBatchGetPostRequestBody body,
-        Action<RequestConfiguration<AssetsBatchGetRequestBuilder.AssetsBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AssetsBatchGetRequestBuilder.AssetsBatchGetRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V2.Projects[projectId]
             .AssetsBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -165,12 +175,16 @@ public class AssetsManager
     public async Task<AssetsBatchPatchPatchResponse?> BatchPatchAssetsAsync(
         string projectId,
         AssetsBatchPatchPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V2.Projects[projectId]
             .AssetsBatchPatch
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -193,12 +207,16 @@ public class AssetsManager
     public async Task BatchDeleteAssetsAsync(
         string projectId,
         AssetsBatchDeletePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Assets.V2.Projects[projectId]
             .AssetsBatchDelete
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -219,12 +237,17 @@ public class AssetsManager
     /// </example>
     public async Task<CategoriesGetResponse?> GetCategoriesAsync(
         string projectId,
-        Action<RequestConfiguration<CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .Categories
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -247,12 +270,17 @@ public class AssetsManager
     public async Task<CategoriesPostResponse?> CreateCategoryAsync(
         string projectId,
         CategoriesPostRequestBody body,
-        Action<RequestConfiguration<CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CategoriesRequestBuilder.CategoriesRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .Categories
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -275,12 +303,17 @@ public class AssetsManager
     public async Task<CategoriesBatchGetPostResponse?> BatchGetCategoriesAsync(
         string projectId,
         CategoriesBatchGetPostRequestBody body,
-        Action<RequestConfiguration<CategoriesBatchGetRequestBuilder.CategoriesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CategoriesBatchGetRequestBuilder.CategoriesBatchGetRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .CategoriesBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -305,13 +338,17 @@ public class AssetsManager
         string projectId,
         string categoryId,
         Guid statusStepSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .Categories[categoryId]
             .StatusStepSet[statusStepSetId]
-            .PutAsync(requestConfiguration, cancellationToken);
+            .PutAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -334,13 +371,18 @@ public class AssetsManager
     public async Task<CategoryCustomAttributes.CustomAttributesGetResponse?> GetCategoryCustomAttributesAsync(
         string projectId,
         string categoryId,
-        Action<RequestConfiguration<CategoryCustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CategoryCustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .Categories[categoryId]
             .CustomAttributes
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -365,13 +407,18 @@ public class AssetsManager
         string projectId,
         string categoryId,
         Guid customAttributeId,
-        Action<RequestConfiguration<CategoryCustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CategoryCustomAttributes.Item.WithCustomAttributeItemRequestBuilder.WithCustomAttributeItemRequestBuilderPutQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .Categories[categoryId]
             .CustomAttributes[customAttributeId]
-            .PutAsync(requestConfiguration, cancellationToken);
+            .PutAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -395,20 +442,21 @@ public class AssetsManager
     /// </example>
     public async IAsyncEnumerable<StatusStepSetsGetResponse_results> ListStatusStepSetsAsync(
         string projectId,
-        Action<RequestConfiguration<StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        string? cursorState = null;
+        string? cursorState = requestConfiguration?.QueryParameters?.CursorState;
 
         while (true)
         {
-            var capturedCursor = cursorState;
             var response = await _api.Construction.Assets.V1.Projects[projectId]
                 .StatusStepSets
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.CursorState = capturedCursor;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursorState;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -445,12 +493,17 @@ public class AssetsManager
     public async Task<StatusStepSetsPostResponse?> CreateStatusStepSetAsync(
         string projectId,
         StatusStepSetsPostRequestBody body,
-        Action<RequestConfiguration<StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<StatusStepSetsRequestBuilder.StatusStepSetsRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .StatusStepSets
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -473,12 +526,17 @@ public class AssetsManager
     public async Task<ProjectStatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse?> BatchGetStatusStepSetsAsync(
         string projectId,
         ProjectStatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body,
-        Action<RequestConfiguration<ProjectStatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ProjectStatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .StatusStepSetsBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -501,13 +559,18 @@ public class AssetsManager
     public async Task<Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse?> BatchGetCategoryStatusStepSetsAsync(
         string projectId,
         Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostRequestBody body,
-        Action<RequestConfiguration<Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Autodesk.ACC.Construction.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetRequestBuilder.StatusStepSetsBatchGetRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .CategoryStatusStepSets
             .StatusStepSetsBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -531,20 +594,21 @@ public class AssetsManager
     /// </example>
     public async IAsyncEnumerable<AssetStatusesGetResponse_results> ListAssetStatusesAsync(
         string projectId,
-        Action<RequestConfiguration<AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AssetStatusesRequestBuilder.AssetStatusesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        string? cursorState = null;
+        string? cursorState = requestConfiguration?.QueryParameters?.CursorState;
 
         while (true)
         {
-            var capturedCursor = cursorState;
             var response = await _api.Construction.Assets.V1.Projects[projectId]
                 .AssetStatuses
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.CursorState = capturedCursor;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursorState;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -581,12 +645,16 @@ public class AssetsManager
     public async Task<AssetStatusesPostResponse?> CreateAssetStatusAsync(
         string projectId,
         AssetStatusesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .AssetStatuses
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -609,12 +677,17 @@ public class AssetsManager
     public async Task<AssetStatusesBatchGetPostResponse?> BatchGetAssetStatusesAsync(
         string projectId,
         AssetStatusesBatchGetPostRequestBody body,
-        Action<RequestConfiguration<AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AssetStatusesBatchGetRequestBuilder.AssetStatusesBatchGetRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .AssetStatusesBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -638,19 +711,20 @@ public class AssetsManager
     /// </example>
     public async IAsyncEnumerable<ProjectCustomAttributes.CustomAttributesGetResponse_results> ListCustomAttributesAsync(
         string projectId,
-        Action<RequestConfiguration<ProjectCustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ProjectCustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        string? cursorState = null;
+        string? cursorState = requestConfiguration?.QueryParameters?.CursorState;
 
         while (true)
         {
-            var capturedCursor = cursorState;
             var response = await _api.Construction.Assets.V1.Projects[projectId].CustomAttributes
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.CursorState = capturedCursor;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursorState;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -687,12 +761,17 @@ public class AssetsManager
     public async Task<CustomAttributesPostResponse?> CreateCustomAttributeAsync(
         string projectId,
         CustomAttributesPostRequestBody body,
-        Action<RequestConfiguration<ProjectCustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ProjectCustomAttributes.CustomAttributesRequestBuilder.CustomAttributesRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .CustomAttributes
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -715,12 +794,17 @@ public class AssetsManager
     public async Task<CustomAttributesBatchGetPostResponse?> BatchGetCustomAttributesAsync(
         string projectId,
         CustomAttributesBatchGetPostRequestBody body,
-        Action<RequestConfiguration<CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CustomAttributesBatchGetRequestBuilder.CustomAttributesBatchGetRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .CustomAttributesBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -745,12 +829,16 @@ public class AssetsManager
         string projectId,
         Guid customAttributeId,
         WithCustomAttributePatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.Projects[projectId]
             .CustomAttributes[customAttributeId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -769,11 +857,15 @@ public class AssetsManager
     /// </code>
     /// </example>
     public async Task<ErrorCodesGetResponse?> GetErrorCodesAsync(
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.ErrorCodes
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -794,10 +886,14 @@ public class AssetsManager
     /// </example>
     public async Task<WithErrorCodeNameGetResponse?> GetErrorCodeAsync(
         string errorCodeName,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Assets.V1.ErrorCodes[errorCodeName]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

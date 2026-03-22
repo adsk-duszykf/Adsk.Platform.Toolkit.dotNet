@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         }
         /// <summary>
         /// Returns all twins for the given group.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-groups-groupID-twins-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Twins
         }
         /// <summary>
         /// Creates a new twin according to the given definition.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-twins-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Groups.Item.Twins.TwinsPostResponse"/></returns>
         /// <param name="body">The request body</param>

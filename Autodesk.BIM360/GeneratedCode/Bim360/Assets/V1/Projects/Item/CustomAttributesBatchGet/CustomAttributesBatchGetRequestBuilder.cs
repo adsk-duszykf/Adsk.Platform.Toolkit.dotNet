@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGe
         }
         /// <summary>
         /// Returns a specified set of custom attributes.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-custom-attributes-batch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributesBatchGet.CustomAttributesBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

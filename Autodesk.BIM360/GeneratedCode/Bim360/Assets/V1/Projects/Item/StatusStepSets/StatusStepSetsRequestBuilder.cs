@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
         }
         /// <summary>
         /// Searches for and returns all specified status sets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-status-step-sets-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets
         }
         /// <summary>
         /// Creates a new status set.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-status-step-sets-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.StatusStepSets.StatusStepSetsPostResponse"/></returns>
         /// <param name="body">The request body</param>

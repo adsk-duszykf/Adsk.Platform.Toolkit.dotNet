@@ -55,12 +55,16 @@ public class TakeoffManager
     /// </example>
     public async Task<SettingsGetResponse?> GetSettingsAsync(
         Guid projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .Settings
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -84,12 +88,16 @@ public class TakeoffManager
     public async Task<SettingsPatchResponse?> UpdateSettingsAsync(
         Guid projectId,
         SettingsPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .Settings
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -113,20 +121,21 @@ public class TakeoffManager
     /// </example>
     public async IAsyncEnumerable<ClassificationSystemsGetResponse_results> ListClassificationSystemsAsync(
         Guid projectId,
-        Action<RequestConfiguration<ClassificationSystemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ClassificationSystemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Takeoff.V1.Projects[projectId]
                 .ClassificationSystems
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -165,12 +174,16 @@ public class TakeoffManager
     public async Task<ClassificationSystemsPostResponse?> CreateClassificationSystemAsync(
         Guid projectId,
         ClassificationSystemsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .ClassificationSystems
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -193,12 +206,16 @@ public class TakeoffManager
     public async Task<WithSystemGetResponse?> GetClassificationSystemAsync(
         Guid projectId,
         Guid systemId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .ClassificationSystems[systemId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -221,12 +238,16 @@ public class TakeoffManager
     public async Task DeleteClassificationSystemAsync(
         Guid projectId,
         Guid systemId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Takeoff.V1.Projects[projectId]
             .ClassificationSystems[systemId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -252,21 +273,22 @@ public class TakeoffManager
     public async IAsyncEnumerable<ClassificationsGetResponse_results> ListClassificationsAsync(
         Guid projectId,
         Guid systemId,
-        Action<RequestConfiguration<ClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ClassificationsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Takeoff.V1.Projects[projectId]
                 .ClassificationSystems[systemId]
                 .Classifications
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -307,13 +329,17 @@ public class TakeoffManager
         Guid projectId,
         Guid systemId,
         ClassificationsImportPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .ClassificationSystems[systemId]
             .ClassificationsImport
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -337,20 +363,21 @@ public class TakeoffManager
     /// </example>
     public async IAsyncEnumerable<PackagesGetResponse_results> ListPackagesAsync(
         Guid projectId,
-        Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<PackagesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Takeoff.V1.Projects[projectId]
                 .Packages
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -389,12 +416,16 @@ public class TakeoffManager
     public async Task<PackagesPostResponse?> CreatePackageAsync(
         Guid projectId,
         PackagesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .Packages
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -417,12 +448,16 @@ public class TakeoffManager
     public async Task<WithPackageGetResponse?> GetPackageAsync(
         Guid projectId,
         Guid packageId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .Packages[packageId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -448,12 +483,16 @@ public class TakeoffManager
         Guid projectId,
         Guid packageId,
         WithPackagePatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .Packages[packageId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -479,21 +518,22 @@ public class TakeoffManager
     public async IAsyncEnumerable<TakeoffTypesGetResponse_results> ListTakeoffTypesAsync(
         Guid projectId,
         Guid packageId,
-        Action<RequestConfiguration<TakeoffTypesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<TakeoffTypesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Takeoff.V1.Projects[projectId]
                 .Packages[packageId]
                 .TakeoffTypes
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -533,13 +573,17 @@ public class TakeoffManager
         Guid projectId,
         Guid packageId,
         Guid takeoffTypeId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .Packages[packageId]
             .TakeoffTypes[takeoffTypeId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -565,21 +609,22 @@ public class TakeoffManager
     public async IAsyncEnumerable<TakeoffItemsGetResponse_results> ListTakeoffItemsAsync(
         Guid projectId,
         Guid packageId,
-        Action<RequestConfiguration<TakeoffItemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<TakeoffItemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Takeoff.V1.Projects[projectId]
                 .Packages[packageId]
                 .TakeoffItems
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -619,13 +664,17 @@ public class TakeoffManager
         Guid projectId,
         Guid packageId,
         Guid takeoffItemId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Takeoff.V1.Projects[projectId]
             .Packages[packageId]
             .TakeoffItems[takeoffItemId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -649,20 +698,21 @@ public class TakeoffManager
     /// </example>
     public async IAsyncEnumerable<ContentViewsGetResponse_results> ListContentViewsAsync(
         Guid projectId,
-        Action<RequestConfiguration<ContentViewsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ContentViewsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Takeoff.V1.Projects[projectId]
                 .ContentViews
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })

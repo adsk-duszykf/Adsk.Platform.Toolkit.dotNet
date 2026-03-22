@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel
         }
         /// <summary>
         /// Creates a default model for the facility. The default model hosts streams, user-initiated elements, and custom geometry creation.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-defaultmodel-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Defaultmodel.DefaultmodelPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Atta
         }
         /// <summary>
         /// Deletes the specified bid attachment under the following conditions:
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bids-attachments-attachmentId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchCreate
         }
         /// <summary>
         /// Creates a set of new assets.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-assets-batch-create-POST-v2" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.AssetsBatchCreate.AssetsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

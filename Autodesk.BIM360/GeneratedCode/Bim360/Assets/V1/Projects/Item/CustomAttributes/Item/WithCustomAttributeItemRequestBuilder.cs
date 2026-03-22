@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item
         }
         /// <summary>
         /// Updates an Asset custom attribute.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-custom-attributes-custom-attribute-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.Item.WithCustomAttributePatchResponse"/></returns>
         /// <param name="body">The request body</param>

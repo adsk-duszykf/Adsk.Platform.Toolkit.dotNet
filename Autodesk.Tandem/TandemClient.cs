@@ -1,3 +1,5 @@
+using Autodesk.Tandem.Managers;
+
 namespace Autodesk.Tandem;
 
 /// <summary>
@@ -15,6 +17,15 @@ public class TandemClient
         var adapter = Common.HttpClientLibrary.HttpClientFactory.CreateAdapter(getAccessToken, httpClient);
 
         Api = new BaseTandemClient(adapter);
+
+        TwinsManager = new TwinsManager(Api);
+        GroupsManager = new GroupsManager(Api);
+        ModeldataManager = new ModeldataManager(Api);
+        StreamsManager = new StreamsManager(Api);
+        StreamConfigsManager = new StreamConfigsManager(Api);
+        DocumentsManager = new DocumentsManager(Api);
+        TemplatesManager = new TemplatesManager(Api);
+        ViewsManager = new ViewsManager(Api);
     }
 
     /// <summary>
@@ -23,28 +34,43 @@ public class TandemClient
     public BaseTandemClient Api { get; protected set; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/tandem/v1/groups/*
+    /// Manager for Twins operations (get, create, history, users, default model).
     /// </summary>
-    public Tandem.V1.Groups.GroupsRequestBuilder Groups => Api.Tandem.V1.Groups;
+    public TwinsManager TwinsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/tandem/v1/modeldata/*
+    /// Manager for Groups operations (list, get, history, user management).
     /// </summary>
-    public Tandem.V1.Modeldata.ModeldataRequestBuilder Modeldata => Api.Tandem.V1.Modeldata;
+    public GroupsManager GroupsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/tandem/v1/models/*
+    /// Manager for Modeldata operations (create, mutate, scan, schema, history).
     /// </summary>
-    public Tandem.V1.ModelsRequests.ModelsRequestBuilder Models => Api.Tandem.V1.Models;
+    public ModeldataManager ModeldataManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/tandem/v1/timeseries/*
+    /// Manager for Streams operations (time series data ingestion and retrieval).
     /// </summary>
-    public Tandem.V1.Timeseries.TimeseriesRequestBuilder Timeseries => Api.Tandem.V1.Timeseries;
+    public StreamsManager StreamsManager { get; }
 
     /// <summary>
-    /// Shortcut to endpoints https://developer.api.autodesk.com/tandem/v1/twins/*
+    /// Manager for Stream Configs operations (list, get, update configurations).
     /// </summary>
-    public Tandem.V1.Twins.TwinsRequestBuilder Twins => Api.Tandem.V1.Twins;
+    public StreamConfigsManager StreamConfigsManager { get; }
+
+    /// <summary>
+    /// Manager for Documents operations (create, get, delete documents).
+    /// </summary>
+    public DocumentsManager DocumentsManager { get; }
+
+    /// <summary>
+    /// Manager for Templates operations (get twin templates).
+    /// </summary>
+    public TemplatesManager TemplatesManager { get; }
+
+    /// <summary>
+    /// Manager for Views operations (get saved views).
+    /// </summary>
+    public ViewsManager ViewsManager { get; }
 
 }

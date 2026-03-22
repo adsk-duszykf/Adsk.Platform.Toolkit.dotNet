@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         }
         /// <summary>
         /// Creates multiple scope-specific bid form line items. Max 2000 line items per call.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-scope-specific-bid-forms-formId-line-items-batch-create-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpecificBidForms.Item.LineItemsBatchCreate.LineItemsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

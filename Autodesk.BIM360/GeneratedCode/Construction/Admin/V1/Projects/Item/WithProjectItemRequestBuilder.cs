@@ -40,6 +40,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
         }
         /// <summary>
         /// Retrieves a project specified by project ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-projectsprojectId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.WithProjectGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

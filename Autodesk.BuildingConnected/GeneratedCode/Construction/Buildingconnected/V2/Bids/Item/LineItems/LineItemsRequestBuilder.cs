@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item
         }
         /// <summary>
         /// Retrieves a list of all of the specified bid&apos;s line items.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bids-bidId-line-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.LineItems.LineItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

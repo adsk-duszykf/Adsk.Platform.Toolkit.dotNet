@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Updates fields in multiple bid packages. The requesting user must be a member of the project team.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-bidPackageId-batch-patch-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackagesBatchPatch.BidPackagesBatchPatchPatchResponse"/></returns>
         /// <param name="body">The request body</param>

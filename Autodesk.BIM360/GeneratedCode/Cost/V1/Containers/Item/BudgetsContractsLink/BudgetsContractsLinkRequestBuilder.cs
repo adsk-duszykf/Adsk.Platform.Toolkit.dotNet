@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.BudgetsContractsLink
         }
         /// <summary>
         /// Link or unlink one or multiple budgets with one or multiple contracts. After budgets and contracts are linked, Contract Schedule of Values will be created.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-budgets-contractslink-POST" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

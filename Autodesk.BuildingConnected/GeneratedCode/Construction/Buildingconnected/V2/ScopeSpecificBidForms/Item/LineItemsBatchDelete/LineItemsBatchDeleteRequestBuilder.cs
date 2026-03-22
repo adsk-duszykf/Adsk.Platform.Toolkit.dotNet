@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ScopeSpec
         }
         /// <summary>
         /// Deletes multiple scope-specific bid form line items. Max 2000 line items per call.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-scope-specific-bid-forms-formId-line-items-batch-delete-POST" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

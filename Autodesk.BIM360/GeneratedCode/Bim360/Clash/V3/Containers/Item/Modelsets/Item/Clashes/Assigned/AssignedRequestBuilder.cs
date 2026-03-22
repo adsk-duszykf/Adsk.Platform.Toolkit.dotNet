@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
         }
         /// <summary>
         /// Retrieves a list of assigned clash groups in a given model set which match the provided search parameters.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-search-container-issue-clash-groups-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

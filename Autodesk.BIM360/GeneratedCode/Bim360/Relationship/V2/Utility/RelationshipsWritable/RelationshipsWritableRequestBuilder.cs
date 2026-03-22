@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable
         }
         /// <summary>
         /// Retrieves a list of entity types that are compatible with each other, to establish whether you can create relationships between them or to delete those relationships.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/relationship-service-v2-get-writable-relationship-domains-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Utility.RelationshipsWritable.RelationshipsWritableGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

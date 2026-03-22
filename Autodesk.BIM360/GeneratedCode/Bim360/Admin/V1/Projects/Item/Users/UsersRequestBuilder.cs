@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users
         }
         /// <summary>
         /// Retrieves information about all the users in a project. To get information about all the users in an account, see [GET accounts/users](https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-GET/).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-v1-projects-projectId-users-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Admin.V1.Projects.Item.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

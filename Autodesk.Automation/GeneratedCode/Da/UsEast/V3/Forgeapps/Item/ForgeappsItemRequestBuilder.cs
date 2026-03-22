@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Forgeapps.Item
         }
         /// <summary>
         /// Delete all data associated with the given app.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/forgeapps-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Forgeapps.Item
         }
         /// <summary>
         /// Return the given app&apos;s nickname.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/forgeapps-id-GET" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Forgeapps.Item
         }
         /// <summary>
         /// Creates/updates the nickname for the current app.  The nickname is
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/forgeapps-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

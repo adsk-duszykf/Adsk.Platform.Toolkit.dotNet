@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Views
         }
         /// <summary>
         /// Returns list of saved views for a given twin.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-views-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Views.ViewsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Properties
         }
         /// <summary>
         /// Lists all the attribute definitions created to define custom attributes for a given module.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-properties-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Properties.PropertiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

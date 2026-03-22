@@ -30,7 +30,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users
             get => new global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Autodesk.BIM360.hq.v1.accounts.item.users.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The user&apos;s BIM 360 ID. A user is assigned a BIM 360 ID (`id`) for all BIM 360 accounts and projects. To verify the ID, call GET users.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.Item.WithUser_ItemRequestBuilder this[Guid position]
         {
@@ -59,6 +59,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users
         }
         /// <summary>
         /// Query all the users in a specific BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,6 +78,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users
         }
         /// <summary>
         /// Create a new user in the BIM 360 member directory.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/users-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Users.UsersPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -151,6 +153,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
         {
+            /// <summary>Comma-separated fields to include in response. id will always be returned. Invalid fields will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("field")]
@@ -160,10 +163,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Users
             [QueryParameter("field")]
             public string Field { get; set; }
 #endif
+            /// <summary>Response array&apos;s size. Default value: 10. Max limit: 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Offset of response array. Default value: 0.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Comma-separated fields to sort by in ascending order. Prepending a field with - sorts in descending order. Invalid fields and whitespaces will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

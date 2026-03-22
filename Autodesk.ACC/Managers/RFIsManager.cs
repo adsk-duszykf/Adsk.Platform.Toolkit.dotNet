@@ -56,12 +56,16 @@ public class RFIsManager
     public async Task<SearchRfisPostResponse?> SearchRfisAsync(
         string projectId,
         SearchRfisPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .SearchRfis
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -84,12 +88,16 @@ public class RFIsManager
     public async Task<WithRfiGetResponse?> GetRfiAsync(
         string projectId,
         string rfiId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis[rfiId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -112,12 +120,16 @@ public class RFIsManager
     public async Task<RfisPostResponse?> CreateRfiAsync(
         string projectId,
         RfisPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -142,12 +154,16 @@ public class RFIsManager
         string projectId,
         string rfiId,
         WithRfiPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis[rfiId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -168,13 +184,17 @@ public class RFIsManager
     /// </example>
     public async Task<CustomIdentifierGetResponse?> GetCustomIdentifierAsync(
         string projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis
             .CustomIdentifier
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -195,12 +215,17 @@ public class RFIsManager
     /// </example>
     public async Task<RfiTypesGetResponse?> GetRfiTypesAsync(
         string projectId,
-        Action<RequestConfiguration<RfiTypesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<RfiTypesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .RfiTypes
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -221,12 +246,17 @@ public class RFIsManager
     /// </example>
     public async Task<AttributesGetResponse?> GetAttributesAsync(
         string projectId,
-        Action<RequestConfiguration<AttributesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AttributesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Attributes
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -249,12 +279,16 @@ public class RFIsManager
     public async Task<AttributesPostResponse?> CreateAttributeAsync(
         string projectId,
         AttributesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Attributes
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -279,12 +313,16 @@ public class RFIsManager
         string projectId,
         string attributeId,
         WithAttributePatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Attributes[attributeId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -307,13 +345,18 @@ public class RFIsManager
     public async Task<AttachmentsGetResponse?> GetRfiAttachmentsAsync(
         string projectId,
         string rfiId,
-        Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis[rfiId]
             .Attachments
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -338,13 +381,17 @@ public class RFIsManager
         string projectId,
         string rfiId,
         ResponsesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis[rfiId]
             .Responses
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -371,13 +418,17 @@ public class RFIsManager
         string rfiId,
         string responseId,
         WithResponsePatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis[rfiId]
             .Responses[responseId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -400,13 +451,18 @@ public class RFIsManager
     public async Task<CommentsGetResponse?> GetRfiCommentsAsync(
         string projectId,
         string rfiId,
-        Action<RequestConfiguration<CommentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CommentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis[rfiId]
             .Comments
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -431,13 +487,17 @@ public class RFIsManager
         string projectId,
         string rfiId,
         CommentsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Rfis[rfiId]
             .Comments
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -458,13 +518,17 @@ public class RFIsManager
     /// </example>
     public async Task<MeGetResponse?> GetCurrentUserAsync(
         string projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Users
             .Me
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -485,11 +549,15 @@ public class RFIsManager
     /// </example>
     public async Task<WorkflowGetResponse?> GetWorkflowAsync(
         string projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Rfis.V3.Projects[projectId]
             .Workflow
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

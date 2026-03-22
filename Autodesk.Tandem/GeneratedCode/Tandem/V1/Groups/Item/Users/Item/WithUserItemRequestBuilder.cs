@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Groups.Item.Users.Item
         }
         /// <summary>
         /// Add user to the given group.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-groups-groupID-users-userID-PUT" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

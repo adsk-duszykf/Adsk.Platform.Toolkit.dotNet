@@ -7,10 +7,6 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithTestGetResponse_status
     {
-        [EnumMember(Value = "Success")]
-        #pragma warning disable CS1591
-        Success,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Pending")]
         #pragma warning disable CS1591
         Pending,
@@ -18,6 +14,10 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item
         [EnumMember(Value = "Processing")]
         #pragma warning disable CS1591
         Processing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Success")]
+        #pragma warning disable CS1591
+        Success,
         #pragma warning restore CS1591
         [EnumMember(Value = "Failed")]
         #pragma warning disable CS1591

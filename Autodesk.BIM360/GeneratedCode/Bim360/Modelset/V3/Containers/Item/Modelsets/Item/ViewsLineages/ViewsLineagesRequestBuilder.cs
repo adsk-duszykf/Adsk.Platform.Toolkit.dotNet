@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.View
         }
         /// <summary>
         /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-search-model-set-view-lineages-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesPostResponse"/></returns>
         /// <param name="body">The request body</param>

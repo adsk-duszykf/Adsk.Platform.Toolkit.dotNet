@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
         }
         /// <summary>
         /// Deletes an indirect cost from the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-projectId-costs-costId-POST" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
         }
         /// <summary>
         /// Updates an indirect cost item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-projectId-costs-costId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.Item.Costs.Item.WithCostPatchResponse"/></returns>
         /// <param name="body">The request body</param>

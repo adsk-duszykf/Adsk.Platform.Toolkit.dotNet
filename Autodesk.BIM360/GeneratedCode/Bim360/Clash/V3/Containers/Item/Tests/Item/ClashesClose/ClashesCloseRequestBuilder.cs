@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClos
         }
         /// <summary>
         /// Adds a batch of new closed clash groups to the given clash test.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-add-closed-clash-group-batch-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesClosePostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -16,7 +16,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Forgeapps
     public partial class ForgeappsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.Automation.da.usEast.v3.forgeapps.item collection</summary>
-        /// <param name="position">Must be ``me`` for the call to succeed.</param>
+        /// <param name="position">Must be `me` for the call to succeed.</param>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Forgeapps.Item.ForgeappsItemRequestBuilder"/></returns>
         public global::Autodesk.Automation.Da.UsEast.V3.Forgeapps.Item.ForgeappsItemRequestBuilder this[string position]
         {

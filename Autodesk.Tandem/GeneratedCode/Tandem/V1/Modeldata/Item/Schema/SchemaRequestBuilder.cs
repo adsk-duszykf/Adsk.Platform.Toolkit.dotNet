@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Schema
         }
         /// <summary>
         /// Returns a model schema for a given model.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-schema-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Schema.SchemaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

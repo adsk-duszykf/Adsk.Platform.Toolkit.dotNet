@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses
         }
         /// <summary>
         /// Retrieves the requested set of expenses in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-expenses-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.ExpensesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Expenses
         }
         /// <summary>
         /// Creates an expense in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-expenses-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Expenses.ExpensesPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -82,18 +82,19 @@ public class CostManager
     /// </example>
     public async IAsyncEnumerable<BudgetsGetResponse_results> ListBudgetsAsync(
         Guid containerId,
-        Action<RequestConfiguration<BudgetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<BudgetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Cost.V1.Containers[containerId].Budgets
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -127,10 +128,15 @@ public class CostManager
     /// </example>
     public async Task<BudgetsGetResponse?> GetBudgetsAsync(
         Guid containerId,
-        Action<RequestConfiguration<BudgetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<BudgetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Budgets.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Budgets.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -153,10 +159,15 @@ public class CostManager
     public async Task<BudgetsPostResponse?> CreateBudgetAsync(
         Guid containerId,
         BudgetsPostRequestBody body,
-        Action<RequestConfiguration<BudgetsRequestBuilder.BudgetsRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<BudgetsRequestBuilder.BudgetsRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Budgets.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Budgets.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -179,10 +190,15 @@ public class CostManager
     public async Task<WithBudgetGetResponse?> GetBudgetAsync(
         Guid containerId,
         string budgetId,
-        Action<RequestConfiguration<WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Budgets[budgetId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Budgets[budgetId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -207,10 +223,15 @@ public class CostManager
         Guid containerId,
         string budgetId,
         WithBudgetPatchRequestBody body,
-        Action<RequestConfiguration<WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderPatchQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Budgets[budgetId].PatchAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Budgets[budgetId].PatchAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -233,10 +254,15 @@ public class CostManager
     public async Task DeleteBudgetAsync(
         Guid containerId,
         string budgetId,
-        Action<RequestConfiguration<WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithBudgetItemRequestBuilder.WithBudgetItemRequestBuilderDeleteQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].Budgets[budgetId].DeleteAsync(requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].Budgets[budgetId].DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -259,10 +285,15 @@ public class CostManager
     public async Task ImportBudgetsAsync(
         Guid containerId,
         BudgetsImportPostRequestBody body,
-        Action<RequestConfiguration<CostCont.BudgetsImport.BudgetsImportRequestBuilder.BudgetsImportRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CostCont.BudgetsImport.BudgetsImportRequestBuilder.BudgetsImportRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].BudgetsImport.PostAsync(body, requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].BudgetsImport.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -285,10 +316,14 @@ public class CostManager
     public async Task<Stream?> LinkBudgetsContractsAsync(
         Guid containerId,
         BudgetsContractsLinkPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].BudgetsContractsLink.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].BudgetsContractsLink.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -313,10 +348,14 @@ public class CostManager
     /// </example>
     public async Task<ChangeOrdersGetResponse?> GetChangeOrdersAsync(
         Guid containerId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].ChangeOrders.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].ChangeOrders.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -342,18 +381,19 @@ public class CostManager
     public async IAsyncEnumerable<WithChangeOrderGetResponse_results> ListChangeOrdersByTypeAsync(
         Guid containerId,
         string changeOrderType,
-        Action<RequestConfiguration<WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithChangeOrderItemRequestBuilder.WithChangeOrderItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType]
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -391,10 +431,14 @@ public class CostManager
         Guid containerId,
         string changeOrderType,
         WithChangeOrderPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType].PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType].PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -419,10 +463,15 @@ public class CostManager
         Guid containerId,
         string changeOrderType,
         Guid changeOrderId,
-        Action<RequestConfiguration<ChangeOrderItemRequestBuilder.ChangeOrderItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ChangeOrderItemRequestBuilder.ChangeOrderItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType][changeOrderId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType][changeOrderId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -449,10 +498,14 @@ public class CostManager
         string changeOrderType,
         Guid changeOrderId,
         ChangeOrderPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType][changeOrderId].PatchAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType][changeOrderId].PatchAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -477,10 +530,14 @@ public class CostManager
         Guid containerId,
         string changeOrderType,
         Guid changeOrderId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType][changeOrderId].DeleteAsync(requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].ChangeOrders[changeOrderType][changeOrderId].DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -508,18 +565,19 @@ public class CostManager
     /// </example>
     public async IAsyncEnumerable<ContractsGetResponse_results> ListContractsAsync(
         Guid containerId,
-        Action<RequestConfiguration<ContractsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ContractsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Cost.V1.Containers[containerId].Contracts
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -555,10 +613,14 @@ public class CostManager
     public async Task<ContractsPostResponse?> CreateContractAsync(
         Guid containerId,
         ContractsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Contracts.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Contracts.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -581,10 +643,15 @@ public class CostManager
     public async Task<WithContractGetResponse?> GetContractAsync(
         Guid containerId,
         string contractId,
-        Action<RequestConfiguration<WithContractItemRequestBuilder.WithContractItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithContractItemRequestBuilder.WithContractItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Contracts[contractId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Contracts[contractId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -609,10 +676,14 @@ public class CostManager
         Guid containerId,
         string contractId,
         WithContractPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Contracts[contractId].PatchAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Contracts[contractId].PatchAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -635,10 +706,14 @@ public class CostManager
     public async Task DeleteContractAsync(
         Guid containerId,
         string contractId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].Contracts[contractId].DeleteAsync(requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].Contracts[contractId].DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -666,18 +741,19 @@ public class CostManager
     /// </example>
     public async IAsyncEnumerable<CostItemsGetResponse_results> ListCostItemsAsync(
         Guid containerId,
-        Action<RequestConfiguration<CostItemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CostItemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Cost.V1.Containers[containerId].CostItems
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -713,10 +789,14 @@ public class CostManager
     public async Task<CostItemsPostResponse?> CreateCostItemAsync(
         Guid containerId,
         CostItemsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].CostItems.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].CostItems.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -739,10 +819,14 @@ public class CostManager
     public async Task<CostItemsBatchCreatePostResponse?> BatchCreateCostItemsAsync(
         Guid containerId,
         CostItemsBatchCreatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].CostItemsBatchCreate.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].CostItemsBatchCreate.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -765,10 +849,14 @@ public class CostManager
     public async Task<CostItemsAttachPostResponse?> AttachCostItemsAsync(
         Guid containerId,
         CostItemsAttachPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].CostItemsAttach.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].CostItemsAttach.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -791,10 +879,14 @@ public class CostManager
     public async Task<CostItemsDetachPostResponse?> DetachCostItemsAsync(
         Guid containerId,
         CostItemsDetachPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].CostItemsDetach.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].CostItemsDetach.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -817,10 +909,15 @@ public class CostManager
     public async Task<WithCostItemGetResponse?> GetCostItemAsync(
         Guid containerId,
         string costItemId,
-        Action<RequestConfiguration<WithCostItemItemRequestBuilder.WithCostItemItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithCostItemItemRequestBuilder.WithCostItemItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].CostItems[costItemId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].CostItems[costItemId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -845,10 +942,14 @@ public class CostManager
         Guid containerId,
         string costItemId,
         WithCostItemPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].CostItems[costItemId].PatchAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].CostItems[costItemId].PatchAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -871,10 +972,14 @@ public class CostManager
     public async Task DeleteCostItemAsync(
         Guid containerId,
         string costItemId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].CostItems[costItemId].DeleteAsync(requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].CostItems[costItemId].DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -902,18 +1007,19 @@ public class CostManager
     /// </example>
     public async IAsyncEnumerable<ExpensesGetResponse_results> ListExpensesAsync(
         Guid containerId,
-        Action<RequestConfiguration<ExpensesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ExpensesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Cost.V1.Containers[containerId].Expenses
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -949,10 +1055,14 @@ public class CostManager
     public async Task<ExpensesPostResponse?> CreateExpenseAsync(
         Guid containerId,
         ExpensesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Expenses.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Expenses.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -975,10 +1085,15 @@ public class CostManager
     public async Task<CostCont.Expenses.Item.ExpenseGetResponse?> GetExpenseAsync(
         Guid containerId,
         string expenseId,
-        Action<RequestConfiguration<CostCont.Expenses.Item.ExpenseItemRequestBuilder.ExpenseItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CostCont.Expenses.Item.ExpenseItemRequestBuilder.ExpenseItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1003,10 +1118,14 @@ public class CostManager
         Guid containerId,
         string expenseId,
         CostCont.Expenses.Item.ExpensePatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].PatchAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].PatchAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1029,10 +1148,14 @@ public class CostManager
     public async Task DeleteExpenseAsync(
         Guid containerId,
         string expenseId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].Expenses[expenseId].DeleteAsync(requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].Expenses[expenseId].DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1055,10 +1178,15 @@ public class CostManager
     public async Task<CostCont.Expenses.Item.Items.ItemsGetResponse?> GetExpenseItemsAsync(
         Guid containerId,
         string expenseId,
-        Action<RequestConfiguration<CostCont.Expenses.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CostCont.Expenses.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1083,10 +1211,14 @@ public class CostManager
         Guid containerId,
         string expenseId,
         CostCont.Expenses.Item.Items.ItemsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1111,10 +1243,15 @@ public class CostManager
         Guid containerId,
         string expenseId,
         string itemId,
-        Action<RequestConfiguration<CostCont.Expenses.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CostCont.Expenses.Item.Items.Item.ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items[itemId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items[itemId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1141,10 +1278,14 @@ public class CostManager
         string expenseId,
         string itemId,
         CostCont.Expenses.Item.Items.Item.ItemsPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items[itemId].PatchAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items[itemId].PatchAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1169,10 +1310,14 @@ public class CostManager
         Guid containerId,
         string expenseId,
         string itemId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items[itemId].DeleteAsync(requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].Expenses[expenseId].Items[itemId].DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -1197,10 +1342,15 @@ public class CostManager
     /// </example>
     public async Task<MainContractsGetResponse?> GetMainContractsAsync(
         Guid containerId,
-        Action<RequestConfiguration<MainContractsRequestBuilder.MainContractsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<MainContractsRequestBuilder.MainContractsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].MainContracts.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].MainContracts.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1223,10 +1373,15 @@ public class CostManager
     public async Task<CostCont.MainContracts.Item.GetResponse?> GetMainContractAsync(
         Guid containerId,
         Guid mainContractId,
-        Action<RequestConfiguration<CostCont.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CostCont.MainContracts.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].MainContracts[mainContractId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].MainContracts[mainContractId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -1251,10 +1406,15 @@ public class CostManager
     /// </example>
     public async Task<PaymentItemsGetResponse?> GetPaymentItemsAsync(
         Guid containerId,
-        Action<RequestConfiguration<PaymentItemsRequestBuilder.PaymentItemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<PaymentItemsRequestBuilder.PaymentItemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].PaymentItems.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].PaymentItems.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1275,10 +1435,15 @@ public class CostManager
     /// </example>
     public async Task<PaymentsGetResponse?> GetPaymentsAsync(
         Guid containerId,
-        Action<RequestConfiguration<PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<PaymentsRequestBuilder.PaymentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Payments.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Payments.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -1306,18 +1471,19 @@ public class CostManager
     /// </example>
     public async IAsyncEnumerable<AttachmentsGetResponse_results> ListAttachmentsAsync(
         Guid containerId,
-        Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Cost.V1.Containers[containerId].Attachments
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -1343,10 +1509,14 @@ public class CostManager
     public async Task<AttachmentsBatchCreatePostResponse?> BatchCreateAttachmentsAsync(
         Guid containerId,
         AttachmentsBatchCreatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].AttachmentsBatchCreate.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].AttachmentsBatchCreate.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1369,10 +1539,14 @@ public class CostManager
     public async Task<AttachmentsPostResponse?> CreateAttachmentAsync(
         Guid containerId,
         AttachmentsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Attachments.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Attachments.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1395,10 +1569,14 @@ public class CostManager
     public async Task DeleteAttachmentAsync(
         Guid containerId,
         string attachmentId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        await _api.Cost.V1.Containers[containerId].Attachments[attachmentId].DeleteAsync(requestConfiguration, cancellationToken);
+        await _api.Cost.V1.Containers[containerId].Attachments[attachmentId].DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1421,10 +1599,14 @@ public class CostManager
     public async Task<AttachmentFoldersPostResponse?> CreateAttachmentFolderAsync(
         Guid containerId,
         AttachmentFoldersPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].AttachmentFolders.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].AttachmentFolders.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -1449,10 +1631,15 @@ public class CostManager
     /// </example>
     public async Task<PropertiesGetResponse?> GetPropertiesAsync(
         Guid containerId,
-        Action<RequestConfiguration<Autodesk.ACC.Cost.V1.Containers.Item.Properties.PropertiesRequestBuilder.PropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Autodesk.ACC.Cost.V1.Containers.Item.Properties.PropertiesRequestBuilder.PropertiesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Properties.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Properties.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1475,10 +1662,14 @@ public class CostManager
     public async Task<PropertyValuesBatchUpdatePostResponse?> BatchUpdatePropertyValuesAsync(
         Guid containerId,
         PropertyValuesBatchUpdatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].PropertyValuesBatchUpdate.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].PropertyValuesBatchUpdate.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1499,10 +1690,15 @@ public class CostManager
     /// </example>
     public async Task<SegmentValuesGetResponse?> GetSegmentValuesAsync(
         Guid containerId,
-        Action<RequestConfiguration<SegmentValuesRequestBuilder.SegmentValuesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<SegmentValuesRequestBuilder.SegmentValuesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].SegmentValues.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].SegmentValues.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1515,10 +1711,15 @@ public class CostManager
     public async Task<ValuesGetResponse?> GetSegmentValuesBySegmentAsync(
         Guid containerId,
         Guid segmentId,
-        Action<RequestConfiguration<ValuesRequestBuilder.ValuesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ValuesRequestBuilder.ValuesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Segments[segmentId].Values.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Segments[segmentId].Values.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1543,10 +1744,14 @@ public class CostManager
         Guid containerId,
         Guid segmentId,
         ValuesImportPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Segments[segmentId].ValuesImport.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Segments[segmentId].ValuesImport.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1571,10 +1776,14 @@ public class CostManager
         Guid containerId,
         Guid segmentId,
         string valueId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Segments[segmentId].Values[valueId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Segments[segmentId].Values[valueId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1595,10 +1804,14 @@ public class CostManager
     /// </example>
     public async Task<TemplatesGetResponse?> GetTemplatesAsync(
         Guid containerId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Templates.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Templates.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1621,10 +1834,15 @@ public class CostManager
     public async Task<SegmentsGetResponse?> GetTemplateSegmentsAsync(
         Guid containerId,
         Guid templateId,
-        Action<RequestConfiguration<CostCont.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CostCont.Templates.Item.Segments.SegmentsRequestBuilder.SegmentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Templates[templateId].Segments.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Templates[templateId].Segments.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1645,10 +1863,15 @@ public class CostManager
     /// </example>
     public async Task<TaxesGetResponse?> GetTaxesAsync(
         Guid containerId,
-        Action<RequestConfiguration<TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<TaxesRequestBuilder.TaxesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Taxes.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Taxes.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -1673,10 +1896,15 @@ public class CostManager
     /// </example>
     public async Task<DocumentsGetResponse?> GetDocumentsAsync(
         Guid containerId,
-        Action<RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].Documents.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].Documents.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1697,10 +1925,15 @@ public class CostManager
     /// </example>
     public async Task<ScheduleOfValuesGetResponse?> GetScheduleOfValuesAsync(
         Guid containerId,
-        Action<RequestConfiguration<ScheduleOfValuesRequestBuilder.ScheduleOfValuesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ScheduleOfValuesRequestBuilder.ScheduleOfValuesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].ScheduleOfValues.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].ScheduleOfValues.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1721,10 +1954,15 @@ public class CostManager
     /// </example>
     public async Task<CostCont.TimeSheets.TimeSheetsGetResponse?> GetTimeSheetsAsync(
         Guid containerId,
-        Action<RequestConfiguration<TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<TimeSheetsRequestBuilder.TimeSheetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].TimeSheets.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].TimeSheets.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1747,10 +1985,14 @@ public class CostManager
     public async Task<CostCont.TimeSheets.Item.TimeSheetsGetResponse?> GetTimeSheetAsync(
         Guid containerId,
         string timeSheetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].TimeSheets[timeSheetId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].TimeSheets[timeSheetId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -1775,10 +2017,15 @@ public class CostManager
     /// </example>
     public async Task<CostCont.PerformanceTrackingItems.PerformanceTrackingItemsGetResponse?> GetPerformanceTrackingItemsAsync(
         Guid containerId,
-        Action<RequestConfiguration<PerformanceTrackingItemsRequestBuilder.PerformanceTrackingItemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<PerformanceTrackingItemsRequestBuilder.PerformanceTrackingItemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].PerformanceTrackingItems.GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].PerformanceTrackingItems.GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1801,10 +2048,14 @@ public class CostManager
     public async Task<CostCont.PerformanceTrackingItems.PerformanceTrackingItemsPostResponse?> CreatePerformanceTrackingItemAsync(
         Guid containerId,
         CostCont.PerformanceTrackingItems.PerformanceTrackingItemsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].PerformanceTrackingItems.PostAsync(body, requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].PerformanceTrackingItems.PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1827,10 +2078,14 @@ public class CostManager
     public async Task<Autodesk.ACC.Cost.V1.Containers.Item.PerformanceTrackingItems.Item.PerformanceTrackingItemsGetResponse?> GetPerformanceTrackingItemAsync(
         Guid containerId,
         Guid itemId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        return await _api.Cost.V1.Containers[containerId].PerformanceTrackingItems[itemId].GetAsync(requestConfiguration, cancellationToken);
+        return await _api.Cost.V1.Containers[containerId].PerformanceTrackingItems[itemId].GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -1855,11 +2110,15 @@ public class CostManager
         Guid containerId,
         string associationType,
         Guid associationId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Cost.V1.Containers[containerId].Workflows[associationType][associationId].Actions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion

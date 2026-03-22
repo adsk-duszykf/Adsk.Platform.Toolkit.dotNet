@@ -42,11 +42,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.ModelsetsPostResponse?> CreateModelSetAsync(
         Guid containerId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.ModelsetsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -105,11 +109,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.WithModelSetGetResponse?> GetModelSetAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -134,11 +142,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.WithModelSetPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -167,11 +179,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Issues.IssuesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Issues
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -194,11 +210,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext.ViewcontextPostResponse?> GetModelSetIssueViewContextAsync(
         Guid containerId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext.ViewcontextPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Issues.Viewcontext
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -225,11 +245,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Jobs.Item.WithJobGetResponse?> GetContainerJobAsync(
         Guid containerId,
         Guid jobId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Jobs[jobId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -254,11 +278,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Guid jobId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Jobs[jobId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -287,11 +315,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Screenshots
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -316,11 +348,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Guid screenShotId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Screenshots[screenShotId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -347,11 +383,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.VersionsPostResponse?> CreateModelSetVersionAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Versions
-            .PostAsync(requestConfiguration, cancellationToken);
+            .PostAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -412,11 +452,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Versions.Latest.LatestGetResponse?> GetModelSetVersionLatestAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Versions.Latest
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -441,11 +485,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         int version,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Versions[version]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -468,11 +516,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.VersionsEnable.VersionsEnablePatchResponse?> EnableModelSetVersionsAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].VersionsEnable
-            .PatchAsync(requestConfiguration, cancellationToken);
+            .PatchAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -495,11 +547,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.VersionsDisable.VersionsDisablePatchResponse?> DisableModelSetVersionsAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].VersionsDisable
-            .PatchAsync(requestConfiguration, cancellationToken);
+            .PatchAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -528,11 +584,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.ViewsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Views
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -595,11 +655,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.ViewsLineages.ViewsLineagesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].ViewsLineages
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -624,11 +688,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Guid viewId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Views[viewId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -655,11 +723,15 @@ public class ModelCoordinationManager
         Guid modelSetId,
         Guid viewId,
         Autodesk.ACC.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Views.Item.WithViewPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Views[viewId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -684,11 +756,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Guid viewId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Views[viewId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -713,11 +789,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         int version,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Versions[version].Views
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -744,11 +824,15 @@ public class ModelCoordinationManager
         Guid modelSetId,
         int version,
         Guid viewId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Versions[version].Views[viewId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -775,11 +859,15 @@ public class ModelCoordinationManager
         Guid modelSetId,
         Guid viewId,
         Guid jobId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Modelset.V3.Containers[containerId].Modelsets[modelSetId].Views[viewId].Jobs[jobId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -806,11 +894,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsGetResponse?> GetModelSetClashTestsAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].Tests
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -835,11 +927,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         int version,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].Versions[version].Tests
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -862,11 +958,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.WithTestGetResponse?> GetClashTestAsync(
         Guid containerId,
         Guid testId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -889,11 +989,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Resources.ResourcesGetResponse?> GetClashTestResourcesAsync(
         Guid containerId,
         Guid testId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId].Resources
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -922,11 +1026,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid testId,
         Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesClose.ClashesClosePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId].ClashesClose
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -949,11 +1057,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse?> GetClosedClashGroupIntersectionAsync(
         Guid containerId,
         Guid testId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId].Clashes.Closed
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -978,11 +1090,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid testId,
         Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId].Clashes.Closed
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1007,11 +1123,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].ClashesReopen
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1034,11 +1154,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Closed.ClosedGetResponse?> SearchClosedClashGroupsAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].Clashes.Closed
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -1067,11 +1191,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid testId,
         Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId].ClashesAssign
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1094,11 +1222,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedGetResponse?> GetAssignedClashGroupIntersectionAsync(
         Guid containerId,
         Guid testId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId].Clashes.Assigned
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1123,11 +1255,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid testId,
         Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Assigned.AssignedPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Tests[testId].Clashes.Assigned
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1150,11 +1286,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Assigned.AssignedGetResponse?> SearchAssignedClashGroupsAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].Clashes.Assigned
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1177,11 +1317,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostResponse?> GetAssignedClashGroupViewContextAsync(
         Guid containerId,
         Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Assigned.Viewcontext.ViewcontextPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Clashes.Assigned.Viewcontext
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1204,11 +1348,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Clashes.Jobs.Item.WithJobGetResponse?> GetClashGroupJobAsync(
         Guid containerId,
         Guid jobId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Clashes.Jobs[jobId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -1237,11 +1385,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].Screenshots
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -1266,11 +1418,15 @@ public class ModelCoordinationManager
         Guid containerId,
         Guid modelSetId,
         Guid screenShotId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].Screenshots[screenShotId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -1297,11 +1453,15 @@ public class ModelCoordinationManager
     public async Task<Autodesk.ACC.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes.Grouped.GroupedGetResponse?> GetGroupedClashesAsync(
         Guid containerId,
         Guid modelSetId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Bim360.Clash.V3.Containers[containerId].Modelsets[modelSetId].Clashes.Grouped
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion

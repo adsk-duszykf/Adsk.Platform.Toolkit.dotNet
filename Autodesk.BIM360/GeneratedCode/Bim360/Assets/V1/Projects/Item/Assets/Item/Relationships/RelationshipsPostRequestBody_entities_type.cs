@@ -15,17 +15,13 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Assets.Item.Relationshi
         #pragma warning disable CS1591
         Documentlineage,
         #pragma warning restore CS1591
-        [EnumMember(Value = "issue")]
-        #pragma warning disable CS1591
-        Issue,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "400")]
-        #pragma warning disable CS1591
-        FourZeroZero,
-        #pragma warning restore CS1591
         [EnumMember(Value = "form")]
         #pragma warning disable CS1591
         Form,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "issue")]
+        #pragma warning disable CS1591
+        Issue,
         #pragma warning restore CS1591
         [EnumMember(Value = "photo")]
         #pragma warning disable CS1591

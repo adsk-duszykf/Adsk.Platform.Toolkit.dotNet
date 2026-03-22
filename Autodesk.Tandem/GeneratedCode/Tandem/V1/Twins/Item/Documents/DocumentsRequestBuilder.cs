@@ -47,6 +47,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Documents
         }
         /// <summary>
         /// Create Tandem documents from ACC files. File contents are copied to Tandem-managed storage system.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-documents-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Documents.DocumentsPostResponse"/></returns>
         /// <param name="body">The request body</param>

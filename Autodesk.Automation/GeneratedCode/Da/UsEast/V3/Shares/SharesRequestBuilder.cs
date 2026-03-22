@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Shares
         }
         /// <summary>
         /// Gets all Shares (AppBundles and Activities) shared by this app (shared to other
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/shares-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Shares.SharesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

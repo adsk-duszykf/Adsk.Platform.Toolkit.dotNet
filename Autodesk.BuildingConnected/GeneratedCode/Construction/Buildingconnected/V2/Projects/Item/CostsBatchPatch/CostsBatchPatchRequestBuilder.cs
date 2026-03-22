@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
         }
         /// <summary>
         /// Updates multiple indirect cost items on the project. Max 200 items per call.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-projectId-costs-batch-patch-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.Item.CostsBatchPatch.CostsBatchPatchPatchResponse"/></returns>
         /// <param name="body">The request body</param>

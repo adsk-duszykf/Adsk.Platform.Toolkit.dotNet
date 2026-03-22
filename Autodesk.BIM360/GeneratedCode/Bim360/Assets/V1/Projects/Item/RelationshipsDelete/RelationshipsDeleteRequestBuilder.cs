@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete
         }
         /// <summary>
         /// &lt;div class=`adskf__banner-deprecated`&gt;Deprecated&lt;/div&gt;
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-relationships-delete-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.RelationshipsDelete.RelationshipsDeletePostResponse"/></returns>
         /// <param name="body">The request body</param>

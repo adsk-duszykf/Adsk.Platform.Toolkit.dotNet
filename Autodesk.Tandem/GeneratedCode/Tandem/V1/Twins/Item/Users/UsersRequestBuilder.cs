@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Users
         }
         /// <summary>
         /// Returns users from the given twin.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-users-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

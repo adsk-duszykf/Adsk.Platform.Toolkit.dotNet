@@ -47,6 +47,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles
         }
         /// <summary>
         /// Lists all available AppBundles, including AppBundles shared with this app.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/appbundles-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.AppbundlesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles
         }
         /// <summary>
         /// Creates a new AppBundle.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/appbundles-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.AppbundlesPostResponse"/></returns>
         /// <param name="body">The request body</param>

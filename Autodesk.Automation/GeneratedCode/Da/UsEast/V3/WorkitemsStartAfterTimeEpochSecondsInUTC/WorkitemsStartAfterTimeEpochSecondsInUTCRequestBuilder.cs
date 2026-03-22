@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsIn
         }
         /// <summary>
         /// Get all WorkItem ids that have been updated after a specified time in the epoch seconds of UTC.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/workitems-startAfterTime-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsInUTC.WorkitemsStartAfterTimeEpochSecondsInUTCGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,6 +85,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsIn
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkitemsStartAfterTimeEpochSecondsInUTCRequestBuilderGetQueryParameters 
         {
+            /// <summary>Page token for retrieving the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page")]
@@ -93,6 +95,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.WorkitemsStartAfterTimeEpochSecondsIn
             [QueryParameter("page")]
             public string Page { get; set; }
 #endif
+            /// <summary>Start time in epoch seconds (UTC). Returns WorkItem IDs updated after this time.</summary>
             [QueryParameter("startAfterTime")]
             public int? StartAfterTime { get; set; }
         }

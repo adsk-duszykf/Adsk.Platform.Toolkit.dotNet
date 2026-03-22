@@ -7,10 +7,6 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item.Users.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithUserGetResponse_products_access
     {
-        [EnumMember(Value = "key")]
-        #pragma warning disable CS1591
-        Key,
-        #pragma warning restore CS1591
         [EnumMember(Value = "administrator")]
         #pragma warning disable CS1591
         Administrator,
@@ -22,14 +18,6 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item.Users.Item
         [EnumMember(Value = "none")]
         #pragma warning disable CS1591
         None,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "projectAdministration")]
-        #pragma warning disable CS1591
-        ProjectAdministration,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "access")]
-        #pragma warning disable CS1591
-        Access,
         #pragma warning restore CS1591
     }
 }

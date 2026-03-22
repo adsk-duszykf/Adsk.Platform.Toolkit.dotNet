@@ -54,13 +54,17 @@ public class IssuesManager
     /// </example>
     public async Task<MeGetResponse?> GetCurrentUserAsync(
         Guid projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Issues.V1.Projects[projectId]
             .Users
             .Me
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -84,20 +88,24 @@ public class IssuesManager
     /// </example>
     public async IAsyncEnumerable<IssueTypesGetResponse_results> ListIssueTypesAsync(
         Guid projectId,
-        Action<RequestConfiguration<IssueTypesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<IssueTypesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Issues.V1.Projects[projectId]
                 .IssueTypes
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+
+                    r.QueryParameters.Offset = offset;
+
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -137,20 +145,21 @@ public class IssuesManager
     /// </example>
     public async IAsyncEnumerable<IssueAttributeDefinitionsGetResponse_results> ListAttributeDefinitionsAsync(
         Guid projectId,
-        Action<RequestConfiguration<IssueAttributeDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<IssueAttributeDefinitionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Issues.V1.Projects[projectId]
                 .IssueAttributeDefinitions
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -190,20 +199,21 @@ public class IssuesManager
     /// </example>
     public async IAsyncEnumerable<IssueAttributeMappingsGetResponse_results> ListAttributeMappingsAsync(
         Guid projectId,
-        Action<RequestConfiguration<IssueAttributeMappingsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<IssueAttributeMappingsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Issues.V1.Projects[projectId]
                 .IssueAttributeMappings
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -243,20 +253,21 @@ public class IssuesManager
     /// </example>
     public async IAsyncEnumerable<IssueRootCauseCategoriesGetResponse_results> ListRootCauseCategoriesAsync(
         Guid projectId,
-        Action<RequestConfiguration<IssueRootCauseCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<IssueRootCauseCategoriesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Issues.V1.Projects[projectId]
                 .IssueRootCauseCategories
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -296,20 +307,21 @@ public class IssuesManager
     /// </example>
     public async IAsyncEnumerable<IssuesGetResponse_results> ListIssuesAsync(
         Guid projectId,
-        Action<RequestConfiguration<IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<IssuesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Issues.V1.Projects[projectId]
                 .Issues
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -348,12 +360,16 @@ public class IssuesManager
     public async Task<IssuesPostResponse?> CreateIssueAsync(
         Guid projectId,
         IssuesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Issues.V1.Projects[projectId]
             .Issues
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -376,12 +392,16 @@ public class IssuesManager
     public async Task<WithIssueGetResponse?> GetIssueAsync(
         Guid projectId,
         Guid issueId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Issues.V1.Projects[projectId]
             .Issues[issueId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -406,12 +426,16 @@ public class IssuesManager
         Guid projectId,
         Guid issueId,
         WithIssuePatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Issues.V1.Projects[projectId]
             .Issues[issueId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -437,21 +461,22 @@ public class IssuesManager
     public async IAsyncEnumerable<CommentsGetResponse_results> ListCommentsAsync(
         Guid projectId,
         Guid issueId,
-        Action<RequestConfiguration<CommentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CommentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Issues.V1.Projects[projectId]
                 .Issues[issueId]
                 .Comments
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -492,13 +517,17 @@ public class IssuesManager
         Guid projectId,
         Guid issueId,
         CommentsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Issues.V1.Projects[projectId]
             .Issues[issueId]
             .Comments
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -521,12 +550,16 @@ public class IssuesManager
     public async Task<AttachmentsPostResponse?> AddAttachmentsAsync(
         Guid projectId,
         AttachmentsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Issues.V1.Projects[projectId]
             .Attachments
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -549,13 +582,17 @@ public class IssuesManager
     public async Task<ItemsGetResponse?> GetAttachmentsAsync(
         Guid projectId,
         Guid issueId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Issues.V1.Projects[projectId]
             .Attachments[issueId]
             .Items
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     /// <summary>
@@ -580,12 +617,16 @@ public class IssuesManager
         Guid projectId,
         Guid issueId,
         Guid attachmentId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Issues.V1.Projects[projectId]
             .Attachments[issueId]
             .Items[attachmentId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 }

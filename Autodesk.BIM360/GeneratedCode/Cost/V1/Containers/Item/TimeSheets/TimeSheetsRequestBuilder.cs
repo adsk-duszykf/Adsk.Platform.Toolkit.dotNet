@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets
         }
         /// <summary>
         /// Retrieves one or more timesheets in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-time-sheets-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.TimeSheetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets
         }
         /// <summary>
         /// Creates a timesheet for the specified tracking item instance in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-time-sheets-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.TimeSheets.TimeSheetsPostResponse"/></returns>
         /// <param name="body">The request body</param>

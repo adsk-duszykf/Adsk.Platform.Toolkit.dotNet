@@ -58,6 +58,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
         }
         /// <summary>
         /// Deletes a BuildingConnected Pro project in draft state.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-projectId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -75,6 +76,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
         }
         /// <summary>
         /// Retrieves the specified BuildingConnected Pro project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-projectId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.Item.WithProjectGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,6 +95,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
         }
         /// <summary>
         /// Updates fields on the specified BuildingConnected Pro project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-projects-projectId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.Item.WithProjectPatchResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
         }
         /// <summary>
         /// Retrieves information about all the [BIM 360 Field Management](https://field.b360.autodesk.com/) templates in a project, including details about the items, sections, and attachments in the template.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/checklists-templates-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates.TemplatesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

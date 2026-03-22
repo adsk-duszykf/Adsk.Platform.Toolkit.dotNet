@@ -38,13 +38,13 @@ public ACCclient(Func<Task<string>> getAccessToken, HttpClient? httpClient = nul
 
 - **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
 - **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
-- Disable per-request: `config.Options.Add(new ErrorHandlerOption { Enabled = false })`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
 
 ## Managers (341 methods across 19 managers)
 
 All manager methods follow these conventions:
 - Async suffix (`*Async`)
-- `requestConfiguration` and `cancellationToken` are optional
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
 - Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages; use `break` or `.Take(n)` to stop early)
 - Non-paginated endpoints return `Task<T?>`
 - Each method documents the wrapped REST endpoint and links to official APS docs
@@ -511,10 +511,8 @@ await foreach (var issue in client.IssuesManager.ListIssuesAsync(projectId))
 }
 
 // With query parameters (filtering, sorting)
-await foreach (var item in client.SubmittalsManager.ListItemsAsync(projectId, config =>
-{
-    config.QueryParameters.Filter_status = "open";
-}))
+await foreach (var item in client.SubmittalsManager.ListItemsAsync(projectId,
+    new() { QueryParameters = { Filter_status = "open" } }))
 { ... }
 ```
 

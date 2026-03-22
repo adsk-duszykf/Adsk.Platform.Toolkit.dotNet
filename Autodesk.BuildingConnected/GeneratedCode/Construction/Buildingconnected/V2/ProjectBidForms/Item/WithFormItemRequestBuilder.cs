@@ -58,6 +58,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBi
         }
         /// <summary>
         /// Retrieves the specified project bid form.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-project-bid-forms-formId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBidForms.Item.WithFormGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

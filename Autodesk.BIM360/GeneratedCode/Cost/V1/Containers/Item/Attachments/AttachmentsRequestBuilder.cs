@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
         }
         /// <summary>
         /// Retrieves all of the attachments associated with an item such as a budget, contract, or cost item. You can also retrieve certain nested resources related to the returned attachments.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-attachments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.AttachmentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Attachments
         }
         /// <summary>
         /// Creates an attachment in a specific project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-attachments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Attachments.AttachmentsPostResponse"/></returns>
         /// <param name="body">The request body</param>

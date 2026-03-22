@@ -52,6 +52,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item
         }
         /// <summary>
         /// Retrieves the specified bid.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bids-bidId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.Item.WithBidGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

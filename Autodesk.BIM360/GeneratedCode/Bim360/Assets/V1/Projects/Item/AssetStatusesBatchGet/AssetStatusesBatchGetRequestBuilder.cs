@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatusesBatchGet
         }
         /// <summary>
         /// Returns a specified set of statuses.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-asset-statuses-batch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatusesBatchGet.AssetStatusesBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -45,12 +45,17 @@ public class FormsManager
     /// </example>
     public async Task<FormTemplatesGetResponse?> GetFormTemplatesAsync(
         string projectId,
-        Action<RequestConfiguration<FormTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<FormTemplatesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Forms.V1.Projects[projectId]
             .FormTemplates
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -75,20 +80,21 @@ public class FormsManager
     /// </example>
     public async IAsyncEnumerable<FormsGetResponse_data> ListFormsAsync(
         string projectId,
-        Action<RequestConfiguration<FormsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<FormsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Forms.V1.Projects[projectId]
                 .Forms
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Data is not { Count: > 0 })
@@ -128,13 +134,17 @@ public class FormsManager
         string projectId,
         string templateId,
         FormsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Forms.V1.Projects[projectId]
             .FormTemplates[templateId]
             .Forms
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -161,13 +171,17 @@ public class FormsManager
         string templateId,
         string formId,
         WithFormPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Forms.V1.Projects[projectId]
             .FormTemplates[templateId]
             .Forms[formId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -192,12 +206,16 @@ public class FormsManager
         string projectId,
         string formId,
         ValuesBatchUpdatePutRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Forms.V1.Projects[projectId]
             .Forms[formId]
             .ValuesBatchUpdate
-            .PutAsync(body, requestConfiguration, cancellationToken);
+            .PutAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

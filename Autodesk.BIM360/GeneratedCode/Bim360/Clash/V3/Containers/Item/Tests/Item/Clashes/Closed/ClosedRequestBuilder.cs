@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Clo
         }
         /// <summary>
         /// Retrieves the state of all closed clash groups in a particular model set, relative to a specified clash test.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-get-clash-test-closed-clash-group-intersection-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Clo
         }
         /// <summary>
         /// Retrieves the state of the specified closed clash groups, relative to a specified clash test.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-get-closed-clash-group-data-batch-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.Clashes.Closed.ClosedPostResponse"/></returns>
         /// <param name="body">The request body</param>

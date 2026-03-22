@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusS
         }
         /// <summary>
         /// Assigns a status set to a category.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-categories-category-id-status-step-set-status-step-set-id-PUT" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.StatusStepSet.Item.WithStatusStepSetPutResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.Item
         }
         /// <summary>
         /// Deletes the specified version of the AppBundle.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/appbundles-id-versions-version-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.Item
         }
         /// <summary>
         /// Gets the details of the specified version of the AppBundle.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/appbundles-id-versions-version-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Appbundles.Item.Versions.Item.WithVersionGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

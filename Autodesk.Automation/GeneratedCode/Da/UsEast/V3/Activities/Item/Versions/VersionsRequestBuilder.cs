@@ -47,6 +47,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions
         }
         /// <summary>
         /// Lists all versions of the specified Activity.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-versions-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.VersionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions
         }
         /// <summary>
         /// Creates a new version of the Activity.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-versions-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Versions.VersionsPostResponse"/></returns>
         /// <param name="body">The request body</param>

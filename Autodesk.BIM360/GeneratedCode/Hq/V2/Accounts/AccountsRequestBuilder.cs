@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts
     public partial class AccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.hq.v2.accounts.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The account ID of the project. This corresponds to hub ID in the Data Management API. To convert a hub ID into an account ID you need to remove the &quot;b.&quot; prefix. For example, a hub ID of b.c8b0c73d-3ae9 translates to an account ID of c8b0c73d-3ae9.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.WithAccount_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Hq.V2.Accounts.Item.WithAccount_ItemRequestBuilder this[string position]
         {

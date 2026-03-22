@@ -42,12 +42,17 @@ public class PhotosManager
     public async Task<WithPhotoGetResponse?> GetPhotoAsync(
         string projectId,
         string photoId,
-        Action<RequestConfiguration<WithPhotoItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithPhotoItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Photos.V1.Projects[projectId]
             .Photos[photoId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -74,11 +79,15 @@ public class PhotosManager
     public async Task<PhotosFilterPostResponse?> SearchPhotosAsync(
         string projectId,
         PhotosFilterPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Photos.V1.Projects[projectId]
             .PhotosFilter
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

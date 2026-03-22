@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         }
         /// <summary>
         /// Retrieves the relationship synchronization status for the caller as one or more synchronization tokens. This can be based on an optional array of input tokens.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/relationship-service-v2-relationships-sync-status-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSyncStatus.RelationshipsSyncStatusPostResponse"/></returns>
         /// <param name="body">The request body</param>

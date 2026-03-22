@@ -36,7 +36,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
             get => new global::Autodesk.Automation.Da.UsEast.V3.Workitems.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Autodesk.Automation.da.usEast.v3.workitems.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the WorkItem.</param>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.Item.WorkitemsItemRequestBuilder"/></returns>
         public global::Autodesk.Automation.Da.UsEast.V3.Workitems.Item.WorkitemsItemRequestBuilder this[string position]
         {
@@ -65,6 +65,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
         }
         /// <summary>
         /// The new WorkItem is always placed on a queue and later picked up by an engine.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/workitems-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.WorkitemsPostResponse"/></returns>
         /// <param name="body">The request body</param>

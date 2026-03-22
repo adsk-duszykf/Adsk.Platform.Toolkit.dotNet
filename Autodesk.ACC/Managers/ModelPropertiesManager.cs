@@ -45,12 +45,16 @@ public class ModelPropertiesManager
     public async Task<WithIndexGetResponse?> GetIndexStatusAsync(
         Guid projectId,
         string indexId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Indexes[indexId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -73,13 +77,17 @@ public class ModelPropertiesManager
     public async Task<Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Fields.FieldsGetResponse?> GetIndexFieldsAsync(
         Guid projectId,
         string indexId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Indexes[indexId]
             .Fields
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -102,13 +110,17 @@ public class ModelPropertiesManager
     public async Task<Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Manifest.ManifestGetResponse?> GetIndexManifestAsync(
         Guid projectId,
         string indexId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Indexes[indexId]
             .Manifest
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -131,13 +143,17 @@ public class ModelPropertiesManager
     public async Task<Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Properties.PropertiesGetResponse?> GetIndexPropertiesAsync(
         Guid projectId,
         string indexId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Indexes[indexId]
             .Properties
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -160,12 +176,16 @@ public class ModelPropertiesManager
     public async Task<IndexesBatchStatusPostResponse?> BatchGetIndexStatusAsync(
         Guid projectId,
         IndexesBatchStatusPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .IndexesBatchStatus
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -190,13 +210,17 @@ public class ModelPropertiesManager
         Guid projectId,
         string indexId,
         Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Indexes.Item.Queries.QueriesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Indexes[indexId]
             .Queries
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -221,13 +245,17 @@ public class ModelPropertiesManager
         Guid projectId,
         string indexId,
         string queryId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Indexes[indexId]
             .Queries[queryId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -252,14 +280,18 @@ public class ModelPropertiesManager
         Guid projectId,
         string indexId,
         string queryId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Indexes[indexId]
             .Queries[queryId]
             .Properties
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -286,12 +318,16 @@ public class ModelPropertiesManager
     public async Task<WithDiffGetResponse?> GetDiffStatusAsync(
         Guid projectId,
         string diffId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Diffs[diffId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -314,13 +350,17 @@ public class ModelPropertiesManager
     public async Task<Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Fields.FieldsGetResponse?> GetDiffFieldsAsync(
         Guid projectId,
         string diffId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Diffs[diffId]
             .Fields
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -343,13 +383,17 @@ public class ModelPropertiesManager
     public async Task<Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Manifest.ManifestGetResponse?> GetDiffManifestAsync(
         Guid projectId,
         string diffId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Diffs[diffId]
             .Manifest
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -372,13 +416,17 @@ public class ModelPropertiesManager
     public async Task<Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Properties.PropertiesGetResponse?> GetDiffPropertiesAsync(
         Guid projectId,
         string diffId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Diffs[diffId]
             .Properties
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -401,12 +449,16 @@ public class ModelPropertiesManager
     public async Task<DiffsBatchStatusPostResponse?> BatchGetDiffStatusAsync(
         Guid projectId,
         DiffsBatchStatusPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .DiffsBatchStatus
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -431,13 +483,17 @@ public class ModelPropertiesManager
         Guid projectId,
         string diffId,
         Autodesk.ACC.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.QueriesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Diffs[diffId]
             .Queries
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -462,13 +518,17 @@ public class ModelPropertiesManager
         Guid projectId,
         string diffId,
         string queryId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Diffs[diffId]
             .Queries[queryId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -493,14 +553,18 @@ public class ModelPropertiesManager
         Guid projectId,
         string diffId,
         string queryId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Index.V2.Projects[projectId]
             .Diffs[diffId]
             .Queries[queryId]
             .Properties
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion

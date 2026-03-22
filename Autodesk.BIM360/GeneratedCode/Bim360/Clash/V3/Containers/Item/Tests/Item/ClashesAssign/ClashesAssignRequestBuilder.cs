@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssi
         }
         /// <summary>
         /// Creates a batch of new assigned clash groups for the given clash test.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-add-assigned-clash-group-batch-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Tests.Item.ClashesAssign.ClashesAssignPostResponse"/></returns>
         /// <param name="body">The request body</param>

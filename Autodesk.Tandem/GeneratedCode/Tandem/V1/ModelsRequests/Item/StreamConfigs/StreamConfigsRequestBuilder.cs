@@ -47,6 +47,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs
         }
         /// <summary>
         /// List all stream configurations for a model.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-stream-configs-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.StreamConfigsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs
         }
         /// <summary>
         /// Bulk update stream configurations. Full stream configuration for each stream must be included in the request, not just the updated fields.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-stream-configs-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.StreamConfigs.StreamConfigsPatchResponse"/></returns>
         /// <param name="body">The request body</param>

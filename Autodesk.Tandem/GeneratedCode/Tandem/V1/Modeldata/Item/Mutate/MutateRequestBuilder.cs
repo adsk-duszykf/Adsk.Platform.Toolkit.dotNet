@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate
         }
         /// <summary>
         /// Bulk update of properties for multiple elements and attributes at the same time (matching specified query). The scope of mutation is always one model.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-mutate-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.Mutate.MutatePostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions
         }
         /// <summary>
         /// Retrieves information about issue custom attributes for a project, including the custom attribute title, description and type.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-issue-attribute-definitions-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeDefinitions.IssueAttributeDefinitionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

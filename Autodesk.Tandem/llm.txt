@@ -1,0 +1,162 @@
+# Adsk.Platform.Tandem — Tandem Digital Twin SDK for .NET
+
+> NuGet: `Adsk.Platform.Tandem` | Namespace: `Autodesk.Tandem` | Target: `net8.0` | License: MIT
+> Generated from OpenAPI specs via Microsoft Kiota. **Unofficial package.**
+
+## Overview
+
+Type-safe C# SDK for the Autodesk Tandem Digital Twin REST APIs. Provides two access patterns:
+
+1. **Fluent URL API** (`client.Api.*`) — mirrors the REST path structure exactly
+2. **Manager API** (`client.*Manager`) — high-level methods with strongly-typed params and XML doc with links to official docs
+
+## Quick Start
+
+```csharp
+using Autodesk.Tandem;
+
+var client = new TandemClient(() => Task.FromResult("YOUR_ACCESS_TOKEN"));
+
+// Manager approach (recommended)
+var groups = await client.GroupsManager.GetGroupsAsync();
+
+// Fluent URL approach — direct REST mapping
+var response = await client.Api.Tandem.V1.Groups.GetAsync();
+```
+
+## Constructor
+
+```csharp
+public TandemClient(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
+```
+
+- `getAccessToken`: async function returning a valid OAuth bearer token
+- `httpClient`: optional custom HttpClient (default includes retry + rate-limit handling)
+
+## Built-in Middleware
+
+- **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
+- **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
+
+## Managers (31 methods across 8 managers)
+
+All manager methods follow these conventions:
+- Async suffix (`*Async`)
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
+- All endpoints return `Task<T?>` or `Task` (no pagination in this API)
+- Each method documents the wrapped REST endpoint and links to official APS docs
+
+### TwinsManager (6 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetTwinsByGroupAsync(string groupId) | Task\<TwinsGetResponse?> | GET /tandem/v1/groups/{groupID}/twins |
+| CreateTwinAsync(string groupId, body) | Task\<TwinsPostResponse?> | POST /tandem/v1/groups/{groupID}/twins |
+| GetTwinAsync(string twinId) | Task\<WithTwinGetResponse?> | GET /tandem/v1/twins/{twinID} |
+| CreateDefaultModelAsync(string twinId, body) | Task\<DefaultmodelPostResponse?> | POST /tandem/v1/twins/{twinID}/defaultmodel |
+| GetTwinHistoryAsync(string twinId, body) | Task\<HistoryPostResponse?> | POST /tandem/v1/twins/{twinID}/history |
+| GetTwinUsersAsync(string twinId) | Task\<UsersGetResponse?> | GET /tandem/v1/twins/{twinID}/users |
+
+### GroupsManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetGroupsAsync() | Task\<GroupsGetResponse?> | GET /tandem/v1/groups |
+| GetGroupAsync(string groupId) | Task\<WithGroupGetResponse?> | GET /tandem/v1/groups/{groupID} |
+| GetGroupHistoryAsync(string groupId, body) | Task\<HistoryPostResponse?> | POST /tandem/v1/groups/{groupID}/history |
+| AddUserToGroupAsync(string groupId, string userId, body) | Task | PUT /tandem/v1/groups/{groupID}/users/{userID} |
+
+### ModeldataManager (5 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| CreateElementsAsync(string modelId, body) | Task\<CreatePostResponse?> | POST /tandem/v1/modeldata/{modelID}/create |
+| GetModelHistoryAsync(string modelId, body) | Task\<HistoryPostResponse?> | POST /tandem/v1/modeldata/{modelID}/history |
+| MutateElementsAsync(string modelId, body) | Task\<MutatePostResponse?> | POST /tandem/v1/modeldata/{modelID}/mutate |
+| ScanElementsAsync(string modelId, body) | Task\<ScanPostResponse?> | POST /tandem/v1/modeldata/{modelID}/scan |
+| GetModelSchemaAsync(string modelId) | Task\<SchemaGetResponse?> | GET /tandem/v1/modeldata/{modelID}/schema |
+
+### StreamsManager (7 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetStreamsSecretsAsync(string modelId, body) | Task\<GetstreamssecretsPostResponse?> | POST /tandem/v1/models/{modelID}/getstreamssecrets |
+| ResetStreamsSecretsAsync(string modelId, body) | Task | POST /tandem/v1/models/{modelID}/resetstreamssecrets |
+| DeleteStreamsDataAsync(string modelId, body) | Task | POST /tandem/v1/timeseries/models/{modelID}/deletestreamsdata |
+| GetLatestStreamsDataAsync(string modelId, body) | Task\<StreamsPostResponse?> | POST /tandem/v1/timeseries/models/{modelID}/streams |
+| GetStreamDataAsync(string modelId, string elementId) | Task\<WithElementGetResponse?> | GET /tandem/v1/timeseries/models/{modelID}/streams/{elementID} |
+| StoreStreamDataAsync(string modelId, string elementId, body) | Task | POST /tandem/v1/timeseries/models/{modelID}/streams/{elementID} |
+| PostGenericWebhookDataAsync(string modelId, body) | Task\<Stream?> | POST /tandem/v1/timeseries/models/{modelID}/webhooks/generic |
+
+### StreamConfigsManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetStreamConfigsAsync(string modelId) | Task\<StreamConfigsGetResponse?> | GET /tandem/v1/models/{modelID}/stream-configs |
+| BulkUpdateStreamConfigsAsync(string modelId, body) | Task\<StreamConfigsPatchResponse?> | PATCH /tandem/v1/models/{modelID}/stream-configs |
+| GetStreamConfigAsync(string modelId, string elementId) | Task\<WithElementGetResponse?> | GET /tandem/v1/models/{modelID}/stream-configs/{elementID} |
+| SaveStreamConfigAsync(string modelId, string elementId, body) | Task\<WithElementPutResponse?> | PUT /tandem/v1/models/{modelID}/stream-configs/{elementID} |
+
+### DocumentsManager (3 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| CreateDocumentAsync(string twinId, body) | Task\<DocumentsPostResponse?> | POST /tandem/v1/twins/{twinID}/documents |
+| GetDocumentAsync(string twinId, string documentId) | Task\<WithDocumentGetResponse?> | GET /tandem/v1/twins/{twinID}/documents/{documentID} |
+| DeleteDocumentAsync(string twinId, string documentId) | Task | DELETE /tandem/v1/twins/{twinID}/documents/{documentID} |
+
+### TemplatesManager (1 method)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetTwinTemplateAsync(string twinId) | Task\<InlinetemplateGetResponse?> | GET /tandem/v1/twins/{twinID}/inlinetemplate |
+
+### ViewsManager (1 method)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetTwinViewsAsync(string twinId) | Task\<ViewsGetResponse?> | GET /tandem/v1/twins/{twinID}/views |
+
+## Fluent URL Properties
+
+For direct REST path access without managers:
+
+| Property | Base Path |
+|----------|-----------|
+| client.Groups | /tandem/v1/groups/* |
+| client.Modeldata | /tandem/v1/modeldata/* |
+| client.Models | /tandem/v1/models/* |
+| client.Timeseries | /tandem/v1/timeseries/* |
+| client.Twins | /tandem/v1/twins/* |
+| client.Api | Full base client (all paths) |
+
+## Key Patterns
+
+### Parameter Types
+- `groupId`: `string` — Group URN (e.g. `urn:adsk.dtg:...`)
+- `twinId`: `string` — Twin URN (e.g. `urn:adsk.dtt:...`)
+- `modelId`: `string` — Model URN/ID (e.g. `urn:adsk.dtm:...`)
+- `elementId`: `string` — Stream element ID
+- `userId`: `string` — User ID
+- `documentId`: `string` — Document ID
+- `body`: Kiota-generated request body types in the respective namespace
+
+### Error Handling
+```csharp
+try { ... }
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"{ex.StatusCode}: {ex.Message}");
+    if (ex.Data["context"] is HttpResponseMessage resp)
+    {
+        var body = await resp.Content.ReadAsStringAsync();
+    }
+}
+```
+
+## Links
+
+- APS Docs: https://aps.autodesk.com/en/docs/tandem/v1/developers_guide/overview/
+- NuGet: https://www.nuget.org/packages/Adsk.Platform.Tandem
+- Kiota: https://learn.microsoft.com/en-us/openapi/kiota/overview

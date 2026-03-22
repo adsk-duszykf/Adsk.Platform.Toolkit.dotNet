@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Item
         }
         /// <summary>
         /// Updates a user&apos;s role, permissions, or company assignment in the specified project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-project_id-users-user_id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Item.WithUser_PatchResponse"/></returns>
         /// <param name="body">The request body</param>

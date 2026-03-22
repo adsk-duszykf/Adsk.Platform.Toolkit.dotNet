@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.Resetstreamssecrets
         }
         /// <summary>
         /// Resets ingestion secret(s), associated with specific data stream(s).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-resetstreamssecrets-POST" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

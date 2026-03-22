@@ -47,6 +47,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities
         }
         /// <summary>
         /// Lists all available Activities, including Activities shared with this app.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities
         }
         /// <summary>
         /// Creates a new Activity.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.ActivitiesPostResponse"/></returns>
         /// <param name="body">The request body</param>

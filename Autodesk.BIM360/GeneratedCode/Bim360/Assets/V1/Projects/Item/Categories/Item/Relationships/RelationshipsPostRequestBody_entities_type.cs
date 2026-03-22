@@ -11,10 +11,6 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.Relatio
         #pragma warning disable CS1591
         Checklisttemplate,
         #pragma warning restore CS1591
-        [EnumMember(Value = "400")]
-        #pragma warning disable CS1591
-        FourZeroZero,
-        #pragma warning restore CS1591
         [EnumMember(Value = "formtemplate")]
         #pragma warning disable CS1591
         Formtemplate,

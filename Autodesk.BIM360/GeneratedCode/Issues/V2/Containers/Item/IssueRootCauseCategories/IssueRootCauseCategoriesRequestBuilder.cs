@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories
         }
         /// <summary>
         /// Retrieves a list of supported root cause categories and root causes that you can allocate to an issue. For example, Coordination, Design, Quality and Safety.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-issue-root-cause-categories-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueRootCauseCategories.IssueRootCauseCategoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

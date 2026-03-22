@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItemsDetach
         }
         /// <summary>
         /// Remove existing cost items from a change order.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-cost-itemsdetach-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItemsDetach.CostItemsDetachPostResponse"/></returns>
         /// <param name="body">The request body</param>

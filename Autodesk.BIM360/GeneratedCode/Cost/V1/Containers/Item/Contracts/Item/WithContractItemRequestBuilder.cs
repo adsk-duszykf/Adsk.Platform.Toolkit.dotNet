@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts.Item
         }
         /// <summary>
         /// Deletes a contract item specified by ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-contracts-contractId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts.Item
         }
         /// <summary>
         /// Retrieves the contract specified by contract ID.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-contracts-contractId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Contracts.Item.WithContractGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Contracts.Item
         }
         /// <summary>
         /// Updates the specified contract.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-contracts-contractId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Contracts.Item.WithContractPatchResponse"/></returns>
         /// <param name="body">The request body</param>

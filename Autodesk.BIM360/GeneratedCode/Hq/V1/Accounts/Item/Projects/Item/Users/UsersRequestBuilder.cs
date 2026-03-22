@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users
         }
         /// <summary>
         /// Add a project admin to a specific BIM 360 project and service type.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-project_id-users-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.Users.UsersPostResponse"/></returns>
         /// <param name="body">The request body</param>

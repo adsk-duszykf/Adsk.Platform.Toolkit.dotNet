@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBi
         }
         /// <summary>
         /// Updates multiple project bid form line items. Max 2000 bid form line items per call.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-project-bid-forms-formId-line-items-batch-patch-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBidForms.Item.LineItemsBatchPatch.LineItemsBatchPatchPatchResponse"/></returns>
         /// <param name="body">The request body</param>

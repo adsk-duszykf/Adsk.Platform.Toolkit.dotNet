@@ -1,0 +1,198 @@
+# Adsk.Platform.Automation — Design Automation SDK for .NET
+
+> NuGet: `Adsk.Platform.Automation` | Namespace: `Autodesk.Automation` | Target: `net8.0` | License: MIT
+> Generated from OpenAPI specs via Microsoft Kiota. **Unofficial package.**
+
+## Overview
+
+Type-safe C# SDK for the Autodesk Design Automation v3 REST API. Provides two access patterns:
+
+1. **Fluent URL API** (`client.Api.*`) — mirrors the REST path structure exactly
+2. **Manager API** (`client.*Manager`) — high-level methods with auto-pagination, strongly-typed params, and XML doc with links to official docs
+
+## Quick Start
+
+```csharp
+using Autodesk.Automation;
+
+var client = new AutomationClient(() => Task.FromResult("YOUR_ACCESS_TOKEN"));
+
+// Manager approach (recommended) — auto-paginates
+await foreach (var activityId in client.ActivitiesManager.ListActivitiesAsync())
+    Console.WriteLine(activityId);
+
+// Fluent URL approach — direct REST mapping
+var response = await client.Api.Da.UsEast.V3.Activities.GetAsync();
+```
+
+## Constructor
+
+```csharp
+public AutomationClient(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
+```
+
+- `getAccessToken`: async function returning a valid OAuth bearer token
+- `httpClient`: optional custom HttpClient (default includes retry + rate-limit handling)
+
+## Built-in Middleware
+
+- **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
+- **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
+
+## Managers (42 methods across 8 managers)
+
+All manager methods follow these conventions:
+- Async suffix (`*Async`)
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
+- Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages; use `break` or `.Take(n)` to stop early)
+- Non-paginated endpoints return `Task<T?>`
+- Each method documents the wrapped REST endpoint and links to official APS docs
+
+### ActivitiesManager (13 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListActivitiesAsync() | IAsyncEnumerable\<string> | GET /da/us-east/v3/activities |
+| CreateActivityAsync(body) | Task\<ActivitiesPostResponse?> | POST /da/us-east/v3/activities |
+| GetActivityAsync(string id) | Task\<ActivityDetails?> | GET /da/us-east/v3/activities/{id} |
+| DeleteActivityAsync(string id) | Task | DELETE /da/us-east/v3/activities/{id} |
+| ListActivityAliasesAsync(string id) | IAsyncEnumerable\<AliasesGetResponse_data> | GET /da/us-east/v3/activities/{id}/aliases |
+| CreateActivityAliasAsync(string id, body) | Task\<AliasesPostResponse?> | POST /da/us-east/v3/activities/{id}/aliases |
+| GetActivityAliasAsync(string id, string aliasId) | Task\<WithAliasGetResponse?> | GET /da/us-east/v3/activities/{id}/aliases/{aliasId} |
+| UpdateActivityAliasAsync(string id, string aliasId, body) | Task\<WithAliasPatchResponse?> | PATCH /da/us-east/v3/activities/{id}/aliases/{aliasId} |
+| DeleteActivityAliasAsync(string id, string aliasId) | Task | DELETE /da/us-east/v3/activities/{id}/aliases/{aliasId} |
+| ListActivityVersionsAsync(string id) | IAsyncEnumerable\<int> | GET /da/us-east/v3/activities/{id}/versions |
+| CreateActivityVersionAsync(string id, body) | Task\<VersionsPostResponse?> | POST /da/us-east/v3/activities/{id}/versions |
+| GetActivityVersionAsync(string id, int version) | Task\<WithVersionGetResponse?> | GET /da/us-east/v3/activities/{id}/versions/{version} |
+| DeleteActivityVersionAsync(string id, int version) | Task | DELETE /da/us-east/v3/activities/{id}/versions/{version} |
+
+### AppBundlesManager (13 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListAppBundlesAsync() | IAsyncEnumerable\<string> | GET /da/us-east/v3/appbundles |
+| CreateAppBundleAsync(body) | Task\<AppbundlesPostResponse?> | POST /da/us-east/v3/appbundles |
+| GetAppBundleAsync(string id) | Task\<AppBundleDetails?> | GET /da/us-east/v3/appbundles/{id} |
+| DeleteAppBundleAsync(string id) | Task | DELETE /da/us-east/v3/appbundles/{id} |
+| ListAppBundleAliasesAsync(string id) | IAsyncEnumerable\<AliasesGetResponse_data> | GET /da/us-east/v3/appbundles/{id}/aliases |
+| CreateAppBundleAliasAsync(string id, body) | Task\<AliasesPostResponse?> | POST /da/us-east/v3/appbundles/{id}/aliases |
+| GetAppBundleAliasAsync(string id, string aliasId) | Task\<WithAliasGetResponse?> | GET /da/us-east/v3/appbundles/{id}/aliases/{aliasId} |
+| UpdateAppBundleAliasAsync(string id, string aliasId, body) | Task\<WithAliasPatchResponse?> | PATCH /da/us-east/v3/appbundles/{id}/aliases/{aliasId} |
+| DeleteAppBundleAliasAsync(string id, string aliasId) | Task | DELETE /da/us-east/v3/appbundles/{id}/aliases/{aliasId} |
+| ListAppBundleVersionsAsync(string id) | IAsyncEnumerable\<int> | GET /da/us-east/v3/appbundles/{id}/versions |
+| CreateAppBundleVersionAsync(string id, body) | Task\<VersionsPostResponse?> | POST /da/us-east/v3/appbundles/{id}/versions |
+| GetAppBundleVersionAsync(string id, int version) | Task\<WithVersionGetResponse?> | GET /da/us-east/v3/appbundles/{id}/versions/{version} |
+| DeleteAppBundleVersionAsync(string id, int version) | Task | DELETE /da/us-east/v3/appbundles/{id}/versions/{version} |
+
+### EnginesManager (2 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListEnginesAsync() | IAsyncEnumerable\<string> | GET /da/us-east/v3/engines |
+| GetEngineAsync(string id) | Task\<EngineDetails?> | GET /da/us-east/v3/engines/{id} |
+
+### ForgeAppsManager (3 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetNicknameAsync(string id = "me") | Task\<Stream?> | GET /da/us-east/v3/forgeapps/{id} |
+| UpdateNicknameAsync(body, string id = "me") | Task\<Stream?> | PATCH /da/us-east/v3/forgeapps/{id} |
+| DeleteAppDataAsync(string id = "me") | Task | DELETE /da/us-east/v3/forgeapps/{id} |
+
+### HealthManager (1 method)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetHealthAsync(string engine) | Task\<Stream?> | GET /da/us-east/v3/health/{engine} |
+
+### ServiceLimitsManager (2 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetServiceLimitsAsync(string owner = "me") | Task\<WithOwnerGetResponse?> | GET /da/us-east/v3/servicelimits/{owner} |
+| UpdateServiceLimitsAsync(body, string owner = "me") | Task\<WithOwnerPutResponse?> | PUT /da/us-east/v3/servicelimits/{owner} |
+
+### SharesManager (1 method)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListSharesAsync() | IAsyncEnumerable\<SharesGetResponse_data> | GET /da/us-east/v3/shares |
+
+### WorkItemsManager (7 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| CreateWorkItemAsync(body) | Task\<WorkitemsPostResponse?> | POST /da/us-east/v3/workitems |
+| GetWorkItemStatusAsync(string id) | Task\<WorkitemsGetResponse?> | GET /da/us-east/v3/workitems/{id} |
+| CancelWorkItemAsync(string id) | Task | DELETE /da/us-east/v3/workitems/{id} |
+| CreateBatchWorkItemsAsync(body) | Task\<BatchPostResponse?> | POST /da/us-east/v3/workitems/batch |
+| GetBatchWorkItemStatusAsync(body) | Task\<StatusPostResponse?> | POST /da/us-east/v3/workitems/status |
+| CreateCombineWorkItemAsync(body) | Task\<CombinePostResponse?> | POST /da/us-east/v3/workitems/combine |
+| ListWorkItemsAsync(int startAfterTime) | IAsyncEnumerable\<WorkitemsStartAfterTimeEpochSecondsInUTCGetResponse_data> | GET /da/us-east/v3/workitems?startAfterTime=:epochSecondsInUTC |
+
+## Fluent URL Properties
+
+For direct REST path access without managers:
+
+| Property | Base Path |
+|----------|-----------|
+| client.Activities | /da/us-east/v3/activities/* |
+| client.AppBundles | /da/us-east/v3/appbundles/* |
+| client.Engines | /da/us-east/v3/engines/* |
+| client.ForgeApps | /da/us-east/v3/forgeapps/* |
+| client.Health | /da/us-east/v3/health/* |
+| client.ServiceLimits | /da/us-east/v3/servicelimits/* |
+| client.Shares | /da/us-east/v3/shares/* |
+| client.WorkItems | /da/us-east/v3/workitems/* |
+| client.Api | Full base client (all paths) |
+
+## Key Patterns
+
+### Parameter Types
+- `id`: `string` — fully qualified name like `MyNickname.MyActivity+MyAlias`
+- `aliasId`: `string` — alias label like `prod` or `dev`
+- `version`: `int` — numeric version number
+- `owner`: `string` — defaults to `"me"` for current app
+- `engine`: `string` — engine identifier like `Autodesk.Revit+2024`
+- `startAfterTime`: `int` — epoch seconds in UTC
+- `body`: Kiota-generated request body types in the `Models` namespace
+
+### Pagination
+```csharp
+// Auto-pagination — fetches all pages transparently
+await foreach (var activityId in client.ActivitiesManager.ListActivitiesAsync())
+{
+    Console.WriteLine(activityId);
+}
+
+// Stop after first 10
+await foreach (var activityId in client.ActivitiesManager.ListActivitiesAsync())
+{
+    if (count++ >= 10) break;
+}
+
+// With query parameters (filtering)
+await foreach (var item in client.WorkItemsManager.ListWorkItemsAsync(epochSeconds,
+    new() { QueryParameters = { Top = 50 } }))
+{ ... }
+```
+
+### Error Handling
+```csharp
+try { ... }
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"{ex.StatusCode}: {ex.Message}");
+    if (ex.Data["context"] is HttpResponseMessage resp)
+    {
+        var body = await resp.Content.ReadAsStringAsync();
+    }
+}
+```
+
+## Links
+
+- APS Docs: https://aps.autodesk.com/en/docs/design-automation/v3/
+- NuGet: https://www.nuget.org/packages/Adsk.Platform.Automation
+- Kiota: https://learn.microsoft.com/en-us/openapi/kiota/overview

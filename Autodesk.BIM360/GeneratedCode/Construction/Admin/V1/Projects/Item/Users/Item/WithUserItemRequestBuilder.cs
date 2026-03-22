@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item.Users.Item
         }
         /// <summary>
         /// Retrieves detailed information about the specified user in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/admin-projectsprojectId-users-userId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.Admin.V1.Projects.Item.Users.Item.WithUserGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

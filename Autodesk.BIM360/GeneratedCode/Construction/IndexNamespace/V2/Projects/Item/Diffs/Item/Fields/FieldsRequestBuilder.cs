@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
         }
         /// <summary>
         /// Retrieve a specific fields dictionary associated with a diff index.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/index-v2-diff-fields-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Fields.FieldsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

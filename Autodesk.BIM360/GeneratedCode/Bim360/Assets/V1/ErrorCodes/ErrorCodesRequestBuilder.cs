@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes
         }
         /// <summary>
         /// Retrieves a list of all error codes returned by the Assets API.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-error-codes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.ErrorCodesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -53,6 +53,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids
         }
         /// <summary>
         /// Retrieves a list of the bids received by the user&apos;s company from invited bidders.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bids-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.BidsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,6 +72,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids
         }
         /// <summary>
         /// Creates a host bid (the value of `creatorType` is `HOST`). Any bid submitted by a member of the project team (or via the BuildingConnected API) on behalf of a bidder is a host bid.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bids-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Bids.BidsPostResponse"/></returns>
         /// <param name="body">The request body</param>

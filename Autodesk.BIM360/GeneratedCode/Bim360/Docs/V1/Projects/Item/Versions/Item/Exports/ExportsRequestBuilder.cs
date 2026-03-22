@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports
         }
         /// <summary>
         /// Exports a single page from an uploaded PDF file into a new PDF file. You can also export the page&apos;s markups (annotations) and hyperlinks.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-projects-project_id-versions-version_id-exports-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.ExportsPostResponse"/></returns>
         /// <param name="body">The request body</param>

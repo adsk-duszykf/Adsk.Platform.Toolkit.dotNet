@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Documents.Item
         }
         /// <summary>
         /// Deletes Tandem document definition and its content.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-documents-documentID-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Documents.Item
         }
         /// <summary>
         /// Returns Tandem document definition.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-documents-documentID-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.Documents.Item.WithDocumentGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

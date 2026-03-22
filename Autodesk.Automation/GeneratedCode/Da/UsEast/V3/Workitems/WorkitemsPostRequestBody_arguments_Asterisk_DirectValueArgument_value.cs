@@ -8,7 +8,7 @@ using System;
 namespace Autodesk.Automation.Da.UsEast.V3.Workitems
 {
     /// <summary>
-    /// Simple json argument. This class represents json argument both in the workitem and job. Example: {``value``: {``key1``: ``value1``, ``key2``: ``value2``}}
+    /// Simple json argument. This class represents json argument both in the workitem and job. Example: {`value`: {`key1`: `value1`, `key2`: `value2`}}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument_value : IAdditionalDataHolder, IParsable

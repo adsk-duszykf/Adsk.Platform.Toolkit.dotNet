@@ -47,6 +47,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBi
         }
         /// <summary>
         /// Retrieves a list of the specified project bid form&apos;s line items.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-project-bid-forms-formId-line-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBidForms.Item.LineItems.LineItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBi
         }
         /// <summary>
         /// Creates a project bid form line item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-project-bid-forms-formId-line-items-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.ProjectBidForms.Item.LineItems.LineItemsPostResponse"/></returns>
         /// <param name="body">The request body</param>

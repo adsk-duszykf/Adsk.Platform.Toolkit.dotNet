@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes
         }
         /// <summary>
         /// Retrieves a project&apos;s issue types. To also include issue subtypes in the response, use the include=subtypes query string parameter.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-issue-types-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueTypes.IssueTypesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

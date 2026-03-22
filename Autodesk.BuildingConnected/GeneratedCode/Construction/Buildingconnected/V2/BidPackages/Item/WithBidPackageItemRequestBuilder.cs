@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Deletes a bid package. The requesting user must be a member of the project team, and the bid package&apos;s `state` field must be set to `DRAFT`.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-bidPackageId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Retrieves a specific bid package.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-bidPackageId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackageGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Updates fields in a bid package. The requesting user must be a member of the project team.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-bidPackageId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackages.Item.WithBidPackagePatchResponse"/></returns>
         /// <param name="body">The request body</param>

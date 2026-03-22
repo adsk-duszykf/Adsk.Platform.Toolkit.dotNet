@@ -62,19 +62,20 @@ public class SheetsManager
     /// </example>
     public async IAsyncEnumerable<VersionSetsGetResponse_results> ListVersionSetsAsync(
         Guid projectId,
-        Action<RequestConfiguration<VersionSetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<VersionSetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Sheets.V1.Projects[projectId]
                 .VersionSets
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -108,12 +109,17 @@ public class SheetsManager
     /// </example>
     public async Task<VersionSetsGetResponse?> GetVersionSetsAsync(
         Guid projectId,
-        Action<RequestConfiguration<VersionSetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<VersionSetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .VersionSets
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -136,12 +142,16 @@ public class SheetsManager
     public async Task<VersionSetsPostResponse?> CreateVersionSetAsync(
         Guid projectId,
         VersionSetsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .VersionSets
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -166,12 +176,16 @@ public class SheetsManager
         Guid projectId,
         string versionSetId,
         WithVersionSetPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .VersionSets[versionSetId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -194,12 +208,16 @@ public class SheetsManager
     public async Task<VersionSetsBatchGetPostResponse?> BatchGetVersionSetsAsync(
         Guid projectId,
         VersionSetsBatchGetPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .VersionSetsBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -222,12 +240,16 @@ public class SheetsManager
     public async Task BatchDeleteVersionSetsAsync(
         Guid projectId,
         VersionSetsBatchDeletePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Sheets.V1.Projects[projectId]
             .VersionSetsBatchDelete
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -254,12 +276,16 @@ public class SheetsManager
     public async Task<StoragePostResponse?> CreateStorageAsync(
         Guid projectId,
         StoragePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Storage
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -284,19 +310,20 @@ public class SheetsManager
     /// </example>
     public async IAsyncEnumerable<UploadsGetResponse_results> ListUploadsAsync(
         Guid projectId,
-        Action<RequestConfiguration<UploadsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<UploadsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Sheets.V1.Projects[projectId]
                 .Uploads
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -330,12 +357,17 @@ public class SheetsManager
     /// </example>
     public async Task<UploadsGetResponse?> GetUploadsAsync(
         Guid projectId,
-        Action<RequestConfiguration<UploadsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<UploadsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Uploads
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -358,12 +390,16 @@ public class SheetsManager
     public async Task<UploadsPostResponse?> CreateUploadAsync(
         Guid projectId,
         UploadsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Uploads
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -386,12 +422,16 @@ public class SheetsManager
     public async Task<WithUploadGetResponse?> GetUploadAsync(
         Guid projectId,
         string uploadId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Uploads[uploadId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -414,13 +454,18 @@ public class SheetsManager
     public async Task<ReviewSheetsGetResponse?> GetReviewSheetsAsync(
         Guid projectId,
         string uploadId,
-        Action<RequestConfiguration<ReviewSheetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ReviewSheetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Uploads[uploadId]
             .ReviewSheets
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -445,13 +490,17 @@ public class SheetsManager
         Guid projectId,
         string uploadId,
         ReviewSheetsPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Uploads[uploadId]
             .ReviewSheets
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -474,13 +523,17 @@ public class SheetsManager
     public async Task PublishReviewSheetsAsync(
         Guid projectId,
         string uploadId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Sheets.V1.Projects[projectId]
             .Uploads[uploadId]
             .ReviewSheetsPublish
-            .PostAsync(requestConfiguration, cancellationToken);
+            .PostAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -505,13 +558,17 @@ public class SheetsManager
         Guid projectId,
         string uploadId,
         ThumbnailsBatchGetPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Uploads[uploadId]
             .ThumbnailsBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -536,19 +593,20 @@ public class SheetsManager
     /// </example>
     public async IAsyncEnumerable<SheetsGetResponse_results> ListSheetsAsync(
         Guid projectId,
-        Action<RequestConfiguration<SheetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<SheetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Sheets.V1.Projects[projectId]
                 .Sheets
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -582,12 +640,17 @@ public class SheetsManager
     /// </example>
     public async Task<SheetsGetResponse?> GetSheetsAsync(
         Guid projectId,
-        Action<RequestConfiguration<SheetsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<SheetsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Sheets
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -610,12 +673,16 @@ public class SheetsManager
     public async Task<SheetsBatchGetPostResponse?> BatchGetSheetsAsync(
         Guid projectId,
         SheetsBatchGetPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .SheetsBatchGet
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -638,12 +705,16 @@ public class SheetsManager
     public async Task<SheetsBatchUpdatePostResponse?> BatchUpdateSheetsAsync(
         Guid projectId,
         SheetsBatchUpdatePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .SheetsBatchUpdate
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -666,12 +737,16 @@ public class SheetsManager
     public async Task BatchDeleteSheetsAsync(
         Guid projectId,
         SheetsBatchDeletePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Sheets.V1.Projects[projectId]
             .SheetsBatchDelete
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -694,12 +769,16 @@ public class SheetsManager
     public async Task<SheetsBatchRestorePostResponse?> BatchRestoreSheetsAsync(
         Guid projectId,
         SheetsBatchRestorePostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .SheetsBatchRestore
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -726,12 +805,16 @@ public class SheetsManager
     public async Task<ExportsPostResponse?> CreateExportAsync(
         Guid projectId,
         ExportsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Exports
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -754,12 +837,16 @@ public class SheetsManager
     public async Task<WithExportGetResponse?> GetExportAsync(
         Guid projectId,
         string exportId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Exports[exportId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion
@@ -784,19 +871,20 @@ public class SheetsManager
     /// </example>
     public async IAsyncEnumerable<CollectionsGetResponse_results> ListCollectionsAsync(
         Guid projectId,
-        Action<RequestConfiguration<CollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CollectionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Sheets.V1.Projects[projectId]
                 .Collections
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -830,12 +918,17 @@ public class SheetsManager
     /// </example>
     public async Task<CollectionsGetResponse?> GetCollectionsAsync(
         Guid projectId,
-        Action<RequestConfiguration<CollectionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CollectionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Collections
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -858,12 +951,16 @@ public class SheetsManager
     public async Task<WithCollectionGetResponse?> GetCollectionAsync(
         Guid projectId,
         Guid collectionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Sheets.V1.Projects[projectId]
             .Collections[collectionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     #endregion

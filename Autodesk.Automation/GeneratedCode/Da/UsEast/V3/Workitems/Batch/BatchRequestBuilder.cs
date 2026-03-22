@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Batch
         }
         /// <summary>
         /// The new WorkItems are always placed on the queue and later picked up by an engine.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/workitems-batch-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.Batch.BatchPostResponse"/></returns>
         /// <param name="body">The request body</param>

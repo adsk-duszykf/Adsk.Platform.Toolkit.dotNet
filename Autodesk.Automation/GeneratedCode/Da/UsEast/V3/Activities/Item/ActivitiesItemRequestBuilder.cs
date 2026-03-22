@@ -46,6 +46,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item
         }
         /// <summary>
         /// Deletes the specified Activity, including all versions and aliases.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,6 +64,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item
         }
         /// <summary>
         /// Gets the details of the specified Activity. Note that the {id} parameter must be a QualifiedId (owner.name+label).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.ActivitiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

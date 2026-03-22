@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.Values
         }
         /// <summary>
         /// Retrieves all of the defined segment values for a specific segment.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-values-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.Values.ValuesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.Values
         }
         /// <summary>
         /// Creates a segment value in a budget code segment.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-values-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.Segments.Item.Values.ValuesPostResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -22,7 +22,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities
 #else
         public List<string> Appbundles { get; set; }
 #endif
-        /// <summary>Path to Engine executable with arguments.`Activity command line &lt;/en/docs/design-automation/v3/developers_guide/field-guide#command-lines&gt;`_.</summary>
+        /// <summary>Path to Engine executable with arguments.[Activity command line](https://aps.autodesk.com/en/docs/design-automation/v3/developers_guide/field-guide#command-lines).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CommandLine { get; set; }

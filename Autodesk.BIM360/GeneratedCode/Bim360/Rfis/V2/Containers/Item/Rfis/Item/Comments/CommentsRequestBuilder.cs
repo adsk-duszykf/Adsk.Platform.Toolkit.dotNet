@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
         }
         /// <summary>
         /// Retrieves all the comments associated with a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-comments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
         }
         /// <summary>
         /// Adds a comment to a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-comments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments.CommentsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -126,6 +128,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommentsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Specify which attributes you want to appear in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fields")]
@@ -135,6 +138,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
 #endif
+            /// <summary>Retrieves comments created after the specified date, in the following format: YYYY-MM-DDThh:mm:ss.sz..YYYY-MM-DDThh:mm:ss.sz.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedAt%5D")]
@@ -144,6 +148,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             [QueryParameter("filter%5BcreatedAt%5D")]
             public string FiltercreatedAt { get; set; }
 #endif
+            /// <summary>Retrieves comments created by the specified user. To find the ID call GET users/me.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5BcreatedBy%5D")]
@@ -153,10 +158,13 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.Comments
             [QueryParameter("filter%5BcreatedBy%5D")]
             public string[] FiltercreatedBy { get; set; }
 #endif
+            /// <summary>The number of comments to return in the response payload. Acceptable value range: 1-100. Default value: 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The page number that you want to begin comment results from.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Sort the comments by the specified field. Separate multiple values with commas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

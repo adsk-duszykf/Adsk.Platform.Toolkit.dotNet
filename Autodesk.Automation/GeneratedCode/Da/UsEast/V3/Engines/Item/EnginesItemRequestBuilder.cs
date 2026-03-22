@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Engines.Item
         }
         /// <summary>
         /// Gets the details of the specified Engine. Note that the {id} parameter must be a QualifiedId (owner.name+label).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/engines-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Engines.Item.EnginesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

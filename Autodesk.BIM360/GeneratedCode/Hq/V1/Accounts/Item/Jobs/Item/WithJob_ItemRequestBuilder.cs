@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item
         }
         /// <summary>
         /// Returns the job status.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/jobs-:job_id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item.WithJob_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

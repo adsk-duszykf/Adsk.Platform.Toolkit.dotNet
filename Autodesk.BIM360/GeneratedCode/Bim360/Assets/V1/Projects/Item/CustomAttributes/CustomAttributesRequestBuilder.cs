@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
         }
         /// <summary>
         /// Searches for and returns all specified custom attributes.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-custom-attributes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes
         }
         /// <summary>
         /// Creates a new Asset custom attribute.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-custom-attributes-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CustomAttributes.CustomAttributesPostResponse"/></returns>
         /// <param name="body">The request body</param>

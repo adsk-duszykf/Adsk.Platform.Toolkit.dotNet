@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext
         }
         /// <summary>
         /// Retrieves the view context around a set of visual inspection issues, such as the model set and documents with which it is associated.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-get-model-set-issue-view-context-POST.rst" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Issues.Viewcontext.ViewcontextPostResponse"/></returns>
         /// <param name="body">The request body</param>

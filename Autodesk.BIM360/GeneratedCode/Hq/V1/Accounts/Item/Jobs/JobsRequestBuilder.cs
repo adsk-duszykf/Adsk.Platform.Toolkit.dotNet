@@ -16,7 +16,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs
     public partial class JobsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.hq.v1.accounts.item.jobs.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier for a job, which is generated when copying project settings and templates from a template project to a new project.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item.WithJob_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Jobs.Item.WithJob_ItemRequestBuilder this[Guid position]
         {

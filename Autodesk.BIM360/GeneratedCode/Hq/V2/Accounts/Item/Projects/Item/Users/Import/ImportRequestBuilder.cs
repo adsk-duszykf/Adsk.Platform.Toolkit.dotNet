@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import
         }
         /// <summary>
         /// Adds users (project admin and project user) to a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-project_id-users-import-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportPostResponse"/></returns>
         /// <param name="body">The request body</param>

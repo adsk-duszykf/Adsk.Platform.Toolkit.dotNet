@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItemsBatchCreate
         }
         /// <summary>
         /// Adds multiple cost items to a project. You can include up to 200 cost items per request.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-cost-itemsbatch-create-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItemsBatchCreate.CostItemsBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

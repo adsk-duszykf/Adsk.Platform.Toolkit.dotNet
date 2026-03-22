@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         }
         /// <summary>
         /// Retrieves sub cost items associated with a specific cost item in a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems
         }
         /// <summary>
         /// Creates a sub cost item within a specific cost item in a project. Sub cost items store detailed cost breakdowns and can be used for tracking and categorization.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.SubCostItemsPostResponse"/></returns>
         /// <param name="body">The request body</param>

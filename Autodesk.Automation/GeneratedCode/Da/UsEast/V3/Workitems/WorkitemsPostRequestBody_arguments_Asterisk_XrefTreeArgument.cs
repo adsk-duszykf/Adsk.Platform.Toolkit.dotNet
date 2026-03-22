@@ -15,7 +15,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Provides default name of the file or folder on the processing server for this argument. The ``local name`` of an argument is determined by the following algorithm:1. Use XrefTreeArgumentBase.LocalName if non-empty, otherwise next step.2. Use Autodesk.Das.Shared.Models.Parameter.LocalName if non-empty, otherwise next step3. Fail if Autodesk.Das.Shared.Models.Request.Url is a `data url &lt;https://en.wikipedia.org/wiki/Data_URI_scheme&gt;`_, otherwise next step.4. Use the `Content-Disposition &lt;http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1&gt;`_ header provided by Autodesk.Das.Shared.Models.Request.Url if the argument is an input (verb=get) and header is present, otherwise next step.5. Use the last segment Autodesk.Das.Shared.Models.Request.Url if the argument is an input (verb=get) and last segment of Autodesk.Das.Shared.Models.Request.Url is a filename (i.e. contains valid filename characters only and has an extension), otherwise next step.6. Use a unique generated name.</summary>
+        /// <summary>Provides default name of the file or folder on the processing server for this argument. The `local name` of an argument is determined by the following algorithm:1. Use XrefTreeArgumentBase.LocalName if non-empty, otherwise next step.2. Use Autodesk.Das.Shared.Models.Parameter.LocalName if non-empty, otherwise next step3. Fail if Autodesk.Das.Shared.Models.Request.Url is a [data url](https://en.wikipedia.org/wiki/Data_URI_scheme), otherwise next step.4. Use the [Content-Disposition](http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1) header provided by Autodesk.Das.Shared.Models.Request.Url if the argument is an input (verb=get) and header is present, otherwise next step.5. Use the last segment Autodesk.Das.Shared.Models.Request.Url if the argument is an input (verb=get) and last segment of Autodesk.Das.Shared.Models.Request.Url is a filename (i.e. contains valid filename characters only and has an extension), otherwise next step.6. Use a unique generated name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalName { get; set; }
@@ -25,7 +25,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
 #endif
         /// <summary>Argument optionality.Failure to download optional input arguments is OK.Failure to find or upload optional output arguments is OK.Defaults to false.</summary>
         public bool? Optional { get; set; }
-        /// <summary>Denotes the ``main file`` in a zip. This attribute together with the Autodesk.Das.Shared.Models.Parameter.Zip attribute determine how zip files are handled.The following table describes the behavior:</summary>
+        /// <summary>Denotes the `main file` in a zip. This attribute together with the Autodesk.Das.Shared.Models.Parameter.Zip attribute determine how zip files are handled.The following table describes the behavior:</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PathInZip { get; set; }

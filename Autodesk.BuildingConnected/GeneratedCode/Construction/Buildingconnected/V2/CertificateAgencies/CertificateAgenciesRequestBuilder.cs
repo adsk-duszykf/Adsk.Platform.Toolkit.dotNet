@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Certifica
         }
         /// <summary>
         /// Retrieves a list of certifying agencies that are supported by BuildingConnected. New ones can be requested using [this form](https://autodeskfeedback.az1.qualtrics.com/jfe/form/SV_0JQRzXzDhGQlMCq).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-certificate-agencies-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.CertificateAgencies.CertificateAgenciesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

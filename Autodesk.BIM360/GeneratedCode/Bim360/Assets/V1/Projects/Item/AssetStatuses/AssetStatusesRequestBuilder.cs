@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses
         }
         /// <summary>
         /// Searches for and returns all specified asset statuses.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-asset-statuses-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses
         }
         /// <summary>
         /// Creates a new asset status.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-asset-statuses-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.AssetStatuses.AssetStatusesPostResponse"/></returns>
         /// <param name="body">The request body</param>

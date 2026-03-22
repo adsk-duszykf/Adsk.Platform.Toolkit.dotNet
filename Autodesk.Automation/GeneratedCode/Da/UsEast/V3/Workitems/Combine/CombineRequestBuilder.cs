@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Combine
         }
         /// <summary>
         /// The allows users to create a simple fan-in workflow where 1-N workitems (parts) must complete before the final workitem (combinator) is processed.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/workitems-combine-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Workitems.Combine.CombinePostResponse"/></returns>
         /// <param name="body">The request body</param>

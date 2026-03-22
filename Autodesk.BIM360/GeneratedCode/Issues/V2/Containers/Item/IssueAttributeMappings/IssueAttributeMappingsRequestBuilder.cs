@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings
         }
         /// <summary>
         /// Retrieves information about the issue custom attributes that are assigned to issue categories and issue types.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-issue-attribute-mappings-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings.IssueAttributeMappingsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

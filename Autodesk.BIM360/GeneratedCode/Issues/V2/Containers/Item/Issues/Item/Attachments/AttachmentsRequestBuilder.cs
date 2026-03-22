@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
         }
         /// <summary>
         /// Get all attachments (by default will not return deleted attachments).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-attachments-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments
         }
         /// <summary>
         /// Create new Issue Attachment.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-attachments-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.AttachmentsPostResponse"/></returns>
         /// <param name="body">The request body</param>

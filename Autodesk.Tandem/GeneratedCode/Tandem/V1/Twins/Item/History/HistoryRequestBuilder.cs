@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.History
         }
         /// <summary>
         /// Returns history of all changes for a given twin.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-history-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Twins.Item.History.HistoryPostResponse"/></returns>
         /// <param name="body">The request body</param>

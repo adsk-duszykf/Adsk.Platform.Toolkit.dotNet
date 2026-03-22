@@ -53,20 +53,21 @@ public class AccountAdminManager
     /// </example>
     public async IAsyncEnumerable<Construction.Admin.V1.Accounts.Item.Projects.ProjectsGetResponse_results> ListProjectsAsync(
         Guid accountId,
-        Action<RequestConfiguration<ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ProjectsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Admin.V1.Accounts[accountId]
                 .Projects
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -105,12 +106,16 @@ public class AccountAdminManager
     public async Task<ProjectsPostResponse?> CreateProjectAsync(
         Guid accountId,
         ProjectsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Accounts[accountId]
             .Projects
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -131,11 +136,16 @@ public class AccountAdminManager
     /// </example>
     public async Task<Construction.Admin.V1.Projects.Item.WithProjectGetResponse?> GetProjectAsync(
         Guid projectId,
-        Action<RequestConfiguration<Construction.Admin.V1.Projects.Item.WithProjectItemRequestBuilder.WithProjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Construction.Admin.V1.Projects.Item.WithProjectItemRequestBuilder.WithProjectItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Projects[projectId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -158,13 +168,17 @@ public class AccountAdminManager
     public async Task<ImagePatchResponse?> UpdateProjectImageAsync(
         Guid accountId,
         Guid projectId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Projects[projectId]
             .Image
-            .PatchAsync(requestConfiguration, cancellationToken);
+            .PatchAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -188,20 +202,21 @@ public class AccountAdminManager
     /// </example>
     public async IAsyncEnumerable<CompaniesGetResponse_results> ListCompaniesAsync(
         Guid accountId,
-        Action<RequestConfiguration<CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CompaniesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Admin.V1.Accounts[accountId]
                 .Companies
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -240,12 +255,16 @@ public class AccountAdminManager
     public async Task<Hq.V1.Accounts.Item.Companies.CompaniesPostResponse?> CreateCompanyAsync(
         Guid accountId,
         Hq.V1.Accounts.Item.Companies.CompaniesPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Companies
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -268,13 +287,17 @@ public class AccountAdminManager
     public async Task<Hq.V1.Accounts.Item.Companies.Import.ImportPostResponse?> ImportCompaniesAsync(
         Guid accountId,
         Hq.V1.Accounts.Item.Companies.Import.ImportPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Companies
             .Import
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -297,12 +320,16 @@ public class AccountAdminManager
     public async Task<WithCompany_GetResponse?> GetCompanyAsync(
         Guid accountId,
         Guid companyId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Companies[companyId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -327,12 +354,16 @@ public class AccountAdminManager
         Guid accountId,
         Guid companyId,
         WithCompany_PatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Companies[companyId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -353,13 +384,18 @@ public class AccountAdminManager
     /// </example>
     public async Task<Hq.V1.Accounts.Item.Companies.Search.SearchGetResponse?> SearchCompaniesAsync(
         Guid accountId,
-        Action<RequestConfiguration<Hq.V1.Accounts.Item.Companies.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Hq.V1.Accounts.Item.Companies.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Companies
             .Search
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -382,13 +418,18 @@ public class AccountAdminManager
     public async Task<Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesGetResponse?> GetProjectCompaniesAsync(
         Guid accountId,
         Guid projectId,
-        Action<RequestConfiguration<Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Hq.V1.Accounts.Item.Projects.Item.Companies.CompaniesRequestBuilder.CompaniesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Projects[projectId]
             .Companies
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -411,13 +452,17 @@ public class AccountAdminManager
     public async Task<Hq.V1.Accounts.Item.Companies.Item.Image.ImagePatchResponse?> UpdateCompanyImageAsync(
         Guid accountId,
         Guid companyId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Companies[companyId]
             .Image
-            .PatchAsync(requestConfiguration, cancellationToken);
+            .PatchAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -440,12 +485,16 @@ public class AccountAdminManager
     public async Task<Hq.V1.Accounts.Item.Users.UsersPostResponse?> CreateUserAsync(
         Guid accountId,
         Hq.V1.Accounts.Item.Users.UsersPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Users
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -466,12 +515,17 @@ public class AccountAdminManager
     /// </example>
     public async Task<Hq.V1.Accounts.Item.Users.UsersGetResponse?> GetUsersAsync(
         Guid accountId,
-        Action<RequestConfiguration<Hq.V1.Accounts.Item.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Hq.V1.Accounts.Item.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Users
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -494,13 +548,17 @@ public class AccountAdminManager
     public async Task<Hq.V1.Accounts.Item.Users.Import.ImportPostResponse?> ImportUsersAsync(
         Guid accountId,
         Hq.V1.Accounts.Item.Users.Import.ImportPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Users
             .Import
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -523,12 +581,16 @@ public class AccountAdminManager
     public async Task<WithUser_GetResponse?> GetUserAsync(
         Guid accountId,
         Guid userId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Users[userId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -553,12 +615,16 @@ public class AccountAdminManager
         Guid accountId,
         Guid userId,
         WithUser_PatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Users[userId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -581,13 +647,18 @@ public class AccountAdminManager
     public async Task<Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsGetResponse?> GetUserProjectsAsync(
         Guid accountId,
         string userId,
-        Action<RequestConfiguration<Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Construction.Admin.V1.Accounts.Item.Users.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Accounts[accountId]
             .Users[userId]
             .Projects
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -610,13 +681,18 @@ public class AccountAdminManager
     public async Task<ProductsGetResponse?> GetUserProductsAsync(
         Guid accountId,
         string userId,
-        Action<RequestConfiguration<ProductsRequestBuilder.ProductsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ProductsRequestBuilder.ProductsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Accounts[accountId]
             .Users[userId]
             .Products
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -639,13 +715,18 @@ public class AccountAdminManager
     public async Task<RolesGetResponse?> GetUserRolesAsync(
         Guid accountId,
         string userId,
-        Action<RequestConfiguration<RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Accounts[accountId]
             .Users[userId]
             .Roles
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -666,13 +747,18 @@ public class AccountAdminManager
     /// </example>
     public async Task<Hq.V1.Accounts.Item.Users.Search.SearchGetResponse?> SearchUsersAsync(
         Guid accountId,
-        Action<RequestConfiguration<Hq.V1.Accounts.Item.Users.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<Hq.V1.Accounts.Item.Users.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Users
             .Search
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -696,20 +782,21 @@ public class AccountAdminManager
     /// </example>
     public async IAsyncEnumerable<UsersGetResponse_results> ListProjectUsersAsync(
         Guid projectId,
-        Action<RequestConfiguration<UsersRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<UsersRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        int offset = 0;
+        int offset = requestConfiguration?.QueryParameters?.Offset ?? 0;
 
         while (true)
         {
-            var capturedOffset = offset;
             var response = await _api.Construction.Admin.V1.Projects[projectId]
                 .Users
-                .GetAsync(config =>
+                .GetAsync(r =>
                 {
-                    requestConfiguration?.Invoke(config);
-                    config.QueryParameters.Offset = capturedOffset;
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.Offset = offset;
                 }, cancellationToken);
 
             if (response?.Results is not { Count: > 0 })
@@ -748,12 +835,16 @@ public class AccountAdminManager
     public async Task<UsersPostResponse?> AddProjectUserAsync(
         Guid projectId,
         UsersPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Projects[projectId]
             .Users
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -776,12 +867,16 @@ public class AccountAdminManager
     public async Task<Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostResponse?> ImportProjectUsersAsync(
         Guid projectId,
         Construction.Admin.V2.Projects.Item.UsersImport.UsersImportPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V2.Projects[projectId]
             .UsersImport
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -804,12 +899,17 @@ public class AccountAdminManager
     public async Task<WithUserGetResponse?> GetProjectUserAsync(
         Guid projectId,
         string userId,
-        Action<RequestConfiguration<WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Projects[projectId]
             .Users[userId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -834,12 +934,16 @@ public class AccountAdminManager
         Guid projectId,
         string userId,
         WithUserPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Construction.Admin.V1.Projects[projectId]
             .Users[userId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -862,12 +966,16 @@ public class AccountAdminManager
     public async Task RemoveProjectUserAsync(
         Guid projectId,
         string userId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Construction.Admin.V1.Projects[projectId]
             .Users[userId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -888,12 +996,16 @@ public class AccountAdminManager
     /// </example>
     public async Task<Business_units_structureGetResponse?> GetBusinessUnitsStructureAsync(
         Guid accountId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Business_units_structure
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -916,11 +1028,15 @@ public class AccountAdminManager
     public async Task<Business_units_structurePutResponse?> UpdateBusinessUnitsStructureAsync(
         Guid accountId,
         Business_units_structurePutRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.Hq.V1.Accounts[accountId]
             .Business_units_structure
-            .PutAsync(body, requestConfiguration, cancellationToken);
+            .PutAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

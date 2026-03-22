@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests
         }
         /// <summary>
         /// Retrieves a list of summaries for all clash tests that have been executed for a given model set. If no tests have yet been completed for the specified model set, no tests are returned.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-get-model-set-clash-tests-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Tests.TestsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

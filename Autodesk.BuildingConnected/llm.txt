@@ -1,0 +1,259 @@
+# Adsk.Platform.BuildingConnected — BuildingConnected SDK for .NET
+
+> NuGet: `Adsk.Platform.BuildingConnected` | Namespace: `Autodesk.BuildingConnected` | Target: `net8.0` | License: MIT
+> Generated from OpenAPI specs via Microsoft Kiota. **Unofficial package.**
+
+## Overview
+
+Type-safe C# SDK for the Autodesk BuildingConnected REST APIs. Provides two access patterns:
+
+1. **Fluent URL API** (`client.Api.*`) — mirrors the REST path structure exactly
+2. **Manager API** (`client.*Manager`) — high-level methods with auto-pagination, strongly-typed params, and XML doc with links to official docs
+
+## Quick Start
+
+```csharp
+using Autodesk.BuildingConnected;
+
+var client = new BuildingConnectedClient(() => Task.FromResult("YOUR_ACCESS_TOKEN"));
+
+// Manager approach (recommended) — auto-paginates
+await foreach (var project in client.ProjectsManager.ListProjectsAsync())
+    Console.WriteLine(project.Name);
+
+// Fluent URL approach — direct REST mapping
+var response = await client.Api.Construction.Buildingconnected.V2.Projects.GetAsync();
+```
+
+## Constructor
+
+```csharp
+public BuildingConnectedClient(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
+```
+
+- `getAccessToken`: async function returning a valid OAuth bearer token
+- `httpClient`: optional custom HttpClient (default includes retry + rate-limit handling)
+
+## Built-in Middleware
+
+- **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
+- **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
+
+## Managers (76 methods across 13 managers)
+
+All manager methods follow these conventions:
+- Async suffix (`*Async`)
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
+- Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages; use `break` or `.Take(n)` to stop early)
+- Non-paginated endpoints return `Task<T?>`
+- Each method documents the wrapped REST endpoint and links to official APS docs
+- All pagination is **cursor-based** (`CursorState` string token), not offset-based
+
+### ProjectsManager (11 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListProjectsAsync() | IAsyncEnumerable\<ProjectsGetResponse_results\> | GET /construction/buildingconnected/v2/projects |
+| GetProjectAsync(string projectId) | Task\<WithProjectGetResponse?\> | GET /construction/buildingconnected/v2/projects/{projectId} |
+| CreateProjectAsync(body) | Task\<ProjectsPostResponse?\> | POST /construction/buildingconnected/v2/projects |
+| UpdateProjectAsync(string projectId, body) | Task\<WithProjectPatchResponse?\> | PATCH /construction/buildingconnected/v2/projects/{projectId} |
+| DeleteProjectAsync(string projectId) | Task | DELETE /construction/buildingconnected/v2/projects/{projectId} |
+| ListCostsAsync(string projectId) | IAsyncEnumerable\<CostsGetResponse_results\> | GET /construction/buildingconnected/v2/projects/{projectId}/costs |
+| CreateCostAsync(string projectId, body) | Task\<CostsPostResponse?\> | POST /construction/buildingconnected/v2/projects/{projectId}/costs |
+| BatchCreateCostsAsync(string projectId, body) | Task\<CostsBatchCreatePostResponse?\> | POST /construction/buildingconnected/v2/projects/{projectId}/costs:batch-create |
+| BatchPatchCostsAsync(string projectId, body) | Task\<CostsBatchPatchPatchResponse?\> | PATCH /construction/buildingconnected/v2/projects/{projectId}/costs:batch-patch |
+| BatchDeleteCostsAsync(string projectId, List\<string\> costIds) | Task | POST /construction/buildingconnected/v2/projects/{projectId}/costs:batch-delete |
+| UpdateCostAsync(string projectId, string costId, body) | Task\<WithCostPatchResponse?\> | PATCH /construction/buildingconnected/v2/projects/{projectId}/costs/{costId} |
+
+### ProjectTeamMembersManager (5 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListProjectTeamMembersAsync() | IAsyncEnumerable\<ProjectTeamMembersGetResponse_results\> | GET /construction/buildingconnected/v2/project-team-members |
+| GetProjectTeamMemberAsync(string memberId) | Task\<WithMemberGetResponse?\> | GET /construction/buildingconnected/v2/project-team-members/{memberId} |
+| CreateProjectTeamMemberAsync(body) | Task\<ProjectTeamMembersPostResponse?\> | POST /construction/buildingconnected/v2/project-team-members |
+| UpdateProjectTeamMemberAsync(string memberId, body) | Task\<WithMemberPatchResponse?\> | PATCH /construction/buildingconnected/v2/project-team-members/{memberId} |
+| DeleteProjectTeamMemberAsync(string memberId) | Task | DELETE /construction/buildingconnected/v2/project-team-members/{memberId} |
+
+### BidPackagesManager (8 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListBidPackagesAsync() | IAsyncEnumerable\<BidPackagesGetResponse_results\> | GET /construction/buildingconnected/v2/bid-packages |
+| GetBidPackageAsync(string bidPackageId) | Task\<WithBidPackageGetResponse?\> | GET /construction/buildingconnected/v2/bid-packages/{bidPackageId} |
+| CreateBidPackageAsync(body) | Task\<BidPackagesPostResponse?\> | POST /construction/buildingconnected/v2/bid-packages |
+| UpdateBidPackageAsync(string bidPackageId, body) | Task\<WithBidPackagePatchResponse?\> | PATCH /construction/buildingconnected/v2/bid-packages/{bidPackageId} |
+| DeleteBidPackageAsync(string bidPackageId) | Task | DELETE /construction/buildingconnected/v2/bid-packages/{bidPackageId} |
+| BatchCreateBidPackagesAsync(body) | Task\<BidPackagesBatchCreatePostResponse?\> | POST /construction/buildingconnected/v2/bid-packages:batch-create |
+| BatchPatchBidPackagesAsync(body) | Task\<BidPackagesBatchPatchPatchResponse?\> | PATCH /construction/buildingconnected/v2/bid-packages:batch-patch |
+| BatchDeleteBidPackagesAsync(List\<string\> bidPackageIds) | Task | POST /construction/buildingconnected/v2/bid-packages:batch-delete |
+
+### InvitesManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListInvitesAsync() | IAsyncEnumerable\<InvitesGetResponse_results\> | GET /construction/buildingconnected/v2/invites |
+| GetInviteAsync(string inviteId) | Task\<WithInviteGetResponse?\> | GET /construction/buildingconnected/v2/invites/{inviteId} |
+| ImportEmailsAsync(body) | Task\<InvitesImportEmailsPostResponse?\> | POST /construction/buildingconnected/v2/invites:import-emails |
+| BatchImportEmailsAsync(body) | Task\<InvitesBatchImportEmailsPostResponse?\> | POST /construction/buildingconnected/v2/invites:batch-import-emails |
+
+### BidsManager (8 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListBidsAsync() | IAsyncEnumerable\<BidsGetResponse_results\> | GET /construction/buildingconnected/v2/bids |
+| GetBidAsync(string bidId) | Task\<WithBidGetResponse?\> | GET /construction/buildingconnected/v2/bids/{bidId} |
+| CreateBidAsync(body) | Task\<BidsPostResponse?\> | POST /construction/buildingconnected/v2/bids |
+| CreateBidAttachmentAsync(body) | Task\<AttachmentsPostResponse?\> | POST /construction/buildingconnected/v2/bids/attachments |
+| DeleteBidAttachmentAsync(string attachmentId) | Task | DELETE /construction/buildingconnected/v2/bids/attachments/{attachmentId} |
+| GetBidAttachmentAsync(string bidId, string attachmentId) | Task\<WithAttachmentGetResponse?\> | GET /construction/buildingconnected/v2/bids/{bidId}/attachments/{attachmentId} |
+| ListBidLineItemsAsync(string bidId) | IAsyncEnumerable\<LineItemsGetResponse_results\> | GET /construction/buildingconnected/v2/bids/{bidId}/line-items |
+| ListBidPlugsAsync(string bidId) | IAsyncEnumerable\<PlugsGetResponse_results\> | GET /construction/buildingconnected/v2/bids/{bidId}/plugs |
+
+### ProjectBidFormsManager (10 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListProjectBidFormsAsync() | IAsyncEnumerable\<ProjectBidFormsGetResponse_results\> | GET /construction/buildingconnected/v2/project-bid-forms |
+| GetProjectBidFormAsync(string formId) | Task\<WithFormGetResponse?\> | GET /construction/buildingconnected/v2/project-bid-forms/{formId} |
+| CreateProjectBidFormAsync(body) | Task\<ProjectBidFormsPostResponse?\> | POST /construction/buildingconnected/v2/project-bid-forms |
+| ListLineItemsAsync(string formId) | IAsyncEnumerable\<LineItemsGetResponse_results\> | GET /construction/buildingconnected/v2/project-bid-forms/{formId}/line-items |
+| CreateLineItemAsync(string formId, body) | Task\<LineItemsPostResponse?\> | POST /construction/buildingconnected/v2/project-bid-forms/{formId}/line-items |
+| UpdateLineItemAsync(string formId, string lineItemId, body) | Task\<WithLineItemPatchResponse?\> | PATCH /construction/buildingconnected/v2/project-bid-forms/{formId}/line-items/{lineItemId} |
+| DeleteLineItemAsync(string formId, string lineItemId) | Task | DELETE /construction/buildingconnected/v2/project-bid-forms/{formId}/line-items/{lineItemId} |
+| BatchCreateLineItemsAsync(string formId, body) | Task\<LineItemsBatchCreatePostResponse?\> | POST /construction/buildingconnected/v2/project-bid-forms/{formId}/line-items:batch-create |
+| BatchPatchLineItemsAsync(string formId, body) | Task\<LineItemsBatchPatchPatchResponse?\> | PATCH /construction/buildingconnected/v2/project-bid-forms/{formId}/line-items:batch-patch |
+| BatchDeleteLineItemsAsync(string formId, List\<string\> body) | Task | POST /construction/buildingconnected/v2/project-bid-forms/{formId}/line-items:batch-delete |
+
+### ScopeSpecificBidFormsManager (10 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListScopeSpecificBidFormsAsync() | IAsyncEnumerable\<ScopeSpecificBidFormsGetResponse_results\> | GET /construction/buildingconnected/v2/scope-specific-bid-forms |
+| GetScopeSpecificBidFormAsync(string formId) | Task\<WithFormGetResponse?\> | GET /construction/buildingconnected/v2/scope-specific-bid-forms/{formId} |
+| CreateScopeSpecificBidFormAsync(body) | Task\<ScopeSpecificBidFormsPostResponse?\> | POST /construction/buildingconnected/v2/scope-specific-bid-forms |
+| ListLineItemsAsync(string formId) | IAsyncEnumerable\<LineItemsGetResponse_results\> | GET /construction/buildingconnected/v2/scope-specific-bid-forms/{formId}/line-items |
+| CreateLineItemAsync(string formId, body) | Task\<LineItemsPostResponse?\> | POST /construction/buildingconnected/v2/scope-specific-bid-forms/{formId}/line-items |
+| UpdateLineItemAsync(string formId, string lineItemId, body) | Task\<WithLineItemPatchResponse?\> | PATCH /construction/buildingconnected/v2/scope-specific-bid-forms/{formId}/line-items/{lineItemId} |
+| DeleteLineItemAsync(string formId, string lineItemId) | Task | DELETE /construction/buildingconnected/v2/scope-specific-bid-forms/{formId}/line-items/{lineItemId} |
+| BatchCreateLineItemsAsync(string formId, body) | Task\<LineItemsBatchCreatePostResponse?\> | POST /construction/buildingconnected/v2/scope-specific-bid-forms/{formId}/line-items:batch-create |
+| BatchPatchLineItemsAsync(string formId, body) | Task\<LineItemsBatchPatchPatchResponse?\> | PATCH /construction/buildingconnected/v2/scope-specific-bid-forms/{formId}/line-items:batch-patch |
+| BatchDeleteLineItemsAsync(string formId, List\<string\> body) | Task | POST /construction/buildingconnected/v2/scope-specific-bid-forms/{formId}/line-items:batch-delete |
+
+### OpportunitiesManager (7 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListOpportunitiesAsync() | IAsyncEnumerable\<OpportunitiesGetResponse_results\> | GET /construction/buildingconnected/v2/opportunities |
+| GetOpportunityAsync(string opportunityId) | Task\<WithOpportunityGetResponse?\> | GET /construction/buildingconnected/v2/opportunities/{opportunityId} |
+| CreateOpportunityAsync(body) | Task\<OpportunitiesPostResponse?\> | POST /construction/buildingconnected/v2/opportunities |
+| UpdateOpportunityAsync(string opportunityId, body) | Task\<WithOpportunityPatchResponse?\> | PATCH /construction/buildingconnected/v2/opportunities/{opportunityId} |
+| DeleteOpportunityAsync(string opportunityId) | Task | DELETE /construction/buildingconnected/v2/opportunities/{opportunityId} |
+| ListOpportunityCommentsAsync(string opportunityId) | IAsyncEnumerable\<CommentsGetResponse_results\> | GET /construction/buildingconnected/v2/opportunities/{opportunityId}/comments |
+| GetOpportunityCommentAsync(string opportunityId, string commentId) | Task\<WithCommentGetResponse?\> | GET /construction/buildingconnected/v2/opportunities/{opportunityId}/comments/{commentId} |
+
+### ContactsManager (2 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListContactsAsync() | IAsyncEnumerable\<ContactsGetResponse_results\> | GET /construction/buildingconnected/v2/contacts |
+| GetContactAsync(string contactId) | Task\<WithContactGetResponse?\> | GET /construction/buildingconnected/v2/contacts/{contactId} |
+
+### UsersManager (3 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListUsersAsync() | IAsyncEnumerable\<UsersGetResponse_results\> | GET /construction/buildingconnected/v2/users |
+| GetUserAsync(string userId) | Task\<WithUserGetResponse?\> | GET /construction/buildingconnected/v2/users/{userId} |
+| GetCurrentUserAsync() | Task\<MeGetResponse?\> | GET /construction/buildingconnected/v2/users/me |
+
+### CertificationManager (2 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListCertificateTypesAsync() | IAsyncEnumerable\<CertificateTypesGetResponse_results\> | GET /construction/buildingconnected/v2/certificate-types |
+| ListCertificateAgenciesAsync() | IAsyncEnumerable\<CertificateAgenciesGetResponse_results\> | GET /construction/buildingconnected/v2/certificate-agencies |
+
+### OfficesManager (2 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListOfficesAsync() | IAsyncEnumerable\<OfficesGetResponse_results\> | GET /construction/buildingconnected/v2/offices |
+| GetOfficeAsync(string officeId) | Task\<WithOfficeGetResponse?\> | GET /construction/buildingconnected/v2/offices/{officeId} |
+
+### OpportunityProjectPairsManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListOpportunityProjectPairsAsync() | IAsyncEnumerable\<OpportunityProjectPairsGetResponse_results\> | GET /construction/buildingconnected/v2/opportunity-project-pairs |
+| GetOpportunityProjectPairAsync(string opportunityProjectPairId) | Task\<WithOpportunityProjectPairGetResponse?\> | GET /construction/buildingconnected/v2/opportunity-project-pairs/{opportunityProjectPairId} |
+| CreateOpportunityProjectPairAsync(body) | Task\<OpportunityProjectPairsPostResponse?\> | POST /construction/buildingconnected/v2/opportunity-project-pairs |
+| UpdateOpportunityProjectPairAsync(string id, body) | Task\<WithOpportunityProjectPairPatchResponse?\> | PATCH /construction/buildingconnected/v2/opportunity-project-pairs/{opportunityProjectPairId} |
+
+## Fluent URL Properties
+
+For direct REST path access without managers:
+
+| Property | Base Path |
+|----------|-----------|
+| client.BuildingConnected | /construction/buildingconnected/v2/* |
+| client.Api | Full base client (all paths) |
+
+## Key Patterns
+
+### Parameter Types
+- `projectId`: `string` — BuildingConnected project ID (not an ACC project ID)
+- `bidPackageId`: `string` — bid package ID
+- `bidId`: `string` — bid ID
+- `inviteId`: `string` — invite ID
+- `formId`: `string` — project bid form or scope-specific bid form ID
+- `lineItemId`: `string` — line item ID within a bid form
+- `costId`: `string` — indirect cost ID
+- `memberId`: `string` — project team member ID
+- `opportunityId`: `string` — opportunity ID
+- `contactId`: `string` — contact ID
+- `userId`: `string` — BuildingConnected user ID
+- `officeId`: `string` — office ID
+- `opportunityProjectPairId`: `string` — opportunity-project pair ID
+- `attachmentId`: `string` — bid attachment ID
+- `commentId`: `string` — opportunity comment ID
+
+### Pagination
+```csharp
+// Auto-pagination — fetches all pages transparently (cursor-based)
+await foreach (var project in client.ProjectsManager.ListProjectsAsync())
+{
+    Console.WriteLine(project.Name);
+}
+
+// Stop after first N
+await foreach (var bid in client.BidsManager.ListBidsAsync())
+{
+    if (count++ >= 10) break;
+}
+
+// With query parameters
+await foreach (var project in client.ProjectsManager.ListProjectsAsync(
+    new() { QueryParameters = { SearchText = "Office", IncludeClosed = true } }))
+{ ... }
+```
+
+### Error Handling
+```csharp
+try { ... }
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"{ex.StatusCode}: {ex.Message}");
+    if (ex.Data["context"] is HttpResponseMessage resp)
+    {
+        var body = await resp.Content.ReadAsStringAsync();
+    }
+}
+```
+
+## Links
+
+- APS Docs: https://aps.autodesk.com/en/docs/buildingconnected/v2/overview/
+- NuGet: https://www.nuget.org/packages/Adsk.Platform.BuildingConnected
+- Kiota: https://learn.microsoft.com/en-us/openapi/kiota/overview

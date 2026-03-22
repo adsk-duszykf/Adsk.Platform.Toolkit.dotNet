@@ -40,6 +40,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
         }
         /// <summary>
         /// Deletes the specified data request created earlier by the authenticated user. Note that the user must have executive overview or project administrator permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/data-connector-requests-requestId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,6 +58,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
         }
         /// <summary>
         /// Returns information about a specified data request created earlier by the authenticated user. Note that the user must have executive overview or project administrator permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/data-connector-requests-requestId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,6 +77,7 @@ namespace Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item
         }
         /// <summary>
         /// Updates the attributes of an existing data request created earlier by the authenticated user. Note that the user must have executive overview or project administrator permissions.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/data-connector-requests-requestId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.DataConnector.V1.Accounts.Item.Requests.Item.WithRequestPatchResponse"/></returns>
         /// <param name="body">The request body</param>

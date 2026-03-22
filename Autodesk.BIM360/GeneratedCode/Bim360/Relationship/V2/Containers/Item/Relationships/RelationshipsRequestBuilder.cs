@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships
         }
         /// <summary>
         /// Creates a relationship between two entities (for example, asset and document). Relationships are stored in the project container, and are retrievable via the relationships search endpoints.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/relationship-service-v2-add-relationships-PUT" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.Relationships.RelationshipsPutResponse"/></returns>
         /// <param name="body">The request body</param>

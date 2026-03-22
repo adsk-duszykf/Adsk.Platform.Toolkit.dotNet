@@ -8,18 +8,6 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item.Users
     public enum GetFilterTextMatchQueryParameterType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "filter[name]")]
-        #pragma warning disable CS1591
-        FilterName,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "filter[jobNumber]")]
-        #pragma warning disable CS1591
-        FilterJobNumber,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "filter[companyName]")]
-        #pragma warning disable CS1591
-        FilterCompanyName,
-        #pragma warning restore CS1591
         [EnumMember(Value = "contains")]
         #pragma warning disable CS1591
         Contains,

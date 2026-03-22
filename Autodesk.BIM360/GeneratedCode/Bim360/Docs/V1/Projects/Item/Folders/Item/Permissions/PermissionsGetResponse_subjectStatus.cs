@@ -7,13 +7,13 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PermissionsGetResponse_subjectStatus
     {
-        [EnumMember(Value = "INACTIVE")]
-        #pragma warning disable CS1591
-        INACTIVE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ACTIVE")]
         #pragma warning disable CS1591
         ACTIVE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INACTIVE")]
+        #pragma warning disable CS1591
+        INACTIVE,
         #pragma warning restore CS1591
         [EnumMember(Value = "PENDING")]
         #pragma warning disable CS1591

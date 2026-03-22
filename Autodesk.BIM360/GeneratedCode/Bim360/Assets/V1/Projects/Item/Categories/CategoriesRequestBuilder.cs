@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
         }
         /// <summary>
         /// Searches for and returns all specified categories.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-categories-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories
         }
         /// <summary>
         /// Creates a new category.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-categories-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.CategoriesPostResponse"/></returns>
         /// <param name="body">The request body</param>

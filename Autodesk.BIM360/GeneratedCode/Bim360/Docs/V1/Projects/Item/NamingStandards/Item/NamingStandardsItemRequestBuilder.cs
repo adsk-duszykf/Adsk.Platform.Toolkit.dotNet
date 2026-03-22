@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item
         }
         /// <summary>
         /// Retrieves the file naming standard for a project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-naming-standards-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.NamingStandards.Item.NamingStandardsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

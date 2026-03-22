@@ -8,14 +8,14 @@ using System;
 namespace Autodesk.Automation.Da.UsEast.V3.Workitems
 {
     /// <summary>
-    /// Simple string argument. This class represents string argument both in the workitem and job. Example: ``value``
+    /// Simple string argument. This class represents string argument both in the workitem and job. Example: `value`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Simple json argument. This class represents json argument both in the workitem and job. Example: {``value``: {``key1``: ``value1``, ``key2``: ``value2``}}</summary>
+        /// <summary>Simple json argument. This class represents json argument both in the workitem and job. Example: {`value`: {`key1`: `value1`, `key2`: `value2`}}</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.Automation.Da.UsEast.V3.Workitems.WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument_value? Value { get; set; }

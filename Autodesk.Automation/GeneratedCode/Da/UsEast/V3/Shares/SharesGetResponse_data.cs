@@ -30,7 +30,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Shares
 #else
         public List<string> Receiver { get; set; }
 #endif
-        /// <summary>Possible values: ``activity``, ``app``</summary>
+        /// <summary>Possible values: `activity`, `app`</summary>
         public global::Autodesk.Automation.Da.UsEast.V3.Shares.SharesGetResponse_data_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.Automation.Da.UsEast.V3.Shares.SharesGetResponse_data"/> and sets the default values.

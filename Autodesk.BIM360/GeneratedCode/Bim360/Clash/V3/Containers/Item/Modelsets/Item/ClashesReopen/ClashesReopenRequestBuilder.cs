@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.Clashes
         }
         /// <summary>
         /// Re-opens a batch of existing closed clash groups.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-clash-service-v3-reopen-closed-clash-group-batch-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Clash.V3.Containers.Item.Modelsets.Item.ClashesReopen.ClashesReopenPostResponse"/></returns>
         /// <param name="body">The request body</param>

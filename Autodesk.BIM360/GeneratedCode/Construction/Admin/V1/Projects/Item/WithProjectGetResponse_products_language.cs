@@ -7,10 +7,6 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WithProjectGetResponse_products_language
     {
-        [EnumMember(Value = "field")]
-        #pragma warning disable CS1591
-        Field,
-        #pragma warning restore CS1591
         [EnumMember(Value = "en")]
         #pragma warning disable CS1591
         En,
@@ -18,6 +14,10 @@ namespace Autodesk.BIM360.Construction.Admin.V1.Projects.Item
         [EnumMember(Value = "de")]
         #pragma warning disable CS1591
         De,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "de-CH")]
+        #pragma warning disable CS1591
+        DeCH,
         #pragma warning restore CS1591
         [EnumMember(Value = "nl")]
         #pragma warning disable CS1591

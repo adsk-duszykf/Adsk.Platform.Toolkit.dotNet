@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Deletes multiple bid packages. The requesting user must be a member of the project team, and the bid package&apos;s `state` field must be set to `DRAFT`.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-bidPackageId-batch-delete-POST" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

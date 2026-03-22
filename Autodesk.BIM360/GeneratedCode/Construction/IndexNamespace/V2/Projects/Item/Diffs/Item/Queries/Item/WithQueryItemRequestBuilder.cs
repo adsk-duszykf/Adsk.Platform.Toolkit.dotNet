@@ -40,6 +40,7 @@ namespace Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Ite
         }
         /// <summary>
         /// Depending on the state different properties might be present or missing.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/index-v2-diff-query-job-status-get" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Construction.IndexNamespace.V2.Projects.Item.Diffs.Item.Queries.Item.WithQueryGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

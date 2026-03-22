@@ -15,7 +15,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Workitems
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Simple string argument. This class represents string argument both in the workitem and job. Example: ``value``</summary>
+        /// <summary>Simple string argument. This class represents string argument both in the workitem and job. Example: `value`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Autodesk.Automation.Da.UsEast.V3.Workitems.WorkitemsPostRequestBody_arguments_Asterisk_DirectValueArgument? DirectValueArgument { get; set; }

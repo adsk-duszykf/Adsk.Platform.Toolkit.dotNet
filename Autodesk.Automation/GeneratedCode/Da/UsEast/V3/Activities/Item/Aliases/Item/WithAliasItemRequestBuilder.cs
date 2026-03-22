@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases.Item
         }
         /// <summary>
         /// Deletes the alias.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-aliases-aliasId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases.Item
         }
         /// <summary>
         /// Gets alias details.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-aliases-aliasId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases.Item.WithAliasGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,6 +71,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases.Item
         }
         /// <summary>
         /// Modifies alias details.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-aliases-aliasId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases.Item.WithAliasPatchResponse"/></returns>
         /// <param name="body">The request body</param>

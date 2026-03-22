@@ -36,7 +36,7 @@ namespace Autodesk.Tandem.Tandem.V1.Twins.Item.Documents.Item
 #else
         public string AccProjectId { get; set; }
 #endif
-        /// <summary>Optional version of of document</summary>
+        /// <summary>Optional version of document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccVersion { get; set; }

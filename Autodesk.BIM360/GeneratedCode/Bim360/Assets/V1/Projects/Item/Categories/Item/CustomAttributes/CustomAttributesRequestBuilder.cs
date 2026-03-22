@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomA
         }
         /// <summary>
         /// Returns the custom attribute assignments for a specified category.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-categories-category-id-custom-attributes-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.Categories.Item.CustomAttributes.CustomAttributesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

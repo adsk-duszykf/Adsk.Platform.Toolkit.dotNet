@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item
         }
         /// <summary>
         /// Update the server that the file was attached to attachment folder of the issue (by uploading local file) or fetch the status of association.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/issues-v2-attachments-attachmentId-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Issues.V2.Containers.Item.Issues.Item.Attachments.Item.WithAttachmentPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

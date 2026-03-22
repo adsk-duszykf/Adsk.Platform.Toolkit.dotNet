@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues
         }
         /// <summary>
         /// Retrieves one or more schedule of values (SOV) items in the given project.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-schedule-of-values-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.ScheduleOfValuesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues
         }
         /// <summary>
         /// Creates a new schedule of values (SOV) item for the given project as a child of an existing SOV item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-schedule-of-values-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ScheduleOfValues.ScheduleOfValuesPostResponse"/></returns>
         /// <param name="body">The request body</param>

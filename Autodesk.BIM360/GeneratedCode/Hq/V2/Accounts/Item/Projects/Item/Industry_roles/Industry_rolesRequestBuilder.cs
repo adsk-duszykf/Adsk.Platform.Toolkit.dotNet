@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles
         }
         /// <summary>
         /// Retrieves the industry roles for the project. For example, contractor and architect.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-project_id-industry_roles-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Industry_roles.Industry_rolesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

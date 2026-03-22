@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.Modeldata.Item.History
         }
         /// <summary>
         /// Returns history of all changes for a given model.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-modeldata-modelID-history-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.Modeldata.Item.History.HistoryPostResponse"/></returns>
         /// <param name="body">The request body</param>

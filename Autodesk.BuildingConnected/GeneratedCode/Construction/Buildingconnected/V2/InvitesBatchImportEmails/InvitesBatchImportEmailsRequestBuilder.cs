@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.InvitesBa
         }
         /// <summary>
         /// Adds bidders to multiple bid packages using their email.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-invites-batch-import-emails-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.InvitesBatchImportEmails.InvitesBatchImportEmailsPostResponse"/></returns>
         /// <param name="body">The request body</param>

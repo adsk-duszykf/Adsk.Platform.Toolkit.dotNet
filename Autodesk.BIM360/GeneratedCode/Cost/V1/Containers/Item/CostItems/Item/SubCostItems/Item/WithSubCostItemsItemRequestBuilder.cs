@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.It
         }
         /// <summary>
         /// Deletes a sub cost item within a specific cost item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-subCostItemsId-DELETE" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,6 +52,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.It
         }
         /// <summary>
         /// Updates a sub cost item within a specific cost item.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-sub-cost-items-subCostItemsId-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.CostItems.Item.SubCostItems.Item.WithSubCostItemsPatchResponse"/></returns>
         /// <param name="body">The request body</param>

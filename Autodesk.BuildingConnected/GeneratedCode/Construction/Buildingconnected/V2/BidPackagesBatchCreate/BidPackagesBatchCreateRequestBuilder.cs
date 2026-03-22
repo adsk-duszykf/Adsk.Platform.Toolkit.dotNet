@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackag
         }
         /// <summary>
         /// Creates multiple bid packages associated with a BuildingConnected project that is owned by the requesting user&apos;s company. The requesting user must be a member of the project team.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-bid-packages-batch-create-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.BidPackagesBatchCreate.BidPackagesBatchCreatePostResponse"/></returns>
         /// <param name="body">The request body</param>

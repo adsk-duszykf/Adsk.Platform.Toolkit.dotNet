@@ -53,6 +53,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Users
         }
         /// <summary>
         /// Retrieves a list of the BuildingConnected users in the requesting user&apos;s company. The results are scoped to a given BuildingConnected company.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-users-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Users.UsersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

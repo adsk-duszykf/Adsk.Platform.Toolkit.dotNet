@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Autodesk.Automation.Da.UsEast.V3.Workitems.Batch
 {
-    /// <summary>Status value of a WorkItem.Possible values: ``pending``, ``inprogress``, ``cancelled``, ``failedLimitProcessingTime``, ``failedDownload``, ``failedInstructions``, ``failedUpload``, ``failedUploadOptional``, ``success``</summary>
+    /// <summary>Status value of a WorkItem.Possible values: `pending`, `inprogress`, `cancelled`, `failedLimitProcessingTime`, `failedDownload`, `failedInstructions`, `failedUpload`, `failedUploadOptional`, `success`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BatchPostResponse_status
     {

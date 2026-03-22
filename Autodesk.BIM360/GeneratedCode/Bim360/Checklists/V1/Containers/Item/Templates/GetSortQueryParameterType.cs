@@ -16,13 +16,5 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Templates
         #pragma warning disable CS1591
         TemplateTypeName,
         #pragma warning restore CS1591
-        [EnumMember(Value = "sort=title")]
-        #pragma warning disable CS1591
-        SortTitle,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "sort=")]
-        #pragma warning disable CS1591
-        Sort,
-        #pragma warning restore CS1591
     }
 }

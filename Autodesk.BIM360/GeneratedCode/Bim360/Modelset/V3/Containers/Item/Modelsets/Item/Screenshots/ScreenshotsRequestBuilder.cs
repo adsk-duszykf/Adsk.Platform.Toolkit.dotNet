@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Scre
         }
         /// <summary>
         /// Uploads a screenshot, associating it with a given model set.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/mc-modelset-service-v3-add-screen-shot-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Modelset.V3.Containers.Item.Modelsets.Item.Screenshots.ScreenshotsPostResponse"/></returns>
         /// <param name="body">The request body</param>

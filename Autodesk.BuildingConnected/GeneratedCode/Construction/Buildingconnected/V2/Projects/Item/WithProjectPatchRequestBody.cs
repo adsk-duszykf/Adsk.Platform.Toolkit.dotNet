@@ -56,7 +56,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Projects.
 #else
         public string CurrentAccLinkedHubId { get; set; }
 #endif
-        /// <summary>The project ID of the Autodesk Construction Cloud project to link with this project. Multiple BuildingConnected projects can be linked to one ACC project.Note that the `currentAccLinkedHubId` field must be provided unless it is already set to the expected value.To obtain the hub and project IDs, see [Retrieve ACC Account and Project ID](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/).Note that when this value is `null`, `currentAccDocsFolderId` is automatically set to **null* as well.To unlink this project from the ACC project, set both this field and the `currentAccLinkedHubId` field to `null`.</summary>
+        /// <summary>The project ID of the Autodesk Construction Cloud project to link with this project. Multiple BuildingConnected projects can be linked to one ACC project.Note that the `currentAccLinkedHubId` field must be provided unless it is already set to the expected value.To obtain the hub and project IDs, see [Retrieve ACC Account and Project ID](https://aps.autodesk.com/en/docs/acc/v1/tutorials/getting-started/retrieve-account-and-project-id/).Note that when this value is `null`, `currentAccDocsFolderId` is automatically set to `null` as well.To unlink this project from the ACC project, set both this field and the `currentAccLinkedHubId` field to `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrentAccLinkedProjectId { get; set; }

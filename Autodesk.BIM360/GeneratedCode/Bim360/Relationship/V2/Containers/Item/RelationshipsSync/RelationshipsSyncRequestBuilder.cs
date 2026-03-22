@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSy
         }
         /// <summary>
         /// Synchronise relationships using the (optional) synchronization token passed by the caller.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/relationship-service-v2-relationships-sync-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Relationship.V2.Containers.Item.RelationshipsSync.RelationshipsSyncPostResponse"/></returns>
         /// <param name="body">The request body</param>

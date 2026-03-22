@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
         }
         /// <summary>
         /// Retrieves a list of change orders of a specified change order type, including PCO (potential change orders), RFQ (requests for quote), SCO (supplier change orders), RCO (requests for change order), and OCO (owner change orders).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-change-orders-changeOrder-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item
         }
         /// <summary>
         /// Create a new change order (typically a PCO) to initiate a change.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/cost-change-orders-changeOrder-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Cost.V1.Containers.Item.ChangeOrders.Item.WithChangeOrderPostResponse"/></returns>
         /// <param name="body">The request body</param>

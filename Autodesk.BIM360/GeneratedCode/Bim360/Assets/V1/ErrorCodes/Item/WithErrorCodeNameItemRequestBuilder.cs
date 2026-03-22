@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.Item
         }
         /// <summary>
         /// Retrieves details about an error code by name.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-error-codes-error-code-name-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.ErrorCodes.Item.WithErrorCodeNameGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

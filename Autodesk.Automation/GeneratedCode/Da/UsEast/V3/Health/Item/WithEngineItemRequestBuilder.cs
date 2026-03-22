@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Health.Item
         }
         /// <summary>
         /// Gets the health status by Engine or for all Engines (Inventor, AutoCAD ...).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/health-engine-GET" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

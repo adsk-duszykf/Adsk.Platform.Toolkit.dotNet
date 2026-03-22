@@ -47,6 +47,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases
         }
         /// <summary>
         /// Lists all aliases for the specified Activity.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-aliases-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases.AliasesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases
         }
         /// <summary>
         /// Creates a new alias for this Activity.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/activities-id-aliases-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Activities.Item.Aliases.AliasesPostResponse"/></returns>
         /// <param name="body">The request body</param>

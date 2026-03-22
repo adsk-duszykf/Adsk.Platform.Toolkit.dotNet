@@ -34,6 +34,7 @@ namespace Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Contacts.
         }
         /// <summary>
         /// Retrieves information about a specific contact at the user&apos;s company. Contacts represent the relationship between a user&apos;s company and an invited bidder&apos;s office (not the bidder&apos;s company).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/buildingconnected/v2/reference/http/buildingconnected-contacts-contactId-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BuildingConnected.Construction.Buildingconnected.V2.Contacts.Item.WithContactGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

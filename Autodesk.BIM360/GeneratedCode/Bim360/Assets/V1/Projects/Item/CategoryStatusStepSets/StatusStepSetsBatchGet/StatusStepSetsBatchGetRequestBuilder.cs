@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.
         }
         /// <summary>
         /// Returns status set assignments associated with a specified set of categories. It can return just explicit
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-category-status-step-sets-status-step-sets-batch-get-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V1.Projects.Item.CategoryStatusStepSets.StatusStepSetsBatchGet.StatusStepSetsBatchGetPostResponse"/></returns>
         /// <param name="body">The request body</param>

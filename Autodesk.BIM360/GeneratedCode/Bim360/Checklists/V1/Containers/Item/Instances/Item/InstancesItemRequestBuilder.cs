@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item
         }
         /// <summary>
         /// Retrieves detailed information about a single [BIM 360 Field Management](https://field.b360.autodesk.com/) checklist (`instance`).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/checklists-instances-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Checklists.V1.Containers.Item.Instances.Item.InstancesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

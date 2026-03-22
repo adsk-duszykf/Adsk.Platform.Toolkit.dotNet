@@ -34,6 +34,7 @@ namespace Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.Getstreamssecrets
         }
         /// <summary>
         /// Retrieves ingestion secret(s), associated with specific data stream(s).
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/tandem/v1/reference/quick_reference/tandem-data-getstreamssecrets-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Tandem.Tandem.V1.ModelsRequests.Item.Getstreamssecrets.GetstreamssecretsPostResponse"/></returns>
         /// <param name="body">The request body</param>

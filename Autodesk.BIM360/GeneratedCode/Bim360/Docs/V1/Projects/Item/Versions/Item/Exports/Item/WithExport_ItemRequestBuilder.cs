@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Ite
         }
         /// <summary>
         /// Returns the status of a PDF export job, as well as data you need to download the exported file when the export is complete.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-projects-project_id-versions-version_id-exports-export_id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Versions.Item.Exports.Item.WithExport_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

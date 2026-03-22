@@ -46,6 +46,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
         }
         /// <summary>
         /// Retrieves detailed information about a single BIM 360 RFI (request for information), including the type of workflow roles assigned to the user, whether the user is permitted to create RFIs, which states the user can create the RFIs in, and the attributes that are required when creating the RFIs in the different states.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-rfis-id-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,6 +65,7 @@ namespace Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item
         }
         /// <summary>
         /// Updates a [BIM 360 Project Management](https://pm.b360.autodesk.com) RFI.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/rfis-v2-rfis-id-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Rfis.V2.Containers.Item.Rfis.Item.WithRfiPatchResponse"/></returns>
         /// <param name="body">The request body</param>

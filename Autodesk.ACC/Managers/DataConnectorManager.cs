@@ -47,12 +47,16 @@ public class DataConnectorManager
     public async Task<RequestsPostResponse?> CreateRequestAsync(
         Guid accountId,
         RequestsPostRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Requests
-            .PostAsync(body, requestConfiguration, cancellationToken);
+            .PostAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -73,12 +77,17 @@ public class DataConnectorManager
     /// </example>
     public async Task<RequestsGetResponse?> GetRequestsAsync(
         Guid accountId,
-        Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<RequestsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Requests
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -101,12 +110,16 @@ public class DataConnectorManager
     public async Task<WithRequestGetResponse?> GetRequestAsync(
         Guid accountId,
         Guid requestId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Requests[requestId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -131,12 +144,16 @@ public class DataConnectorManager
         Guid accountId,
         Guid requestId,
         WithRequestPatchRequestBody body,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Requests[requestId]
-            .PatchAsync(body, requestConfiguration, cancellationToken);
+            .PatchAsync(body, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -159,12 +176,16 @@ public class DataConnectorManager
     public async Task DeleteRequestAsync(
         Guid accountId,
         Guid requestId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.DataConnector.V1.Accounts[accountId]
             .Requests[requestId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -187,13 +208,18 @@ public class DataConnectorManager
     public async Task<Autodesk.ACC.DataConnector.V1.Accounts.Item.Requests.Item.Jobs.JobsGetResponse?> GetRequestJobsAsync(
         Guid accountId,
         Guid requestId,
-        Action<RequestConfiguration<RequestJobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<RequestJobsRequestBuilder.JobsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Requests[requestId]
             .Jobs
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -214,12 +240,17 @@ public class DataConnectorManager
     /// </example>
     public async Task<Autodesk.ACC.DataConnector.V1.Accounts.Item.Jobs.JobsGetResponse?> GetJobsAsync(
         Guid accountId,
-        Action<RequestConfiguration<JobsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<JobsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Jobs
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -242,12 +273,16 @@ public class DataConnectorManager
     public async Task<WithJobGetResponse?> GetJobAsync(
         Guid accountId,
         Guid jobId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Jobs[jobId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -270,12 +305,16 @@ public class DataConnectorManager
     public async Task CancelJobAsync(
         Guid accountId,
         Guid jobId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.DataConnector.V1.Accounts[accountId]
             .Jobs[jobId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -298,13 +337,17 @@ public class DataConnectorManager
     public async Task<DataListingGetResponse?> GetDataListingAsync(
         Guid accountId,
         Guid jobId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Jobs[jobId]
             .DataListing
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 
     /// <summary>
@@ -329,12 +372,16 @@ public class DataConnectorManager
         Guid accountId,
         Guid jobId,
         Guid name,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         return await _api.DataConnector.V1.Accounts[accountId]
             .Jobs[jobId]
             .Data[name]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                }, cancellationToken);
     }
 }

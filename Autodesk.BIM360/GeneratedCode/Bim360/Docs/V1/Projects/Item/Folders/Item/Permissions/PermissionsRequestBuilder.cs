@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions
         }
         /// <summary>
         /// Retrieves information about the permissions assigned to users, roles and companies for a [BIM 360 Document Management](https://docs.b360.autodesk.com/) folder, including details about the name and the status.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/document-management-projects-project_id-folders-folder_id-permissions-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Docs.V1.Projects.Item.Folders.Item.Permissions.PermissionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

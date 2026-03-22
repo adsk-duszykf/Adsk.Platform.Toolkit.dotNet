@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets
         }
         /// <summary>
         /// Searches for and returns all specified assets within a project visible to the authenticated user.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/assets-assets-v2-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Bim360.Assets.V2.Projects.Item.Assets.AssetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

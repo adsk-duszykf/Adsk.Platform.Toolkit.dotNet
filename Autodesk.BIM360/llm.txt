@@ -1,0 +1,440 @@
+# Adsk.Platform.BIM360 — BIM 360 SDK for .NET
+
+> NuGet: `Adsk.Platform.BIM360` | Namespace: `Autodesk.BIM360` | Target: `net8.0` | License: MIT
+> Generated from OpenAPI specs via Microsoft Kiota. **Unofficial package.**
+
+## Overview
+
+Type-safe C# SDK for the Autodesk BIM 360 REST APIs. Provides two access patterns:
+
+1. **Fluent URL API** (`client.Api.*`) — mirrors the REST path structure exactly
+2. **Manager API** (`client.*Manager`) — high-level methods with auto-pagination, strongly-typed params, and XML doc with links to official docs
+
+## Quick Start
+
+```csharp
+using Autodesk.BIM360;
+
+var client = new BIM360client(() => Task.FromResult("YOUR_ACCESS_TOKEN"));
+
+// Manager approach (recommended) — auto-paginates
+await foreach (var issue in client.IssuesManager.ListIssuesAsync(containerId))
+    Console.WriteLine(issue.Title);
+
+// Fluent URL approach — direct REST mapping
+var response = await client.Api.Issues.V2.Containers[containerId].QualityIssues.GetAsync();
+```
+
+## Constructor
+
+```csharp
+public BIM360client(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
+```
+
+- `getAccessToken`: async function returning a valid OAuth bearer token
+- `httpClient`: optional custom HttpClient (default includes retry + rate-limit handling)
+
+## Built-in Middleware
+
+- **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
+- **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
+
+## Managers (266 methods across 12 managers)
+
+All manager methods follow these conventions:
+- Async suffix (`*Async`)
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
+- Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages; use `break` or `.Take(n)` to stop early)
+- Non-paginated endpoints return `Task<T?>`
+- Each method documents the wrapped REST endpoint and links to official APS docs
+
+### AccountAdminManager (33 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListProjectsAsync(Guid accountId) | IAsyncEnumerable\<ProjectsGetResponse_results\> | GET /construction/admin/v1/accounts/{accountId}/projects |
+| GetHqProjectsPageAsync(Guid accountId) | Task\<ProjectsGetResponse?\> | GET /hq/v1/accounts/{account_id}/projects |
+| CreateProjectAsync(Guid accountId, body) | Task\<ProjectsPostResponse?\> | POST /hq/v1/accounts/{account_id}/projects |
+| GetHqProjectAsync(Guid accountId, Guid projectId) | Task\<WithProject_GetResponse?\> | GET /hq/v1/accounts/{account_id}/projects/{project_id} |
+| UpdateHqProjectAsync(Guid accountId, Guid projectId, body) | Task\<WithProject_PatchResponse?\> | PATCH /hq/v1/accounts/{account_id}/projects/{project_id} |
+| GetProjectAsync(Guid projectId) | Task\<WithProjectGetResponse?\> | GET /construction/admin/v1/projects/{projectId} |
+| UpdateProjectImageAsync(Guid accountId, Guid projectId) | Task\<ImagePatchResponse?\> | PATCH /hq/v1/accounts/{account_id}/projects/{project_id}/image |
+| ListCompaniesAsync(Guid accountId) | IAsyncEnumerable\<CompaniesGetResponse_results\> | GET /construction/admin/v1/accounts/{accountId}/companies |
+| GetHqCompaniesPageAsync(Guid accountId) | Task\<CompaniesGetResponse?\> | GET /hq/v1/accounts/{account_id}/companies |
+| CreateCompanyAsync(Guid accountId, body) | Task\<CompaniesPostResponse?\> | POST /hq/v1/accounts/{account_id}/companies |
+| ImportCompaniesAsync(Guid accountId, body) | Task\<ImportPostResponse?\> | POST /hq/v1/accounts/{account_id}/companies/import |
+| GetCompanyAsync(Guid accountId, Guid companyId) | Task\<WithCompany_GetResponse?\> | GET /hq/v1/accounts/{account_id}/companies/{company_id} |
+| UpdateCompanyAsync(Guid accountId, Guid companyId, body) | Task\<WithCompany_PatchResponse?\> | PATCH /hq/v1/accounts/{account_id}/companies/{company_id} |
+| SearchCompaniesAsync(Guid accountId) | Task\<SearchGetResponse?\> | GET /hq/v1/accounts/{account_id}/companies/search |
+| GetProjectCompaniesAsync(Guid accountId, Guid projectId) | Task\<CompaniesGetResponse?\> | GET /hq/v1/accounts/{account_id}/projects/{project_id}/companies |
+| UpdateCompanyImageAsync(Guid accountId, Guid companyId) | Task\<ImagePatchResponse?\> | PATCH /hq/v1/accounts/{account_id}/companies/{company_id}/image |
+| CreateUserAsync(Guid accountId, body) | Task\<UsersPostResponse?\> | POST /hq/v1/accounts/{account_id}/users |
+| GetHqUsersPageAsync(Guid accountId) | Task\<UsersGetResponse?\> | GET /hq/v1/accounts/{account_id}/users |
+| ImportUsersAsync(Guid accountId, body) | Task\<ImportPostResponse?\> | POST /hq/v1/accounts/{account_id}/users/import |
+| GetUserAsync(Guid accountId, Guid userId) | Task\<WithUser_GetResponse?\> | GET /hq/v1/accounts/{account_id}/users/{user_id} |
+| UpdateUserAsync(Guid accountId, Guid userId, body) | Task\<WithUser_PatchResponse?\> | PATCH /hq/v1/accounts/{account_id}/users/{user_id} |
+| SearchUsersAsync(Guid accountId) | Task\<SearchGetResponse?\> | GET /hq/v1/accounts/{account_id}/users/search |
+| ListConstructionProjectUsersAsync(Guid projectId) | IAsyncEnumerable\<UsersGetResponse_results\> | GET /construction/admin/v1/projects/{projectId}/users |
+| ListBim360ProjectUsersAsync(Guid projectId) | IAsyncEnumerable\<UsersGetResponse_results\> | GET /bim360/admin/v1/projects/{projectId}/users |
+| GetConstructionProjectUserAsync(Guid projectId, string userId) | Task\<WithUserGetResponse?\> | GET /construction/admin/v1/projects/{projectId}/users/{userId} |
+| GetBim360ProjectUserAsync(Guid projectId, string userId) | Task\<WithUserGetResponse?\> | GET /bim360/admin/v1/projects/{projectId}/users/{userId} |
+| AddHqProjectUserAsync(Guid accountId, Guid projectId, body) | Task\<UsersPostResponse?\> | POST /hq/v1/accounts/{account_id}/projects/{project_id}/users |
+| ImportProjectUsersAsync(Guid accountId, Guid projectId, body) | Task\<ImportPostResponse?\> | POST /hq/v2/accounts/{account_id}/projects/{project_id}/users/import |
+| UpdateHqV2ProjectUserAsync(Guid accountId, Guid projectId, string userId, body) | Task\<WithUser_PatchResponse?\> | PATCH /hq/v2/accounts/{account_id}/projects/{project_id}/users/{user_id} |
+| GetIndustryRolesAsync(Guid accountId, Guid projectId) | Task\<Industry_rolesGetResponse?\> | GET /hq/v2/accounts/{account_id}/projects/{project_id}/industry_roles |
+| GetBusinessUnitsStructureAsync(Guid accountId) | Task\<Business_units_structureGetResponse?\> | GET /hq/v1/accounts/{account_id}/business_units_structure |
+| UpdateBusinessUnitsStructureAsync(Guid accountId, body) | Task\<Business_units_structurePutResponse?\> | PUT /hq/v1/accounts/{account_id}/business_units_structure |
+| GetJobAsync(Guid accountId, Guid jobId) | Task\<WithJob_GetResponse?\> | GET /hq/v1/accounts/{account_id}/jobs/{job_id} |
+
+### AssetsManager (27 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListAssetsAsync(string projectId) | IAsyncEnumerable\<AssetsGetResponse_results\> | GET /bim360/assets/v2/projects/{projectId}/assets |
+| BatchCreateAssetsAsync(string projectId, body) | Task\<AssetsBatchCreatePostResponse?\> | POST /bim360/assets/v2/projects/{projectId}/assets:batch-create |
+| BatchGetAssetsAsync(string projectId, body) | Task\<AssetsBatchGetPostResponse?\> | POST /bim360/assets/v2/projects/{projectId}/assets:batch-get |
+| BatchPatchAssetsAsync(string projectId, body) | Task\<AssetsBatchPatchPatchResponse?\> | PATCH /bim360/assets/v2/projects/{projectId}/assets:batch-patch |
+| BatchDeleteAssetsAsync(string projectId, body) | Task | POST /bim360/assets/v2/projects/{projectId}/assets:batch-delete |
+| GetCategoriesAsync(string projectId) | Task\<CategoriesGetResponse?\> | GET /bim360/assets/v1/projects/{projectId}/categories |
+| CreateCategoryAsync(string projectId, body) | Task\<CategoriesPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/categories |
+| BatchGetCategoriesAsync(string projectId, body) | Task\<CategoriesBatchGetPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/categories:batch-get |
+| SetCategoryStatusStepSetAsync(string projectId, string categoryId, Guid statusStepSetId) | Task\<WithStatusStepSetPutResponse?\> | PUT /bim360/assets/v1/projects/{projectId}/categories/{categoryId}/status-step-set/{statusStepSetId} |
+| GetCategoryCustomAttributesAsync(string projectId, string categoryId) | Task\<CustomAttributesGetResponse?\> | GET /bim360/assets/v1/projects/{projectId}/categories/{categoryId}/custom-attributes |
+| AssignCustomAttributeToCategoryAsync(string projectId, string categoryId, Guid customAttributeId) | Task\<WithCustomAttributePutResponse?\> | PUT /bim360/assets/v1/projects/{projectId}/categories/{categoryId}/custom-attributes/{customAttributeId} |
+| ListStatusStepSetsAsync(string projectId) | IAsyncEnumerable\<StatusStepSetsGetResponse_results\> | GET /bim360/assets/v1/projects/{projectId}/status-step-sets |
+| CreateStatusStepSetAsync(string projectId, body) | Task\<StatusStepSetsPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/status-step-sets |
+| BatchGetStatusStepSetsAsync(string projectId, body) | Task\<StatusStepSetsBatchGetPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/status-step-sets:batch-get |
+| BatchGetCategoryStatusStepSetsAsync(string projectId, body) | Task\<StatusStepSetsBatchGetPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/category-status-step-sets/status-step-sets:batch-get |
+| ListAssetStatusesAsync(string projectId) | IAsyncEnumerable\<AssetStatusesGetResponse_results\> | GET /bim360/assets/v1/projects/{projectId}/asset-statuses |
+| CreateAssetStatusAsync(string projectId, body) | Task\<AssetStatusesPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/asset-statuses |
+| BatchGetAssetStatusesAsync(string projectId, body) | Task\<AssetStatusesBatchGetPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/asset-statuses:batch-get |
+| ListCustomAttributesAsync(string projectId) | IAsyncEnumerable\<CustomAttributesGetResponse_results\> | GET /bim360/assets/v1/projects/{projectId}/custom-attributes |
+| CreateCustomAttributeAsync(string projectId, body) | Task\<CustomAttributesPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/custom-attributes |
+| BatchGetCustomAttributesAsync(string projectId, body) | Task\<CustomAttributesBatchGetPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/custom-attributes:batch-get |
+| UpdateCustomAttributeAsync(string projectId, Guid customAttributeId, body) | Task\<WithCustomAttributePatchResponse?\> | PATCH /bim360/assets/v1/projects/{projectId}/custom-attributes/{customAttributeId} |
+| GetErrorCodesAsync() | Task\<ErrorCodesGetResponse?\> | GET /bim360/assets/v1/error-codes |
+| GetErrorCodeAsync(string errorCodeName) | Task\<WithErrorCodeNameGetResponse?\> | GET /bim360/assets/v1/error-codes/{errorCodeName} |
+| CreateAssetRelationshipsAsync(string projectId, Guid assetId, body) | Task\<RelationshipsPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/assets/{assetId}/relationships |
+| CreateCategoryRelationshipsAsync(string projectId, string categoryId, body) | Task\<RelationshipsPostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/categories/{categoryId}/relationships |
+| DeleteRelationshipsAsync(string projectId, body) | Task\<RelationshipsDeletePostResponse?\> | POST /bim360/assets/v1/projects/{projectId}/relationships:delete |
+
+### ChecklistsManager (6 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListInstancesAsync(string containerId) | IAsyncEnumerable\<InstancesGetResponse_data\> | GET /bim360/checklists/v1/containers/{containerId}/instances |
+| GetInstancesPageAsync(string containerId) | Task\<InstancesGetResponse?\> | GET /bim360/checklists/v1/containers/{containerId}/instances |
+| GetInstanceAsync(string containerId, string instanceId) | Task\<InstancesGetResponse?\> | GET /bim360/checklists/v1/containers/{containerId}/instances/{id} |
+| ListTemplatesAsync(string containerId) | IAsyncEnumerable\<TemplatesGetResponse_data\> | GET /bim360/checklists/v1/containers/{containerId}/templates |
+| GetTemplatesPageAsync(string containerId) | Task\<TemplatesGetResponse?\> | GET /bim360/checklists/v1/containers/{containerId}/templates |
+| GetTemplateAsync(string containerId, string templateId) | Task\<TemplatesGetResponse?\> | GET /bim360/checklists/v1/containers/{containerId}/templates/{id} |
+
+### CostManager (84 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListBudgetsAsync(Guid containerId) | IAsyncEnumerable\<BudgetsGetResponse_results\> | GET /cost/v1/containers/{containerId}/budgets |
+| GetBudgetsAsync(Guid containerId) | Task\<BudgetsGetResponse?\> | GET /cost/v1/containers/{containerId}/budgets |
+| CreateBudgetAsync(Guid containerId, body) | Task\<BudgetsPostResponse?\> | POST /cost/v1/containers/{containerId}/budgets |
+| GetBudgetAsync(Guid containerId, string budgetId) | Task\<WithBudgetGetResponse?\> | GET /cost/v1/containers/{containerId}/budgets/{budgetId} |
+| UpdateBudgetAsync(Guid containerId, string budgetId, body) | Task\<WithBudgetPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/budgets/{budgetId} |
+| DeleteBudgetAsync(Guid containerId, string budgetId) | Task | DELETE /cost/v1/containers/{containerId}/budgets/{budgetId} |
+| ImportBudgetsAsync(Guid containerId, body) | Task | POST /cost/v1/containers/{containerId}/budgets:import |
+| LinkBudgetsContractsAsync(Guid containerId, body) | Task\<Stream?\> | POST /cost/v1/containers/{containerId}/budgets-contracts:link |
+| GetChangeOrdersAsync(Guid containerId) | Task\<ChangeOrdersGetResponse?\> | GET /cost/v1/containers/{containerId}/change-orders |
+| ListChangeOrdersByTypeAsync(Guid containerId, string changeOrderType) | IAsyncEnumerable\<WithChangeOrderGetResponse_results\> | GET /cost/v1/containers/{containerId}/change-orders/{changeOrder} |
+| CreateChangeOrderAsync(Guid containerId, string changeOrderType, body) | Task\<WithChangeOrderPostResponse?\> | POST /cost/v1/containers/{containerId}/change-orders/{changeOrder} |
+| GetChangeOrderAsync(Guid containerId, string changeOrderType, Guid changeOrderId) | Task\<ChangeOrderGetResponse?\> | GET /cost/v1/containers/{containerId}/change-orders/{changeOrder}/{id} |
+| UpdateChangeOrderAsync(Guid containerId, string changeOrderType, Guid changeOrderId, body) | Task\<ChangeOrderPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/change-orders/{changeOrder}/{id} |
+| DeleteChangeOrderAsync(Guid containerId, string changeOrderType, Guid changeOrderId) | Task | DELETE /cost/v1/containers/{containerId}/change-orders/{changeOrder}/{id} |
+| ListContractsAsync(Guid containerId) | IAsyncEnumerable\<ContractsGetResponse_results\> | GET /cost/v1/containers/{containerId}/contracts |
+| CreateContractAsync(Guid containerId, body) | Task\<ContractsPostResponse?\> | POST /cost/v1/containers/{containerId}/contracts |
+| GetContractAsync(Guid containerId, string contractId) | Task\<WithContractGetResponse?\> | GET /cost/v1/containers/{containerId}/contracts/{contractId} |
+| UpdateContractAsync(Guid containerId, string contractId, body) | Task\<WithContractPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/contracts/{contractId} |
+| DeleteContractAsync(Guid containerId, string contractId) | Task | DELETE /cost/v1/containers/{containerId}/contracts/{contractId} |
+| ListCostItemsAsync(Guid containerId) | IAsyncEnumerable\<CostItemsGetResponse_results\> | GET /cost/v1/containers/{containerId}/cost-items |
+| CreateCostItemAsync(Guid containerId, body) | Task\<CostItemsPostResponse?\> | POST /cost/v1/containers/{containerId}/cost-items |
+| BatchCreateCostItemsAsync(Guid containerId, body) | Task\<CostItemsBatchCreatePostResponse?\> | POST /cost/v1/containers/{containerId}/cost-items:batch-create |
+| AttachCostItemsAsync(Guid containerId, body) | Task\<CostItemsAttachPostResponse?\> | POST /cost/v1/containers/{containerId}/cost-items:attach |
+| DetachCostItemsAsync(Guid containerId, body) | Task\<CostItemsDetachPostResponse?\> | POST /cost/v1/containers/{containerId}/cost-items:detach |
+| GetCostItemAsync(Guid containerId, string costItemId) | Task\<WithCostItemGetResponse?\> | GET /cost/v1/containers/{containerId}/cost-items/{costItemId} |
+| UpdateCostItemAsync(Guid containerId, string costItemId, body) | Task\<WithCostItemPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/cost-items/{costItemId} |
+| DeleteCostItemAsync(Guid containerId, string costItemId) | Task | DELETE /cost/v1/containers/{containerId}/cost-items/{costItemId} |
+| ListSubCostItemsAsync(Guid containerId, string costItemId) | IAsyncEnumerable\<SubCostItemsGetResponse_results\> | GET /cost/v1/containers/{containerId}/cost-items/{costItemId}/sub-cost-items |
+| GetSubCostItemsAsync(Guid containerId, string costItemId) | Task\<SubCostItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/cost-items/{costItemId}/sub-cost-items |
+| CreateSubCostItemAsync(Guid containerId, string costItemId, body) | Task\<SubCostItemsPostResponse?\> | POST /cost/v1/containers/{containerId}/cost-items/{costItemId}/sub-cost-items |
+| UpdateSubCostItemAsync(Guid containerId, string costItemId, Guid subCostItemId, body) | Task\<WithSubCostItemsPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/cost-items/{costItemId}/sub-cost-items/{subCostItemId} |
+| DeleteSubCostItemAsync(Guid containerId, string costItemId, Guid subCostItemId) | Task | DELETE /cost/v1/containers/{containerId}/cost-items/{costItemId}/sub-cost-items/{subCostItemId} |
+| CopySubCostItemsAsync(Guid containerId, string costItemId, body) | Task\<SubCostItemsCopyPostResponse?\> | POST /cost/v1/containers/{containerId}/cost-items/{costItemId}/sub-cost-items:copy |
+| ListExpensesAsync(Guid containerId) | IAsyncEnumerable\<ExpensesGetResponse_results\> | GET /cost/v1/containers/{containerId}/expenses |
+| CreateExpenseAsync(Guid containerId, body) | Task\<ExpensesPostResponse?\> | POST /cost/v1/containers/{containerId}/expenses |
+| GetExpenseAsync(Guid containerId, string expenseId) | Task\<ExpenseGetResponse?\> | GET /cost/v1/containers/{containerId}/expenses/{expenseId} |
+| UpdateExpenseAsync(Guid containerId, string expenseId, body) | Task\<ExpensePatchResponse?\> | PATCH /cost/v1/containers/{containerId}/expenses/{expenseId} |
+| DeleteExpenseAsync(Guid containerId, string expenseId) | Task | DELETE /cost/v1/containers/{containerId}/expenses/{expenseId} |
+| GetExpenseItemsAsync(Guid containerId, string expenseId) | Task\<ItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/expenses/{expenseId}/items |
+| CreateExpenseItemAsync(Guid containerId, string expenseId, body) | Task\<ItemsPostResponse?\> | POST /cost/v1/containers/{containerId}/expenses/{expenseId}/items |
+| GetExpenseItemAsync(Guid containerId, string expenseId, string itemId) | Task\<ItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/expenses/{expenseId}/items/{itemId} |
+| UpdateExpenseItemAsync(Guid containerId, string expenseId, string itemId, body) | Task\<ItemsPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/expenses/{expenseId}/items/{itemId} |
+| DeleteExpenseItemAsync(Guid containerId, string expenseId, string itemId) | Task | DELETE /cost/v1/containers/{containerId}/expenses/{expenseId}/items/{itemId} |
+| GetMainContractsAsync(Guid containerId) | Task\<MainContractsGetResponse?\> | GET /cost/v1/containers/{containerId}/main-contracts |
+| GetMainContractAsync(Guid containerId, Guid mainContractId) | Task\<MainContractGetResponse?\> | GET /cost/v1/containers/{containerId}/main-contracts/{id} |
+| UpdateMainContractAsync(Guid containerId, Guid mainContractId, body) | Task\<MainContractPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/main-contracts/{id} |
+| DeleteMainContractAsync(Guid containerId, Guid mainContractId) | Task | DELETE /cost/v1/containers/{containerId}/main-contracts/{id} |
+| ListMainContractItemsAsync(Guid containerId, Guid mainContractId) | IAsyncEnumerable\<ItemsGetResponse_results\> | GET /cost/v1/containers/{containerId}/main-contracts/{mainContractId}/items |
+| GetMainContractItemsAsync(Guid containerId, Guid mainContractId) | Task\<ItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/main-contracts/{mainContractId}/items |
+| CreateMainContractItemAsync(Guid containerId, Guid mainContractId, body) | Task\<ItemsPostResponse?\> | POST /cost/v1/containers/{containerId}/main-contracts/{mainContractId}/items |
+| GetMainContractItemAsync(Guid containerId, Guid mainContractId, Guid itemId) | Task\<ItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/main-contracts/{mainContractId}/items/{itemId} |
+| UpdateMainContractItemAsync(Guid containerId, Guid mainContractId, Guid itemId, body) | Task\<ItemsPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/main-contracts/{mainContractId}/items/{itemId} |
+| DeleteMainContractItemAsync(Guid containerId, Guid mainContractId, Guid itemId) | Task | DELETE /cost/v1/containers/{containerId}/main-contracts/{mainContractId}/items/{itemId} |
+| GetPaymentItemsAsync(Guid containerId) | Task\<PaymentItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/payment-items |
+| GetPaymentsAsync(Guid containerId) | Task\<PaymentsGetResponse?\> | GET /cost/v1/containers/{containerId}/payments |
+| GetPaymentAsync(Guid containerId, string paymentId) | Task\<PaymentsGetResponse?\> | GET /cost/v1/containers/{containerId}/payments/{id} |
+| ListAttachmentsAsync(Guid containerId) | IAsyncEnumerable\<AttachmentsGetResponse_results\> | GET /cost/v1/containers/{containerId}/attachments |
+| BatchCreateAttachmentsAsync(Guid containerId, body) | Task\<AttachmentsBatchCreatePostResponse?\> | POST /cost/v1/containers/{containerId}/attachments:batch-create |
+| CreateAttachmentAsync(Guid containerId, body) | Task\<AttachmentsPostResponse?\> | POST /cost/v1/containers/{containerId}/attachments |
+| DeleteAttachmentAsync(Guid containerId, string attachmentId) | Task | DELETE /cost/v1/containers/{containerId}/attachments/{attachmentId} |
+| CreateAttachmentFolderAsync(Guid containerId, body) | Task\<AttachmentFoldersPostResponse?\> | POST /cost/v1/containers/{containerId}/attachment-folders |
+| GetPropertiesAsync(Guid containerId) | Task\<PropertiesGetResponse?\> | GET /cost/v1/containers/{containerId}/properties |
+| BatchUpdatePropertyValuesAsync(Guid containerId, body) | Task\<PropertyValuesBatchUpdatePostResponse?\> | POST /cost/v1/containers/{containerId}/property-values:batch-update |
+| GetSegmentValuesAsync(Guid containerId) | Task\<SegmentValuesGetResponse?\> | GET /cost/v1/containers/{containerId}/segment-values |
+| GetSegmentValuesBySegmentAsync(Guid containerId, Guid segmentId) | Task\<ValuesGetResponse?\> | GET /cost/v1/containers/{containerId}/segments/{segmentId}/values |
+| ImportSegmentValuesAsync(Guid containerId, Guid segmentId, body) | Task\<ValuesImportPostResponse?\> | POST /cost/v1/containers/{containerId}/segments/{segmentId}/values:import |
+| GetSegmentValueAsync(Guid containerId, Guid segmentId, string valueId) | Task\<WithValueGetResponse?\> | GET /cost/v1/containers/{containerId}/segments/{segmentId}/values/{valueId} |
+| GetTemplatesAsync(Guid containerId) | Task\<TemplatesGetResponse?\> | GET /cost/v1/containers/{containerId}/templates |
+| GetTemplateSegmentsAsync(Guid containerId, Guid templateId) | Task\<SegmentsGetResponse?\> | GET /cost/v1/containers/{containerId}/templates/{templateId}/segments |
+| GetTaxesAsync(Guid containerId) | Task\<TaxesGetResponse?\> | GET /cost/v1/containers/{containerId}/taxes |
+| GetDocumentsAsync(Guid containerId) | Task\<DocumentsGetResponse?\> | GET /cost/v1/containers/{containerId}/documents |
+| GetScheduleOfValuesAsync(Guid containerId) | Task\<ScheduleOfValuesGetResponse?\> | GET /cost/v1/containers/{containerId}/schedule-of-values |
+| GetTimeSheetsAsync(Guid containerId) | Task\<TimeSheetsGetResponse?\> | GET /cost/v1/containers/{containerId}/time-sheets |
+| GetTimeSheetAsync(Guid containerId, string timeSheetId) | Task\<TimeSheetsGetResponse?\> | GET /cost/v1/containers/{containerId}/time-sheets/{timeSheetId} |
+| GetPerformanceTrackingItemsAsync(Guid containerId) | Task\<PerformanceTrackingItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/performance-tracking-items |
+| CreatePerformanceTrackingItemAsync(Guid containerId, body) | Task\<PerformanceTrackingItemsPostResponse?\> | POST /cost/v1/containers/{containerId}/performance-tracking-items |
+| GetPerformanceTrackingItemAsync(Guid containerId, Guid itemId) | Task\<PerformanceTrackingItemsGetResponse?\> | GET /cost/v1/containers/{containerId}/performance-tracking-items/{itemId} |
+| ListPerformanceTrackingItemInstancesAsync(Guid containerId) | IAsyncEnumerable\<PerformanceTrackingItemInstancesGetResponse_results\> | GET /cost/v1/containers/{containerId}/performance-tracking-item-instances |
+| GetPerformanceTrackingItemInstancesAsync(Guid containerId) | Task\<PerformanceTrackingItemInstancesGetResponse?\> | GET /cost/v1/containers/{containerId}/performance-tracking-item-instances |
+| CreatePerformanceTrackingItemInstanceAsync(Guid containerId, body) | Task\<PerformanceTrackingItemInstancesPostResponse?\> | POST /cost/v1/containers/{containerId}/performance-tracking-item-instances |
+| GetPerformanceTrackingItemInstanceAsync(Guid containerId, string instanceId) | Task\<PerformanceTrackingItemInstancesGetResponse?\> | GET /cost/v1/containers/{containerId}/performance-tracking-item-instances/{id} |
+| UpdatePerformanceTrackingItemInstanceAsync(Guid containerId, string instanceId, body) | Task\<PerformanceTrackingItemInstancesPatchResponse?\> | PATCH /cost/v1/containers/{containerId}/performance-tracking-item-instances/{id} |
+| DeletePerformanceTrackingItemInstanceAsync(Guid containerId, string instanceId) | Task | DELETE /cost/v1/containers/{containerId}/performance-tracking-item-instances/{id} |
+| GetWorkflowActionsForAssociationAsync(Guid containerId, string associationType, Guid associationId) | Task\<ActionsGetResponse?\> | GET /cost/v1/containers/{containerId}/workflows/{associationType}/{associationId}/actions |
+
+### DataConnectorManager (11 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| CreateRequestAsync(Guid accountId, body) | Task\<RequestsPostResponse?\> | POST /data-connector/v1/accounts/{accountId}/requests |
+| GetRequestsAsync(Guid accountId) | Task\<RequestsGetResponse?\> | GET /data-connector/v1/accounts/{accountId}/requests |
+| GetRequestAsync(Guid accountId, Guid requestId) | Task\<WithRequestGetResponse?\> | GET /data-connector/v1/accounts/{accountId}/requests/{requestId} |
+| UpdateRequestAsync(Guid accountId, Guid requestId, body) | Task\<WithRequestPatchResponse?\> | PATCH /data-connector/v1/accounts/{accountId}/requests/{requestId} |
+| DeleteRequestAsync(Guid accountId, Guid requestId) | Task | DELETE /data-connector/v1/accounts/{accountId}/requests/{requestId} |
+| GetRequestJobsAsync(Guid accountId, Guid requestId) | Task\<JobsGetResponse?\> | GET /data-connector/v1/accounts/{accountId}/requests/{requestId}/jobs |
+| GetJobsAsync(Guid accountId) | Task\<JobsGetResponse?\> | GET /data-connector/v1/accounts/{accountId}/jobs |
+| GetJobAsync(Guid accountId, Guid jobId) | Task\<WithJobGetResponse?\> | GET /data-connector/v1/accounts/{accountId}/jobs/{jobId} |
+| CancelJobAsync(Guid accountId, Guid jobId) | Task | DELETE /data-connector/v1/accounts/{accountId}/jobs/{jobId} |
+| GetDataListingAsync(Guid accountId, Guid jobId) | Task\<DataListingGetResponse?\> | GET /data-connector/v1/accounts/{accountId}/jobs/{jobId}/data-listing |
+| GetDataDownloadUrlAsync(Guid accountId, Guid jobId, Guid dataName) | Task\<WithNameGetResponse?\> | GET /data-connector/v1/accounts/{accountId}/jobs/{jobId}/data/{name} |
+
+### DocumentManagementManager (11 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetFolderPermissionsAsync(Guid projectId, string folderId) | Task\<PermissionsGetResponse?\> | GET /bim360/docs/v1/projects/{project_id}/folders/{folder_id}/permissions |
+| BatchCreatePermissionsAsync(Guid projectId, string folderId, body) | Task\<PermissionsBatchCreatePostResponse?\> | POST /bim360/docs/v1/projects/{project_id}/folders/{folder_id}/permissions:batch-create |
+| BatchUpdatePermissionsAsync(Guid projectId, string folderId, body) | Task\<PermissionsBatchUpdatePostResponse?\> | POST /bim360/docs/v1/projects/{project_id}/folders/{folder_id}/permissions:batch-update |
+| BatchDeletePermissionsAsync(Guid projectId, string folderId, body) | Task\<Stream?\> | POST /bim360/docs/v1/projects/{project_id}/folders/{folder_id}/permissions:batch-delete |
+| ListCustomAttributeDefinitionsAsync(Guid projectId, string folderId) | IAsyncEnumerable\<CustomAttributeDefinitionsGetResponse_results\> | GET /bim360/docs/v1/projects/{project_id}/folders/{folder_id}/custom-attribute-definitions |
+| CreateCustomAttributeDefinitionAsync(Guid projectId, string folderId, body) | Task\<CustomAttributeDefinitionsPostResponse?\> | POST /bim360/docs/v1/projects/{project_id}/folders/{folder_id}/custom-attribute-definitions |
+| BatchGetVersionCustomAttributesAsync(Guid projectId, body) | Task\<VersionsBatchGetPostResponse?\> | POST /bim360/docs/v1/projects/{project_id}/versions:batch-get |
+| BatchUpdateCustomAttributesAsync(Guid projectId, string versionId, body) | Task\<CustomAttributesBatchUpdatePostResponse?\> | POST /bim360/docs/v1/projects/{project_id}/versions/{version_id}/custom-attributes:batch-update |
+| GetNamingStandardAsync(Guid projectId, Guid namingStandardId) | Task\<NamingStandardsGetResponse?\> | GET /bim360/docs/v1/projects/{projectId}/naming-standards/{id} |
+| StartVersionExportAsync(Guid projectId, string versionId, body) | Task\<ExportsPostResponse?\> | POST /bim360/docs/v1/projects/{project_id}/versions/{version_id}/exports |
+| GetVersionExportStatusAsync(Guid projectId, string versionId, Guid exportId) | Task\<WithExport_GetResponse?\> | GET /bim360/docs/v1/projects/{project_id}/versions/{version_id}/exports/{export_id} |
+
+### IssuesManager (14 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetCurrentUserAsync(string containerId) | Task\<MeGetResponse?\> | GET /issues/v2/containers/{containerId}/users/me |
+| ListIssueTypesAsync(string containerId) | IAsyncEnumerable\<IssueTypesGetResponse_results\> | GET /issues/v2/containers/{containerId}/issue-types |
+| ListAttributeDefinitionsAsync(string containerId) | IAsyncEnumerable\<IssueAttributeDefinitionsGetResponse_results\> | GET /issues/v2/containers/{containerId}/issue-attribute-definitions |
+| ListAttributeMappingsAsync(string containerId) | IAsyncEnumerable\<IssueAttributeMappingsGetResponse_results\> | GET /issues/v2/containers/{containerId}/issue-attribute-mappings |
+| ListRootCauseCategoriesAsync(string containerId) | IAsyncEnumerable\<IssueRootCauseCategoriesGetResponse_results\> | GET /issues/v2/containers/{containerId}/issue-root-cause-categories |
+| ListIssuesAsync(string containerId) | IAsyncEnumerable\<IssuesGetResponse_results\> | GET /issues/v2/containers/{containerId}/issues |
+| CreateIssueAsync(string containerId, body) | Task\<IssuesPostResponse?\> | POST /issues/v2/containers/{containerId}/issues |
+| GetIssueAsync(string containerId, string issueId) | Task\<WithIssueGetResponse?\> | GET /issues/v2/containers/{containerId}/issues/{issueId} |
+| UpdateIssueAsync(string containerId, string issueId, body) | Task\<WithIssuePatchResponse?\> | PATCH /issues/v2/containers/{containerId}/issues/{issueId} |
+| ListCommentsAsync(string containerId, string issueId) | IAsyncEnumerable\<CommentsGetResponse_results\> | GET /issues/v2/containers/{containerId}/issues/{issueId}/comments |
+| CreateCommentAsync(string containerId, string issueId, body) | Task\<CommentsPostResponse?\> | POST /issues/v2/containers/{containerId}/issues/{issueId}/comments |
+| ListAttachmentsAsync(string containerId, string issueId) | IAsyncEnumerable\<AttachmentsGetResponse_results\> | GET /issues/v2/containers/{containerId}/issues/{issueId}/attachments |
+| CreateAttachmentAsync(string containerId, string issueId, body) | Task\<AttachmentsPostResponse?\> | POST /issues/v2/containers/{containerId}/issues/{issueId}/attachments |
+| CompleteIssueAttachmentUploadAsync(string containerId, string issueId, string attachmentId) | Task\<WithAttachmentPostResponse?\> | POST /issues/v2/containers/{containerId}/issues/{issueId}/attachments/{attachmentId} |
+
+### LocationsManager (2 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetNodesAsync(Guid containerId, string treeId) | Task\<NodesGetResponse?\> | GET /bim360/locations/v2/containers/{containerId}/trees/{treeId}/nodes |
+| ListNodesAsync(Guid containerId, string treeId) | IAsyncEnumerable\<NodesGetResponse_results\> | GET /bim360/locations/v2/containers/{containerId}/trees/{treeId}/nodes |
+
+### ModelCoordinationManager (43 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| CreateModelSetAsync(Guid containerId, body) | Task\<ModelsetsPostResponse?\> | POST /bim360/modelset/v3/containers/{containerId}/modelsets |
+| ListModelSetsAsync(Guid containerId) | IAsyncEnumerable\<ModelsetsGetResponse_modelSets\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets |
+| GetModelSetAsync(Guid containerId, Guid modelSetId) | Task\<WithModelSetGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId} |
+| UpdateModelSetAsync(Guid containerId, Guid modelSetId, body) | Task\<WithModelSetPatchResponse?\> | PATCH /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId} |
+| AddModelSetIssueAsync(Guid containerId, Guid modelSetId, body) | Task\<IssuesPostResponse?\> | POST /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/issues |
+| GetModelSetIssueViewContextAsync(Guid containerId, body) | Task\<ViewcontextPostResponse?\> | POST /bim360/modelset/v3/containers/{containerId}/issues/viewcontext |
+| GetContainerJobAsync(Guid containerId, Guid jobId) | Task\<WithJobGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/jobs/{jobId} |
+| GetModelSetJobAsync(Guid containerId, Guid modelSetId, Guid jobId) | Task\<WithJobGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/jobs/{jobId} |
+| CreateModelSetScreenshotAsync(Guid containerId, Guid modelSetId, body) | Task\<ScreenshotsPostResponse?\> | POST /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/screenshots |
+| GetModelSetScreenshotAsync(Guid containerId, Guid modelSetId, Guid screenShotId) | Task\<Stream?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/screenshots/{screenShotId} |
+| CreateModelSetVersionAsync(Guid containerId, Guid modelSetId) | Task\<VersionsPostResponse?\> | POST /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions |
+| ListModelSetVersionsAsync(Guid containerId, Guid modelSetId) | IAsyncEnumerable\<VersionsGetResponse_modelSetVersions\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions |
+| GetModelSetVersionLatestAsync(Guid containerId, Guid modelSetId) | Task\<LatestGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions/latest |
+| GetModelSetVersionAsync(Guid containerId, Guid modelSetId, int version) | Task\<WithVersionGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions/{version} |
+| EnableModelSetVersionsAsync(Guid containerId, Guid modelSetId) | Task\<VersionsEnablePatchResponse?\> | PATCH /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions:enable |
+| DisableModelSetVersionsAsync(Guid containerId, Guid modelSetId) | Task\<VersionsDisablePatchResponse?\> | PATCH /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions:disable |
+| CreateModelSetViewAsync(Guid containerId, Guid modelSetId, body) | Task\<ViewsPostResponse?\> | POST /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/views |
+| ListModelSetViewsAsync(Guid containerId, Guid modelSetId) | IAsyncEnumerable\<ViewsGetResponse_modelSetViews\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/views |
+| SearchModelSetViewLineagesAsync(Guid containerId, Guid modelSetId, body) | Task\<ViewsLineagesPostResponse?\> | POST /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/views:lineages |
+| GetModelSetViewAsync(Guid containerId, Guid modelSetId, Guid viewId) | Task\<WithViewGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/views/{viewId} |
+| UpdateModelSetViewAsync(Guid containerId, Guid modelSetId, Guid viewId, body) | Task\<WithViewPatchResponse?\> | PATCH /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/views/{viewId} |
+| DeleteModelSetViewAsync(Guid containerId, Guid modelSetId, Guid viewId) | Task | DELETE /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/views/{viewId} |
+| GetModelSetVersionViewsAsync(Guid containerId, Guid modelSetId, int version) | Task\<ViewsGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions/{version}/views |
+| GetModelSetVersionViewAsync(Guid containerId, Guid modelSetId, int version, Guid viewId) | Task\<WithViewGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/versions/{version}/views/{viewId} |
+| GetModelSetViewJobAsync(Guid containerId, Guid modelSetId, Guid viewId, Guid jobId) | Task\<WithJobGetResponse?\> | GET /bim360/modelset/v3/containers/{containerId}/modelsets/{modelSetId}/views/{viewId}/jobs/{jobId} |
+| GetModelSetClashTestsAsync(Guid containerId, Guid modelSetId) | Task\<TestsGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/tests |
+| GetModelSetVersionClashTestsAsync(Guid containerId, Guid modelSetId, int version) | Task\<TestsGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/versions/{version}/tests |
+| GetClashTestAsync(Guid containerId, Guid testId) | Task\<WithTestGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/tests/{testId} |
+| GetClashTestResourcesAsync(Guid containerId, Guid testId) | Task\<ResourcesGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/tests/{testId}/resources |
+| AddClosedClashGroupsAsync(Guid containerId, Guid testId, body) | Task\<ClashesClosePostResponse?\> | POST /bim360/clash/v3/containers/{containerId}/tests/{testId}/clashes:close |
+| GetClosedClashGroupIntersectionAsync(Guid containerId, Guid testId) | Task\<ClosedGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/tests/{testId}/clashes/closed |
+| GetClosedClashGroupBatchAsync(Guid containerId, Guid testId, body) | Task\<ClosedPostResponse?\> | POST /bim360/clash/v3/containers/{containerId}/tests/{testId}/clashes/closed |
+| ReopenClosedClashGroupsAsync(Guid containerId, Guid modelSetId, body) | Task\<ClashesReopenPostResponse?\> | POST /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/clashes:reopen |
+| SearchClosedClashGroupsAsync(Guid containerId, Guid modelSetId) | Task\<ClosedGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/clashes/closed |
+| AddAssignedClashGroupsAsync(Guid containerId, Guid testId, body) | Task\<ClashesAssignPostResponse?\> | POST /bim360/clash/v3/containers/{containerId}/tests/{testId}/clashes:assign |
+| GetAssignedClashGroupIntersectionAsync(Guid containerId, Guid testId) | Task\<AssignedGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/tests/{testId}/clashes/assigned |
+| GetAssignedClashGroupBatchAsync(Guid containerId, Guid testId, body) | Task\<AssignedPostResponse?\> | POST /bim360/clash/v3/containers/{containerId}/tests/{testId}/clashes/assigned |
+| SearchAssignedClashGroupsAsync(Guid containerId, Guid modelSetId) | Task\<AssignedGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/clashes/assigned |
+| GetAssignedClashGroupViewContextAsync(Guid containerId, body) | Task\<ViewcontextPostResponse?\> | POST /bim360/clash/v3/containers/{containerId}/clashes/assigned/viewcontext |
+| GetClashGroupJobAsync(Guid containerId, Guid jobId) | Task\<WithJobGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/clashes/jobs/{jobId} |
+| CreateClashScreenshotAsync(Guid containerId, Guid modelSetId, body) | Task\<ScreenshotsPostResponse?\> | POST /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/screenshots |
+| GetClashScreenshotAsync(Guid containerId, Guid modelSetId, Guid screenShotId) | Task\<Stream?\> | GET /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/screenshots/{screenShotId} |
+| GetGroupedClashesAsync(Guid containerId, Guid modelSetId) | Task\<GroupedGetResponse?\> | GET /bim360/clash/v3/containers/{containerId}/modelsets/{modelSetId}/clashes/grouped |
+
+### ModelPropertiesManager (16 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetIndexStatusAsync(Guid projectId, string indexId) | Task\<WithIndexGetResponse?\> | GET /construction/index/v2/projects/{projectId}/indexes/{indexId} |
+| GetIndexFieldsAsync(Guid projectId, string indexId) | Task\<FieldsGetResponse?\> | GET /construction/index/v2/projects/{projectId}/indexes/{indexId}/fields |
+| GetIndexManifestAsync(Guid projectId, string indexId) | Task\<ManifestGetResponse?\> | GET /construction/index/v2/projects/{projectId}/indexes/{indexId}/manifest |
+| GetIndexPropertiesAsync(Guid projectId, string indexId) | Task\<PropertiesGetResponse?\> | GET /construction/index/v2/projects/{projectId}/indexes/{indexId}/properties |
+| BatchGetIndexStatusAsync(Guid projectId, body) | Task\<IndexesBatchStatusPostResponse?\> | POST /construction/index/v2/projects/{projectId}/indexes:batch-status |
+| CreateIndexQueryAsync(Guid projectId, string indexId, body) | Task\<QueriesPostResponse?\> | POST /construction/index/v2/projects/{projectId}/indexes/{indexId}/queries |
+| GetIndexQueryStatusAsync(Guid projectId, string indexId, string queryId) | Task\<WithQueryGetResponse?\> | GET /construction/index/v2/projects/{projectId}/indexes/{indexId}/queries/{queryId} |
+| GetIndexQueryPropertiesAsync(Guid projectId, string indexId, string queryId) | Task\<PropertiesGetResponse?\> | GET /construction/index/v2/projects/{projectId}/indexes/{indexId}/queries/{queryId}/properties |
+| GetDiffStatusAsync(Guid projectId, string diffId) | Task\<WithDiffGetResponse?\> | GET /construction/index/v2/projects/{projectId}/diffs/{diffId} |
+| GetDiffFieldsAsync(Guid projectId, string diffId) | Task\<FieldsGetResponse?\> | GET /construction/index/v2/projects/{projectId}/diffs/{diffId}/fields |
+| GetDiffManifestAsync(Guid projectId, string diffId) | Task\<ManifestGetResponse?\> | GET /construction/index/v2/projects/{projectId}/diffs/{diffId}/manifest |
+| GetDiffPropertiesAsync(Guid projectId, string diffId) | Task\<PropertiesGetResponse?\> | GET /construction/index/v2/projects/{projectId}/diffs/{diffId}/properties |
+| BatchGetDiffStatusAsync(Guid projectId, body) | Task\<DiffsBatchStatusPostResponse?\> | POST /construction/index/v2/projects/{projectId}/diffs:batch-status |
+| CreateDiffQueryAsync(Guid projectId, string diffId, body) | Task\<QueriesPostResponse?\> | POST /construction/index/v2/projects/{projectId}/diffs/{diffId}/queries |
+| GetDiffQueryStatusAsync(Guid projectId, string diffId, string queryId) | Task\<WithQueryGetResponse?\> | GET /construction/index/v2/projects/{projectId}/diffs/{diffId}/queries/{queryId} |
+| GetDiffQueryPropertiesAsync(Guid projectId, string diffId, string queryId) | Task\<PropertiesGetResponse?\> | GET /construction/index/v2/projects/{projectId}/diffs/{diffId}/queries/{queryId}/properties |
+
+### RFIsManager (10 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListRfisAsync(string containerId) | IAsyncEnumerable\<RfisGetResponse_results\> | GET /bim360/rfis/v2/containers/{containerId}/rfis |
+| GetRfiAsync(string containerId, string rfiId) | Task\<WithRfiGetResponse?\> | GET /bim360/rfis/v2/containers/{containerId}/rfis/{rfiId} |
+| CreateRfiAsync(string containerId, body) | Task\<RfisPostResponse?\> | POST /bim360/rfis/v2/containers/{containerId}/rfis |
+| UpdateRfiAsync(string containerId, string rfiId, body) | Task\<WithRfiPatchResponse?\> | PATCH /bim360/rfis/v2/containers/{containerId}/rfis/{rfiId} |
+| GetCurrentUserAsync(string containerId) | Task\<MeGetResponse?\> | GET /bim360/rfis/v2/containers/{containerId}/users/me |
+| ListRfiCommentsAsync(string containerId, string rfiId) | IAsyncEnumerable\<CommentsGetResponse_results\> | GET /bim360/rfis/v2/containers/{containerId}/rfis/{rfiId}/comments |
+| CreateRfiCommentAsync(string containerId, string rfiId, body) | Task\<CommentsPostResponse?\> | POST /bim360/rfis/v2/containers/{containerId}/rfis/{rfiId}/comments |
+| ListRfiAttachmentsAsync(string containerId, string rfiId) | IAsyncEnumerable\<AttachmentsGetResponse_results\> | GET /bim360/rfis/v2/containers/{containerId}/rfis/{rfiId}/attachments |
+| CreateRfiAttachmentAsync(string containerId, string rfiId, body) | Task\<AttachmentsPostResponse?\> | POST /bim360/rfis/v2/containers/{containerId}/rfis/{rfiId}/attachments |
+| DeleteRfiAttachmentAsync(string containerId, string rfiId, string attachmentId) | Task | DELETE /bim360/rfis/v2/containers/{containerId}/rfis/{rfiId}/attachments/{attachmentId} |
+
+### RelationshipsManager (9 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetWritableRelationshipTypesAsync() | Task\<RelationshipsWritableGetResponse?\> | GET /bim360/relationship/v2/utility/relationships:writable |
+| CreateRelationshipsAsync(Guid containerId, body) | Task\<RelationshipsPutResponse?\> | PUT /bim360/relationship/v2/containers/{containerId}/relationships |
+| GetRelationshipAsync(Guid containerId, Guid relationshipId) | Task\<WithRelationshipGetResponse?\> | GET /bim360/relationship/v2/containers/{containerId}/relationships/{relationshipId} |
+| DeleteRelationshipsAsync(Guid containerId, body) | Task\<RelationshipsDeletePostResponse?\> | POST /bim360/relationship/v2/containers/{containerId}/relationships:delete |
+| SearchRelationshipsAsync(Guid containerId) | Task\<RelationshipsSearchGetResponse?\> | GET /bim360/relationship/v2/containers/{containerId}/relationships:search |
+| BatchGetRelationshipsAsync(Guid containerId, body) | Task\<RelationshipsBatchPostResponse?\> | POST /bim360/relationship/v2/containers/{containerId}/relationships:batch |
+| IntersectRelationshipsAsync(Guid containerId, body) | Task\<RelationshipsIntersectPostResponse?\> | POST /bim360/relationship/v2/containers/{containerId}/relationships:intersect |
+| GetSyncStatusAsync(Guid containerId, body) | Task\<RelationshipsSyncStatusPostResponse?\> | POST /bim360/relationship/v2/containers/{containerId}/relationships:syncStatus |
+| SyncRelationshipsAsync(Guid containerId, body) | Task\<RelationshipsSyncPostResponse?\> | POST /bim360/relationship/v2/containers/{containerId}/relationships:sync |
+
+## Fluent URL Properties
+
+For direct REST path access without managers:
+
+| Property | Base Path |
+|----------|-----------|
+| client.Api.Hq | /hq/* |
+| client.Api.Bim360 | /bim360/* |
+| client.Api.Construction | /construction/* |
+| client.Api.Cost | /cost/* |
+| client.Api.DataConnector | /data-connector/* |
+| client.Api.Issues | /issues/* |
+| client.Api | Full base client (all paths) |
+
+## Key Patterns
+
+### Parameter Types
+- `accountId`: `Guid` — BIM 360 account identifier
+- `projectId`: `Guid` in AccountAdminManager; `string` in AssetsManager, ChecklistsManager
+- `containerId`: `string` in IssuesManager, RFIsManager, ChecklistsManager; `Guid` in CostManager, ModelCoordinationManager, RelationshipsManager, DataConnectorManager, LocationsManager
+- `modelSetId`: `Guid` — model set identifier for Model Coordination
+- `body`: Kiota-generated request body type (e.g. `IssuesPostRequestBody`, `BudgetsPostRequestBody`)
+- `requestConfiguration`: `RequestConfiguration<T>?` — query parameters, headers, options (always optional)
+
+### Pagination
+```csharp
+// Auto-pagination — fetches all pages transparently
+await foreach (var issue in client.IssuesManager.ListIssuesAsync(containerId))
+{
+    Console.WriteLine(issue.Title);
+}
+
+// Stop after first N
+int count = 0;
+await foreach (var budget in client.CostManager.ListBudgetsAsync(containerId))
+{
+    if (++count >= 10) break;
+}
+
+// With query parameters
+await foreach (var project in client.AccountAdminManager.ListProjectsAsync(accountId,
+    new() { QueryParameters = { Sort = ["name"] } }))
+{ Console.WriteLine(project.Name); }
+```
+
+### Error Handling
+```csharp
+try { ... }
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"{ex.StatusCode}: {ex.Message}");
+    if (ex.Data["context"] is HttpResponseMessage resp)
+    {
+        var body = await resp.Content.ReadAsStringAsync();
+    }
+}
+```
+
+## Links
+
+- APS Docs: https://aps.autodesk.com/en/docs/bim360/v1/overview/
+- NuGet: https://www.nuget.org/packages/Adsk.Platform.BIM360
+- Kiota: https://learn.microsoft.com/en-us/openapi/kiota/overview

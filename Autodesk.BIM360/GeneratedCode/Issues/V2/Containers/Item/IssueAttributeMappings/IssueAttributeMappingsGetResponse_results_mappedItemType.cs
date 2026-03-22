@@ -11,10 +11,6 @@ namespace Autodesk.BIM360.Issues.V2.Containers.Item.IssueAttributeMappings
         #pragma warning disable CS1591
         IssueType,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Issue Category")]
-        #pragma warning disable CS1591
-        IssueCategory,
-        #pragma warning restore CS1591
         [EnumMember(Value = "issueSubtype")]
         #pragma warning disable CS1591
         IssueSubtype,

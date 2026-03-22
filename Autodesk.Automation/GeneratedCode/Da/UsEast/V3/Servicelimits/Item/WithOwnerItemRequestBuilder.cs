@@ -34,6 +34,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item
         }
         /// <summary>
         /// Gets a user&apos;s service limit configuration.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/servicelimits-owner-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item.WithOwnerGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,6 +53,7 @@ namespace Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item
         }
         /// <summary>
         /// User can only update the following 2 properties:
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/design-automation/v3/reference/http/servicelimits-owner-PUT" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Automation.Da.UsEast.V3.Servicelimits.Item.WithOwnerPutResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -85,6 +85,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
+            /// <summary>User company to match. Max length: 255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("company_name")]
@@ -94,6 +95,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             [QueryParameter("company_name")]
             public string CompanyName { get; set; }
 #endif
+            /// <summary>User email to match. Max length: 255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("email")]
@@ -103,6 +105,7 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             [QueryParameter("email")]
             public string Email { get; set; }
 #endif
+            /// <summary>Comma-separated fields to include in response. id will always be returned. Invalid fields will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("field")]
@@ -112,8 +115,10 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             [QueryParameter("field")]
             public string Field { get; set; }
 #endif
+            /// <summary>Response array&apos;s size. Default value: 10. Max limit: 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>User name to match. Max length: 255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -123,8 +128,10 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
+            /// <summary>Offset of response array. Default value: 0.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Boolean operator to use: OR (default) or AND.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("operator")]
@@ -134,8 +141,10 @@ namespace Autodesk.ACC.Hq.V1.Accounts.Item.Users.Search
             [QueryParameter("operator")]
             public string Operator { get; set; }
 #endif
+            /// <summary>If true (default), perform a fuzzy match.</summary>
             [QueryParameter("partial")]
             public bool? Partial { get; set; }
+            /// <summary>Comma-separated fields to sort by in ascending order. Prepending a field with - sorts in descending order. Invalid fields and whitespaces will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

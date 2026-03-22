@@ -34,6 +34,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image
         }
         /// <summary>
         /// Create or update a specific partner company&apos;s image.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/companies-:company_id-image-PATCH" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Companies.Item.Image.ImagePatchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

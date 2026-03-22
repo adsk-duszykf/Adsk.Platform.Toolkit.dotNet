@@ -18,7 +18,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Autodesk.BIM360.hq.v1.accounts.item.projects.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the project. This corresponds to project ID in the Data Management API. To convert a project ID in the Data Management API into a project ID in the BIM 360 API you need to remove the &quot;b.&quot; prefix. For example, a project ID of b.a4be0c34a-4ab7 translates to a project ID of a4be0c34a-4ab7.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.WithProject_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.Item.WithProject_ItemRequestBuilder this[Guid position]
         {
@@ -47,6 +47,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
         }
         /// <summary>
         /// Query all the projects in a specific BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-GET" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,6 +66,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
         }
         /// <summary>
         /// Create a new BIM 360 project in a specific BIM 360 account.
+        /// Online documentation <see href="https://aps.autodesk.com/en/docs/bim360/v1/reference/http/projects-POST" />
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V1.Accounts.Item.Projects.ProjectsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -139,6 +141,7 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProjectsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Comma-separated fields to include in response. id will always be returned. Invalid fields will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("field")]
@@ -148,10 +151,13 @@ namespace Autodesk.BIM360.Hq.V1.Accounts.Item.Projects
             [QueryParameter("field")]
             public string Field { get; set; }
 #endif
+            /// <summary>Response array&apos;s size. Default value: 10. Max limit: 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Offset of response array. Default value: 0.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Comma-separated fields to sort by in ascending order. Prepending a field with - sorts in descending order. Invalid fields and whitespaces will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

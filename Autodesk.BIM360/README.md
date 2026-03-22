@@ -1,36 +1,24 @@
-# Autodesk BIM 360 SDK for .NET
+# BIM 360 SDK for .NET
 
-> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+[![NuGet](https://img.shields.io/nuget/v/Adsk.Platform.BIM360)](https://www.nuget.org/packages/Adsk.Platform.BIM360)
 
-A .NET SDK providing a [Fluent API](https://dzone.com/articles/java-fluent-api) for the [Autodesk BIM 360](https://aps.autodesk.com/en/docs/bim360/v1/overview/) APIs, generated from the official OpenAPI specifications using [Microsoft Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview).
+> **Unofficial package** — not affiliated with or endorsed by Autodesk.
+>
+> **Namespace:** `Autodesk.BIM360` | **Target:** `net8.0` | **License:** MIT
+> Generated from OpenAPI specs via [Microsoft Kiota](https://learn.microsoft.com/openapi/kiota/overview).
 
-## Features
+A type-safe C# SDK for the [Autodesk BIM 360](https://aps.autodesk.com/en/docs/bim360/v1/overview/) REST APIs. Covers account admin, issues, cost management, RFIs, model coordination, assets, checklists, document management, and more — **266 methods across 12 service managers** through a single unified client.
 
-This SDK provides access to multiple BIM 360 API endpoints through a unified client:
+The SDK provides two access patterns:
 
-| API | Endpoint Path |
-|-----|---------------|
-| **Accounts** | `/hq/v1/accounts/*` |
-| **Accounts EU (v1)** | `/hq/v1/regions/eu/accounts/*` |
-| **Accounts EU (v2)** | `/hq/v2/regions/eu/accounts/*` |
-| **Admin** | `/construction/admin/v1/*` |
-| **Assets** | `/bim360/assets/v1/*` |
-| **Checklists** | `/bim360/checklists/v1/*` |
-| **Clash** | `/bim360/clash/v3/*` |
-| **Cost** | `/cost/v1/*` |
-| **Data Connector** | `/dataconnector/v1/*` |
-| **Docs** | `/bim360/docs/v1/*` |
-| **Index** | `/construction/index/v2/*` |
-| **Issues** | `/issues/v2/*` |
-| **ModelSet** | `/bim360/modelset/v3/*` |
-| **Projects** | `/bim360/relationship/v2/*` |
-| **Relationships** | `/bim360/relationship/v2/*` |
-| **RFIs** | `/bim360/rfis/v2/*` |
+1. **Manager API** (recommended) — high-level methods with automatic pagination, strongly-typed parameters, and XML doc comments linking to official APS docs.
+2. **Fluent URL API** — mirrors the REST endpoint structure directly for full control over requests.
 
 ## Installation
 
 ```bash
 dotnet add package Adsk.Platform.BIM360
+dotnet add package Adsk.Platform.Authentication
 ```
 
 ## Quick Start
@@ -38,192 +26,284 @@ dotnet add package Adsk.Platform.BIM360
 ```csharp
 using Autodesk.BIM360;
 
-// Provide a function that returns the access token
-Func<Task<string>> getAccessToken = () => Task.FromResult("YOUR_ACCESS_TOKEN");
+var client = new BIM360client(() => Task.FromResult("YOUR_ACCESS_TOKEN"));
 
-// Initialize the BIM 360 client
-var bim360Client = new BIM360client(getAccessToken);
+// Manager approach (recommended) — auto-paginates all pages
+await foreach (var issue in client.IssuesManager.ListIssuesAsync(containerId))
+{
+    Console.WriteLine($"{issue.Title} — {issue.Status}");
+}
+
+// Fluent URL approach — mirrors the REST path directly
+var response = await client.Api.Issues.V2.Containers[containerId].QualityIssues.GetAsync();
 ```
 
-### Using with 2-Legged Authentication
+### Authentication with 2-Legged OAuth
 
-For server-to-server communication using client credentials (2-legged OAuth), use the `Autodesk.Authentication` package:
+For server-to-server communication, use the [`Adsk.Platform.Authentication`](https://www.nuget.org/packages/Adsk.Platform.Authentication) package:
 
 ```csharp
 using Autodesk.BIM360;
 using Autodesk.Authentication;
 using Autodesk.Authentication.Helpers.Models;
 
-// Your APS app credentials
-var clientId = "YOUR_CLIENT_ID";
-var clientSecret = "YOUR_CLIENT_SECRET";
-
-// Define the required scopes
-var scopes = new[] { "data:read", "data:write", "account:read" };
-
-// Create authentication client
 var authClient = new AuthenticationClient();
-
-// Create an auto-refreshing token provider (handles token expiration automatically)
 var tokenStore = new InMemoryTokenStore();
+
 var getAccessToken = authClient.Helper.CreateTwoLeggedAutoRefreshToken(
-    clientId, 
-    clientSecret, 
-    scopes, 
+    clientId: "YOUR_CLIENT_ID",
+    clientSecret: "YOUR_CLIENT_SECRET",
+    scopes: new[] { "data:read", "data:write", "account:read" },
     tokenStore);
 
-// Initialize the BIM 360 client with auto-refreshing token
-var bim360Client = new BIM360client(getAccessToken);
+var client = new BIM360client(getAccessToken);
+```
 
-// Now you can use the client - tokens are refreshed automatically when needed
-var issues = await bim360Client.Issues.Containers[containerId].QualityIssues.GetAsync();
+### Dependency Injection
+
+```csharp
+using Autodesk.Common.HttpClientLibrary;
+using Microsoft.Extensions.DependencyInjection;
+
+builder.Services.AddAdskToolkitHttpClient("ApsClient");
+
+// In your service:
+public class MyService(IHttpClientFactory httpClientFactory)
+{
+    public BIM360client CreateClient(Func<Task<string>> getAccessToken)
+    {
+        var httpClient = httpClientFactory.CreateClient("ApsClient");
+        return new BIM360client(getAccessToken, httpClient);
+    }
+}
+```
+
+## Available Managers
+
+Every manager is a property on `BIM360client`. Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages); non-paginated endpoints return `Task<T?>`.
+
+| Manager | Description | Methods |
+| ------- | ----------- | ------: |
+| `AccountAdminManager` | Accounts, projects, users, companies, business units, roles | 33 |
+| `AssetsManager` | Asset records, categories, statuses, custom attributes | 27 |
+| `ChecklistsManager` | Checklist templates and instances | 6 |
+| `CostManager` | Budgets, contracts, change orders, expenses, payments, main contracts | 84 |
+| `DataConnectorManager` | Data extraction requests, jobs, downloads | 11 |
+| `DocumentManagementManager` | Permissions, custom attributes, versions batch, exports | 11 |
+| `IssuesManager` | Issues, types, comments, attachments, root causes | 14 |
+| `LocationsManager` | Location nodes and trees | 2 |
+| `ModelCoordinationManager` | Model sets, clash tests, clashes, screenshots | 43 |
+| `ModelPropertiesManager` | Property indexes, diffs, queries, fields, manifests | 16 |
+| `RFIsManager` | RFIs, comments, attachments, current user | 10 |
+| `RelationshipsManager` | Create, search, sync relationships | 9 |
+
+## Automatic Pagination
+
+Paginated Manager methods return `IAsyncEnumerable<T>`, transparently fetching every page. Use `break` or LINQ's `.Take(n)` to stop early without fetching unnecessary pages.
+
+```csharp
+// Iterate all issues across all pages
+await foreach (var issue in client.IssuesManager.ListIssuesAsync(containerId))
+{
+    Console.WriteLine(issue.Title);
+}
+
+// Stop after first 10 items
+int count = 0;
+await foreach (var budget in client.CostManager.ListBudgetsAsync(containerId))
+{
+    if (++count >= 10) break;
+}
+
+// Apply query parameter filters
+await foreach (var project in client.AccountAdminManager.ListProjectsAsync(accountId,
+    new() { QueryParameters = { Sort = ["name"] } }))
+{
+    Console.WriteLine(project.Name);
+}
 ```
 
 ## Usage Examples
 
-### Get Issues
+### List Projects
 
 ```csharp
-// Get quality issues for a container
-var issues = await bim360Client.Issues.Containers[containerId].QualityIssues.GetAsync();
-
-foreach (var issue in issues?.Data ?? [])
+await foreach (var project in client.AccountAdminManager.ListProjectsAsync(accountId))
 {
-    Console.WriteLine($"Issue: {issue.Attributes?.Title} - Status: {issue.Attributes?.Status}");
+    Console.WriteLine($"{project.Name} — {project.Status}");
 }
 ```
 
-### Get Clash Results
+### Create an Issue
 
 ```csharp
-// Get clash test results
-var clashTests = await bim360Client.Clash.Containers[containerId].Clash.Tests.GetAsync();
+using Autodesk.BIM360.Issues.V2.Containers.Item.QualityIssues;
+
+IssuesPostResponse? newIssue = await client.IssuesManager.CreateIssueAsync(containerId, new IssuesPostRequestBody
+{
+    Title = "Missing fire extinguisher on Level 3",
+    Description = "Fire safety requirement not met",
+});
 ```
 
-### Get RFIs
+### List RFIs
 
 ```csharp
-// Get RFIs for a container
-var rfis = await bim360Client.RFIs.Containers[containerId].Rfis.GetAsync();
+await foreach (var rfi in client.RFIsManager.ListRfisAsync(containerId))
+{
+    Console.WriteLine($"{rfi.Title} — {rfi.Status}");
+}
 ```
 
-### Get Checklists
+### Cost Management
 
 ```csharp
-// Get checklists for a container
-var checklists = await bim360Client.Checklists.Containers[containerId].Checklists.GetAsync();
+await foreach (var budget in client.CostManager.ListBudgetsAsync(containerId))
+{
+    Console.WriteLine($"{budget.Name}: {budget.OriginalAmount}");
+}
+
+await foreach (var contract in client.CostManager.ListContractsAsync(containerId))
+{
+    Console.WriteLine($"{contract.Name} — {contract.Status}");
+}
 ```
 
-### Using the Full API
-
-For endpoints not available through shortcuts, use the `Api` property to access the full API structure:
+### Model Coordination and Clash Detection
 
 ```csharp
-// Access the full API
-var result = await bim360Client.Api.Issues.V2.Containers[containerId].QualityIssues.GetAsync();
+await foreach (var modelSet in client.ModelCoordinationManager.ListModelSetsAsync(containerId))
+{
+    Console.WriteLine($"{modelSet.Name} — {modelSet.Status}");
+}
+
+var clashTests = await client.ModelCoordinationManager
+    .GetModelSetClashTestsAsync(containerId, modelSetId);
 ```
 
-## API Structure
+### Using the Fluent URL API
 
-The SDK provides convenient shortcut properties for common endpoints:
-
-| Property | Description |
-|----------|-------------|
-| `bim360Client.Accounts` | Account management APIs |
-| `bim360Client.AccountsEU_V1` | EU region account APIs (v1) |
-| `bim360Client.AccountsEU_V2` | EU region account APIs (v2) |
-| `bim360Client.Admin` | Admin APIs |
-| `bim360Client.Assets` | Assets management APIs |
-| `bim360Client.Checklists` | Checklists APIs |
-| `bim360Client.Clash` | Clash detection APIs |
-| `bim360Client.Cost` | Cost management APIs |
-| `bim360Client.DataConnector` | Data Connector APIs |
-| `bim360Client.Docs` | Document management APIs |
-| `bim360Client.Index` | Index/search APIs |
-| `bim360Client.Issues` | Issues management APIs |
-| `bim360Client.ModelSet` | Model set management APIs |
-| `bim360Client.Projects` | Project relationship APIs |
-| `bim360Client.Relationships` | Relationships APIs |
-| `bim360Client.RFIs` | RFI management APIs |
-
-## Custom HttpClient
-
-You can provide your own `HttpClient` instance for advanced scenarios:
+For full control or endpoints not covered by a Manager, use the `Api` property which mirrors the REST path structure:
 
 ```csharp
-var httpClient = new HttpClient();
-// Configure your HttpClient...
+// GET /issues/v2/containers/{containerId}/quality-issues
+var issues = await client.Api.Issues.V2.Containers[containerId].QualityIssues.GetAsync();
 
-var bim360Client = new BIM360client(getAccessToken, httpClient);
+// GET /bim360/assets/v2/projects/{projectId}/assets
+var assets = await client.Api.Bim360.Assets.V2.Projects[projectId].Assets.GetAsync();
+
+// GET /cost/v1/containers/{containerId}/budgets
+var budgets = await client.Api.Cost.V1.Containers[containerId].Budgets.GetAsync();
 ```
 
 ## Rate Limiting
 
-The SDK handles API rate limits automatically thanks to the built-in retry handler provided by the [Kiota HTTP client](https://learn.microsoft.com/en-us/openapi/kiota/middleware). When the API returns a `429 Too Many Requests` response, the SDK will:
+The SDK handles API rate limits automatically. When the API returns a `429 Too Many Requests` response, the SDK will:
 
 - Automatically retry the request with exponential backoff
 - Respect the `Retry-After` header returned by the API
 - Retry up to a configurable number of times before failing
 
-This means you don't need to implement custom retry logic in your application — the SDK handles transient failures and rate limiting transparently.
+No custom retry logic needed — transient failures and rate limiting are handled transparently by the built-in [Kiota HTTP middleware](https://learn.microsoft.com/openapi/kiota/middleware).
 
 ## Error Handling
 
-By default, the SDK throws an `HttpRequestException` for any non-successful HTTP response (4xx or 5xx status codes). This differs from Kiota's default behavior, which requires you to check the response status manually.
+By default, the SDK throws `HttpRequestException` for any non-success HTTP response (4xx/5xx). This is enabled by default — unlike Kiota's default behavior which requires manual status checking.
 
-The exception includes:
-- The request URI
-- The HTTP status code
-- The full `HttpResponseMessage` in the `Data["context"]` property, allowing you to inspect the request, headers, response body, and other details for debugging
+The exception includes the status code and the full `HttpResponseMessage` in `ex.Data["context"]`:
 
 ```csharp
 try
 {
-    var issues = await bim360Client.Issues.Containers[containerId].QualityIssues.GetAsync();
+    var issues = await client.IssuesManager.ListIssuesAsync(containerId).ToListAsync();
 }
 catch (HttpRequestException ex)
 {
-    Console.WriteLine($"Request failed: {ex.Message}");
-    Console.WriteLine($"Status code: {ex.StatusCode}");
+    Console.WriteLine($"Status: {ex.StatusCode} — {ex.Message}");
 
-    // Access the full response for more details
     if (ex.Data["context"] is HttpResponseMessage response)
     {
-        // Get request details
-        Console.WriteLine($"Request URI: {response.RequestMessage?.RequestUri}");
-        Console.WriteLine($"Request Method: {response.RequestMessage?.Method}");
-
-        // Get response body
+        Console.WriteLine($"URI: {response.RequestMessage?.RequestUri}");
         var body = await response.Content.ReadAsStringAsync();
-        Console.WriteLine($"Response body: {body}");
+        Console.WriteLine($"Body: {body}");
     }
 }
 ```
 
-If you prefer Kiota's default behavior (no automatic exception throwing), you can disable the error handler:
+To disable the error handler for a specific Manager call:
 
 ```csharp
 using Autodesk.Common.HttpClientLibrary.Middleware.Options;
 
-// Disable error handling for a specific request
-var requestConfig = new Action<RequestConfiguration<DefaultQueryParameters>>(config =>
+var issues = await client.IssuesManager.ListIssuesAsync(containerId,
+    new() { Options = { new ErrorHandlerOption { Enabled = false } } }).ToListAsync();
+```
+
+For Fluent URL API calls, the `Action<>` lambda is used (Kiota-generated):
+
+```csharp
+var issues = await client.Api.Issues.V2.Containers[containerId].QualityIssues.GetAsync(config =>
 {
     config.Options.Add(new ErrorHandlerOption { Enabled = false });
 });
-
-var issues = await bim360Client.Issues.Containers[containerId].QualityIssues.GetAsync(requestConfig);
 ```
+
+## Custom HttpClient
+
+You can provide your own `HttpClient` for advanced scenarios (proxies, custom handlers, etc.):
+
+```csharp
+var httpClient = new HttpClient();
+var client = new BIM360client(getAccessToken, httpClient);
+```
+
+## Constructor
+
+```csharp
+public BIM360client(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
+```
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `getAccessToken` | `Func<Task<string>>` | Async function returning a valid OAuth bearer token |
+| `httpClient` | `HttpClient?` | Optional custom HttpClient (default includes retry, rate-limit, and error handling middleware) |
+
+## Conventions
+
+These patterns are consistent across all 266 methods and are useful for AI code generation:
+
+- All async methods use the `*Async` suffix
+- Paginated endpoints return `IAsyncEnumerable<T>` — auto-fetches all pages; use `break` or `.Take(n)` to stop early
+- Non-paginated endpoints return `Task<T?>`
+- Every method accepts optional `RequestConfiguration<T>? requestConfiguration` (object, not `Action<>`) and `CancellationToken cancellationToken` parameters
+- `accountId` is `Guid` in `AccountAdminManager`
+- `containerId` is `string` in `IssuesManager`, `RFIsManager`, `ChecklistsManager`; `Guid` in `CostManager`, `ModelCoordinationManager`, `RelationshipsManager`, `DataConnectorManager`
+- `projectId` is `string` in most managers; `Guid` in some `AccountAdminManager` methods
+- Request body types are Kiota-generated classes in sub-namespaces (e.g. `Autodesk.BIM360.Issues.V2.Containers.Item.QualityIssues.IssuesPostRequestBody`)
+
+## Related Packages
+
+| Package | NuGet | Purpose |
+| ------- | ----- | ------- |
+| `Adsk.Platform.Authentication` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.Authentication) | OAuth 2-legged/3-legged token management |
+| `Adsk.Platform.HttpClient` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.HttpClient) | Shared HTTP client with retry, rate limiting, error handling |
+| `Adsk.Platform.ACC` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.ACC) | Autodesk Construction Cloud (successor to BIM 360) |
+| `Adsk.Platform.DataManagement` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.DataManagement) | Hubs, projects, folders, items, versions |
+
+## For AI Assistants
+
+A machine-readable API reference with all 266 method signatures, return types, and REST endpoint mappings is available at [`llm.txt`](./llm.txt) — optimized for use with AI coding tools (Copilot, Cursor, ChatGPT, etc.).
 
 ## Requirements
 
 - .NET 8.0 or later
-- Valid Autodesk Platform Services (APS) access token with appropriate scopes
+- Valid [Autodesk Platform Services (APS)](https://aps.autodesk.com/) access token with appropriate scopes
 
 ## Documentation
 
 - [BIM 360 API Documentation](https://aps.autodesk.com/en/docs/bim360/v1/overview/)
 - [Autodesk Platform Services](https://aps.autodesk.com/)
-- [Microsoft Kiota Documentation](https://learn.microsoft.com/en-us/openapi/kiota/overview)
+- [Microsoft Kiota Documentation](https://learn.microsoft.com/openapi/kiota/overview)
 
 ## License
 

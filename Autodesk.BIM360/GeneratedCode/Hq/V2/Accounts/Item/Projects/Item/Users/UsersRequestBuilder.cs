@@ -22,7 +22,7 @@ namespace Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users
             get => new global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Import.ImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Autodesk.BIM360.hq.v2.accounts.item.projects.item.users.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The user&apos;s BIM 360 ID. A user is assigned a BIM 360 ID (`id`) for all BIM 360 accounts and projects. To verify the ID, call GET users.</param>
         /// <returns>A <see cref="global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Item.WithUser_ItemRequestBuilder"/></returns>
         public global::Autodesk.BIM360.Hq.V2.Accounts.Item.Projects.Item.Users.Item.WithUser_ItemRequestBuilder this[string position]
         {
