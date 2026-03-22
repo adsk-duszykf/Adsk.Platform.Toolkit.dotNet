@@ -1,117 +1,279 @@
-# Autodesk Platform Services Toolkit
+# Autodesk Platform Services SDK for .NET
 
-This toolkit provides a collection of .NET libraries, featuring a [Fluent API](https://dzone.com/articles/java-fluent-api) derived from the [API specifications](https://swagger.io/specification/) and a set of convenient functions designed to enhance the developer experience when using Autodesk Platform Services (APS) in C#.
+[![NuGet](https://img.shields.io/nuget/v/Adsk.Platform.DataManagement)](https://www.nuget.org/packages?q=Adsk.Platform)
 
-## Helper functions
+> **Unofficial packages** — not affiliated with or endorsed by Autodesk.
+>
+> **Target:** `net8.0` | **License:** MIT | Generated from OpenAPI specs via [Microsoft Kiota](https://learn.microsoft.com/openapi/kiota/overview).
 
-Example:
-**Get the file id by the file path**
+A collection of type-safe .NET libraries for [Autodesk Platform Services (APS)](https://aps.autodesk.com/) REST APIs — covering ACC, BIM 360, Data Management, Model Derivative, Authentication, Vault, Tandem, Automation, BuildingConnected, and Parameters. Each service ships as an independent NuGet package under the `Adsk.Platform.*` namespace.
 
-```csharp
-using Autodesk.DataManagement;
-
-// Initialize the DataManagementClient
-var authToken() => Task.FromResult("YOUR_ACCESS_TOKEN");
-
-var DMclient = new DataManagementClient(authToken);
-
-// A single method getting the file id by path
-var file = await DMclient.Helper.GetFileItemByPathAsync("Account/Project/Folder/SubFolder/FileName.ext");
-
-Console.WriteLine($"File ID: {file.Id}");    
-```
-
-## Fluent API
-
-Example: **Get the hub ids**
+## Quick Start
 
 ```csharp
+using Autodesk.Authentication;
 using Autodesk.DataManagement;
 
-// Initialize the DataManagementClient
-var authToken() => Task.FromResult("YOUR_ACCESS_TOKEN");
+// 1. Create an auto-refreshing 2-legged token
+var authClient = new AuthenticationClient();
+var tokenStore = new InMemoryTokenStore();
 
-var DMclient = new DataManagementClient(authToken);
+var getToken = authClient.Helper.CreateTwoLeggedAutoRefreshToken(
+    clientId: "YOUR_CLIENT_ID",
+    clientSecret: "YOUR_CLIENT_SECRET",
+    scopes: new[] { "data:read", "data:write" },
+    tokenStore);
 
-// Fluent API reproducing the API endpoint to get the hub ids
-var hubs = await DMclient.DataMgtApi.Project.V1.Hubs.GetAsync();
+// 2. Use any service client
+var dmClient = new DataManagementClient(getToken);
 
-var hubIds = hubs?.Data?.Select(h => h?.Id ?? "")?.ToArray() ?? [];
-
-Console.WriteLine($"Hubs: {string.Join(';', hubIds)}");  
-```
-
-The repository contains a C# SDK for several APS services, including:
-
-| Service | SDK | Helper functions | Package |
-|--|--|--|--|
-| Authentication | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.Authentication.Helpers.AuthenticationClientHelper.html) | [Adsk.Platform.Authentication](https://www.nuget.org/packages/Adsk.Platform.Authentication) |
-| Data Management | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.DataManagement.Helpers.DataManagementClientHelper.html) | [Adsk.Platform.DataManagement](https://www.nuget.org/packages/Adsk.Platform.DataManagement) |
-| Model Derivative | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.ModelDerivative.Helpers.ModelDerivativeClientHelper.html) | [Adsk.Platform.ModelDerivative](https://www.nuget.org/packages/Adsk.Platform.ModelDerivative) |
-| ACC Model Properties | Stable | [Yes](https://adsk-duszykf.github.io/Adsk.Platform.Toolkit/api/Autodesk.ACC.ModelProperties.Helpers.ModelPropertiesClientHelper.html) | [Adsk.Platform.ACC.ModelProperties](https://www.nuget.org/packages/Adsk.Platform.ACC.ModelProperties) |
-| ACC/BIM360 Account Admin | In development | No | [Adsk.Platform.ACC.AccountAdmin](https://www.nuget.org/packages/Adsk.Platform.ACC.AccountAdmin) |
-| ACC Cost Management | In development | No | [Adsk.Platform.ACC.CostManagement](https://www.nuget.org/packages/Adsk.Platform.ACC.CostManagement) |
-| ACC Assets | In development | No | - |
-
-## Get started
-
-The root object for each service is `{service}Client`. For example, the root object for the Data Management service is `DataManagementClient`.
-This object contains 2 properties:
-
-- `Api`: Contains the root object for the Fluent API.
-- `Helper`: Contains methods that cover common scenarios combining multiple API calls.
-
-The Fluent API reflects the Rest API endpoint structure:
-
-````csharp
-//https://developer.api.autodesk.com / project / v1 / hubs  (GET)
-                   client.DataMgtApi . Project . V1 . Hubs . GetAsync()
-````
-
-For more details about the SDK structure, see the [Kiota documentation](https://learn.microsoft.com/en-us/openapi/kiota/request-builders)
-
-For code examples look at the files `{service}ClientHelper.cs`.
-
-## Motivations
-
-### Why this toolkit?
-
-- Needs full typed SDKs with a more complete and comprehensive API from the API specifications compared to existing solution. Thanks to [Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview) by Microsoft
-- Needs higher level functions to cover common scenarios combining multiple API calls:
-  - Authentication: Create and refresh automatically a 2 legged token
-  - DataManagement: Download/Upload a file
-  - Model Derivative: Get large model tree
-  - Model Properties: Run the query and wait until done
-  - ...
-
-### More about the SDK generator [Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview)
-
-There are other SDK generators like [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator), [AutoRest](https://github.com/Azure/autorest), [NSwag](https://github.com/RicoSuter/NSwag), etc.
-
-[Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview) offers several benefits:
-
-- Support all OpenAPI specifications => Full typed SDK including:
-  - Request and response bodies
-  - Headers
-  - Query parameters
-  - Path parameters
-- Easy to map the API provider documentation to the SDK => Easy to use
-- Log error in reports and continue during SDK generation => Robust
-- Can exclude some endpoints for the SDK generation => Customizable
-- Open source => Transparent
-- Developed by Microsoft and used for their Graph SDK (very large API) => Reliable/scalable
-- Coded in C# => Easy to understand, extend and execute
-
-Here is an introduction by the authors: [Introducing project Kiota a client generator for OpenAPI | .NET Conf 2023](https://www.youtube.com/watch?v=sQ9Pv-rQ1s8)
-
-## Run Tests
-
-1. Create an app on Autodesk Platform Services (APS) and get the client id and client secret.
-1. Create a `appsettings.json` file based on this example:
-
-````json
+// Manager approach (recommended) — auto-paginates all pages
+await foreach (var project in dmClient.Projects.ListProjectsAsync("b.my-account-id"))
 {
-    "APS_CLIENT_ID": "ednqAmsC....N6eQPAKLsfVnXg",
-    "APS_CLIENT_SECRET": "CHib...d4Bijb"
+    Console.WriteLine($"{project.Id} — {project.Attributes?.Name}");
 }
-````
+
+// Fluent URL approach — mirrors the REST endpoint directly
+var hubs = await dmClient.DataMgtApi.Project.V1.Hubs.GetAsync();
+```
+
+## Installation
+
+Install only the packages you need:
+
+```bash
+dotnet add package Adsk.Platform.Authentication
+dotnet add package Adsk.Platform.DataManagement
+dotnet add package Adsk.Platform.ACC
+```
+
+All SDK packages automatically include the shared HTTP client (`Adsk.Platform.HttpClient`) with retry, rate limiting, and error handling middleware.
+
+## Available Packages
+
+### Platform Services
+
+| Package | NuGet | Client Class | Managers | Helper | README |
+| ------- | ----- | ------------ | :------: | :----: | :----: |
+| Authentication | [Adsk.Platform.Authentication](https://www.nuget.org/packages/Adsk.Platform.Authentication) | `AuthenticationClient` | — | Yes | [README](Autodesk.Authentication/README.md) |
+| Data Management | [Adsk.Platform.DataManagement](https://www.nuget.org/packages/Adsk.Platform.DataManagement) | `DataManagementClient` | Yes | Yes | [README](Autodesk.DataManagement/README.md) |
+| Model Derivative | [Adsk.Platform.ModelDerivative](https://www.nuget.org/packages/Adsk.Platform.ModelDerivative) | `ModelDerivativeClient` | Yes | Yes | [README](Autodesk.ModelDerivative/README.md) |
+
+### Autodesk Construction Cloud (ACC)
+
+| Package | NuGet | Client Class | Managers | Helper | README |
+| ------- | ----- | ------------ | :------: | :----: | :----: |
+| ACC (all-in-one) | [Adsk.Platform.ACC](https://www.nuget.org/packages/Adsk.Platform.ACC) | `ACCclient` | Yes | — | [README](Autodesk.ACC/README.md) |
+
+> The individual ACC packages (`Adsk.Platform.ACC.AccountAdmin`, `ACC.Issues`, `ACC.RFIs`, `ACC.CostManagement`, `ACC.DataConnector`, `ACC.FileManagement`, `ACC.ModelProperties`) are **deprecated** on NuGet. Use the all-in-one `Adsk.Platform.ACC` package instead — it includes all ACC services through a single unified client with 19 service managers.
+
+### Other Services
+
+| Package | NuGet | Client Class | Managers | Helper | README |
+| ------- | ----- | ------------ | :------: | :----: | :----: |
+| BIM 360 | [Adsk.Platform.BIM360](https://www.nuget.org/packages/Adsk.Platform.BIM360) | `BIM360client` | Yes | — | [README](Autodesk.BIM360/README.md) |
+| Automation | [Adsk.Platform.Automation](https://www.nuget.org/packages/Adsk.Platform.Automation) | `AutomationClient` | Yes | — | [README](Autodesk.Automation/README.md) |
+| BuildingConnected | [Adsk.Platform.BuildingConnected](https://www.nuget.org/packages/Adsk.Platform.BuildingConnected) | `BuildingConnectedClient` | Yes | — | [README](Autodesk.BuildingConnected/README.md) |
+| Parameters | Adsk.Platform.Parameters (preview) | `ParametersClient` | Yes | — | [README](Autodesk.Parameters/README.md) |
+| Tandem | [Adsk.Platform.Tandem](https://www.nuget.org/packages/Adsk.Platform.Tandem) | `TandemClient` | Yes | — | [README](Autodesk.Tandem/README.md) |
+| Vault | [Adsk.Platform.VaultData](https://www.nuget.org/packages/Adsk.Platform.VaultData) | `VaultClient` | Yes | — | [README](Autodesk.Vault/README.md) |
+
+### Infrastructure
+
+| Package | NuGet | Description | README |
+| ------- | ----- | ----------- | :----: |
+| HTTP Client | [Adsk.Platform.HttpClient](https://www.nuget.org/packages/Adsk.Platform.HttpClient) | Shared HTTP client with retry, rate limiting, and error handling middleware | [README](Autodesk.Common.HttpClient/README.md) |
+
+## Architecture
+
+Every SDK package follows the same structure. The entry point is always a `{Service}Client` class with up to three access patterns:
+
+```text
+{Service}Client
+├── .Api        → Fluent URL API (Kiota-generated, mirrors REST endpoints)
+├── .Helper     → Convenience methods for multi-step workflows
+└── .{Manager}  → High-level manager classes with pagination and typed parameters
+```
+
+### Fluent URL API
+
+The Kiota-generated fluent API maps directly to REST endpoint paths — making it easy to translate any APS documentation example into code:
+
+```csharp
+// REST:  GET https://developer.api.autodesk.com/project/v1/hubs
+// SDK:       client.DataMgtApi.Project.V1.Hubs.GetAsync()
+
+// REST:  GET https://developer.api.autodesk.com/construction/issues/v1/projects/{id}/issues
+// SDK:       client.Api.Construction.Issues.V1.Projects[projectId].Issues.GetAsync()
+```
+
+### Managers (where available)
+
+Manager classes wrap common operations into strongly-typed methods with automatic pagination via `IAsyncEnumerable<T>`:
+
+```csharp
+// Auto-fetches all pages — stop early with break or .Take(n)
+await foreach (var issue in accClient.IssuesManager.ListIssuesAsync(projectId))
+{
+    Console.WriteLine($"{issue.Title} — {issue.Status}");
+}
+```
+
+### Helper Methods (where available)
+
+Helper methods simplify multi-step workflows into single calls:
+
+```csharp
+// Single call to navigate the folder hierarchy by path
+var file = await dmClient.Helper.GetFileItemByPathAsync(
+    "MyAccount/MyProject/Folder/SubFolder/FileName.ext");
+```
+
+## Authentication
+
+The `AuthenticationClient` does not require an access token itself — it is used to obtain tokens for other services.
+
+### 2-Legged OAuth (server-to-server)
+
+```csharp
+using Autodesk.Authentication;
+
+var authClient = new AuthenticationClient();
+var tokenStore = new InMemoryTokenStore();
+
+var getToken = authClient.Helper.CreateTwoLeggedAutoRefreshToken(
+    clientId: "YOUR_CLIENT_ID",
+    clientSecret: "YOUR_CLIENT_SECRET",
+    scopes: new[] { "data:read", "data:write", "account:read" },
+    tokenStore);
+
+// Pass getToken to any service client
+var client = new DataManagementClient(getToken);
+```
+
+### Simple Token (for testing)
+
+```csharp
+Func<Task<string>> getToken = () => Task.FromResult("YOUR_ACCESS_TOKEN");
+var client = new DataManagementClient(getToken);
+```
+
+## Dependency Injection
+
+All clients support the shared HTTP client factory for ASP.NET Core applications:
+
+```csharp
+using Autodesk.Common.HttpClientLibrary;
+using Microsoft.Extensions.DependencyInjection;
+
+builder.Services.AddAdskToolkitHttpClient("ApsClient");
+
+// In your service:
+public class MyService(IHttpClientFactory httpClientFactory)
+{
+    public DataManagementClient CreateClient(Func<Task<string>> getToken)
+    {
+        var httpClient = httpClientFactory.CreateClient("ApsClient");
+        return new DataManagementClient(getToken, httpClient);
+    }
+}
+```
+
+## Error Handling
+
+By default, all SDK clients throw `HttpRequestException` for non-success HTTP responses (4xx/5xx). The exception includes the full response context:
+
+```csharp
+try
+{
+    var hubs = await dmClient.DataMgtApi.Project.V1.Hubs.GetAsync();
+}
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"Status: {ex.StatusCode} — {ex.Message}");
+
+    if (ex.Data["context"] is HttpResponseMessage response)
+    {
+        var body = await response.Content.ReadAsStringAsync();
+        Console.WriteLine($"URI: {response.RequestMessage?.RequestUri}");
+        Console.WriteLine($"Body: {body}");
+    }
+}
+```
+
+## Rate Limiting
+
+All SDK clients handle API rate limits automatically via built-in [Kiota HTTP middleware](https://learn.microsoft.com/openapi/kiota/middleware):
+
+- Automatically retries on `429 Too Many Requests`
+- Respects the `Retry-After` header
+- Configurable retry count with exponential backoff
+
+No custom retry logic needed.
+
+## Why Kiota?
+
+There are several OpenAPI SDK generators ([OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator), [AutoRest](https://github.com/Azure/autorest), [NSwag](https://github.com/RicoSuter/NSwag), etc.). [Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview) was chosen because it:
+
+- Generates **fully typed** request/response bodies, headers, query parameters, and path parameters
+- Maps directly to API documentation — the fluent URL structure matches the REST paths
+- Logs errors in reports and continues during generation (robust)
+- Supports excluding endpoints from generation (customizable)
+- Is open source, developed by Microsoft, and used for the Microsoft Graph SDK (proven at scale)
+
+Introduction by the authors: [Introducing project Kiota | .NET Conf 2023](https://www.youtube.com/watch?v=sQ9Pv-rQ1s8)
+
+## Running Tests
+
+1. Create an app on [Autodesk Platform Services](https://aps.autodesk.com/) and get the client ID and secret.
+1. Create `Sdk_Tests/appsettings.json`:
+
+```json
+{
+    "APS_CLIENT_ID": "YOUR_CLIENT_ID",
+    "APS_CLIENT_SECRET": "YOUR_CLIENT_SECRET"
+}
+```
+
+1. Run the tests:
+
+```bash
+dotnet test
+```
+
+## For AI Assistants
+
+Each package directory contains a `llm.txt` file with machine-readable method signatures, return types, and REST endpoint mappings — optimized for AI coding tools.
+
+| Package | Reference |
+| ------- | --------- |
+| ACC | [`Autodesk.ACC/llm.txt`](Autodesk.ACC/llm.txt) |
+| Automation | [`Autodesk.Automation/llm.txt`](Autodesk.Automation/llm.txt) |
+| BIM 360 | [`Autodesk.BIM360/llm.txt`](Autodesk.BIM360/llm.txt) |
+| BuildingConnected | [`Autodesk.BuildingConnected/llm.txt`](Autodesk.BuildingConnected/llm.txt) |
+| Parameters | [`Autodesk.Parameters/llm.txt`](Autodesk.Parameters/llm.txt) |
+| Tandem | [`Autodesk.Tandem/llm.txt`](Autodesk.Tandem/llm.txt) |
+
+### SDK Conventions
+
+These patterns are consistent across all packages:
+
+- Entry point is always `new {Service}Client(getAccessToken)` (except `AuthenticationClient` which takes no token, and `VaultClient` which takes additional server URL)
+- `.Api` property provides the Kiota-generated fluent URL builder
+- `.Helper` property (when available) provides convenience methods for multi-step workflows
+- Named Manager properties (when available) provide high-level typed operations
+- All async methods use the `*Async` suffix
+- Paginated Manager methods return `IAsyncEnumerable<T>` — auto-fetches all pages
+- Non-paginated methods return `Task<T?>`
+- Optional `HttpClient` parameter on all constructors for DI/custom configuration
+- Request body types are Kiota-generated classes in sub-namespaces matching the URL path
+
+## Documentation
+
+- [Autodesk Platform Services](https://aps.autodesk.com/)
+- [APS API Documentation](https://aps.autodesk.com/developer/documentation)
+- [Microsoft Kiota Documentation](https://learn.microsoft.com/openapi/kiota/overview)
+
+## License
+
+This project is licensed under the MIT License.
