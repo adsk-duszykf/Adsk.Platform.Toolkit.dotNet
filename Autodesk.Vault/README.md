@@ -1,91 +1,101 @@
 # Autodesk Vault Data SDK for .NET
 
-> **⚠️ UNOFFICIAL PACKAGE ⚠️**
+[![NuGet](https://img.shields.io/nuget/v/Adsk.Platform.VaultData)](https://www.nuget.org/packages/Adsk.Platform.VaultData)
 
-A .NET SDK providing a [Fluent API](https://dzone.com/articles/java-fluent-api) for the [Autodesk Vault](https://www.autodesk.com/products/vault/overview) Data APIs, generated from the official OpenAPI specifications using [Microsoft Kiota](https://learn.microsoft.com/en-us/openapi/kiota/overview).
+> **Unofficial package** — not affiliated with or endorsed by Autodesk.
+>
+> **Namespace:** `Autodesk.Vault` | **Target:** `net8.0` | **License:** MIT
+> Generated from OpenAPI specs via [Microsoft Kiota](https://learn.microsoft.com/openapi/kiota/overview).
 
-## Features
+A type-safe C# SDK for the [Autodesk Vault](https://www.autodesk.com/products/vault/overview) Data REST API (v2). Covers sessions, vaults, files, folders, items, change orders, users, groups, roles, search, jobs, links, properties, and options — **60 methods across 11 service managers** through a single unified client.
 
-This SDK provides access to Vault Data API endpoints through a unified client:
+The SDK provides two access patterns:
 
-| API | Description |
-|-----|-------------|
-| **Sessions** | Authentication and session management |
-| **Vaults** | Vault operations and management |
-| **Files & Folders** | File versions, folder contents, and file associations |
-| **Items** | Item management, versions, and bill of materials |
-| **Change Orders** | Engineering Change Order (ECO) management |
-| **Users** | User account management |
-| **Groups** | Group management |
-| **Roles** | Role management |
-| **Server Info** | Server information retrieval |
-| **System Options** | System-level options |
-| **Profile Attributes** | User profile attribute definitions |
-| **Search** | Basic and advanced search operations |
-| **Jobs** | Job management and monitoring |
-| **Links** | Entity link management |
-| **Properties** | Property definitions |
+1. **Manager API** (recommended) — high-level methods with strongly-typed parameters and XML doc comments.
+2. **Fluent URL API** — mirrors the REST endpoint structure directly for full control over requests.
 
 ## Installation
 
 ```bash
 dotnet add package Adsk.Platform.VaultData
+dotnet add package Adsk.Platform.Authentication
 ```
 
 ## Quick Start
 
-### Using with 2-Legged Authentication (Server-to-Server)
+```csharp
+using Autodesk.Vault;
 
-For server-to-server communication using client credentials (2-legged OAuth) with user impersonation:
+var client = new VaultClient(
+    () => Task.FromResult("YOUR_ACCESS_TOKEN"),
+    vaultServerUrl: "https://your-vault-server");
+
+// Manager approach (recommended)
+var vaults = await client.Informational.GetVaultsAsync();
+foreach (var vault in vaults?.Data ?? [])
+{
+    Console.WriteLine($"Vault: {vault.Name} (ID: {vault.Id})");
+}
+
+// Fluent URL approach — mirrors the REST path directly
+var serverInfo = await client.Api.ServerInfo.GetAsync();
+Console.WriteLine($"Server Version: {serverInfo?.ServerVersion}");
+```
+
+### Authentication with 2-Legged OAuth
+
+For server-to-server communication with user impersonation, use the [`Adsk.Platform.Authentication`](https://www.nuget.org/packages/Adsk.Platform.Authentication) package:
 
 ```csharp
 using Autodesk.Vault;
 using Autodesk.Authentication;
 using Autodesk.Authentication.Helpers.Models;
 
-// Your APS app credentials
-var clientId = "YOUR_CLIENT_ID";
-var clientSecret = "YOUR_CLIENT_SECRET";
-
-// Define the required scopes
-var scopes = new[] { "data:read", "data:write" };
-
-// Create authentication client
 var authClient = new AuthenticationClient();
-
-// Create an auto-refreshing token provider
 var tokenStore = new InMemoryTokenStore();
+
 var getAccessToken = authClient.Helper.CreateTwoLeggedAutoRefreshToken(
-    clientId, 
-    clientSecret, 
-    scopes, 
+    clientId: "YOUR_CLIENT_ID",
+    clientSecret: "YOUR_CLIENT_SECRET",
+    scopes: new[] { "data:read", "data:write" },
     tokenStore);
 
-// Initialize the Vault client with 2-legged auth
-// The userId parameter specifies the Vault user to impersonate
-// vaultServerUrl must be a valid absolute HTTP or HTTPS URL
-var vaultClient = new VaultClient(
-    getAccessToken, 
-    vaultServerUrl: "https://your-vault-server.autodesk.com", 
+// 2-legged auth requires a userId for impersonation
+var client = new VaultClient(
+    getAccessToken,
+    vaultServerUrl: "https://your-vault-server",
     userId: "user@company.com");
 ```
 
-### Using with 3-Legged Authentication (User Context)
+### Authentication with 3-Legged OAuth
 
-For user-context operations using 3-legged OAuth:
+For user-context operations:
 
 ```csharp
 using Autodesk.Vault;
 
-// Function that returns the 3-legged access token
-Func<Task<string>> getAccessToken = () => Task.FromResult("YOUR_3LEGGED_ACCESS_TOKEN");
-
-// Initialize the Vault client with 3-legged auth
-// vaultServerUrl must be a valid absolute HTTP or HTTPS URL
-var vaultClient = new VaultClient(
-    getAccessToken, 
-    vaultServerUrl: "https://your-vault-server.autodesk.com");
+var client = new VaultClient(
+    () => Task.FromResult("YOUR_3LEGGED_ACCESS_TOKEN"),
+    vaultServerUrl: "https://your-vault-server");
 ```
+
+## Available Managers
+
+Every manager is a property on `VaultClient`. All endpoints return `Task<T?>` — the Vault API uses server-side filtering and sorting via query parameters.
+
+| Manager | Description | Methods |
+| --- | --- | ---: |
+| `Auth` | Session creation (standard and Windows auth), retrieval, deletion | 4 |
+| `Accounts` | Users, groups, roles, profile attributes, account info | 11 |
+| `Options` | System-wide options and per-vault options (CRUD) | 10 |
+| `Informational` | Server info, vault listing and details | 3 |
+| `Properties` | Property definitions for a vault | 2 |
+| `FilesAndFolders` | File versions, file details, folder contents, sub-folders, downloads, thumbnails | 9 |
+| `Items` | Items, item versions, associated files, bill of materials, thumbnails | 8 |
+| `ChangeOrders` | Change orders (ECOs), related files, associated entities, comments, attachments | 6 |
+| `Links` | Entity links and relationships | 2 |
+| `Search` | Basic search results and advanced search | 2 |
+| `Jobs` | Job creation, status, and queue management | 3 |
 
 ## Usage Examples
 
@@ -94,7 +104,6 @@ var vaultClient = new VaultClient(
 ```csharp
 using Autodesk.Vault.Sessions;
 
-// Create session with username/password
 var sessionData = new SessionsPostRequestBody
 {
     VaultName = "MyVault",
@@ -102,215 +111,188 @@ var sessionData = new SessionsPostRequestBody
     Password = "mypassword"
 };
 
-var session = await vaultClient.Auth.CreateSessionAsync(sessionData);
+var session = await client.Auth.CreateSessionAsync(sessionData);
 Console.WriteLine($"Session ID: {session?.Id}");
 ```
 
-### Get Server Information
+### Browse Files and Folders
 
 ```csharp
-// Get server information
-var serverInfo = await vaultClient.Api.ServerInfo.GetAsync();
-Console.WriteLine($"Server Version: {serverInfo?.ServerVersion}");
-```
-
-### List Vaults
-
-```csharp
-// Get all vaults
-var vaults = await vaultClient.Api.Vaults.GetAsync();
-
-foreach (var vault in vaults?.Data ?? [])
-{
-    Console.WriteLine($"Vault: {vault.Name} - ID: {vault.Id}");
-}
-```
-
-### Get Files and Folders
-
-```csharp
-// Get folder contents
-var contents = await vaultClient.FilesAndFolders.GetFolderContentsAsync(vaultId, folderId);
-
+var contents = await client.FilesAndFolders.GetFolderContentsAsync(vaultId, folderId);
 foreach (var item in contents?.Data ?? [])
 {
     Console.WriteLine($"Item: {item.Name}");
 }
 
 // Download file content
-var fileStream = await vaultClient.FilesAndFolders.GetFileVersionContentAsync(
-    vaultId, 
-    fileVersionId);
+var fileStream = await client.FilesAndFolders.GetFileVersionContentAsync(vaultId, fileVersionId);
 ```
 
-### Work with Items
+### Work with Items and Bill of Materials
 
 ```csharp
-// Get items in a vault
-var items = await vaultClient.Items.GetItemsAsync(vaultId);
-
+var items = await client.Items.GetItemsAsync(vaultId);
 foreach (var item in items?.Data ?? [])
 {
-    Console.WriteLine($"Item: {item.Number} - {item.Title}");
+    Console.WriteLine($"Item: {item.Number} — {item.Title}");
 }
 
-// Get item versions
-var versions = await vaultClient.Items.GetItemVersionsAsync(vaultId, itemId);
-
-// Get bill of materials for an item version
-var bom = await vaultClient.Items.GetBillOfMaterialsAsync(vaultId, itemVersionId);
+var bom = await client.Items.GetItemVersionBillOfMaterialsAsync(vaultId, itemVersionId);
 ```
 
-### Search Operations
+### Manage Change Orders (ECOs)
+
+```csharp
+var changeOrders = await client.ChangeOrders.GetChangeOrdersAsync(vaultId);
+foreach (var eco in changeOrders?.Data ?? [])
+{
+    Console.WriteLine($"ECO: {eco.Number} — {eco.Title}");
+}
+
+var relatedFiles = await client.ChangeOrders.GetChangeOrderRelatedFilesAsync(vaultId, changeOrderId);
+var comments = await client.ChangeOrders.GetChangeOrderCommentsAsync(vaultId, changeOrderId);
+```
+
+### Advanced Search
 
 ```csharp
 using Autodesk.Vault.Vaults.WithVaultIdAdvancedSearch;
 
-// Perform advanced search
 var searchBody = new WithVaultIdAdvancedSearchPostRequestBody
 {
-    // Configure your search criteria
+    // Configure search criteria
 };
 
-var results = await vaultClient.Search.PerformAdvancedSearchAsync(vaultId, searchBody);
-
+var results = await client.Search.PerformAdvancedSearchAsync(vaultId, searchBody);
 foreach (var entity in results?.Data ?? [])
 {
     Console.WriteLine($"Found: {entity.Name}");
 }
 ```
 
-### Manage Users and Groups
+### Using the Fluent URL API
 
 ```csharp
+// Get server information
+var serverInfo = await client.Api.ServerInfo.GetAsync();
+
 // Get all users
-var users = await vaultClient.Accounts.GetUsersAsync();
+var users = await client.Api.Users.GetAsync();
 
-// Get all groups
-var groups = await vaultClient.Accounts.GetGroupsAsync();
-
-// Get user by ID
-var user = await vaultClient.Accounts.GetUserByIdAsync(userId);
+// Get file by ID through the full path
+var file = await client.Api.Vaults[vaultId].Files[fileId].GetAsync();
 ```
-
-### Using the Full API
-
-For endpoints not available through manager shortcuts, use the `Api` property to access the full API structure:
-
-```csharp
-// Access the full API for low-level operations
-var result = await vaultClient.Api.Vaults[vaultId].Files[fileId].GetAsync();
-```
-
-## Manager Reference
-
-The SDK provides convenient manager properties for organized access to API operations:
-
-| Property | Description |
-|----------|-------------|
-| `vaultClient.Auth` | Authentication and session management |
-| `vaultClient.Accounts` | Users, Groups, Roles, Profile Attributes |
-| `vaultClient.Options` | System Options, Vault Options |
-| `vaultClient.Informational` | Server Info, Vaults |
-| `vaultClient.Properties` | Property definitions |
-| `vaultClient.FilesAndFolders` | Files, File Versions, Folders, Associations |
-| `vaultClient.Items` | Items, Item Versions, Bill of Materials |
-| `vaultClient.ChangeOrders` | Engineering Change Orders (ECOs) |
-| `vaultClient.Links` | Entity links and relationships |
-| `vaultClient.Search` | Basic and advanced search |
-| `vaultClient.Jobs` | Job management and status |
-
-## API Structure
-
-The `Api` property provides direct access to the generated Kiota client:
-
-| Property | Description |
-|----------|-------------|
-| `vaultClient.Api.Sessions` | Session management endpoints |
-| `vaultClient.Api.Vaults` | Vault and vault content endpoints |
-| `vaultClient.Api.Users` | User management endpoints |
-| `vaultClient.Api.Groups` | Group management endpoints |
-| `vaultClient.Api.Roles` | Role management endpoints |
-| `vaultClient.Api.ServerInfo` | Server information endpoint |
-| `vaultClient.Api.SystemOptions` | System options endpoints |
-| `vaultClient.Api.ProfileAttributeDefinitions` | Profile attribute endpoints |
-
-## Custom HttpClient
-
-You can provide your own `HttpClient` instance for advanced scenarios:
-
-```csharp
-var httpClient = new HttpClient();
-// Configure your HttpClient (timeouts, handlers, etc.)
-
-var vaultClient = new VaultClient(getAccessToken, "https://your-vault-server", userId, httpClient);
-```
-
-## URL Validation
-
-The `vaultServerUrl` parameter must be a valid absolute HTTP or HTTPS URL (e.g. `"https://vaultserver.example.com"` or `"http://10.148.0.1"`). An `ArgumentException` is thrown for invalid, relative, or non-HTTP URLs.
 
 ## Rate Limiting
 
-The SDK handles API rate limits automatically thanks to the built-in retry handler provided by the [Kiota HTTP client](https://learn.microsoft.com/en-us/openapi/kiota/middleware). When the API returns a `429 Too Many Requests` response, the SDK will:
+The SDK handles API rate limits automatically via built-in Kiota middleware. When the API returns a `429 Too Many Requests` response, the SDK will:
 
-- Automatically retry the request with exponential backoff
-- Respect the `Retry-After` header returned by the API
+- Automatically retry with exponential backoff
+- Respect the `Retry-After` header
 - Retry up to a configurable number of times before failing
 
-This means you don't need to implement custom retry logic in your application — the SDK handles transient failures and rate limiting transparently.
+No custom retry logic is needed in your application.
 
 ## Error Handling
 
-By default, the SDK throws an `HttpRequestException` for any non-successful HTTP response (4xx or 5xx status codes). This differs from Kiota's default behavior, which requires you to check the response status manually.
-
-The exception includes:
-- The request URI
-- The HTTP status code
-- The full `HttpResponseMessage` in the `Data["context"]` property, allowing you to inspect the request, headers, response body, and other details for debugging
+By default, the SDK throws an `HttpRequestException` for any non-successful HTTP response (4xx or 5xx). The exception includes the request URI, HTTP status code, and the full `HttpResponseMessage` in the `Data["context"]` property.
 
 ```csharp
 try
 {
-    var items = await vaultClient.Items.GetItemsAsync(vaultId);
+    var items = await client.Items.GetItemsAsync(vaultId);
 }
 catch (HttpRequestException ex)
 {
     Console.WriteLine($"Request failed: {ex.Message}");
     Console.WriteLine($"Status code: {ex.StatusCode}");
 
-    // Access the full response for more details
     if (ex.Data["context"] is HttpResponseMessage response)
     {
-        // Get request details
         Console.WriteLine($"Request URI: {response.RequestMessage?.RequestUri}");
-        Console.WriteLine($"Request Method: {response.RequestMessage?.Method}");
-
-        // Get response body
         var body = await response.Content.ReadAsStringAsync();
         Console.WriteLine($"Response body: {body}");
     }
 }
 ```
 
-If you prefer Kiota's default behavior (no automatic exception throwing), you can disable the error handler:
+To disable the error handler for a specific request:
 
 ```csharp
 using Autodesk.Common.HttpClientLibrary.Middleware.Options;
 
-// Disable error handling for a specific request
-var requestConfig = new Action<RequestConfiguration<DefaultQueryParameters>>(config =>
-{
-    config.Options.Add(new ErrorHandlerOption { Enabled = false });
-});
-
-var items = await vaultClient.Items.GetItemsAsync(vaultId, requestConfig);
+var items = await client.Items.GetItemsAsync(vaultId,
+    new() { Options = { new ErrorHandlerOption { Enabled = false } } });
 ```
+
+## Custom HTTP Client
+
+```csharp
+var httpClient = new HttpClient();
+// Configure your HttpClient (timeouts, handlers, etc.)
+
+var client = new VaultClient(getAccessToken, "https://your-vault-server", userId, httpClient);
+```
+
+## Constructors
+
+```csharp
+// 2-legged: server-to-server with user impersonation
+public VaultClient(Func<Task<string>> get2LeggedAccessToken, string vaultServerUrl, string userId, HttpClient? httpClient = null)
+
+// 3-legged: user context
+public VaultClient(Func<Task<string>> get3LeggedAccessToken, string vaultServerUrl, HttpClient? httpClient = null)
+```
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `get2LeggedAccessToken` / `get3LeggedAccessToken` | `Func<Task<string>>` | Async function returning a valid OAuth bearer token |
+| `vaultServerUrl` | `string` | Valid absolute HTTP/HTTPS URL to the Vault server |
+| `userId` | `string` | (2-legged only) Email address of the Vault user to impersonate |
+| `httpClient` | `HttpClient?` | Optional custom HTTP client (default includes retry + rate limiting) |
+
+The `vaultServerUrl` must be a valid absolute HTTP or HTTPS URL (e.g. `"https://vaultserver.example.com"` or `"http://10.148.0.1"`). An `ArgumentException` is thrown for invalid, relative, or non-HTTP URLs.
+
+## Conventions
+
+Patterns useful for AI code generation:
+
+- **Method naming**: `Get{Entity}Async`, `Get{Entity}ByIdAsync`, `Create{Entity}Async`, `Update{Entity}ByIdAsync`, `Delete{Entity}ByIdAsync`, `Get{Entity}{SubResource}Async`
+- **Return types**: all methods return `Task<T?>` or `Task` (no `IAsyncEnumerable<T>` — Vault API does not use cursor-based pagination through manager methods)
+- **RequestConfiguration parameter**: all Manager methods accept `RequestConfiguration<T>? requestConfiguration` as an object — **never `Action<>`**. Configure via object initializer: `new() { QueryParameters = { ... } }`
+- **Parameter types**: all identifiers (`vaultId`, `fileId`, `itemId`, etc.) are `string`
+- **Body types**: request body types live in Kiota-generated namespaces (e.g. `Autodesk.Vault.Sessions.SessionsPostRequestBody`, `Autodesk.Vault.Vaults.WithVaultIdAdvancedSearch.WithVaultIdAdvancedSearchPostRequestBody`)
+- **Model types**: response model types are in `Autodesk.Vault.Models` (e.g. `Session`, `FileObject`, `Item`, `ChangeOrder`, `Job`)
+
+## Fluent URL Shortcut Properties
+
+| Property | Base Path |
+| --- | --- |
+| `client.Api.Sessions` | `/sessions/*` |
+| `client.Api.Groups` | `/groups/*` |
+| `client.Api.Users` | `/users/*` |
+| `client.Api.Roles` | `/roles/*` |
+| `client.Api.ServerInfo` | `/serverInfo` |
+| `client.Api.SystemOptions` | `/systemOptions/*` |
+| `client.Api.ProfileAttributeDefinitions` | `/profileAttributeDefinitions/*` |
+| `client.Api.Vaults` | `/vaults/*` |
+
+## Related Packages
+
+| Package | NuGet | Purpose |
+| --- | --- | --- |
+| `Adsk.Platform.Authentication` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.Authentication) | OAuth token management (2-legged and 3-legged) |
+| `Adsk.Platform.HttpClient` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.HttpClient) | Shared HTTP client with retry, rate limiting, DI support |
+| `Adsk.Platform.DataManagement` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.DataManagement) | Cloud-based data management (hubs, projects, folders, files) |
+
+## For AI Assistants
+
+A machine-readable API reference with all method signatures, return types, and REST endpoint mappings is available at [`llm.txt`](./llm.txt).
 
 ## Requirements
 
 - .NET 8.0 or later
-- Valid Autodesk Platform Services (APS) access token with appropriate scopes
+- Valid [Autodesk Platform Services (APS)](https://aps.autodesk.com/) access token with appropriate scopes
 - Access to an Autodesk Vault server
 
 ## Documentation
@@ -318,7 +300,7 @@ var items = await vaultClient.Items.GetItemsAsync(vaultId, requestConfig);
 - [Autodesk Vault](https://www.autodesk.com/products/vault/overview)
 - [Vault REST API Documentation](https://www.autodeskapis.com/)
 - [Autodesk Platform Services](https://aps.autodesk.com/)
-- [Microsoft Kiota Documentation](https://learn.microsoft.com/en-us/openapi/kiota/overview)
+- [Microsoft Kiota Documentation](https://learn.microsoft.com/openapi/kiota/overview)
 
 ## License
 

@@ -30,11 +30,15 @@ public class InformationalManager
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Server information</returns>
     public async Task<ServerInfoGetResponse?> GetServerInfoAsync(
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.ServerInfo
-            .GetAsServerInfoGetResponseAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -46,11 +50,16 @@ public class InformationalManager
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Collection of vaults</returns>
     public async Task<VaultCollection?> GetVaultsAsync(
-        Action<RequestConfiguration<VaultsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<VaultsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -64,11 +73,15 @@ public class InformationalManager
     /// <returns>Vault information</returns>
     public async Task<Models.Vault?> GetVaultByIdAsync(
         string vaultId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }

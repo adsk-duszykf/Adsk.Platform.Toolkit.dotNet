@@ -31,11 +31,16 @@ public class PropertyManager
     /// <returns>Collection of property definitions</returns>
     public async Task<PropertyDefinitionCollection?> GetPropertyDefinitionsAsync(
         string vaultId,
-        Action<RequestConfiguration<PropertyDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<PropertyDefinitionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].PropertyDefinitions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -51,11 +56,15 @@ public class PropertyManager
     public async Task<PropertyDefinition?> GetPropertyDefinitionByIdAsync(
         string vaultId,
         string propertyDefinitionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].PropertyDefinitions[propertyDefinitionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }

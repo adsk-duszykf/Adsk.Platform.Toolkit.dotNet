@@ -45,11 +45,11 @@ namespace Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl
         /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlGetResponse?> GetAsSignedurlGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlRequestBuilder.SignedurlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlRequestBuilder.SignedurlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlGetResponse> GetAsSignedurlGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlRequestBuilder.SignedurlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlRequestBuilder.SignedurlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -61,36 +61,6 @@ namespace Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl
                 { "404", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlGetResponse>(requestInfo, global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// A time-limited, cryptographically signed URL providing secure access to download a file resource. Endpoint allows generation of signed download url for given file version Id. 
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsSignedurlGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlRequestBuilder.SignedurlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlRequestBuilder.SignedurlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlResponse>(requestInfo, global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A time-limited, cryptographically signed URL providing secure access to download a file resource. Endpoint allows generation of signed download url for given file version Id. 
@@ -159,14 +129,6 @@ namespace Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl
             [QueryParameter("wmSrcItemVerId")]
             public string WmSrcItemVerId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SignedurlRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Signedurl.SignedurlRequestBuilder.SignedurlRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

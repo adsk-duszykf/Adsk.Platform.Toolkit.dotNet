@@ -45,11 +45,11 @@ namespace Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson
         /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleGetResponse?> GetAsBubbleGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleJsonRequestBuilder.BubbleJsonRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleGetResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleJsonRequestBuilder.BubbleJsonRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleGetResponse> GetAsBubbleGetResponseAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleJsonRequestBuilder.BubbleJsonRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleGetResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleJsonRequestBuilder.BubbleJsonRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -61,36 +61,6 @@ namespace Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson
                 { "404", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleGetResponse>(requestInfo, global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// This endpoint should be invoked only for DWF/DWFx file. Retrieves the bubble.json file, which serves as the root file for the Autodesk Large Model Viewer (LMV) format. It provides essential metadata and structure information required to render 2D/3D models or other complex visualizations in the LMV viewer.Note: When requesting this endpoint for a file version first time, the server would trigger a low priority job in background to generate the bubble.json and other LMV related visualization files, which will be cached for subsequent use. Subsequent calls to this endpoint will retrieve the bubble.json from the cache directly.In order to get the associated DWF/DWFx file (if available) for a CAD file, &quot;visualization-attachments&quot; endpoint should be used.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Autodesk.Vault.Models.ErrorResponse">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsBubbleGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleResponse?> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleJsonRequestBuilder.BubbleJsonRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleResponse> GetAsync(Action<RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleJsonRequestBuilder.BubbleJsonRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-                { "401", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Autodesk.Vault.Models.ErrorResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleResponse>(requestInfo, global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint should be invoked only for DWF/DWFx file. Retrieves the bubble.json file, which serves as the root file for the Autodesk Large Model Viewer (LMV) format. It provides essential metadata and structure information required to render 2D/3D models or other complex visualizations in the LMV viewer.Note: When requesting this endpoint for a file version first time, the server would trigger a low priority job in background to generate the bubble.json and other LMV related visualization files, which will be cached for subsequent use. Subsequent calls to this endpoint will retrieve the bubble.json from the cache directly.In order to get the associated DWF/DWFx file (if available) for a CAD file, &quot;visualization-attachments&quot; endpoint should be used.
@@ -149,14 +119,6 @@ namespace Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson
             [QueryParameter("wmSrcItemVerId")]
             public string WmSrcItemVerId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BubbleJsonRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Autodesk.Vault.Vaults.Item.FileVersions.Item.Svf.BubbleJson.BubbleJsonRequestBuilder.BubbleJsonRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

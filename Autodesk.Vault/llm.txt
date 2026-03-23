@@ -1,0 +1,239 @@
+# Adsk.Platform.VaultData — Vault Data SDK for .NET
+
+> NuGet: `Adsk.Platform.VaultData` | Namespace: `Autodesk.Vault` | Target: `net8.0` | License: MIT
+> Generated from OpenAPI specs via Microsoft Kiota. **Unofficial package.**
+
+## Overview
+
+Type-safe C# SDK for the Autodesk Vault Data REST API (v2). Provides two access patterns:
+
+1. **Fluent URL API** (`client.Api.*`) — mirrors the REST path structure exactly
+2. **Manager API** (`client.{Manager}`) — high-level methods with strongly-typed params and XML doc comments
+
+Unlike cloud-based APS SDKs, this SDK connects to on-premise Vault servers via a configurable `vaultServerUrl`. The base URL is `{vaultServerUrl}/AutodeskDM/Services/api/vault/v2`.
+
+## Quick Start
+
+```csharp
+using Autodesk.Vault;
+
+// 2-legged (server-to-server with user impersonation)
+var client = new VaultClient(
+    () => Task.FromResult("YOUR_ACCESS_TOKEN"),
+    vaultServerUrl: "https://your-vault-server",
+    userId: "user@company.com");
+
+// 3-legged (user context)
+var client = new VaultClient(
+    () => Task.FromResult("YOUR_3LEGGED_TOKEN"),
+    vaultServerUrl: "https://your-vault-server");
+
+// Manager approach (recommended)
+var vaults = await client.Informational.GetVaultsAsync();
+
+// Fluent URL approach — direct REST mapping
+var vaults = await client.Api.Vaults.GetAsync();
+```
+
+## Constructors
+
+```csharp
+// 2-legged: server-to-server with user impersonation
+public VaultClient(Func<Task<string>> get2LeggedAccessToken, string vaultServerUrl, string userId, HttpClient? httpClient = null)
+
+// 3-legged: user context
+public VaultClient(Func<Task<string>> get3LeggedAccessToken, string vaultServerUrl, HttpClient? httpClient = null)
+```
+
+- `get2LeggedAccessToken` / `get3LeggedAccessToken`: async function returning a valid OAuth bearer token
+- `vaultServerUrl`: valid absolute HTTP/HTTPS URL to the Vault server (e.g. `"https://your-vault-server"`, `"http://10.148.0.1"`)
+- `userId`: (2-legged only) email address of the Vault user to impersonate
+- `httpClient`: optional custom HttpClient (default includes retry + rate-limit handling)
+
+## Built-in Middleware
+
+- **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
+- **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
+
+## Managers (60 methods across 11 managers)
+
+All manager methods follow these conventions:
+- Async suffix (`*Async`)
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
+- All endpoints return `Task<T?>` (no auto-pagination — Vault API uses server-side filtering/sorting via query params)
+- Each method documents its purpose via XML doc comments
+
+### AuthManager (4 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| CreateSessionAsync(body) | Task\<Session?> | POST /sessions |
+| CreateSessionWithWinAuthAsync(body) | Task\<Session?> | POST /sessions/winAuth |
+| GetSessionAsync(string sessionId) | Task\<Session?> | GET /sessions/{sessionId} |
+| DeleteSessionAsync(string sessionId) | Task | DELETE /sessions/{sessionId} |
+
+### AccountsManager (11 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetGroupsAsync() | Task\<GroupCollection?> | GET /groups |
+| GetGroupByIdAsync(string groupId) | Task\<GroupExtended?> | GET /groups/{groupId} |
+| GetGroupAccountByAuthTypeAsync(string groupId, string authType) | Task\<Account?> | GET /groups/{groupId}/accounts/{authType} |
+| GetProfileAttributeDefinitionsAsync() | Task\<ProfileAttributeDefinitionCollection?> | GET /profileAttributeDefinitions |
+| GetProfileAttributeDefinitionByIdAsync(string definitionId) | Task\<ProfileAttributeDefinition?> | GET /profileAttributeDefinitions/{definitionId} |
+| GetRolesAsync() | Task\<RoleCollection?> | GET /roles |
+| GetRoleByIdAsync(string roleId) | Task\<Role?> | GET /roles/{roleId} |
+| GetUsersAsync() | Task\<UserCollection?> | GET /users |
+| GetUserByIdAsync(string userId) | Task\<UserExtended?> | GET /users/{userId} |
+| GetUserAccountsAsync(string userId) | Task\<AccountCollection?> | GET /users/{userId}/accounts |
+| GetUserAccountByAuthTypeAsync(string userId, string authType) | Task\<Account?> | GET /users/{userId}/accounts/{authType} |
+
+### OptionsManager (10 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetSystemOptionsAsync() | Task\<VaultOptionCollection?> | GET /systemOptions |
+| CreateSystemOptionAsync(body) | Task\<VaultOption?> | POST /systemOptions |
+| GetSystemOptionByIdAsync(string optionId) | Task\<VaultOption?> | GET /systemOptions/{optionId} |
+| UpdateSystemOptionByIdAsync(string optionId, body) | Task\<VaultOption?> | PATCH /systemOptions/{optionId} |
+| DeleteSystemOptionByIdAsync(string optionId) | Task | DELETE /systemOptions/{optionId} |
+| GetVaultOptionsAsync(string vaultId) | Task\<VaultOptionCollection?> | GET /vaults/{vaultId}/vaultOptions |
+| CreateVaultOptionAsync(string vaultId, body) | Task\<VaultOption?> | POST /vaults/{vaultId}/vaultOptions |
+| GetVaultOptionByIdAsync(string vaultId, string optionId) | Task\<VaultOption?> | GET /vaults/{vaultId}/vaultOptions/{optionId} |
+| UpdateVaultOptionByIdAsync(string vaultId, string optionId, body) | Task\<VaultOption?> | PATCH /vaults/{vaultId}/vaultOptions/{optionId} |
+| DeleteVaultOptionByIdAsync(string vaultId, string optionId) | Task | DELETE /vaults/{vaultId}/vaultOptions/{optionId} |
+
+### InformationalManager (3 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetServerInfoAsync() | Task\<ServerInfoGetResponse?> | GET /serverInfo |
+| GetVaultsAsync() | Task\<VaultCollection?> | GET /vaults |
+| GetVaultByIdAsync(string vaultId) | Task\<Vault?> | GET /vaults/{vaultId} |
+
+### PropertyManager (2 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetPropertyDefinitionsAsync(string vaultId) | Task\<PropertyDefinitionCollection?> | GET /vaults/{vaultId}/propertyDefinitions |
+| GetPropertyDefinitionByIdAsync(string vaultId, string propertyDefinitionId) | Task\<PropertyDefinition?> | GET /vaults/{vaultId}/propertyDefinitions/{propertyDefinitionId} |
+
+### FilesAndFoldersManager (9 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetFileVersionsAsync(string vaultId) | Task\<FileVersionCollection?> | GET /vaults/{vaultId}/fileVersions |
+| GetFileVersionByIdAsync(string vaultId, string fileVersionId) | Task\<FileVersionExtended?> | GET /vaults/{vaultId}/fileVersions/{fileVersionId} |
+| GetFileVersionContentAsync(string vaultId, string fileVersionId) | Task\<Stream?> | GET /vaults/{vaultId}/fileVersions/{fileVersionId}/content |
+| GetFileVersionThumbnailAsync(string vaultId, string fileVersionId) | Task\<Stream?> | GET /vaults/{vaultId}/fileVersions/{fileVersionId}/thumbnail |
+| GetFileByIdAsync(string vaultId, string fileId) | Task\<FileObject?> | GET /vaults/{vaultId}/files/{fileId} |
+| GetFileVersionsForFileAsync(string vaultId, string fileId) | Task\<FileVersionCollection?> | GET /vaults/{vaultId}/files/{fileId}/versions |
+| GetFolderByIdAsync(string vaultId, string folderId) | Task\<Folder?> | GET /vaults/{vaultId}/folders/{folderId} |
+| GetFolderContentsAsync(string vaultId, string folderId) | Task\<EntityCollection?> | GET /vaults/{vaultId}/folders/{folderId}/contents |
+| GetSubFoldersAsync(string vaultId, string folderId) | Task\<FolderCollection?> | GET /vaults/{vaultId}/folders/{folderId}/subFolders |
+
+### ItemsManager (8 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetItemsAsync(string vaultId) | Task\<ItemCollection?> | GET /vaults/{vaultId}/items |
+| GetItemByIdAsync(string vaultId, string itemId) | Task\<Item?> | GET /vaults/{vaultId}/items/{itemId} |
+| GetItemVersionsAsync(string vaultId, string itemId) | Task\<ItemVersionCollection?> | GET /vaults/{vaultId}/items/{itemId}/versions |
+| GetAllItemVersionsAsync(string vaultId) | Task\<ItemVersionCollection?> | GET /vaults/{vaultId}/itemVersions |
+| GetItemVersionByIdAsync(string vaultId, string itemVersionId) | Task\<ItemVersion?> | GET /vaults/{vaultId}/itemVersions/{itemVersionId} |
+| GetItemVersionAssociatedFilesAsync(string vaultId, string itemVersionId) | Task\<ItemAssociatedFileVersionCollection?> | GET /vaults/{vaultId}/itemVersions/{itemVersionId}/associatedFiles |
+| GetItemVersionBillOfMaterialsAsync(string vaultId, string itemVersionId) | Task\<BOMLinksAndRevisions?> | GET /vaults/{vaultId}/itemVersions/{itemVersionId}/billOfMaterials |
+| GetItemVersionThumbnailAsync(string vaultId, string itemVersionId) | Task\<Stream?> | GET /vaults/{vaultId}/itemVersions/{itemVersionId}/thumbnail |
+
+### ChangeOrdersManager (6 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetChangeOrdersAsync(string vaultId) | Task\<ChangeOrderCollection?> | GET /vaults/{vaultId}/changeOrders |
+| GetChangeOrderByIdAsync(string vaultId, string changeOrderId) | Task\<ChangeOrder?> | GET /vaults/{vaultId}/changeOrders/{changeOrderId} |
+| GetChangeOrderRelatedFilesAsync(string vaultId, string changeOrderId) | Task\<FileVersionCollection?> | GET /vaults/{vaultId}/changeOrders/{changeOrderId}/allRelatedFiles |
+| GetChangeOrderAssociatedEntitiesAsync(string vaultId, string changeOrderId) | Task\<EntityCollection?> | GET /vaults/{vaultId}/changeOrders/{changeOrderId}/associatedEntities |
+| GetChangeOrderCommentsAsync(string vaultId, string changeOrderId) | Task\<ECOCommentCollection?> | GET /vaults/{vaultId}/changeOrders/{changeOrderId}/comments |
+| GetChangeOrderCommentAttachmentsAsync(string vaultId, string commentId) | Task\<FileVersionCollection?> | GET /vaults/{vaultId}/changeOrderComments/{commentId}/attachments |
+
+### LinksManager (2 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetLinksAsync(string vaultId) | Task\<LinkCollection?> | GET /vaults/{vaultId}/links |
+| GetLinkByIdAsync(string vaultId, string linkId) | Task\<LinkEntity?> | GET /vaults/{vaultId}/links/{linkId} |
+
+### SearchManager (2 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| GetSearchResultsAsync(string vaultId) | Task\<EntityCollection?> | GET /vaults/{vaultId}/searchResults |
+| PerformAdvancedSearchAsync(string vaultId, body) | Task\<EntityCollection?> | POST /vaults/{vaultId}/advancedSearch |
+
+### JobsManager (3 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| CreateJobAsync(string vaultId, body) | Task\<Job?> | POST /vaults/{vaultId}/jobs |
+| GetJobQueueEnabledStatusAsync(string vaultId) | Task\<bool?> | GET /vaults/{vaultId}/jobs/jobQueueEnabled |
+| GetJobByIdAsync(string vaultId, string jobId) | Task\<Job?> | GET /vaults/{vaultId}/jobs/{jobId} |
+
+## Fluent URL Properties
+
+For direct REST path access without managers:
+
+| Property | Base Path |
+| --- | --- |
+| client.Api.Sessions | /sessions/* |
+| client.Api.Groups | /groups/* |
+| client.Api.Users | /users/* |
+| client.Api.Roles | /roles/* |
+| client.Api.ServerInfo | /serverInfo |
+| client.Api.SystemOptions | /systemOptions/* |
+| client.Api.ProfileAttributeDefinitions | /profileAttributeDefinitions/* |
+| client.Api.Vaults | /vaults/* (files, folders, items, change orders, jobs, links, search, options, properties) |
+| client.Api | Full base client (all paths) |
+
+## Key Patterns
+
+### Parameter Types
+- `vaultId`: `string` — Vault identifier (used by most vault-scoped endpoints)
+- `sessionId`: `string` — Session identifier or `"@current"` for the active session
+- `fileVersionId`: `string` — File version identifier
+- `fileId`: `string` — File (lineage) identifier
+- `folderId`: `string` — Folder identifier
+- `itemId`: `string` — Item identifier
+- `itemVersionId`: `string` — Item version identifier
+- `changeOrderId`: `string` — Change order (ECO) identifier
+- `commentId`: `string` — Change order comment identifier
+- `linkId`: `string` — Link entity identifier
+- `jobId`: `string` — Job identifier
+- `optionId`: `string` — System or vault option identifier
+- `groupId`: `string` — Group identifier
+- `userId`: `string` — User identifier
+- `roleId`: `string` — Role identifier
+- `authType`: `string` — Authentication type (`"ActiveDirectory"`, `"Vault"`, or `"Autodesk"`)
+- `definitionId`: `string` — Profile attribute definition identifier
+- `propertyDefinitionId`: `string` — Property definition identifier
+- `body`: request body object (type varies per endpoint)
+
+### Error Handling
+```csharp
+try { ... }
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"{ex.StatusCode}: {ex.Message}");
+    if (ex.Data["context"] is HttpResponseMessage resp)
+    {
+        var body = await resp.Content.ReadAsStringAsync();
+    }
+}
+```
+
+## Links
+
+- Vault Product: https://www.autodesk.com/products/vault/overview
+- Vault REST API: https://www.autodeskapis.com/
+- NuGet: https://www.nuget.org/packages/Adsk.Platform.VaultData
+- Kiota: https://learn.microsoft.com/en-us/openapi/kiota/overview

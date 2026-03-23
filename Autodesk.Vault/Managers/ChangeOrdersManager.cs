@@ -33,11 +33,16 @@ public class ChangeOrdersManager
     /// <returns>Collection of change orders</returns>
     public async Task<ChangeOrderCollection?> GetChangeOrdersAsync(
         string vaultId,
-        Action<RequestConfiguration<ChangeOrdersRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ChangeOrdersRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ChangeOrders
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -53,11 +58,15 @@ public class ChangeOrdersManager
     public async Task<ChangeOrder?> GetChangeOrderByIdAsync(
         string vaultId,
         string changeOrderId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -74,11 +83,16 @@ public class ChangeOrdersManager
     public async Task<FileVersionCollection?> GetChangeOrderRelatedFilesAsync(
         string vaultId,
         string changeOrderId,
-        Action<RequestConfiguration<AllRelatedFilesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AllRelatedFilesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId].AllRelatedFiles
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -94,11 +108,16 @@ public class ChangeOrdersManager
     public async Task<EntityCollection?> GetChangeOrderAssociatedEntitiesAsync(
         string vaultId,
         string changeOrderId,
-        Action<RequestConfiguration<AssociatedEntitiesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AssociatedEntitiesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId].AssociatedEntities
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -114,11 +133,16 @@ public class ChangeOrdersManager
     public async Task<ECOCommentCollection?> GetChangeOrderCommentsAsync(
         string vaultId,
         string changeOrderId,
-        Action<RequestConfiguration<CommentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<CommentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId].Comments
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -134,11 +158,16 @@ public class ChangeOrdersManager
     public async Task<FileVersionCollection?> GetChangeOrderCommentAttachmentsAsync(
         string vaultId,
         string commentId,
-        Action<RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ChangeOrderComments[commentId].Attachments
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }

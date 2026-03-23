@@ -32,11 +32,16 @@ public class AccountsManager
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Collection of groups</returns>
     public async Task<GroupCollection?> GetGroupsAsync(
-        Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<GroupsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Groups
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -50,11 +55,15 @@ public class AccountsManager
     /// <returns>Group information</returns>
     public async Task<GroupExtended?> GetGroupByIdAsync(
         string groupId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Groups[groupId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -70,11 +79,15 @@ public class AccountsManager
     public async Task<Account?> GetGroupAccountByAuthTypeAsync(
         string groupId,
         string authType,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Groups[groupId].Accounts[authType]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -90,11 +103,16 @@ public class AccountsManager
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Collection of profile attribute definitions</returns>
     public async Task<ProfileAttributeDefinitionCollection?> GetProfileAttributeDefinitionsAsync(
-        Action<RequestConfiguration<ProfileAttributeDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ProfileAttributeDefinitionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.ProfileAttributeDefinitions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -108,11 +126,15 @@ public class AccountsManager
     /// <returns>Profile attribute definition</returns>
     public async Task<ProfileAttributeDefinition?> GetProfileAttributeDefinitionByIdAsync(
         string definitionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.ProfileAttributeDefinitions[definitionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -128,11 +150,16 @@ public class AccountsManager
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Collection of roles</returns>
     public async Task<RoleCollection?> GetRolesAsync(
-        Action<RequestConfiguration<RolesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<RolesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Roles
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -146,11 +173,15 @@ public class AccountsManager
     /// <returns>Role information</returns>
     public async Task<Role?> GetRoleByIdAsync(
         string roleId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Roles[roleId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -166,11 +197,16 @@ public class AccountsManager
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Collection of users</returns>
     public async Task<UserCollection?> GetUsersAsync(
-        Action<RequestConfiguration<UsersRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<UsersRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Users
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -184,11 +220,15 @@ public class AccountsManager
     /// <returns>User information</returns>
     public async Task<UserExtended?> GetUserByIdAsync(
         string userId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Users[userId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -202,11 +242,15 @@ public class AccountsManager
     /// <returns>Collection of user accounts</returns>
     public async Task<AccountCollection?> GetUserAccountsAsync(
         string userId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Users[userId].Accounts
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -222,11 +266,15 @@ public class AccountsManager
     public async Task<Account?> GetUserAccountByAuthTypeAsync(
         string userId,
         string authType,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Users[userId].Accounts[authType]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }

@@ -29,11 +29,15 @@ public class AuthManager
     /// <returns>Session information</returns>
     public async Task<Session?> CreateSessionAsync(
         SessionsPostRequestBody sessionData,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Sessions
-            .PostAsync(sessionData, requestConfiguration, cancellationToken);
+            .PostAsync(sessionData, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -47,11 +51,15 @@ public class AuthManager
     /// <returns>Session information</returns>
     public async Task<Session?> CreateSessionWithWinAuthAsync(
         Sessions.WinAuth.WinAuthPostRequestBody sessionData,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Sessions.WinAuth
-            .PostAsync(sessionData, requestConfiguration, cancellationToken);
+            .PostAsync(sessionData, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -65,11 +73,15 @@ public class AuthManager
     /// <returns>Session information</returns>
     public async Task<Session?> GetSessionAsync(
         string sessionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Sessions[sessionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -82,10 +94,14 @@ public class AuthManager
     /// <param name="cancellationToken">Cancellation token</param>
     public async Task DeleteSessionAsync(
         string sessionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Sessions[sessionId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 }

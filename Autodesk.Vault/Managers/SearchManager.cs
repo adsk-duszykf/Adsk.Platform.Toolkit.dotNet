@@ -31,11 +31,16 @@ public class SearchManager
     /// <returns>Search results</returns>
     public async Task<EntityCollection?> GetSearchResultsAsync(
         string vaultId,
-        Action<RequestConfiguration<SearchResultsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<SearchResultsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].SearchResults
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -51,11 +56,16 @@ public class SearchManager
     public async Task<EntityCollection?> PerformAdvancedSearchAsync(
         string vaultId,
         WithVaultIdAdvancedSearchPostRequestBody searchBody,
-        Action<RequestConfiguration<WithVaultIdAdvancedSearchRequestBuilderPostQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<WithVaultIdAdvancedSearchRequestBuilderPostQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults.WithVaultIdAdvancedSearch(vaultId)
-            .PostAsync(searchBody, requestConfiguration, cancellationToken);
+            .PostAsync(searchBody, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }

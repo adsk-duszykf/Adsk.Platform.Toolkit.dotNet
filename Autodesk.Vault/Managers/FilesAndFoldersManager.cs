@@ -36,11 +36,16 @@ public class FilesAndFoldersManager
     /// <returns>Collection of file versions</returns>
     public async Task<FileVersionCollection?> GetFileVersionsAsync(
         string vaultId,
-        Action<RequestConfiguration<FileVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<FileVersionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].FileVersions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -56,11 +61,15 @@ public class FilesAndFoldersManager
     public async Task<FileVersionExtended?> GetFileVersionByIdAsync(
         string vaultId,
         string fileVersionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].FileVersions[fileVersionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -76,11 +85,16 @@ public class FilesAndFoldersManager
     public async Task<Stream?> GetFileVersionContentAsync(
         string vaultId,
         string fileVersionId,
-        Action<RequestConfiguration<ContentRequestBuilder.ContentRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ContentRequestBuilder.ContentRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].FileVersions[fileVersionId].Content
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -96,11 +110,15 @@ public class FilesAndFoldersManager
     public async Task<Stream?> GetFileVersionThumbnailAsync(
         string vaultId,
         string fileVersionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].FileVersions[fileVersionId].Thumbnail
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -120,11 +138,16 @@ public class FilesAndFoldersManager
     public async Task<FileObject?> GetFileByIdAsync(
         string vaultId,
         string fileId,
-        Action<RequestConfiguration<FilesItemRequestBuilder.FilesItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<FilesItemRequestBuilder.FilesItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Files[fileId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -140,11 +163,16 @@ public class FilesAndFoldersManager
     public async Task<FileVersionCollection?> GetFileVersionsForFileAsync(
         string vaultId,
         string fileId,
-        Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<VersionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Files[fileId].Versions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -164,11 +192,15 @@ public class FilesAndFoldersManager
     public async Task<Folder?> GetFolderByIdAsync(
         string vaultId,
         string folderId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Folders[folderId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -184,11 +216,16 @@ public class FilesAndFoldersManager
     public async Task<EntityCollection?> GetFolderContentsAsync(
         string vaultId,
         string folderId,
-        Action<RequestConfiguration<ContentsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ContentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Folders[folderId].Contents
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -204,11 +241,16 @@ public class FilesAndFoldersManager
     public async Task<FolderCollection?> GetSubFoldersAsync(
         string vaultId,
         string folderId,
-        Action<RequestConfiguration<SubFoldersRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<SubFoldersRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Folders[folderId].SubFolders
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }

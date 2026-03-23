@@ -36,11 +36,16 @@ public class ItemsManager
     /// <returns>Collection of items</returns>
     public async Task<ItemCollection?> GetItemsAsync(
         string vaultId,
-        Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ItemsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Items
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -56,11 +61,16 @@ public class ItemsManager
     public async Task<Item?> GetItemByIdAsync(
         string vaultId,
         string itemId,
-        Action<RequestConfiguration<ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ItemsItemRequestBuilder.ItemsItemRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Items[itemId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -76,11 +86,16 @@ public class ItemsManager
     public async Task<ItemVersionCollection?> GetItemVersionsAsync(
         string vaultId,
         string itemId,
-        Action<RequestConfiguration<VersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<VersionsRequestBuilder.VersionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].Items[itemId].Versions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -98,11 +113,16 @@ public class ItemsManager
     /// <returns>Collection of item versions</returns>
     public async Task<ItemVersionCollection?> GetAllItemVersionsAsync(
         string vaultId,
-        Action<RequestConfiguration<ItemVersionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<ItemVersionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ItemVersions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -118,11 +138,15 @@ public class ItemsManager
     public async Task<ItemVersion?> GetItemVersionByIdAsync(
         string vaultId,
         string itemVersionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ItemVersions[itemVersionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -138,11 +162,16 @@ public class ItemsManager
     public async Task<ItemAssociatedFileVersionCollection?> GetItemVersionAssociatedFilesAsync(
         string vaultId,
         string itemVersionId,
-        Action<RequestConfiguration<AssociatedFilesRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<AssociatedFilesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ItemVersions[itemVersionId].AssociatedFiles
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -158,11 +187,16 @@ public class ItemsManager
     public async Task<BOMLinksAndRevisions?> GetItemVersionBillOfMaterialsAsync(
         string vaultId,
         string itemVersionId,
-        Action<RequestConfiguration<BillOfMaterialsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<BillOfMaterialsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ItemVersions[itemVersionId].BillOfMaterials
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -178,11 +212,15 @@ public class ItemsManager
     public async Task<Stream?> GetItemVersionThumbnailAsync(
         string vaultId,
         string itemVersionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].ItemVersions[itemVersionId].Thumbnail
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }

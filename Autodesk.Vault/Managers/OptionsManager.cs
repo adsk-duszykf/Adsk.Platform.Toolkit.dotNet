@@ -34,11 +34,16 @@ public class OptionsManager
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Collection of system options</returns>
     public async Task<VaultOptionCollection?> GetSystemOptionsAsync(
-        Action<RequestConfiguration<SystemOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<SystemOptionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.SystemOptions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -52,11 +57,15 @@ public class OptionsManager
     /// <returns>Created system option</returns>
     public async Task<VaultOption?> CreateSystemOptionAsync(
         SystemOptionsPostRequestBody optionData,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.SystemOptions
-            .PostAsync(optionData, requestConfiguration, cancellationToken);
+            .PostAsync(optionData, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -70,11 +79,15 @@ public class OptionsManager
     /// <returns>System option information</returns>
     public async Task<VaultOption?> GetSystemOptionByIdAsync(
         string optionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.SystemOptions[optionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -90,11 +103,15 @@ public class OptionsManager
     public async Task<VaultOption?> UpdateSystemOptionByIdAsync(
         string optionId,
         SystemOptionsPatchRequestBody optionData,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.SystemOptions[optionId]
-            .PatchAsync(optionData, requestConfiguration, cancellationToken);
+            .PatchAsync(optionData, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -107,11 +124,15 @@ public class OptionsManager
     /// <param name="cancellationToken">Cancellation token</param>
     public async Task DeleteSystemOptionByIdAsync(
         string optionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.SystemOptions[optionId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
@@ -127,11 +148,16 @@ public class OptionsManager
     /// <returns>Collection of vault options</returns>
     public async Task<VaultOptionCollection?> GetVaultOptionsAsync(
         string vaultId,
-        Action<RequestConfiguration<VaultOptionsRequestBuilderGetQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<VaultOptionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].VaultOptions
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -147,11 +173,15 @@ public class OptionsManager
     public async Task<VaultOption?> CreateVaultOptionAsync(
         string vaultId,
         VaultOptionsPostRequestBody optionData,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].VaultOptions
-            .PostAsync(optionData, requestConfiguration, cancellationToken);
+            .PostAsync(optionData, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -167,11 +197,15 @@ public class OptionsManager
     public async Task<VaultOption?> GetVaultOptionByIdAsync(
         string vaultId,
         string optionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].VaultOptions[optionId]
-            .GetAsync(requestConfiguration, cancellationToken);
+            .GetAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -189,11 +223,15 @@ public class OptionsManager
         string vaultId,
         string optionId,
         VaultOptionsPatchRequestBody optionData,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         var result = await _api.Vaults[vaultId].VaultOptions[optionId]
-            .PatchAsync(optionData, requestConfiguration, cancellationToken);
+            .PatchAsync(optionData, r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
 
         return result;
     }
@@ -208,11 +246,15 @@ public class OptionsManager
     public async Task DeleteVaultOptionByIdAsync(
         string vaultId,
         string optionId,
-        Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null,
+        RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
         await _api.Vaults[vaultId].VaultOptions[optionId]
-            .DeleteAsync(requestConfiguration, cancellationToken);
+            .DeleteAsync(r =>
+            {
+                r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                r.Options = requestConfiguration?.Options ?? r.Options;
+            }, cancellationToken);
     }
 
     #endregion
