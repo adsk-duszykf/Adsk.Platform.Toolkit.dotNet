@@ -1,0 +1,180 @@
+# Adsk.Platform.Parameters — Parameters SDK for .NET
+
+> NuGet: `Adsk.Platform.Parameters` | Namespace: `Autodesk.Parameters` | Target: `net8.0` | License: MIT
+> Generated from OpenAPI specs via Microsoft Kiota. **Unofficial package.**
+
+## Overview
+
+Type-safe C# SDK for the Autodesk Parameters v1 REST API. Provides two access patterns:
+
+1. **Fluent URL API** (`client.Api.*`) — mirrors the REST path structure exactly
+2. **Manager API** (`client.*Manager`) — high-level methods with auto-pagination, strongly-typed params, and XML doc with links to official docs
+
+## Quick Start
+
+```csharp
+using Autodesk.Parameters;
+
+var client = new ParametersClient(() => Task.FromResult("YOUR_ACCESS_TOKEN"));
+
+// Manager approach (recommended) — auto-paginates
+await foreach (var collection in client.CollectionsManager.ListCollectionsAsync(accountId, groupId))
+    Console.WriteLine($"{collection.Id}: {collection.Title}");
+
+// Fluent URL approach — direct REST mapping
+var response = await client.Api.Parameters.V1.Accounts[accountId].Groups[groupId].Collections.GetAsync();
+```
+
+## Constructor
+
+```csharp
+public ParametersClient(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
+```
+
+- `getAccessToken`: async function returning a valid OAuth bearer token
+- `httpClient`: optional custom HttpClient (default includes retry + rate-limit handling)
+
+## Built-in Middleware
+
+- **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
+- **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
+
+## Managers (35 methods across 7 managers)
+
+All manager methods follow these conventions:
+- Async suffix (`*Async`)
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
+- Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages; use `break` or `.Take(n)` to stop early)
+- Non-paginated endpoints return `Task<T?>`
+- Each method documents the wrapped REST endpoint and links to official APS docs
+
+### GroupsManager (3 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListGroupsAsync(Guid accountId) | Task\<GroupsGetResponse?> | GET /parameters/v1/accounts/{accountId}/groups |
+| GetGroupAsync(Guid accountId, string groupId) | Task\<WithGroupGetResponse?> | GET /parameters/v1/accounts/{accountId}/groups/{groupId} |
+| UpdateGroupAsync(Guid accountId, string groupId, body) | Task\<WithGroupPutResponse?> | PUT /parameters/v1/accounts/{accountId}/groups/{groupId} |
+
+### CollectionsManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListCollectionsAsync(Guid accountId, string groupId) | IAsyncEnumerable\<CollectionsGetResponse_results> | GET /parameters/v1/accounts/{accountId}/groups/{groupId}/collections |
+| GetCollectionAsync(Guid accountId, string groupId, string collectionId) | Task\<WithCollectionGetResponse?> | GET /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId} |
+| CreateCollectionAsync(Guid accountId, string groupId, body) | Task\<CollectionsPostResponse?> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections |
+| UpdateCollectionAsync(Guid accountId, string groupId, string collectionId, body) | Task\<WithCollectionPutResponse?> | PUT /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId} |
+
+### ParametersManager (9 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| GetParametersAsync(Guid accountId, string groupId, string collectionId) | Task\<ParametersGetResponse?> | GET /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/parameters |
+| CreateParametersAsync(Guid accountId, string groupId, string collectionId, body) | Task\<ParametersPostResponse?> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/parameters |
+| UpdateParametersAsync(Guid accountId, string groupId, string collectionId, body) | Task\<ParametersPatchResponse?> | PATCH /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/parameters |
+| GetParameterByIdAsync(string parameterId) | Task\<WithParameterGetResponse?> | GET /parameters/v1/parameters/{parameterId} |
+| RenderParametersAsync(body) | Task\<ParametersRenderPostResponse?> | POST /parameters/v1/parameters:render |
+| BatchShareParametersAsync(Guid accountId, string groupId, string collectionId, body) | Task\<ParametersBatchSharePostResponse?> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/parameters:batch-share |
+| BatchUnshareParametersAsync(Guid accountId, string groupId, string collectionId, body) | Task\<ParametersBatchUnsharePostResponse?> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/parameters:batch-unshare |
+| SearchParametersAsync(Guid accountId, string groupId, string collectionId, body) | IAsyncEnumerable\<ParametersSearchPostResponse_results> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/parameters:search |
+| GetSearchIndicesAsync(Guid accountId, string groupId, string collectionId, body) | Task\<ParametersSearchIndicesPostResponse?> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/parameters:search-indices |
+
+### EnumerationsManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListEnumerationsAsync() | IAsyncEnumerable\<EnumerationsGetResponse_results> | GET /parameters/v1/enumerations |
+| BatchCreateEnumerationsAsync(body) | Task\<EnumerationsBatchCreatePostResponse?> | POST /parameters/v1/enumerations:batch-create |
+| BatchUpdateEnumerationsAsync(body) | Task\<EnumerationsBatchUpdatePatchResponse?> | PATCH /parameters/v1/enumerations:batch-update |
+| UpdateEnumerationAsync(string enumerationId, body) | Task\<WithEnumerationPatchResponse?> | PATCH /parameters/v1/enumerations/{enumerationId} |
+
+### SpecsManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListSpecsAsync() | IAsyncEnumerable\<SpecsGetResponse_results> | GET /parameters/v1/specs |
+| BatchCreateSpecsAsync(body) | Task\<SpecsBatchCreatePostResponse?> | POST /parameters/v1/specs:batch-create |
+| BatchUpdateSpecsAsync(body) | Task\<SpecsBatchUpdatePutResponse?> | PUT /parameters/v1/specs:batch-update |
+| UpdateSpecAsync(string specId) | Task\<WithSpecPutResponse?> | PUT /parameters/v1/specs/{specId} |
+
+### LabelsManager (7 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListLabelsAsync(Guid accountId) | IAsyncEnumerable\<LabelsGetResponse_result> | GET /parameters/v1/accounts/{accountId}/labels |
+| GetLabelAsync(Guid accountId, string labelId) | Task\<WithLabelGetResponse?> | GET /parameters/v1/accounts/{accountId}/labels/{labelId} |
+| CreateLabelsAsync(Guid accountId, body) | Task\<LabelsPostResponse?> | POST /parameters/v1/accounts/{accountId}/labels |
+| UpdateLabelAsync(Guid accountId, string labelId, body) | Task\<WithLabelPatchResponse?> | PATCH /parameters/v1/accounts/{accountId}/labels/{labelId} |
+| DeleteLabelAsync(Guid accountId, string labelId) | Task | DELETE /parameters/v1/accounts/{accountId}/labels/{labelId} |
+| AttachLabelsAsync(Guid accountId, string groupId, string collectionId, body) | Task\<LabelsAttachPostResponse?> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/labels:attach |
+| DetachLabelsAsync(Guid accountId, string groupId, string collectionId, body) | Task\<LabelsDetachPostResponse?> | POST /parameters/v1/accounts/{accountId}/groups/{groupId}/collections/{collectionId}/labels:detach |
+
+### ClassificationsManager (4 methods)
+
+| Method | Returns | API |
+|--------|---------|-----|
+| ListClassificationGroupsAsync() | IAsyncEnumerable\<ClassificationGroupsGetResponse_results> | GET /parameters/v1/classifications/groups |
+| ListCategoriesAsync() | IAsyncEnumerable\<CategoriesGetResponse_results> | GET /parameters/v1/classifications/categories |
+| ListDisciplinesAsync() | IAsyncEnumerable\<DisciplinesGetResponse_results> | GET /parameters/v1/disciplines |
+| ListUnitsAsync() | IAsyncEnumerable\<UnitsGetResponse_results> | GET /parameters/v1/units |
+
+## Fluent URL Properties
+
+For direct REST path access without managers:
+
+| Property | Base Path |
+|----------|-----------|
+| client.Accounts | /parameters/v1/accounts/* |
+| client.Api | Full base client (all paths) |
+
+## Key Patterns
+
+### Parameter Types
+- `accountId`: `Guid` — Autodesk Construction Cloud account ID
+- `groupId`: `string` — parameter group identifier
+- `collectionId`: `string` — parameter collection identifier
+- `parameterId`: `string` — individual parameter identifier
+- `enumerationId`: `string` — enumeration definition identifier
+- `specId`: `string` — spec identifier
+- `labelId`: `string` — label identifier
+- `body`: Kiota-generated request body types in sub-namespaces
+
+### Pagination
+```csharp
+// Auto-pagination — fetches all pages transparently
+await foreach (var collection in client.CollectionsManager.ListCollectionsAsync(accountId, groupId))
+{
+    Console.WriteLine(collection.Title);
+}
+
+// Stop after first 10
+await foreach (var label in client.LabelsManager.ListLabelsAsync(accountId))
+{
+    if (count++ >= 10) break;
+}
+
+// With query parameters
+await foreach (var collection in client.CollectionsManager.ListCollectionsAsync(accountId, groupId,
+    new() { QueryParameters = { Limit = 50 } }))
+{ ... }
+```
+
+### Error Handling
+```csharp
+try { ... }
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"{ex.StatusCode}: {ex.Message}");
+    if (ex.Data["context"] is HttpResponseMessage resp)
+    {
+        var body = await resp.Content.ReadAsStringAsync();
+    }
+}
+```
+
+## Links
+
+- APS Docs: https://aps.autodesk.com/en/docs/parameters/v1/overview/
+- NuGet: https://www.nuget.org/packages/Adsk.Platform.Parameters
+- Kiota: https://learn.microsoft.com/en-us/openapi/kiota/overview
