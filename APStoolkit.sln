@@ -80,6 +80,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.Automation", "Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.BuildingConnected", "Autodesk.BuildingConnected\Autodesk.BuildingConnected.csproj", "{58002B47-BB94-4C9E-97F9-FB98E328C7A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.Parameters", "Autodesk.Parameters\Autodesk.Parameters.csproj", "{BECBD003-BBE8-4087-92B1-56EBD511D316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autodesk.InformedDesign", "Autodesk.InformedDesign\Autodesk.InformedDesign.csproj", "{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -340,6 +344,30 @@ Global
 		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|x64.Build.0 = Release|Any CPU
 		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|x86.ActiveCfg = Release|Any CPU
 		{58002B47-BB94-4C9E-97F9-FB98E328C7A1}.Release|x86.Build.0 = Release|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Debug|x64.Build.0 = Debug|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Debug|x86.Build.0 = Debug|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Release|x64.ActiveCfg = Release|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Release|x64.Build.0 = Release|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Release|x86.ActiveCfg = Release|Any CPU
+		{BECBD003-BBE8-4087-92B1-56EBD511D316}.Release|x86.Build.0 = Release|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Debug|x64.Build.0 = Debug|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Debug|x86.Build.0 = Debug|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Release|x64.ActiveCfg = Release|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Release|x64.Build.0 = Release|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Release|x86.ActiveCfg = Release|Any CPU
+		{81280E2B-FD1B-4C96-9EB0-620A62B10CDA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

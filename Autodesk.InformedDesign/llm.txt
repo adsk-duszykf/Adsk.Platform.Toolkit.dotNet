@@ -1,0 +1,178 @@
+# Adsk.Platform.InformedDesign — Informed Design SDK for .NET
+
+> NuGet: `Adsk.Platform.InformedDesign` | Namespace: `Autodesk.InformedDesign` | Target: `net8.0` | License: MIT
+> Generated from OpenAPI specs via Microsoft Kiota. **Unofficial package.**
+
+## Overview
+
+Type-safe C# SDK for the Autodesk Informed Design (Beta) REST APIs — also known as Dynamic Content / Industrialized Construction. Provides two access patterns:
+
+1. **Fluent URL API** (`client.Api.*`) — mirrors the REST path structure exactly
+2. **Manager API** (`client.*Manager`) — high-level methods with auto-pagination, strongly-typed params, and XML doc with links to official docs
+
+## Quick Start
+
+```csharp
+using Autodesk.InformedDesign;
+
+var client = new InformedDesignClient(() => Task.FromResult("YOUR_ACCESS_TOKEN"));
+
+// Manager approach (recommended) — auto-paginates
+await foreach (var product in client.ProductsManager.ListProductsAsync())
+{
+    Console.WriteLine(product);
+}
+
+// Fluent URL approach — direct REST mapping
+var response = await client.Api.IndustrializedConstruction.InformedDesign.V1.Products.GetAsync();
+```
+
+## Constructor
+
+```csharp
+public InformedDesignClient(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
+```
+
+- `getAccessToken`: async function returning a valid OAuth bearer token
+- `httpClient`: optional custom HttpClient (default includes retry + rate-limit handling)
+
+## Built-in Middleware
+
+- **Rate limiting**: auto-retries on 429 with Retry-After / exponential backoff
+- **Error handling**: throws `HttpRequestException` with status code and full response in `ex.Data["context"]`
+- Disable per-request: pass `new RequestConfiguration<T> { Options = { new ErrorHandlerOption { Enabled = false } } }`
+
+## Managers (31 methods across 7 managers)
+
+All manager methods follow these conventions:
+- Async suffix (`*Async`)
+- `requestConfiguration` (`RequestConfiguration<T>?`, object — not `Action<>`) and `cancellationToken` are optional
+- Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages; use `break` or `.Take(n)` to stop early)
+- Non-paginated endpoints return `Task<T?>`
+- Each method documents the wrapped REST endpoint and links to official APS docs
+
+### ProductsManager (9 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| ListProductsAsync() | IAsyncEnumerable\<ProductsGetResponse_results\> | GET /industrialized-construction/informed-design/v1/products |
+| CreateProductAsync(body) | Task\<ProductsPostResponse?\> | POST /industrialized-construction/informed-design/v1/products |
+| GetProductAsync(Guid productId) | Task\<WithProductGetResponse?\> | GET /industrialized-construction/informed-design/v1/products/{productId} |
+| UpdateProductAsync(Guid productId, body) | Task\<WithProductPatchResponse?\> | PATCH /industrialized-construction/informed-design/v1/products/{productId} |
+| DeleteProductAsync(Guid productId) | Task | DELETE /industrialized-construction/informed-design/v1/products/{productId} |
+| GetUploadUrlsAsync(Guid productId, body) | Task\<UploadUrlsPostResponse?\> | POST /industrialized-construction/informed-design/v1/products/{productId}/upload-urls |
+| CompleteUploadAsync(Guid productId, body) | Task\<CompleteUploadPostResponse?\> | POST /industrialized-construction/informed-design/v1/products/{productId}/complete-upload |
+| GetDownloadUrlAsync(Guid productId) | Task\<DownloadUrlGetResponse?\> | GET /industrialized-construction/informed-design/v1/products/{productId}/download-url |
+| DeleteUploadAsync(Guid productId) | Task | DELETE /industrialized-construction/informed-design/v1/products/{productId}/upload |
+
+### ReleasesManager (5 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| ListReleasesAsync() | IAsyncEnumerable\<ReleasesGetResponse_results\> | GET /industrialized-construction/informed-design/v1/releases |
+| CreateReleaseAsync(body) | Task\<ReleasesPostResponse?\> | POST /industrialized-construction/informed-design/v1/releases |
+| GetReleaseAsync(Guid releaseId) | Task\<WithReleaseGetResponse?\> | GET /industrialized-construction/informed-design/v1/releases/{releaseId} |
+| UpdateReleaseAsync(Guid releaseId, body) | Task\<WithReleasePatchResponse?\> | PATCH /industrialized-construction/informed-design/v1/releases/{releaseId} |
+| DeleteReleaseAsync(Guid releaseId) | Task | DELETE /industrialized-construction/informed-design/v1/releases/{releaseId} |
+
+### VariantsManager (4 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| ListVariantsAsync() | IAsyncEnumerable\<VariantsGetResponse_results\> | GET /industrialized-construction/informed-design/v1/variants |
+| CreateVariantAsync(body) | Task\<VariantsPostResponse?\> | POST /industrialized-construction/informed-design/v1/variants |
+| GetVariantAsync(Guid variantId) | Task\<WithVariantGetResponse?\> | GET /industrialized-construction/informed-design/v1/variants/{variantId} |
+| DeleteVariantAsync(Guid variantId) | Task | DELETE /industrialized-construction/informed-design/v1/variants/{variantId} |
+
+### OutputsManager (5 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| ListOutputsAsync() | IAsyncEnumerable\<OutputsGetResponse_results\> | GET /industrialized-construction/informed-design/v1/outputs |
+| CreateOutputsAsync(body) | Task\<OutputsPostResponse?\> | POST /industrialized-construction/informed-design/v1/outputs |
+| GetOutputAsync(Guid outputId) | Task\<WithOutputGetResponse?\> | GET /industrialized-construction/informed-design/v1/outputs/{outputId} |
+| DeleteOutputAsync(Guid outputId) | Task | DELETE /industrialized-construction/informed-design/v1/outputs/{outputId} |
+| GetOutputsRequestAsync(Guid outputsRequestId) | Task\<WithOutputsRequestGetResponse?\> | GET /industrialized-construction/informed-design/v1/outputs-request/{outputsRequestId} |
+
+### UploadsManager (3 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| ListUploadsAsync() | IAsyncEnumerable\<UploadsGetResponse_results\> | GET /industrialized-construction/informed-design/v1/uploads |
+| CreateUploadAsync(body) | Task\<UploadsPostResponse?\> | POST /industrialized-construction/informed-design/v1/uploads |
+| GetUploadAsync(Guid uploadRequestId) | Task\<WithUploadRequestGetResponse?\> | GET /industrialized-construction/informed-design/v1/uploads/{uploadRequestId} |
+
+### DownloadsManager (2 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| CreateDownloadAsync(body) | Task\<DownloadsPostResponse?\> | POST /industrialized-construction/informed-design/v1/downloads |
+| GetDownloadAsync(Guid downloadRequestId) | Task\<WithDownloadRequestGetResponse?\> | GET /industrialized-construction/informed-design/v1/downloads/{downloadRequestId} |
+
+### RulesManager (3 methods)
+
+| Method | Returns | API |
+| --- | --- | --- |
+| EvaluateRulesAsync(body) | Task\<RulesEvaluatePostResponse?\> | POST /industrialized-construction/informed-design/v1/rules:evaluate |
+| ValidateRulesAsync(body) | Task\<RulesValidatePostResponse?\> | POST /industrialized-construction/informed-design/v1/rules:validate |
+| GetRulesAsync(string rulesKey) | Task\<WithRulesKeyGetResponse?\> | GET /industrialized-construction/informed-design/v1/rules/{rulesKey} |
+
+## Fluent URL Properties
+
+For direct REST path access without managers:
+
+| Property | Base Path |
+| --- | --- |
+| client.Api.IndustrializedConstruction | /industrialized-construction/* |
+| client.Api | Full base client (all paths) |
+
+## Key Patterns
+
+### Parameter Types
+- `productId`: `Guid` — unique product identifier
+- `releaseId`: `Guid` — unique release identifier
+- `variantId`: `Guid` — unique variant identifier
+- `outputId`: `Guid` — unique output identifier
+- `outputsRequestId`: `Guid` — unique outputs request identifier
+- `uploadRequestId`: `Guid` — unique upload request identifier
+- `downloadRequestId`: `Guid` — unique download request identifier
+- `rulesKey`: `string` — key identifying the rules document (not a Guid)
+
+### Pagination
+```csharp
+// Auto-pagination — fetches all pages transparently
+await foreach (var product in client.ProductsManager.ListProductsAsync())
+{
+    Console.WriteLine(product);
+}
+
+// Stop after first N
+await foreach (var product in client.ProductsManager.ListProductsAsync())
+{
+    if (count++ >= 10) break;
+}
+
+// With query parameters
+await foreach (var product in client.ProductsManager.ListProductsAsync(
+    new() { QueryParameters = { Limit = 50 } }))
+{ ... }
+```
+
+### Error Handling
+```csharp
+try { ... }
+catch (HttpRequestException ex)
+{
+    Console.WriteLine($"{ex.StatusCode}: {ex.Message}");
+    if (ex.Data["context"] is HttpResponseMessage resp)
+    {
+        var body = await resp.Content.ReadAsStringAsync();
+    }
+}
+```
+
+## Links
+
+- APS Docs: https://aps.autodesk.com/en/docs/informed-design/v1/overview/
+- NuGet: https://www.nuget.org/packages/Adsk.Platform.InformedDesign
+- Kiota: https://learn.microsoft.com/en-us/openapi/kiota/overview
