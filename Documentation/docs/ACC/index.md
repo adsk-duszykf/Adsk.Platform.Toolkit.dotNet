@@ -327,7 +327,7 @@ These patterns are consistent across all 341 methods and are useful for AI code 
 
 ## For AI Assistants
 
-A machine-readable API reference with all 341 method signatures, return types, and REST endpoint mappings is available at [`llm.txt`](./llm.txt) — optimized for use with AI coding tools (Copilot, Cursor, ChatGPT, etc.).
+A machine-readable API reference with all 341 method signatures, return types, and REST endpoint mappings is available at [`llm.txt`](../../../Autodesk.ACC/llm.txt) — optimized for use with AI coding tools (Copilot, Cursor, ChatGPT, etc.).
 
 ## Requirements
 

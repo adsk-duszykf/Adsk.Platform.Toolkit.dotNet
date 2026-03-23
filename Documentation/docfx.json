@@ -35,7 +35,8 @@
     "output": "_site",
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/context7"
     ],
     "globalMetadata": {
       "_appName": "Autodesk Platform Toolkit Documentation",
