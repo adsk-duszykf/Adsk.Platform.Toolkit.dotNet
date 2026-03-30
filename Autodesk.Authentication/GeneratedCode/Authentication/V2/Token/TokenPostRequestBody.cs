@@ -10,9 +10,19 @@ namespace Autodesk.Authentication.Authentication.V2.Token
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TokenPostRequestBody : IParsable
+    public partial class TokenPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Required if `grant_type` is `urn:ietf:params:oauth:grant-type:jwt-bearer`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Assertion { get; set; }
+#nullable restore
+#else
+        public string Assertion { get; set; }
+#endif
         /// <summary>This field is required for public client</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,13 +74,20 @@ namespace Autodesk.Authentication.Authentication.V2.Token
         public string Scope { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Authentication.Authentication.V2.Token.TokenPostRequestBody"/> and sets the default values.
+        /// </summary>
+        public TokenPostRequestBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Authentication.Authentication.V2.Token.TokenPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Authentication.Authentication.V2.Token.TokenPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Authentication.Authentication.V2.Token.TokenPostRequestBody();
         }
         /// <summary>
@@ -81,6 +98,7 @@ namespace Autodesk.Authentication.Authentication.V2.Token
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "assertion", n => { Assertion = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "code_verifier", n => { CodeVerifier = n.GetStringValue(); } },
@@ -96,7 +114,8 @@ namespace Autodesk.Authentication.Authentication.V2.Token
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("assertion", Assertion);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("code_verifier", CodeVerifier);
@@ -104,6 +123,7 @@ namespace Autodesk.Authentication.Authentication.V2.Token
             writer.WriteStringValue("redirect_uri", RedirectUri);
             writer.WriteStringValue("refresh_token", RefreshToken);
             writer.WriteStringValue("scope", Scope);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

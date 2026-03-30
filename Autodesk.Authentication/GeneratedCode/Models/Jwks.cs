@@ -9,9 +9,11 @@ namespace Autodesk.Authentication.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Jwks : IParsable
+    public partial class Jwks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The e property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,13 +55,20 @@ namespace Autodesk.Authentication.Models
         public string Use { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Authentication.Models.Jwks"/> and sets the default values.
+        /// </summary>
+        public Jwks()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Authentication.Models.Jwks"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Authentication.Models.Jwks CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Authentication.Models.Jwks();
         }
         /// <summary>
@@ -83,12 +92,13 @@ namespace Autodesk.Authentication.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("e", E);
             writer.WriteStringValue("kid", Kid);
             writer.WriteStringValue("kty", Kty);
             writer.WriteStringValue("n", N);
             writer.WriteStringValue("use", Use);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

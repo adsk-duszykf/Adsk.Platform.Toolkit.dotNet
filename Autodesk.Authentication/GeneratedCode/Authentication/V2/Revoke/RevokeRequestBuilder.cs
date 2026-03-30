@@ -43,46 +43,20 @@ namespace Autodesk.Authentication.Authentication.V2.Revoke
         /// <exception cref="global::Autodesk.Authentication.Models.Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse?> PostAsRevokePostResponseAsync(global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse?> PostAsync(global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse> PostAsRevokePostResponseAsync(global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse> PostAsync(global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Autodesk.Authentication.Models.Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse>(requestInfo, global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// This API endpoint takes an access token or refresh token and revokes it. Once the token is revoked, it becomes inactive and returns no body response.A client can only revoke its own tokens.
-        /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Authentication.Authentication.V2.Revoke.RevokeResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Autodesk.Authentication.Models.Error">When receiving a 400 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsRevokePostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokeResponse?> PostAsync(global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokeResponse> PostAsync(global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Autodesk.Authentication.Models.Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Autodesk.Authentication.Authentication.V2.Revoke.RevokeResponse>(requestInfo, global::Autodesk.Authentication.Authentication.V2.Revoke.RevokeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This API endpoint takes an access token or refresh token and revokes it. Once the token is revoked, it becomes inactive and returns no body response.A client can only revoke its own tokens.
@@ -99,7 +73,7 @@ namespace Autodesk.Authentication.Authentication.V2.Revoke
         public RequestInformation ToPostRequestInformation(global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -114,14 +88,6 @@ namespace Autodesk.Authentication.Authentication.V2.Revoke
         public global::Autodesk.Authentication.Authentication.V2.Revoke.RevokeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Autodesk.Authentication.Authentication.V2.Revoke.RevokeRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RevokeRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -9,9 +9,18 @@ namespace Autodesk.Authentication.Authentication.V2.Revoke
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RevokePostResponse : IParsable
+    public partial class RevokePostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse"/> and sets the default values.
+        /// </summary>
+        public RevokePostResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -19,7 +28,7 @@ namespace Autodesk.Authentication.Authentication.V2.Revoke
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Authentication.Authentication.V2.Revoke.RevokePostResponse();
         }
         /// <summary>
@@ -38,7 +47,8 @@ namespace Autodesk.Authentication.Authentication.V2.Revoke
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

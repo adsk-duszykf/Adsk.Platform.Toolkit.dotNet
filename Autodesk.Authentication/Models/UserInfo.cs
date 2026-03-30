@@ -1,6 +1,9 @@
-﻿namespace Autodesk.Authentication.Helpers.Models;
+namespace Autodesk.Authentication.Helpers.Models;
 
 
+/// <summary>
+/// Represents the authenticated user's profile information returned by the Autodesk userinfo endpoint.
+/// </summary>
 public class UserInfo
 {
     /// <summary>The email property</summary>

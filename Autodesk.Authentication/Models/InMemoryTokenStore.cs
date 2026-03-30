@@ -1,5 +1,8 @@
-﻿namespace Autodesk.Authentication.Helpers.Models;
+namespace Autodesk.Authentication.Helpers.Models;
 
+/// <summary>
+/// In-memory implementation of <see cref="ITokenStore"/> that holds a single token.
+/// </summary>
 public class InMemoryTokenStore : ITokenStore
 {
     private AuthTokenExtended? _authToken;
@@ -14,7 +17,7 @@ public class InMemoryTokenStore : ITokenStore
     /// <summary>
     /// Save the token in the store
     /// </summary>
-    /// <param name="authToken">Authorization token</param>
+    /// <param name="token">Authorization token</param>
     public void Set(AuthTokenExtended token)
     {
         _authToken = token;

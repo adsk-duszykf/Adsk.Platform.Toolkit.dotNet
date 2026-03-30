@@ -29,6 +29,7 @@ public class AuthenticationClientHelper
     /// <param name="clientId">Autodesk App Id</param>
     /// <param name="redirectUri">Callback url</param>
     /// <param name="scope">Token scope</param>
+    /// <param name="codeChallenge">PKCE code challenge generated from a code verifier</param>
     /// <param name="nonce">Optional, except if scope is 'OpenId'</param>
     /// <param name="state">Optional.</param>
     /// <param name="forceLogin">Default:False. If 'true' ignore the current session and force the login again</param>
@@ -336,6 +337,11 @@ public class AuthenticationClientHelper
         }));
     }
 
+    /// <summary>
+    /// Convert a list of scope strings to a single space-separated string.
+    /// </summary>
+    /// <param name="scopes">List of scopes as raw strings</param>
+    /// <returns>Scopes separated with spaces</returns>
     public static string CreateScopeString(IEnumerable<string> scopes)
     {
         return string.Join(" ", scopes);

@@ -1,5 +1,8 @@
-﻿namespace Autodesk.Authentication.Helpers.Models;
+namespace Autodesk.Authentication.Helpers.Models;
 
+/// <summary>
+/// Abstraction for storing and retrieving an <see cref="AuthTokenExtended"/>.
+/// </summary>
 public interface ITokenStore
 {
     /// <summary>

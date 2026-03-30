@@ -11,10 +11,12 @@ namespace Autodesk.Authentication.Models
     /// The response body for the introspection of access token.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Introspecttoken : IParsable
+    public partial class Introspecttoken : IAdditionalDataHolder, IParsable
     {
         /// <summary>The active property</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The client_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,13 +44,20 @@ namespace Autodesk.Authentication.Models
         public string Userid { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Authentication.Models.Introspecttoken"/> and sets the default values.
+        /// </summary>
+        public Introspecttoken()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Authentication.Models.Introspecttoken"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Authentication.Models.Introspecttoken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Authentication.Models.Introspecttoken();
         }
         /// <summary>
@@ -72,12 +81,13 @@ namespace Autodesk.Authentication.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteIntValue("exp", Exp);
             writer.WriteStringValue("scope", Scope);
             writer.WriteStringValue("userid", Userid);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

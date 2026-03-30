@@ -9,7 +9,7 @@ namespace Autodesk.Authentication.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AuthToken : IParsable
+    public partial class AuthToken : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access_token property</summary>
@@ -20,6 +20,8 @@ namespace Autodesk.Authentication.Models
 #else
         public string AccessToken { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expires_in property</summary>
         public int? ExpiresIn { get; set; }
         /// <summary>The id_token property</summary>
@@ -39,13 +41,20 @@ namespace Autodesk.Authentication.Models
         public string RefreshToken { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Autodesk.Authentication.Models.AuthToken"/> and sets the default values.
+        /// </summary>
+        public AuthToken()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Autodesk.Authentication.Models.AuthToken"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Autodesk.Authentication.Models.AuthToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Autodesk.Authentication.Models.AuthToken();
         }
         /// <summary>
@@ -68,11 +77,12 @@ namespace Autodesk.Authentication.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("access_token", AccessToken);
             writer.WriteIntValue("expires_in", ExpiresIn);
             writer.WriteStringValue("id_token", IdToken);
             writer.WriteStringValue("refresh_token", RefreshToken);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

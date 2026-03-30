@@ -19,5 +19,9 @@ namespace Autodesk.Authentication.Models
         #pragma warning disable CS1591
         Refresh_token,
         #pragma warning restore CS1591
+        [EnumMember(Value = "urn:ietf:params:oauth:grant-type:jwt-bearer")]
+        #pragma warning disable CS1591
+        UrnIetfParamsOauthGrantTypeJwtBearer,
+        #pragma warning restore CS1591
     }
 }
