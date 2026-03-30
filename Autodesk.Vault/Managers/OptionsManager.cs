@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Autodesk.Vault.Models;
 using Autodesk.Vault.SystemOptions;
 using Autodesk.Vault.SystemOptions.Item;
@@ -28,100 +29,157 @@ public class OptionsManager
     #region System Options
 
     /// <summary>
-    /// Returns list of options which applies to the entire system
+    /// Lists options which apply to the entire system with automatic cursor-based pagination.
     /// </summary>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of system options</returns>
-    public async Task<VaultOptionCollection?> GetSystemOptionsAsync(
+    /// <remarks>
+    /// Wraps: GET /system-options
+    /// </remarks>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports filter[name], limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="VaultOption"/> items, automatically paginated</returns>
+    /// <example>
+    /// <code>
+    /// await foreach (VaultOption option in client.Options.ListSystemOptionsAsync())
+    /// {
+    ///     Console.WriteLine($"{option.Name}: {option.Value}");
+    /// }
+    /// </code>
+    /// </example>
+    public async IAsyncEnumerable<VaultOption> ListSystemOptionsAsync(
         RequestConfiguration<SystemOptionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
-        CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var result = await _api.SystemOptions
-            .GetAsync(r =>
-            {
-                r.Headers = requestConfiguration?.Headers ?? r.Headers;
-                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
-                r.Options = requestConfiguration?.Options ?? r.Options;
-            }, cancellationToken);
+        string? cursor = requestConfiguration?.QueryParameters?.CursorState;
 
-        return result;
+        while (true)
+        {
+            VaultOptionCollection? response = await _api.SystemOptions
+                .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursor;
+                }, cancellationToken);
+
+            if (response?.Results is not { Count: > 0 })
+                yield break;
+
+            foreach (VaultOption item in response.Results)
+            {
+                yield return item;
+            }
+
+            if (string.IsNullOrEmpty(response.Pagination?.NextUrl))
+                yield break;
+
+            cursor = PaginationHelper.ExtractBookmarkFromNextUrl(response.Pagination.NextUrl);
+        }
     }
 
     /// <summary>
-    /// Creates a system wide option with input name and value
+    /// Creates a system-wide option with input name and value.
     /// </summary>
-    /// <param name="optionData">System option data</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Created system option</returns>
+    /// <remarks>
+    /// Wraps: POST /system-options
+    /// </remarks>
+    /// <param name="optionData">System option data containing name and value</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="VaultOption"/> containing the created system option</returns>
+    /// <example>
+    /// <code>
+    /// VaultOption? option = await client.Options.CreateSystemOptionAsync(
+    ///     new SystemOptionsPostRequestBody { Name = "MyOption", Value = "MyValue" });
+    /// </code>
+    /// </example>
     public async Task<VaultOption?> CreateSystemOptionAsync(
         SystemOptionsPostRequestBody optionData,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.SystemOptions
+        return await _api.SystemOptions
             .PostAsync(optionData, r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get an option (By ID) which applies to the entire system
+    /// Get a system option by its ID.
     /// </summary>
-    /// <param name="optionId">System option ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>System option information</returns>
+    /// <remarks>
+    /// Wraps: GET /system-options/{id}
+    /// </remarks>
+    /// <param name="optionId">The unique identifier of a system option</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="VaultOption"/> containing the system option</returns>
+    /// <example>
+    /// <code>
+    /// VaultOption? option = await client.Options.GetSystemOptionByIdAsync("42");
+    /// </code>
+    /// </example>
     public async Task<VaultOption?> GetSystemOptionByIdAsync(
         string optionId,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.SystemOptions[optionId]
+        return await _api.SystemOptions[optionId]
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Update an option (By ID) which applies to the entire system
+    /// Update a system option by its ID.
     /// </summary>
-    /// <param name="optionId">System option ID</param>
-    /// <param name="optionData">Updated system option data</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Updated system option</returns>
+    /// <remarks>
+    /// Wraps: PATCH /system-options/{id}
+    /// </remarks>
+    /// <param name="optionId">The unique identifier of a system option</param>
+    /// <param name="optionData">Updated system option data containing the new value</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="VaultOption"/> containing the updated system option</returns>
+    /// <example>
+    /// <code>
+    /// VaultOption? option = await client.Options.UpdateSystemOptionByIdAsync("42",
+    ///     new SystemOptionsPatchRequestBody { Value = "NewValue" });
+    /// </code>
+    /// </example>
     public async Task<VaultOption?> UpdateSystemOptionByIdAsync(
         string optionId,
         SystemOptionsPatchRequestBody optionData,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.SystemOptions[optionId]
+        return await _api.SystemOptions[optionId]
             .PatchAsync(optionData, r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Delete an option (By ID) which applies to the entire system
+    /// Delete a system option by its ID.
     /// </summary>
-    /// <param name="optionId">System option ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
+    /// <remarks>
+    /// Wraps: DELETE /system-options/{id}
+    /// </remarks>
+    /// <param name="optionId">The unique identifier of a system option</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A task representing the asynchronous operation</returns>
+    /// <example>
+    /// <code>
+    /// await client.Options.DeleteSystemOptionByIdAsync("42");
+    /// </code>
+    /// </example>
     public async Task DeleteSystemOptionByIdAsync(
         string optionId,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
@@ -140,85 +198,135 @@ public class OptionsManager
     #region Vault Options
 
     /// <summary>
-    /// Get vault options for a specific vault
+    /// Lists vault options for a specific vault with automatic cursor-based pagination.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of vault options</returns>
-    public async Task<VaultOptionCollection?> GetVaultOptionsAsync(
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/vault-options
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports filter[name], limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="VaultOption"/> items, automatically paginated</returns>
+    /// <example>
+    /// <code>
+    /// await foreach (VaultOption option in client.Options.ListVaultOptionsAsync("1"))
+    /// {
+    ///     Console.WriteLine($"{option.Name}: {option.Value}");
+    /// }
+    /// </code>
+    /// </example>
+    public async IAsyncEnumerable<VaultOption> ListVaultOptionsAsync(
         string vaultId,
         RequestConfiguration<VaultOptionsRequestBuilderGetQueryParameters>? requestConfiguration = null,
-        CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].VaultOptions
-            .GetAsync(r =>
-            {
-                r.Headers = requestConfiguration?.Headers ?? r.Headers;
-                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
-                r.Options = requestConfiguration?.Options ?? r.Options;
-            }, cancellationToken);
+        string? cursor = requestConfiguration?.QueryParameters?.CursorState;
 
-        return result;
+        while (true)
+        {
+            VaultOptionCollection? response = await _api.Vaults[vaultId].VaultOptions
+                .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursor;
+                }, cancellationToken);
+
+            if (response?.Results is not { Count: > 0 })
+                yield break;
+
+            foreach (VaultOption item in response.Results)
+            {
+                yield return item;
+            }
+
+            if (string.IsNullOrEmpty(response.Pagination?.NextUrl))
+                yield break;
+
+            cursor = PaginationHelper.ExtractBookmarkFromNextUrl(response.Pagination.NextUrl);
+        }
     }
 
     /// <summary>
-    /// Create a vault option
+    /// Create a vault option.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="optionData">Vault option data</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Created vault option</returns>
+    /// <remarks>
+    /// Wraps: POST /vaults/{vaultId}/vault-options
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="optionData">Vault option data containing name and value</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="VaultOption"/> containing the created vault option</returns>
+    /// <example>
+    /// <code>
+    /// VaultOption? option = await client.Options.CreateVaultOptionAsync("1",
+    ///     new VaultOptionsPostRequestBody { Name = "MyOption", Value = "MyValue" });
+    /// </code>
+    /// </example>
     public async Task<VaultOption?> CreateVaultOptionAsync(
         string vaultId,
         VaultOptionsPostRequestBody optionData,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].VaultOptions
+        return await _api.Vaults[vaultId].VaultOptions
             .PostAsync(optionData, r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get a vault option by ID
+    /// Get a vault option by its ID.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="optionId">Vault option ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Vault option information</returns>
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/vault-options/{id}
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="optionId">The unique identifier of a vault option</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="VaultOption"/> containing the vault option</returns>
+    /// <example>
+    /// <code>
+    /// VaultOption? option = await client.Options.GetVaultOptionByIdAsync("1", "42");
+    /// </code>
+    /// </example>
     public async Task<VaultOption?> GetVaultOptionByIdAsync(
         string vaultId,
         string optionId,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].VaultOptions[optionId]
+        return await _api.Vaults[vaultId].VaultOptions[optionId]
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Update a vault option by ID
+    /// Update a vault option by its ID.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="optionId">Vault option ID</param>
-    /// <param name="optionData">Updated vault option data</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Updated vault option</returns>
+    /// <remarks>
+    /// Wraps: PATCH /vaults/{vaultId}/vault-options/{id}
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="optionId">The unique identifier of a vault option</param>
+    /// <param name="optionData">Updated vault option data containing the new value</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="VaultOption"/> containing the updated vault option</returns>
+    /// <example>
+    /// <code>
+    /// VaultOption? option = await client.Options.UpdateVaultOptionByIdAsync("1", "42",
+    ///     new VaultOptionsPatchRequestBody { Value = "NewValue" });
+    /// </code>
+    /// </example>
     public async Task<VaultOption?> UpdateVaultOptionByIdAsync(
         string vaultId,
         string optionId,
@@ -226,23 +334,30 @@ public class OptionsManager
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].VaultOptions[optionId]
+        return await _api.Vaults[vaultId].VaultOptions[optionId]
             .PatchAsync(optionData, r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Delete a vault option by ID
+    /// Delete a vault option by its ID.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="optionId">Vault option ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
+    /// <remarks>
+    /// Wraps: DELETE /vaults/{vaultId}/vault-options/{id}
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="optionId">The unique identifier of a vault option</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A task representing the asynchronous operation</returns>
+    /// <example>
+    /// <code>
+    /// await client.Options.DeleteVaultOptionByIdAsync("1", "42");
+    /// </code>
+    /// </example>
     public async Task DeleteVaultOptionByIdAsync(
         string vaultId,
         string optionId,

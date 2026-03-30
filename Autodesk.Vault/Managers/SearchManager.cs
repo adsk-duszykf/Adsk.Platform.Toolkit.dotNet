@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Autodesk.Vault.Models;
 using Autodesk.Vault.Vaults.WithVaultIdAdvancedSearch;
 using Microsoft.Kiota.Abstractions;
@@ -23,50 +24,117 @@ public class SearchManager
     }
 
     /// <summary>
-    /// Get search results for a specific vault
+    /// Search a vault using a simple query string with automatic cursor-based pagination.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Search results</returns>
-    public async Task<EntityCollection?> GetSearchResultsAsync(
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/search-results
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports query, filtering, sorting, limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="EntityCollection.EntityCollection_results"/> across all pages</returns>
+    /// <example>
+    /// <code>
+    /// await foreach (EntityCollection.EntityCollection_results result in client.Search.GetSearchResultsAsync("1",
+    ///     new RequestConfiguration&lt;SearchResultsRequestBuilderGetQueryParameters&gt;
+    ///     {
+    ///         QueryParameters = new SearchResultsRequestBuilderGetQueryParameters { Q = "assembly" }
+    ///     }))
+    /// {
+    ///     Console.WriteLine(result.FileVersion?.Name ?? result.Folder?.Name);
+    /// }
+    /// </code>
+    /// </example>
+    public async IAsyncEnumerable<EntityCollection.EntityCollection_results> GetSearchResultsAsync(
         string vaultId,
         RequestConfiguration<SearchResultsRequestBuilderGetQueryParameters>? requestConfiguration = null,
-        CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].SearchResults
-            .GetAsync(r =>
-            {
-                r.Headers = requestConfiguration?.Headers ?? r.Headers;
-                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
-                r.Options = requestConfiguration?.Options ?? r.Options;
-            }, cancellationToken);
+        string? cursor = requestConfiguration?.QueryParameters?.CursorState;
 
-        return result;
+        while (true)
+        {
+            EntityCollection? response = await _api.Vaults[vaultId].SearchResults
+                .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursor;
+                }, cancellationToken);
+
+            if (response?.Results is not { Count: > 0 })
+                yield break;
+
+            foreach (var item in response.Results)
+            {
+                yield return item;
+            }
+
+            if (string.IsNullOrEmpty(response.Pagination?.NextUrl))
+                yield break;
+
+            cursor = PaginationHelper.ExtractBookmarkFromNextUrl(response.Pagination.NextUrl);
+        }
     }
 
     /// <summary>
-    /// Perform advanced search in a vault
+    /// Perform an advanced search in a vault using structured search criteria with automatic cursor-based pagination.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="searchBody">Advanced search criteria</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Search results</returns>
-    public async Task<EntityCollection?> PerformAdvancedSearchAsync(
+    /// <remarks>
+    /// Wraps: POST /vaults/{vaultId}:advanced-search
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="searchBody">The advanced search criteria including search conditions and sort criteria</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="EntityCollection.EntityCollection_results"/> across all pages</returns>
+    /// <example>
+    /// <code>
+    /// await foreach (EntityCollection.EntityCollection_results result in client.Search.PerformAdvancedSearchAsync("1",
+    ///     new WithVaultIdAdvancedSearchPostRequestBody
+    ///     {
+    ///         SearchCriterias = new List&lt;SearchCriteria&gt;
+    ///         {
+    ///             new SearchCriteria { Operator = SearchCriteria_operator.Contains, SearchString = "assembly" }
+    ///         }
+    ///     }))
+    /// {
+    ///     Console.WriteLine(result.FileVersion?.Name ?? result.Folder?.Name);
+    /// }
+    /// </code>
+    /// </example>
+    public async IAsyncEnumerable<EntityCollection.EntityCollection_results> PerformAdvancedSearchAsync(
         string vaultId,
         WithVaultIdAdvancedSearchPostRequestBody searchBody,
         RequestConfiguration<WithVaultIdAdvancedSearchRequestBuilderPostQueryParameters>? requestConfiguration = null,
-        CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults.WithVaultIdAdvancedSearch(vaultId)
-            .PostAsync(searchBody, r =>
-            {
-                r.Headers = requestConfiguration?.Headers ?? r.Headers;
-                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
-                r.Options = requestConfiguration?.Options ?? r.Options;
-            }, cancellationToken);
+        string? cursor = requestConfiguration?.QueryParameters?.CursorState;
 
-        return result;
+        while (true)
+        {
+            EntityCollection? response = await _api.Vaults.WithVaultIdAdvancedSearch(vaultId)
+                .PostAsync(searchBody, r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursor;
+                }, cancellationToken);
+
+            if (response?.Results is not { Count: > 0 })
+                yield break;
+
+            foreach (var item in response.Results)
+            {
+                yield return item;
+            }
+
+            if (string.IsNullOrEmpty(response.Pagination?.NextUrl))
+                yield break;
+
+            cursor = PaginationHelper.ExtractBookmarkFromNextUrl(response.Pagination.NextUrl);
+        }
     }
 }

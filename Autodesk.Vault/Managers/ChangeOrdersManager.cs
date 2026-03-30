@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Autodesk.Vault.Models;
 using Microsoft.Kiota.Abstractions;
 using static Autodesk.Vault.Vaults.Item.ChangeOrderComments.Item.Attachments.AttachmentsRequestBuilder;
@@ -25,150 +26,230 @@ public class ChangeOrdersManager
     }
 
     /// <summary>
-    /// Get list of change orders based on a set of conditions
+    /// Get list of change orders based on a set of conditions.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of change orders</returns>
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/change-orders
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports query, filtering, sorting, limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="ChangeOrderCollection"/> containing the change orders</returns>
+    /// <example>
+    /// <code>
+    /// ChangeOrderCollection? changeOrders = await client.ChangeOrders.GetChangeOrdersAsync("1");
+    /// </code>
+    /// </example>
     public async Task<ChangeOrderCollection?> GetChangeOrdersAsync(
         string vaultId,
         RequestConfiguration<ChangeOrdersRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].ChangeOrders
+        return await _api.Vaults[vaultId].ChangeOrders
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get change order by its ID
+    /// Get a change order by its ID.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="changeOrderId">Change order ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Change order information</returns>
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/change-orders/{id}
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="changeOrderId">The unique identifier of a change order</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="ChangeOrder"/> containing the change order</returns>
+    /// <example>
+    /// <code>
+    /// ChangeOrder? co = await client.ChangeOrders.GetChangeOrderByIdAsync("1", "42");
+    /// </code>
+    /// </example>
     public async Task<ChangeOrder?> GetChangeOrderByIdAsync(
         string vaultId,
         string changeOrderId,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId]
+        return await _api.Vaults[vaultId].ChangeOrders[changeOrderId]
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get all change order related Files by its Id. This includes files that are not only tracked by the change order,
-    /// but also its associated items file associations as well.
+    /// Get all change order related files by its ID, including files tracked by the change order
+    /// and associated items file associations. The result also includes related attachments.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="changeOrderId">Change order ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of related files</returns>
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/change-orders/{id}/all-related-files
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="changeOrderId">The unique identifier of a change order</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports releasedOnly, extendedModels, propDefIds, limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="FileVersionCollection"/> containing the related files</returns>
+    /// <example>
+    /// <code>
+    /// FileVersionCollection? files = await client.ChangeOrders.GetChangeOrderRelatedFilesAsync("1", "42");
+    /// </code>
+    /// </example>
     public async Task<FileVersionCollection?> GetChangeOrderRelatedFilesAsync(
         string vaultId,
         string changeOrderId,
         RequestConfiguration<AllRelatedFilesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId].AllRelatedFiles
+        return await _api.Vaults[vaultId].ChangeOrders[changeOrderId].AllRelatedFiles
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get associated entities for a change order
+    /// Get associated entities for a change order.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="changeOrderId">Change order ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of associated entities</returns>
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/change-orders/{id}/associated-entities
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="changeOrderId">The unique identifier of a change order</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports extendedModels, propDefIds, limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="EntityCollection"/> containing the associated entities</returns>
+    /// <example>
+    /// <code>
+    /// EntityCollection? entities = await client.ChangeOrders.GetChangeOrderAssociatedEntitiesAsync("1", "42");
+    /// </code>
+    /// </example>
     public async Task<EntityCollection?> GetChangeOrderAssociatedEntitiesAsync(
         string vaultId,
         string changeOrderId,
         RequestConfiguration<AssociatedEntitiesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId].AssociatedEntities
+        return await _api.Vaults[vaultId].ChangeOrders[changeOrderId].AssociatedEntities
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get comments for a change order
+    /// Lists comments for a change order with automatic cursor-based pagination.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="changeOrderId">Change order ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of comments</returns>
-    public async Task<ECOCommentCollection?> GetChangeOrderCommentsAsync(
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/change-orders/{id}/comments
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="changeOrderId">The unique identifier of a change order</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="ECOComment"/> items, automatically paginated</returns>
+    /// <example>
+    /// <code>
+    /// await foreach (ECOComment comment in client.ChangeOrders.ListChangeOrderCommentsAsync("1", "42"))
+    /// {
+    ///     Console.WriteLine(comment.Comment);
+    /// }
+    /// </code>
+    /// </example>
+    public async IAsyncEnumerable<ECOComment> ListChangeOrderCommentsAsync(
         string vaultId,
         string changeOrderId,
         RequestConfiguration<CommentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
-        CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].ChangeOrders[changeOrderId].Comments
-            .GetAsync(r =>
-            {
-                r.Headers = requestConfiguration?.Headers ?? r.Headers;
-                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
-                r.Options = requestConfiguration?.Options ?? r.Options;
-            }, cancellationToken);
+        string? cursor = requestConfiguration?.QueryParameters?.CursorState;
 
-        return result;
+        while (true)
+        {
+            ECOCommentCollection? response = await _api.Vaults[vaultId].ChangeOrders[changeOrderId].Comments
+                .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursor;
+                }, cancellationToken);
+
+            if (response?.Results is not { Count: > 0 })
+                yield break;
+
+            foreach (ECOComment item in response.Results)
+            {
+                yield return item;
+            }
+
+            if (string.IsNullOrEmpty(response.Pagination?.NextUrl))
+                yield break;
+
+            cursor = PaginationHelper.ExtractBookmarkFromNextUrl(response.Pagination.NextUrl);
+        }
     }
 
     /// <summary>
-    /// Get attachments for a change order comment
+    /// Lists attachments for a change order comment with automatic cursor-based pagination.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="commentId">Comment ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of attachments</returns>
-    public async Task<FileVersionCollection?> GetChangeOrderCommentAttachmentsAsync(
+    /// <remarks>
+    /// Wraps: GET /vaults/{vaultId}/change-order-comments/{id}/attachments
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="commentId">The unique identifier of a change order comment</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="FileVersionCollection.FileVersionCollection_results"/> items, automatically paginated</returns>
+    /// <example>
+    /// <code>
+    /// await foreach (var attachment in client.ChangeOrders.ListChangeOrderCommentAttachmentsAsync("1", "99"))
+    /// {
+    ///     Console.WriteLine(attachment.FileName);
+    /// }
+    /// </code>
+    /// </example>
+    public async IAsyncEnumerable<FileVersionCollection.FileVersionCollection_results> ListChangeOrderCommentAttachmentsAsync(
         string vaultId,
         string commentId,
         RequestConfiguration<AttachmentsRequestBuilderGetQueryParameters>? requestConfiguration = null,
-        CancellationToken cancellationToken = default)
+        [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId].ChangeOrderComments[commentId].Attachments
-            .GetAsync(r =>
-            {
-                r.Headers = requestConfiguration?.Headers ?? r.Headers;
-                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
-                r.Options = requestConfiguration?.Options ?? r.Options;
-            }, cancellationToken);
+        string? cursor = requestConfiguration?.QueryParameters?.CursorState;
 
-        return result;
+        while (true)
+        {
+            FileVersionCollection? response = await _api.Vaults[vaultId].ChangeOrderComments[commentId].Attachments
+                .GetAsync(r =>
+                {
+                    r.Headers = requestConfiguration?.Headers ?? r.Headers;
+                    r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+                    r.Options = requestConfiguration?.Options ?? r.Options;
+                    r.QueryParameters.CursorState = cursor;
+                }, cancellationToken);
+
+            if (response?.Results is not { Count: > 0 })
+                yield break;
+
+            foreach (var item in response.Results)
+            {
+                yield return item;
+            }
+
+            if (string.IsNullOrEmpty(response.Pagination?.NextUrl))
+                yield break;
+
+            cursor = PaginationHelper.ExtractBookmarkFromNextUrl(response.Pagination.NextUrl);
+        }
     }
 }

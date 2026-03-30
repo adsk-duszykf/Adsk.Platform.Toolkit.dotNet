@@ -1,14 +1,12 @@
 using Autodesk.Vault.Models;
 using Autodesk.Vault.ServerInfo;
-using Autodesk.Vault.Vaults;
-using Autodesk.Vault.Vaults.Item;
 using Microsoft.Kiota.Abstractions;
 using static Autodesk.Vault.Vaults.VaultsRequestBuilder;
 
 namespace Autodesk.Vault.Managers;
 
 /// <summary>
-/// Manager for Informational operations (Server Info, Vaults, API Spec)
+/// Manager for Informational operations (Server Info, Vaults)
 /// </summary>
 public class InformationalManager
 {
@@ -24,65 +22,85 @@ public class InformationalManager
     }
 
     /// <summary>
-    /// Get some metadata information about server such as product version, etc.
+    /// Get metadata information about the server such as product version.
     /// </summary>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Server information</returns>
+    /// <remarks>
+    /// Wraps: GET /server-info
+    /// </remarks>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="ServerInfoGetResponse"/> containing the server information</returns>
+    /// <example>
+    /// <code>
+    /// ServerInfoGetResponse? info = await client.Informational.GetServerInfoAsync();
+    /// Console.WriteLine(info?.ProductVersion);
+    /// </code>
+    /// </example>
     public async Task<ServerInfoGetResponse?> GetServerInfoAsync(
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.ServerInfo
+        return await _api.ServerInfo
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get the list of all knowledge vaults on the server without logging in
+    /// Get the list of all Knowledge Vaults on the server without logging in.
     /// </summary>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Collection of vaults</returns>
+    /// <remarks>
+    /// Wraps: GET /vaults
+    /// </remarks>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request (supports limit, cursorState)</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="VaultCollection"/> containing the list of vaults</returns>
+    /// <example>
+    /// <code>
+    /// VaultCollection? vaults = await client.Informational.GetVaultsAsync();
+    /// </code>
+    /// </example>
     public async Task<VaultCollection?> GetVaultsAsync(
         RequestConfiguration<VaultsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults
+        return await _api.Vaults
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 
     /// <summary>
-    /// Get Knowledge vault based on its ID
+    /// Get a Knowledge Vault by its ID.
     /// </summary>
-    /// <param name="vaultId">Vault ID</param>
-    /// <param name="requestConfiguration">Optional configuration for the request</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Vault information</returns>
+    /// <remarks>
+    /// Wraps: GET /vaults/{id}
+    /// </remarks>
+    /// <param name="vaultId">The unique identifier of a vault</param>
+    /// <param name="requestConfiguration">(Optional) Configuration for the request</param>
+    /// <param name="cancellationToken">(Optional) Cancellation token</param>
+    /// <returns>A <see cref="Models.Vault"/> containing the vault information</returns>
+    /// <example>
+    /// <code>
+    /// Autodesk.Vault.Models.Vault? vault = await client.Informational.GetVaultByIdAsync("1");
+    /// Console.WriteLine(vault?.Name);
+    /// </code>
+    /// </example>
     public async Task<Models.Vault?> GetVaultByIdAsync(
         string vaultId,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
         CancellationToken cancellationToken = default)
     {
-        var result = await _api.Vaults[vaultId]
+        return await _api.Vaults[vaultId]
             .GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.Options = requestConfiguration?.Options ?? r.Options;
             }, cancellationToken);
-
-        return result;
     }
 }
