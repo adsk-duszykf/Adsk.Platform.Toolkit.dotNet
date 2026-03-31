@@ -1,6 +1,6 @@
-# BuildingConnected SDK for .NET
+# Autodesk BuildingConnected SDK for .NET
 
-[![NuGet](https://img.shields.io/nuget/v/Adsk.Platform.BuildingConnected)](https://www.nuget.org/packages/Adsk.Platform.BuildingConnected)
+[NuGet](https://www.nuget.org/packages/Adsk.Platform.BuildingConnected)
 
 > **Unofficial package** — not affiliated with or endorsed by Autodesk.
 >
@@ -40,7 +40,7 @@ var response = await client.Api.Construction.Buildingconnected.V2.Projects.GetAs
 
 ### Authentication with 2-Legged OAuth
 
-For server-to-server communication, use the [`Adsk.Platform.Authentication`](https://www.nuget.org/packages/Adsk.Platform.Authentication) package:
+For server-to-server communication, use the `[Adsk.Platform.Authentication](https://www.nuget.org/packages/Adsk.Platform.Authentication)` package:
 
 ```csharp
 using Autodesk.BuildingConnected;
@@ -82,21 +82,23 @@ public class MyService(IHttpClientFactory httpClientFactory)
 
 Every manager is a property on `BuildingConnectedClient`. Paginated endpoints return `IAsyncEnumerable<T>` (auto-fetches all pages); non-paginated endpoints return `Task<T?>`.
 
-| Manager | Description | Methods |
-| ------- | ----------- | ------: |
-| `ProjectsManager` | Projects, indirect costs, batch cost operations | 11 |
-| `ProjectTeamMembersManager` | Project team member CRUD | 5 |
-| `BidPackagesManager` | Bid packages CRUD and batch operations | 8 |
-| `InvitesManager` | Invites, email imports | 4 |
-| `BidsManager` | Bids, attachments, line items, plugs | 8 |
-| `ProjectBidFormsManager` | Project bid forms and line items CRUD/batch | 10 |
-| `ScopeSpecificBidFormsManager` | Scope-specific bid forms and line items CRUD/batch | 10 |
-| `OpportunitiesManager` | Opportunities CRUD, comments | 7 |
-| `ContactsManager` | Contact listing and retrieval | 2 |
-| `UsersManager` | Users listing, retrieval, current user | 3 |
-| `CertificationManager` | Certificate types and certifying agencies | 2 |
-| `OfficesManager` | Office listing and retrieval | 2 |
-| `OpportunityProjectPairsManager` | Opportunity-project pair CRUD | 4 |
+
+| Manager                          | Description                                        | Methods |
+| -------------------------------- | -------------------------------------------------- | ------- |
+| `ProjectsManager`                | Projects, indirect costs, batch cost operations    | 11      |
+| `ProjectTeamMembersManager`      | Project team member CRUD                           | 5       |
+| `BidPackagesManager`             | Bid packages CRUD and batch operations             | 8       |
+| `InvitesManager`                 | Invites, email imports                             | 4       |
+| `BidsManager`                    | Bids, attachments, line items, plugs               | 8       |
+| `ProjectBidFormsManager`         | Project bid forms and line items CRUD/batch        | 10      |
+| `ScopeSpecificBidFormsManager`   | Scope-specific bid forms and line items CRUD/batch | 10      |
+| `OpportunitiesManager`           | Opportunities CRUD, comments                       | 7       |
+| `ContactsManager`                | Contact listing and retrieval                      | 2       |
+| `UsersManager`                   | Users listing, retrieval, current user             | 3       |
+| `CertificationManager`           | Certificate types and certifying agencies          | 2       |
+| `OfficesManager`                 | Office listing and retrieval                       | 2       |
+| `OpportunityProjectPairsManager` | Opportunity-project pair CRUD                      | 4       |
+
 
 ## Automatic Pagination
 
@@ -211,10 +213,12 @@ var bid = await client.BuildingConnected.Bids[bidId].GetAsync();
 
 ## Fluent URL Shortcut Properties
 
-| Property | Base Path |
-| -------- | --------- |
+
+| Property                   | Base Path                              |
+| -------------------------- | -------------------------------------- |
 | `client.BuildingConnected` | `/construction/buildingconnected/v2/*` |
-| `client.Api` | Full base client (all paths) |
+| `client.Api`               | Full base client (all paths)           |
+
 
 ## Rate Limiting
 
@@ -278,10 +282,12 @@ var client = new BuildingConnectedClient(getAccessToken, httpClient);
 public BuildingConnectedClient(Func<Task<string>> getAccessToken, HttpClient? httpClient = null)
 ```
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
-| `getAccessToken` | `Func<Task<string>>` | Async function returning a valid OAuth bearer token |
-| `httpClient` | `HttpClient?` | Optional custom HttpClient (default includes retry, rate-limit, and error handling middleware) |
+
+| Parameter        | Type                 | Description                                                                                    |
+| ---------------- | -------------------- | ---------------------------------------------------------------------------------------------- |
+| `getAccessToken` | `Func<Task<string>>` | Async function returning a valid OAuth bearer token                                            |
+| `httpClient`     | `HttpClient?`        | Optional custom HttpClient (default includes retry, rate-limit, and error handling middleware) |
+
 
 ## Conventions
 
@@ -296,16 +302,18 @@ These patterns are consistent across all 76 methods and are useful for AI code g
 
 ## Related Packages
 
-| Package | NuGet | Purpose |
-| ------- | ----- | ------- |
-| `Adsk.Platform.Authentication` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.Authentication) | OAuth 2-legged/3-legged token management |
-| `Adsk.Platform.HttpClient` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.HttpClient) | Shared HTTP client with retry, rate limiting, error handling |
-| `Adsk.Platform.ACC` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.ACC) | Autodesk Construction Cloud (ACC) SDK |
-| `Adsk.Platform.DataManagement` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.DataManagement) | Hubs, projects, folders, items, versions |
+
+| Package                        | NuGet                                                                | Purpose                                                      |
+| ------------------------------ | -------------------------------------------------------------------- | ------------------------------------------------------------ |
+| `Adsk.Platform.Authentication` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.Authentication) | OAuth 2-legged/3-legged token management                     |
+| `Adsk.Platform.HttpClient`     | [NuGet](https://www.nuget.org/packages/Adsk.Platform.HttpClient)     | Shared HTTP client with retry, rate limiting, error handling |
+| `Adsk.Platform.ACC`            | [NuGet](https://www.nuget.org/packages/Adsk.Platform.ACC)            | Autodesk Construction Cloud (ACC) SDK                        |
+| `Adsk.Platform.DataManagement` | [NuGet](https://www.nuget.org/packages/Adsk.Platform.DataManagement) | Hubs, projects, folders, items, versions                     |
+
 
 ## For AI Assistants
 
-A machine-readable API reference with all 76 method signatures, return types, and REST endpoint mappings is available at [`llm.txt`](./llm.txt).
+A machine-readable API reference with all 76 method signatures, return types, and REST endpoint mappings is available at `[llm.txt](./llm.txt)`.
 
 ## Requirements
 

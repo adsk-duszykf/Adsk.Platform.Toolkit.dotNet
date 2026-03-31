@@ -35,6 +35,8 @@
   href: Automation/index.md
 - name: BuildingConnected
   href: BuildingConnected/index.md
+- name: Informed Design
+  href: InformedDesign/index.md
 - name: How To
 - name: Rate limit handling
   href: HowTo/rateLimitHandling.md

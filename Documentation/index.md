@@ -65,6 +65,7 @@ Console.WriteLine($"Hubs: {string.Join(';', hubIds)}");
 | Tandem | Stable | No | [Adsk.Platform.Tandem](https://www.nuget.org/packages/Adsk.Platform.Tandem) |
 | Automation | Stable | No | [Adsk.Platform.Automation](https://www.nuget.org/packages/Adsk.Platform.Automation) |
 | BuildingConnected | Stable | No | [Adsk.Platform.BuildingConnected](https://www.nuget.org/packages/Adsk.Platform.BuildingConnected) |
+| Informed Design | Stable | No | [Adsk.Platform.InformedDesign](https://www.nuget.org/packages/Adsk.Platform.InformedDesign) |
 
 
 ## Get started

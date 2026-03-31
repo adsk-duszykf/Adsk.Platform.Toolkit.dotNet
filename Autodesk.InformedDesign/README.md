@@ -1,4 +1,4 @@
-# Informed Design SDK for .NET
+# Autodesk Informed Design SDK for .NET
 
 [![NuGet](https://img.shields.io/nuget/v/Adsk.Platform.InformedDesign)](https://www.nuget.org/packages/Adsk.Platform.InformedDesign)
 
@@ -7,7 +7,7 @@
 > **Namespace:** `Autodesk.InformedDesign` | **Target:** `net8.0` | **License:** MIT
 > Generated from OpenAPI specs via [Microsoft Kiota](https://learn.microsoft.com/openapi/kiota/overview).
 
-A type-safe C# SDK for the [Autodesk Informed Design (Beta)](https://aps.autodesk.com/en/docs/informed-design/v1/overview/) REST APIs — also known as Dynamic Content / Industrialized Construction. Manage products, releases, variants, outputs, uploads, downloads, and rules — **31 methods across 7 managers** through a single unified client.
+A type-safe C# SDK for the [Autodesk Informed Design](https://aps.autodesk.com/en/docs/informed-design/v1/overview/) REST APIs — also known as Dynamic Content / Industrialized Construction. Manage products, releases, variants, outputs, uploads, downloads, and rules — **31 methods across 7 managers** through a single unified client.
 
 The SDK provides two access patterns:
 
