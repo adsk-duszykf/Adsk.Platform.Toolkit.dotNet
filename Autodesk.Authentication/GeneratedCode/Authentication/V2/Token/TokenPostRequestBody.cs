@@ -31,6 +31,14 @@ namespace Autodesk.Authentication.Authentication.V2.Token
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>This field is required for confidential client</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSecret { get; set; }
+#nullable restore
+#else
+        public string ClientSecret { get; set; }
+#endif
         /// <summary>Required if `grant_type` is `authorization_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,7 @@ namespace Autodesk.Authentication.Authentication.V2.Token
             {
                 { "assertion", n => { Assertion = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "code_verifier", n => { CodeVerifier = n.GetStringValue(); } },
                 { "grant_type", n => { GrantType = n.GetEnumValue<global::Autodesk.Authentication.Models.Granttype>(); } },
@@ -117,6 +126,7 @@ namespace Autodesk.Authentication.Authentication.V2.Token
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assertion", Assertion);
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("code_verifier", CodeVerifier);
             writer.WriteEnumValue<global::Autodesk.Authentication.Models.Granttype>("grant_type", GrantType);

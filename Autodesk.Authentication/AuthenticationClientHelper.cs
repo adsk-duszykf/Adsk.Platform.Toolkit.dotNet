@@ -1,3 +1,4 @@
+using System.ClientModel.Primitives;
 using System.Net.Http.Json;
 using System.Reflection;
 using System.Runtime.Serialization;
@@ -97,6 +98,7 @@ public class AuthenticationClientHelper
     /// </summary>
     /// <param name="threeLeggedToken">3L Access token</param>
     /// <returns>User info</returns>
+    [Obsolete("This method is deprecated and will be removed on April 30, 2026. Please use the 'client.Userinfo.GetAsync()' method from the SDK instead.")]
     public async Task<UserInfo?> GetUserInfoAsync(string threeLeggedToken)
     {
         var userInfoUrl = @"https://api.userprofile.autodesk.com/userinfo";
@@ -117,6 +119,7 @@ public class AuthenticationClientHelper
         return userInfo;
 
     }
+
 
     /// <summary>
     /// Create the url for reaching the Autodesk login page (3legged Auth)

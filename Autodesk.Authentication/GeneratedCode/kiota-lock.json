@@ -1,5 +1,5 @@
 {
-  "descriptionHash": "849A8E685DD33EAB04F0393E664A47B5D36A3453E471830BE4804463150085CF5DBB14E8ACAA3D1F3AFF90C956DD32A28F86F1E1315C2401CE86D31097162AA7",
+  "descriptionHash": "80012144E6139CFCBA160034E6B4FDB8EFCED3DD6F4253E6016119DA443F346CE409E39503107F3B0364F7E683C91113BE1D77BE7558A34F3158A9B0DC09D386",
   "descriptionLocation": "../../../_spec/output/authentication/authentication-openapi.yaml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.30.0",
@@ -28,15 +28,7 @@
     "application/x-www-form-urlencoded",
     "multipart/form-data"
   ],
-  "includePatterns": [
-    "/.well-known/openid-configuration",
-    "/authentication/v2/authorize",
-    "/authentication/v2/introspect",
-    "/authentication/v2/keys",
-    "/authentication/v2/logout",
-    "/authentication/v2/revoke",
-    "/authentication/v2/token"
-  ],
+  "includePatterns": [],
   "excludePatterns": [],
   "disabledValidationRules": []
 }
