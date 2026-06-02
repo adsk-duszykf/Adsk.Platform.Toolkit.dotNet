@@ -31,10 +31,10 @@ dotnet add package Adsk.Platform.HttpClient
 ```csharp
 using Autodesk.Common.HttpClientLibrary;
 
-// Create a basic HttpClient
+// Create a basic HttpClient (rate limiting is disabled by default)
 var httpClient = HttpClientFactory.Create();
 
-// Create with rate limiting
+// Create with rate limiting enabled
 var rateLimitedClient = HttpClientFactory.Create((maxConcurrentRequests: 10, timeWindow: TimeSpan.FromMinutes(1)));
 ```
 
@@ -101,15 +101,38 @@ public static class HttpClientFactory
 
 ## Middleware Components
 
+The HTTP pipeline includes both **Kiota built-in handlers** (provided by `KiotaClientFactory.CreateDefaultHandlers()`) and **custom handlers** added by this library.
+
+### Kiota Built-in Handlers
+
+These handlers are inherited from the [Microsoft Kiota HTTP library](https://learn.microsoft.com/en-us/openapi/kiota/middleware) and are included automatically in every `HttpClient` created by `HttpClientFactory.Create()`:
+
+| Handler | Description | Key options |
+| --- | --- | --- |
+| **UriReplacementHandler** | Replaces URI path segments at runtime (e.g., switching between API versions or environments). Disabled by default. | `isEnabled`, `replacementPairs` (key/value pairs applied to the URI path) |
+| **RetryHandler** | Retries on `429`, `503`, and `504` with exponential backoff. Respects `Retry-After` headers. | `MaxRetry` (default 3, max 10), `Delay` (default 3 s, max 180 s), `RetriesTimeLimit`, `ShouldRetry` delegate |
+| **RedirectHandler** | Follows `301`/`302` redirects. Scrubs `Authorization`/`Cookie` headers on cross-origin redirects. | `MaxRedirect` (default 5, max 20), `AllowRedirectOnSchemeChange`, `ShouldRedirect` delegate |
+| **ParametersNameDecodingHandler** | Decodes query parameter names encoded per RFC 6570 (e.g., `%24select` → `$select`). | `ParametersToDecode` (characters to decode, defaults to `.`, `-`, `~`, `$`, etc.) |
+| **UserAgentHandler** | Appends the Kiota product info to the `User-Agent` request header. | `Enabled` (default `true`), `ProductName`, `ProductVersion` |
+| **HeadersInspectionHandler** | Allows callers to inspect request and response headers via the options object. | `InspectRequestHeaders`, `InspectResponseHeaders` (both default `false`) |
+| **BodyInspectionHandler** | Allows callers to inspect request and response bodies via the options object. | `InspectRequestBody`, `InspectResponseBody` (both default `false`) |
+
+> Source: [`KiotaClientFactory.cs`](https://github.com/microsoft/kiota-dotnet/blob/c20dddff8866a432b1d2ecd3e1ed01dfa82e7436/src/http/httpClient/KiotaClientFactory.cs#L62) — all options can be passed via the `optionsForHandlers` parameter when calling `HttpClientFactory.Create()`.
+
+### Custom Handlers
+
+The following handlers are specific to this library and are appended after the Kiota defaults:
+
 ### RateLimitingHandler
 
-Implements per-endpoint rate limiting to prevent API quota exhaustion.
+Implements per-endpoint rate limiting to prevent API quota exhaustion. **Disabled by default** — must be explicitly enabled via `SetRateLimit()`.
 
 **Features:**
 
 - Configurable maximum concurrent requests
 - Configurable time windows
 - Per-endpoint limiting (based on HTTP method and path)
+- Per-endpoint overrides with glob-style pattern matching (`*` wildcard)
 - Automatic request queuing and retry
 
 **Configuration:**
@@ -117,6 +140,13 @@ Implements per-endpoint rate limiting to prevent API quota exhaustion.
 ```csharp
 var rateLimitOption = new RateLimitingHandlerOption();
 rateLimitOption.SetRateLimit(maxConcurrentRequests: 5, timeWindow: TimeSpan.FromMinutes(1));
+
+// Optionally set different limits for specific endpoints (exact match)
+rateLimitOption.EndpointOverrides["POST|/api/expensive-operation"] = (2, TimeSpan.FromMinutes(1));
+
+// Glob patterns with * wildcard are supported
+rateLimitOption.EndpointOverrides["GET|/api/projects/*/items"] = (10, TimeSpan.FromMinutes(1));
+rateLimitOption.EndpointOverrides["*|/api/slow-endpoint"] = (3, TimeSpan.FromMinutes(1));
 
 var httpClient = HttpClientFactory.Create(null, new IRequestOption[] { rateLimitOption });
 ```
@@ -128,14 +158,37 @@ Provides centralized error handling for HTTP responses.
 **Features:**
 
 - Automatic exception throwing for non-success status codes
+- Configurable success-status matching via regex (`ValidStatusPattern`)
 - Detailed error information including response context
 - Configurable enable/disable functionality
 
 **Configuration:**
 
 ```csharp
+// Default: throws on any non-2xx status code (pattern: ^2\d{2}$)
 var errorOption = new ErrorHandlerOption { Enabled = true };
 var httpClient = HttpClientFactory.Create(null, new IRequestOption[] { errorOption });
+```
+
+**Custom status pattern:**
+
+```csharp
+using System.Text.RegularExpressions;
+
+// Accept 2xx and 302 as valid responses
+var errorOption = new ErrorHandlerOption
+{
+    ValidStatusPattern = new Regex(@"^(2\d{2}|302)$")
+};
+var httpClient = HttpClientFactory.Create(null, new IRequestOption[] { errorOption });
+```
+
+**Checking a status code directly:**
+
+```csharp
+var option = new ErrorHandlerOption();
+option.IsValidStatus(200); // true
+option.IsValidStatus(404); // false
 ```
 
 ### QueryParameterHandler
@@ -169,7 +222,7 @@ var handlerTypes = HttpClientFactory.GetDefaultHandlerActivatableTypes();
 // Create custom configuration
 var customOptions = new IRequestOption[]
 {
-    new RateLimitingHandlerOption(),
+    new RateLimitingHandlerOption(), // Rate limiting disabled by default
     new ErrorHandlerOption { Enabled = true },
     new QueryParameterHandlerOption()
 };

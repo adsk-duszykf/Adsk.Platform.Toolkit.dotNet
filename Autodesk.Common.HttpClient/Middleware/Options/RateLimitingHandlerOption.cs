@@ -5,44 +5,42 @@ namespace Autodesk.Common.HttpClientLibrary.Middleware.Options;
 public class RateLimitingHandlerOption : IRequestOption
 {
     /// <summary>
+    /// Whether rate limiting is enabled. Default: false.
+    /// </summary>
+    public bool Enabled { get; private set; }
+
+    /// <summary>
     /// Maximum number of requests allowed within the specified time window.
     /// </summary>
-    private int _maxConcurrentRequests = 0;
+    public int MaxConcurrentRequests { get; private set; }
 
     /// <summary>
     /// Time window for the rate limiting.
     /// </summary>
-    private TimeSpan _timeWindow = TimeSpan.Zero;
+    public TimeSpan TimeWindow { get; private set; }
 
-    public (int maxConcurrentRequests, TimeSpan timeWindow)? GetRateLimit()
-    {
-        if (_timeWindow == TimeSpan.Zero || _maxConcurrentRequests == 0)
-            return null;
-
-        return (_maxConcurrentRequests, _timeWindow);
-    }
     /// <summary>
-    /// Sets the rate limit parameters.
+    /// Per-endpoint rate limit overrides. Keys support glob-style patterns with * as wildcard.
+    /// Format: "METHOD|/path/pattern" (e.g. "GET|/api/projects/*/items", "*|/api/slow-endpoint").
+    /// The first matching pattern is used. When no pattern matches, the default limits apply.
+    /// </summary>
+    public Dictionary<string, (int MaxConcurrentRequests, TimeSpan TimeWindow)> EndpointOverrides { get; } = new();
+
+    /// <summary>
+    /// Sets the rate limit parameters and enables rate limiting.
     /// </summary>
     /// <param name="maxConcurrentRequests">Maximum number of concurrent requests.</param>
-    /// <param name="timeWindow">Time window for the rate limiting in seconds.</param>
+    /// <param name="timeWindow">Time window for the rate limiting.</param>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public void SetRateLimit(int maxConcurrentRequests, TimeSpan timeWindow)
     {
         if (maxConcurrentRequests <= 0)
             throw new ArgumentOutOfRangeException(nameof(maxConcurrentRequests), "Max concurrent requests must be greater than zero.");
-
-        _maxConcurrentRequests = maxConcurrentRequests;
-
-        if (timeWindow == TimeSpan.Zero )
+        if (timeWindow <= TimeSpan.Zero)
             throw new ArgumentOutOfRangeException(nameof(timeWindow), "Time window must be greater than zero.");
-        _timeWindow = timeWindow;
-    }
 
-    public void Disable()
-    {
-        _maxConcurrentRequests = 0;
-        _timeWindow = TimeSpan.Zero;
+        MaxConcurrentRequests = maxConcurrentRequests;
+        TimeWindow = timeWindow;
+        Enabled = true;
     }
-
 }

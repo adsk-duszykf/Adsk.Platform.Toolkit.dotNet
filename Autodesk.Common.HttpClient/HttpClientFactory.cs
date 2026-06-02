@@ -9,19 +9,19 @@ namespace Autodesk.Common.HttpClientLibrary;
 public static class HttpClientFactory
 {
     /// <summary>
-    /// Create a resilient Http Client
+    /// Create a resilient Http Client without rate limiting.
     /// </summary>
-    /// <returns>Http client including default middleware WITHOUT rate limit</returns>
+    /// <returns>Http client including default middleware without rate limit</returns>
     public static System.Net.Http.HttpClient Create()
     {
-        return Create(null);
+        return Create(null, null);
     }
 
     /// <summary>
-    /// Create a resilient Http Client
+    /// Create a resilient Http Client with rate limit settings.
     /// </summary>
     /// <param name="rateLimit">Maximum calls per endpoint in a specific timeframe</param>
-    /// <returns>Http client including default middleware WITH rate limit</returns>
+    /// <returns>Http client including default middleware with rate limit</returns>
     public static System.Net.Http.HttpClient Create((int maxConcurrentRequests, TimeSpan timeWindow)? rateLimit)
     {
         var rateLimitHandlerOption = new RateLimitingHandlerOption();

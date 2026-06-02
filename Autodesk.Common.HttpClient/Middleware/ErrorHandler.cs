@@ -24,12 +24,27 @@ public class ErrorHandler : DelegatingHandler
         // Check if the request has a specific ErrorHandlerOptions set, otherwise use the default options
         var errorOptions = request.GetRequestOption<ErrorHandlerOption>() ?? _errorHandlerOptions;
 
-        if (errorOptions.Enabled && !response.IsSuccessStatusCode)
+        if (errorOptions.Enabled && !errorOptions.IsValidStatus((int)response.StatusCode))
         {
             // Buffer the response content so it remains readable after the exception propagates
             var responseContentStream = await CopyToStreamAsync(response.Content, cancellationToken).ConfigureAwait(false);
 
             var responseBody = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            responseBody = responseBody.TrimStart();
+
+            if (responseBody.StartsWith('{') || responseBody.StartsWith('['))
+            {
+                try
+                {
+                    using var jsonDoc = System.Text.Json.JsonDocument.Parse(responseBody);
+                    responseBody = System.Text.Json.JsonSerializer.Serialize(jsonDoc.RootElement);
+                }
+                catch
+                {
+                    // If the response body is not a valid JSON, keep the original response body in the exception message
+                }
+            }
 
             throw new HttpRequestException(
                 $"Request to '{request.RequestUri}' failed with status code '{response.StatusCode}'. Response body: '{responseBody}'",
@@ -84,9 +99,9 @@ public class ErrorHandler : DelegatingHandler
 public record ErrorContext
 {
     public Uri? RequestUri { get; init; }
-    public HttpMethod?  RequestMethod { get; init; }
+    public HttpMethod? RequestMethod { get; init; }
     public HttpRequestHeaders? RequestHeaders { get; init; }
-    public  Stream? RequestContent { get; init; }
+    public Stream? RequestContent { get; init; }
     public HttpResponseHeaders? ResponseHeaders { get; init; }
-    public  Stream? ResponseContent { get; init; }
+    public Stream? ResponseContent { get; init; }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Text.RegularExpressions;
 using Autodesk.Common.HttpClientLibrary.Middleware.Options;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
 
@@ -7,34 +8,49 @@ namespace Autodesk.Common.HttpClientLibrary.Middleware;
 public class RateLimitingHandler : DelegatingHandler
 {
     private readonly RateLimitingHandlerOption _options;
+    private readonly ConcurrentDictionary<string, RateLimiter> _rateLimiters = new();
+
     public RateLimitingHandler(RateLimitingHandlerOption? rateLimitingHandlerOption = null)
     {
         _options = rateLimitingHandlerOption ?? new RateLimitingHandlerOption();
     }
 
-    private readonly ConcurrentDictionary<string, RateLimiter> _rateLimiters = new();
-
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         var rateOptions = request.GetRequestOption<RateLimitingHandlerOption>() ?? _options;
 
-        var rateLimit = rateOptions.GetRateLimit();
+        if (!rateOptions.Enabled)
+            return await base.SendAsync(request, cancellationToken);
 
-        if (rateLimit != null)
-        {
-            var endpoint = GetEndpoint(request);
-            var rateLimiter = _rateLimiters.GetOrAdd(endpoint, (_) => new RateLimiter(rateLimit.Value.maxConcurrentRequests, rateLimit.Value.timeWindow));
+        var endpoint = GetEndpoint(request);
+        var (maxConcurrentRequests, timeWindow) = ResolveRateLimit(rateOptions, endpoint);
 
-            await rateLimiter.WaitForAvailabilityAsync();
-
-        }
+        var rateLimiter = _rateLimiters.GetOrAdd(endpoint, _ => new RateLimiter(maxConcurrentRequests, timeWindow));
+        await rateLimiter.WaitForAvailabilityAsync();
 
         return await base.SendAsync(request, cancellationToken);
     }
 
+    private static (int MaxConcurrentRequests, TimeSpan TimeWindow) ResolveRateLimit(RateLimitingHandlerOption options, string endpoint)
+    {
+        foreach (var (pattern, limit) in options.EndpointOverrides)
+        {
+            if (IsGlobMatch(pattern, endpoint))
+                return (limit.MaxConcurrentRequests, limit.TimeWindow);
+        }
+
+        return (options.MaxConcurrentRequests, options.TimeWindow);
+    }
+
+    private static bool IsGlobMatch(string pattern, string value)
+    {
+        // Convert glob pattern (with * wildcard) to regex
+        var regexPattern = "^" + Regex.Escape(pattern).Replace("\\*", ".*") + "$";
+        return Regex.IsMatch(value, regexPattern, RegexOptions.IgnoreCase);
+    }
+
     private static string GetEndpoint(HttpRequestMessage request)
     {
-        // Customize this method to identify endpoints uniquely based on your API structure
         return $"{request.Method}|{request.RequestUri?.GetLeftPart(UriPartial.Path) ?? ""}";
     }
 }
