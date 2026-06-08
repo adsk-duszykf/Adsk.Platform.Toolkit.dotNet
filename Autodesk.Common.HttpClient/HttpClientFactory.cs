@@ -42,13 +42,13 @@ public static class HttpClientFactory
     public static HttpClient Create(HttpMessageHandler? finalHandler = null, IRequestOption[]? optionsForHandlers = null)
     {
         var rateLimitHandlerOption = (RateLimitingHandlerOption?)optionsForHandlers?.FirstOrDefault(o => o.GetType() == typeof(RateLimitingHandlerOption)) ?? new RateLimitingHandlerOption();
-        var errorHandlerOption = (ErrorHandlerOption?)optionsForHandlers?.FirstOrDefault(o => o.GetType() == typeof(ErrorHandlerOption)) ?? new ErrorHandlerOption();
+        var errorHandlerOption = (CustomErrorHandlerOption?)optionsForHandlers?.FirstOrDefault(o => o.GetType() == typeof(CustomErrorHandlerOption)) ?? new CustomErrorHandlerOption();
         var queryParameterHandlerOption = (QueryParameterHandlerOption?)optionsForHandlers?.FirstOrDefault(o => o.GetType() == typeof(QueryParameterHandlerOption)) ?? new QueryParameterHandlerOption();
 
         var handlers = CreateDefaultHandlers(optionsForHandlers);
         handlers.Add(new RateLimitingHandler(rateLimitHandlerOption));
         handlers.Add(new QueryParameterHandler(queryParameterHandlerOption));
-        handlers.Add(new ErrorHandler(errorHandlerOption));
+        handlers.Add(new CustomErrorHandler(errorHandlerOption));
 
         var defaultFinalHandler = finalHandler ?? GetDefaultHttpMessageHandler();
         var httpMessageHandler =
@@ -82,6 +82,6 @@ public static class HttpClientFactory
     {
         var nativeDefaultHandlers = KiotaClientFactory.GetDefaultHandlerActivatableTypes();
 
-        return [.. nativeDefaultHandlers, new(typeof(RateLimitingHandler)), new(typeof(ErrorHandler))];
+        return [.. nativeDefaultHandlers, new(typeof(RateLimitingHandler)), new(typeof(CustomErrorHandler))];
     }
 }

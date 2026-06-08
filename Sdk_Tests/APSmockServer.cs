@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using Sdk_Tests;
 using WireMock.Handlers;
 using WireMock.RequestBuilders;
@@ -25,7 +25,7 @@ namespace Tests
         public static System.Net.Http.HttpClient CreateProxyHttpClient(AdskService service)
         {
 
-            var handler = new Autodesk.Common.HttpClientLibrary.Middleware.ErrorHandler()
+            var handler = new Autodesk.Common.HttpClientLibrary.Middleware.CustomErrorHandler()
             {
                 InnerHandler = new HttpClientHandler
                 {
@@ -89,7 +89,7 @@ namespace Tests
             foreach (var service in adskServices)
             {
                 MockServer
-                    .Given(Request.Create().WithPath($"*/{service}/*"))
+                    .Given(Request.Create().WithPath($"/{service}/*"))
                     .RespondWith(Response.Create()
                         .WithProxy(new ProxyAndRecordSettings
                         {
@@ -108,20 +108,27 @@ namespace Tests
             }
 
             // Specific mock for rate limiting testing
-            MockServer.Given(Request.Create().WithPath("*/ratelimit/*"))
+            MockServer.Given(Request.Create().WithPath("/ratelimit/*"))
                 .RespondWith(Response.Create()
                                 .WithStatusCode(System.Net.HttpStatusCode.OK)
                                 .WithDelay(2)
                                 .WithHeader("Retry-After", "120"));
 
             // Specific mock for error testing
-            MockServer.Given(Request.Create().WithPath("*/error/*"))
+            MockServer.Given(Request.Create().WithPath("/error/*"))
                 .RespondWith(Response.Create()
                                 .WithStatusCode(System.Net.HttpStatusCode.InternalServerError)
                                 .WithBodyAsJson(new { message = "Expected error" })
                                 );
+            // Specific mock for custom status code testing (returns 302 without redirect)
+            MockServer.Given(Request.Create().WithPath("/status/302"))
+                .RespondWith(Response.Create()
+                                .WithStatusCode(System.Net.HttpStatusCode.Found)
+                                .WithBodyAsJson(new { message = "Found" })
+                                );
+
             // Specific mock for query parameter testing
-            MockServer.Given(Request.Create().WithPath("*/queryParam/*").WithParam(p =>
+            MockServer.Given(Request.Create().WithPath("/queryParam/*").WithParam(p =>
             {
                 var testParam = p.Keys.FirstOrDefault(k => k == "testparam");
                 return testParam != null && p.Count == 1;

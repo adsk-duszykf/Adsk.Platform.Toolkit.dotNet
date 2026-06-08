@@ -151,44 +151,67 @@ rateLimitOption.EndpointOverrides["*|/api/slow-endpoint"] = (3, TimeSpan.FromMin
 var httpClient = HttpClientFactory.Create(null, new IRequestOption[] { rateLimitOption });
 ```
 
-### ErrorHandler
+### CustomErrorHandler
 
-Provides centralized error handling for HTTP responses.
+Provides centralized error handling for HTTP responses. The middleware itself never decides what is an error — the delegate does.
 
 **Features:**
 
-- Automatic exception throwing for non-success status codes
-- Configurable success-status matching via regex (`ValidStatusPattern`)
-- Detailed error information including response context
-- Configurable enable/disable functionality
+- Delegate-driven: a `Func<HttpContext, HandlerOutcome>` receives the full request/response context and decides what to do (throw, return, log, etc.)
+- Default behaviour: throws `ApiException` for non-2xx responses, with the `HttpContext` attached in `exception.Data["context"]`
+- Non-throwing error signalling via `HandlerOutcome(IsError: true)` — response is returned to the caller, span is marked as error
+- Configurable success-status regex via `DefaultCustomErrorHandler`
+- Enable/disable per request via `Enabled`
 
-**Configuration:**
+**Default (throws `ApiException` on non-2xx):**
 
 ```csharp
-// Default: throws on any non-2xx status code (pattern: ^2\d{2}$)
-var errorOption = new ErrorHandlerOption { Enabled = true };
-var httpClient = HttpClientFactory.Create(null, new IRequestOption[] { errorOption });
+// No configuration needed — this is the default behaviour
+var httpClient = HttpClientFactory.Create();
+
+try
+{
+    var response = await httpClient.GetAsync("https://developer.api.autodesk.com/...");
+}
+catch (ApiException ex)
+{
+    var context = (HttpContext)ex.Data["context"];
+    Console.WriteLine(context.ResponseContentAsString);
+}
 ```
 
-**Custom status pattern:**
+**Custom success-status pattern (reuse default logic):**
 
 ```csharp
 using System.Text.RegularExpressions;
 
-// Accept 2xx and 302 as valid responses
-var errorOption = new ErrorHandlerOption
+// Accept 2xx and 404 as valid — do not throw on 404
+var pattern = new Regex(@"^(2\d{2}|404)$");
+var errorOption = new CustomErrorHandlerOption
 {
-    ValidStatusPattern = new Regex(@"^(2\d{2}|302)$")
+    CustomErrorHandler = ctx =>
+        CustomErrorHandlerOption.DefaultCustomErrorHandler(ctx, pattern)
 };
-var httpClient = HttpClientFactory.Create(null, new IRequestOption[] { errorOption });
+var httpClient = HttpClientFactory.Create(null, [errorOption]);
 ```
 
-**Checking a status code directly:**
+**Fully custom delegate — non-throwing error signalling:**
 
 ```csharp
-var option = new ErrorHandlerOption();
-option.IsValidStatus(200); // true
-option.IsValidStatus(404); // false
+var errorOption = new CustomErrorHandlerOption
+{
+    CustomErrorHandler = ctx =>
+    {
+        if ((int)ctx.StatusCode is >= 200 and < 300)
+            return HandlerOutcome.Ok;
+
+        if ((int)ctx.StatusCode == 429)
+            // Return response to caller, mark the span as error — do not throw
+            return new HandlerOutcome(IsError: true, Description: "Rate limited");
+
+        throw new ApiException($"HTTP {(int)ctx.StatusCode}");
+    }
+};
 ```
 
 ### QueryParameterHandler
@@ -222,8 +245,8 @@ var handlerTypes = HttpClientFactory.GetDefaultHandlerActivatableTypes();
 // Create custom configuration
 var customOptions = new IRequestOption[]
 {
-    new RateLimitingHandlerOption(), // Rate limiting disabled by default
-    new ErrorHandlerOption { Enabled = true },
+    new RateLimitingHandlerOption(),   // Rate limiting disabled by default — call SetRateLimit() to enable
+    new CustomErrorHandlerOption(),    // Throws ApiException on non-2xx by default
     new QueryParameterHandlerOption()
 };
 

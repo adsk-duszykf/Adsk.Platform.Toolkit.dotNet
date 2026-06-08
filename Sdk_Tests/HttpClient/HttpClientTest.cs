@@ -1,6 +1,9 @@
-﻿using Autodesk.Authentication;
+using Autodesk.Authentication;
 using Autodesk.Authentication.Helpers.Models;
+using Autodesk.Common.HttpClientLibrary.Middleware;
 using Autodesk.Common.HttpClientLibrary.Middleware.Options;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sdk_Tests;
 
 namespace Tests.HttpClient;
@@ -36,7 +39,7 @@ public class HttpClientTest
         {
             await AuthClient.Helper.GetTwoLeggedToken(config.APS_CLIENT_ID, string.Empty, [AuthenticationScopeDefaults.DataWrite, AuthenticationScopeDefaults.DataRead]);
         }
-        catch (HttpRequestException ex)
+        catch (ApiException ex)
         {
             Assert.IsNotNull(ex.Message);
             return;
@@ -102,24 +105,19 @@ public class HttpClientTest
     }
 
     [TestMethod]
-    [ExpectedException(typeof(HttpRequestException))]
-    //Test the rate limit handler
+    //Test the error handler
     public async Task ShouldThrowException()
     {
         var httpClient = Autodesk.Common.HttpClientLibrary.HttpClientFactory.Create();
 
-        try
+        var ex = await Assert.ThrowsExceptionAsync<ApiException>(async () =>
         {
             await httpClient.GetAsync("http://localhost:4200/error/test?testparam=1");
-        }
-        catch (HttpRequestException ex)
-        {
-            // Validate that the exception message or data contains "context"
-            Assert.IsNotNull(ex.Message);
-            Assert.IsTrue(ex.Data.Contains("context"), "Exception data should contain 'context' entry");
+        });
 
-            throw;
-        }
+        // Validate that the exception message or data contains "context"
+        Assert.IsNotNull(ex.Message);
+        Assert.IsTrue(ex.Data.Contains("context"), "Exception data should contain 'context' entry");
     }
 
     [TestMethod]
@@ -136,6 +134,58 @@ public class HttpClientTest
         var resp = await httpClient.GetAsync("http://localhost:4200/queryParam/");
 
         Assert.IsTrue(resp.IsSuccessStatusCode, "Response should be successful");
+    }
+
+    [TestMethod]
+    public async Task ShouldThrowOnNon2xxWithDefaultPattern()
+    {
+        var noRedirect = new HttpClientHandler { AllowAutoRedirect = false };
+        var httpClient = Autodesk.Common.HttpClientLibrary.HttpClientFactory.Create(noRedirect);
+
+        var ex = await Assert.ThrowsExceptionAsync<ApiException>(async () =>
+        {
+            await httpClient.GetAsync("http://localhost:4200/status/302");
+        });
+
+        Assert.IsNotNull(ex.Message);
+    }
+
+    [TestMethod]
+    public async Task ShouldNotThrowWhenCustomPatternAllows400()
+    {
+        // 400 is non-2xx but the custom pattern explicitly permits it — no exception should be thrown.
+        var pattern = new System.Text.RegularExpressions.Regex(@"^(2\d{2}|400)$");
+        var errorOption = new CustomErrorHandlerOption
+        {
+            CustomErrorHandler = ctx => CustomErrorHandlerOption.DefaultCustomErrorHandler(ctx, pattern)
+        };
+        var httpClient = Autodesk.Common.HttpClientLibrary.HttpClientFactory.Create(null, [errorOption]);
+
+        var resp = await httpClient.GetAsync("http://localhost:4200/error/test?testparam=1");
+
+        Assert.AreEqual(400, (int)resp.StatusCode);
+    }
+
+    [TestMethod]
+    public async Task ShouldReturnIsErrorOutcomeWithoutThrowing()
+    {
+        // Delegate returns a non-throwing HandlerOutcome with IsError=true instead of throwing.
+        var errorOption = new CustomErrorHandlerOption
+        {
+            CustomErrorHandler = ctx =>
+            {
+                if ((int)ctx.StatusCode is >= 200 and < 300)
+                    return HandlerOutcome.Ok;
+
+                return new HandlerOutcome(IsError: true, Description: $"HTTP {(int)ctx.StatusCode}");
+            }
+        };
+        var httpClient = Autodesk.Common.HttpClientLibrary.HttpClientFactory.Create(null, [errorOption]);
+
+        // The response is returned rather than thrown — caller inspects the status code.
+        var resp = await httpClient.GetAsync("http://localhost:4200/error/test?testparam=1");
+
+        Assert.IsFalse(resp.IsSuccessStatusCode);
     }
 
     private AuthenticationClient InitializeAuthClient()

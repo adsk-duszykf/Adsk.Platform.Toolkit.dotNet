@@ -1,6 +1,8 @@
 ﻿using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Autodesk.Common.HttpClientLibrary.Middleware.Options;
+using Microsoft.Kiota.Http.HttpClientLibrary;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
 
 namespace Autodesk.Common.HttpClientLibrary.Middleware;
@@ -19,16 +21,39 @@ public class RateLimitingHandler : DelegatingHandler
     {
         var rateOptions = request.GetRequestOption<RateLimitingHandlerOption>() ?? _options;
 
-        if (!rateOptions.Enabled)
+        Activity? activity = null;
+        if (request.GetRequestOption<ObservabilityOptions>() is { } obsOptions)
+        {
+            var activitySource = ActivitySourceRegistry.DefaultInstance.GetOrCreateActivitySource(obsOptions.TracerInstrumentationName);
+            activity = activitySource.StartActivity($"{nameof(RateLimitingHandler)}_{nameof(SendAsync)}");
+            activity?.SetTag("com.autodesk.handler.ratelimiting.enable", rateOptions.Enabled);
+        }
+
+        try
+        {
+            if (!rateOptions.Enabled)
+                return await base.SendAsync(request, cancellationToken);
+
+            var endpoint = GetEndpoint(request);
+            var (maxConcurrentRequests, timeWindow) = ResolveRateLimit(rateOptions, endpoint);
+
+            activity?.SetTag("com.autodesk.handler.ratelimiting.endpoint", endpoint);
+            activity?.SetTag("com.autodesk.handler.ratelimiting.max_concurrent_requests", maxConcurrentRequests);
+            activity?.SetTag("com.autodesk.handler.ratelimiting.time_window_ms", timeWindow.TotalMilliseconds);
+
+            var rateLimiter = _rateLimiters.GetOrAdd(endpoint, _ => new RateLimiter(maxConcurrentRequests, timeWindow));
+
+            var waitStart = Stopwatch.GetTimestamp();
+            await rateLimiter.WaitForAvailabilityAsync();
+            var waitMs = (Stopwatch.GetTimestamp() - waitStart) * 1000.0 / Stopwatch.Frequency;
+            activity?.SetTag("com.autodesk.handler.ratelimiting.wait_ms", waitMs);
+
             return await base.SendAsync(request, cancellationToken);
-
-        var endpoint = GetEndpoint(request);
-        var (maxConcurrentRequests, timeWindow) = ResolveRateLimit(rateOptions, endpoint);
-
-        var rateLimiter = _rateLimiters.GetOrAdd(endpoint, _ => new RateLimiter(maxConcurrentRequests, timeWindow));
-        await rateLimiter.WaitForAvailabilityAsync();
-
-        return await base.SendAsync(request, cancellationToken);
+        }
+        finally
+        {
+            activity?.Dispose();
+        }
     }
 
     private static (int MaxConcurrentRequests, TimeSpan TimeWindow) ResolveRateLimit(RateLimitingHandlerOption options, string endpoint)
