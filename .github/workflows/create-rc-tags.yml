@@ -1,6 +1,13 @@
 ﻿name: Create Release Candidate Tags
 
 on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "Optional git ref to create RC tags from (branch, tag, or SHA)"
+        required: false
+        default: ""
+        type: string
   push:
     branches:
       - "**"
@@ -13,18 +20,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.0
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.source_ref != '' && inputs.source_ref || github.ref }}
 
       - name: Create project rc tags
         run: |
-          set +e
+          set -uo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           SHORT_SHA=$(git rev-parse --short=8 HEAD)
           BEFORE_SHA="${{ github.event.before }}"
 
-          if [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            DIFF_BASE=$(git rev-parse HEAD^ 2>/dev/null || git rev-list --max-parents=0 HEAD)
+            echo "Manual run - using previous commit as diff base when available: $DIFF_BASE"
+          elif [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
             DIFF_BASE=$(git rev-list --max-parents=0 HEAD)
             echo "Using initial commit as diff base: $DIFF_BASE"
           else
@@ -79,9 +93,12 @@ jobs:
               continue
             fi
 
-            git tag -a "$TAG" -m "RC tag for $SLUG v$CSPROJ_VERSION"
-            git push origin "$TAG"
-            CREATED+=("$TAG")
+            if git tag -a "$TAG" -m "RC tag for $SLUG v$CSPROJ_VERSION" && git push origin "$TAG"; then
+              CREATED+=("$TAG")
+            else
+              SKIPPED+=("$SLUG (failed to create or push $TAG)")
+              git tag -d "$TAG" >/dev/null 2>&1 || true
+            fi
           done
 
           echo "Created tags: ${#CREATED[@]}"
