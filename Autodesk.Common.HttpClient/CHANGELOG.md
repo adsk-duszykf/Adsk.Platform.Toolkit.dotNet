@@ -5,7 +5,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
-## [Unreleased]
+## [1.0.0]
 
 ### Breaking Changes
 
@@ -23,6 +23,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Defaults to `DefaultCustomErrorHandler`, which throws `ApiException` for non-2xx responses (same behaviour as before).
   - Override to log, suppress, or conditionally throw based on full request/response context.
 - **`CustomErrorHandlerOption.DefaultCustomErrorHandler(ctx, Regex pattern)`** — reuse the built-in logic with a custom success-status pattern:
+
   ```csharp
   var option = new CustomErrorHandlerOption
   {
@@ -30,6 +31,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
           CustomErrorHandlerOption.DefaultCustomErrorHandler(ctx, new Regex(@"^(2\d{2}|404)$"))
   };
   ```
+
 - **`HandlerOutcome`** — return type for the delegate:
   - `HandlerOutcome.Ok` — response is success, no action needed.
   - `new HandlerOutcome(IsError: true, Description: "…")` — mark the span as an error without throwing, response is still returned to the caller.
