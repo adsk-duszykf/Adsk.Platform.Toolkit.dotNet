@@ -27,13 +27,24 @@ on:
         required: false
         type: boolean
         default: false
+      use_oidc:
+        description: "Use OIDC token instead of API key for authentication"
+        required: false
+        type: boolean
+        default: false
     secrets:
       nuget_api_key:
-        required: true
+        required: false
+      nuget_user:
+        description: "NuGet.org profile name (required for OIDC)"
+        required: false
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - name: Checkout (default ref)
@@ -133,8 +144,25 @@ jobs:
             /p:Version="${{ steps.versions.outputs.version }}" \
             --output ./nupkg
 
-      - name: Publish to NuGet
-        if: steps.versions.outputs.match == 'true'
+      - name: NuGet login (OIDC → temp API key)
+        if: steps.versions.outputs.match == 'true' && inputs.use_oidc == true
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.nuget_user }}
+
+      - name: Publish to NuGet (OIDC)
+        if: steps.versions.outputs.match == 'true' && inputs.use_oidc == true
+        run: |
+          dotnet nuget push \
+            "./nupkg/${{ inputs.package_id }}.${{ steps.versions.outputs.version }}.nupkg" \
+            --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" \
+            --source "https://api.nuget.org/v3/index.json" \
+            --skip-duplicate
+          echo "Published ${{ inputs.package_id }} v${{ steps.versions.outputs.version }}"
+
+      - name: Publish to NuGet (API Key)
+        if: steps.versions.outputs.match == 'true' && inputs.use_oidc != true
         run: |
           dotnet nuget push \
             "./nupkg/${{ inputs.package_id }}.${{ steps.versions.outputs.version }}.nupkg" \

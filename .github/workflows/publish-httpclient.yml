@@ -16,6 +16,9 @@ on:
 
 jobs:
   publish:
+    permissions:
+      contents: read
+      id-token: write
     uses: ./.github/workflows/_publish-nuget-package.yml
     with:
       folder: Autodesk.Common.HttpClient
@@ -23,5 +26,7 @@ jobs:
       package_id: Adsk.Platform.HttpClient
       source_ref: ${{ inputs.source_ref }}
       force_publish: ${{ inputs.force_publish == true }}
+      use_oidc: true
     secrets:
       nuget_api_key: ${{ secrets.NUGET_API_KEY }}
+      nuget_user: ${{ secrets.NUGET_USER }}
