@@ -1,0 +1,27 @@
+﻿name: Publish Autodesk.Common.HttpClient
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: 'Optional git ref to publish from (for example rc/authentication/v1.0.0)'
+        required: false
+        default: ''
+        type: string
+      force_publish:
+        description: 'Skip changelog-change check'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  publish:
+    uses: ./.github/workflows/_publish-nuget-package.yml
+    with:
+      folder: Autodesk.Common.HttpClient
+      csproj: Autodesk.Common.HttpClient/Autodesk.Common.HttpClientLibrary.csproj
+      package_id: Adsk.Platform.HttpClient
+      source_ref: ${{ inputs.source_ref }}
+      force_publish: ${{ inputs.force_publish == true }}
+    secrets:
+      nuget_api_key: ${{ secrets.NUGET_API_KEY }}

@@ -1,0 +1,90 @@
+﻿name: Create Release Candidate Tags
+
+on:
+  push:
+    branches:
+      - "**"
+
+permissions:
+  contents: write
+
+jobs:
+  create_rc_tags:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create project rc tags
+        run: |
+          set +e
+
+          SHORT_SHA=$(git rev-parse --short=8 HEAD)
+          BEFORE_SHA="${{ github.event.before }}"
+
+          if [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            DIFF_BASE=$(git rev-list --max-parents=0 HEAD)
+            echo "Using initial commit as diff base: $DIFF_BASE"
+          else
+            DIFF_BASE="$BEFORE_SHA"
+            echo "Using push before SHA as diff base: $DIFF_BASE"
+          fi
+
+          PROJECTS=(
+            "authentication|Autodesk.Authentication|Autodesk.Authentication/Autodesk.Authentication.csproj"
+            "httpclient|Autodesk.Common.HttpClient|Autodesk.Common.HttpClient/Autodesk.Common.HttpClientLibrary.csproj"
+            "datamanagement|Autodesk.DataManagement|Autodesk.DataManagement/Autodesk.DataManagement.csproj"
+            "modelderivative|Autodesk.ModelDerivative|Autodesk.ModelDerivative/Autodesk.ModelDerivative.csproj"
+            "bim360|Autodesk.BIM360|Autodesk.BIM360/Autodesk.BIM360.csproj"
+            "automation|Autodesk.Automation|Autodesk.Automation/Autodesk.Automation.csproj"
+            "forma|Autodesk.Forma|Autodesk.Forma/Autodesk.Forma.csproj"
+            "vault|Autodesk.Vault|Autodesk.Vault/Autodesk.Vault.csproj"
+            "tandem|Autodesk.Tandem|Autodesk.Tandem/Autodesk.Tandem.csproj"
+            "buildingconnected|Autodesk.BuildingConnected|Autodesk.BuildingConnected/Autodesk.BuildingConnected.csproj"
+            "parameters|Autodesk.Parameters|Autodesk.Parameters/Autodesk.Parameters.csproj"
+            "informeddesign|Autodesk.InformedDesign|Autodesk.InformedDesign/Autodesk.InformedDesign.csproj"
+
+          )
+
+          CREATED=()
+          SKIPPED=()
+
+          for PROJECT in "${PROJECTS[@]}"; do
+            IFS='|' read -r SLUG FOLDER CSPROJ <<< "$PROJECT"
+
+            if [ ! -f "$FOLDER/CHANGELOG.md" ]; then
+              SKIPPED+=("$SLUG (no CHANGELOG.md)")
+              continue
+            fi
+
+            CHANGED=$(git diff --name-only "$DIFF_BASE" HEAD -- "$FOLDER/CHANGELOG.md")
+            if [ -z "$CHANGED" ]; then
+              SKIPPED+=("$SLUG (changelog unchanged)")
+              continue
+            fi
+
+            CHANGELOG_VERSION=$(grep -m1 '## \[' "$FOLDER/CHANGELOG.md" | sed 's/.*\[\([^]]*\)\].*/\1/')
+            CSPROJ_VERSION=$(grep -m1 '<Version>' "$CSPROJ" | sed 's/.*<Version>[[:space:]]*\(.*\)[[:space:]]*<\/Version>.*/\1/' | xargs)
+
+            if [ -z "$CHANGELOG_VERSION" ] || [ -z "$CSPROJ_VERSION" ] || [ "$CHANGELOG_VERSION" != "$CSPROJ_VERSION" ]; then
+              SKIPPED+=("$SLUG (version mismatch or parse error)")
+              continue
+            fi
+
+            TAG="rc/$SLUG/v$CSPROJ_VERSION-$SHORT_SHA"
+            if git rev-parse "$TAG" >/dev/null 2>&1; then
+              SKIPPED+=("$SLUG ($TAG exists)")
+              continue
+            fi
+
+            git tag -a "$TAG" -m "RC tag for $SLUG v$CSPROJ_VERSION"
+            git push origin "$TAG"
+            CREATED+=("$TAG")
+          done
+
+          echo "Created tags: ${#CREATED[@]}"
+          for t in "${CREATED[@]}"; do echo "+ $t"; done
+          echo "Skipped: ${#SKIPPED[@]}"
+          for s in "${SKIPPED[@]}"; do echo "- $s"; done

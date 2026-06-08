@@ -1,0 +1,144 @@
+﻿# Reusable workflow - shared publish logic for all NuGet packages.
+# Called by per-project workflows; not triggered directly.
+name: _Publish NuGet Package (shared)
+
+on:
+  workflow_call:
+    inputs:
+      folder:
+        description: "Project folder name (relative to repo root, e.g. Autodesk.Authentication)"
+        required: true
+        type: string
+      csproj:
+        description: "Path to the .csproj file relative to repo root"
+        required: true
+        type: string
+      package_id:
+        description: "NuGet package ID (e.g. Adsk.Platform.Authentication)"
+        required: true
+        type: string
+      source_ref:
+        description: "Optional git ref to publish from (tag, branch, or SHA)"
+        required: false
+        type: string
+        default: ""
+      force_publish:
+        description: "Skip the changelog-change check and publish if versions match"
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      nuget_api_key:
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (default ref)
+        if: inputs.source_ref == ''
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout (custom ref)
+        if: inputs.source_ref != ''
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.source_ref }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Check CHANGELOG.md exists
+        id: changelog_exists
+        run: |
+          if [ ! -f "${{ inputs.folder }}/CHANGELOG.md" ]; then
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "SKIP - no CHANGELOG.md found in ${{ inputs.folder }}/"
+          else
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Found ${{ inputs.folder }}/CHANGELOG.md"
+          fi
+
+      - name: Check CHANGELOG.md was modified
+        id: changelog_changed
+        if: steps.changelog_exists.outputs.exists == 'true' && inputs.force_publish == false
+        run: |
+          PREV_TAG=$(git describe --abbrev=0 --tags HEAD^ 2>/dev/null || echo "")
+          if [ -z "$PREV_TAG" ]; then
+            DIFF_BASE=$(git rev-list --max-parents=0 HEAD)
+            echo "No previous tag - comparing against initial commit ($DIFF_BASE)"
+          else
+            DIFF_BASE="$PREV_TAG"
+            echo "Comparing against previous tag: $PREV_TAG"
+          fi
+
+          CHANGED=$(git diff --name-only "$DIFF_BASE" HEAD -- "${{ inputs.folder }}/CHANGELOG.md")
+          if [ -z "$CHANGED" ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "SKIP - CHANGELOG.md not modified since $DIFF_BASE"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "CHANGELOG.md was modified"
+          fi
+
+      - name: Compare versions
+        id: versions
+        if: |
+          steps.changelog_exists.outputs.exists == 'true' &&
+          (inputs.force_publish == true || steps.changelog_changed.outputs.changed == 'true')
+        run: |
+          CHANGELOG_VERSION=$(grep -m1 '## \[' "${{ inputs.folder }}/CHANGELOG.md" \
+            | sed 's/.*\[\([^]]*\)\].*/\1/')
+          CSPROJ_VERSION=$(grep -m1 '<Version>' "${{ inputs.csproj }}" \
+            | sed 's/.*<Version>[[:space:]]*\(.*\)[[:space:]]*<\/Version>.*/\1/' | xargs)
+
+          echo "Changelog version : ${CHANGELOG_VERSION:-(not found)}"
+          echo ".csproj version   : ${CSPROJ_VERSION:-(not found)}"
+          echo "changelog_version=$CHANGELOG_VERSION" >> $GITHUB_OUTPUT
+          echo "csproj_version=$CSPROJ_VERSION" >> $GITHUB_OUTPUT
+
+          if [ -z "$CHANGELOG_VERSION" ] || [ -z "$CSPROJ_VERSION" ]; then
+            echo "match=false" >> $GITHUB_OUTPUT
+            echo "SKIP - could not parse one or both versions"
+          elif [ "$CHANGELOG_VERSION" != "$CSPROJ_VERSION" ]; then
+            echo "match=false" >> $GITHUB_OUTPUT
+            echo "SKIP - version mismatch (changelog=$CHANGELOG_VERSION, csproj=$CSPROJ_VERSION)"
+          else
+            echo "match=true" >> $GITHUB_OUTPUT
+            echo "version=$CSPROJ_VERSION" >> $GITHUB_OUTPUT
+            echo "All gates passed - will publish ${{ inputs.package_id }} v$CSPROJ_VERSION"
+          fi
+
+      - name: Restore and Build
+        if: steps.versions.outputs.match == 'true'
+        run: |
+          dotnet restore "${{ inputs.csproj }}"
+          dotnet build "${{ inputs.csproj }}" \
+            --configuration Release \
+            --no-restore \
+            /p:Version="${{ steps.versions.outputs.version }}"
+
+      - name: Pack
+        if: steps.versions.outputs.match == 'true'
+        run: |
+          dotnet pack "${{ inputs.csproj }}" \
+            --configuration Release \
+            --no-build \
+            /p:Version="${{ steps.versions.outputs.version }}" \
+            --output ./nupkg
+
+      - name: Publish to NuGet
+        if: steps.versions.outputs.match == 'true'
+        run: |
+          dotnet nuget push \
+            "./nupkg/${{ inputs.package_id }}.${{ steps.versions.outputs.version }}.nupkg" \
+            --api-key "${{ secrets.nuget_api_key }}" \
+            --source "https://api.nuget.org/v3/index.json" \
+            --skip-duplicate
+          echo "Published ${{ inputs.package_id }} v${{ steps.versions.outputs.version }}"
