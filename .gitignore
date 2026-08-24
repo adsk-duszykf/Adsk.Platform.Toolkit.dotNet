@@ -9,6 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.lscache
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -180,6 +181,8 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
+!**/GeneratedCode/**/Publish/
+!**/GeneratedCode/**/Publish/**
 
 # Publish Web Output
 *.[Pp]ublish.xml
