@@ -38,11 +38,34 @@ namespace Autodesk.Datum.CLS360
             FileManager = new FileManager(Api);
         }
 
+        /// <summary>
+        /// Gets the underlying Kiota-generated API client.
+        /// </summary>
         public BaseDatumCLS360Client Api { get; protected set; }
+
+        /// <summary>
+        /// Gets the domain manager for domain-related operations.
+        /// </summary>
         public DomainManager DomainManager { get; protected set; }
+
+        /// <summary>
+        /// Gets the class manager for class-related operations.
+        /// </summary>
         public ClassManager ClassManager { get; protected set; }
+
+        /// <summary>
+        /// Gets the template manager for template-related operations.
+        /// </summary>
         public TemplateManager TemplateManager { get; protected set; }
+
+        /// <summary>
+        /// Gets the attribute manager for attribute-related operations.
+        /// </summary>
         public AttributeManager AttributeManager { get; protected set; }
+
+        /// <summary>
+        /// Gets the file manager for file download operations.
+        /// </summary>
         public FileManager FileManager { get; protected set; }
     }
 }
