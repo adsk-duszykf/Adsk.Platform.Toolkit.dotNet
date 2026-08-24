@@ -30,6 +30,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.source_ref != '' && inputs.source_ref || github.ref }}
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4.2.0
+        with:
+          dotnet-version: "10.0.x"
+
       - name: Create project rc tags
         run: |
           set -uo pipefail
@@ -52,34 +57,26 @@ jobs:
             echo "Using push before SHA as diff base: $DIFF_BASE"
           fi
 
-          PROJECTS=(
-            "authentication|Autodesk.Authentication|Autodesk.Authentication/Autodesk.Authentication.csproj"
-            "httpclient|Autodesk.Common.HttpClient|Autodesk.Common.HttpClient/Autodesk.Common.HttpClientLibrary.csproj"
-            "datamanagement|Autodesk.DataManagement|Autodesk.DataManagement/Autodesk.DataManagement.csproj"
-            "modelderivative|Autodesk.ModelDerivative|Autodesk.ModelDerivative/Autodesk.ModelDerivative.csproj"
-            "bim360|Autodesk.BIM360|Autodesk.BIM360/Autodesk.BIM360.csproj"
-            "automation|Autodesk.Automation|Autodesk.Automation/Autodesk.Automation.csproj"
-            "forma|Autodesk.Forma|Autodesk.Forma/Autodesk.Forma.csproj"
-            "vault|Autodesk.Vault|Autodesk.Vault/Autodesk.Vault.csproj"
-            "tandem|Autodesk.Tandem|Autodesk.Tandem/Autodesk.Tandem.csproj"
-            "buildingconnected|Autodesk.BuildingConnected|Autodesk.BuildingConnected/Autodesk.BuildingConnected.csproj"
-            "parameters|Autodesk.Parameters|Autodesk.Parameters/Autodesk.Parameters.csproj"
-            "informeddesign|Autodesk.InformedDesign|Autodesk.InformedDesign/Autodesk.InformedDesign.csproj"
-
-          )
-
           CREATED=()
           SKIPPED=()
 
-          for PROJECT in "${PROJECTS[@]}"; do
-            IFS='|' read -r SLUG FOLDER CSPROJ <<< "$PROJECT"
-
-            if [ ! -f "$FOLDER/CHANGELOG.md" ]; then
-              SKIPPED+=("$SLUG (no CHANGELOG.md)")
+          while IFS= read -r -d '' CHANGELOG; do
+            FOLDER=$(dirname "$CHANGELOG")
+            CSPROJ=$(find "$FOLDER" -maxdepth 1 -type f -name '*.csproj' -print -quit)
+            if [ -z "$CSPROJ" ]; then
+              SKIPPED+=("$FOLDER (no .csproj)")
               continue
             fi
 
-            CHANGED=$(git diff --name-only "$DIFF_BASE" HEAD -- "$FOLDER/CHANGELOG.md")
+            PACKAGE_ID=$(grep -m1 '<PackageId>' "$CSPROJ" \
+              | sed 's/.*<PackageId>[[:space:]]*\(.*\)[[:space:]]*<\/PackageId>.*/\1/' | xargs)
+            if [ -z "$PACKAGE_ID" ]; then
+              SKIPPED+=("$FOLDER (no PackageId)")
+              continue
+            fi
+            SLUG=$(printf '%s' "$PACKAGE_ID" | sed 's/^Adsk\.Platform\.//' | tr '[:upper:]' '[:lower:]' | tr '.' '-')
+
+            CHANGED=$(git diff --name-only "$DIFF_BASE" HEAD -- "$CHANGELOG")
             if [ -z "$CHANGED" ] && [ "$FORCE_TAG" != "true" ]; then
               SKIPPED+=("$SLUG (changelog unchanged)")
               continue
@@ -87,11 +84,20 @@ jobs:
               echo "force_tag=true - bypassing changelog check for $SLUG"
             fi
 
-            CHANGELOG_VERSION=$(grep -m1 '## \[' "$FOLDER/CHANGELOG.md" | sed 's/.*\[\([^]]*\)\].*/\1/')
-            CSPROJ_VERSION=$(grep -m1 '<Version>' "$CSPROJ" | sed 's/.*<Version>[[:space:]]*\(.*\)[[:space:]]*<\/Version>.*/\1/' | xargs)
+            CHANGELOG_VERSION=$(grep -m1 '## \[' "$CHANGELOG" | sed 's/.*\[\([^]]*\)\].*/\1/')
+            CSPROJ_VERSION=$(grep -m1 '<Version>' "$CSPROJ" \
+              | sed 's/.*<Version>[[:space:]]*\(.*\)[[:space:]]*<\/Version>.*/\1/' | xargs)
 
             if [ -z "$CHANGELOG_VERSION" ] || [ -z "$CSPROJ_VERSION" ] || [ "$CHANGELOG_VERSION" != "$CSPROJ_VERSION" ]; then
               SKIPPED+=("$SLUG (version mismatch or parse error)")
+              continue
+            fi
+
+            echo "Building $SLUG v$CSPROJ_VERSION"
+            if ! dotnet restore "$CSPROJ" || \
+              ! dotnet build "$CSPROJ" --configuration Release --no-restore /p:Version="$CSPROJ_VERSION"; then
+              SKIPPED+=("$SLUG (build failed)")
+              echo "Build failed for $SLUG; no RC tag will be created"
               continue
             fi
 
@@ -107,7 +113,7 @@ jobs:
               SKIPPED+=("$SLUG (failed to create or push $TAG)")
               git tag -d "$TAG" >/dev/null 2>&1 || true
             fi
-          done
+          done < <(find . -mindepth 2 -maxdepth 2 -type f -name 'CHANGELOG.md' -print0 | sort -z)
 
           echo "Created tags: ${#CREATED[@]}"
           for t in "${CREATED[@]}"; do echo "+ $t"; done
