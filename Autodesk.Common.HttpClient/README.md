@@ -331,7 +331,7 @@ All components in this library are thread-safe and can be used in concurrent sce
 
 ## Dependencies
 
-- **.NET 8.0**: Target framework
+- **.NET 8.0 / .NET 10.0**: Target frameworks
 - **Microsoft.Extensions.Http**: HTTP client factory and DI integration
 - **Microsoft.Kiota.Http.HttpClientLibrary**: Base HTTP client library with Kiota integration
 
