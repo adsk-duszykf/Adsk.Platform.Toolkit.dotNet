@@ -27,23 +27,16 @@ on:
         required: false
         type: boolean
         default: false
-      use_oidc:
-        description: "Use OIDC token instead of API key for authentication"
-        required: false
-        type: boolean
-        default: false
     secrets:
-      nuget_api_key:
-        required: false
       nuget_user:
-        description: "NuGet.org profile name (required for OIDC)"
-        required: false
+        description: "NuGet.org profile name"
+        required: true
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
 
     steps:
@@ -65,25 +58,28 @@ jobs:
         with:
           dotnet-version: "10.0.x"
 
+      - name: Derive package slug
+        id: slug
+        run: |
+          SLUG=$(printf '%s' "${{ inputs.package_id }}" | sed 's/^Adsk\.Platform\.//' | tr '[:upper:]' '[:lower:]' | tr '.' '-')
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+
       - name: Check CHANGELOG.md exists
-        id: changelog_exists
         run: |
           if [ ! -f "${{ inputs.folder }}/CHANGELOG.md" ]; then
-            echo "exists=false" >> $GITHUB_OUTPUT
-            echo "SKIP - no CHANGELOG.md found in ${{ inputs.folder }}/"
-          else
-            echo "exists=true" >> $GITHUB_OUTPUT
-            echo "Found ${{ inputs.folder }}/CHANGELOG.md"
+            echo "FAIL - no CHANGELOG.md found in ${{ inputs.folder }}/"
+            exit 1
           fi
+          echo "Found ${{ inputs.folder }}/CHANGELOG.md"
 
       - name: Check CHANGELOG.md was modified
-        id: changelog_changed
-        if: steps.changelog_exists.outputs.exists == 'true' && inputs.force_publish == false
+        if: inputs.force_publish == false
         run: |
-          PREV_TAG=$(git describe --abbrev=0 --tags HEAD^ 2>/dev/null || echo "")
+          SLUG="${{ steps.slug.outputs.slug }}"
+          PREV_TAG=$(git describe --abbrev=0 --tags --match "$SLUG/v*" HEAD^ 2>/dev/null || echo "")
           if [ -z "$PREV_TAG" ]; then
             DIFF_BASE=$(git rev-list --max-parents=0 HEAD)
-            echo "No previous tag - comparing against initial commit ($DIFF_BASE)"
+            echo "No previous tag for $SLUG - comparing against initial commit ($DIFF_BASE)"
           else
             DIFF_BASE="$PREV_TAG"
             echo "Comparing against previous tag: $PREV_TAG"
@@ -91,18 +87,13 @@ jobs:
 
           CHANGED=$(git diff --name-only "$DIFF_BASE" HEAD -- "${{ inputs.folder }}/CHANGELOG.md")
           if [ -z "$CHANGED" ]; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "SKIP - CHANGELOG.md not modified since $DIFF_BASE"
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-            echo "CHANGELOG.md was modified"
+            echo "FAIL - CHANGELOG.md not modified since $DIFF_BASE"
+            exit 1
           fi
+          echo "CHANGELOG.md was modified"
 
       - name: Compare versions
         id: versions
-        if: |
-          steps.changelog_exists.outputs.exists == 'true' &&
-          (inputs.force_publish == true || steps.changelog_changed.outputs.changed == 'true')
         run: |
           CHANGELOG_VERSION=$(grep -m1 '## \[' "${{ inputs.folder }}/CHANGELOG.md" \
             | sed 's/.*\[\([^]]*\)\].*/\1/')
@@ -111,23 +102,18 @@ jobs:
 
           echo "Changelog version : ${CHANGELOG_VERSION:-(not found)}"
           echo ".csproj version   : ${CSPROJ_VERSION:-(not found)}"
-          echo "changelog_version=$CHANGELOG_VERSION" >> $GITHUB_OUTPUT
-          echo "csproj_version=$CSPROJ_VERSION" >> $GITHUB_OUTPUT
 
           if [ -z "$CHANGELOG_VERSION" ] || [ -z "$CSPROJ_VERSION" ]; then
-            echo "match=false" >> $GITHUB_OUTPUT
-            echo "SKIP - could not parse one or both versions"
+            echo "FAIL - could not parse one or both versions"
+            exit 1
           elif [ "$CHANGELOG_VERSION" != "$CSPROJ_VERSION" ]; then
-            echo "match=false" >> $GITHUB_OUTPUT
-            echo "SKIP - version mismatch (changelog=$CHANGELOG_VERSION, csproj=$CSPROJ_VERSION)"
-          else
-            echo "match=true" >> $GITHUB_OUTPUT
-            echo "version=$CSPROJ_VERSION" >> $GITHUB_OUTPUT
-            echo "All gates passed - will publish ${{ inputs.package_id }} v$CSPROJ_VERSION"
+            echo "FAIL - version mismatch (changelog=$CHANGELOG_VERSION, csproj=$CSPROJ_VERSION)"
+            exit 1
           fi
+          echo "version=$CSPROJ_VERSION" >> $GITHUB_OUTPUT
+          echo "All gates passed - will publish ${{ inputs.package_id }} v$CSPROJ_VERSION"
 
       - name: Restore and Build
-        if: steps.versions.outputs.match == 'true'
         run: |
           dotnet restore "${{ inputs.csproj }}"
           dotnet build "${{ inputs.csproj }}" \
@@ -136,7 +122,6 @@ jobs:
             /p:Version="${{ steps.versions.outputs.version }}"
 
       - name: Pack
-        if: steps.versions.outputs.match == 'true'
         run: |
           dotnet pack "${{ inputs.csproj }}" \
             --configuration Release \
@@ -145,14 +130,12 @@ jobs:
             --output ./nupkg
 
       - name: NuGet login (OIDC → temp API key)
-        if: steps.versions.outputs.match == 'true' && inputs.use_oidc == true
         id: login
         uses: NuGet/login@v1
         with:
           user: ${{ secrets.nuget_user }}
 
-      - name: Publish to NuGet (OIDC)
-        if: steps.versions.outputs.match == 'true' && inputs.use_oidc == true
+      - name: Publish to NuGet
         run: |
           dotnet nuget push \
             "./nupkg/${{ inputs.package_id }}.${{ steps.versions.outputs.version }}.nupkg" \
@@ -161,12 +144,21 @@ jobs:
             --skip-duplicate
           echo "Published ${{ inputs.package_id }} v${{ steps.versions.outputs.version }}"
 
-      - name: Publish to NuGet (API Key)
-        if: steps.versions.outputs.match == 'true' && inputs.use_oidc != true
+      - name: Create and push release tag
         run: |
-          dotnet nuget push \
-            "./nupkg/${{ inputs.package_id }}.${{ steps.versions.outputs.version }}.nupkg" \
-            --api-key "${{ secrets.nuget_api_key }}" \
-            --source "https://api.nuget.org/v3/index.json" \
-            --skip-duplicate
-          echo "Published ${{ inputs.package_id }} v${{ steps.versions.outputs.version }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          SLUG="${{ steps.slug.outputs.slug }}"
+          VERSION="${{ steps.versions.outputs.version }}"
+          TAG="$SLUG/v$VERSION"
+
+          git fetch --tags
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "FAIL - tag $TAG already exists"
+            exit 1
+          fi
+
+          git tag -a "$TAG" -m "Release ${{ inputs.package_id }} v$VERSION"
+          git push origin "$TAG"
+          echo "Created tag $TAG"
