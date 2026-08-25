@@ -5,6 +5,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.1.0]
+
+### Added
+
+- Multi-targeting: package now also targets `net10.0` in addition to `net8.0`.
+
+---
+
 ## [1.0.0]
 
 ### Added

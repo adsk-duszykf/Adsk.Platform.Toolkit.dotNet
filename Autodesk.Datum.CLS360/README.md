@@ -36,11 +36,11 @@ await foreach (var domain in client.DomainManager.ListDomainsAsync())
 
 | Manager | Operations |
 | --- | --- |
-| `DomainManager` | List, get, seed, and retrieve snapshots of domains |
-| `ClassManager` | List, create, get, and update classes and their mappings |
-| `TemplateManager` | List, create, get, and update templates and essential attributes |
 | `AttributeManager` | Get information and measure attributes for a domain |
+| `ClassManager` | List, create, get, and update classes and their mappings |
+| `DomainManager` | List, get, seed, and retrieve snapshots of domains |
 | `FileManager` | Download files by file handle or dataset reference |
+| `TemplateManager` | List, create, get, and update templates and essential attributes |
 
 ## Usage Examples
 
