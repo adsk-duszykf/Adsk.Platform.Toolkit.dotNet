@@ -4,7 +4,7 @@
 
 > Unofficial package - not affiliated with or endorsed by Autodesk.
 
-A type-safe .NET 8 client for the Autodesk Datum PIM360 REST API, generated with Microsoft Kiota.
+A type-safe .NET 8 / .NET 10 client for the Autodesk Datum PIM360 REST API, generated with Microsoft Kiota.
 
 ## Installation
 
