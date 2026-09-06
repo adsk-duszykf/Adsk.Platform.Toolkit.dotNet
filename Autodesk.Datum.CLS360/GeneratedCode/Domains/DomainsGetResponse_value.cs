@@ -14,6 +14,14 @@ namespace Autodesk.Datum.CLS360.Domains
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Company property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Company { get; set; }
+#nullable restore
+#else
+        public string Company { get; set; }
+#endif
         /// <summary>The Hdl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +37,16 @@ namespace Autodesk.Datum.CLS360.Domains
 #nullable restore
 #else
         public string Label { get; set; }
+#endif
+        /// <summary>The Lock property</summary>
+        public bool? Lock { get; set; }
+        /// <summary>The Logo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Logo { get; set; }
+#nullable restore
+#else
+        public string Logo { get; set; }
 #endif
         /// <summary>The Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,8 +83,11 @@ namespace Autodesk.Datum.CLS360.Domains
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Company", n => { Company = n.GetStringValue(); } },
                 { "Hdl", n => { Hdl = n.GetStringValue(); } },
                 { "Label", n => { Label = n.GetStringValue(); } },
+                { "Lock", n => { Lock = n.GetBoolValue(); } },
+                { "Logo", n => { Logo = n.GetStringValue(); } },
                 { "Name", n => { Name = n.GetStringValue(); } },
                 { "Version", n => { Version = n.GetLongValue(); } },
             };
@@ -78,8 +99,11 @@ namespace Autodesk.Datum.CLS360.Domains
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("Company", Company);
             writer.WriteStringValue("Hdl", Hdl);
             writer.WriteStringValue("Label", Label);
+            writer.WriteBoolValue("Lock", Lock);
+            writer.WriteStringValue("Logo", Logo);
             writer.WriteStringValue("Name", Name);
             writer.WriteLongValue("Version", Version);
             writer.WriteAdditionalData(AdditionalData);

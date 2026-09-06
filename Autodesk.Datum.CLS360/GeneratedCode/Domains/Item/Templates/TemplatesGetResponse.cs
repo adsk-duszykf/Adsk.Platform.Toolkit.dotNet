@@ -14,21 +14,21 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The NextLink property</summary>
+        /// <summary>The header property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextLink { get; set; }
+        public List<string>? Header { get; set; }
 #nullable restore
 #else
-        public string NextLink { get; set; }
+        public List<string> Header { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The rows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value? Value { get; set; }
+        public List<global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows>? Rows { get; set; }
 #nullable restore
 #else
-        public global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value Value { get; set; }
+        public List<global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows> Rows { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "@nextLink", n => { NextLink = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value>(global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value.CreateFromDiscriminatorValue); } },
+                { "header", n => { Header = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rows", n => { Rows = n.GetCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows>(global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("@nextLink", NextLink);
-            writer.WriteObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value>("value", Value);
+            writer.WriteCollectionOfPrimitiveValues<string>("header", Header);
+            writer.WriteCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows>("rows", Rows);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

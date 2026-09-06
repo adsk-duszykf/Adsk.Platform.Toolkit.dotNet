@@ -22,6 +22,14 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>The options property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_metadata_options>? Options { get; set; }
+#nullable restore
+#else
+        public List<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_metadata_options> Options { get; set; }
+#endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_metadata_options>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_metadata_options.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
+            writer.WriteCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_metadata_options>("options", Options);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

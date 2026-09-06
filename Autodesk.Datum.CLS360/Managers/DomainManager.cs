@@ -44,14 +44,15 @@ public class DomainManager
         RequestConfiguration<DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var requestBuilder = _api.Domains;
+        long page = requestConfiguration?.QueryParameters?.Page ?? 0;
         while (true)
         {
-            DomainsGetResponse? response = await requestBuilder.GetAsync(r =>
+            DomainsGetResponse? response = await _api.Domains.GetAsync(r =>
             {
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
                 r.Options = requestConfiguration?.Options ?? r.Options;
+                r.QueryParameters.Page = page;
             }, cancellationToken);
 
             if (response?.Value is not { Count: > 0 })
@@ -63,7 +64,7 @@ public class DomainManager
             if (string.IsNullOrWhiteSpace(response.NextLink))
                 yield break;
 
-            requestBuilder = requestBuilder.WithUrl(response.NextLink);
+            page++;
         }
     }
 

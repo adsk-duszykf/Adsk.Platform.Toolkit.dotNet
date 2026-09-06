@@ -9,11 +9,19 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TemplatesGetResponse_value : IAdditionalDataHolder, IParsable
+    public partial class TemplatesGetResponse_rows : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The cl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cl { get; set; }
+#nullable restore
+#else
+        public string Cl { get; set; }
+#endif
         /// <summary>The ClassLibrary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +62,8 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
 #else
         public string ObjectType { get; set; }
 #endif
+        /// <summary>The on property</summary>
+        public long? On { get; set; }
         /// <summary>The Status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,22 +72,24 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>The vn property</summary>
+        public long? Vn { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows"/> and sets the default values.
         /// </summary>
-        public TemplatesGetResponse_value()
+        public TemplatesGetResponse_rows()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value"/></returns>
+        /// <returns>A <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_value();
+            return new global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesGetResponse_rows();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,12 +99,15 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "_cl", n => { Cl = n.GetStringValue(); } },
                 { "Class Library", n => { ClassLibrary = n.GetStringValue(); } },
                 { "Hdl", n => { Hdl = n.GetStringValue(); } },
                 { "Icon", n => { Icon = n.GetStringValue(); } },
                 { "Name", n => { Name = n.GetStringValue(); } },
                 { "Object Type", n => { ObjectType = n.GetStringValue(); } },
+                { "_on", n => { On = n.GetLongValue(); } },
                 { "Status", n => { Status = n.GetStringValue(); } },
+                { "_vn", n => { Vn = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +117,15 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("_cl", Cl);
             writer.WriteStringValue("Class Library", ClassLibrary);
             writer.WriteStringValue("Hdl", Hdl);
             writer.WriteStringValue("Icon", Icon);
             writer.WriteStringValue("Name", Name);
             writer.WriteStringValue("Object Type", ObjectType);
+            writer.WriteLongValue("_on", On);
             writer.WriteStringValue("Status", Status);
+            writer.WriteLongValue("_vn", Vn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

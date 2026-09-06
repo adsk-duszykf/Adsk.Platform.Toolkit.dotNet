@@ -5,18 +5,16 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
+namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithClsHdlPostResponse_detail : IAdditionalDataHolder, IParsable
+    public partial class UomGroupGetResponse_usedby_list : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date property</summary>
-        public DateTimeOffset? Date { get; set; }
-        /// <summary>CLS360 Unique identifier</summary>
+        /// <summary>The Hdl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hdl { get; set; }
@@ -24,7 +22,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
 #else
         public string Hdl { get; set; }
 #endif
-        /// <summary>The icon property</summary>
+        /// <summary>The Icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Icon { get; set; }
@@ -32,32 +30,46 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
 #else
         public string Icon { get; set; }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>The Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string Label { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>Last modified Domain version</summary>
-        public long? Version { get; set; }
+        /// <summary>The Status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
+        /// <summary>The Type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlPostResponse_detail"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_usedby_list"/> and sets the default values.
         /// </summary>
-        public WithClsHdlPostResponse_detail()
+        public UomGroupGetResponse_usedby_list()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlPostResponse_detail"/></returns>
+        /// <returns>A <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_usedby_list"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlPostResponse_detail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_usedby_list CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlPostResponse_detail();
+            return new global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.UomGroup.UomGroupGetResponse_usedby_list();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,11 +79,11 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                { "hdl", n => { Hdl = n.GetStringValue(); } },
-                { "icon", n => { Icon = n.GetStringValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetLongValue(); } },
+                { "Hdl", n => { Hdl = n.GetStringValue(); } },
+                { "Icon", n => { Icon = n.GetStringValue(); } },
+                { "Name", n => { Name = n.GetStringValue(); } },
+                { "Status", n => { Status = n.GetStringValue(); } },
+                { "Type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,11 +93,11 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("date", Date);
-            writer.WriteStringValue("hdl", Hdl);
-            writer.WriteStringValue("icon", Icon);
-            writer.WriteStringValue("label", Label);
-            writer.WriteLongValue("version", Version);
+            writer.WriteStringValue("Hdl", Hdl);
+            writer.WriteStringValue("Icon", Icon);
+            writer.WriteStringValue("Name", Name);
+            writer.WriteStringValue("Status", Status);
+            writer.WriteStringValue("Type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

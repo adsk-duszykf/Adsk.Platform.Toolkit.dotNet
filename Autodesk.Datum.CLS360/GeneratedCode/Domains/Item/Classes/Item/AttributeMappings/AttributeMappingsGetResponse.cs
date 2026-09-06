@@ -14,6 +14,14 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item.AttributeMappings
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The header property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Header { get; set; }
+#nullable restore
+#else
+        public List<string> Header { get; set; }
+#endif
         /// <summary>The rows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item.AttributeMappings
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "header", n => { Header = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "rows", n => { Rows = n.GetCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.AttributeMappings.AttributeMappingsGetResponse_rows>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.AttributeMappings.AttributeMappingsGetResponse_rows.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +66,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item.AttributeMappings
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("header", Header);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.AttributeMappings.AttributeMappingsGetResponse_rows>("rows", Rows);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -48,6 +48,7 @@ public class ClassManager
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         var requestBuilder = _api.Domains[domHdl].Classes;
+        long page = requestConfiguration?.QueryParameters?.Page ?? 0;
         while (true)
         {
             ClassesGetResponse? response = await requestBuilder.GetAsync(r =>
@@ -55,15 +56,19 @@ public class ClassManager
                 r.Headers = requestConfiguration?.Headers ?? r.Headers;
                 r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
                 r.Options = requestConfiguration?.Options ?? r.Options;
+                r.QueryParameters.Page = page;
             }, cancellationToken);
 
             if (response?.Value is not null)
-                yield return response.Value;
+            {
+                foreach (var item in response.Value)
+                    yield return item;
+            }
 
             if (string.IsNullOrWhiteSpace(response?.NextLink))
                 yield break;
 
-            requestBuilder = requestBuilder.WithUrl(response.NextLink);
+            page++;
         }
     }
 
@@ -77,13 +82,13 @@ public class ClassManager
     /// <param name="body">The create request body.</param>
     /// <param name="requestConfiguration">(Optional) Configuration for the request.</param>
     /// <param name="cancellationToken">(Optional) Cancellation token.</param>
-    /// <returns>A <see cref="ClassesPostResponse"/> containing the created class.</returns>
+    /// <returns>The handle of the newly created class.</returns>
     /// <example>
     /// <code>
-    /// ClassesPostResponse? response = await client.ClassManager.CreateClassAsync("domain-handle", new ClassesPostRequestBody());
+    /// string? handle = await client.ClassManager.CreateClassAsync("domain-handle", new ClassesPostRequestBody());
     /// </code>
     /// </example>
-    public async Task<ClassesPostResponse?> CreateClassAsync(
+    public async Task<string?> CreateClassAsync(
         string domHdl,
         ClassesPostRequestBody body,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
@@ -137,13 +142,13 @@ public class ClassManager
     /// <param name="body">The update request body.</param>
     /// <param name="requestConfiguration">(Optional) Configuration for the request.</param>
     /// <param name="cancellationToken">(Optional) Cancellation token.</param>
-    /// <returns>A <see cref="WithClsHdlPostResponse"/> containing the updated class.</returns>
+    /// <returns>"OK" if successful, otherwise an error message.</returns>
     /// <example>
     /// <code>
-    /// WithClsHdlPostResponse? response = await client.ClassManager.UpdateClassAsync("domain-handle", "class-handle", new WithClsHdlPostRequestBody());
+    /// string? result = await client.ClassManager.UpdateClassAsync("domain-handle", "class-handle", new WithClsHdlPostRequestBody());
     /// </code>
     /// </example>
-    public async Task<WithClsHdlPostResponse?> UpdateClassAsync(
+    public async Task<string?> UpdateClassAsync(
         string domHdl,
         string clsHdl,
         WithClsHdlPostRequestBody body,

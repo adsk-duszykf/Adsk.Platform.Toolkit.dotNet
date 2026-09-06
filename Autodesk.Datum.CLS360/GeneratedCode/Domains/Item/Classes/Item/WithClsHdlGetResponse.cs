@@ -54,6 +54,14 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
 #else
         public global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_detail Detail { get; set; }
 #endif
+        /// <summary>The history property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_history? History { get; set; }
+#nullable restore
+#else
+        public global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_history History { get; set; }
+#endif
         /// <summary>Attachments from other objects *(Attributes, UoMs, ...)*</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +85,14 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
 #nullable restore
 #else
         public global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_permissions Permissions { get; set; }
+#endif
+        /// <summary>The usedby property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_usedby? Usedby { get; set; }
+#nullable restore
+#else
+        public global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_usedby Usedby { get; set; }
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,9 +132,11 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
                 { "checksum", n => { Checksum = n.GetStringValue(); } },
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_data>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "detail", n => { Detail = n.GetObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_detail>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_detail.CreateFromDiscriminatorValue); } },
+                { "history", n => { History = n.GetObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_history>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_history.CreateFromDiscriminatorValue); } },
                 { "mapping", n => { Mapping = n.GetCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_mapping>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_mapping.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_metadata>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_metadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_permissions>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_permissions.CreateFromDiscriminatorValue); } },
+                { "usedby", n => { Usedby = n.GetObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_usedby>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_usedby.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_version>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_version.CreateFromDiscriminatorValue); } },
             };
         }
@@ -134,9 +152,11 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes.Item
             writer.WriteStringValue("checksum", Checksum);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_data>("data", Data);
             writer.WriteObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_detail>("detail", Detail);
+            writer.WriteObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_history>("history", History);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_mapping>("mapping", Mapping);
             writer.WriteCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_metadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_permissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_usedby>("usedby", Usedby);
             writer.WriteObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.Item.WithClsHdlGetResponse_version>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

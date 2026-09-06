@@ -66,18 +66,18 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes
         /// <summary>
         /// Create a new class
         /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostResponse"/></returns>
+        /// <returns>A <see cref="string"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Autodesk.Datum.CLS360.Domains.Item.Classes.Classes409Error">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostResponse?> PostAsync(global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> PostAsync(global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostResponse> PostAsync(global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> PostAsync(global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -86,7 +86,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes
             {
                 { "409", global::Autodesk.Datum.CLS360.Domains.Item.Classes.Classes409Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostResponse>(requestInfo, global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return list of class objects

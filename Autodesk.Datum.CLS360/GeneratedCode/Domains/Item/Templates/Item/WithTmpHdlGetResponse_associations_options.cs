@@ -5,47 +5,47 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Autodesk.Datum.CLS360.Domains.Item.Templates
+namespace Autodesk.Datum.CLS360.Domains.Item.Templates.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TemplatesPostResponse_context_list : IAdditionalDataHolder, IParsable
+    public partial class WithTmpHdlGetResponse_associations_options : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Hdl property</summary>
+        /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hdl { get; set; }
+        public string? Label { get; set; }
 #nullable restore
 #else
-        public string Hdl { get; set; }
+        public string Label { get; set; }
 #endif
-        /// <summary>The Key property</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesPostResponse_context_list"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.Item.WithTmpHdlGetResponse_associations_options"/> and sets the default values.
         /// </summary>
-        public TemplatesPostResponse_context_list()
+        public WithTmpHdlGetResponse_associations_options()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesPostResponse_context_list"/></returns>
+        /// <returns>A <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Templates.Item.WithTmpHdlGetResponse_associations_options"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesPostResponse_context_list CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Autodesk.Datum.CLS360.Domains.Item.Templates.Item.WithTmpHdlGetResponse_associations_options CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Autodesk.Datum.CLS360.Domains.Item.Templates.TemplatesPostResponse_context_list();
+            return new global::Autodesk.Datum.CLS360.Domains.Item.Templates.Item.WithTmpHdlGetResponse_associations_options();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +55,8 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Hdl", n => { Hdl = n.GetStringValue(); } },
-                { "Key", n => { Key = n.GetStringValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Hdl", Hdl);
-            writer.WriteStringValue("Key", Key);
+            writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

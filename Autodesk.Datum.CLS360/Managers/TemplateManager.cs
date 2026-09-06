@@ -61,38 +61,33 @@ public class TemplateManager
     /// <param name="domHdl">Domain handle.</param>
     /// <param name="requestConfiguration">(Optional) Configuration for the request.</param>
     /// <param name="cancellationToken">(Optional) Cancellation token.</param>
-    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="TemplatesGetResponse_value"/> items, automatically paginated.</returns>
+    /// <returns>An <see cref="IAsyncEnumerable{T}"/> of <see cref="TemplatesGetResponse_rows"/> items.</returns>
     /// <example>
     /// <code>
-    /// await foreach (TemplatesGetResponse_value template in client.TemplateManager.ListTemplatesAsync("domain-handle"))
+    /// await foreach (TemplatesGetResponse_rows template in client.TemplateManager.ListTemplatesAsync("domain-handle"))
     /// {
     ///     Console.WriteLine(template.Hdl);
     /// }
     /// </code>
     /// </example>
-    public async IAsyncEnumerable<TemplatesGetResponse_value> ListTemplatesAsync(
+    public async IAsyncEnumerable<TemplatesGetResponse_rows> ListTemplatesAsync(
         string domHdl,
         RequestConfiguration<TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>? requestConfiguration = null,
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var requestBuilder = _api.Domains[domHdl].Templates;
-        while (true)
+        // The API has no page/pageSize params for this endpoint; it always returns the full list in one call.
+        TemplatesGetResponse? response = await _api.Domains[domHdl].Templates.GetAsync(r =>
         {
-            TemplatesGetResponse? response = await requestBuilder.GetAsync(r =>
-            {
-                r.Headers = requestConfiguration?.Headers ?? r.Headers;
-                r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
-                r.Options = requestConfiguration?.Options ?? r.Options;
-            }, cancellationToken);
+            r.Headers = requestConfiguration?.Headers ?? r.Headers;
+            r.QueryParameters = requestConfiguration?.QueryParameters ?? r.QueryParameters;
+            r.Options = requestConfiguration?.Options ?? r.Options;
+        }, cancellationToken);
 
-            if (response?.Value is not null)
-                yield return response.Value;
+        if (response?.Rows is null)
+            yield break;
 
-            if (string.IsNullOrWhiteSpace(response?.NextLink))
-                yield break;
-
-            requestBuilder = requestBuilder.WithUrl(response.NextLink);
-        }
+        foreach (var item in response.Rows)
+            yield return item;
     }
 
     /// <summary>
@@ -105,13 +100,13 @@ public class TemplateManager
     /// <param name="body">The create request body.</param>
     /// <param name="requestConfiguration">(Optional) Configuration for the request.</param>
     /// <param name="cancellationToken">(Optional) Cancellation token.</param>
-    /// <returns>A <see cref="TemplatesPostResponse"/> containing the created template.</returns>
+    /// <returns>The handle of the newly created template.</returns>
     /// <example>
     /// <code>
-    /// TemplatesPostResponse? response = await client.TemplateManager.CreateTemplateAsync("domain-handle", new TemplatesPostRequestBody());
+    /// string? handle = await client.TemplateManager.CreateTemplateAsync("domain-handle", new TemplatesPostRequestBody());
     /// </code>
     /// </example>
-    public async Task<TemplatesPostResponse?> CreateTemplateAsync(
+    public async Task<string?> CreateTemplateAsync(
         string domHdl,
         TemplatesPostRequestBody body,
         RequestConfiguration<DefaultQueryParameters>? requestConfiguration = null,
@@ -165,13 +160,13 @@ public class TemplateManager
     /// <param name="body">The update request body.</param>
     /// <param name="requestConfiguration">(Optional) Configuration for the request.</param>
     /// <param name="cancellationToken">(Optional) Cancellation token.</param>
-    /// <returns>A <see cref="WithTmpHdlPostResponse"/> containing the updated template.</returns>
+    /// <returns>"OK" if successful, otherwise an error message.</returns>
     /// <example>
     /// <code>
-    /// WithTmpHdlPostResponse? response = await client.TemplateManager.UpdateTemplateAsync("domain-handle", "template-handle", new WithTmpHdlPostRequestBody());
+    /// string? result = await client.TemplateManager.UpdateTemplateAsync("domain-handle", "template-handle", new WithTmpHdlPostRequestBody());
     /// </code>
     /// </example>
-    public async Task<WithTmpHdlPostResponse?> UpdateTemplateAsync(
+    public async Task<string?> UpdateTemplateAsync(
         string domHdl,
         string tmpHdl,
         WithTmpHdlPostRequestBody body,

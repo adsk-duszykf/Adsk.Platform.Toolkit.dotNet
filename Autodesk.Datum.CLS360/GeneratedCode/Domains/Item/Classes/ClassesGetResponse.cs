@@ -25,10 +25,10 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value? Value { get; set; }
+        public List<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value>? Value { get; set; }
 #nullable restore
 #else
-        public global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value Value { get; set; }
+        public List<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value> Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@nextLink", n => { NextLink = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value>(global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Classes
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@nextLink", NextLink);
-            writer.WriteObjectValue<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value>("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Autodesk.Datum.CLS360.Domains.Item.Classes.ClassesGetResponse_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

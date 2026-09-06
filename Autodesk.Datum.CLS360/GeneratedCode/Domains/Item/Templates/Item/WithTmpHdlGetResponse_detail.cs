@@ -32,6 +32,14 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates.Item
 #else
         public string Icon { get; set; }
 #endif
+        /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Key { get; set; }
+#nullable restore
+#else
+        public string Key { get; set; }
+#endif
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +78,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates.Item
                 { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 { "hdl", n => { Hdl = n.GetStringValue(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetLongValue(); } },
             };
@@ -84,6 +93,7 @@ namespace Autodesk.Datum.CLS360.Domains.Item.Templates.Item
             writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteStringValue("hdl", Hdl);
             writer.WriteStringValue("icon", Icon);
+            writer.WriteStringValue("key", Key);
             writer.WriteStringValue("label", Label);
             writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
