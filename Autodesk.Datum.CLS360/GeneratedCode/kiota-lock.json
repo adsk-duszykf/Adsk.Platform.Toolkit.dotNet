@@ -2,7 +2,7 @@
   "descriptionHash": "DA4DCA2F3E2B693D123575ECF2CACA2CC92FFFAADE1AB2DC99C5837BD427D28A5B8BD1CE29CDD696D512B1CB3B7621A53959633FCB54C7C7067C2B4A30A318FA",
   "descriptionLocation": "../../../_spec/output/datum/cls360-openapi-patched.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.35.0",
   "clientClassName": "BaseDatumCLS360Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Autodesk.Datum.CLS360",

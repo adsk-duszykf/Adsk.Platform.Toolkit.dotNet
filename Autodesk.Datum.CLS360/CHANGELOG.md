@@ -5,6 +5,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.0.1]
+
+### Fixed
+
+- Re-packaged to fix invalid `Adsk.Platform.HttpClient` dependency version metadata generated during CI workflow.
+
+---
+
 ## [2.0.0]
 
 ### Fixed
