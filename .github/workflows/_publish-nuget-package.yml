@@ -113,20 +113,21 @@ jobs:
           echo "version=$CSPROJ_VERSION" >> $GITHUB_OUTPUT
           echo "All gates passed - will publish ${{ inputs.package_id }} v$CSPROJ_VERSION"
 
+      # Version comes from the .csproj (already validated above). Passing /p:Version
+      # would also override project-referenced libraries and stamp their package
+      # dependency versions with this project's version.
       - name: Restore and Build
         run: |
           dotnet restore "${{ inputs.csproj }}"
           dotnet build "${{ inputs.csproj }}" \
             --configuration Release \
-            --no-restore \
-            /p:Version="${{ steps.versions.outputs.version }}"
+            --no-restore
 
       - name: Pack
         run: |
           dotnet pack "${{ inputs.csproj }}" \
             --configuration Release \
             --no-build \
-            /p:Version="${{ steps.versions.outputs.version }}" \
             --output ./nupkg
 
       - name: NuGet login (OIDC → temp API key)
